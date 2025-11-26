@@ -875,3 +875,66 @@ tr:hover {
     font-size: var(--text-sm);
 }
 
+/* Section Title Variants - For different color themes */
+.section-title-pink {
+    text-align: center;
+    color: #fbc2eb;
+    margin-bottom: var(--space-lg);
+}
+
+/* Subsection Header - For h3 subsections */
+.subsection-header {
+    margin-bottom: var(--space-lg);
+}
+
+/* Input Section Spacing - Additional top margin for input sections */
+.input-section-spaced {
+    margin-top: var(--space-2xl);
+}
+
+/* Visual Dimension Labels - For positioned dimension labels */
+.dimension-label-top {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dimension-label-bottom {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dimension-label-left {
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dimension-label-right {
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Visual Result Text - Bold text with top margin */
+.visual-result-text {
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+/* Grid Cell - For visual area demonstration */
+.grid-cell {
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.grid-cell-pink {
+    border: 1px solid rgba(240, 147, 251, 0.3);
+}
+
+/* Short Result Text - Bold text with small top margin */
+.short-result-text {
+    margin-top: var(--space-sm);
+    font-weight: bold;
+}
+
