@@ -17,7 +17,7 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Geometría Vectorial del Espacio</h2>
 
-            <div class="info-box" class="bg-gradient-primary-white">
+            <div class="info-box bg-gradient-primary-white">
                 <h4 class="color-white mt-0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Geometría Vectorial 3D:</p>
                 <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
@@ -148,7 +148,7 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" class="border-left-success">
+            <div class="info-box border-left-success">
                 <h4 class="color-success">Ejemplo 1: Módulo en ℝ³</h4>
                 <p><strong>Problema:</strong> Calcular |v⃗| si v⃗ = (2, 3, 6)</p>
                 <p><strong>Solución:</strong></p>
@@ -156,7 +156,7 @@
                 <p><strong>Respuesta:</strong> |v⃗| = 7</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
+            <div class="info-box border-left-success">
                 <h4 class="color-success">Ejemplo 2: Producto Escalar en ℝ³</h4>
                 <p><strong>Problema:</strong> Calcular v⃗ · u⃗ si v⃗ = (1, 2, 3) y u⃗ = (4, 5, 6)</p>
                 <p><strong>Solución:</strong></p>
@@ -164,7 +164,7 @@
                 <p><strong>Respuesta:</strong> v⃗ · u⃗ = 32</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
+            <div class="info-box border-left-success">
                 <h4 class="color-success">Ejemplo 3: Producto Vectorial</h4>
                 <p><strong>Problema:</strong> Calcular v⃗ × u⃗ si v⃗ = (1, 0, 0) y u⃗ = (0, 1, 0)</p>
                 <p><strong>Solución:</strong></p>
@@ -172,7 +172,7 @@
                 <p><strong>Respuesta:</strong> v⃗ × u⃗ = (0, 0, 1) = k⃗</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
+            <div class="info-box border-left-success">
                 <h4 class="color-success">Ejemplo 4: Ecuación del Plano</h4>
                 <p><strong>Problema:</strong> Escribir la ecuación general del plano con vector normal n⃗=(1,2,3) que pasa por P(1,0,-1)</p>
                 <p><strong>Solución:</strong></p>
@@ -181,7 +181,7 @@
                 <p><strong>Respuesta:</strong> x + 2y + 3z + 2 = 0</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
+            <div class="info-box border-left-success">
                 <h4 class="color-success">Ejemplo 5: Distancia Punto-Plano</h4>
                 <p><strong>Problema:</strong> Distancia de P(1,1,1) al plano x + y + z - 6 = 0</p>
                 <p><strong>Solución:</strong></p>
@@ -250,7 +250,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" class="mt-2">
+            <div class="navigation-buttons mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='vectorial-plano.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -285,7 +285,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" class="mt-2">
+            <div class="navigation-buttons mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='vectorial-plano.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -340,7 +340,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" class="d-none">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box d-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

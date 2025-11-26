@@ -227,7 +227,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" class="mt-2">
+            <div class="navigation-buttons mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -312,7 +312,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" class="mt-2">
+            <div class="navigation-buttons mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -429,7 +429,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" class="d-none">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box d-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');
