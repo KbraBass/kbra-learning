@@ -574,7 +574,7 @@
                 <input type="number" id="answer-minute" min="0" max="59" placeholder="Minuto (0-59)">
                 <br>
                 <button class="calc-button" onclick="checkTimeAnswer()">✅ Verificar</button>
-                <button class="calc-button" onclick="generatePracticeTime()" style="background: linear-gradient(45deg, #ff6b6b, #ffa500);">🔄 Nueva Hora</button>
+                <button class="calc-button" onclick="generatePracticeTime()" class="gradient-warm">🔄 Nueva Hora</button>
                 <div class="result" id="practice-result">¡Haz clic en "Nueva Hora" para empezar!</div>
             </div>
 
@@ -974,7 +974,7 @@
             if (answerHour === correctHour && answerMinute === correctMinute) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #00b894;">
+                    <div class="text-green">
                         ¡Correcto! 🎉<br>
                         ${correctHour}:${String(correctMinute).padStart(2, '0')} - ${timeToNaturalLanguage(correctHour, correctMinute)}<br>
                         <small>+10 puntos</small>
@@ -983,7 +983,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #d63031;">
+                    <div class="text-red">
                         ¡Intenta de nuevo! 😊<br>
                         La hora correcta es: ${correctHour}:${String(correctMinute).padStart(2, '0')}<br>
                         "${timeToNaturalLanguage(correctHour, correctMinute)}"<br>

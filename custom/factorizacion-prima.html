@@ -589,16 +589,16 @@
                 Puntuación: <span id="score">0</span> puntos
             </div>
             
-            <div class="score" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="score" class="gradient-primary">
                 Nivel: <span id="level">Principiante</span>
             </div>
 
             <div class="practice-question">
                 <div class="question-text" id="questionText"></div>
                 <div class="input-group">
-                    <input type="text" id="answerInput" placeholder="Ej: 2, 2, 3" style="width: 300px;">
+                    <input type="text" id="answerInput" placeholder="Ej: 2, 2, 3" class="width-300">
                     <button onclick="checkAnswer()">Comprobar</button>
-                    <button onclick="nextQuestion()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Nueva Pregunta</button>
+                    <button onclick="nextQuestion()" class="gradient-primary">Nueva Pregunta</button>
                 </div>
                 <div id="feedback" style="margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center;"></div>
             </div>
@@ -789,12 +789,12 @@
                 <div class="factorization-area">
                     <div class="number-display">${num}</div>
                     
-                    <h3 style="color: #667eea; margin: 20px 0; text-align: center;">📝 Proceso de División</h3>
+                    <h3 class="section-header-medium">📝 Proceso de División</h3>
                     <div class="steps-container">
                         ${steps}
                     </div>
 
-                    <h3 style="color: #667eea; margin: 20px 0; text-align: center;">🎯 Factores Primos</h3>
+                    <h3 class="section-header-medium">🎯 Factores Primos</h3>
                     <div class="factor-list">
                         ${factors.map(f => `<div class="factor-item">${f}</div>`).join('<span class="multiplication-sign">×</span>')}
                     </div>
@@ -851,7 +851,7 @@
 
             resultDiv.innerHTML += `
                 <div class="factorization-area">
-                    <h3 style="color: #667eea; margin: 20px 0; text-align: center;">🎯 Multiplicación</h3>
+                    <h3 class="section-header-medium">🎯 Multiplicación</h3>
                     <div class="factor-list">
                         ${factors.map(f => `<div class="factor-item">${f}</div>`).join('<span class="multiplication-sign">×</span>')}
                     </div>
@@ -889,7 +889,7 @@
                 };
                 document.getElementById('questionText').innerHTML = `
                     Factoriza el número <strong style="color: #f5576c; font-size: 1.5em;">${num}</strong>
-                    <p style="font-size: 0.8em; margin-top: 10px;">Escribe los factores primos separados por comas (Ej: 2, 2, 3)</p>
+                    <p class="small-hint-top">Escribe los factores primos separados por comas (Ej: 2, 2, 3)</p>
                 `;
             } else if (type === 'compose') {
                 const factors = generateRandomFactors();
@@ -901,7 +901,7 @@
                 };
                 document.getElementById('questionText').innerHTML = `
                     ¿Qué número se obtiene multiplicando: <strong style="color: #f5576c; font-size: 1.3em;">${factors.join(' × ')}</strong>?
-                    <p style="font-size: 0.8em; margin-top: 10px;">Escribe solo el número</p>
+                    <p class="small-hint-top">Escribe solo el número</p>
                 `;
             } else if (type === 'identify') {
                 const num = Math.floor(Math.random() * 100) + 2;
@@ -912,7 +912,7 @@
                 };
                 document.getElementById('questionText').innerHTML = `
                     ¿El número <strong style="color: #f5576c; font-size: 1.5em;">${num}</strong> es primo?
-                    <p style="font-size: 0.8em; margin-top: 10px;">Responde: si o no</p>
+                    <p class="small-hint-top">Responde: si o no</p>
                 `;
             }
         }
@@ -962,7 +962,7 @@
                     score += 10;
                     document.getElementById('score').textContent = score;
                     updateScore();
-                    document.getElementById('feedback').innerHTML = '<span style="color: #51cf66;">✅ ¡Correcto! +10 puntos</span>';
+                    document.getElementById('feedback').innerHTML = '<span class="text-success">✅ ¡Correcto! +10 puntos</span>';
                     setTimeout(() => nextQuestion(), 2000);
                 } else {
                     score = Math.max(0, score - 15);
@@ -979,7 +979,7 @@
                     score += 10;
                     document.getElementById('score').textContent = score;
                     updateScore();
-                    document.getElementById('feedback').innerHTML = '<span style="color: #51cf66;">✅ ¡Correcto! +10 puntos</span>';
+                    document.getElementById('feedback').innerHTML = '<span class="text-success">✅ ¡Correcto! +10 puntos</span>';
                     setTimeout(() => nextQuestion(), 2000);
                 } else {
                     score = Math.max(0, score - 15);
@@ -994,7 +994,7 @@
                     score += 10;
                     document.getElementById('score').textContent = score;
                     updateScore();
-                    document.getElementById('feedback').innerHTML = '<span style="color: #51cf66;">✅ ¡Correcto! +10 puntos</span>';
+                    document.getElementById('feedback').innerHTML = '<span class="text-success">✅ ¡Correcto! +10 puntos</span>';
                     setTimeout(() => nextQuestion(), 2000);
                 } else {
                     score = Math.max(0, score - 15);

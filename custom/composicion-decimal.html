@@ -394,7 +394,7 @@
                 3 Unidades de Millar + 4 Centenas + 5 Decenas + 6 Unidades</p>
             </div>
 
-            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📊 Tabla de Valores Posicionales</h2>
+            <h2 class="section-header-colored">📊 Tabla de Valores Posicionales</h2>
             
             <div class="place-value-grid">
                 <div class="place-card">
@@ -439,7 +439,7 @@
                 </div>
             </div>
 
-            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📝 Ejemplo Detallado</h2>
+            <h2 class="section-header-colored">📝 Ejemplo Detallado</h2>
             <div class="decomposition-area">
                 <div class="number-display">456 789</div>
                 
@@ -554,7 +554,7 @@
                 <p class="spaced-paragraph">Por ejemplo: <strong>123.456</strong> tiene tres decimales.</p>
             </div>
 
-            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📊 Valores Decimales</h2>
+            <h2 class="section-header-colored">📊 Valores Decimales</h2>
             
             <div class="place-value-grid">
                 <div class="place-card" class="place-card-gradient">
@@ -574,13 +574,13 @@
                 </div>
             </div>
 
-            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📝 Ejemplo con Decimales</h2>
+            <h2 class="section-header-colored">📝 Ejemplo con Decimales</h2>
             <div class="decomposition-area">
                 <div class="number-display">123.456</div>
                 
                 <div class="flex-center-gap">
                     <div class="text-center-block">
-                        <h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3>
+                        <h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Entera</h3>
                         <div class="digit-breakdown">
                             <div class="digit-box">
                                 <div class="digit">1</div>
@@ -600,17 +600,17 @@
                     <div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>
 
                     <div class="text-center-block">
-                        <h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3>
+                        <h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Decimal</h3>
                         <div class="digit-breakdown">
-                            <div class="digit-box" style="border-color: #e74c3c;">
+                            <div class="digit-box" class="border-danger">
                                 <div class="digit" class="text-danger">4</div>
                                 <div class="digit-place">d</div>
                             </div>
-                            <div class="digit-box" style="border-color: #e74c3c;">
+                            <div class="digit-box" class="border-danger">
                                 <div class="digit" class="text-danger">5</div>
                                 <div class="digit-place">c</div>
                             </div>
-                            <div class="digit-box" style="border-color: #e74c3c;">
+                            <div class="digit-box" class="border-danger">
                                 <div class="digit" class="text-danger">6</div>
                                 <div class="digit-place">m</div>
                             </div>
@@ -658,7 +658,7 @@
                 Puntuación: <span id="score">0</span> puntos
             </div>
             
-            <div class="score" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="score" class="gradient-primary">
                 Nivel: <span id="level">Principiante</span>
             </div>
 
@@ -847,7 +847,7 @@
             const intValues = [100000, 10000, 1000, 100, 10, 1];
             const intNames = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
 
-            let integerHTML = '<div class="text-center-block"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
+            let integerHTML = '<div class="text-center-block"><h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
             let hasInteger = false;
             let expandedParts = [];
             let explanations = [];
@@ -879,7 +879,7 @@
             // Decimal part
             if (decimalPart) {
                 html += '<div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>';
-                html += '<div class="text-center-block"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
+                html += '<div class="text-center-block"><h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
 
                 const decDigits = decimalPart.padEnd(3, '0').split('').map(d => parseInt(d));
                 const decPlaces = ['d', 'c', 'm'];
@@ -888,7 +888,7 @@
 
                 for (let i = 0; i < decimalPart.length; i++) {
                     html += `
-                        <div class="digit-box" style="border-color: #e74c3c;">
+                        <div class="digit-box" class="border-danger">
                             <div class="digit" class="text-danger">${decDigits[i]}</div>
                             <div class="digit-place">${decPlaces[i]}</div>
                         </div>
@@ -936,7 +936,7 @@
                     answer: num
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Cuánto vale el dígito <strong style="color: #667eea; font-size: 1.5em;">${getRandomDigit(num)}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${formatNumber(num)}</strong>?
+                    ¿Cuánto vale el dígito <strong style="color: #667eea; font-size: 1.5em;">${getRandomDigit(num)}</strong> en el número <strong class="text-error-large">${formatNumber(num)}</strong>?
                 `;
             } else if (type === 'compose') {
                 const values = generateRandomValues();
@@ -963,7 +963,7 @@
                     answer: digits[pos]
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${posNames[pos]}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${formatNumber(num)}</strong>?
+                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${posNames[pos]}</strong> en el número <strong class="text-error-large">${formatNumber(num)}</strong>?
                 `;
             } else if (type === 'decimal') {
                 const intPart = Math.floor(Math.random() * 1000);
@@ -980,7 +980,7 @@
                     answer: decDigits[pos]
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${decimalPositions[pos]}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${num}</strong>?
+                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${decimalPositions[pos]}</strong> en el número <strong class="text-error-large">${num}</strong>?
                 `;
             }
         }
@@ -1046,7 +1046,7 @@
             if (userNum === correctAnswer) {
                 score += 10;
                 document.getElementById('score').textContent = score;
-                document.getElementById('feedback').innerHTML = '<span style="color: #51cf66;">✅ ¡Correcto! +10 puntos</span>';
+                document.getElementById('feedback').innerHTML = '<span class="text-success">✅ ¡Correcto! +10 puntos</span>';
                 
                 updateScore();
                 

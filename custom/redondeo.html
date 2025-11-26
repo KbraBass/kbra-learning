@@ -551,7 +551,7 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
                     <small class="text-small-hint">${explanation}</small>
                 </div>
@@ -583,7 +583,7 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
                     <small class="text-small-hint">${explanation}</small>
                 </div>
@@ -615,7 +615,7 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
                     <small class="text-small-hint">${explanation}</small>
                 </div>
@@ -649,7 +649,7 @@
             html += '</div>';
             html += '<div style="text-align: center; margin-top: 10px;">';
             html += '<span class="text-error">🔴 Número original</span> | ';
-            html += '<span style="color: #4ecdc4;">🟢 Número redondeado</span>';
+            html += '<span class="text-teal">🟢 Número redondeado</span>';
             html += '</div>';
             
             container.innerHTML = html;

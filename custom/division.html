@@ -309,7 +309,7 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: #30cfd0; margin-bottom: 20px;">🎯 División Visual</h2>
+            <h2 class="section-header-teal">🎯 División Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es dividir?</h3>
@@ -323,13 +323,13 @@
 
             <div class="input-section">
                 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Cantidad total:</label>
+                    <div class="input-group" class="no-margin">
+                        <label class="">Cantidad total:</label>
                         <input type="number" id="div1" placeholder="12" min="1" max="100" value="12">
                     </div>
                     <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Grupos:</label>
+                    <div class="input-group" class="no-margin">
+                        <label class="">Grupos:</label>
                         <input type="number" id="div2" placeholder="3" min="1" max="12" value="3">
                     </div>
                 </div>
@@ -349,7 +349,7 @@
 
         <!-- EXACTA TAB -->
         <div id="exacta" class="content tab-content">
-            <h2 style="text-align: center; color: #30cfd0; margin-bottom: 20px;">🎲 División Exacta y con Resto</h2>
+            <h2 class="section-header-teal">🎲 División Exacta y con Resto</h2>
             
             <div class="explanation">
                 <h3>¿Qué pasa cuando no se puede repartir exactamente?</h3>
@@ -363,13 +363,13 @@
 
             <div class="input-section">
                 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Dividendo:</label>
+                    <div class="input-group" class="no-margin">
+                        <label class="">Dividendo:</label>
                         <input type="number" id="exact1" placeholder="13" min="1" max="100" value="13">
                     </div>
                     <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Divisor:</label>
+                    <div class="input-group" class="no-margin">
+                        <label class="">Divisor:</label>
                         <input type="number" id="exact2" placeholder="4" min="1" max="12" value="4">
                     </div>
                 </div>
@@ -377,7 +377,7 @@
                 <div class="result" id="exact-result">¡Descubre el cociente y el resto!</div>
             </div>
 
-            <div id="exact-explanation" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px 0; color: #333;">
+            <div id="exact-explanation" class="display-box">
                 <!-- Se generará dinámicamente -->
             </div>
 
@@ -389,7 +389,7 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #30cfd0; margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header-teal">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div style="text-align: center; margin-bottom: 20px;">
@@ -398,7 +398,7 @@
                 </div>
 
                 <h3 style="color: #30cfd0; margin-bottom: 15px; text-align: center;">Resuelve la división:</h3>
-                <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
+                <p id="practice-question" class="practice-question-large"></p>
 
                 <div class="input-section">
                     <div class="input-group">

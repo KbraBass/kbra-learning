@@ -1173,3 +1173,138 @@ tr:hover {
     text-align: center;
 }
 
+/* Additional common patterns */
+.no-margin {
+    margin: 0;
+}
+
+.text-large {
+    font-size: 2em;
+}
+
+.text-xlarge {
+    font-size: 3em;
+}
+
+.text-primary-colored {
+    color: var(--primary-color);
+}
+
+.text-success {
+    color: #51cf66;
+}
+
+.text-teal {
+    color: #4ecdc4;
+}
+
+.text-green {
+    color: #00b894;
+}
+
+.text-red {
+    color: #d63031;
+}
+
+.text-error-large {
+    color: #e74c3c;
+    font-size: 1.5em;
+}
+
+.border-danger {
+    border-color: #e74c3c;
+}
+
+.text-large-dark {
+    font-size: 2em;
+    color: #333;
+}
+
+.practice-question-large {
+    font-size: 2em;
+    text-align: center;
+    margin: var(--space-lg) 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.text-centered-gray {
+    text-align: center;
+    margin-top: var(--space-sm);
+    color: #666;
+}
+
+.text-xl-relaxed {
+    font-size: var(--text-xl);
+    line-height: 2;
+}
+
+.small-hint-top {
+    font-size: 0.8em;
+    margin-top: var(--space-sm);
+}
+
+.section-header-teal {
+    text-align: center;
+    color: #30cfd0;
+    margin-bottom: var(--space-lg);
+}
+
+.section-header-medium {
+    color: var(--color-primary);
+    margin: var(--space-lg) 0;
+    text-align: center;
+}
+
+.visual-result-large {
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.display-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    color: #333;
+}
+
+.gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-warm {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+}
+
+.text-left-auto {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+.width-300 {
+    width: 300px;
+}
+
+.width-progress-0 {
+    width: 0%;
+}
+
+/* CSS variables for card colors */
+.card-teal-pink {
+    --card-color1: #a8edea;
+    --card-color2: #fed6e3;
+}
+
+.card-purple-red {
+    --card-color1: #f093fb;
+    --card-color2: #f5576c;
+}
+
+.card-blue-purple {
+    --card-color1: #667eea;
+    --card-color2: #764ba2;
+}
+

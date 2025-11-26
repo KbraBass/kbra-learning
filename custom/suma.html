@@ -363,7 +363,7 @@
                 <div class="result" id="carry-result">¡Prueba sumar números más grandes!</div>
             </div>
 
-            <div id="carry-explanation" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px 0; color: #333;">
+            <div id="carry-explanation" class="display-box">
                 <!-- Se generará dinámicamente -->
             </div>
 
@@ -384,7 +384,7 @@
                 </div>
 
                 <h3 style="color: #f5576c; margin-bottom: 15px; text-align: center;">Resuelve la suma:</h3>
-                <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
+                <p id="practice-question" class="practice-question-large"></p>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -462,7 +462,7 @@
             }
             html += '</div>';
             
-            html += '<div style="font-size: 2em; color: #333;">+</div>';
+            html += '<div class="text-large-dark">+</div>';
             
             html += '<div class="number-group">';
             for (let i = 0; i < num2; i++) {
@@ -470,7 +470,7 @@
             }
             html += '</div>';
             
-            html += '<div style="font-size: 2em; color: #333;">=</div>';
+            html += '<div class="text-large-dark">=</div>';
             
             html += `<div style="font-size: 3em; color: #f5576c; font-weight: bold;">${num1 + num2}</div>`;
             
@@ -515,7 +515,7 @@
             const tensSum = tens1 + tens2 + carry;
             
             let html = '<h3 style="color: #f5576c; margin-bottom: 15px;">Paso a paso:</h3>';
-            html += '<div style="font-size: 1.2em; line-height: 2;">';
+            html += '<div class="text-xl-relaxed">';
             html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} + ${units2} = ${unitsSum}`;
             if (carry > 0) {
                 html += ` → Escribimos <strong>${finalUnits}</strong> y llevamos <strong>${carry}</strong>`;

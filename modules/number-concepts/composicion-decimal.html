@@ -299,19 +299,19 @@
 
             <div class="decimal-grid">
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Décimos</h3>
+                    <h3 class="text-primary-colored">Décimos</h3>
                     <div class="decimal-example">0.1</div>
                     <p>Una décima parte de 1</p>
                     <p class="list-spaced">10 décimos = 1 unidad</p>
                 </div>
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Centésimos</h3>
+                    <h3 class="text-primary-colored">Centésimos</h3>
                     <div class="decimal-example">0.01</div>
                     <p>Una centésima parte de 1</p>
                     <p class="list-spaced">100 centésimos = 1 unidad</p>
                 </div>
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Milésimos</h3>
+                    <h3 class="text-primary-colored">Milésimos</h3>
                     <div class="decimal-example">0.001</div>
                     <p>Una milésima parte de 1</p>
                     <p class="list-spaced">1000 milésimos = 1 unidad</p>
@@ -547,7 +547,7 @@
                 currentQuestion = { num, answer, type: 'decompose' };
                 
                 document.getElementById('practice-question').textContent = `¿Cuál es el valor del dígito ${digit} en ${num}?`;
-                document.getElementById('practice-visual').innerHTML = `<div class="number-box" style="font-size: 3em;">${num}</div>`;
+                document.getElementById('practice-visual').innerHTML = `<div class="number-box" class="text-xlarge">${num}</div>`;
             } else {
                 const parts = [
                     Math.floor(Math.random() * 9) * 1000,

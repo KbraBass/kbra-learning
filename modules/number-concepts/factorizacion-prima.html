@@ -262,7 +262,7 @@
 
             <div class="fun-facts" class="margin-top-30">
                 <h3>📝 Pasos para Factorizar:</h3>
-                <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
+                <ol class="text-left-auto">
                     <li>Empieza probando con 2 (el primo más pequeño)</li>
                     <li>Si el número es divisible, divídelo</li>
                     <li>Continúa con el resultado hasta que sea primo</li>
@@ -460,7 +460,7 @@
             
             if (!prime) {
                 const factors = getPrimeFactors(num);
-                html += `<p style="text-align: center; font-size: 1.2em; color: #666;">Factores primos: <strong style="color: var(--primary-color);">${factors.join(' × ')}</strong></p>`;
+                html += `<p style="text-align: center; font-size: 1.2em; color: #666;">Factores primos: <strong class="text-primary-colored">${factors.join(' × ')}</strong></p>`;
             }
             
             document.getElementById('prime-test-result').innerHTML = html;
@@ -550,7 +550,7 @@
             questionAnswered = false;
             
             document.getElementById('practice-question').textContent = `Encuentra los factores primos de ${number}`;
-            document.getElementById('practice-visual').innerHTML = `<div class="number-box" style="font-size: 3em;">${number}</div>`;
+            document.getElementById('practice-visual').innerHTML = `<div class="number-box" class="text-xlarge">${number}</div>`;
             document.getElementById('practice-answer').value = '';
             document.getElementById('practice-result').innerHTML = '<small class="text-gray">Escribe los factores separados por comas (Ej: 2,2,3)</small>';
             document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';

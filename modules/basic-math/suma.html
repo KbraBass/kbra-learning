@@ -213,9 +213,9 @@
             
             let html = '<div class="visual-demo">';
             html += Components.createNumberBlocks(num1, '🔵', 40);
-            html += '<div style="font-size: 2em; color: #333;">+</div>';
+            html += '<div class="text-large-dark">+</div>';
             html += Components.createNumberBlocks(num2, '🟢', 40);
-            html += '<div style="font-size: 2em; color: #333;">=</div>';
+            html += '<div class="text-large-dark">=</div>';
             html += `<div style="font-size: 3em; color: #f5576c; font-weight: bold;">${num1 + num2}</div>`;
             html += '</div>';
             
@@ -262,7 +262,7 @@
             const tensSum = tens1 + tens2 + carry;
             
             let html = '<h3 style="color: #f5576c; margin-bottom: 15px;">Paso a paso:</h3>';
-            html += '<div style="font-size: 1.2em; line-height: 2;">';
+            html += '<div class="text-xl-relaxed">';
             html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} + ${units2} = ${unitsSum}`;
             if (carry > 0) {
                 html += ` → Escribimos <strong>${finalUnits}</strong> y llevamos <strong>${carry}</strong>`;
