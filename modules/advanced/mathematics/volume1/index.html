@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volumen I: Fundamentos Matemáticos - Kbra Learning</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+            <a href="../../../../index.html" class="back-button">🏠 Página Principal</a>
+            <a href="../../../index.html" class="back-button">📚 Centro de Módulos</a>
+            <a href="../../index.html" class="back-button">🎓 Aprendizaje Avanzado</a>
+            <a href="../index.html" class="back-button">← Volver a Matemáticas</a>
+        </div>
+        <div class="math-header" style="text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; color: white; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+            <h1 style="margin: 0 0 15px 0; font-size: 3em;">📐 Volumen I</h1>
+            <p style="font-size: 1.5em; margin: 0 0 10px 0; font-weight: 600;">Fundamentos Matemáticos</p>
+            <p style="font-size: 1.1em; opacity: 0.95; line-height: 1.6;">Álgebra, Geometría y Geometría Vectorial</p>
+        </div>
+
+        <!-- Progress Summary -->
+        <div class="info-box" style="background: linear-gradient(135deg, #10b981, #059669); color: white; margin-bottom: 40px;">
+            <h3 style="color: white; margin-top: 0;">📊 Tu Progreso en Volumen I</h3>
+            <div id="progress-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;" id="total-points">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Puntos Totales</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;" id="completed-modules">0/8</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Módulos Completados</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold;" id="total-exercises">0/80</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Ejercicios Resueltos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modules Grid -->
+        <div class="games-grid">
+            <!-- Preliminares -->
+            <a href="preliminares-numeros.html" class="game-card">
+                <div class="game-icon">🔢</div>
+                <h3>Preliminares</h3>
+                <p class="game-description">Números y Conjuntos</p>
+                <div class="game-stats">
+                    <span id="stats-preliminares-numeros">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">ℕ ℤ ℚ ℝ</span>
+                    <span class="tag">Conjuntos</span>
+                </div>
+            </a>
+
+            <!-- Tema 1 -->
+            <a href="estadistica.html" class="game-card">
+                <div class="game-icon">📊</div>
+                <h3>Tema 1</h3>
+                <p class="game-description">Estadística y Probabilidad</p>
+                <div class="game-stats">
+                    <span id="stats-estadistica">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">Combinatoria</span>
+                    <span class="tag">C(n,r)</span>
+                </div>
+            </a>
+
+            <!-- Tema 2 -->
+            <a href="polinomios.html" class="game-card">
+                <div class="game-icon">📐</div>
+                <h3>Tema 2</h3>
+                <p class="game-description">Polinomios y Fracciones</p>
+                <div class="game-stats">
+                    <span id="stats-polinomios">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">P(x)</span>
+                    <span class="tag">Ruffini</span>
+                </div>
+            </a>
+
+            <!-- Tema 3 -->
+            <a href="geometria-trigonometria.html" class="game-card">
+                <div class="game-icon">📏</div>
+                <h3>Tema 3</h3>
+                <p class="game-description">Geometría y Trigonometría</p>
+                <div class="game-stats">
+                    <span id="stats-geometria-trigonometria">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">△ ∠</span>
+                    <span class="tag">sin cos tan</span>
+                </div>
+            </a>
+
+            <!-- Tema 4 -->
+            <a href="matrices.html" class="game-card">
+                <div class="game-icon">🔢</div>
+                <h3>Tema 4</h3>
+                <p class="game-description">Matrices y Determinantes</p>
+                <div class="game-stats">
+                    <span id="stats-matrices">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">|A|</span>
+                    <span class="tag">A⁻¹</span>
+                </div>
+            </a>
+
+            <!-- Tema 5 -->
+            <a href="sistemas-ecuaciones.html" class="game-card">
+                <div class="game-icon">🧮</div>
+                <h3>Tema 5</h3>
+                <p class="game-description">Sistemas de Ecuaciones</p>
+                <div class="game-stats">
+                    <span id="stats-sistemas-ecuaciones">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">SCD/SCI</span>
+                    <span class="tag">Cramer</span>
+                </div>
+            </a>
+
+            <!-- Tema 6 -->
+            <a href="vectorial-plano.html" class="game-card">
+                <div class="game-icon">📍</div>
+                <h3>Tema 6</h3>
+                <p class="game-description">Geometría Vectorial del Plano</p>
+                <div class="game-stats">
+                    <span id="stats-vectorial-plano">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">v⃗ · u⃗</span>
+                    <span class="tag">ℝ²</span>
+                </div>
+            </a>
+
+            <!-- Tema 7 -->
+            <a href="vectorial-espacio.html" class="game-card">
+                <div class="game-icon">🌐</div>
+                <h3>Tema 7</h3>
+                <p class="game-description">Geometría Vectorial del Espacio</p>
+                <div class="game-stats">
+                    <span id="stats-vectorial-espacio">0/10 ejercicios</span>
+                </div>
+                <div class="game-tags">
+                    <span class="tag">v⃗ × u⃗</span>
+                    <span class="tag">ℝ³</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons" style="margin-top: 3rem;">
+            <button class="btn btn-secondary" onclick="window.location.href='../index.html'">⬅️ Volver a Matemáticas</button>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader('Volumen I: Fundamentos Matemáticos', '../index.html');
+            loadVolumeProgress();
+        });
+
+        const moduleIds = [
+            'preliminares-numeros',
+            'estadistica',
+            'polinomios',
+            'geometria-trigonometria',
+            'matrices',
+            'sistemas-ecuaciones',
+            'vectorial-plano',
+            'vectorial-espacio'
+        ];
+
+        function loadVolumeProgress() {
+            let totalPoints = 0;
+            let totalExercises = 0;
+            let completedExercises = 0;
+            let completedModules = 0;
+
+            moduleIds.forEach(moduleId => {
+                const stats = Gamification.getModuleStats(moduleId);
+                const statsElement = document.getElementById(`stats-${moduleId}`);
+                
+                if (statsElement) {
+                    statsElement.textContent = `${stats.exercisesCompleted}/10 ejercicios`;
+                    
+                    // Add completion indicator
+                    const card = statsElement.closest('.game-card');
+                    if (stats.exercisesCompleted >= 10) {
+                        card.style.borderColor = '#10b981';
+                        card.style.background = 'linear-gradient(to bottom, #f0fdf4, white)';
+                        completedModules++;
+                    } else if (stats.exercisesCompleted > 0) {
+                        card.style.borderColor = '#f59e0b';
+                        card.style.background = 'linear-gradient(to bottom, #fffbeb, white)';
+                    }
+                }
+                
+                totalPoints += stats.points;
+                completedExercises += stats.exercisesCompleted;
+            });
+
+            totalExercises = moduleIds.length * 10; // 8 modules × 10 exercises each
+
+            // Update summary
+            document.getElementById('total-points').textContent = totalPoints;
+            document.getElementById('completed-modules').textContent = `${completedModules}/${moduleIds.length}`;
+            document.getElementById('total-exercises').textContent = `${completedExercises}/${totalExercises}`;
+        }
+    </script>
+</body>
+</html>

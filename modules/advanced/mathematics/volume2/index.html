@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volumen II: Análisis - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+            <a href="../../../../index.html" class="back-button">🏠 Página Principal</a>
+            <a href="../../../index.html" class="back-button">📚 Centro de Módulos</a>
+            <a href="../../index.html" class="back-button">🎓 Aprendizaje Avanzado</a>
+            <a href="../index.html" class="back-button">← Volver a Matemáticas</a>
+        </div>
+        <div class="hero-section" style="text-align: center; padding: 3rem 1rem; background: var(--gradient-primary); color: white; border-radius: 15px; margin-bottom: 2rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">📊 Volumen II: Análisis</h1>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Cálculo diferencial e integral</p>
+        </div>
+
+        <div class="info-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-bottom: 2rem;">
+            <h3 style="color: white; margin-top: 0;">📈 Progreso del Volumen II</h3>
+            <div id="progress-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                    <div style="font-size: 2.5rem; font-weight: bold;" id="total-points">0</div>
+                    <div style="opacity: 0.9;">Puntos Totales</div>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                    <div style="font-size: 2.5rem; font-weight: bold;" id="completed-modules">0/7</div>
+                    <div style="opacity: 0.9;">Módulos Completados</div>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                    <div style="font-size: 2.5rem; font-weight: bold;" id="exercises-done">0/70</div>
+                    <div style="opacity: 0.9;">Ejercicios Resueltos</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin: 2rem 0 1rem 0;">📚 Temas del Volumen II</h2>
+
+        <div class="games-grid">
+            <!-- Preliminares -->
+            <div class="game-card" id="card-preliminares-reales">
+                <div class="game-icon">🔢</div>
+                <h3>Preliminares</h3>
+                <p>Números Reales</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-preliminares-reales">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-preliminares-reales">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='preliminares-reales.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 1 -->
+            <div class="game-card" id="card-funciones-elementales-1">
+                <div class="game-icon">📐</div>
+                <h3>Tema 1</h3>
+                <p>Funciones Elementales I</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-funciones-elementales-1">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-funciones-elementales-1">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='funciones-elementales-1.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 2 -->
+            <div class="game-card" id="card-funciones-elementales-2">
+                <div class="game-icon">📈</div>
+                <h3>Tema 2</h3>
+                <p>Funciones Elementales II</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-funciones-elementales-2">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-funciones-elementales-2">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='funciones-elementales-2.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 3 -->
+            <div class="game-card" id="card-limites">
+                <div class="game-icon">∞</div>
+                <h3>Tema 3</h3>
+                <p>Límites y Continuidad</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-limites">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-limites">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='limites.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 4 -->
+            <div class="game-card" id="card-derivadas">
+                <div class="game-icon">📊</div>
+                <h3>Tema 4</h3>
+                <p>Derivadas</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-derivadas">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-derivadas">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='derivadas.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 5 -->
+            <div class="game-card" id="card-representacion">
+                <div class="game-icon">📉</div>
+                <h3>Tema 5</h3>
+                <p>Representación de Funciones</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-representacion">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-representacion">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='representacion.html'">
+                    Comenzar
+                </button>
+            </div>
+
+            <!-- Tema 6 -->
+            <div class="game-card" id="card-integral">
+                <div class="game-icon">∫</div>
+                <h3>Tema 6</h3>
+                <p>Integral</p>
+                <div class="game-stats">
+                    <span class="stat">
+                        <span class="stat-icon">✏️</span>
+                        <span id="exercises-integral">0/10</span>
+                    </span>
+                    <span class="stat">
+                        <span class="stat-icon">⭐</span>
+                        <span id="points-integral">0</span>
+                    </span>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='integral.html'">
+                    Comenzar
+                </button>
+            </div>
+        </div>
+
+        <div class="navigation-buttons" style="margin-top: 3rem;">
+            <button class="btn btn-secondary" onclick="window.location.href='../index.html'">⬅️ Volver a Matemáticas Avanzadas</button>
+            <button class="btn btn-secondary" onclick="window.location.href='../../../../index.html'">🏠 Inicio</button>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader('Volumen II: Análisis', '../index.html');
+            updateAllStats();
+        });
+
+        const modules = [
+            'preliminares-reales',
+            'funciones-elementales-1',
+            'funciones-elementales-2',
+            'limites',
+            'derivadas',
+            'representacion',
+            'integral'
+        ];
+
+        function updateAllStats() {
+            let totalPoints = 0;
+            let totalExercises = 0;
+            let completedModules = 0;
+
+            modules.forEach(moduleId => {
+                const moduleData = Gamification.getModuleData(moduleId);
+                const points = moduleData.points || 0;
+                const exercises = moduleData.exercisesCompleted?.size || 0;
+                const isComplete = exercises >= 10;
+
+                // Update card stats
+                document.getElementById(`exercises-${moduleId}`).textContent = `${exercises}/10`;
+                document.getElementById(`points-${moduleId}`).textContent = points;
+
+                // Visual feedback
+                const card = document.getElementById(`card-${moduleId}`);
+                if (isComplete) {
+                    card.style.background = 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)';
+                    card.style.color = 'white';
+                    const heading = card.querySelector('h3');
+                    const paragraph = card.querySelector('p');
+                    if (heading) heading.style.color = 'white';
+                    if (paragraph) paragraph.style.color = 'rgba(255,255,255,0.9)';
+                } else if (exercises > 0) {
+                    card.style.background = 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)';
+                    card.style.color = 'white';
+                    const heading = card.querySelector('h3');
+                    const paragraph = card.querySelector('p');
+                    if (heading) heading.style.color = 'white';
+                    if (paragraph) paragraph.style.color = 'rgba(255,255,255,0.9)';
+                }
+
+                totalPoints += points;
+                totalExercises += exercises;
+                if (isComplete) completedModules++;
+            });
+
+            // Update summary stats
+            document.getElementById('total-points').textContent = totalPoints;
+            document.getElementById('completed-modules').textContent = `${completedModules}/7`;
+            document.getElementById('exercises-done').textContent = `${totalExercises}/70`;
+        }
+    </script>
+</body>
+</html>

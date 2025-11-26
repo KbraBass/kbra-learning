@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Integral - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Integral</h2>
+
+            <div class="info-box" style="background: var(--gradient-primary); color: white;">
+                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos</h4>
+                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+                    <li><strong>∫</strong> = Integral</li>
+                    <li><strong>∫f(x)dx</strong> = Integral indefinida</li>
+                    <li><strong>∫ₐᵇf(x)dx</strong> = Integral definida</li>
+                    <li><strong>F(x) + C</strong> = Primitiva + constante</li>
+                    <li><strong>TFC</strong> = Teorema Fundamental del Cálculo</li>
+                </ul>
+            </div>
+
+            <h3>1. Primitivas (Antiderivadas)</h3>
+            <div class="info-box">
+                <p><strong>Definición:</strong> F es primitiva de f si F'(x) = f(x)</p>
+                <div class="exam-important">
+                    <strong>Importante:</strong> Difieren en una constante C
+                </div>
+            </div>
+
+            <h3>2. Integral Indefinida</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    ∫f(x)dx = F(x) + C
+                </div>
+                <p>Representa todas las primitivas de f</p>
+            </div>
+
+            <h3>3. Integrales Inmediatas</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Función</th><th>Integral</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>xⁿ (n≠-1)</td><td>xⁿ⁺¹/(n+1) + C</td></tr>
+                    <tr><td>1/x</td><td>ln|x| + C</td></tr>
+                    <tr><td>eˣ</td><td>eˣ + C</td></tr>
+                    <tr><td>aˣ</td><td>aˣ/ln(a) + C</td></tr>
+                    <tr><td>sin(x)</td><td>-cos(x) + C</td></tr>
+                    <tr><td>cos(x)</td><td>sin(x) + C</td></tr>
+                    <tr><td>1/cos²(x)</td><td>tan(x) + C</td></tr>
+                </tbody>
+            </table>
+
+            <h3>4. Métodos de Integración</h3>
+            <div class="info-box">
+                <h4>Por partes:</h4>
+                <div class="formula-box">
+                    ∫u dv = uv - ∫v du
+                </div>
+                <h4>Por sustitución:</h4>
+                <p>Si ∫f(g(x))·g'(x)dx, hacer u=g(x)</p>
+                <h4>Por descomposición:</h4>
+                <p>Para funciones racionales</p>
+            </div>
+
+            <h3>5. Integral Definida</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    ∫ₐᵇ f(x)dx = F(b) - F(a)
+                </div>
+                <p><strong>Interpretación geométrica:</strong> Área bajo la curva</p>
+            </div>
+
+            <h3>6. Propiedades Integral Definida</h3>
+            <div class="info-box">
+                <ul>
+                    <li>∫ₐᵇ [f(x)+g(x)]dx = ∫ₐᵇ f(x)dx + ∫ₐᵇ g(x)dx</li>
+                    <li>∫ₐᵇ c·f(x)dx = c·∫ₐᵇ f(x)dx</li>
+                    <li>∫ₐᵇ f(x)dx = -∫ᵇₐ f(x)dx</li>
+                    <li>∫ₐᵇ f(x)dx + ∫ᵇᶜ f(x)dx = ∫ₐᶜ f(x)dx</li>
+                </ul>
+            </div>
+
+            <h3>7. Teorema Fundamental del Cálculo</h3>
+            <div class="info-box">
+                <div class="exam-important">
+                    <strong>TFC:</strong> La derivada de la integral es la función original
+                </div>
+                <p>Si F'(x) = f(x), entonces:</p>
+                <div class="formula-box">
+                    ∫ₐᵇ f(x)dx = F(b) - F(a)
+                </div>
+            </div>
+
+            <h3>8. Aplicaciones</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Áreas:</strong> ∫ₐᵇ |f(x)|dx</li>
+                    <li><strong>Volúmenes de revolución:</strong> π∫ₐᵇ [f(x)]²dx</li>
+                    <li><strong>Longitud de arco:</strong> ∫ₐᵇ √[1+(f'(x))²]dx</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 1: Potencia</h4>
+                <p><strong>Problema:</strong> ∫x³dx</p>
+                <p><strong>Solución:</strong> x⁴/4 + C</p>
+                <p><strong>Respuesta:</strong> x⁴/4 + C</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 2: Exponencial</h4>
+                <p><strong>Problema:</strong> ∫eˣdx</p>
+                <p><strong>Solución:</strong> eˣ + C</p>
+                <p><strong>Respuesta:</strong> eˣ + C</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 3: Definida</h4>
+                <p><strong>Problema:</strong> ∫₀² x dx</p>
+                <p><strong>Solución:</strong> [x²/2]₀² = 4/2 - 0 = 2</p>
+                <p><strong>Respuesta:</strong> 2</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 4: Área</h4>
+                <p><strong>Problema:</strong> Área bajo y=x² entre x=0 y x=1</p>
+                <p><strong>Solución:</strong> ∫₀¹ x² dx = [x³/3]₀¹ = 1/3</p>
+                <p><strong>Respuesta:</strong> 1/3 unidades²</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 5: Trigonométrica</h4>
+                <p><strong>Problema:</strong> ∫sin(x)dx</p>
+                <p><strong>Solución:</strong> -cos(x) + C</p>
+                <p><strong>Respuesta:</strong> -cos(x) + C</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📐 Calculadora de Integrales (Potencias)</h3>
+                <p>Calcula ∫axⁿdx</p>
+                <div class="tool-input-group">
+                    <label>Coeficiente a:</label>
+                    <input type="number" step="any" id="int-a" placeholder="Ej: 1">
+                </div>
+                <div class="tool-input-group">
+                    <label>Exponente n (n≠-1):</label>
+                    <input type="number" step="any" id="int-n" placeholder="Ej: 3">
+                </div>
+                <button class="calc-button" onclick="calculateIntegral()">Integrar</button>
+                <div class="calc-result" id="int-result">Ingresa los datos</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📊 Calculadora de Integral Definida</h3>
+                <p>Calcula ∫ₐᵇ x² dx</p>
+                <div class="tool-input-group">
+                    <label>Límite inferior a:</label>
+                    <input type="number" step="any" id="def-a" placeholder="Ej: 0">
+                </div>
+                <div class="tool-input-group">
+                    <label>Límite superior b:</label>
+                    <input type="number" step="any" id="def-b" placeholder="Ej: 2">
+                </div>
+                <button class="calc-button" onclick="calculateDefiniteIntegral()">Calcular</button>
+                <div class="calc-result" id="def-result">Ingresa los límites</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>🔳 Calculadora de Áreas</h3>
+                <p>Área bajo y=ax² entre límites</p>
+                <div class="tool-input-group">
+                    <label>Coeficiente a:</label>
+                    <input type="number" step="any" id="area-a" placeholder="Ej: 1">
+                </div>
+                <div class="tool-input-group">
+                    <label>Límite inferior:</label>
+                    <input type="number" step="any" id="area-x1" placeholder="Ej: 0">
+                </div>
+                <div class="tool-input-group">
+                    <label>Límite superior:</label>
+                    <input type="number" step="any" id="area-x2" placeholder="Ej: 1">
+                </div>
+                <button class="calc-button" onclick="calculateArea()">Calcular Área</button>
+                <div class="calc-result" id="area-result">Ingresa los datos</div>
+            </div>
+        </div>
+
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+            <div id="exercises-container"></div>
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+            </div>
+        </div>
+
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen</h2>
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>∫xⁿdx:</strong> xⁿ⁺¹/(n+1) + C</li>
+                    <li><strong>∫eˣdx:</strong> eˣ + C</li>
+                    <li><strong>∫(1/x)dx:</strong> ln|x| + C</li>
+                    <li><strong>TFC:</strong> ∫ₐᵇf(x)dx = F(b)-F(a)</li>
+                    <li><strong>Área:</strong> Integral definida</li>
+                    <li><strong>Constante:</strong> No olvidar +C</li>
+                </ul>
+            </div>
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'integral';
+        const MODULE_TITLE = 'Tema 6: Integral';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, 'index.html');
+            Components.createTabs([
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ], 'teoria');
+            Components.createScoreDisplay();
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: '∫x²dx = xⁿ/(n+1)+C, n=?', correct: '3', hint: 'x³/3 + C, n=3' },
+            { id: 2, question: '∫1 dx = ?', correct: '1', hint: 'x + C, coef es 1' },
+            { id: 3, question: '∫eˣdx coeficiente', correct: '1', hint: 'eˣ + C, coef 1' },
+            { id: 4, question: '∫₀¹ 2x dx = [x²]₀¹ = ?', correct: '1', hint: '1²-0²=1' },
+            { id: 5, question: '∫x⁴dx exponente resultado', correct: '5', hint: 'x⁵/5, exp 5' },
+            { id: 6, question: '∫sin(x)dx = -cos(x)+C, signo (1=+,-1=-)', correct: '-1', hint: 'Signo negativo' },
+            { id: 7, question: '∫cos(x)dx = sin(x)+C, signo (1=+,-1=-)', correct: '1', hint: 'Signo positivo' },
+            { id: 8, question: '∫₀² x dx = [x²/2]₀² = ?', correct: '2', hint: '4/2-0=2' },
+            { id: 9, question: '(d/dx)∫f(x)dx = ?f(x) [coef]', correct: '1', hint: 'TFC: vale f(x)' },
+            { id: 10, question: 'Área bajo y=1 de x=0 a x=3', correct: '3', hint: '∫₀³ 1 dx = 3' }
+        ];
+
+        function loadExercises() {
+            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
+                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
+                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                </div>
+                <div id="hint${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                <div id="feedback${ex.id}" class="feedback"></div></div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function calculateIntegral() {
+            const a = parseFloat(document.getElementById('int-a').value);
+            const n = parseFloat(document.getElementById('int-n').value);
+            const result = document.getElementById('int-result');
+            
+            if (isNaN(a) || isNaN(n)) {
+                result.textContent = '⚠️ Completa ambos campos';
+                return;
+            }
+            
+            if (n === -1) {
+                result.textContent = '⚠️ n no puede ser -1 (usar ln|x|)';
+                return;
+            }
+            
+            const newCoef = a / (n + 1);
+            const newExp = n + 1;
+            
+            result.innerHTML = `
+                <strong>∫${a}x^${n}dx =</strong><br>
+                <strong>${newCoef.toFixed(3)}x^${newExp} + C</strong>
+            `;
+        }
+
+        function calculateDefiniteIntegral() {
+            const a = parseFloat(document.getElementById('def-a').value);
+            const b = parseFloat(document.getElementById('def-b').value);
+            const result = document.getElementById('def-result');
+            
+            if (isNaN(a) || isNaN(b)) {
+                result.textContent = '⚠️ Completa ambos límites';
+                return;
+            }
+            
+            const Fb = (b * b * b) / 3;
+            const Fa = (a * a * a) / 3;
+            const value = Fb - Fa;
+            
+            result.innerHTML = `
+                <strong>∫${a}^${b} x² dx =</strong><br>
+                <strong>[x³/3]${a}^${b} =</strong><br>
+                <strong>${Fb.toFixed(3)} - ${Fa.toFixed(3)} = ${value.toFixed(3)}</strong>
+            `;
+        }
+
+        function calculateArea() {
+            const a = parseFloat(document.getElementById('area-a').value);
+            const x1 = parseFloat(document.getElementById('area-x1').value);
+            const x2 = parseFloat(document.getElementById('area-x2').value);
+            const result = document.getElementById('area-result');
+            
+            if (isNaN(a) || isNaN(x1) || isNaN(x2)) {
+                result.textContent = '⚠️ Completa todos los campos';
+                return;
+            }
+            
+            const Fx2 = a * (x2 * x2 * x2) / 3;
+            const Fx1 = a * (x1 * x1 * x1) / 3;
+            const area = Math.abs(Fx2 - Fx1);
+            
+            result.innerHTML = `
+                <strong>Función:</strong> y = ${a}x²<br>
+                <strong>Límites:</strong> [${x1}, ${x2}]<br>
+                <strong>Área = ${area.toFixed(3)} unidades²</strong>
+            `;
+        }
+    </script>
+</body>
+</html>
