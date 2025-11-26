@@ -389,16 +389,16 @@
         <!-- TAB 1: APRENDER -->
         <div id="aprender" class="tab-content active">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">📖 ¿Qué es la Factorización Prima?</h2>
+                <h2 class="content-header">📖 ¿Qué es la Factorización Prima?</h2>
                 <p><strong>Un número primo</strong> es un número mayor que 1 que solo se puede dividir exactamente por 1 y por sí mismo.</p>
-                <p style="margin-top: 10px;"><strong>Factorizar</strong> un número significa descomponerlo en una multiplicación de números primos.</p>
-                <p style="margin-top: 10px;">Por ejemplo: <strong>12 = 2 × 2 × 3</strong> (también se escribe como 2² × 3)</p>
+                <p class="spaced-paragraph"><strong>Factorizar</strong> un número significa descomponerlo en una multiplicación de números primos.</p>
+                <p class="spaced-paragraph">Por ejemplo: <strong>12 = 2 × 2 × 3</strong> (también se escribe como 2² × 3)</p>
             </div>
 
-            <h2 style="color: #f5576c; margin: 25px 0 15px 0; text-align: center;">🌟 Ejemplos Paso a Paso</h2>
+            <h2 class="section-header-pink-colored">🌟 Ejemplos Paso a Paso</h2>
 
             <div class="factorization-area">
-                <h3 style="color: #667eea; margin-bottom: 15px; text-align: center;">Ejemplo 1: Factorizar 24</h3>
+                <h3 class="content-subheader">Ejemplo 1: Factorizar 24</h3>
                 
                 <div class="steps-container">
                     <div class="step">
@@ -429,7 +429,7 @@
             </div>
 
             <div class="factorization-area">
-                <h3 style="color: #667eea; margin-bottom: 15px; text-align: center;">Ejemplo 2: Factorizar 100</h3>
+                <h3 class="content-subheader">Ejemplo 2: Factorizar 100</h3>
                 
                 <div class="factor-tree">
                     <div class="tree-level">
@@ -441,25 +441,25 @@
                     </div>
                     <div class="tree-level">
                         <div class="tree-node prime">2</div>
-                        <span style="margin: 0 20px;">×</span>
+                        <span class="inline-separator">×</span>
                         <div class="tree-node">50</div>
                     </div>
-                    <div class="tree-level" style="margin-left: 100px;">
+                    <div class="tree-level tree-level-indent-sm">
                         <span class="tree-arrow">↙</span>
                         <span class="tree-arrow">↘</span>
                     </div>
-                    <div class="tree-level" style="margin-left: 100px;">
+                    <div class="tree-level tree-level-indent-sm">
                         <div class="tree-node prime">2</div>
-                        <span style="margin: 0 20px;">×</span>
+                        <span class="inline-separator">×</span>
                         <div class="tree-node">25</div>
                     </div>
-                    <div class="tree-level" style="margin-left: 200px;">
+                    <div class="tree-level tree-level-indent-md">
                         <span class="tree-arrow">↙</span>
                         <span class="tree-arrow">↘</span>
                     </div>
-                    <div class="tree-level" style="margin-left: 200px;">
+                    <div class="tree-level tree-level-indent-md">
                         <div class="tree-node prime">5</div>
-                        <span style="margin: 0 20px;">×</span>
+                        <span class="inline-separator">×</span>
                         <div class="tree-node prime">5</div>
                     </div>
                 </div>
@@ -483,9 +483,9 @@
         <!-- TAB 2: NÚMEROS PRIMOS -->
         <div id="primos" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">⭐ Números Primos del 1 al 100</h2>
+                <h2 class="content-header">⭐ Números Primos del 1 al 100</h2>
                 <p>Los números primos solo se pueden dividir por 1 y por ellos mismos.</p>
-                <p style="margin-top: 10px;">Hay <strong>25 números primos</strong> entre 1 y 100.</p>
+                <p class="spaced-paragraph">Hay <strong>25 números primos</strong> entre 1 y 100.</p>
             </div>
 
             <div class="prime-grid" id="primeGrid"></div>
@@ -501,7 +501,7 @@
             </div>
 
             <div class="input-section">
-                <h3 style="text-align: center; margin-bottom: 15px; color: #2c3e50;">🔍 ¿Es Primo?</h3>
+                <h3 class="content-subheader-dark">🔍 ¿Es Primo?</h3>
                 <div class="input-group">
                     <input type="number" id="primeCheck" placeholder="Introduce un número" min="2" max="10000">
                     <button onclick="checkPrime()">Verificar</button>
@@ -513,14 +513,14 @@
         <!-- TAB 3: FACTORIZAR -->
         <div id="factorizar" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">🌲 Factorización de Números</h2>
+                <h2 class="content-header">🌲 Factorización de Números</h2>
                 <p>Introduce un número y descubre su factorización prima completa.</p>
-                <p style="margin-top: 10px;">Verás el árbol de factorización y todos los pasos.</p>
+                <p class="spaced-paragraph">Verás el árbol de factorización y todos los pasos.</p>
             </div>
 
             <div class="input-section">
                 <div class="input-group">
-                    <label style="font-size: 1.2em; font-weight: bold;">Número a factorizar:</label>
+                    <label class="large-label-text">Número a factorizar:</label>
                     <input type="number" id="factorizeInput" placeholder="Ej: 120" min="2" max="100000">
                     <button onclick="factorizeNumber()">Factorizar</button>
                 </div>
@@ -532,24 +532,24 @@
         <!-- TAB 4: COMPONER -->
         <div id="componer" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">➕ Componer desde Factores Primos</h2>
+                <h2 class="content-header">➕ Componer desde Factores Primos</h2>
                 <p>Multiplica factores primos para obtener el número original.</p>
-                <p style="margin-top: 10px;">Por ejemplo: 2 × 2 × 3 × 5 = 60</p>
+                <p class="spaced-paragraph">Por ejemplo: 2 × 2 × 3 × 5 = 60</p>
             </div>
 
             <div class="input-section">
-                <h3 style="text-align: center; margin-bottom: 15px; color: #2c3e50;">Introduce los factores primos (separados por comas)</h3>
+                <h3 class="content-subheader-dark">Introduce los factores primos (separados por comas)</h3>
                 <div class="input-group">
-                    <input type="text" id="composeInput" placeholder="Ej: 2, 2, 3, 5" style="width: 300px;">
+                    <input type="text" id="composeInput" placeholder="Ej: 2, 2, 3, 5" class="narrow-container">
                     <button onclick="composeFromFactors()">Componer</button>
                 </div>
                 <div id="composeResult"></div>
             </div>
 
             <div class="factorization-area">
-                <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">📚 Ejemplos para Probar:</h3>
+                <h3 class="content-subheader">📚 Ejemplos para Probar:</h3>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <div class="examples-grid">
                     <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('2, 2, 3')">
                         <div class="info-title">2 × 2 × 3</div>
                         <div class="info-text">= 12</div>

@@ -938,3 +938,127 @@ tr:hover {
     font-weight: bold;
 }
 
+/* Section Header Colored - Centered colored headers with margins */
+.section-header-colored {
+    color: var(--color-primary);
+    margin: 25px 0 15px 0;
+    text-align: center;
+}
+
+.section-header-pink-colored {
+    color: #f5576c;
+    margin: 25px 0 15px 0;
+    text-align: center;
+}
+
+.section-header-teal-colored {
+    color: #a8edea;
+    margin: 25px 0 15px 0;
+    text-align: center;
+}
+
+/* Content Header - Headers with bottom margin */
+.content-header {
+    margin-bottom: var(--space-md);
+}
+
+/* Content Subheader - Centered subheaders with primary color */
+.content-subheader {
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.content-subheader-dark {
+    color: #2c3e50;
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+/* Spaced Paragraph - Paragraphs with top margin */
+.spaced-paragraph {
+    margin-top: var(--space-sm);
+}
+
+/* Centered Text Container - Centered text with spacing */
+.centered-text-container {
+    text-align: center;
+    margin-top: var(--space-lg);
+    font-size: var(--text-lg);
+    color: #2c3e50;
+}
+
+/* Inline Separator - Horizontal spacing for inline elements */
+.inline-separator {
+    margin: 0 var(--space-lg);
+}
+
+/* Tree Level Indent - For tree structure indentation */
+.tree-level-indent-sm {
+    margin-left: 100px;
+}
+
+.tree-level-indent-md {
+    margin-left: 200px;
+}
+
+/* Flex Center Gap - Centered flex with specific gap */
+.flex-center-gap {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+    margin: var(--space-lg) 0;
+}
+
+/* Text Center Block - Centered text container */
+.text-center-block {
+    text-align: center;
+}
+
+/* Large Label Text - Larger labels for forms */
+.large-label-text {
+    font-size: var(--text-xl);
+    font-weight: bold;
+}
+
+/* Season Month Item - For colored month indicators (theme-specific gradients) */
+.season-winter {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.season-spring {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+}
+
+.season-summer {
+    background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+}
+
+.season-autumn {
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    color: white;
+}
+
+/* Place Card Gradient - Decimal place value cards */
+.place-card-gradient {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Margin Spacing - Common margin patterns */
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-20 {
+    margin: var(--space-lg) 0;
+}
+
+/* Examples Grid - Grid layout for example cards */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
