@@ -36,11 +36,11 @@
         </section>
 
         <!-- NEW: Modules Hub Link -->
-        <section class="modules-hub-section" id="modules-hub-section" style="display: none;">
+        <section class="modules-hub-section d-none" id="modules-hub-section">
             <div class="hub-banner">
                 <h2>🎓 Learning Modules Hub</h2>
                 <p>Explore our comprehensive collection of interactive learning modules</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <div class="d-flex gap-1 justify-center flex-wrap mt-2">
                     <a href="modules/index.html" class="btn btn-primary btn-large">📚 Basic Modules →</a>
                     <a href="modules/advanced/index.html" class="btn btn-primary btn-large">🎓 Advanced Learning →</a>
                 </div>
@@ -79,14 +79,14 @@
             </div>
         </section>
 
-        <section class="lessons-section" id="lessons-section" style="display: none;">
+        <section class="lessons-section d-none" id="lessons-section">
             <h2>Choose Your Lesson</h2>
             <div class="lessons-grid" id="lessons-grid">
                 <!-- Lessons will be dynamically loaded here -->
             </div>
         </section>
 
-        <section class="quiz-section" id="quiz-section" style="display: none;">
+        <section class="quiz-section d-none" id="quiz-section">
             <div class="quiz-container">
                 <div class="quiz-header">
                     <h2 id="quiz-title">Quiz</h2>
@@ -102,12 +102,12 @@
                 </div>
                 <div class="quiz-footer">
                     <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
-                    <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                    <button class="btn btn-primary d-none" id="next-btn" onclick="nextQuestion()">Next Question</button>
                 </div>
             </div>
         </section>
 
-        <section class="achievements-section" id="achievements-section" style="display: none;">
+        <section class="achievements-section d-none" id="achievements-section">
             <h2>🏆 Your Achievements</h2>
             <div class="achievements-grid" id="achievements-grid">
                 <!-- Achievements will be dynamically loaded here -->
@@ -115,7 +115,7 @@
             <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
         </section>
 
-        <section class="results-section" id="results-section" style="display: none;">
+        <section class="results-section d-none" id="results-section">
             <div class="results-container">
                 <h2>Quiz Complete! 🎉</h2>
                 <div class="results-content">
