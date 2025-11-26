@@ -299,12 +299,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: #f5576c; margin-bottom: 20px;">🎯 Suma Visual</h2>
+            <h2 class="section-title">🎯 Suma Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es sumar?</h3>
                 <p>Sumar es juntar cantidades. Si tienes 3 manzanas y te dan 2 más, ¡ahora tienes 5 manzanas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>3 + 2</strong> = 5 (Juntamos 3 y 2)</li>
                     <li><strong>5 + 4</strong> = 9 (Juntamos 5 y 4)</li>
                     <li><strong>7 + 3</strong> = 10 (Juntamos 7 y 3)</li>
@@ -312,12 +312,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="sum1" placeholder="3" min="0" max="20" value="3">
                     </div>
-                    <div style="font-size: 2em;">+</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="operator-display">+</div>
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="sum2" placeholder="5" min="0" max="20" value="5">
                     </div>
                 </div>
@@ -337,12 +337,12 @@
 
         <!-- LLEVANDO TAB -->
         <div id="llevando" class="content tab-content">
-            <h2 style="text-align: center; color: #f5576c; margin-bottom: 20px;">🔟 Suma con Llevadas</h2>
+            <h2 class="section-title">🔟 Suma con Llevadas</h2>
             
             <div class="explanation">
                 <h3>¿Qué es "llevar" en la suma?</h3>
                 <p>Cuando sumas y pasas de 10, "llevas" una decena. Por ejemplo: 8 + 5 = 13 (llevamos 1 decena y 3 unidades)</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>8 + 5</strong> = 13 (Pasamos de 10, llevamos 1)</li>
                     <li><strong>27 + 15</strong> = 42 (7 + 5 = 12, llevamos 1)</li>
                     <li><strong>48 + 36</strong> = 84 (8 + 6 = 14, llevamos 1)</li>
@@ -350,12 +350,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="carry1" placeholder="27" min="10" max="99" value="27">
                     </div>
-                    <div style="font-size: 2em;">+</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="operator-display">+</div>
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="carry2" placeholder="15" min="10" max="99" value="15">
                     </div>
                 </div>
@@ -375,10 +375,10 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #f5576c; margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div class="practice-score-area">
                     <span class="score-display">Puntos: <span id="score">0</span></span>
                     <span class="score-display">Nivel: <span id="level">Principiante</span></span>
                 </div>

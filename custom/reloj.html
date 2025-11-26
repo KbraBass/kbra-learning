@@ -342,7 +342,7 @@
 
         <!-- ANALÓGICO TAB -->
         <div id="analogico" class="content tab-content active">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">🕐 Reloj Analógico</h2>
+            <h2 class="section-title">🕐 Reloj Analógico</h2>
             
             <div class="explanation">
                 <h3>¿Cómo leer un reloj analógico?</h3>
@@ -368,7 +368,7 @@
             </div>
 
             <div class="time-input">
-                <h3 style="margin-bottom: 15px;">🎯 Establece la Hora</h3>
+                <h3 class="content-header">🎯 Establece la Hora</h3>
                 <input type="number" id="set-hour" min="0" max="23" value="12" placeholder="Hora">
                 <input type="number" id="set-minute" min="0" max="59" value="0" placeholder="Minuto">
                 <br>
@@ -386,7 +386,7 @@
 
         <!-- DIGITAL TAB -->
         <div id="digital" class="content tab-content">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">🔢 Reloj Digital</h2>
+            <h2 class="section-title">🔢 Reloj Digital</h2>
             
             <div class="explanation">
                 <h3>Formatos de Hora Digital</h3>
@@ -410,7 +410,7 @@
             </div>
 
             <div class="time-input">
-                <h3 style="margin-bottom: 15px;">🔄 Convertir Hora</h3>
+                <h3 class="content-header">🔄 Convertir Hora</h3>
                 <input type="number" id="convert-hour" min="0" max="23" value="14" placeholder="Hora (0-23)">
                 <input type="number" id="convert-minute" min="0" max="59" value="30" placeholder="Minuto">
                 <br>
@@ -434,7 +434,7 @@
 
         <!-- LENGUAJE NATURAL TAB -->
         <div id="lenguaje" class="content tab-content">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">💬 Lenguaje Natural</h2>
+            <h2 class="section-title">💬 Lenguaje Natural</h2>
             
             <div class="explanation">
                 <h3>¿Cómo decimos la hora en español?</h3>
@@ -469,7 +469,7 @@
             </div>
 
             <div class="time-input">
-                <h3 style="margin-bottom: 15px;">🗣️ Practica el Lenguaje</h3>
+                <h3 class="content-header">🗣️ Practica el Lenguaje</h3>
                 <input type="number" id="natural-hour" min="1" max="12" value="3" placeholder="Hora (1-12)">
                 <input type="number" id="natural-minute" min="0" max="59" value="45" placeholder="Minuto">
                 <br>
@@ -493,7 +493,7 @@
 
         <!-- ZONAS HORARIAS TAB -->
         <div id="zonas" class="content tab-content">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">🌍 Zonas Horarias del Mundo</h2>
+            <h2 class="section-title">🌍 Zonas Horarias del Mundo</h2>
             
             <div class="explanation">
                 <h3>¿Qué son las zonas horarias?</h3>
@@ -502,7 +502,7 @@
             </div>
 
             <div class="time-input">
-                <h3 style="margin-bottom: 15px;">🔍 Buscar Ciudad</h3>
+                <h3 class="content-header">🔍 Buscar Ciudad</h3>
                 <input type="text" id="city-search" class="city-search" placeholder="Escribe una ciudad o país...">
                 <button class="calc-button" onclick="searchCity()">🔍 Buscar</button>
             </div>
@@ -553,9 +553,9 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">🏆 ¡Practica Leyendo la Hora!</h2>
+            <h2 class="section-title">🏆 ¡Practica Leyendo la Hora!</h2>
             
-            <div style="text-align: center; margin-bottom: 20px;">
+            <div class="practice-score-area">
                 <span class="score-display">Puntos: <span id="score">0</span></span>
                 <span class="score-display">Nivel: <span id="level">Principiante</span></span>
             </div>
@@ -569,7 +569,7 @@
             </div>
 
             <div class="time-input">
-                <h3 style="margin-bottom: 15px;">¿Qué hora es?</h3>
+                <h3 class="content-header">¿Qué hora es?</h3>
                 <input type="number" id="answer-hour" min="1" max="12" placeholder="Hora (1-12)">
                 <input type="number" id="answer-minute" min="0" max="59" placeholder="Minuto (0-59)">
                 <br>

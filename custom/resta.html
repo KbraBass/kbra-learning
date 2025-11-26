@@ -304,12 +304,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: #fa709a; margin-bottom: 20px;">🎯 Resta Visual</h2>
+            <h2 class="section-title">🎯 Resta Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es restar?</h3>
                 <p>Restar es quitar cantidades. Si tienes 8 caramelos y te comes 3, ¡te quedan 5 caramelos!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>8 - 3</strong> = 5 (Tenemos 8, quitamos 3)</li>
                     <li><strong>10 - 4</strong> = 6 (Tenemos 10, quitamos 4)</li>
                     <li><strong>7 - 2</strong> = 5 (Tenemos 7, quitamos 2)</li>
@@ -317,12 +317,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="sub1" placeholder="8" min="0" max="20" value="8">
                     </div>
-                    <div style="font-size: 2em;">-</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="operator-display">-</div>
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="sub2" placeholder="3" min="0" max="20" value="3">
                     </div>
                 </div>
@@ -342,12 +342,12 @@
 
         <!-- PRESTANDO TAB -->
         <div id="prestando" class="content tab-content">
-            <h2 style="text-align: center; color: #fa709a; margin-bottom: 20px;">🔟 Resta con Prestadas</h2>
+            <h2 class="section-title">🔟 Resta con Prestadas</h2>
             
             <div class="explanation">
                 <h3>¿Qué es "pedir prestado" en la resta?</h3>
                 <p>Cuando el número de arriba es más pequeño que el de abajo, "pedimos prestado" de la siguiente columna. ¡Es como cambiar un billete de 10 por 10 monedas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>42 - 17</strong> = 25 (No podemos hacer 2 - 7, pedimos prestado)</li>
                     <li><strong>53 - 28</strong> = 25 (Pedimos prestado de las decenas)</li>
                     <li><strong>81 - 36</strong> = 45 (Pedimos prestado para restar)</li>
@@ -355,12 +355,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="borrow1" placeholder="42" min="10" max="99" value="42">
                     </div>
-                    <div style="font-size: 2em;">-</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="operator-display">-</div>
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="borrow2" placeholder="17" min="10" max="99" value="17">
                     </div>
                 </div>
@@ -380,10 +380,10 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #fa709a; margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div class="practice-score-area">
                     <span class="score-display">Puntos: <span id="score">0</span></span>
                     <span class="score-display">Nivel: <span id="level">Principiante</span></span>
                 </div>

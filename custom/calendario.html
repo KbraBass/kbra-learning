@@ -374,7 +374,7 @@
 
         <!-- CALENDARIO TAB -->
         <div id="calendario" class="content tab-content active">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">📆 Calendario Interactivo</h2>
+            <h2 class="section-title">📆 Calendario Interactivo</h2>
             
             <div class="explanation">
                 <h3>¿Qué es un calendario?</h3>
@@ -418,7 +418,7 @@
 
         <!-- CONCEPTOS TAB -->
         <div id="conceptos" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">📚 Conceptos del Calendario</h2>
+            <h2 class="section-title">📚 Conceptos del Calendario</h2>
             
             <div class="explanation">
                 <h3>Aprende los conceptos básicos</h3>
@@ -526,7 +526,7 @@
 
         <!-- FESTIVOS MADRID TAB -->
         <div id="festivos" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🎉 Festivos Oficiales de Madrid</h2>
+            <h2 class="section-title">🎉 Festivos Oficiales de Madrid</h2>
             
             <div class="explanation">
                 <h3>Días festivos en Madrid</h3>
@@ -538,7 +538,7 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
+                <h3 class="content-header">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
                 <button class="calc-button" onclick="findNextHoliday()">📅 Ver Próximo Festivo</button>
                 <div class="result" id="next-holiday-result"></div>
             </div>
@@ -552,7 +552,7 @@
 
         <!-- CALCULADORA TAB -->
         <div id="calculadora" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🧮 Calculadora de Fechas</h2>
+            <h2 class="section-title">🧮 Calculadora de Fechas</h2>
             
             <div class="explanation">
                 <h3>Calcula tu edad, días hasta tu cumpleaños y más</h3>
@@ -560,7 +560,7 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🎂 Tu Fecha de Nacimiento</h3>
+                <h3 class="content-header">🎂 Tu Fecha de Nacimiento</h3>
                 <input type="date" id="birthdate" style="width: 300px;">
                 <br>
                 <button class="calc-button" onclick="calculateAge()">🎉 Calcular Edad</button>
@@ -595,7 +595,7 @@
             </div>
 
             <div class="date-input" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 15px;">🗓️ ¿Es Año Bisiesto?</h3>
+                <h3 class="content-header">🗓️ ¿Es Año Bisiesto?</h3>
                 <input type="number" id="leap-year" placeholder="Año (ej: 2024)" min="1900" max="2100">
                 <br>
                 <button class="calc-button" onclick="checkLeapYear()">🔍 Verificar</button>
@@ -618,9 +618,9 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🏆 ¡Practica el Calendario!</h2>
+            <h2 class="section-title">🏆 ¡Practica el Calendario!</h2>
             
-            <div style="text-align: center; margin-bottom: 20px;">
+            <div class="practice-score-area">
                 <span class="score-display">Puntos: <span id="score">0</span></span>
                 <span class="score-display">Nivel: <span id="level">Principiante</span></span>
             </div>

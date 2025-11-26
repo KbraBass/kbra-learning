@@ -50,12 +50,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 División Visual</h2>
+            <h2 class="section-title">🎯 División Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es dividir?</h3>
                 <p>Dividir es repartir en partes iguales. Si tienes 12 galletas y quieres repartirlas entre 3 amigos, ¡cada uno recibe 4 galletas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="list-spaced">
                     <li><strong>12 ÷ 3</strong> = 4 (Repartimos 12 en 3 grupos)</li>
                     <li><strong>20 ÷ 4</strong> = 5 (Repartimos 20 en 4 grupos)</li>
                     <li><strong>15 ÷ 5</strong> = 3 (Repartimos 15 en 5 grupos)</li>
@@ -63,14 +63,14 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Cantidad total:</label>
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
+                        <label class="">Cantidad total:</label>
                         <input type="number" id="div1" placeholder="12" min="1" max="100" value="12">
                     </div>
-                    <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Grupos:</label>
+                    <div class="operator-display">÷</div>
+                    <div class="input-group" class="input-group-inline">
+                        <label class="">Grupos:</label>
                         <input type="number" id="div2" placeholder="3" min="1" max="12" value="3">
                     </div>
                 </div>
@@ -90,12 +90,12 @@
 
         <!-- EXACTA TAB -->
         <div id="exacta" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎲 División Exacta y con Resto</h2>
+            <h2 class="section-title">🎲 División Exacta y con Resto</h2>
             
             <div class="explanation">
                 <h3>¿Qué pasa cuando no se puede repartir exactamente?</h3>
                 <p>A veces sobran cosas. Si tienes 13 caramelos y los repartes entre 4 amigos, cada uno recibe 3 y ¡sobra 1!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="list-spaced">
                     <li><strong>13 ÷ 4</strong> = 3 (y sobra 1)</li>
                     <li><strong>17 ÷ 5</strong> = 3 (y sobran 2)</li>
                     <li><strong>25 ÷ 6</strong> = 4 (y sobra 1)</li>
@@ -103,14 +103,14 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Dividendo:</label>
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
+                        <label class="">Dividendo:</label>
                         <input type="number" id="exact1" placeholder="13" min="1" max="100" value="13">
                     </div>
-                    <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
-                        <label style="font-size: 1em;">Divisor:</label>
+                    <div class="operator-display">÷</div>
+                    <div class="input-group" class="input-group-inline">
+                        <label class="">Divisor:</label>
                         <input type="number" id="exact2" placeholder="4" min="1" max="12" value="4">
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="result" id="exact-result">¡Descubre el cociente y el resto!</div>
             </div>
 
-            <div id="exact-explanation" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px 0; color: #333;">
+            <div id="exact-explanation" class="display-container text-primary">
                 <!-- Se generará dinámicamente -->
             </div>
 
@@ -130,7 +130,7 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container">
