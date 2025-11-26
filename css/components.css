@@ -728,3 +728,150 @@ tr:hover {
     color: #b71c1c;
 }
 
+/* ==================== SEMANTIC COMPONENT CLASSES ==================== */
+/* Classes for common UI patterns to eliminate inline styles */
+
+/* Section Titles - Centered headers with primary color */
+.section-title {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Practice Question Display - Large, bold, centered text */
+.practice-question {
+    font-size: var(--text-3xl);
+    text-align: center;
+    margin: var(--space-lg) 0;
+    color: var(--color-gray-600);
+    font-weight: bold;
+}
+
+/* Flex Container - Common flex layouts */
+.flex-center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.flex-gap-sm {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex-gap-md {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-xl);
+}
+
+/* Input Group Spacing - Remove margin from input groups in flex containers */
+.input-group-inline {
+    margin: 0;
+}
+
+/* Operator Display - Large text for mathematical operators */
+.operator-display {
+    font-size: var(--text-3xl);
+}
+
+/* Display Container - White background containers */
+.display-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+/* Practice Score Area - Centered score displays */
+.practice-score-area {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+/* Narrow Container - Constrained width container */
+.narrow-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Hidden by Default - For tab content and toggleable sections */
+.hidden-default {
+    display: none;
+}
+
+/* Small Text - Smaller font size for secondary info */
+.text-small {
+    font-size: var(--text-sm);
+}
+
+/* Primary Text Color - For consistent text coloring */
+.text-primary {
+    color: var(--color-gray-600);
+}
+
+/* List Spacing - Add margin to lists */
+.list-spaced {
+    margin-top: var(--space-sm);
+}
+
+/* Result Highlight - Special result box with gradient and animation */
+.result-highlight {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin: var(--space-sm) 0;
+    font-size: var(--text-xl);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Section Header with Subtitle - For explanatory headers */
+.section-header-subtitle {
+    color: var(--color-gray-600);
+    text-align: center;
+}
+
+/* Inline No-Margin - Remove margins for inline elements */
+.no-margin {
+    margin: 0;
+}
+
+/* Message Container - For large result messages */
+.message-container {
+    text-align: center;
+    color: var(--color-gray-600);
+    font-size: var(--text-xl);
+}
+
+/* Table Result Item - Individual multiplication table results */
+.table-result-item {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin: var(--space-sm) 0;
+    font-size: var(--text-xl);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Table Header - Centered table header */
+.table-header {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Small Hint Text - Small explanatory text */
+.hint-text {
+    font-size: var(--text-sm);
+}
+
