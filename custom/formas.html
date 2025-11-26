@@ -711,7 +711,7 @@
             if (answer === currentShape) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         Es un <strong>${correctData.name}</strong> ${correctData.emoji}<br>
                         <small>+10 puntos</small>
@@ -721,7 +721,7 @@
                 score = Math.max(0, score - 5);
                 const answerData = shapeData[answer];
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         No es un ${answerData.name}, es un <strong>${correctData.name}</strong> ${correctData.emoji}<br>
                         <small>-5 puntos</small>

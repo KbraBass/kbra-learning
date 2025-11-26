@@ -334,9 +334,9 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="result-container"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -466,13 +466,13 @@
                 result.textContent = '¡Por favor selecciona una fecha!';
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             } else if (diffDays < 0) {
-                result.innerHTML = `<div style="color: #333;">Esa fecha ya pasó hace <strong>${Math.abs(diffDays)} días</strong></div>`;
+                result.innerHTML = `<div class="text-dark">Esa fecha ya pasó hace <strong>${Math.abs(diffDays)} días</strong></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             } else if (diffDays === 0) {
-                result.innerHTML = '<div style="color: #333;"><strong>¡Es hoy!</strong> 🎉</div>';
+                result.innerHTML = '<div class="text-dark"><strong>¡Es hoy!</strong> 🎉</div>';
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
-                result.innerHTML = `<div style="color: #333;">Faltan <strong>${diffDays} días</strong></div>`;
+                result.innerHTML = `<div class="text-dark">Faltan <strong>${diffDays} días</strong></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             }
         }
@@ -487,7 +487,7 @@
             } else {
                 const weekdayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
                 const weekday = weekdayNames[date.getDay()];
-                result.innerHTML = `<div style="color: #333;">Es un <strong>${weekday}</strong></div>`;
+                result.innerHTML = `<div class="text-dark">Es un <strong>${weekday}</strong></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             }
         }
@@ -537,11 +537,11 @@
             
             if (userAnswer === currentQuestion.a.toLowerCase()) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.a}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.a}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.a}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.a}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

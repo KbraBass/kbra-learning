@@ -1062,3 +1062,114 @@ tr:hover {
     gap: var(--space-md);
 }
 
+/* Additional utility classes for common patterns */
+.text-dark {
+    color: #333;
+}
+
+.text-small-hint {
+    font-size: 0.8em;
+}
+
+.text-gray {
+    color: #666;
+}
+
+.text-error {
+    color: #ff6b6b;
+}
+
+.text-danger {
+    color: #e74c3c;
+}
+
+.bg-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.bg-warning-light {
+    background: rgba(255, 107, 107, 0.3);
+}
+
+.margin-top-20 {
+    margin-top: var(--space-lg);
+}
+
+.margin-top-30 {
+    margin-top: var(--space-2xl);
+}
+
+.line-height-relaxed {
+    line-height: 2;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.bold-spaced {
+    margin-top: var(--space-sm);
+    font-weight: bold;
+}
+
+.small-hint-spaced {
+    margin-top: var(--space-sm);
+    font-size: 0.8em;
+}
+
+.gray-hint-spaced {
+    margin-top: var(--space-sm);
+    color: #666;
+    font-size: 0.9em;
+}
+
+.large-title {
+    font-size: 1.8em;
+    padding: var(--space-md);
+}
+
+.primary-large-text {
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+.centered-message {
+    text-align: center;
+    color: #333;
+    font-size: var(--text-xl);
+}
+
+.hero-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin: 40px 0 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.section-title-large {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 40px 0 30px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.result-container {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-with-color {
+    color: var(--primary-color);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+

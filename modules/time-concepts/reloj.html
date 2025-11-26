@@ -358,7 +358,7 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div id="practice-visual" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"></div>
 
@@ -499,7 +499,7 @@
                     <div class="timezone-card">
                         <div class="timezone-city">${tz.city}</div>
                         <div class="timezone-time">${timeStr}</div>
-                        <small style="color: #666;">GMT${tz.offset >= 0 ? '+' : ''}${tz.offset}</small>
+                        <small class="text-gray">GMT${tz.offset >= 0 ? '+' : ''}${tz.offset}</small>
                     </div>
                 `;
             }).join('');
@@ -561,11 +561,11 @@
             
             if (userHour === currentQuestion.hour && userMinute === currentQuestion.minute) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

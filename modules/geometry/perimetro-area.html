@@ -77,7 +77,7 @@
 
             <div class="shape-visual" id="square-visual"></div>
 
-            <div class="input-section" style="margin-top: 30px;">
+            <div class="input-section" class="margin-top-30">
                 <h3 class="subsection-header">Calcula el Perímetro de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length">Largo:</label>
@@ -125,7 +125,7 @@
 
             <div class="shape-visual" id="square-area-visual"></div>
 
-            <div class="input-section" style="margin-top: 30px;">
+            <div class="input-section" class="margin-top-30">
                 <h3 class="subsection-header">Calcula el Área de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length-area">Largo:</label>
@@ -154,7 +154,7 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div class="shape-visual" id="practice-visual"></div>
 
@@ -329,14 +329,14 @@
                         <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px; display: grid; grid-template-columns: repeat(${side}, 1fr); grid-template-rows: repeat(${side}, 1fr);">
                             ${Array(area).fill('<div style="border: 1px solid rgba(102, 126, 234, 0.3);"></div>').join('')}
                         </div>
-                        <p style="margin-top: 10px; font-weight: bold;">${area} cuadraditos = ${area} unidades²</p>
+                        <p class="bold-spaced">${area} cuadraditos = ${area} unidades²</p>
                     </div>
                 `;
             } else {
                 visual.innerHTML = `
                     <div class="shape-container">
                         <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;"></div>
-                        <p style="margin-top: 10px; font-weight: bold;">Área = ${area} unidades²</p>
+                        <p class="bold-spaced">Área = ${area} unidades²</p>
                     </div>
                 `;
             }
@@ -366,14 +366,14 @@
                         <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px; display: grid; grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${width}, 1fr);">
                             ${Array(area).fill('<div style="border: 1px solid rgba(240, 147, 251, 0.3);"></div>').join('')}
                         </div>
-                        <p style="margin-top: 10px; font-weight: bold;">${area} cuadraditos = ${area} unidades²</p>
+                        <p class="bold-spaced">${area} cuadraditos = ${area} unidades²</p>
                     </div>
                 `;
             } else {
                 visual.innerHTML = `
                     <div class="shape-container">
                         <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;"></div>
-                        <p style="margin-top: 10px; font-weight: bold;">Área = ${area} unidades²</p>
+                        <p class="bold-spaced">Área = ${area} unidades²</p>
                     </div>
                 `;
             }
@@ -464,11 +464,11 @@
             
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

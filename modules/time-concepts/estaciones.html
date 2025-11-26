@@ -214,7 +214,7 @@
                 <div class="hemisphere-card">
                     <div class="hemisphere-title">🌍 Hemisferio Norte</div>
                     <p style="text-align: center; color: #666; margin-bottom: 20px;">España, Europa, América del Norte, Asia</p>
-                    <div style="line-height: 2;">
+                    <div class="line-height-relaxed">
                         <p><strong>🌸 Marzo-Mayo:</strong> Primavera</p>
                         <p><strong>☀️ Junio-Agosto:</strong> Verano</p>
                         <p><strong>🍂 Septiembre-Noviembre:</strong> Otoño</p>
@@ -225,7 +225,7 @@
                 <div class="hemisphere-card">
                     <div class="hemisphere-title">🌎 Hemisferio Sur</div>
                     <p style="text-align: center; color: #666; margin-bottom: 20px;">Australia, Argentina, Sudáfrica</p>
-                    <div style="line-height: 2;">
+                    <div class="line-height-relaxed">
                         <p><strong>🍂 Marzo-Mayo:</strong> Otoño</p>
                         <p><strong>❄️ Junio-Agosto:</strong> Invierno</p>
                         <p><strong>🌸 Septiembre-Noviembre:</strong> Primavera</p>
@@ -254,56 +254,56 @@
                     <div class="moon-icon">🌑</div>
                     <div class="moon-name">Luna Nueva</div>
                     <div class="moon-days">Día 0</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">No se ve desde la Tierra</p>
+                    <p class="gray-hint-spaced">No se ve desde la Tierra</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌒</div>
                     <div class="moon-name">Creciente</div>
                     <div class="moon-days">Día 1-6</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Aparece una pequeña franja</p>
+                    <p class="gray-hint-spaced">Aparece una pequeña franja</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌓</div>
                     <div class="moon-name">Cuarto Creciente</div>
                     <div class="moon-days">Día 7</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Se ve la mitad derecha</p>
+                    <p class="gray-hint-spaced">Se ve la mitad derecha</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌔</div>
                     <div class="moon-name">Gibosa Creciente</div>
                     <div class="moon-days">Día 8-14</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Más de la mitad visible</p>
+                    <p class="gray-hint-spaced">Más de la mitad visible</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌕</div>
                     <div class="moon-name">Luna Llena</div>
                     <div class="moon-days">Día 15</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Totalmente iluminada</p>
+                    <p class="gray-hint-spaced">Totalmente iluminada</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌖</div>
                     <div class="moon-name">Gibosa Menguante</div>
                     <div class="moon-days">Día 16-22</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Comienza a reducirse</p>
+                    <p class="gray-hint-spaced">Comienza a reducirse</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌗</div>
                     <div class="moon-name">Cuarto Menguante</div>
                     <div class="moon-days">Día 23</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Se ve la mitad izquierda</p>
+                    <p class="gray-hint-spaced">Se ve la mitad izquierda</p>
                 </div>
 
                 <div class="moon-phase">
                     <div class="moon-icon">🌘</div>
                     <div class="moon-name">Menguante</div>
                     <div class="moon-days">Día 24-29</div>
-                    <p style="margin-top: 10px; color: #666; font-size: 0.9em;">Casi invisible</p>
+                    <p class="gray-hint-spaced">Casi invisible</p>
                 </div>
             </div>
 
@@ -325,9 +325,9 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="result-container"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -443,11 +443,11 @@
             
             if (userAnswer === currentQuestion.a.toLowerCase()) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.a}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.a}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.a}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.a}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

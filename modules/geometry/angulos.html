@@ -198,7 +198,7 @@
                 </ol>
             </div>
 
-            <div class="explanation" style="margin-top: 30px;">
+            <div class="explanation" class="margin-top-30">
                 <h3>💡 Trucos Útiles:</h3>
                 <ul style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
                     <li>Si el ángulo parece grande (abierto), probablemente es obtuso (más de 90°)</li>
@@ -240,7 +240,7 @@
                 <div id="angle-type" style="font-size: 0.8em; color: var(--accent-color); margin-top: 10px;">Ángulo Agudo</div>
             </div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>🔍 Observa:</h3>
                 <ul>
                     <li><strong>0°-89°:</strong> Ángulo Agudo (pequeño)</li>
@@ -258,7 +258,7 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div id="practice-visual" style="min-height: 150px; display: flex; align-items: center; justify-content: center;">
                     <canvas id="practice-canvas" width="200" height="200"></canvas>
@@ -512,11 +512,11 @@
             
             if (userAnswer === currentQuestion.type) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

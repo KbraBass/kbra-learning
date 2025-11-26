@@ -550,27 +550,27 @@
                 <h3 class="content-subheader">📚 Ejemplos para Probar:</h3>
                 
                 <div class="examples-grid">
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('2, 2, 3')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('2, 2, 3')">
                         <div class="info-title">2 × 2 × 3</div>
                         <div class="info-text">= 12</div>
                     </div>
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('2, 2, 2, 2')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('2, 2, 2, 2')">
                         <div class="info-title">2 × 2 × 2 × 2</div>
                         <div class="info-text">= 16</div>
                     </div>
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('3, 3, 3')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('3, 3, 3')">
                         <div class="info-title">3 × 3 × 3</div>
                         <div class="info-text">= 27</div>
                     </div>
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('2, 3, 5, 7')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('2, 3, 5, 7')">
                         <div class="info-title">2 × 3 × 5 × 7</div>
                         <div class="info-text">= 210</div>
                     </div>
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('11, 11')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('11, 11')">
                         <div class="info-title">11 × 11</div>
                         <div class="info-text">= 121</div>
                     </div>
-                    <div class="info-box" style="cursor: pointer;" onclick="setComposeExample('2, 2, 5, 5')">
+                    <div class="info-box" class="cursor-pointer" onclick="setComposeExample('2, 2, 5, 5')">
                         <div class="info-title">2 × 2 × 5 × 5</div>
                         <div class="info-text">= 100</div>
                     </div>
@@ -694,7 +694,7 @@
             
             if (isNaN(num) || num < 2) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                    <div class="result-box" class="bg-error">
                         ⚠️ Por favor, introduce un número mayor o igual a 2
                     </div>
                 `;
@@ -707,7 +707,7 @@
                 resultDiv.innerHTML = `
                     <div class="result-box" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
                         ✅ <strong>${num}</strong> es un número PRIMO
-                        <p style="margin-top: 10px; font-size: 0.8em;">Solo es divisible por 1 y ${num}</p>
+                        <p class="small-hint-spaced">Solo es divisible por 1 y ${num}</p>
                     </div>
                 `;
             } else {
@@ -715,7 +715,7 @@
                 resultDiv.innerHTML = `
                     <div class="result-box" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
                         ❌ <strong>${num}</strong> NO es primo
-                        <p style="margin-top: 10px; font-size: 0.8em;">Factorización: ${num} = ${factors.join(' × ')}</p>
+                        <p class="small-hint-spaced">Factorización: ${num} = ${factors.join(' × ')}</p>
                     </div>
                 `;
             }
@@ -727,7 +727,7 @@
             
             if (isNaN(num) || num < 2) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                    <div class="result-box" class="bg-error">
                         ⚠️ Por favor, introduce un número mayor o igual a 2
                     </div>
                 `;
@@ -736,7 +736,7 @@
 
             if (num > 100000) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                    <div class="result-box" class="bg-error">
                         ⚠️ Por favor, introduce un número menor o igual a 100 000
                     </div>
                 `;
@@ -751,7 +751,7 @@
                         <div class="number-display">${num}</div>
                         <div class="result-box" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
                             ⭐ ¡${num} es un número PRIMO!
-                            <p style="margin-top: 10px; font-size: 0.8em;">No se puede factorizar más</p>
+                            <p class="small-hint-spaced">No se puede factorizar más</p>
                         </div>
                     </div>
                 `;
@@ -817,7 +817,7 @@
             
             if (!input.trim()) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                    <div class="result-box" class="bg-error">
                         ⚠️ Por favor, introduce los factores separados por comas
                     </div>
                 `;
@@ -828,7 +828,7 @@
             
             if (factors.length === 0) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                    <div class="result-box" class="bg-error">
                         ⚠️ No se encontraron números válidos
                     </div>
                 `;
@@ -842,7 +842,7 @@
                 resultDiv.innerHTML = `
                     <div class="result-box" style="background: #fff3cd; color: #856404;">
                         ⚠️ Advertencia: Los siguientes números NO son primos: ${nonPrimes.join(', ')}
-                        <p style="margin-top: 10px; font-size: 0.8em;">La factorización solo usa números primos</p>
+                        <p class="small-hint-spaced">La factorización solo usa números primos</p>
                     </div>
                 `;
             }
@@ -947,7 +947,7 @@
             const userAnswer = document.getElementById('answerInput').value.trim().toLowerCase();
             
             if (userAnswer === '') {
-                document.getElementById('feedback').innerHTML = '<span style="color: #ff6b6b;">⚠️ Por favor, introduce una respuesta</span>';
+                document.getElementById('feedback').innerHTML = '<span class="text-error">⚠️ Por favor, introduce una respuesta</span>';
                 return;
             }
 
@@ -968,7 +968,7 @@
                     score = Math.max(0, score - 15);
                     document.getElementById('score').textContent = score;
                     updateScore();
-                    document.getElementById('feedback').innerHTML = `<span style="color: #ff6b6b;">❌ Incorrecto. La respuesta correcta es: ${correctFactors.join(', ')} (-15 puntos)</span>`;
+                    document.getElementById('feedback').innerHTML = `<span class="text-error">❌ Incorrecto. La respuesta correcta es: ${correctFactors.join(', ')} (-15 puntos)</span>`;
                     showFactorizationExplanation();
                 }
             } else if (currentQuestion.type === 'compose') {
@@ -985,7 +985,7 @@
                     score = Math.max(0, score - 15);
                     document.getElementById('score').textContent = score;
                     updateScore();
-                    document.getElementById('feedback').innerHTML = `<span style="color: #ff6b6b;">❌ Incorrecto. La respuesta correcta es: ${formatNumber(currentQuestion.answer)} (-15 puntos)</span>`;
+                    document.getElementById('feedback').innerHTML = `<span class="text-error">❌ Incorrecto. La respuesta correcta es: ${formatNumber(currentQuestion.answer)} (-15 puntos)</span>`;
                 }
             } else if (currentQuestion.type === 'identify') {
                 correct = (userAnswer === 'si' && currentQuestion.answer) || (userAnswer === 'no' && !currentQuestion.answer);
@@ -1001,7 +1001,7 @@
                     document.getElementById('score').textContent = score;
                     updateScore();
                     const correctAnswer = currentQuestion.answer ? 'Sí, es primo' : 'No, no es primo';
-                    document.getElementById('feedback').innerHTML = `<span style="color: #ff6b6b;">❌ Incorrecto. ${correctAnswer} (-15 puntos)</span>`;
+                    document.getElementById('feedback').innerHTML = `<span class="text-error">❌ Incorrecto. ${correctAnswer} (-15 puntos)</span>`;
                     if (!currentQuestion.answer) {
                         showFactorizationExplanation();
                     }
@@ -1012,7 +1012,7 @@
         function showFactorizationExplanation() {
             const factors = getPrimeFactors(currentQuestion.number);
             const html = `
-                <div class="info-box" style="margin-top: 20px;">
+                <div class="info-box" class="margin-top-20">
                     <div class="info-title">📖 Explicación:</div>
                     <div class="info-text">
                         <p><strong>${currentQuestion.number}</strong> se factoriza como:</p>

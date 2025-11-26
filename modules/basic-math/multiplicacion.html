@@ -125,7 +125,7 @@
                     <!-- Score display will be inserted here -->
                 </div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;">Resuelve la multiplicación:</h3>
+                <h3 class="header-with-color">Resuelve la multiplicación:</h3>
                 <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
 
                 <div class="input-section">
@@ -239,7 +239,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} × ${num2} = ${product} 🎉<br>
-                    <small style="font-size: 0.8em;">Esto es como sumar ${num1}, ${num2} veces!</small>
+                    <small class="text-small-hint">Esto es como sumar ${num1}, ${num2} veces!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -252,7 +252,7 @@
             const total = num1 * num2;
             
             if (total > 100) {
-                container.innerHTML = `<p style="text-align: center; color: #333; font-size: 1.2em;">¡El resultado es ${total}! Es demasiado grande para mostrarlo visualmente, pero ¡lo calculaste bien!</p>`;
+                container.innerHTML = `<p class="centered-message">¡El resultado es ${total}! Es demasiado grande para mostrarlo visualmente, pero ¡lo calculaste bien!</p>`;
                 return;
             }
             
@@ -333,7 +333,7 @@
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos</small>
@@ -343,7 +343,7 @@
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando!</small>

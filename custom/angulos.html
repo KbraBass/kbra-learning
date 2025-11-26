@@ -592,7 +592,7 @@
             if (answer === currentAngle.type) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         Es un ángulo <strong>${currentAngle.label}</strong> de ${currentAngle.degrees}°<br>
                         <small>+10 puntos</small>
@@ -601,7 +601,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         Es un ángulo <strong>${currentAngle.label}</strong> de ${currentAngle.degrees}°<br>
                         <small>-5 puntos</small>

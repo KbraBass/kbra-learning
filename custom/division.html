@@ -462,14 +462,14 @@
                 result.innerHTML = `
                     <div>
                         ${num1} ÷ ${num2} = ${quotient} 🎉<br>
-                        <small style="font-size: 0.8em;">¡División exacta! Cada grupo tiene ${quotient}</small>
+                        <small class="text-small-hint">¡División exacta! Cada grupo tiene ${quotient}</small>
                     </div>
                 `;
             } else {
                 result.innerHTML = `
                     <div>
                         ${num1} ÷ ${num2} = ${quotient} (sobran ${remainder}) 🎉<br>
-                        <small style="font-size: 0.8em;">Cada grupo tiene ${quotient} y sobran ${remainder}</small>
+                        <small class="text-small-hint">Cada grupo tiene ${quotient} y sobran ${remainder}</small>
                     </div>
                 `;
             }
@@ -484,7 +484,7 @@
             const remainder = num1 % num2;
             
             if (num1 > 60) {
-                container.innerHTML = `<p style="text-align: center; color: #333; font-size: 1.2em;">¡El resultado es ${quotient}${remainder > 0 ? ' y sobran ' + remainder : ''}! Es demasiado grande para mostrarlo visualmente.</p>`;
+                container.innerHTML = `<p class="centered-message">¡El resultado es ${quotient}${remainder > 0 ? ' y sobran ' + remainder : ''}! Es demasiado grande para mostrarlo visualmente.</p>`;
                 return;
             }
             
@@ -540,14 +540,14 @@
                 result.innerHTML = `
                     <div>
                         Cociente: ${quotient} - Resto: 0 🎉<br>
-                        <small style="font-size: 0.8em;">¡División exacta!</small>
+                        <small class="text-small-hint">¡División exacta!</small>
                     </div>
                 `;
             } else {
                 result.innerHTML = `
                     <div>
                         Cociente: ${quotient} - Resto: ${remainder} 🎉<br>
-                        <small style="font-size: 0.8em;">Mira la explicación abajo</small>
+                        <small class="text-small-hint">Mira la explicación abajo</small>
                     </div>
                 `;
             }
@@ -633,7 +633,7 @@
             if (userAnswer === currentQuestion.answer) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos</small>
@@ -643,7 +643,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando!</small>

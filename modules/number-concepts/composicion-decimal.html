@@ -243,9 +243,9 @@
                 <button class="calc-button" onclick="decomposeNumber()">Descomponer</button>
             </div>
 
-            <div id="decompose-result" style="margin-top: 30px;"></div>
+            <div id="decompose-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>🎯 Ejemplo:</h3>
                 <p><strong>3,456</strong> se descompone en:</p>
                 <p>3,000 + 400 + 50 + 6</p>
@@ -285,7 +285,7 @@
                 <button class="calc-button" onclick="composeNumber()">Componer</button>
             </div>
 
-            <div id="compose-result" style="margin-top: 30px;"></div>
+            <div id="compose-result" class="margin-top-30"></div>
         </div>
 
         <!-- DECIMALES TAB -->
@@ -318,7 +318,7 @@
                 </div>
             </div>
 
-            <div class="input-section" style="margin-top: 30px;">
+            <div class="input-section" class="margin-top-30">
                 <h3>Descomponer un decimal:</h3>
                 <div class="input-group">
                     <label for="decimal-input">Número decimal:</label>
@@ -327,9 +327,9 @@
                 <button class="calc-button" onclick="decomposeDecimal()">Descomponer</button>
             </div>
 
-            <div id="decimal-result" style="margin-top: 30px;"></div>
+            <div id="decimal-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>💡 Ejemplo:</h3>
                 <p><strong>5.73</strong> significa:</p>
                 <p>5 unidades + 7 décimos + 3 centésimos</p>
@@ -344,9 +344,9 @@
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="result-container"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -440,7 +440,7 @@
             const num = parseInt(input.value);
             
             if (isNaN(num) || num < 0) {
-                result.innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número válido!</div>';
+                result.innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número válido!</div>';
                 return;
             }
             
@@ -494,9 +494,9 @@
                         <span class="plus-sign">+</span>
                         <span>${u}</span>
                         <span class="equals-sign">=</span>
-                        <span style="color: var(--primary-color); font-size: 1.3em;">${total}</span>
+                        <span class="primary-large-text">${total}</span>
                     </div>
-                    <div class="number-display" style="margin-top: 20px;">${total.toLocaleString()}</div>
+                    <div class="number-display" class="margin-top-20">${total.toLocaleString()}</div>
                 </div>
             `;
         }
@@ -506,7 +506,7 @@
             const num = parseFloat(input.value);
             
             if (isNaN(num)) {
-                document.getElementById('decimal-result').innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número válido!</div>';
+                document.getElementById('decimal-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número válido!</div>';
                 return;
             }
             
@@ -596,11 +596,11 @@
             
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

@@ -440,7 +440,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} + ${num2} = ${sum} 🎉<br>
-                    <small style="font-size: 0.8em;">¡Juntamos ${num1} y ${num2}!</small>
+                    <small class="text-small-hint">¡Juntamos ${num1} y ${num2}!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -452,7 +452,7 @@
             const container = document.getElementById('visual-sum');
             
             if (num1 + num2 > 40) {
-                container.innerHTML = `<p style="text-align: center; color: #333; font-size: 1.2em;">¡El resultado es ${num1 + num2}! Es demasiado grande para mostrarlo visualmente, pero ¡lo calculaste bien!</p>`;
+                container.innerHTML = `<p class="centered-message">¡El resultado es ${num1 + num2}! Es demasiado grande para mostrarlo visualmente, pero ¡lo calculaste bien!</p>`;
                 return;
             }
             
@@ -493,7 +493,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} + ${num2} = ${sum} 🎉<br>
-                    <small style="font-size: 0.8em;">¡Mira abajo cómo se hace paso a paso!</small>
+                    <small class="text-small-hint">¡Mira abajo cómo se hace paso a paso!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -589,7 +589,7 @@
             if (userAnswer === currentQuestion.answer) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} + ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos</small>
@@ -599,7 +599,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} + ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando!</small>
