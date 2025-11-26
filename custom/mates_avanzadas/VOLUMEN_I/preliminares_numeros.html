@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Preliminares: Números y Conjuntos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .tab-button {
+            background: #e0e0e0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .tab-button:hover {
+            background: #d0d0d0;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content-section h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .concept-box {
+            background: #f0f4ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .concept-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .formula-box {
+            background: #fff8e1;
+            border: 2px dashed #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .example-box h4 {
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+
+        .interactive-tool {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .interactive-tool h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .calc-button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 15px 10px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .calc-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .result-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            min-height: 60px;
+        }
+
+        .exercise-container {
+            margin: 20px 0;
+        }
+
+        .exercise {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 2px solid #e0e0e0;
+        }
+
+        .exercise h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .exercise-input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            width: 200px;
+            margin: 10px 10px 10px 0;
+        }
+
+        .check-button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .check-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .hint-button {
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .hint-button:hover {
+            background: #d97706;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #ef4444;
+            display: block;
+        }
+
+        .hint-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .score-panel {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .score-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .score-item .score-number {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .score-item .score-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="../../index.html">🏠 Inicio</a>
+            <span>›</span>
+            <a href="../index.html">Mates Avanzadas</a>
+            <span>›</span>
+            <a href="volume1_index.html">Volumen I</a>
+            <span>›</span>
+            <span>Preliminares</span>
+        </nav>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>🔢 Preliminares: Números y Conjuntos</h1>
+            <p class="subtitle">Fundamentos de los conjuntos numéricos y operaciones</p>
+        </div>
+
+        <!-- Score Panel -->
+        <div class="score-panel">
+            <div class="score-item">
+                <div class="score-number" id="points">0</div>
+                <div class="score-label">Puntos</div>
+            </div>
+            <div class="score-item">
+                <div class="score-number" id="completed">0</div>
+                <div class="score-label">Ejercicios</div>
+            </div>
+            <div class="score-item">
+                <div class="score-number" id="accuracy">0%</div>
+                <div class="score-label">Precisión</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+            <button class="tab-button" onclick="showTab('resumen')">📋 Resumen</button>
+        </div>
+
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Números y Conjuntos</h2>
+
+            <h3>📖 Glosario de Símbolos Matemáticos</h3>
+            <div class="concept-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; margin-bottom: 25px;">
+                <h4 style="color: white; margin-top: 0;">Símbolos utilizados en este tema:</h4>
+                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+                    <li><strong>ℕ</strong> = Números Naturales (Natural numbers)</li>
+                    <li><strong>ℤ</strong> = Números Enteros (del alemán "Zahlen")</li>
+                    <li><strong>ℚ</strong> = Números Racionales (Quotient/cociente)</li>
+                    <li><strong>𝕀</strong> = Números Irracionales</li>
+                    <li><strong>ℝ</strong> = Números Reales (Real numbers)</li>
+                    <li><strong>∈</strong> = "pertenece a" (ejemplo: 5 ∈ ℕ significa "5 pertenece a los naturales")</li>
+                    <li><strong>∉</strong> = "no pertenece a" (ejemplo: -3 ∉ ℕ)</li>
+                    <li><strong>∪</strong> = Unión (todos los elementos de ambos conjuntos)</li>
+                    <li><strong>∩</strong> = Intersección (elementos comunes a ambos conjuntos)</li>
+                    <li><strong>⊂</strong> = "está contenido en" / "es subconjunto de"</li>
+                    <li><strong>⊆</strong> = "está contenido o es igual a"</li>
+                    <li><strong>∅</strong> = Conjunto vacío (sin elementos)</li>
+                    <li><strong>{ }</strong> = Llaves para definir un conjunto</li>
+                    <li><strong>|</strong> = "tal que" (en definiciones de conjuntos)</li>
+                    <li><strong>≠</strong> = "distinto de" / "no igual a"</li>
+                    <li><strong>≤</strong> = "menor o igual que"</li>
+                    <li><strong>≥</strong> = "mayor o igual que"</li>
+                    <li><strong>< </strong> = "estrictamente menor que"</li>
+                    <li><strong>></strong> = "estrictamente mayor que"</li>
+                    <li><strong>∞</strong> = Infinito (no es un número, es un concepto)</li>
+                    <li><strong>...</strong> = "continúa indefinidamente" (elipsis)</li>
+                    <li><strong>|x|</strong> = Valor absoluto de x (distancia al cero)</li>
+                    <li><strong>[a, b]</strong> = Intervalo cerrado (incluye a y b)</li>
+                    <li><strong>(a, b)</strong> = Intervalo abierto (excluye a y b)</li>
+                </ul>
+            </div>
+
+            <h3>1. Conjuntos Numéricos</h3>
+            <p>
+                Los números se organizan en conjuntos que amplían progresivamente sus propiedades:
+            </p>
+
+            <div class="concept-box">
+                <h4>Números Naturales (ℕ)</h4>
+                <p>ℕ = {1, 2, 3, 4, 5, ...}</p>
+                <p>Son los números que usamos para contar. Algunos autores incluyen el 0.</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Números Enteros (ℤ)</h4>
+                <p>ℤ = {..., -3, -2, -1, 0, 1, 2, 3, ...}</p>
+                <p>Incluyen los naturales, sus opuestos y el cero.</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Números Racionales (ℚ)</h4>
+                <p>ℚ = {p/q | p, q ∈ ℤ, q ≠ 0}</p>
+                <p><em>Se lee: "Q es el conjunto de fracciones p/q tal que p y q pertenecen a los enteros, con q distinto de cero"</em></p>
+                <p>Números que pueden expresarse como fracción de dos enteros. Incluyen decimales exactos y periódicos.</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Números Irracionales (𝕀)</h4>
+                <p>Ejemplos: π, √2, e, φ (número áureo)</p>
+                <p>Números que NO pueden expresarse como fracción. Sus decimales son infinitos y no periódicos.</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Números Reales (ℝ)</h4>
+                <p>ℝ = ℚ ∪ 𝕀</p>
+                <p><em>Se lee: "R es igual a Q unión I" (todos los racionales más todos los irracionales)</em></p>
+                <p>Unión de todos los números racionales e irracionales. Representan todos los puntos en la recta numérica.</p>
+            </div>
+
+            <h3>2. Operaciones con Conjuntos</h3>
+
+            <div class="concept-box">
+                <h4>Unión (A ∪ B)</h4>
+                <p>Elementos que pertenecen a A, a B, o a ambos.</p>
+                <p>Ejemplo: {1,2,3} ∪ {3,4,5} = {1,2,3,4,5}</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Intersección (A ∩ B)</h4>
+                <p>Elementos que pertenecen simultáneamente a A y a B.</p>
+                <p>Ejemplo: {1,2,3} ∩ {3,4,5} = {3}</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Diferencia (A - B)</h4>
+                <p>Elementos que pertenecen a A pero no a B.</p>
+                <p>Ejemplo: {1,2,3} - {3,4,5} = {1,2}</p>
+            </div>
+
+            <h3>3. Intervalos</h3>
+            <p>Los intervalos representan conjuntos de números reales entre dos valores:</p>
+
+            <ul>
+                <li><strong>[a, b]</strong> - Intervalo cerrado: incluye a y b</li>
+                <li><strong>(a, b)</strong> - Intervalo abierto: excluye a y b</li>
+                <li><strong>[a, b)</strong> - Semiabierto por la derecha</li>
+                <li><strong>(a, b]</strong> - Semiabierto por la izquierda</li>
+                <li><strong>[a, ∞)</strong> - Desde a hasta infinito</li>
+                <li><strong>(-∞, b]</strong> - Desde menos infinito hasta b</li>
+            </ul>
+
+            <h3>4. Valor Absoluto</h3>
+            <div class="formula-box">
+                |x| = x si x ≥ 0<br>
+                |x| = -x si x < 0
+            </div>
+            <p>El valor absoluto representa la distancia de un número al cero en la recta numérica.</p>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="example-box">
+                <h4>Ejemplo 1: Clasificación de Números</h4>
+                <p><strong>Pregunta:</strong> Clasifica los siguientes números en los conjuntos correspondientes: -5, 3.5, √9, π, 7/2</p>
+                <p><strong>Solución:</strong></p>
+                <ul>
+                    <li>-5 ∈ ℤ (entero negativo)</li>
+                    <li>3.5 ∈ ℚ (decimal exacto = 7/2)</li>
+                    <li>√9 = 3 ∈ ℕ (natural, porque √9 = 3)</li>
+                    <li>π ∈ 𝕀 (irracional)</li>
+                    <li>7/2 ∈ ℚ (fracción)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 2: Operaciones con Conjuntos</h4>
+                <p><strong>Dados:</strong> A = {1, 2, 3, 4, 5} y B = {4, 5, 6, 7}</p>
+                <p><strong>Calcula:</strong></p>
+                <ul>
+                    <li>A ∪ B = {1, 2, 3, 4, 5, 6, 7}</li>
+                    <li>A ∩ B = {4, 5}</li>
+                    <li>A - B = {1, 2, 3}</li>
+                    <li>B - A = {6, 7}</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 3: Intervalos</h4>
+                <p><strong>Expresa en notación de intervalos:</strong> x ≥ 2 y x < 5</p>
+                <p><strong>Solución:</strong> [2, 5)</p>
+                <p>Se incluye el 2 (por el ≥) pero no el 5 (por el <)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 4: Valor Absoluto</h4>
+                <p><strong>Resuelve:</strong> |x - 3| = 5</p>
+                <p><strong>Solución:</strong></p>
+                <p>x - 3 = 5  →  x = 8</p>
+                <p>x - 3 = -5  →  x = -2</p>
+                <p>Soluciones: x = 8 o x = -2</p>
+            </div>
+        </div>
+
+        <!-- Herramientas Interactivas -->
+        <div class="content-section" id="herramientas">
+            <h2>🧮 Herramientas Interactivas</h2>
+
+            <div class="interactive-tool">
+                <h3>Clasificador de Números</h3>
+                <div class="input-group">
+                    <label>Ingresa un número:</label>
+                    <input type="text" id="numberInput" placeholder="Ej: 3.14, -5, √2">
+                </div>
+                <button class="calc-button" onclick="classifyNumber()">Clasificar</button>
+                <div class="result-box" id="classifyResult"></div>
+            </div>
+
+            <div class="interactive-tool">
+                <h3>Operaciones con Conjuntos</h3>
+                <div class="input-group">
+                    <label>Conjunto A (separado por comas):</label>
+                    <input type="text" id="setA" placeholder="1, 2, 3, 4">
+                </div>
+                <div class="input-group">
+                    <label>Conjunto B (separado por comas):</label>
+                    <input type="text" id="setB" placeholder="3, 4, 5, 6">
+                </div>
+                <button class="calc-button" onclick="calculateUnion()">A ∪ B</button>
+                <button class="calc-button" onclick="calculateIntersection()">A ∩ B</button>
+                <button class="calc-button" onclick="calculateDifference()">A - B</button>
+                <div class="result-box" id="setResult"></div>
+            </div>
+
+            <div class="interactive-tool">
+                <h3>Calculadora de Valor Absoluto</h3>
+                <div class="input-group">
+                    <label>Ingresa un número:</label>
+                    <input type="number" id="absInput" placeholder="Ej: -7">
+                </div>
+                <button class="calc-button" onclick="calculateAbsolute()">Calcular |x|</button>
+                <div class="result-box" id="absResult"></div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica Guiada</h2>
+
+            <div class="exercise-container">
+                <div class="exercise">
+                    <h4>Ejercicio 1: ¿Es √16 un número natural?</h4>
+                    <select id="ex1" class="exercise-input">
+                        <option value="">Selecciona...</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    <button class="check-button" onclick="checkExercise(1, 'si')">Verificar</button>
+                    <button class="hint-button" onclick="showHint(1)">💡 Pista</button>
+                    <div class="hint-box" id="hint1">√16 = 4, y 4 es un número que usamos para contar.</div>
+                    <div class="feedback" id="feedback1"></div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Ejercicio 2: Si A = {1,2,3} y B = {2,3,4}, ¿cuántos elementos tiene A ∩ B?</h4>
+                    <input type="number" id="ex2" class="exercise-input" placeholder="Número">
+                    <button class="check-button" onclick="checkExercise(2, '2')">Verificar</button>
+                    <button class="hint-button" onclick="showHint(2)">💡 Pista</button>
+                    <div class="hint-box" id="hint2">La intersección contiene los elementos comunes a ambos conjuntos.</div>
+                    <div class="feedback" id="feedback2"></div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Ejercicio 3: ¿Cuál es el valor de |-7|?</h4>
+                    <input type="number" id="ex3" class="exercise-input" placeholder="Número">
+                    <button class="check-button" onclick="checkExercise(3, '7')">Verificar</button>
+                    <button class="hint-button" onclick="showHint(3)">💡 Pista</button>
+                    <div class="hint-box" id="hint3">El valor absoluto siempre es positivo o cero.</div>
+                    <div class="feedback" id="feedback3"></div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Ejercicio 4: El número π es:</h4>
+                    <select id="ex4" class="exercise-input">
+                        <option value="">Selecciona...</option>
+                        <option value="natural">Natural</option>
+                        <option value="entero">Entero</option>
+                        <option value="racional">Racional</option>
+                        <option value="irracional">Irracional</option>
+                    </select>
+                    <button class="check-button" onclick="checkExercise(4, 'irracional')">Verificar</button>
+                    <button class="hint-button" onclick="showHint(4)">💡 Pista</button>
+                    <div class="hint-box" id="hint4">π no puede expresarse como fracción y sus decimales son infinitos no periódicos.</div>
+                    <div class="feedback" id="feedback4"></div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Ejercicio 5: Si A = {1,2,3,4} y B = {3,4,5,6}, ¿cuántos elementos tiene A ∪ B?</h4>
+                    <input type="number" id="ex5" class="exercise-input" placeholder="Número">
+                    <button class="check-button" onclick="checkExercise(5, '6')">Verificar</button>
+                    <button class="hint-button" onclick="showHint(5)">💡 Pista</button>
+                    <div class="hint-box" id="hint5">La unión contiene todos los elementos de ambos conjuntos sin repetir.</div>
+                    <div class="feedback" id="feedback5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="concept-box">
+                <h4>Puntos Clave</h4>
+                <ul>
+                    <li>Los conjuntos numéricos se organizan jerárquicamente: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</li>
+                    <li>Todo número natural es entero, todo entero es racional, todo racional es real</li>
+                    <li>Los números irracionales no pueden expresarse como fracción</li>
+                    <li>Las operaciones básicas con conjuntos son: unión, intersección y diferencia</li>
+                    <li>Los intervalos representan conjuntos continuos de números reales</li>
+                    <li>El valor absoluto mide la distancia al cero</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>Fórmulas Importantes</h4>
+                <ul>
+                    <li>|x| ≥ 0 para todo x ∈ ℝ</li>
+                    <li>|x| = |-x|</li>
+                    <li>|x·y| = |x|·|y|</li>
+                    <li>n(A ∪ B) = n(A) + n(B) - n(A ∩ B)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>¿Qué sigue?</h4>
+                <p>Ahora que dominas los fundamentos de números y conjuntos, estás listo para:</p>
+                <ul>
+                    <li>Trabajar con combinatoria y probabilidad</li>
+                    <li>Aplicar estos conceptos en álgebra</li>
+                    <li>Resolver problemas más complejos con números reales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <a href="volume1_index.html" class="nav-btn">⬅️ Volver al Índice</a>
+            <a href="tema1_estadistica.html" class="nav-btn">Siguiente: Tema 1 ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            const sections = document.querySelectorAll('.content-section');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Score tracking
+        let score = {
+            points: 0,
+            completed: 0,
+            total: 5,
+            correct: 0
+        };
+
+        function updateScore() {
+            document.getElementById('points').textContent = score.points;
+            document.getElementById('completed').textContent = score.completed;
+            const accuracy = score.completed > 0 ? Math.round((score.correct / score.completed) * 100) : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+            
+            // Save to localStorage
+            saveProgress();
+        }
+
+        function saveProgress() {
+            const data = JSON.parse(localStorage.getItem('matematicasAvanzadas')) || {
+                puntos: 0,
+                nivel: 1,
+                ejerciciosCompletados: 0,
+                progreso: { volumen1: {} }
+            };
+            
+            data.puntos += score.points;
+            data.ejerciciosCompletados += score.completed;
+            data.progreso.volumen1.preliminares = {
+                completado: score.completed,
+                total: score.total
+            };
+            
+            localStorage.setItem('matematicasAvanzadas', JSON.stringify(data));
+        }
+
+        // Exercise checking
+        function checkExercise(num, correctAnswer) {
+            const input = document.getElementById('ex' + num);
+            const feedback = document.getElementById('feedback' + num);
+            const userAnswer = input.value.trim().toLowerCase();
+            
+            if (!userAnswer) {
+                alert('Por favor, ingresa una respuesta');
+                return;
+            }
+            
+            if (input.dataset.completed) {
+                feedback.className = 'feedback';
+                feedback.textContent = 'Ya completaste este ejercicio';
+                feedback.style.display = 'block';
+                return;
+            }
+            
+            if (userAnswer === correctAnswer.toLowerCase()) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '¡Correcto! +10 puntos 🎉';
+                score.points += 10;
+                score.completed++;
+                score.correct++;
+                input.dataset.completed = 'true';
+                input.disabled = true;
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa una pista.';
+                score.completed++;
+            }
+            
+            updateScore();
+        }
+
+        function showHint(num) {
+            const hint = document.getElementById('hint' + num);
+            hint.style.display = hint.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Interactive tools
+        function classifyNumber() {
+            const input = document.getElementById('numberInput').value.trim();
+            const result = document.getElementById('classifyResult');
+            
+            if (!input) {
+                result.innerHTML = 'Por favor ingresa un número';
+                return;
+            }
+            
+            const num = parseFloat(input);
+            let classification = [];
+            
+            if (!isNaN(num)) {
+                if (Number.isInteger(num)) {
+                    if (num > 0) {
+                        classification.push('Natural (ℕ)');
+                    }
+                    classification.push('Entero (ℤ)');
+                }
+                classification.push('Racional (ℚ)');
+                classification.push('Real (ℝ)');
+                
+                result.innerHTML = `<strong>${input}</strong> pertenece a: ${classification.join(', ')}`;
+            } else {
+                result.innerHTML = 'Este número es irracional (𝕀) y real (ℝ)';
+            }
+        }
+
+        function parseSet(str) {
+            return str.split(',').map(s => s.trim()).filter(s => s !== '');
+        }
+
+        function calculateUnion() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            const union = [...new Set([...a, ...b])];
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A ∪ B =</strong> {${union.join(', ')}}`;
+        }
+
+        function calculateIntersection() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            const intersection = a.filter(x => b.includes(x));
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A ∩ B =</strong> {${intersection.join(', ')}}`;
+        }
+
+        function calculateDifference() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            const difference = a.filter(x => !b.includes(x));
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A - B =</strong> {${difference.join(', ')}}`;
+        }
+
+        function calculateAbsolute() {
+            const num = parseFloat(document.getElementById('absInput').value);
+            const result = document.getElementById('absResult');
+            
+            if (isNaN(num)) {
+                result.innerHTML = 'Por favor ingresa un número válido';
+                return;
+            }
+            
+            result.innerHTML = `<strong>|${num}| = ${Math.abs(num)}</strong>`;
+        }
+
+        // Load saved progress
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = JSON.parse(localStorage.getItem('matematicasAvanzadas')) || {};
+            if (data.progreso && data.progreso.volumen1 && data.progreso.volumen1.preliminares) {
+                const saved = data.progreso.volumen1.preliminares;
+                score.completed = saved.completado || 0;
+                score.correct = saved.completado || 0;
+                updateScore();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Sistemas de Ecuaciones Lineales - Matemáticas Avanzadas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 10px;
+        }
+        
+        .score-item {
+            text-align: center;
+        }
+        
+        .score-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .score-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .tab-button {
+            background: #e0e0e0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .tab-button:hover {
+            background: #d0d0d0;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .theory-content {
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .formula {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .symbol-glossary {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .symbol-glossary h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .symbol-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .symbol {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        
+        .example {
+            background: #e7f3ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #2196F3;
+        }
+        
+        .example h4 {
+            color: #1976D2;
+            margin-bottom: 15px;
+        }
+        
+        .interactive-tool {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tool-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .system-display {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .result-box {
+            background: #f0f7ff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            min-height: 60px;
+        }
+        
+        .result-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .exercise {
+            background: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: border-color 0.3s;
+        }
+        
+        .exercise:hover {
+            border-color: #667eea;
+        }
+        
+        .exercise-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .hint-button {
+            background: #ffc107;
+            color: #333;
+            font-size: 0.9em;
+            padding: 8px 20px;
+        }
+        
+        .hint-box {
+            background: #fff3cd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            display: none;
+        }
+        
+        .feedback {
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+            display: block;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            transition: transform 0.2s;
+        }
+        
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .steps-box {
+            background: #e8f5e9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .score-board {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚖️ Tema 5: Sistemas de Ecuaciones Lineales</h1>
+            <p class="subtitle">Volumen I - Matemáticas Avanzadas</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar">0%</div>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-value" id="scoreValue">0</div>
+                <div class="score-label">Puntos</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="exerciseCount">0/10</div>
+                <div class="score-label">Ejercicios</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="accuracy">0%</div>
+                <div class="score-label">Precisión</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+            <button class="tab-button" onclick="showTab('resumen')">📋 Resumen</button>
+        </div>
+
+        <!-- TEORÍA -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría</h2>
+            
+            <div class="symbol-glossary">
+                <h3>🔤 Glosario de Símbolos</h3>
+                <div class="symbol-item">
+                    <span class="symbol">{</span>
+                    <span>Llave que agrupa las ecuaciones de un sistema</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">x, y, z</span>
+                    <span>Incógnitas del sistema (valores desconocidos a hallar)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">=</span>
+                    <span>Igualdad (relación entre los dos miembros de la ecuación)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">SCD</span>
+                    <span>Sistema Compatible Determinado (solución única)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">SCI</span>
+                    <span>Sistema Compatible Indeterminado (infinitas soluciones)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">SI</span>
+                    <span>Sistema Incompatible (sin solución)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">|A|</span>
+                    <span>Determinante de la matriz de coeficientes</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">A|b</span>
+                    <span>Matriz ampliada (coeficientes + términos independientes)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">rango(A)</span>
+                    <span>Rango de la matriz (número de filas linealmente independientes)</span>
+                </div>
+            </div>
+
+            <div class="theory-content">
+                <h3>1. ¿Qué es un Sistema de Ecuaciones?</h3>
+                <p>Un sistema de ecuaciones lineales es un conjunto de ecuaciones que comparten las mismas incógnitas. La solución es el conjunto de valores que satisfacen todas las ecuaciones simultáneamente.</p>
+                <div class="formula">
+                    { ax + by = c<br>
+                    { dx + ey = f
+                </div>
+
+                <h3>2. Clasificación de Sistemas</h3>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li><strong>Compatible Determinado (SCD):</strong> Tiene solución única</li>
+                    <li><strong>Compatible Indeterminado (SCI):</strong> Tiene infinitas soluciones</li>
+                    <li><strong>Incompatible (SI):</strong> No tiene solución</li>
+                </ul>
+
+                <h3>3. Método de Sustitución</h3>
+                <p><strong>Pasos:</strong></p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>Despejar una incógnita en una ecuación</li>
+                    <li>Sustituir en la otra ecuación</li>
+                    <li>Resolver la ecuación resultante</li>
+                    <li>Sustituir el valor hallado en la primera expresión</li>
+                </ol>
+
+                <h3>4. Método de Igualación</h3>
+                <p><strong>Pasos:</strong></p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>Despejar la misma incógnita en ambas ecuaciones</li>
+                    <li>Igualar las dos expresiones obtenidas</li>
+                    <li>Resolver la ecuación resultante</li>
+                    <li>Sustituir para hallar la otra incógnita</li>
+                </ol>
+
+                <h3>5. Método de Reducción (Eliminación)</h3>
+                <p><strong>Pasos:</strong></p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>Multiplicar las ecuaciones para igualar coeficientes</li>
+                    <li>Sumar o restar para eliminar una incógnita</li>
+                    <li>Resolver la ecuación de una incógnita</li>
+                    <li>Sustituir para hallar la otra</li>
+                </ol>
+
+                <h3>6. Regla de Cramer</h3>
+                <p>Para un sistema de 2 ecuaciones con 2 incógnitas:</p>
+                <div class="formula">
+                    x = |A_x| / |A|<br>
+                    y = |A_y| / |A|
+                </div>
+                <p>Donde |A| es el determinante de coeficientes, |A_x| y |A_y| son los determinantes sustituyendo la columna respectiva por los términos independientes.</p>
+                <p><strong>Condición:</strong> |A| ≠ 0 (sistema compatible determinado)</p>
+
+                <h3>7. Método de Gauss</h3>
+                <p>Transforma la matriz ampliada en forma escalonada mediante operaciones elementales:</p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>Intercambiar filas</li>
+                    <li>Multiplicar una fila por un número ≠ 0</li>
+                    <li>Sumar a una fila otra multiplicada por un número</li>
+                </ul>
+                <p>Después se resuelve por sustitución regresiva.</p>
+
+                <h3>8. Teorema de Rouché-Frobenius</h3>
+                <p>Para un sistema Ax = b:</p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li><strong>SCD:</strong> rango(A) = rango(A|b) = número de incógnitas</li>
+                    <li><strong>SCI:</strong> rango(A) = rango(A|b) < número de incógnitas</li>
+                    <li><strong>SI:</strong> rango(A) ≠ rango(A|b)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EJEMPLOS RESUELTOS -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+            
+            <div class="example">
+                <h4>Ejemplo 1: Método de Sustitución</h4>
+                <p><strong>Sistema:</strong> { x + y = 5  ;  x - y = 1 }</p>
+                <p><strong>Solución:</strong></p>
+                <div class="steps-box">
+                    <div class="step">1️⃣ Despejamos x de la primera: x = 5 - y</div>
+                    <div class="step">2️⃣ Sustituimos en la segunda: (5 - y) - y = 1</div>
+                    <div class="step">3️⃣ Resolvemos: 5 - 2y = 1  →  y = 2</div>
+                    <div class="step">4️⃣ Sustituimos: x = 5 - 2 = 3</div>
+                </div>
+                <p><strong>Respuesta:</strong> x = 3, y = 2</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 2: Método de Reducción</h4>
+                <p><strong>Sistema:</strong> { 2x + 3y = 13  ;  x - y = 1 }</p>
+                <p><strong>Solución:</strong></p>
+                <div class="steps-box">
+                    <div class="step">1️⃣ Multiplicamos la 2ª por 2: 2x - 2y = 2</div>
+                    <div class="step">2️⃣ Restamos: (2x + 3y) - (2x - 2y) = 13 - 2</div>
+                    <div class="step">3️⃣ Simplificamos: 5y = 11  →  y = 2.2</div>
+                    <div class="step">4️⃣ Sustituimos: x - 2.2 = 1  →  x = 3.2</div>
+                </div>
+                <p><strong>Respuesta:</strong> x = 3.2, y = 2.2</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 3: Regla de Cramer</h4>
+                <p><strong>Sistema:</strong> { 2x + y = 8  ;  x + 3y = 11 }</p>
+                <p><strong>Solución:</strong></p>
+                <div class="steps-box">
+                    <div class="step">1️⃣ |A| = |2,1; 1,3| = 2×3 - 1×1 = 5</div>
+                    <div class="step">2️⃣ |A_x| = |8,1; 11,3| = 8×3 - 1×11 = 13</div>
+                    <div class="step">3️⃣ |A_y| = |2,8; 1,11| = 2×11 - 8×1 = 14</div>
+                    <div class="step">4️⃣ x = 13/5 = 2.6,  y = 14/5 = 2.8</div>
+                </div>
+                <p><strong>Respuesta:</strong> x = 2.6, y = 2.8</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 4: Sistema Incompatible</h4>
+                <p><strong>Sistema:</strong> { x + y = 3  ;  2x + 2y = 10 }</p>
+                <p><strong>Análisis:</strong></p>
+                <p>La segunda ecuación es: 2(x + y) = 10  →  x + y = 5</p>
+                <p>Pero la primera dice: x + y = 3</p>
+                <p>Contradicción: 3 ≠ 5</p>
+                <p><strong>Respuesta:</strong> Sistema <strong>Incompatible</strong> (sin solución)</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 5: Sistema Compatible Indeterminado</h4>
+                <p><strong>Sistema:</strong> { x + y = 4  ;  2x + 2y = 8 }</p>
+                <p><strong>Análisis:</strong></p>
+                <p>La segunda ecuación es: 2(x + y) = 8  →  x + y = 4</p>
+                <p>Ambas ecuaciones son equivalentes (la misma información)</p>
+                <p><strong>Respuesta:</strong> Sistema <strong>Compatible Indeterminado</strong></p>
+                <p>Solución general: y = 4 - x (infinitas soluciones)</p>
+            </div>
+        </div>
+
+        <!-- HERRAMIENTAS INTERACTIVAS -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+            
+            <!-- Resolvedor de Sistemas 2x2 -->
+            <div class="interactive-tool">
+                <h3 class="tool-title">🔢 Resolvedor de Sistemas 2×2</h3>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                    Ingresa los coeficientes del sistema:<br>
+                    { a₁x + b₁y = c₁<br>
+                    { a₂x + b₂y = c₂
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
+                    <input type="number" id="sys_a1" placeholder="a₁" step="0.01">
+                    <input type="number" id="sys_b1" placeholder="b₁" step="0.01">
+                    <input type="number" id="sys_c1" placeholder="c₁" step="0.01">
+                    <input type="number" id="sys_a2" placeholder="a₂" step="0.01">
+                    <input type="number" id="sys_b2" placeholder="b₂" step="0.01">
+                    <input type="number" id="sys_c2" placeholder="c₂" step="0.01">
+                </div>
+                <div style="text-align: center;">
+                    <button onclick="solveSystem2x2()">Resolver (Cramer)</button>
+                </div>
+                <div class="result-box" id="sysResult"></div>
+            </div>
+
+            <!-- Clasificador de Sistemas -->
+            <div class="interactive-tool">
+                <h3 class="tool-title">🔍 Clasificador de Sistemas</h3>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                    Analiza el tipo de sistema según sus coeficientes
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
+                    <input type="number" id="class_a1" placeholder="a₁" step="0.01">
+                    <input type="number" id="class_b1" placeholder="b₁" step="0.01">
+                    <input type="number" id="class_c1" placeholder="c₁" step="0.01">
+                    <input type="number" id="class_a2" placeholder="a₂" step="0.01">
+                    <input type="number" id="class_b2" placeholder="b₂" step="0.01">
+                    <input type="number" id="class_c2" placeholder="c₂" step="0.01">
+                </div>
+                <div style="text-align: center;">
+                    <button onclick="classifySystem()">Clasificar Sistema</button>
+                </div>
+                <div class="result-box" id="classResult"></div>
+            </div>
+        </div>
+
+        <!-- EJERCICIOS -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Ejercicios de Práctica</h2>
+            
+            <div class="exercise">
+                <span class="exercise-number">1</span>
+                <strong>Resolver: { x + y = 10  ;  x - y = 2 }. ¿Cuánto vale x?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex1" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(1, 6)">Verificar</button>
+                <button class="hint-button" onclick="showHint(1)">💡 Pista</button>
+                <div class="hint-box" id="hint1">
+                    <strong>Pista:</strong> Suma ambas ecuaciones: (x+y) + (x-y) = 10+2  →  2x = 12  →  x = 6
+                </div>
+                <div class="feedback" id="feedback1"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">2</span>
+                <strong>Del ejercicio anterior, ¿cuánto vale y?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex2" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(2, 4)">Verificar</button>
+                <button class="hint-button" onclick="showHint(2)">💡 Pista</button>
+                <div class="hint-box" id="hint2">
+                    <strong>Pista:</strong> Sustituye x=6 en x+y=10: 6+y=10  →  y=4
+                </div>
+                <div class="feedback" id="feedback2"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">3</span>
+                <strong>Resolver: { 2x + y = 7  ;  x = 2 }. ¿Cuánto vale y?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex3" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(3, 3)">Verificar</button>
+                <button class="hint-button" onclick="showHint(3)">💡 Pista</button>
+                <div class="hint-box" id="hint3">
+                    <strong>Pista:</strong> Sustituye x=2 en la primera: 2(2)+y=7  →  4+y=7  →  y=3
+                </div>
+                <div class="feedback" id="feedback3"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">4</span>
+                <strong>¿Qué tipo de sistema es { x+y=5  ;  2x+2y=10 }? (1=SCD, 2=SCI, 3=SI)</strong>
+                <div class="input-group">
+                    <input type="number" id="ex4" placeholder="Tu respuesta (1, 2 o 3)">
+                </div>
+                <button onclick="checkExercise(4, 2)">Verificar</button>
+                <button class="hint-button" onclick="showHint(4)">💡 Pista</button>
+                <div class="hint-box" id="hint4">
+                    <strong>Pista:</strong> La 2ª ecuación es el doble de la 1ª (ecuaciones proporcionales) → SCI (infinitas soluciones)
+                </div>
+                <div class="feedback" id="feedback4"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">5</span>
+                <strong>¿Qué tipo de sistema es { x+y=3  ;  x+y=5 }? (1=SCD, 2=SCI, 3=SI)</strong>
+                <div class="input-group">
+                    <input type="number" id="ex5" placeholder="Tu respuesta (1, 2 o 3)">
+                </div>
+                <button onclick="checkExercise(5, 3)">Verificar</button>
+                <button class="hint-button" onclick="showHint(5)">💡 Pista</button>
+                <div class="hint-box" id="hint5">
+                    <strong>Pista:</strong> Contradicción: x+y no puede ser 3 y 5 al mismo tiempo → SI (sin solución)
+                </div>
+                <div class="feedback" id="feedback5"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">6</span>
+                <strong>Calcular |A| para { 3x+2y=1  ;  x+y=0 }. |A| = ?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex6" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(6, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(6)">💡 Pista</button>
+                <div class="hint-box" id="hint6">
+                    <strong>Pista:</strong> |A| = |3,2; 1,1| = 3×1 - 2×1 = 3-2 = 1
+                </div>
+                <div class="feedback" id="feedback6"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">7</span>
+                <strong>Si |A| ≠ 0, ¿qué tipo de sistema es? (1=SCD, 2=SCI, 3=SI)</strong>
+                <div class="input-group">
+                    <input type="number" id="ex7" placeholder="Tu respuesta (1, 2 o 3)">
+                </div>
+                <button onclick="checkExercise(7, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(7)">💡 Pista</button>
+                <div class="hint-box" id="hint7">
+                    <strong>Pista:</strong> Si |A| ≠ 0, el sistema es Compatible Determinado (solución única)
+                </div>
+                <div class="feedback" id="feedback7"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">8</span>
+                <strong>Resolver: { x+2y=11  ;  x=3 }. ¿Cuánto vale y?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex8" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(8, 4)">Verificar</button>
+                <button class="hint-button" onclick="showHint(8)">💡 Pista</button>
+                <div class="hint-box" id="hint8">
+                    <strong>Pista:</strong> Sustituye: 3+2y=11  →  2y=8  →  y=4
+                </div>
+                <div class="feedback" id="feedback8"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">9</span>
+                <strong>Resolver: { 3x-y=8  ;  x+y=4 }. ¿Cuánto vale x?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex9" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(9, 3)">Verificar</button>
+                <button class="hint-button" onclick="showHint(9)">💡 Pista</button>
+                <div class="hint-box" id="hint9">
+                    <strong>Pista:</strong> Suma ambas ecuaciones: 4x=12  →  x=3
+                </div>
+                <div class="feedback" id="feedback9"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">10</span>
+                <strong>Del ejercicio anterior, ¿cuánto vale y?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex10" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(10, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(10)">💡 Pista</button>
+                <div class="hint-box" id="hint10">
+                    <strong>Pista:</strong> Sustituye x=3 en x+y=4: 3+y=4  →  y=1
+                </div>
+                <div class="feedback" id="feedback10"></div>
+            </div>
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen</h2>
+            <div class="theory-content">
+                <h3>Conceptos Clave:</h3>
+                <ul style="line-height: 2;">
+                    <li>✓ <strong>SCD:</strong> Solución única (|A| ≠ 0)</li>
+                    <li>✓ <strong>SCI:</strong> Infinitas soluciones (ecuaciones proporcionales)</li>
+                    <li>✓ <strong>SI:</strong> Sin solución (contradicción)</li>
+                    <li>✓ <strong>Sustitución:</strong> Despejar y sustituir</li>
+                    <li>✓ <strong>Reducción:</strong> Sumar/restar para eliminar incógnitas</li>
+                    <li>✓ <strong>Cramer:</strong> x = |Aₓ|/|A|, y = |Aᵧ|/|A| (si |A| ≠ 0)</li>
+                    <li>✓ <strong>Gauss:</strong> Transformar a forma escalonada</li>
+                    <li>✓ <strong>Verificación:</strong> Sustituir solución en las ecuaciones originales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="nav-buttons">
+            <a href="tema4_matrices.html" class="nav-button">⬅️ Tema 4: Matrices</a>
+            <a href="volume1_index.html" class="nav-button">🏠 Índice Volumen I</a>
+            <a href="tema6_vectorial_plano.html" class="nav-button">Tema 6: Vectores Plano ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        
+        // Tab functionality
+        function showTab(tabName) {
+            const sections = document.querySelectorAll('.content-section');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+// Sistema de puntuación
+        let score = 0;
+        let completedExercises = 0;
+        let totalExercises = 10;
+        let correctAnswers = 0;
+
+        // Cargar progreso
+        function loadProgress() {
+            const saved = localStorage.getItem('tema5_progress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                score = data.score || 0;
+                completedExercises = data.completed || 0;
+                correctAnswers = data.correct || 0;
+                updateDisplay();
+            }
+        }
+
+        // Guardar progreso
+        function saveProgress() {
+            localStorage.setItem('tema5_progress', JSON.stringify({
+                score: score,
+                completed: completedExercises,
+                correct: correctAnswers
+            }));
+        }
+
+        // Actualizar visualización
+        function updateDisplay() {
+            document.getElementById('scoreValue').textContent = score;
+            document.getElementById('exerciseCount').textContent = `${completedExercises}/${totalExercises}`;
+            const accuracy = completedExercises > 0 ? Math.round((correctAnswers / completedExercises) * 100) : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+            const progress = (completedExercises / totalExercises) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        // Resolvedor de Sistemas 2x2 (Regla de Cramer)
+        function solveSystem2x2() {
+            const a1 = parseFloat(document.getElementById('sys_a1').value);
+            const b1 = parseFloat(document.getElementById('sys_b1').value);
+            const c1 = parseFloat(document.getElementById('sys_c1').value);
+            const a2 = parseFloat(document.getElementById('sys_a2').value);
+            const b2 = parseFloat(document.getElementById('sys_b2').value);
+            const c2 = parseFloat(document.getElementById('sys_c2').value);
+            const resultDiv = document.getElementById('sysResult');
+            
+            if ([a1, b1, c1, a2, b2, c2].some(isNaN)) {
+                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los coeficientes.</p>';
+                return;
+            }
+            
+            // Determinante principal
+            const detA = a1 * b2 - a2 * b1;
+            
+            resultDiv.innerHTML = `<h4>Sistema:</h4>
+                <div class="system-display">
+                    { ${a1}x + ${b1}y = ${c1}<br>
+                    { ${a2}x + ${b2}y = ${c2}
+                </div>`;
+            
+            if (Math.abs(detA) < 0.0001) {
+                // Verificar si es SCI o SI
+                const ratio1 = a1 / a2;
+                const ratio2 = b1 / b2;
+                const ratio3 = c1 / c2;
+                
+                if (Math.abs(ratio1 - ratio2) < 0.0001 && Math.abs(ratio1 - ratio3) < 0.0001) {
+                    resultDiv.innerHTML += `
+                        <p><strong>|A| = ${detA.toFixed(4)} ≈ 0</strong></p>
+                        <p style="color: #ffc107;"><strong>Sistema Compatible Indeterminado (SCI)</strong></p>
+                        <p>Las ecuaciones son proporcionales → Infinitas soluciones</p>
+                    `;
+                } else {
+                    resultDiv.innerHTML += `
+                        <p><strong>|A| = ${detA.toFixed(4)} ≈ 0</strong></p>
+                        <p style="color: red;"><strong>Sistema Incompatible (SI)</strong></p>
+                        <p>Contradicción → Sin solución</p>
+                    `;
+                }
+                return;
+            }
+            
+            // Determinantes para x e y
+            const detX = c1 * b2 - c2 * b1;
+            const detY = a1 * c2 - a2 * c1;
+            
+            const x = detX / detA;
+            const y = detY / detA;
+            
+            resultDiv.innerHTML += `
+                <h4>Solución (Regla de Cramer):</h4>
+                <p><strong>Cálculo de determinantes:</strong></p>
+                <p>|A| = ${a1}×${b2} - ${a2}×${b1} = ${detA.toFixed(4)}</p>
+                <p>|Aₓ| = ${c1}×${b2} - ${c2}×${b1} = ${detX.toFixed(4)}</p>
+                <p>|Aᵧ| = ${a1}×${c2} - ${a2}×${c1} = ${detY.toFixed(4)}</p>
+                <p><strong>Solución:</strong></p>
+                <p style="font-size: 1.2em; color: #667eea;">
+                    <strong>x = ${x.toFixed(4)}</strong><br>
+                    <strong>y = ${y.toFixed(4)}</strong>
+                </p>
+                <p style="margin-top: 15px; color: #28a745;">
+                    ✓ Sistema Compatible Determinado (solución única)
+                </p>
+            `;
+        }
+
+        // Clasificador de Sistemas
+        function classifySystem() {
+            const a1 = parseFloat(document.getElementById('class_a1').value);
+            const b1 = parseFloat(document.getElementById('class_b1').value);
+            const c1 = parseFloat(document.getElementById('class_c1').value);
+            const a2 = parseFloat(document.getElementById('class_a2').value);
+            const b2 = parseFloat(document.getElementById('class_b2').value);
+            const c2 = parseFloat(document.getElementById('class_c2').value);
+            const resultDiv = document.getElementById('classResult');
+            
+            if ([a1, b1, c1, a2, b2, c2].some(isNaN)) {
+                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los coeficientes.</p>';
+                return;
+            }
+            
+            resultDiv.innerHTML = `<h4>Sistema:</h4>
+                <div class="system-display">
+                    { ${a1}x + ${b1}y = ${c1}<br>
+                    { ${a2}x + ${b2}y = ${c2}
+                </div>`;
+            
+            const detA = a1 * b2 - a2 * b1;
+            
+            resultDiv.innerHTML += `<p><strong>|A| = ${detA.toFixed(4)}</strong></p>`;
+            
+            if (Math.abs(detA) > 0.0001) {
+                resultDiv.innerHTML += `
+                    <p style="color: #28a745; font-size: 1.2em;">
+                        <strong>✓ Sistema Compatible Determinado (SCD)</strong>
+                    </p>
+                    <p>El determinante es diferente de cero → Solución única</p>
+                    <p>Puedes usar la Regla de Cramer para resolverlo.</p>
+                `;
+            } else {
+                // Calcular razones
+                let ratio1, ratio2, ratio3;
+                
+                if (Math.abs(a2) > 0.0001) ratio1 = a1 / a2;
+                else if (Math.abs(a1) > 0.0001) ratio1 = Infinity;
+                else ratio1 = 0;
+                
+                if (Math.abs(b2) > 0.0001) ratio2 = b1 / b2;
+                else if (Math.abs(b1) > 0.0001) ratio2 = Infinity;
+                else ratio2 = 0;
+                
+                if (Math.abs(c2) > 0.0001) ratio3 = c1 / c2;
+                else if (Math.abs(c1) > 0.0001) ratio3 = Infinity;
+                else ratio3 = 0;
+                
+                const sameRatio = Math.abs(ratio1 - ratio2) < 0.01 && Math.abs(ratio1 - ratio3) < 0.01;
+                
+                if (sameRatio) {
+                    resultDiv.innerHTML += `
+                        <p style="color: #ffc107; font-size: 1.2em;">
+                            <strong>⚠ Sistema Compatible Indeterminado (SCI)</strong>
+                        </p>
+                        <p>Ecuaciones proporcionales → Infinitas soluciones</p>
+                        <p>Razones: ${ratio1.toFixed(2)} = ${ratio2.toFixed(2)} = ${ratio3.toFixed(2)}</p>
+                    `;
+                } else {
+                    resultDiv.innerHTML += `
+                        <p style="color: #dc3545; font-size: 1.2em;">
+                            <strong>✗ Sistema Incompatible (SI)</strong>
+                        </p>
+                        <p>Contradicción → Sin solución</p>
+                        <p>Las ecuaciones son contradictorias (rectas paralelas)</p>
+                    `;
+                }
+            }
+        }
+
+        // Mostrar pistas
+        function showHint(n) {
+            const hint = document.getElementById('hint' + n);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Verificar ejercicio
+        function checkExercise(n, correct, tolerance = 0.1) {
+            const input = document.getElementById('ex' + n);
+            const feedback = document.getElementById('feedback' + n);
+            const userAnswer = parseFloat(input.value);
+            
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Por favor, introduce un valor numérico.';
+                return;
+            }
+            
+            const isCorrect = Math.abs(userAnswer - correct) <= tolerance;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ ¡Correcto! +10 puntos';
+                if (!input.dataset.completed) {
+                    score += 10;
+                    completedExercises++;
+                    correctAnswers++;
+                    input.dataset.completed = 'true';
+                    input.disabled = true;
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = `❌ Incorrecto. La respuesta correcta es ${correct}.`;
+                if (!input.dataset.completed) {
+                    completedExercises++;
+                    input.dataset.completed = 'true';
+                }
+            }
+            
+            updateDisplay();
+            saveProgress();
+        }
+
+        // Inicializar
+        loadProgress();
+    </script>
+</body>
+</html>

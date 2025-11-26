@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 Tema 2: Polinomios y Fracciones Algebraicas</title>
+    <link rel="stylesheet" href="tema_styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">🏠</a><span>›</span>
+            <a href="../index.html">Mates Avanzadas</a><span>›</span>
+            <a href="volume1_index.html">Vol I</a><span>›</span>
+            <span>Tema 2</span>
+        </nav>
+
+        <div class="header">
+            <h1>📐 Polinomios y Fracciones Algebraicas</h1>
+            <p>Operaciones, factorización y simplificación</p>
+        </div>
+
+        <div class="score-panel">
+            <div class="score-item"><div class="score-number" id="points">0</div><div>Puntos</div></div>
+            <div class="score-item"><div class="score-number" id="completed">0</div><div>Ejercicios</div></div>
+            <div class="score-item"><div class="score-number" id="accuracy">0%</div><div>Precisión</div></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+        </div>
+
+        <div class="content active" id="teoria">
+            <h2>Polinomios</h2>
+            
+            <h3>📖 Glosario de Símbolos Matemáticos</h3>
+            <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:25px;margin:20px 0;border-radius:15px">
+                <h4 style="color:white;margin:0 0 15px 0">Símbolos utilizados en Polinomios y Álgebra:</h4>
+                <ul style="list-style:none;padding-left:0;line-height:2">
+                    <li><strong>P(x)</strong> = Polinomio en la variable x</li>
+                    <li><strong>a<sub>n</sub></strong> = Coeficiente del término de grado n</li>
+                    <li><strong>deg(P)</strong> = Grado del polinomio P (mayor exponente)</li>
+                    <li><strong>x<sup>n</sup></strong> = x elevado a la potencia n</li>
+                    <li><strong>±</strong> = Más o menos (indica dos posibles signos)</li>
+                    <li><strong>÷</strong> = División</li>
+                    <li><strong>≡</strong> = Idéntico a / identidad algebraica</li>
+                    <li><strong>∀x</strong> = Para todo valor de x</li>
+                    <li><strong>(x-a)</strong> = Factor lineal (a es raíz del polinomio)</li>
+                    <li><strong>√</strong> = Raíz cuadrada</li>
+                    <li><strong>∛</strong> = Raíz cúbica</li>
+                </ul>
+                <p style="margin-top:20px;padding-top:20px;border-top:2px solid rgba(255,255,255,0.3)">
+                    <strong>💡 Consejo:</strong> Familiarízate con estos símbolos antes de comenzar el estudio del tema. Te ayudará a leer y comprender las fórmulas matemáticas con mayor facilidad.
+                </p>
+            </div>
+            
+            <p>Un polinomio es una expresión algebraica de la forma: P(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀</p>
+            
+            <div class="concept-box">
+                <h4>División de Polinomios - Regla de Ruffini</h4>
+                <p>Método rápido para dividir un polinomio por (x - a)</p>
+            </div>
+
+            <div class="formula-box">
+                Teorema del Resto: P(a) = resto de P(x)/(x-a)
+            </div>
+        </div>
+
+        <div class="content" id="ejemplos">
+            <h2>Ejemplos Resueltos</h2>
+            <div class="example-box">
+                <h4>Ejemplo: Factorizar x² + 5x + 6</h4>
+                <p>= (x + 2)(x + 3)</p>
+            </div>
+        </div>
+
+        <div class="content" id="herramientas">
+            <h2>Calculadora de Polinomios</h2>
+            <div class="interactive-tool">
+                <h3>Evaluador de Polinomios</h3>
+                <p>Próximamente: herramientas interactivas</p>
+            </div>
+        </div>
+
+        <div class="content" id="practica">
+            <h2>Ejercicios</h2>
+            <div class="exercise">
+                <h4>Factoriza: x² - 9</h4>
+                <input type="text" id="ex1" class="exercise-input" placeholder="(x+a)(x+b)">
+                <button class="check-button" onclick="checkEx(1,'(x+3)(x-3)')">Verificar</button>
+                <div class="feedback" id="f1"></div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="tema1_estadistica.html" class="nav-btn">⬅️ Anterior</a>
+            <a href="volume1_index.html" class="nav-btn">📚 Índice</a>
+            <a href="tema3_geometria_trig.html" class="nav-btn">Siguiente ➡️</a>
+        </div>
+    </div>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;color:#333;padding:20px}.container{max-width:1200px;margin:0 auto}.breadcrumb{background:rgba(255,255,255,0.9);padding:15px 25px;border-radius:15px;margin-bottom:20px;display:flex;gap:10px}.breadcrumb a{color:#667eea;text-decoration:none}.header{background:rgba(255,255,255,0.98);border-radius:25px;padding:40px;margin-bottom:30px;text-align:center}.header h1{font-size:2.5em;color:#667eea}.tabs{display:flex;gap:10px;margin-bottom:20px;background:rgba(255,255,255,0.9);padding:15px;border-radius:15px;flex-wrap:wrap}.tab-button{background:#e0e0e0;border:none;padding:12px 25px;border-radius:10px;cursor:pointer;font-weight:600}.tab-button.active{background:linear-gradient(135deg,#667eea,#764ba2);color:white}.content{display:none;background:rgba(255,255,255,0.98);border-radius:20px;padding:35px;margin-bottom:20px}.content.active{display:block}h2{color:#667eea;margin-bottom:20px}p{line-height:1.8;margin-bottom:15px}.concept-box{background:#f0f4ff;border-left:5px solid #667eea;padding:20px;margin:20px 0;border-radius:10px}.formula-box{background:#fff8e1;border:2px dashed #f59e0b;padding:20px;margin:20px 0;border-radius:10px;text-align:center;font-weight:bold}.example-box{background:#e8f5e9;border-left:5px solid #10b981;padding:20px;margin:20px 0;border-radius:10px}.interactive-tool{background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:30px;border-radius:15px;margin:25px 0}.exercise{background:#f8f9fa;padding:20px;border-radius:12px;margin:15px 0;border:2px solid #e0e0e0}.exercise-input{padding:10px;border:2px solid #ddd;border-radius:8px;margin:10px 10px 10px 0}.check-button{background:#10b981;color:white;border:none;padding:10px 25px;border-radius:8px;cursor:pointer;font-weight:bold}.feedback{margin-top:15px;padding:15px;border-radius:8px;display:none}.feedback.correct{background:#d1fae5;color:#065f46;border:2px solid #10b981;display:block}.feedback.incorrect{background:#fee2e2;color:#991b1b;border:2px solid #ef4444;display:block}.score-panel{background:linear-gradient(135deg,#10b981,#059669);color:white;padding:20px;border-radius:15px;margin:20px 0;display:flex;justify-content:space-around;flex-wrap:wrap}.score-item{text-align:center;padding:10px}.score-item .score-number{font-size:2.5em;font-weight:bold}.navigation-buttons{display:flex;justify-content:space-between;margin:30px 0;gap:15px;flex-wrap:wrap}.nav-btn{background:rgba(255,255,255,0.95);color:#667eea;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold}
+    </style>
+
+    <script>
+        function showTab(t){document.querySelectorAll('.content').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));document.getElementById(t).classList.add('active');event.target.classList.add('active')}
+        let score={points:0,completed:0,correct:0};
+        function updateScore(){document.getElementById('points').textContent=score.points;document.getElementById('completed').textContent=score.completed;document.getElementById('accuracy').textContent=score.completed>0?Math.round((score.correct/score.completed)*100)+'%':'0%';const d=JSON.parse(localStorage.getItem('matematicasAvanzadas'))||{puntos:0,ejerciciosCompletados:0,progreso:{volumen1:{}}};d.puntos+=score.points;d.ejerciciosCompletados+=1;d.progreso.volumen1.tema2={completado:score.completed,total:5};localStorage.setItem('matematicasAvanzadas',JSON.stringify(d));score.points=0}
+        function checkEx(n,c){const i=document.getElementById('ex'+n),f=document.getElementById('f'+n);if(i.dataset.completed)return;if(i.value.replace(/\s/g,'').toLowerCase()===c.replace(/\s/g,'').toLowerCase()){f.className='feedback correct';f.textContent='¡Correcto! +10 puntos';score.points+=10;score.completed++;score.correct++;i.disabled=true;i.dataset.completed='true'}else{f.className='feedback incorrect';f.textContent='Incorrecto';score.completed++}updateScore()}
+    </script>
+</body>
+</html>

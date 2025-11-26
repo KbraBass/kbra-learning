@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 Tema 2: Polinomios y Fracciones Algebraicas</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 20px;}
+        .breadcrumb {background: rgba(255, 255, 255, 0.9); padding: 15px 25px; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;}
+        .breadcrumb a {color: #667eea; text-decoration: none;}
+        .breadcrumb a:hover {text-decoration: underline;}
+        .header {background: rgba(255, 255, 255, 0.98); border-radius: 25px; padding: 40px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); text-align: center;}
+        .header h1 {font-size: 2.8em; color: #667eea; margin-bottom: 15px;}
+        .tabs {display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; background: rgba(255, 255, 255, 0.9); padding: 15px; border-radius: 15px;}
+        .tab-button {background: #e0e0e0; border: none; padding: 12px 25px; border-radius: 10px; cursor: pointer; font-size: 1em; font-weight: 600; transition: all 0.3s ease; color: #666;}
+        .tab-button:hover {background: #d0d0d0;}
+        .tab-button.active {background: linear-gradient(135deg, #667eea, #764ba2); color: white;}
+        .content-section {display: none; background: rgba(255, 255, 255, 0.98); border-radius: 20px; padding: 35px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);}
+        .content-section.active {display: block; animation: fadeIn 0.4s ease;}
+        @keyframes fadeIn {from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);}}
+        h2 {color: #667eea; font-size: 2em; margin-bottom: 20px;}
+        h3 {color: #764ba2; font-size: 1.5em; margin: 25px 0 15px 0;}
+        p {line-height: 1.8; margin-bottom: 15px; font-size: 1.05em;}
+        .concept-box {background: #f0f4ff; border-left: 5px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 10px;}
+        .formula-box {background: #fff8e1; border: 2px dashed #f59e0b; padding: 20px; margin: 20px 0; border-radius: 10px; text-align: center; font-size: 1.3em; font-weight: bold;}
+        .example-box {background: #e8f5e9; border-left: 5px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 10px;}
+        .interactive-tool {background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 15px; margin: 25px 0;}
+        .input-group {margin: 15px 0;}
+        .input-group label {display: block; margin-bottom: 8px; font-weight: 600;}
+        .input-group input, .input-group select {width: 100%; max-width: 300px; padding: 12px; border: none; border-radius: 8px; font-size: 1em;}
+        .calc-button {background: white; color: #667eea; border: none; padding: 12px 30px; border-radius: 10px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 15px 10px 0 0; transition: all 0.3s ease;}
+        .calc-button:hover {transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);}
+        .result-box {background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; margin-top: 20px; min-height: 60px; font-size: 1.1em;}
+        .exercise {background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 15px 0; border: 2px solid #e0e0e0;}
+        .exercise-input {padding: 10px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em; width: 200px; margin: 10px 10px 10px 0;}
+        .check-button {background: #10b981; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;}
+        .hint-button {background: #f59e0b; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; margin-left: 10px;}
+        .feedback {margin-top: 15px; padding: 15px; border-radius: 8px; font-weight: bold; display: none;}
+        .feedback.correct {background: #d1fae5; color: #065f46; border: 2px solid #10b981; display: block;}
+        .feedback.incorrect {background: #fee2e2; color: #991b1b; border: 2px solid #ef4444; display: block;}
+        .hint-box {background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin-top: 10px; border-radius: 8px; display: none;}
+        .score-panel {background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 20px; border-radius: 15px; margin: 20px 0; display: flex; justify-content: space-around; flex-wrap: wrap;}
+        .score-item {text-align: center; padding: 10px;}
+        .score-item .score-number {font-size: 2.5em; font-weight: bold;}
+        .navigation-buttons {display: flex; justify-content: space-between; margin: 30px 0; gap: 15px; flex-wrap: wrap;}
+        .nav-btn {background: rgba(255, 255, 255, 0.95); color: #667eea; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);}
+        .nav-btn:hover {background: white; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);}
+        ul {margin-left: 25px; line-height: 1.8;}
+        li {margin: 10px 0;}
+        table {width: 100%; border-collapse: collapse; margin: 20px 0;}
+        th, td {padding: 12px; border: 1px solid #ddd; text-align: left;}
+        th {background: #667eea; color: white;}
+        @media (max-width: 768px) {.header h1 {font-size: 2em;} .tabs {flex-direction: column;} .tab-button {width: 100%;}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">🏠 Inicio</a><span>›</span>
+            <a href="../index.html">Mates Avanzadas</a><span>›</span>
+            <a href="volume1_index.html">Volumen I</a><span>›</span>
+            <span>Tema 2: Polinomios</span>
+        </nav>
+
+        <div class="header">
+            <h1>📐 Tema 2: Polinomios y Fracciones Algebraicas</h1>
+            <p class="subtitle">Operaciones, división, factorización y simplificación</p>
+        </div>
+
+        <div class="score-panel">
+            <div class="score-item"><div class="score-number" id="points">0</div><div class="score-label">Puntos</div></div>
+            <div class="score-item"><div class="score-number" id="completed">0</div><div class="score-label">Ejercicios</div></div>
+            <div class="score-item"><div class="score-number" id="accuracy">0%</div><div class="score-label">Precisión</div></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+            <button class="tab-button" onclick="showTab('resumen')">📋 Resumen</button>
+        </div>
+
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Polinomios</h2>
+
+            <h3>📖 Glosario de Símbolos Matemáticos</h3>
+            <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:25px;margin:20px 0;border-radius:15px">
+                <h4 style="color:white;margin:0 0 15px 0">Símbolos utilizados en Polinomios y Álgebra:</h4>
+                <ul style="list-style:none;padding-left:0;line-height:2">
+                    <li><strong>P(x)</strong> = Polinomio en la variable x</li>
+                    <li><strong>a<sub>n</sub></strong> = Coeficiente del término de grado n</li>
+                    <li><strong>deg(P)</strong> = Grado del polinomio P (mayor exponente)</li>
+                    <li><strong>x<sup>n</sup></strong> = x elevado a la potencia n</li>
+                    <li><strong>±</strong> = Más o menos (indica dos posibles signos)</li>
+                    <li><strong>÷</strong> = División</li>
+                    <li><strong>≡</strong> = Idéntico a / identidad algebraica</li>
+                    <li><strong>∀x</strong> = Para todo valor de x</li>
+                    <li><strong>(x-a)</strong> = Factor lineal (a es raíz del polinomio)</li>
+                    <li><strong>√</strong> = Raíz cuadrada</li>
+                    <li><strong>∛</strong> = Raíz cúbica</li>
+                </ul>
+                <p style="margin-top:20px;padding-top:20px;border-top:2px solid rgba(255,255,255,0.3)">
+                    <strong>💡 Consejo:</strong> Familiarízate con estos símbolos antes de comenzar el estudio del tema.
+                </p>
+            </div>
+
+            <h3>1. Definición de Polinomio</h3>
+            <div class="concept-box">
+                <h4>Polinomio</h4>
+                <p>Un polinomio es una expresión algebraica de la forma:</p>
+                <div class="formula-box">
+                    P(x) = a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x + a<sub>0</sub>
+                </div>
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>a<sub>n</sub>, a<sub>n-1</sub>, ..., a<sub>0</sub></strong> son los coeficientes (números reales)</li>
+                    <li><strong>n</strong> es el grado del polinomio (entero no negativo)</li>
+                    <li><strong>x</strong> es la variable o indeterminada</li>
+                    <li><strong>a<sub>n</sub> ≠ 0</strong> (coeficiente principal)</li>
+                </ul>
+            </div>
+
+            <h3>2. Operaciones con Polinomios</h3>
+            
+            <div class="concept-box">
+                <h4>Suma y Resta</h4>
+                <p>Se suman o restan los coeficientes de los términos del mismo grado.</p>
+                <p><strong>Ejemplo:</strong> (3x² + 2x - 5) + (x² - 4x + 3) = 4x² - 2x - 2</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>Multiplicación</h4>
+                <p>Se multiplica cada término del primer polinomio por cada término del segundo.</p>
+                <p><strong>Ejemplo:</strong> (x + 2)(x - 3) = x² - 3x + 2x - 6 = x² - x - 6</p>
+            </div>
+
+            <h3>3. División de Polinomios - Regla de Ruffini</h3>
+            <div class="concept-box">
+                <h4>Método de Ruffini</h4>
+                <p>Método rápido para dividir un polinomio P(x) entre un binomio de la forma (x - a).</p>
+                <p><strong>Pasos:</strong></p>
+                <ol>
+                    <li>Escribir los coeficientes del polinomio</li>
+                    <li>Colocar el valor 'a' a la izquierda</li>
+                    <li>Bajar el primer coeficiente</li>
+                    <li>Multiplicar por 'a' y sumar al siguiente coeficiente</li>
+                    <li>Repetir hasta el final</li>
+                    <li>El último número es el resto</li>
+                </ol>
+            </div>
+
+            <div class="formula-box">
+                <strong>Teorema del Resto:</strong><br>
+                P(a) = resto de P(x) ÷ (x - a)
+            </div>
+
+            <h3>4. Factorización</h3>
+            <div class="concept-box">
+                <h4>Principales Identidades Notables</h4>
+                <table>
+                    <tr><th>Identidad</th><th>Desarrollo</th></tr>
+                    <tr><td>(a + b)²</td><td>a² + 2ab + b²</td></tr>
+                    <tr><td>(a - b)²</td><td>a² - 2ab + b²</td></tr>
+                    <tr><td>(a + b)(a - b)</td><td>a² - b²</td></tr>
+                    <tr><td>(a + b)³</td><td>a³ + 3a²b + 3ab² + b³</td></tr>
+                    <tr><td>(a - b)³</td><td>a³ - 3a²b + 3ab² - b³</td></tr>
+                </table>
+            </div>
+
+            <h3>5. Fracciones Algebraicas</h3>
+            <div class="concept-box">
+                <h4>Simplificación</h4>
+                <p>Para simplificar una fracción algebraica:</p>
+                <ol>
+                    <li>Factorizar numerador y denominador</li>
+                    <li>Cancelar factores comunes</li>
+                    <li>El resultado es la fracción simplificada</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="example-box">
+                <h4>Ejemplo 1: Suma de Polinomios</h4>
+                <p><strong>Problema:</strong> (2x³ + 3x² - x + 5) + (x³ - 2x² + 4x - 3)</p>
+                <p><strong>Solución:</strong></p>
+                <p>Agrupamos términos del mismo grado:</p>
+                <p>= (2x³ + x³) + (3x² - 2x²) + (-x + 4x) + (5 - 3)</p>
+                <p>= 3x³ + x² + 3x + 2</p>
+                <p><strong>Respuesta:</strong> 3x³ + x² + 3x + 2</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 2: Multiplicación de Polinomios</h4>
+                <p><strong>Problema:</strong> (x + 3)(2x - 5)</p>
+                <p><strong>Solución:</strong></p>
+                <p>Aplicamos la propiedad distributiva:</p>
+                <p>= x · 2x + x · (-5) + 3 · 2x + 3 · (-5)</p>
+                <p>= 2x² - 5x + 6x - 15</p>
+                <p>= 2x² + x - 15</p>
+                <p><strong>Respuesta:</strong> 2x² + x - 15</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 3: División por Ruffini</h4>
+                <p><strong>Problema:</strong> Dividir (x³ - 6x² + 11x - 6) ÷ (x - 2)</p>
+                <p><strong>Solución:</strong></p>
+                <p>Coeficientes: [1, -6, 11, -6] | Divisor: x - 2, entonces a = 2</p>
+                <pre style="background: #f0f0f0; padding: 15px; border-radius: 8px;">
+    1   -6   11   -6
+2 |     2   -8    6
+    ─────────────────
+    1   -4    3    0
+                </pre>
+                <p><strong>Cociente:</strong> x² - 4x + 3</p>
+                <p><strong>Resto:</strong> 0 (entonces 2 es raíz del polinomio)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 4: Factorización</h4>
+                <p><strong>Problema:</strong> Factorizar x² - 9</p>
+                <p><strong>Solución:</strong></p>
+                <p>Reconocemos la diferencia de cuadrados: a² - b²</p>
+                <p>x² - 9 = x² - 3²</p>
+                <p>Aplicamos: a² - b² = (a + b)(a - b)</p>
+                <p><strong>Respuesta:</strong> (x + 3)(x - 3)</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 5: Simplificación de Fracción Algebraica</h4>
+                <p><strong>Problema:</strong> Simplificar (x² - 4)/(x² + 4x + 4)</p>
+                <p><strong>Solución:</strong></p>
+                <p>Paso 1: Factorizar numerador y denominador</p>
+                <p>Numerador: x² - 4 = (x + 2)(x - 2)</p>
+                <p>Denominador: x² + 4x + 4 = (x + 2)²</p>
+                <p>Paso 2: Sustituir y simplificar</p>
+                <p>= (x + 2)(x - 2) / (x + 2)²</p>
+                <p>= (x - 2) / (x + 2)</p>
+                <p><strong>Respuesta:</strong> (x - 2)/(x + 2), con x ≠ -2</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="herramientas">
+            <h2>🧮 Herramientas Interactivas</h2>
+
+            <div class="interactive-tool">
+                <h3>Evaluador de Polinomios</h3>
+                <p>Calcula el valor de un polinomio para un valor específico de x</p>
+                
+                <div class="input-group">
+                    <label>Coeficientes (separa por comas, de mayor a menor grado):</label>
+                    <input type="text" id="poly-coeffs" placeholder="Ej: 1,-2,3 para x²-2x+3">
+                </div>
+                
+                <div class="input-group">
+                    <label>Valor de x:</label>
+                    <input type="number" id="poly-x" placeholder="Ej: 2">
+                </div>
+                
+                <button class="calc-button" onclick="evaluatePolynomial()">Evaluar</button>
+                <div class="result-box" id="poly-result"></div>
+            </div>
+
+            <div class="interactive-tool">
+                <h3>Calculadora de Ruffini</h3>
+                <p>Divide un polinomio entre (x - a) usando el método de Ruffini</p>
+                
+                <div class="input-group">
+                    <label>Coeficientes del polinomio:</label>
+                    <input type="text" id="ruffini-coeffs" placeholder="Ej: 1,-6,11,-6">
+                </div>
+                
+                <div class="input-group">
+                    <label>Valor de a (divisor x-a):</label>
+                    <input type="number" id="ruffini-a" placeholder="Ej: 2">
+                </div>
+                
+                <button class="calc-button" onclick="calculateRuffini()">Calcular</button>
+                <div class="result-box" id="ruffini-result"></div>
+            </div>
+
+            <div class="interactive-tool">
+                <h3>Detector de Raíces</h3>
+                <p>Encuentra las raíces racionales de un polinomio</p>
+                
+                <div class="input-group">
+                    <label>Coeficientes:</label>
+                    <input type="text" id="roots-coeffs" placeholder="Ej: 1,0,-1 para x²-1">
+                </div>
+                
+                <button class="calc-button" onclick="findRoots()">Buscar Raíces</button>
+                <div class="result-box" id="roots-result"></div>
+            </div>
+        </div>
+
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+
+            <div class="exercise">
+                <h4>Ejercicio 1: ¿Cuál es el grado del polinomio 5x⁴ - 3x² + 7?</h4>
+                <input type="number" id="ex1" class="exercise-input" placeholder="Grado">
+                <button class="check-button" onclick="checkExercise(1, '4')">Verificar</button>
+                <button class="hint-button" onclick="showHint(1)">💡 Pista</button>
+                <div class="hint-box" id="hint1">El grado es el mayor exponente que aparece en el polinomio.</div>
+                <div class="feedback" id="feedback1"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 2: Suma (3x² + 2x - 1) + (x² - 3x + 4). Coeficiente de x²:</h4>
+                <input type="number" id="ex2" class="exercise-input" placeholder="Coeficiente">
+                <button class="check-button" onclick="checkExercise(2, '4')">Verificar</button>
+                <button class="hint-button" onclick="showHint(2)">💡 Pista</button>
+                <div class="hint-box" id="hint2">Suma los coeficientes de x²: 3 + 1 = ?</div>
+                <div class="feedback" id="feedback2"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 3: Multiplica (x + 2)(x + 3). Término independiente:</h4>
+                <input type="number" id="ex3" class="exercise-input" placeholder="Resultado">
+                <button class="check-button" onclick="checkExercise(3, '6')">Verificar</button>
+                <button class="hint-button" onclick="showHint(3)">💡 Pista</button>
+                <div class="hint-box" id="hint3">El término independiente es 2 × 3 = ?</div>
+                <div class="feedback" id="feedback3"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 4: Factoriza x² - 16. ¿Cuál es un factor?</h4>
+                <input type="text" id="ex4" class="exercise-input" placeholder="Ej: (x+4)">
+                <button class="check-button" onclick="checkExercise(4, '(x+4)', true)">Verificar</button>
+                <button class="hint-button" onclick="showHint(4)">💡 Pista</button>
+                <div class="hint-box" id="hint4">Es una diferencia de cuadrados: x² - 4²</div>
+                <div class="feedback" id="feedback4"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 5: Si P(x) = x² - 5x + 6, calcula P(2):</h4>
+                <input type="number" id="ex5" class="exercise-input" placeholder="Resultado">
+                <button class="check-button" onclick="checkExercise(5, '0')">Verificar</button>
+                <button class="hint-button" onclick="showHint(5)">💡 Pista</button>
+                <div class="hint-box" id="hint5">Sustituye x=2: (2)² - 5(2) + 6 = ?</div>
+                <div class="feedback" id="feedback5"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 6: Desarrolla (x + 5)². Coeficiente de x:</h4>
+                <input type="number" id="ex6" class="exercise-input" placeholder="Coeficiente">
+                <button class="check-button" onclick="checkExercise(6, '10')">Verificar</button>
+                <button class="hint-button" onclick="showHint(6)">💡 Pista</button>
+                <div class="hint-box" id="hint6">Fórmula: (a+b)² = a² + 2ab + b². El término 2ab = 2(1)(5)x</div>
+                <div class="feedback" id="feedback6"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 7: Divide x³ - 1 entre x - 1 (Ruffini). Resto:</h4>
+                <input type="number" id="ex7" class="exercise-input" placeholder="Resto">
+                <button class="check-button" onclick="checkExercise(7, '0')">Verificar</button>
+                <button class="hint-button" onclick="showHint(7)">💡 Pista</button>
+                <div class="hint-box" id="hint7">Por el teorema del resto: P(1) = 1³ - 1 = ?</div>
+                <div class="feedback" id="feedback7"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 8: Factoriza x² + 5x + 6. Suma de las raíces:</h4>
+                <input type="number" id="ex8" class="exercise-input" placeholder="Suma">
+                <button class="check-button" onclick="checkExercise(8, '-5')">Verificar</button>
+                <button class="hint-button" onclick="showHint(8)">💡 Pista</button>
+                <div class="hint-box" id="hint8">Las raíces son -2 y -3. Suma: -2 + (-3) = ?</div>
+                <div class="feedback" id="feedback8"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 9: Simplifica (x² - 9)/(x + 3). Resultado para x=2:</h4>
+                <input type="number" id="ex9" class="exercise-input" placeholder="Valor">
+                <button class="check-button" onclick="checkExercise(9, '-1')">Verificar</button>
+                <button class="hint-button" onclick="showHint(9)">💡 Pista</button>
+                <div class="hint-box" id="hint9">Factoriza: (x+3)(x-3)/(x+3) = x-3. Luego evalúa en x=2</div>
+                <div class="feedback" id="feedback9"></div>
+            </div>
+
+            <div class="exercise">
+                <h4>Ejercicio 10: ¿Cuántas raíces reales tiene x² + 1?</h4>
+                <input type="number" id="ex10" class="exercise-input" placeholder="Número">
+                <button class="check-button" onclick="checkExercise(10, '0')">Verificar</button>
+                <button class="hint-button" onclick="showHint(10)">💡 Pista</button>
+                <div class="hint-box" id="hint10">x² siempre es ≥ 0, entonces x² + 1 ≥ 1, nunca es cero</div>
+                <div class="feedback" id="feedback10"></div>
+            </div>
+        </div>
+
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="concept-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Polinomio:</strong> Expresión de la forma P(x) = aₙxⁿ + ... + a₁x + a₀</li>
+                    <li><strong>Grado:</strong> Mayor exponente con coeficiente no nulo</li>
+                    <li><strong>Operaciones:</strong> Suma, resta, multiplicación y división</li>
+                    <li><strong>Ruffini:</strong> Método rápido para dividir entre (x - a)</li>
+                    <li><strong>Teorema del Resto:</strong> P(a) = resto de P(x) ÷ (x - a)</li>
+                    <li><strong>Factorización:</strong> Expresar como producto de factores</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>📐 Identidades Notables Importantes</h4>
+                <ul>
+                    <li>(a + b)² = a² + 2ab + b²</li>
+                    <li>(a - b)² = a² - 2ab + b²</li>
+                    <li>a² - b² = (a + b)(a - b)</li>
+                    <li>(a + b)³ = a³ + 3a²b + 3ab² + b³</li>
+                    <li>a³ + b³ = (a + b)(a² - ab + b²)</li>
+                    <li>a³ - b³ = (a - b)(a² + ab + b²)</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>💡 Consejos de Estudio</h4>
+                <ul>
+                    <li>Practica las identidades notables hasta memorizarlas</li>
+                    <li>Verifica tus factorizaciones multiplicando los factores</li>
+                    <li>En Ruffini, organiza bien los coeficientes (incluye ceros)</li>
+                    <li>Al simplificar fracciones, siempre indica las restricciones</li>
+                    <li>Usa el teorema del resto para verificar divisiones</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="tema1_estadistica.html" class="nav-btn">⬅️ Tema Anterior</a>
+            <a href="volume1_index.html" class="nav-btn">📚 Índice del Volumen</a>
+            <a href="tema3_geometria_trig.html" class="nav-btn">Tema Siguiente ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Score management
+        let score = {
+            points: 0,
+            completed: 0,
+            correct: 0,
+            exercises: {}
+        };
+
+        function updateScore() {
+            document.getElementById('points').textContent = score.points;
+            document.getElementById('completed').textContent = score.completed;
+            const accuracy = score.completed > 0 ? Math.round((score.correct / score.completed) * 100) : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+            
+            // Save to localStorage
+            const mathData = JSON.parse(localStorage.getItem('matematicasAvanzadas')) || {
+                puntos: 0,
+                nivel: 1,
+                ejerciciosCompletados: 0,
+                progreso: { volumen1: {} }
+            };
+            mathData.puntos = (mathData.puntos || 0) + score.points;
+            mathData.ejerciciosCompletados = (mathData.ejerciciosCompletados || 0) + 1;
+            mathData.progreso.volumen1.tema2 = {
+                completado: score.completed,
+                total: 10
+            };
+            localStorage.setItem('matematicasAvanzadas', JSON.stringify(mathData));
+            score.points = 0;
+        }
+
+        function checkExercise(num, correctAnswer, isText = false) {
+            const input = document.getElementById('ex' + num);
+            const feedback = document.getElementById('feedback' + num);
+            
+            if (score.exercises[num]) {
+                feedback.textContent = '✓ Ya completaste este ejercicio';
+                feedback.className = 'feedback correct';
+                return;
+            }
+            
+            const userAnswer = isText ? input.value.replace(/\s/g, '').toLowerCase() : input.value.trim();
+            const correct = isText ? 
+                correctAnswer.replace(/\s/g, '').toLowerCase() : 
+                correctAnswer;
+            
+            if (userAnswer === correct || (isText && userAnswer.includes(correct))) {
+                feedback.textContent = '¡Correcto! +10 puntos 🎉';
+                feedback.className = 'feedback correct';
+                score.points += 10;
+                score.completed++;
+                score.correct++;
+                score.exercises[num] = true;
+                input.disabled = true;
+            } else {
+                feedback.textContent = '❌ Incorrecto. Intenta de nuevo o usa la pista.';
+                feedback.className = 'feedback incorrect';
+                score.completed++;
+            }
+            
+            updateScore();
+        }
+
+        function showHint(num) {
+            const hint = document.getElementById('hint' + num);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function evaluatePolynomial() {
+            const coeffsStr = document.getElementById('poly-coeffs').value;
+            const x = parseFloat(document.getElementById('poly-x').value);
+            const result = document.getElementById('poly-result');
+            
+            if (!coeffsStr || isNaN(x)) {
+                result.textContent = '⚠️ Por favor, completa todos los campos';
+                return;
+            }
+            
+            const coeffs = coeffsStr.split(',').map(c => parseFloat(c.trim()));
+            let value = 0;
+            const degree = coeffs.length - 1;
+            
+            for (let i = 0; i < coeffs.length; i++) {
+                value += coeffs[i] * Math.pow(x, degree - i);
+            }
+            
+            // Build polynomial string
+            let polyStr = '';
+            for (let i = 0; i < coeffs.length; i++) {
+                const exp = degree - i;
+                const coeff = coeffs[i];
+                if (coeff === 0) continue;
+                if (i > 0 && coeff > 0) polyStr += ' + ';
+                if (coeff < 0) polyStr += ' - ' + Math.abs(coeff);
+                else if (i > 0) polyStr += coeff;
+                else polyStr += coeff;
+                if (exp > 1) polyStr += 'x^' + exp;
+                else if (exp === 1) polyStr += 'x';
+            }
+            
+            result.innerHTML = `
+                <strong>Polinomio:</strong> P(x) = ${polyStr}<br>
+                <strong>P(${x}):</strong> ${value.toFixed(2)}
+            `;
+        }
+
+        function calculateRuffini() {
+            const coeffsStr = document.getElementById('ruffini-coeffs').value;
+            const a = parseFloat(document.getElementById('ruffini-a').value);
+            const result = document.getElementById('ruffini-result');
+            
+            if (!coeffsStr || isNaN(a)) {
+                result.textContent = '⚠️ Por favor, completa todos los campos';
+                return;
+            }
+            
+            const coeffs = coeffsStr.split(',').map(c => parseFloat(c.trim()));
+            const resultCoeffs = [coeffs[0]];
+            
+            for (let i = 1; i < coeffs.length; i++) {
+                resultCoeffs.push(coeffs[i] + a * resultCoeffs[i - 1]);
+            }
+            
+            const remainder = resultCoeffs.pop();
+            const quotient = resultCoeffs;
+            
+            let quotientStr = '';
+            const degree = quotient.length - 1;
+            for (let i = 0; i < quotient.length; i++) {
+                const exp = degree - i;
+                const coeff = quotient[i];
+                if (i > 0 && coeff >= 0) quotientStr += ' + ';
+                if (coeff < 0) quotientStr += ' - ' + Math.abs(coeff);
+                else if (i > 0) quotientStr += coeff;
+                else quotientStr += coeff;
+                if (exp > 1) quotientStr += 'x^' + exp;
+                else if (exp === 1) quotientStr += 'x';
+            }
+            
+            result.innerHTML = `
+                <strong>División:</strong> P(x) ÷ (x - ${a})<br>
+                <strong>Cociente:</strong> ${quotientStr}<br>
+                <strong>Resto:</strong> ${remainder}<br>
+                ${remainder === 0 ? '<br>✅ ' + a + ' es una raíz del polinomio' : ''}
+            `;
+        }
+
+        function findRoots() {
+            const coeffsStr = document.getElementById('roots-coeffs').value;
+            const result = document.getElementById('roots-result');
+            
+            if (!coeffsStr) {
+                result.textContent = '⚠️ Por favor, ingresa los coeficientes';
+                return;
+            }
+            
+            const coeffs = coeffsStr.split(',').map(c => parseFloat(c.trim()));
+            
+            if (coeffs.length === 3) {
+                // Quadratic equation
+                const [a, b, c] = coeffs;
+                const discriminant = b * b - 4 * a * c;
+                
+                if (discriminant < 0) {
+                    result.innerHTML = '❌ No tiene raíces reales (discriminante < 0)';
+                } else if (discriminant === 0) {
+                    const root = -b / (2 * a);
+                    result.innerHTML = `
+                        <strong>Raíz doble:</strong> x = ${root.toFixed(2)}
+                    `;
+                } else {
+                    const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                    result.innerHTML = `
+                        <strong>Raíces:</strong><br>
+                        x₁ = ${root1.toFixed(2)}<br>
+                        x₂ = ${root2.toFixed(2)}
+                    `;
+                }
+            } else {
+                result.innerHTML = '⚠️ Por ahora solo se resuelven ecuaciones cuadráticas (3 coeficientes)';
+            }
+        }
+
+        // Load progress on page load
+        window.addEventListener('load', () => {
+            const mathData = JSON.parse(localStorage.getItem('matematicasAvanzadas'));
+            if (mathData && mathData.progreso && mathData.progreso.volumen1 && mathData.progreso.volumen1.tema2) {
+                // Could restore progress here if desired
+            }
+        });
+    </script>
+</body>
+</html>

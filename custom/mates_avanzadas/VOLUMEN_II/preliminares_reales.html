@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Preliminares: Números Reales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f093fb;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: #f5576c;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar h3 {
+            color: #f5576c;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill-container {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #f093fb, #f5576c);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .scoreboard {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .score-item {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .score-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .score-label {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            border: none;
+            background: #f0f0f0;
+            color: #333;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            box-shadow: 0 4px 8px rgba(240, 147, 251, 0.3);
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #f5576c;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #f5576c;
+            margin: 30px 0 15px 0;
+        }
+
+        .symbol-box {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .symbol-box h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .symbol-box ul {
+            list-style: none;
+            padding-left: 0;
+            line-height: 2;
+        }
+
+        .theory-section {
+            background: #fff8f0;
+            border-left: 5px solid #f5576c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .formula-box {
+            background: #f8f9fa;
+            border: 2px solid #f093fb;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            border-left: 5px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .exercise-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border: 2px solid #e0e0e0;
+        }
+
+        .exercise-box input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 10px 10px 0;
+            width: 250px;
+            font-size: 1em;
+        }
+
+        .exercise-box button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .exercise-box button:hover {
+            background: #059669;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.95);
+            color: #f5576c;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="../../index.html">🏠 Inicio</a> ›
+            <a href="../index.html">Mates Avanzadas</a> ›
+            <a href="volume2_index.html">Volumen II</a> ›
+            <span>Preliminares: Números Reales</span>
+        </nav>
+
+        <div class="header">
+            <h1>🔢 Preliminares: Números Reales</h1>
+            <p>Axiomas, propiedades y estructura de ℝ</p>
+        </div>
+
+        <div class="progress-bar">
+            <h3>📈 Progreso del Tema</h3>
+            <div class="progress-fill-container">
+                <div class="progress-fill" id="progress-fill">0%</div>
+            </div>
+        </div>
+
+        <div class="scoreboard">
+            <div class="score-item">
+                <span class="score-number" id="points">0</span>
+                <span class="score-label">Puntos</span>
+            </div>
+            <div class="score-item">
+                <span class="score-number" id="completed">0</span>
+                <span class="score-label">Ejercicios Completados</span>
+            </div>
+            <div class="score-item">
+                <span class="score-number" id="accuracy">0%</span>
+                <span class="score-label">Precisión</span>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+            <button class="tab-button" onclick="showTab('resumen')">📋 Resumen</button>
+        </div>
+
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content-section active">
+            <h2>📚 Teoría: Números Reales</h2>
+            
+            <div class="symbol-box">
+                <h4>📖 Glosario de Símbolos Matemáticos</h4>
+                <ul>
+                    <li><strong>ℝ</strong> = Números Reales (conjunto de todos los números en la recta numérica)</li>
+                    <li><strong>∀</strong> = "para todo" / "para cada" (cuantificador universal)</li>
+                    <li><strong>∃</strong> = "existe" / "existe al menos un" (cuantificador existencial)</li>
+                    <li><strong>∃!</strong> = "existe un único"</li>
+                    <li><strong>⇒</strong> = "implica" / "entonces" (implicación lógica)</li>
+                    <li><strong>⇔</strong> = "si y solo si" / "es equivalente a" (doble implicación)</li>
+                    <li><strong>∈</strong> = "pertenece a" / "es elemento de"</li>
+                    <li><strong>∉</strong> = "no pertenece a"</li>
+                    <li><strong>⊂</strong> = "está contenido en" / "es subconjunto de"</li>
+                    <li><strong>≤ , ≥ , < , ></strong> = Relaciones de orden</li>
+                    <li><strong>∞</strong> = Infinito (concepto, no un número)</li>
+                    <li><strong>sup</strong> = Supremo (menor cota superior de un conjunto)</li>
+                    <li><strong>inf</strong> = Ínfimo (mayor cota inferior de un conjunto)</li>
+                    <li><strong>max , min</strong> = Máximo y mínimo</li>
+                    <li><strong>|x|</strong> = Valor absoluto de x</li>
+                    <li><strong>ε , δ</strong> = Números pequeños positivos (usados en definiciones de límites)</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h3>1️⃣ Axiomas de los Números Reales</h3>
+                <p><strong>Los números reales (ℝ)</strong> forman un conjunto con dos operaciones: suma (+) y producto (·), que satisfacen los siguientes axiomas:</p>
+                
+                <h4>🔹 Axiomas de la Suma:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>(A1) Cerradura:</strong> ∀ a, b ∈ ℝ ⇒ a + b ∈ ℝ</li>
+                    <li><strong>(A2) Asociativa:</strong> ∀ a, b, c ∈ ℝ: (a + b) + c = a + (b + c)</li>
+                    <li><strong>(A3) Elemento neutro:</strong> ∃ 0 ∈ ℝ tal que ∀ a ∈ ℝ: a + 0 = a</li>
+                    <li><strong>(A4) Elemento opuesto:</strong> ∀ a ∈ ℝ, ∃ (-a) ∈ ℝ tal que a + (-a) = 0</li>
+                    <li><strong>(A5) Conmutativa:</strong> ∀ a, b ∈ ℝ: a + b = b + a</li>
+                </ul>
+
+                <h4>🔹 Axiomas del Producto:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>(M1) Cerradura:</strong> ∀ a, b ∈ ℝ ⇒ a · b ∈ ℝ</li>
+                    <li><strong>(M2) Asociativa:</strong> ∀ a, b, c ∈ ℝ: (a · b) · c = a · (b · c)</li>
+                    <li><strong>(M3) Elemento neutro:</strong> ∃ 1 ∈ ℝ (1 ≠ 0) tal que ∀ a ∈ ℝ: a · 1 = a</li>
+                    <li><strong>(M4) Elemento inverso:</strong> ∀ a ∈ ℝ (a ≠ 0), ∃ (1/a) ∈ ℝ tal que a · (1/a) = 1</li>
+                    <li><strong>(M5) Conmutativa:</strong> ∀ a, b ∈ ℝ: a · b = b · a</li>
+                </ul>
+
+                <h4>🔹 Axioma Distributivo:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>(D) Distributiva:</strong> ∀ a, b, c ∈ ℝ: a · (b + c) = a · b + a · c</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h3>2️⃣ Axiomas de Orden</h3>
+                <p>En ℝ existe una relación de orden "≤" que satisface:</p>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>(O1) Tricotomía:</strong> ∀ a, b ∈ ℝ, se cumple exactamente una: a < b, a = b, o a > b</li>
+                    <li><strong>(O2) Transitiva:</strong> Si a ≤ b y b ≤ c ⇒ a ≤ c</li>
+                    <li><strong>(O3) Compatibilidad con suma:</strong> Si a ≤ b ⇒ a + c ≤ b + c</li>
+                    <li><strong>(O4) Compatibilidad con producto:</strong> Si a ≤ b y 0 ≤ c ⇒ ac ≤ bc</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h3>3️⃣ Supremo e Ínfimo</h3>
+                <p><strong>Definiciones fundamentales:</strong></p>
+                
+                <div class="formula-box">
+                    <strong>Cota Superior:</strong> c es cota superior de A ⊂ ℝ si ∀ x ∈ A: x ≤ c<br>
+                    <strong>Supremo (sup A):</strong> La menor de las cotas superiores de A<br><br>
+                    <strong>Cota Inferior:</strong> c es cota inferior de A ⊂ ℝ si ∀ x ∈ A: c ≤ x<br>
+                    <strong>Ínfimo (inf A):</strong> La mayor de las cotas inferiores de A
+                </div>
+
+                <p><strong>Axioma del Supremo (Axioma de Completitud):</strong></p>
+                <p style="padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; margin: 15px 0;">
+                    Todo conjunto no vacío de números reales que esté acotado superiormente tiene supremo.
+                </p>
+
+                <h4>Diferencia entre máximo y supremo:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>Máximo:</strong> max A es el supremo que pertenece al conjunto A</li>
+                    <li><strong>Mínimo:</strong> min A es el ínfimo que pertenece al conjunto A</li>
+                </ul>
+
+                <p><strong>Ejemplo:</strong> A = (0, 1) = {x ∈ ℝ : 0 < x < 1}</p>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li>sup A = 1 (pero 1 ∉ A, por tanto A no tiene máximo)</li>
+                    <li>inf A = 0 (pero 0 ∉ A, por tanto A no tiene mínimo)</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h3>4️⃣ Valor Absoluto y Distancia</h3>
+                
+                <div class="formula-box">
+                    <strong>Valor Absoluto:</strong><br>
+                    |x| = { x si x ≥ 0<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ -x si x < 0
+                </div>
+
+                <h4>Propiedades del Valor Absoluto:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li>|x| ≥ 0 para todo x ∈ ℝ</li>
+                    <li>|x| = 0 ⇔ x = 0</li>
+                    <li>|-x| = |x|</li>
+                    <li>|x · y| = |x| · |y|</li>
+                    <li><strong>Desigualdad triangular:</strong> |x + y| ≤ |x| + |y|</li>
+                    <li>||x| - |y|| ≤ |x - y|</li>
+                </ul>
+
+                <h4>Distancia entre dos puntos:</h4>
+                <div class="formula-box">
+                    d(x, y) = |x - y|
+                </div>
+                <p>La distancia satisface:</p>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li>d(x, y) ≥ 0</li>
+                    <li>d(x, y) = 0 ⇔ x = y</li>
+                    <li>d(x, y) = d(y, x) (simetría)</li>
+                    <li>d(x, z) ≤ d(x, y) + d(y, z) (desigualdad triangular)</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h3>5️⃣ Intervalos en ℝ</h3>
+                
+                <h4>Tipos de Intervalos:</h4>
+                <ul style="line-height: 1.8; margin-left: 25px;">
+                    <li><strong>[a, b]</strong> = {x ∈ ℝ : a ≤ x ≤ b} — Intervalo cerrado</li>
+                    <li><strong>(a, b)</strong> = {x ∈ ℝ : a < x < b} — Intervalo abierto</li>
+                    <li><strong>[a, b)</strong> = {x ∈ ℝ : a ≤ x < b} — Semiabierto por la derecha</li>
+                    <li><strong>(a, b]</strong> = {x ∈ ℝ : a < x ≤ b} — Semiabierto por la izquierda</li>
+                    <li><strong>[a, ∞)</strong> = {x ∈ ℝ : x ≥ a} — Semirrecta cerrada</li>
+                    <li><strong>(a, ∞)</strong> = {x ∈ ℝ : x > a} — Semirrecta abierta</li>
+                    <li><strong>(-∞, b]</strong> = {x ∈ ℝ : x ≤ b}</li>
+                    <li><strong>(-∞, b)</strong> = {x ∈ ℝ : x < b}</li>
+                </ul>
+
+                <h4>Entornos:</h4>
+                <div class="formula-box">
+                    <strong>Entorno de radio ε centrado en a:</strong><br>
+                    E(a, ε) = (a - ε, a + ε) = {x ∈ ℝ : |x - a| < ε}
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h3>6️⃣ Desigualdades Importantes</h3>
+                
+                <h4>🔹 Desigualdad de Bernoulli:</h4>
+                <div class="formula-box">
+                    Para x ≥ -1 y n ∈ ℕ:<br>
+                    (1 + x)ⁿ ≥ 1 + nx
+                </div>
+
+                <h4>🔹 Desigualdad Media Aritmética - Media Geométrica (AM-GM):</h4>
+                <div class="formula-box">
+                    Para a₁, a₂, ..., aₙ ≥ 0:<br>
+                    (a₁ + a₂ + ... + aₙ)/n ≥ ⁿ√(a₁ · a₂ · ... · aₙ)
+                </div>
+                <p>La igualdad se da si y solo si a₁ = a₂ = ... = aₙ</p>
+
+                <h4>🔹 Desigualdad de Cauchy-Schwarz:</h4>
+                <div class="formula-box">
+                    |a₁b₁ + a₂b₂ + ... + aₙbₙ| ≤ √(a₁² + a₂² + ... + aₙ²) · √(b₁² + b₂² + ... + bₙ²)
+                </div>
+            </div>
+
+            <div class="theory-section">
+                <h3>7️⃣ Propiedad Arquimediana</h3>
+                <p style="padding: 15px; background: #e3f2fd; border-left: 4px solid #2196f3; margin: 15px 0;">
+                    <strong>Propiedad Arquimediana:</strong> Dados x, y ∈ ℝ con x > 0, existe n ∈ ℕ tal que nx > y
+                </p>
+                <p><strong>Consecuencia:</strong> No existe ningún número real infinitamente grande o infinitamente pequeño. Entre dos números reales siempre hay infinitos racionales.</p>
+            </div>
+
+            <div class="theory-section">
+                <h3>8️⃣ Densidad de ℚ en ℝ</h3>
+                <p style="padding: 15px; background: #f3e5f5; border-left: 4px solid #9c27b0; margin: 15px 0;">
+                    <strong>Teorema:</strong> Entre dos números reales cualesquiera siempre existe un número racional.
+                </p>
+                <p>Es decir: ∀ a, b ∈ ℝ con a < b, ∃ r ∈ ℚ tal que a < r < b</p>
+                <p><strong>Implicación:</strong> Los números racionales son densos en los reales. Esto significa que podemos aproximar cualquier número real con la precisión que deseemos usando racionales.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Conceptos Clave para Recordar:</h4>
+                <ul style="line-height: 2; margin-left: 25px;">
+                    <li>ℝ es un <strong>campo ordenado completo</strong></li>
+                    <li>El <strong>axioma del supremo</strong> es lo que distingue ℝ de ℚ</li>
+                    <li>El <strong>valor absoluto</strong> mide la distancia al origen</li>
+                    <li>Los <strong>entornos</strong> son fundamentales para definir límites</li>
+                    <li>Las <strong>desigualdades</strong> son herramientas esenciales en análisis</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EJEMPLOS TAB -->
+        <div id="ejemplos" class="content-section">
+            <h2>💡 Ejemplos Resueltos</h2>
+            <p style="color: #666; margin-bottom: 30px;">Pendiente de implementación...</p>
+        </div>
+
+        <!-- HERRAMIENTAS TAB -->
+        <div id="herramientas" class="content-section">
+            <h2>🧮 Herramientas Interactivas</h2>
+            <p style="color: #666; margin-bottom: 30px;">Pendiente de implementación...</p>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content-section">
+            <h2>✏️ Práctica</h2>
+            <p style="color: #666; margin-bottom: 30px;">Pendiente de implementación...</p>
+        </div>
+
+        <!-- RESUMEN TAB -->
+        <div id="resumen" class="content-section">
+            <h2>📋 Resumen</h2>
+            <p style="color: #666; margin-bottom: 30px;">Pendiente de implementación...</p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="volume2_index.html" class="nav-button">⬅️ Anterior</a>
+            <a href="volume2_index.html" class="nav-button">📚 Índice</a>
+            <a href="tema1_funciones_elem1.html" class="nav-button">Siguiente ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected section and activate button
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Update progress
+            updateProgress();
+        }
+
+        // Score tracking
+        let score = {
+            points: 0,
+            completed: 0,
+            correct: 0,
+            total: 10 // Total exercises in Práctica tab
+        };
+
+        function updateScore() {
+            document.getElementById('points').textContent = score.points;
+            document.getElementById('completed').textContent = score.completed;
+            const accuracy = score.completed > 0 ? Math.round((score.correct / score.completed) * 100) : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+            
+            // Save to localStorage
+            const data = JSON.parse(localStorage.getItem('matematicasAvanzadas')) || {
+                puntos: 0,
+                ejerciciosCompletados: 0,
+                progreso: { volumen2: {} }
+            };
+            
+            data.puntos = (data.puntos || 0) + score.points;
+            data.ejerciciosCompletados = (data.ejerciciosCompletados || 0) + 1;
+            data.progreso.volumen2.preliminares = {
+                completado: score.completed,
+                total: score.total,
+                correct: score.correct
+            };
+            
+            localStorage.setItem('matematicasAvanzadas', JSON.stringify(data));
+            
+            // Reset points (they've been added to total)
+            score.points = 0;
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const percentage = (score.completed / score.total) * 100;
+            const progressFill = document.getElementById('progress-fill');
+            progressFill.style.width = percentage + '%';
+            progressFill.textContent = Math.round(percentage) + '%';
+        }
+
+        // Exercise checking function
+        function checkEx(n, correctAnswer) {
+            const input = document.getElementById('ex' + n);
+            const feedback = document.getElementById('f' + n);
+            
+            // Prevent re-checking completed exercises
+            if (input.dataset.completed) {
+                return;
+            }
+            
+            const userAnswer = input.value.trim().toLowerCase();
+            const correct = correctAnswer.toLowerCase();
+            
+            if (userAnswer === correct) {
+                feedback.style.display = 'block';
+                feedback.style.background = '#d1fae5';
+                feedback.style.color = '#065f46';
+                feedback.style.border = '2px solid #10b981';
+                feedback.textContent = '¡Correcto! +10 puntos 🎉';
+                
+                score.points += 10;
+                score.completed++;
+                score.correct++;
+                input.disabled = true;
+                input.dataset.completed = 'true';
+                input.style.background = '#d1fae5';
+            } else {
+                feedback.style.display = 'block';
+                feedback.style.background = '#fee2e2';
+                feedback.style.color = '#991b1b';
+                feedback.style.border = '2px solid #ef4444';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                
+                score.completed++;
+            }
+            
+            updateScore();
+        }
+
+        // Load progress on page load
+        window.addEventListener('load', function() {
+            const data = JSON.parse(localStorage.getItem('matematicasAvanzadas'));
+            if (data && data.progreso && data.progreso.volumen2 && data.progreso.volumen2.preliminares) {
+                const saved = data.progreso.volumen2.preliminares;
+                score.completed = saved.completado || 0;
+                score.correct = saved.correct || 0;
+                updateScore();
+            }
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

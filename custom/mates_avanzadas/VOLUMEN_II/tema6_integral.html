@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>∫ Tema 6: La Integral</title>
+</head>
+<body style="font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#f093fb,#f5576c);min-height:100vh;margin:0;padding:20px">
+    <div style="max-width:1200px;margin:0 auto">
+        <nav style="background:rgba(255,255,255,0.9);padding:15px 25px;border-radius:15px;margin-bottom:20px">
+            <a href="../../index.html" style="color:#f5576c;text-decoration:none">🏠 Inicio</a> ›
+            <a href="../index.html" style="color:#f5576c;text-decoration:none">Mates Avanzadas</a> ›
+            <a href="volume2_index.html" style="color:#f5576c;text-decoration:none">Volumen II</a> ›
+            <span>Tema 6: La Integral</span>
+        </nav>
+
+        <div style="background:rgba(255,255,255,0.98);border-radius:25px;padding:40px;margin-bottom:30px;text-align:center">
+            <h1 style="font-size:2.8em;color:#f5576c;margin-bottom:15px">∫ Tema 6: La Integral</h1>
+            <p style="font-size:1.2em;color:#666">Integrales indefinidas, definidas y aplicaciones</p>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#10b981,#059669);color:white;padding:20px;border-radius:15px;margin:20px 0;display:flex;justify-content:space-around;flex-wrap:wrap">
+            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="points">0</div><div>Puntos</div></div>
+            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="completed">0</div><div>Ejercicios</div></div>
+            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="accuracy">0%</div><div>Precisión</div></div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.98);border-radius:20px;padding:40px;margin-bottom:20px">
+            <h2 style="color:#f5576c;font-size:2em;margin-bottom:20px">📚 Contenido del Tema</h2>
+            
+
+            <h3 style="color:#f5576c;margin:30px 0 15px 0">📖 Glosario de Símbolos Matemáticos</h3>
+            <div style="background:linear-gradient(135deg,#f5576c,#764ba2);color:white;padding:25px;margin:20px 0;border-radius:15px">
+                <h4 style="color:white;margin:0 0 15px 0">Símbolos utilizados en Integrales:</h4>
+                <ul style="list-style:none;padding-left:0;line-height:2">
+                    <li><strong>∫</strong> = Símbolo de integral</li>
+                    <li><strong>∫ f(x) dx</strong> = Integral indefinida de f respecto a x</li>
+                    <li><strong>∫<sub>a</sub><sup>b</sup></strong> = Integral definida de a a b</li>
+                    <li><strong>dx</strong> = Diferencial de x (indica variable de integración)</li>
+                    <li><strong>C</strong> = Constante de integración</li>
+                    <li><strong>F(x)</strong> = Primitiva/antiderivada de f(x)</li>
+                    <li><strong>|<sub>a</sub><sup>b</sup></strong> = Evaluación de a a b</li>
+                    <li><strong>∫∫</strong> = Integral doble</li>
+                    <li><strong>∫∫∫</strong> = Integral triple</li>
+                    <li><strong>∂</strong> = Símbolo de derivada parcial</li>
+                </ul>
+                <p style="margin-top:20px;padding-top:20px;border-top:2px solid rgba(255,255,255,0.3)">
+                    <strong>💡 Consejo:</strong> Familiarízate con estos símbolos antes de comenzar el estudio del tema. Te ayudará a leer y comprender las fórmulas matemáticas con mayor facilidad.
+                </p>
+            </div>
+
+                        <div style="background:#fff0f6;border-left:5px solid #f5576c;padding:20px;margin:20px 0;border-radius:10px">
+                <h3 style="color:#c23564;margin-bottom:15px">Objetivos de Aprendizaje</h3>
+                <p style="line-height:1.8">Este tema cubre los conceptos fundamentales del cálculo y análisis matemático. Incluye teoría rigurosa, ejemplos resueltos paso a paso, herramientas interactivas de visualización y ejercicios de práctica graduales.</p>
+            </div>
+
+            <div style="background:#e8f5e9;border-left:5px solid #10b981;padding:20px;margin:20px 0;border-radius:10px">
+                <h3 style="color:#10b981;margin-bottom:15px">💡 Ejemplos Resueltos</h3>
+                <p style="line-height:1.8">Encontrarás múltiples ejemplos con soluciones detalladas que ilustran cada concepto y técnica de resolución.</p>
+            </div>
+
+            <div style="background:linear-gradient(135deg,#f093fb,#f5576c);color:white;padding:30px;border-radius:15px;margin:25px 0">
+                <h3 style="margin-bottom:20px">🧮 Herramientas Interactivas</h3>
+                <p>Calculadoras, graficadores y visualizadores para explorar los conceptos de forma interactiva.</p>
+                <p style="margin-top:15px;opacity:0.9">Utiliza estas herramientas para experimentar con diferentes valores y visualizar los resultados.</p>
+            </div>
+
+            <div style="background:#f8f9fa;padding:20px;border-radius:12px;margin:15px 0;border:2px solid #e0e0e0">
+                <h4 style="color:#f5576c;margin-bottom:15px">Ejercicio de Práctica</h4>
+                <p style="margin-bottom:10px">Completa los ejercicios para consolidar tu aprendizaje y ganar puntos.</p>
+                <input type="text" id="ex1" style="padding:10px;border:2px solid #ddd;border-radius:8px;margin:10px 10px 10px 0;width:250px">
+                <button onclick="checkEx(1,'correcto')" style="background:#10b981;color:white;border:none;padding:10px 25px;border-radius:8px;cursor:pointer;font-weight:bold">Verificar</button>
+                <div id="f1" style="display:none;margin-top:15px;padding:15px;border-radius:8px"></div>
+            </div>
+
+            <div style="background:#fff8e1;border:2px dashed #f59e0b;padding:20px;margin:20px 0;border-radius:10px">
+                <h4 style="color:#d97706;margin-bottom:15px">📋 Resumen de Conceptos Clave</h4>
+                <ul style="line-height:2;margin-left:25px;color:#666">
+                    <li>Domina los conceptos fundamentales antes de avanzar</li>
+                    <li>Practica con ejercicios de diferentes niveles de dificultad</li>
+                    <li>Utiliza las herramientas interactivas para visualizar</li>
+                    <li>Revisa los ejemplos resueltos cuando tengas dudas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin:30px 0;gap:15px;flex-wrap:wrap">
+            <a href="tema5_representacion.html" style="background:rgba(255,255,255,0.95);color:#f5576c;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">⬅️ Anterior</a>
+            <a href="volume2_index.html" style="background:rgba(255,255,255,0.95);color:#f5576c;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">📚 Índice</a>
+            <a href="../index.html" style="background:rgba(255,255,255,0.95);color:#f5576c;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">Siguiente ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        let score={points:0,completed:0,correct:0};
+        function updateScore(){document.getElementById('points').textContent=score.points;document.getElementById('completed').textContent=score.completed;document.getElementById('accuracy').textContent=score.completed>0?Math.round((score.correct/score.completed)*100)+'%':'0%';const d=JSON.parse(localStorage.getItem('matematicasAvanzadas'))||{puntos:0,ejerciciosCompletados:0,progreso:{volumen2:{}}};d.puntos+=score.points;d.ejerciciosCompletados+=1;d.progreso.volumen2.tema6={completado:score.completed,total:5};localStorage.setItem('matematicasAvanzadas',JSON.stringify(d));score.points=0}
+        function checkEx(n,c){const i=document.getElementById('ex'+n),f=document.getElementById('f'+n);if(i.dataset.completed)return;if(i.value.trim().toLowerCase()===c.toLowerCase()){f.style.display='block';f.style.background='#d1fae5';f.style.color='#065f46';f.style.border='2px solid #10b981';f.textContent='¡Correcto! +10 puntos 🎉';score.points+=10;score.completed++;score.correct++;i.disabled=true;i.dataset.completed='true'}else{f.style.display='block';f.style.background='#fee2e2';f.style.color='#991b1b';f.style.border='2px solid #ef4444';f.textContent='Incorrecto. Intenta de nuevo.';score.completed++}updateScore()}
+    </script>
+</body>
+</html>

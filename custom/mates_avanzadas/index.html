@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Matemáticas Avanzadas - Plataforma Interactiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 50px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 1.4em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .user-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .volumes-section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        .volumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .volume-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .volume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .volume-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        }
+
+        .volume-card.volume1 {
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+        }
+
+        .volume-card.volume2 {
+            --gradient-start: #f093fb;
+            --gradient-end: #f5576c;
+        }
+
+        .volume-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .volume-icon {
+            font-size: 4em;
+            margin-right: 20px;
+        }
+
+        .volume-title {
+            flex: 1;
+        }
+
+        .volume-title h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .volume-title .subtitle-vol {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            transition: width 0.6s ease;
+            border-radius: 10px;
+        }
+
+        .progress-text {
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+
+        .topics-list {
+            margin: 25px 0;
+        }
+
+        .topic-item {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .topic-item:hover {
+            background: #e9ecef;
+            border-left-color: var(--gradient-start);
+            transform: translateX(5px);
+        }
+
+        .topic-item .topic-name {
+            color: #333;
+            font-weight: 500;
+            font-size: 1.05em;
+        }
+
+        .topic-item .topic-status {
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        .volume-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-align: center;
+            padding: 18px 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 25px;
+        }
+
+        .volume-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .features-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin: 50px 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: #e9ecef;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-home a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home a:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1.1em;
+            }
+
+            .volumes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .volume-card {
+                padding: 25px;
+            }
+
+            .volume-icon {
+                font-size: 3em;
+            }
+
+            .volume-title h2 {
+                font-size: 1.8em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .user-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .achievement-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .achievement-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .achievement-badge.locked {
+            background: #ccc;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📚 Matemáticas Avanzadas</h1>
+            <p>Plataforma Interactiva de Aprendizaje</p>
+            <p class="subtitle">Domina las matemáticas con ejercicios interactivos y gamificación</p>
+
+            <!-- User Stats -->
+            <div class="user-stats">
+                <div class="stat-card">
+                    <span class="number" id="totalPoints">0</span>
+                    <span class="label">Puntos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number" id="userLevel">1</span>
+                    <span class="label">Nivel</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number" id="exercisesCompleted">0</span>
+                    <span class="label">Ejercicios</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number" id="currentStreak">0</span>
+                    <span class="label">Racha (días)</span>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="achievements">
+                <div class="achievement-badge locked" title="Completa 5 ejercicios">🥉</div>
+                <div class="achievement-badge locked" title="Completa 25 ejercicios">🥈</div>
+                <div class="achievement-badge locked" title="Completa 100 ejercicios">🥇</div>
+                <div class="achievement-badge locked" title="Completa un volumen">💎</div>
+                <div class="achievement-badge locked" title="7 días seguidos">🔥</div>
+            </div>
+        </div>
+
+        <!-- Volumes Section -->
+        <section class="volumes-section">
+            <h2 class="section-title">📖 Selecciona un Volumen</h2>
+
+            <div class="volumes-grid">
+                <!-- Volume I -->
+                <div class="volume-card volume1">
+                    <div class="volume-header">
+                        <div class="volume-icon">📘</div>
+                        <div class="volume-title">
+                            <h2>Volumen I</h2>
+                            <p class="subtitle-vol">Fundamentos Matemáticos</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;" id="progress-vol1"></div>
+                    </div>
+                    <p class="progress-text">Progreso: <span id="progress-text-vol1">0%</span></p>
+
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">📐 Preliminares: Números y Conjuntos</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📊 Tema 1: Estadística y Probabilidad</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📐 Tema 2: Polinomios y Fracciones</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📏 Tema 3: Geometría y Trigonometría</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">🔢 Tema 4: Matrices y Determinantes</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">⚖️ Tema 5: Sistemas de Ecuaciones</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">➡️ Tema 6: Geometría Vectorial Plano</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">🌐 Tema 7: Geometría Vectorial Espacio</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                    </div>
+
+                    <a href="VOLUMEN_I/volume1_index.html" class="volume-button">Comenzar Volumen I</a>
+                </div>
+
+                <!-- Volume II -->
+                <div class="volume-card volume2">
+                    <div class="volume-header">
+                        <div class="volume-icon">📕</div>
+                        <div class="volume-title">
+                            <h2>Volumen II</h2>
+                            <p class="subtitle-vol">Cálculo y Análisis</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;" id="progress-vol2"></div>
+                    </div>
+                    <p class="progress-text">Progreso: <span id="progress-text-vol2">0%</span></p>
+
+                    <div class="topics-list">
+                        <div class="topic-item">
+                            <span class="topic-name">🔢 Preliminares: Números Reales</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📈 Tema 1: Funciones Elementales I</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📉 Tema 2: Funciones Elementales II</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">♾️ Tema 3: Límites y Continuidad</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📐 Tema 4: Funciones Derivables</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">📊 Tema 5: Representación de Funciones</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">∫ Tema 6: La Integral</span>
+                            <span class="topic-status">Nuevo</span>
+                        </div>
+                    </div>
+
+                    <a href="VOLUMEN_II/volume2_index.html" class="volume-button">Comenzar Volumen II</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title" style="color: #333;">✨ Características de la Plataforma</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Gamificación</h3>
+                    <p class="feature-description">Sistema de puntos, niveles y logros para mantener tu motivación</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Visualizaciones</h3>
+                    <p class="feature-description">Gráficos interactivos para entender conceptos complejos</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3 class="feature-title">Calculadoras</h3>
+                    <p class="feature-description">Herramientas paso a paso para resolver problemas</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3 class="feature-title">Autocorrección</h3>
+                    <p class="feature-description">Feedback inmediato para aprender de tus errores</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Ayudas</h3>
+                    <p class="feature-description">Sistema de pistas graduales cuando lo necesites</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Responsive</h3>
+                    <p class="feature-description">Estudia desde cualquier dispositivo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home -->
+        <div class="back-home">
+            <a href="../index.html">⬅️ Volver al Centro de Aprendizaje</a>
+        </div>
+    </div>
+
+    <script>
+        // Load user progress from localStorage
+        function loadUserProgress() {
+            const userData = JSON.parse(localStorage.getItem('matematicasAvanzadas')) || {
+                puntos: 0,
+                nivel: 1,
+                ejerciciosCompletados: 0,
+                racha: 0,
+                progreso: {
+                    volumen1: {},
+                    volumen2: {}
+                },
+                logros: []
+            };
+
+            // Update stats display
+            document.getElementById('totalPoints').textContent = userData.puntos;
+            document.getElementById('userLevel').textContent = userData.nivel;
+            document.getElementById('exercisesCompleted').textContent = userData.ejerciciosCompletados;
+            document.getElementById('currentStreak').textContent = userData.racha;
+
+            // Calculate volume progress
+            const vol1Progress = calculateVolumeProgress(userData.progreso.volumen1, 8);
+            const vol2Progress = calculateVolumeProgress(userData.progreso.volumen2, 7);
+
+            document.getElementById('progress-vol1').style.width = vol1Progress + '%';
+            document.getElementById('progress-text-vol1').textContent = vol1Progress + '%';
+            document.getElementById('progress-vol2').style.width = vol2Progress + '%';
+            document.getElementById('progress-text-vol2').textContent = vol2Progress + '%';
+
+            // Update achievements
+            updateAchievements(userData);
+        }
+
+        function calculateVolumeProgress(volumeData, totalTopics) {
+            if (!volumeData || Object.keys(volumeData).length === 0) return 0;
+            
+            let totalProgress = 0;
+            Object.values(volumeData).forEach(topic => {
+                if (topic.completado && topic.total) {
+                    totalProgress += (topic.completado / topic.total) * 100;
+                }
+            });
+            
+            return Math.round(totalProgress / totalTopics);
+        }
+
+        function updateAchievements(userData) {
+            const badges = document.querySelectorAll('.achievement-badge');
+            
+            // Bronze: 5 exercises
+            if (userData.ejerciciosCompletados >= 5) {
+                badges[0].classList.remove('locked');
+            }
+            
+            // Silver: 25 exercises
+            if (userData.ejerciciosCompletados >= 25) {
+                badges[1].classList.remove('locked');
+            }
+            
+            // Gold: 100 exercises
+            if (userData.ejerciciosCompletados >= 100) {
+                badges[2].classList.remove('locked');
+            }
+            
+            // Diamond: Complete one volume
+            const vol1Complete = calculateVolumeProgress(userData.progreso.volumen1, 8) === 100;
+            const vol2Complete = calculateVolumeProgress(userData.progreso.volumen2, 7) === 100;
+            if (vol1Complete || vol2Complete) {
+                badges[3].classList.remove('locked');
+            }
+            
+            // Fire: 7 day streak
+            if (userData.racha >= 7) {
+                badges[4].classList.remove('locked');
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadUserProgress);
+    </script>
+</body>
+</html>

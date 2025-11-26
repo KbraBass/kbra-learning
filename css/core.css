@@ -1,0 +1,588 @@
+/**
+ * Core.css - Unified base styles for Kbra Learning Platform
+ * Foundation styles, variables, utilities, and common patterns
+ */
+
+/* ==================== CSS RESET ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== CSS VARIABLES ==================== */
+:root {
+    /* Colors - Main Palette */
+    --color-primary: #667eea;
+    --color-primary-dark: #764ba2;
+    --color-secondary: #f093fb;
+    --color-secondary-dark: #f5576c;
+    --color-accent: #4ecdc4;
+    --color-accent-dark: #44a08d;
+    
+    /* Functional Colors */
+    --color-success: #00b894;
+    --color-success-light: #00cec9;
+    --color-error: #ff6b6b;
+    --color-error-light: #ff7979;
+    --color-warning: #fdcb6e;
+    --color-warning-light: #ffeaa7;
+    --color-info: #74b9ff;
+    
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-gray-100: #f7f7f7;
+    --color-gray-200: #eeeeee;
+    --color-gray-300: #dddddd;
+    --color-gray-400: #999999;
+    --color-gray-500: #666666;
+    --color-gray-600: #333333;
+    --color-black: #000000;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-accent: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    --gradient-success: linear-gradient(45deg, #00b894, #00cec9);
+    --gradient-warning: linear-gradient(45deg, #ff6b6b, #ffa500);
+    
+    /* Spacing System (8px base) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
+    
+    /* Typography */
+    --font-primary: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
+    --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index layers */
+    --z-base: 1;
+    --z-dropdown: 10;
+    --z-sticky: 100;
+    --z-modal: 1000;
+    --z-toast: 2000;
+}
+
+/* ==================== BASE STYLES ==================== */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--gradient-primary);
+    min-height: 100vh;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    padding-bottom: 80px;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--text-5xl);
+    color: var(--color-primary);
+}
+
+h2 {
+    font-size: var(--text-4xl);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* ==================== LAYOUT CONTAINERS ==================== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.container-lg {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-lg);
+    box-shadow: var(--shadow-xl);
+    animation: slideDown 0.8s ease-out;
+}
+
+.header h1 {
+    margin-bottom: var(--space-md);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header p,
+.header .subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-md);
+}
+
+/* ==================== BUTTONS ==================== */
+.btn,
+.calc-button,
+button {
+    background: var(--gradient-warning);
+    border: none;
+    color: var(--color-white);
+    padding: 15px 30px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-lg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+    font-family: inherit;
+    margin: var(--space-sm);
+    display: inline-block;
+}
+
+.btn:hover,
+.calc-button:hover,
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:active,
+.calc-button:active,
+button:active {
+    transform: translateY(-1px);
+}
+
+.btn:disabled,
+.calc-button:disabled,
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.back-button {
+    background: linear-gradient(45deg, #a29bfe, #6c5ce7);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+    font-weight: bold;
+    cursor: pointer;
+    margin: var(--space-sm);
+    transition: var(--transition-base);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==================== TABS ==================== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: var(--gradient-warning);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-lg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tab-button.active {
+    background: var(--gradient-accent);
+}
+
+/* ==================== CONTENT SECTIONS ==================== */
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* ==================== INPUT SECTIONS ==================== */
+.input-section {
+    background: var(--gradient-secondary);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+    text-align: center;
+}
+
+.input-section h2 {
+    color: white;
+    margin-bottom: var(--space-lg);
+}
+
+.input-group {
+    margin: var(--space-lg) 0;
+}
+
+.input-group label {
+    display: block;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    font-weight: bold;
+}
+
+.input-group input,
+.practice-input {
+    padding: 15px 20px;
+    font-size: var(--text-2xl);
+    border: none;
+    border-radius: var(--radius-full);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+}
+
+/* ==================== RESULTS & EXPLANATIONS ==================== */
+.result {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+    font-size: var(--text-xl);
+    font-weight: bold;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-base);
+}
+
+.explanation {
+    background: var(--gradient-accent);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    font-size: var(--text-lg);
+}
+
+.explanation-icon {
+    font-size: var(--text-3xl);
+    margin-right: var(--space-sm);
+}
+
+/* ==================== VISUAL DEMOS ==================== */
+.visual-demo-container {
+    margin: var(--space-lg) 0;
+}
+
+.visual-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+    flex-wrap: wrap;
+    min-height: 100px;
+}
+
+.number-group {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.item-block {
+    background: var(--gradient-secondary);
+    color: white;
+    border-radius: var(--space-sm);
+    padding: var(--space-sm);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: var(--text-2xl);
+    animation: popIn 0.3s ease-out;
+}
+
+/* ==================== SCORE DISPLAY ==================== */
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin: var(--space-lg) 0;
+}
+
+.score-display {
+    background: var(--gradient-success);
+    color: white;
+    border-radius: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    display: inline-block;
+    font-weight: bold;
+    font-size: var(--text-base);
+}
+
+/* ==================== PRACTICE AREAS ==================== */
+.practice-area {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+    color: var(--color-gray-600);
+    text-align: center;
+}
+
+.practice-area h2 {
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-lg);
+}
+
+.practice-area .result {
+    color: var(--color-gray-600);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ==================== FUN FACTS ==================== */
+.fun-facts {
+    background: var(--gradient-warning);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+    color: white;
+}
+
+.fun-facts h3 {
+    color: white;
+    margin-bottom: var(--space-md);
+}
+
+.fun-facts ul {
+    list-style-position: inside;
+    font-size: var(--text-lg);
+}
+
+.fun-facts li {
+    margin-bottom: var(--space-sm);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    :root {
+        --text-5xl: 2em;
+        --text-4xl: 1.75em;
+        --text-3xl: 1.5em;
+    }
+
+    .container {
+        padding: var(--space-md);
+    }
+
+    .header {
+        padding: var(--space-lg);
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .input-group input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .item-block {
+        width: 35px;
+        height: 35px;
+        font-size: var(--text-xl);
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.hidden {
+    display: none !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }

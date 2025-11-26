@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas Básicas - Kbra Learning</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔢 Matemáticas Básicas 🔢</h1>
+            <p class="subtitle">Aprende las operaciones fundamentales de las matemáticas</p>
+            <a href="../../index.html" class="back-button">🏠 Volver al Inicio</a>
+        </div>
+
+        <!-- Progress stats -->
+        <div id="stats-container"></div>
+
+        <!-- Module cards -->
+        <div class="games-grid" id="modules-grid"></div>
+    </div>
+
+    <!-- Shared JavaScript Libraries -->
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        // Module definitions
+        const modules = [
+            {
+                id: 'suma',
+                icon: '➕',
+                title: 'Suma',
+                description: '¡Aprende a sumar! Descubre cómo juntar números de forma divertida con visualizaciones y práctica interactiva.',
+                link: 'suma.html'
+            },
+            {
+                id: 'resta',
+                icon: '➖',
+                title: 'Resta',
+                description: '¡Aprende a restar! Descubre cómo quitar números y resolver problemas de sustracción.',
+                link: 'resta.html'
+            },
+            {
+                id: 'multiplicacion',
+                icon: '✖️',
+                title: 'Multiplicación',
+                description: '¡Domina las tablas! Aprende a multiplicar con trucos, tablas interactivas y mucha práctica.',
+                link: 'multiplicacion.html'
+            },
+            {
+                id: 'division',
+                icon: '➗',
+                title: 'División',
+                description: '¡Aprende a dividir! Descubre cómo repartir cantidades de manera equitativa.',
+                link: 'division.html'
+            }
+        ];
+
+        // Initialize page
+        function init() {
+            const completedModules = Storage.getCompletedLessons();
+            const moduleData = modules.map(module => {
+                const data = Storage.getModuleData(module.id);
+                return {
+                    ...module,
+                    completed: completedModules.includes(module.id),
+                    bestScore: data ? data.bestScore : 0
+                };
+            });
+
+            // Render stats
+            const stats = Storage.getStats();
+            const categoryProgress = Gamification.getCategoryProgress(modules.map(m => m.id));
+            
+            document.getElementById('stats-container').innerHTML = `
+                ${Components.createStatsCard(stats)}
+                ${Components.createProgressBar(
+                    categoryProgress.completed,
+                    categoryProgress.total,
+                    'Progreso en Matemáticas Básicas'
+                )}
+            `;
+
+            // Render module cards
+            const grid = document.getElementById('modules-grid');
+            moduleData.forEach(module => {
+                grid.innerHTML += Components.createModuleCard(module);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

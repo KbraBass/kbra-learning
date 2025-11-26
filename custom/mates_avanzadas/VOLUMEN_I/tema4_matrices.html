@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Matrices y Determinantes - Matemáticas Avanzadas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-radius: 10px;
+        }
+        
+        .score-item {
+            text-align: center;
+        }
+        
+        .score-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .score-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .tab-button {
+            background: #e0e0e0;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .tab-button:hover {
+            background: #d0d0d0;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .theory-content {
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .formula {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .symbol-glossary {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .symbol-glossary h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .symbol-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .symbol {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        
+        .example {
+            background: #e7f3ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #2196F3;
+        }
+        
+        .example h4 {
+            color: #1976D2;
+            margin-bottom: 15px;
+        }
+        
+        .matrix-display {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .matrix-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+        
+        .matrix-cell {
+            width: 50px;
+            height: 40px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .interactive-tool {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tool-title {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border 0.3s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .matrix-input-grid {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .matrix-input-2x2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .matrix-input-3x3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .matrix-input-grid input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .result-box {
+            background: #f0f7ff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+            min-height: 60px;
+        }
+        
+        .result-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .exercise {
+            background: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            transition: border-color 0.3s;
+        }
+        
+        .exercise:hover {
+            border-color: #667eea;
+        }
+        
+        .exercise-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .hint-button {
+            background: #ffc107;
+            color: #333;
+            font-size: 0.9em;
+            padding: 8px 20px;
+        }
+        
+        .hint-box {
+            background: #fff3cd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            display: none;
+        }
+        
+        .feedback {
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+            display: block;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            border-radius: 25px;
+            transition: transform 0.2s;
+        }
+        
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .score-board {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .matrix-input-grid {
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔢 Tema 4: Matrices y Determinantes</h1>
+            <p class="subtitle">Volumen I - Matemáticas Avanzadas</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar">0%</div>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-value" id="scoreValue">0</div>
+                <div class="score-label">Puntos</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="exerciseCount">0/10</div>
+                <div class="score-label">Ejercicios</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="accuracy">0%</div>
+                <div class="score-label">Precisión</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('teoria')">📚 Teoría</button>
+            <button class="tab-button" onclick="showTab('ejemplos')">💡 Ejemplos</button>
+            <button class="tab-button" onclick="showTab('herramientas')">🧮 Herramientas</button>
+            <button class="tab-button" onclick="showTab('practica')">✏️ Práctica</button>
+            <button class="tab-button" onclick="showTab('resumen')">📋 Resumen</button>
+        </div>
+
+        <!-- TEORÍA -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría</h2>
+            
+            <div class="symbol-glossary">
+                <h3>🔤 Glosario de Símbolos</h3>
+                <div class="symbol-item">
+                    <span class="symbol">A, B, C</span>
+                    <span>Matrices (representadas por letras mayúsculas)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">aᵢⱼ</span>
+                    <span>Elemento en la fila i, columna j de una matriz</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">A<sup>T</sup></span>
+                    <span>Matriz transpuesta de A</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">A<sup>-1</sup></span>
+                    <span>Matriz inversa de A</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">|A| o det(A)</span>
+                    <span>Determinante de la matriz A</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">I<sub>n</sub></span>
+                    <span>Matriz identidad de orden n (diagonal de 1s)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">O</span>
+                    <span>Matriz nula (todos sus elementos son 0)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">rango(A)</span>
+                    <span>Rango de la matriz A (número de filas/columnas linealmente independientes)</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">m×n</span>
+                    <span>Dimensión de la matriz: m filas, n columnas</span>
+                </div>
+                <div class="symbol-item">
+                    <span class="symbol">±</span>
+                    <span>Más o menos (operaciones con matrices)</span>
+                </div>
+            </div>
+
+            <div class="theory-content">
+                <h3>1. ¿Qué es una Matriz?</h3>
+                <p>Una matriz es una tabla rectangular de números ordenados en filas y columnas. Una matriz de dimensión m×n tiene m filas y n columnas.</p>
+                <div class="formula">
+                    A = (aᵢⱼ) donde i = 1,...,m  y  j = 1,...,n
+                </div>
+
+                <h3>2. Tipos de Matrices</h3>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li><strong>Matriz fila:</strong> 1 fila, n columnas (1×n)</li>
+                    <li><strong>Matriz columna:</strong> m filas, 1 columna (m×1)</li>
+                    <li><strong>Matriz cuadrada:</strong> m = n (igual número de filas y columnas)</li>
+                    <li><strong>Matriz nula (O):</strong> Todos sus elementos son 0</li>
+                    <li><strong>Matriz identidad (I):</strong> Cuadrada con 1s en la diagonal y 0s en el resto</li>
+                    <li><strong>Matriz diagonal:</strong> Sólo tiene elementos en la diagonal principal</li>
+                    <li><strong>Matriz triangular:</strong> Elementos nulos por encima o por debajo de la diagonal</li>
+                </ul>
+
+                <h3>3. Operaciones con Matrices</h3>
+                
+                <h4>Suma y Resta</h4>
+                <p>Se suman/restan los elementos correspondientes. Solo se pueden sumar matrices de la misma dimensión.</p>
+                <div class="formula">
+                    (A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ
+                </div>
+
+                <h4>Producto por Escalar</h4>
+                <p>Se multiplica cada elemento de la matriz por el número k.</p>
+                <div class="formula">
+                    (k·A)ᵢⱼ = k·aᵢⱼ
+                </div>
+
+                <h4>Producto de Matrices</h4>
+                <p>Para multiplicar A×B, el número de columnas de A debe ser igual al número de filas de B. El elemento (i,j) del producto es:</p>
+                <div class="formula">
+                    (A·B)ᵢⱼ = aᵢ₁·b₁ⱼ + aᵢ₂·b₂ⱼ + ... + aᵢₙ·bₙⱼ
+                </div>
+                <p><strong>Importante:</strong> El producto de matrices NO es conmutativo: A·B ≠ B·A</p>
+
+                <h4>Matriz Transpuesta</h4>
+                <p>Se obtiene intercambiando filas por columnas: (A<sup>T</sup>)ᵢⱼ = aⱼᵢ</p>
+
+                <h3>4. Determinantes</h3>
+                <p>El determinante es un número asociado a una matriz cuadrada.</p>
+                
+                <h4>Determinante 2×2</h4>
+                <div class="formula">
+                    |A| = a₁₁·a₂₂ - a₁₂·a₂₁
+                </div>
+
+                <h4>Determinante 3×3 (Regla de Sarrus)</h4>
+                <p>Se suman los productos de las diagonales principales y se restan las secundarias.</p>
+
+                <h4>Propiedades de Determinantes</h4>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>|A<sup>T</sup>| = |A|</li>
+                    <li>Si una fila/columna es nula → |A| = 0</li>
+                    <li>Si dos filas/columnas son iguales → |A| = 0</li>
+                    <li>|k·A| = k<sup>n</sup>·|A| (n = orden de la matriz)</li>
+                    <li>|A·B| = |A|·|B|</li>
+                </ul>
+
+                <h3>5. Matriz Inversa</h3>
+                <p>Una matriz cuadrada A tiene inversa A<sup>-1</sup> si:</p>
+                <div class="formula">
+                    A·A<sup>-1</sup> = A<sup>-1</sup>·A = I
+                </div>
+                <p><strong>Condición:</strong> |A| ≠ 0 (la matriz debe ser no singular)</p>
+
+                <h4>Cálculo de la Inversa 2×2</h4>
+                <div class="formula">
+                    A<sup>-1</sup> = (1/|A|) · [a₂₂, -a₁₂; -a₂₁, a₁₁]
+                </div>
+
+                <h3>6. Rango de una Matriz</h3>
+                <p>El rango es el número máximo de filas (o columnas) linealmente independientes. También es el orden del mayor determinante no nulo que se puede formar.</p>
+
+                <h3>7. Método de Gauss</h3>
+                <p>Consiste en transformar la matriz en una forma escalonada mediante operaciones elementales:</p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>Intercambiar dos filas</li>
+                    <li>Multiplicar una fila por un número no nulo</li>
+                    <li>Sumar a una fila otra multiplicada por un número</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EJEMPLOS RESUELTOS -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+            
+            <div class="example">
+                <h4>Ejemplo 1: Suma de Matrices</h4>
+                <p><strong>Problema:</strong> Calcular A + B si:</p>
+                <p>A = [1, 2; 3, 4]  y  B = [5, 6; 7, 8]</p>
+                <p><strong>Solución:</strong></p>
+                <p>A + B = [1+5, 2+6; 3+7, 4+8] = [6, 8; 10, 12]</p>
+                <p><strong>Respuesta:</strong> [6, 8; 10, 12]</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 2: Producto de Matrices</h4>
+                <p><strong>Problema:</strong> Calcular A·B si A = [1, 2; 3, 4] y B = [2, 0; 1, 3]</p>
+                <p><strong>Solución:</strong></p>
+                <p>Elemento (1,1): 1×2 + 2×1 = 4</p>
+                <p>Elemento (1,2): 1×0 + 2×3 = 6</p>
+                <p>Elemento (2,1): 3×2 + 4×1 = 10</p>
+                <p>Elemento (2,2): 3×0 + 4×3 = 12</p>
+                <p><strong>Respuesta:</strong> A·B = [4, 6; 10, 12]</p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 3: Determinante 2×2</h4>
+                <p><strong>Problema:</strong> Calcular |A| si A = [3, 2; 1, 4]</p>
+                <p><strong>Solución:</strong></p>
+                <p>|A| = 3×4 - 2×1 = 12 - 2 = 10</p>
+                <p><strong>Respuesta:</strong> |A| = <strong>10</strong></p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 4: Determinante 3×3</h4>
+                <p><strong>Problema:</strong> Calcular el determinante de A = [1, 2, 3; 0, 1, 4; 5, 6, 0]</p>
+                <p><strong>Solución (Regla de Sarrus):</strong></p>
+                <p>Diagonales principales: 1×1×0 + 2×4×5 + 3×0×6 = 0 + 40 + 0 = 40</p>
+                <p>Diagonales secundarias: 3×1×5 + 1×4×6 + 2×0×0 = 15 + 24 + 0 = 39</p>
+                <p>|A| = 40 - 39 = 1</p>
+                <p><strong>Respuesta:</strong> |A| = <strong>1</strong></p>
+            </div>
+
+            <div class="example">
+                <h4>Ejemplo 5: Matriz Inversa 2×2</h4>
+                <p><strong>Problema:</strong> Calcular A<sup>-1</sup> si A = [2, 1; 3, 4]</p>
+                <p><strong>Solución:</strong></p>
+                <p>Primero: |A| = 2×4 - 1×3 = 8 - 3 = 5 ≠ 0 (tiene inversa)</p>
+                <p>A<sup>-1</sup> = (1/5) × [4, -1; -3, 2] = [4/5, -1/5; -3/5, 2/5]</p>
+                <p><strong>Respuesta:</strong> A<sup>-1</sup> = [0.8, -0.2; -0.6, 0.4]</p>
+            </div>
+        </div>
+
+        <!-- HERRAMIENTAS INTERACTIVAS -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+            
+            <!-- Calculadora de Determinante 2x2 -->
+            <div class="interactive-tool">
+                <h3 class="tool-title">🔢 Calculadora de Determinante 2×2</h3>
+                <div class="matrix-input-grid matrix-input-2x2">
+                    <input type="number" id="det2_a11" placeholder="a₁₁" step="0.01">
+                    <input type="number" id="det2_a12" placeholder="a₁₂" step="0.01">
+                    <input type="number" id="det2_a21" placeholder="a₂₁" step="0.01">
+                    <input type="number" id="det2_a22" placeholder="a₂₂" step="0.01">
+                </div>
+                <button onclick="calculateDet2x2()">Calcular Determinante</button>
+                <div class="result-box" id="det2Result"></div>
+            </div>
+
+            <!-- Calculadora de Determinante 3x3 -->
+            <div class="interactive-tool">
+                <h3 class="tool-title">🔢 Calculadora de Determinante 3×3</h3>
+                <div class="matrix-input-grid matrix-input-3x3">
+                    <input type="number" id="det3_a11" placeholder="a₁₁" step="0.01">
+                    <input type="number" id="det3_a12" placeholder="a₁₂" step="0.01">
+                    <input type="number" id="det3_a13" placeholder="a₁₃" step="0.01">
+                    <input type="number" id="det3_a21" placeholder="a₂₁" step="0.01">
+                    <input type="number" id="det3_a22" placeholder="a₂₂" step="0.01">
+                    <input type="number" id="det3_a23" placeholder="a₂₃" step="0.01">
+                    <input type="number" id="det3_a31" placeholder="a₃₁" step="0.01">
+                    <input type="number" id="det3_a32" placeholder="a₃₂" step="0.01">
+                    <input type="number" id="det3_a33" placeholder="a₃₃" step="0.01">
+                </div>
+                <button onclick="calculateDet3x3()">Calcular Determinante</button>
+                <div class="result-box" id="det3Result"></div>
+            </div>
+
+            <!-- Calculadora de Inversa 2x2 -->
+            <div class="interactive-tool">
+                <h3 class="tool-title">🔄 Calculadora de Matriz Inversa 2×2</h3>
+                <div class="matrix-input-grid matrix-input-2x2">
+                    <input type="number" id="inv_a11" placeholder="a₁₁" step="0.01">
+                    <input type="number" id="inv_a12" placeholder="a₁₂" step="0.01">
+                    <input type="number" id="inv_a21" placeholder="a₂₁" step="0.01">
+                    <input type="number" id="inv_a22" placeholder="a₂₂" step="0.01">
+                </div>
+                <button onclick="calculateInverse2x2()">Calcular Inversa</button>
+                <div class="result-box" id="invResult"></div>
+            </div>
+        </div>
+
+        <!-- EJERCICIOS -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Ejercicios de Práctica</h2>
+            
+            <div class="exercise">
+                <span class="exercise-number">1</span>
+                <strong>Si A = [2, 3; 1, 4], ¿cuánto vale el elemento a₂₁?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex1" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(1, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(1)">💡 Pista</button>
+                <div class="hint-box" id="hint1">
+                    <strong>Pista:</strong> aᵢⱼ significa el elemento en la fila i, columna j. Entonces a₂₁ está en la fila 2, columna 1.
+                </div>
+                <div class="feedback" id="feedback1"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">2</span>
+                <strong>Calcular el determinante de A = [4, 2; 3, 1]</strong>
+                <div class="input-group">
+                    <input type="number" id="ex2" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(2, -2)">Verificar</button>
+                <button class="hint-button" onclick="showHint(2)">💡 Pista</button>
+                <div class="hint-box" id="hint2">
+                    <strong>Pista:</strong> Para una matriz 2×2, |A| = a₁₁×a₂₂ - a₁₂×a₂₁. Calcula 4×1 - 2×3.
+                </div>
+                <div class="feedback" id="feedback2"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">3</span>
+                <strong>Si A = [1, 0; 0, 1], ¿qué tipo de matriz es A?</strong>
+                <p>Escribe: 1 para Identidad, 2 para Nula, 3 para Diagonal</p>
+                <div class="input-group">
+                    <input type="number" id="ex3" placeholder="Tu respuesta (1, 2 o 3)">
+                </div>
+                <button onclick="checkExercise(3, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(3)">💡 Pista</button>
+                <div class="hint-box" id="hint3">
+                    <strong>Pista:</strong> La matriz identidad tiene 1s en la diagonal principal y 0s en el resto.
+                </div>
+                <div class="feedback" id="feedback3"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">4</span>
+                <strong>Si A es de dimensión 2×3 y B es 3×4, ¿qué dimensión tiene A·B?</strong>
+                <p>Responde como: 24 (para 2×4), 33 (para 3×3), etc.</p>
+                <div class="input-group">
+                    <input type="number" id="ex4" placeholder="Tu respuesta (ej: 24)">
+                </div>
+                <button onclick="checkExercise(4, 24)">Verificar</button>
+                <button class="hint-button" onclick="showHint(4)">💡 Pista</button>
+                <div class="hint-box" id="hint4">
+                    <strong>Pista:</strong> Si A es m×n y B es n×p, entonces A·B es m×p. Aquí: 2×4.
+                </div>
+                <div class="feedback" id="feedback4"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">5</span>
+                <strong>Si |A| = 0, ¿existe la matriz inversa A<sup>-1</sup>?</strong>
+                <p>Responde: 1 para SÍ, 0 para NO</p>
+                <div class="input-group">
+                    <input type="number" id="ex5" placeholder="Tu respuesta (0 o 1)">
+                </div>
+                <button onclick="checkExercise(5, 0)">Verificar</button>
+                <button class="hint-button" onclick="showHint(5)">💡 Pista</button>
+                <div class="hint-box" id="hint5">
+                    <strong>Pista:</strong> Una matriz solo tiene inversa si su determinante es diferente de cero (|A| ≠ 0).
+                </div>
+                <div class="feedback" id="feedback5"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">6</span>
+                <strong>Calcular 2×A si A = [1, 2; 3, 4]. ¿Cuánto vale el elemento (2,2)?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex6" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(6, 8)">Verificar</button>
+                <button class="hint-button" onclick="showHint(6)">💡 Pista</button>
+                <div class="hint-box" id="hint6">
+                    <strong>Pista:</strong> Multiplicar por escalar: k·A multiplica cada elemento por k. 2×4 = 8.
+                </div>
+                <div class="feedback" id="feedback6"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">7</span>
+                <strong>Si A = [1, 2, 3], ¿qué dimensión tiene A<sup>T</sup>?</strong>
+                <p>Responde como: 13 (para 1×3), 31 (para 3×1), etc.</p>
+                <div class="input-group">
+                    <input type="number" id="ex7" placeholder="Tu respuesta (ej: 31)">
+                </div>
+                <button onclick="checkExercise(7, 31)">Verificar</button>
+                <button class="hint-button" onclick="showHint(7)">💡 Pista</button>
+                <div class="hint-box" id="hint7">
+                    <strong>Pista:</strong> La transpuesta intercambia filas por columnas. Una matriz 1×3 se convierte en 3×1.
+                </div>
+                <div class="feedback" id="feedback7"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">8</span>
+                <strong>Calcular |A| si A = [5, 0; 0, 3]</strong>
+                <div class="input-group">
+                    <input type="number" id="ex8" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(8, 15)">Verificar</button>
+                <button class="hint-button" onclick="showHint(8)">💡 Pista</button>
+                <div class="hint-box" id="hint8">
+                    <strong>Pista:</strong> Es una matriz diagonal. |A| = 5×3 - 0×0 = 15.
+                </div>
+                <div class="feedback" id="feedback8"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">9</span>
+                <strong>Si A·I = A para cualquier matriz A, ¿cuánto vale |I₂| (determinante de la identidad 2×2)?</strong>
+                <div class="input-group">
+                    <input type="number" id="ex9" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(9, 1)">Verificar</button>
+                <button class="hint-button" onclick="showHint(9)">💡 Pista</button>
+                <div class="hint-box" id="hint9">
+                    <strong>Pista:</strong> I₂ = [1, 0; 0, 1]. Calcula |I₂| = 1×1 - 0×0 = 1.
+                </div>
+                <div class="feedback" id="feedback9"></div>
+            </div>
+
+            <div class="exercise">
+                <span class="exercise-number">10</span>
+                <strong>Si A = [2, 1; 4, 3], calcular el elemento (1,2) de 3A</strong>
+                <div class="input-group">
+                    <input type="number" id="ex10" step="0.01" placeholder="Tu respuesta">
+                </div>
+                <button onclick="checkExercise(10, 3)">Verificar</button>
+                <button class="hint-button" onclick="showHint(10)">💡 Pista</button>
+                <div class="hint-box" id="hint10">
+                    <strong>Pista:</strong> El elemento (1,2) de A es 1. Multiplicar por 3: 3×1 = 3.
+                </div>
+                <div class="feedback" id="feedback10"></div>
+            </div>
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen</h2>
+            <div class="theory-content">
+                <h3>Conceptos Clave:</h3>
+                <ul style="line-height: 2;">
+                    <li>✓ <strong>Matriz m×n:</strong> m filas, n columnas</li>
+                    <li>✓ <strong>Suma:</strong> Solo matrices de igual dimensión, elemento a elemento</li>
+                    <li>✓ <strong>Producto:</strong> A(m×n) · B(n×p) = C(m×p), NO conmutativo</li>
+                    <li>✓ <strong>Determinante 2×2:</strong> |A| = a₁₁a₂₂ - a₁₂a₂₁</li>
+                    <li>✓ <strong>Determinante 3×3:</strong> Regla de Sarrus (diagonales)</li>
+                    <li>✓ <strong>Inversa:</strong> Existe si |A| ≠ 0, cumple A·A⁻¹ = I</li>
+                    <li>✓ <strong>Transpuesta:</strong> Intercambia filas por columnas</li>
+                    <li>✓ <strong>Matriz identidad I:</strong> A·I = I·A = A</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="nav-buttons">
+            <a href="tema3_geometria_trig.html" class="nav-button">⬅️ Tema 3: Geometría</a>
+            <a href="volume1_index.html" class="nav-button">🏠 Índice Volumen I</a>
+            <a href="tema5_sistemas.html" class="nav-button">Tema 5: Sistemas ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        
+        // Tab functionality
+        function showTab(tabName) {
+            const sections = document.querySelectorAll('.content-section');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            sections.forEach(section => section.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+// Sistema de puntuación
+        let score = 0;
+        let completedExercises = 0;
+        let totalExercises = 10;
+        let correctAnswers = 0;
+
+        // Cargar progreso
+        function loadProgress() {
+            const saved = localStorage.getItem('tema4_progress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                score = data.score || 0;
+                completedExercises = data.completed || 0;
+                correctAnswers = data.correct || 0;
+                updateDisplay();
+            }
+        }
+
+        // Guardar progreso
+        function saveProgress() {
+            localStorage.setItem('tema4_progress', JSON.stringify({
+                score: score,
+                completed: completedExercises,
+                correct: correctAnswers
+            }));
+        }
+
+        // Actualizar visualización
+        function updateDisplay() {
+            document.getElementById('scoreValue').textContent = score;
+            document.getElementById('exerciseCount').textContent = `${completedExercises}/${totalExercises}`;
+            const accuracy = completedExercises > 0 ? Math.round((correctAnswers / completedExercises) * 100) : 0;
+            document.getElementById('accuracy').textContent = accuracy + '%';
+            const progress = (completedExercises / totalExercises) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        // Calculadora de Determinante 2x2
+        function calculateDet2x2() {
+            const a11 = parseFloat(document.getElementById('det2_a11').value);
+            const a12 = parseFloat(document.getElementById('det2_a12').value);
+            const a21 = parseFloat(document.getElementById('det2_a21').value);
+            const a22 = parseFloat(document.getElementById('det2_a22').value);
+            const resultDiv = document.getElementById('det2Result');
+            
+            if ([a11, a12, a21, a22].some(isNaN)) {
+                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los valores de la matriz.</p>';
+                return;
+            }
+            
+            const det = a11 * a22 - a12 * a21;
+            
+            resultDiv.innerHTML = `
+                <h4>Resultado:</h4>
+                <p><strong>Matriz A:</strong></p>
+                <p>[${a11}, ${a12}]</p>
+                <p>[${a21}, ${a22}]</p>
+                <p><strong>Cálculo:</strong></p>
+                <p>|A| = (${a11})(${a22}) - (${a12})(${a21})</p>
+                <p>|A| = ${a11 * a22} - ${a12 * a21}</p>
+                <p><strong>|A| = ${det}</strong></p>
+            `;
+        }
+
+        // Calculadora de Determinante 3x3
+        function calculateDet3x3() {
+            const matrix = [];
+            for (let i = 1; i <= 3; i++) {
+                const row = [];
+                for (let j = 1; j <= 3; j++) {
+                    const val = parseFloat(document.getElementById(`det3_a${i}${j}`).value);
+                    if (isNaN(val)) {
+                        document.getElementById('det3Result').innerHTML = '<p style="color: red;">Por favor, completa todos los valores.</p>';
+                        return;
+                    }
+                    row.push(val);
+                }
+                matrix.push(row);
+            }
+            
+            // Regla de Sarrus
+            const diag1 = matrix[0][0] * matrix[1][1] * matrix[2][2];
+            const diag2 = matrix[0][1] * matrix[1][2] * matrix[2][0];
+            const diag3 = matrix[0][2] * matrix[1][0] * matrix[2][1];
+            const diag4 = matrix[0][2] * matrix[1][1] * matrix[2][0];
+            const diag5 = matrix[0][0] * matrix[1][2] * matrix[2][1];
+            const diag6 = matrix[0][1] * matrix[1][0] * matrix[2][2];
+            
+            const sumPos = diag1 + diag2 + diag3;
+            const sumNeg = diag4 + diag5 + diag6;
+            const det = sumPos - sumNeg;
+            
+            document.getElementById('det3Result').innerHTML = `
+                <h4>Resultado (Regla de Sarrus):</h4>
+                <p><strong>Diagonales principales:</strong> ${diag1.toFixed(2)} + ${diag2.toFixed(2)} + ${diag3.toFixed(2)} = ${sumPos.toFixed(2)}</p>
+                <p><strong>Diagonales secundarias:</strong> ${diag4.toFixed(2)} + ${diag5.toFixed(2)} + ${diag6.toFixed(2)} = ${sumNeg.toFixed(2)}</p>
+                <p><strong>|A| = ${sumPos.toFixed(2)} - ${sumNeg.toFixed(2)} = ${det.toFixed(4)}</strong></p>
+            `;
+        }
+
+        // Calculadora de Inversa 2x2
+        function calculateInverse2x2() {
+            const a11 = parseFloat(document.getElementById('inv_a11').value);
+            const a12 = parseFloat(document.getElementById('inv_a12').value);
+            const a21 = parseFloat(document.getElementById('inv_a21').value);
+            const a22 = parseFloat(document.getElementById('inv_a22').value);
+            const resultDiv = document.getElementById('invResult');
+            
+            if ([a11, a12, a21, a22].some(isNaN)) {
+                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los valores de la matriz.</p>';
+                return;
+            }
+            
+            const det = a11 * a22 - a12 * a21;
+            
+            if (Math.abs(det) < 0.0001) {
+                resultDiv.innerHTML = `
+                    <h4>Resultado:</h4>
+                    <p style="color: red;"><strong>|A| = ${det.toFixed(4)} ≈ 0</strong></p>
+                    <p>La matriz <strong>NO tiene inversa</strong> (es singular).</p>
+                `;
+                return;
+            }
+            
+            const inv11 = a22 / det;
+            const inv12 = -a12 / det;
+            const inv21 = -a21 / det;
+            const inv22 = a11 / det;
+            
+            resultDiv.innerHTML = `
+                <h4>Resultado:</h4>
+                <p><strong>|A| = ${det.toFixed(4)} ≠ 0</strong> → La matriz tiene inversa ✓</p>
+                <p><strong>A<sup>-1</sup> =</strong></p>
+                <p>[${inv11.toFixed(4)}, ${inv12.toFixed(4)}]</p>
+                <p>[${inv21.toFixed(4)}, ${inv22.toFixed(4)}]</p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                    Verificación: A·A<sup>-1</sup> debería dar la matriz identidad I
+                </p>
+            `;
+        }
+
+        // Mostrar pistas
+        function showHint(n) {
+            const hint = document.getElementById('hint' + n);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Verificar ejercicio
+        function checkExercise(n, correct, tolerance = 0.1) {
+            const input = document.getElementById('ex' + n);
+            const feedback = document.getElementById('feedback' + n);
+            const userAnswer = parseFloat(input.value);
+            
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Por favor, introduce un valor numérico.';
+                return;
+            }
+            
+            const isCorrect = Math.abs(userAnswer - correct) <= tolerance;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ ¡Correcto! +10 puntos';
+                if (!input.dataset.completed) {
+                    score += 10;
+                    completedExercises++;
+                    correctAnswers++;
+                    input.dataset.completed = 'true';
+                    input.disabled = true;
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = `❌ Incorrecto. La respuesta correcta es ${correct}.`;
+                if (!input.dataset.completed) {
+                    completedExercises++;
+                    input.dataset.completed = 'true';
+                }
+            }
+            
+            updateDisplay();
+            saveProgress();
+        }
+
+        // Inicializar
+        loadProgress();
+    </script>
+</body>
+</html>

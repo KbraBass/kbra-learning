@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composición y Descomposición Decimal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-family: 'Comic Sans MS', cursive;
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tab-button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .explanation {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .place-value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .place-card {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .place-name {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .place-abbr {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 8px 0;
+        }
+
+        .place-value {
+            font-size: 0.85em;
+            color: #34495e;
+            font-weight: bold;
+        }
+
+        .decomposition-area {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .number-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .digit-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .digit-box {
+            background: white;
+            border: 3px solid #667eea;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 80px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .digit-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .digit {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .digit-place {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .expanded-form {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.3em;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        .input-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        input[type="number"], input[type="text"] {
+            padding: 15px;
+            font-size: 1.3em;
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            font-family: 'Comic Sans MS', cursive;
+            width: 250px;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .composition-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .composition-input {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .composition-input label {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.95em;
+        }
+
+        .composition-input input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .practice-question {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 3px solid #ffc107;
+        }
+
+        .question-text {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .score {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .info-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .info-text {
+            color: #155724;
+            line-height: 1.6;
+        }
+
+        .decimal-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .decimal-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .number-display { font-size: 2em; letter-spacing: 3px; }
+            .tab-button { min-width: 150px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔢 Composición y Descomposición Decimal</h1>
+            <p class="subtitle">¡Aprende a entender los números!</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('aprender')">📚 Aprender</button>
+            <button class="tab-button" onclick="showTab('descomponer')">➗ Descomponer</button>
+            <button class="tab-button" onclick="showTab('componer')">➕ Componer</button>
+            <button class="tab-button" onclick="showTab('decimales')">🔢 Decimales</button>
+            <button class="tab-button" onclick="showTab('practica')">🏆 Práctica</button>
+        </div>
+
+        <!-- TAB 1: APRENDER -->
+        <div id="aprender" class="tab-content active">
+            <div class="explanation">
+                <h2 style="margin-bottom: 15px;">📖 ¿Qué es la Composición y Descomposición?</h2>
+                <p><strong>Descomponer</strong> un número significa separarlo en sus partes según el valor posicional de cada dígito.</p>
+                <p style="margin-top: 10px;"><strong>Componer</strong> un número significa juntar todas las partes para formar el número completo.</p>
+                <p style="margin-top: 10px;">Por ejemplo: <strong>3 456</strong> se descompone en:<br>
+                3 Unidades de Millar + 4 Centenas + 5 Decenas + 6 Unidades</p>
+            </div>
+
+            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📊 Tabla de Valores Posicionales</h2>
+            
+            <div class="place-value-grid">
+                <div class="place-card">
+                    <div class="place-name">Centena de Millar</div>
+                    <div class="place-abbr">CM</div>
+                    <div class="place-value">100 000</div>
+                </div>
+                <div class="place-card">
+                    <div class="place-name">Decena de Millar</div>
+                    <div class="place-abbr">DM</div>
+                    <div class="place-value">10 000</div>
+                </div>
+                <div class="place-card">
+                    <div class="place-name">Unidad de Millar</div>
+                    <div class="place-abbr">UM</div>
+                    <div class="place-value">1 000</div>
+                </div>
+                <div class="place-card">
+                    <div class="place-name">Centena</div>
+                    <div class="place-abbr">C</div>
+                    <div class="place-value">100</div>
+                </div>
+                <div class="place-card">
+                    <div class="place-name">Decena</div>
+                    <div class="place-abbr">D</div>
+                    <div class="place-value">10</div>
+                </div>
+                <div class="place-card">
+                    <div class="place-name">Unidad</div>
+                    <div class="place-abbr">U</div>
+                    <div class="place-value">1</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">💡 ¿Sabías que...?</div>
+                <div class="info-text">
+                    <p>✓ Cada posición a la izquierda vale 10 veces más</p>
+                    <p>✓ El número 523 741 tiene 6 dígitos</p>
+                    <p>✓ El dígito más importante (el de mayor valor) está a la izquierda</p>
+                    <p>✓ Los decimales van después del punto y valen menos que 1</p>
+                </div>
+            </div>
+
+            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📝 Ejemplo Detallado</h2>
+            <div class="decomposition-area">
+                <div class="number-display">456 789</div>
+                
+                <div class="digit-breakdown">
+                    <div class="digit-box">
+                        <div class="digit">4</div>
+                        <div class="digit-place">CM</div>
+                    </div>
+                    <div class="digit-box">
+                        <div class="digit">5</div>
+                        <div class="digit-place">DM</div>
+                    </div>
+                    <div class="digit-box">
+                        <div class="digit">6</div>
+                        <div class="digit-place">UM</div>
+                    </div>
+                    <div class="digit-box">
+                        <div class="digit">7</div>
+                        <div class="digit-place">C</div>
+                    </div>
+                    <div class="digit-box">
+                        <div class="digit">8</div>
+                        <div class="digit-place">D</div>
+                    </div>
+                    <div class="digit-box">
+                        <div class="digit">9</div>
+                        <div class="digit-place">U</div>
+                    </div>
+                </div>
+
+                <div class="expanded-form">
+                    400 000 + 50 000 + 6 000 + 700 + 80 + 9
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #2c3e50;">
+                    <p><strong>4</strong> Centenas de Millar = 4 × 100 000 = 400 000</p>
+                    <p><strong>5</strong> Decenas de Millar = 5 × 10 000 = 50 000</p>
+                    <p><strong>6</strong> Unidades de Millar = 6 × 1 000 = 6 000</p>
+                    <p><strong>7</strong> Centenas = 7 × 100 = 700</p>
+                    <p><strong>8</strong> Decenas = 8 × 10 = 80</p>
+                    <p><strong>9</strong> Unidades = 9 × 1 = 9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: DESCOMPONER -->
+        <div id="descomponer" class="tab-content">
+            <div class="explanation">
+                <h2 style="margin-bottom: 15px;">➗ Descomponer un Número</h2>
+                <p>Introduce un número (hasta 6 dígitos) y verás cómo se descompone en sus valores posicionales.</p>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label style="font-size: 1.2em; font-weight: bold;">Número a descomponer:</label>
+                    <input type="number" id="decomposeInput" placeholder="Ej: 523741" min="0" max="999999">
+                    <button onclick="decomposeNumber()">Descomponer</button>
+                </div>
+            </div>
+
+            <div id="decomposeResult"></div>
+        </div>
+
+        <!-- TAB 3: COMPONER -->
+        <div id="componer" class="tab-content">
+            <div class="explanation">
+                <h2 style="margin-bottom: 15px;">➕ Componer un Número</h2>
+                <p>Introduce los valores de cada posición y descubre qué número forman juntos.</p>
+            </div>
+
+            <div class="input-section">
+                <div class="composition-inputs">
+                    <div class="composition-input">
+                        <label>Centenas de Millar (CM)</label>
+                        <input type="number" id="cm" min="0" max="9" value="0">
+                    </div>
+                    <div class="composition-input">
+                        <label>Decenas de Millar (DM)</label>
+                        <input type="number" id="dm" min="0" max="9" value="0">
+                    </div>
+                    <div class="composition-input">
+                        <label>Unidades de Millar (UM)</label>
+                        <input type="number" id="um" min="0" max="9" value="0">
+                    </div>
+                    <div class="composition-input">
+                        <label>Centenas (C)</label>
+                        <input type="number" id="c" min="0" max="9" value="0">
+                    </div>
+                    <div class="composition-input">
+                        <label>Decenas (D)</label>
+                        <input type="number" id="d" min="0" max="9" value="0">
+                    </div>
+                    <div class="composition-input">
+                        <label>Unidades (U)</label>
+                        <input type="number" id="u" min="0" max="9" value="0">
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="composeNumber()">Componer Número</button>
+                </div>
+            </div>
+
+            <div id="composeResult"></div>
+        </div>
+
+        <!-- TAB 4: DECIMALES -->
+        <div id="decimales" class="tab-content">
+            <div class="explanation">
+                <h2 style="margin-bottom: 15px;">🔢 Números con Decimales</h2>
+                <p>Los decimales son partes más pequeñas que la unidad. Van después del punto decimal.</p>
+                <p style="margin-top: 10px;">Por ejemplo: <strong>123.456</strong> tiene tres decimales.</p>
+            </div>
+
+            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📊 Valores Decimales</h2>
+            
+            <div class="place-value-grid">
+                <div class="place-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="place-name">Décima</div>
+                    <div class="place-abbr">d</div>
+                    <div class="place-value">0.1</div>
+                </div>
+                <div class="place-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="place-name">Centésima</div>
+                    <div class="place-abbr">c</div>
+                    <div class="place-value">0.01</div>
+                </div>
+                <div class="place-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="place-name">Milésima</div>
+                    <div class="place-abbr">m</div>
+                    <div class="place-value">0.001</div>
+                </div>
+            </div>
+
+            <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📝 Ejemplo con Decimales</h2>
+            <div class="decomposition-area">
+                <div class="number-display">123.456</div>
+                
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3>
+                        <div class="digit-breakdown">
+                            <div class="digit-box">
+                                <div class="digit">1</div>
+                                <div class="digit-place">C</div>
+                            </div>
+                            <div class="digit-box">
+                                <div class="digit">2</div>
+                                <div class="digit-place">D</div>
+                            </div>
+                            <div class="digit-box">
+                                <div class="digit">3</div>
+                                <div class="digit-place">U</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>
+
+                    <div style="text-align: center;">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3>
+                        <div class="digit-breakdown">
+                            <div class="digit-box" style="border-color: #e74c3c;">
+                                <div class="digit" style="color: #e74c3c;">4</div>
+                                <div class="digit-place">d</div>
+                            </div>
+                            <div class="digit-box" style="border-color: #e74c3c;">
+                                <div class="digit" style="color: #e74c3c;">5</div>
+                                <div class="digit-place">c</div>
+                            </div>
+                            <div class="digit-box" style="border-color: #e74c3c;">
+                                <div class="digit" style="color: #e74c3c;">6</div>
+                                <div class="digit-place">m</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expanded-form">
+                    100 + 20 + 3 + 0.4 + 0.05 + 0.006
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #2c3e50;">
+                    <p><strong>1</strong> Centena = 1 × 100 = 100</p>
+                    <p><strong>2</strong> Decenas = 2 × 10 = 20</p>
+                    <p><strong>3</strong> Unidades = 3 × 1 = 3</p>
+                    <p style="color: #e74c3c;"><strong>4</strong> Décimas = 4 × 0.1 = 0.4</p>
+                    <p style="color: #e74c3c;"><strong>5</strong> Centésimas = 5 × 0.01 = 0.05</p>
+                    <p style="color: #e74c3c;"><strong>6</strong> Milésimas = 6 × 0.001 = 0.006</p>
+                </div>
+            </div>
+
+            <div class="decimal-section">
+                <div class="decimal-title">🎯 Prueba con tus Propios Números Decimales</div>
+                
+                <div class="input-section" style="background: white; margin-top: 20px;">
+                    <div class="input-group">
+                        <label style="font-size: 1.2em; font-weight: bold;">Número con decimales:</label>
+                        <input type="text" id="decimalInput" placeholder="Ej: 123.456" pattern="[0-9]*\.?[0-9]*">
+                        <button onclick="decomposeDecimal()">Descomponer</button>
+                    </div>
+                </div>
+
+                <div id="decimalResult"></div>
+            </div>
+        </div>
+
+        <!-- TAB 5: PRÁCTICA -->
+        <div id="practica" class="tab-content">
+            <div class="explanation">
+                <h2 style="margin-bottom: 15px;">🏆 ¡Pon a Prueba tus Conocimientos!</h2>
+                <p>Responde las preguntas sobre composición y descomposición de números.</p>
+            </div>
+
+            <div class="score">
+                Puntuación: <span id="score">0</span> puntos
+            </div>
+            
+            <div class="score" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                Nivel: <span id="level">Principiante</span>
+            </div>
+
+            <div class="practice-question">
+                <div class="question-text" id="questionText"></div>
+                <div class="input-group">
+                    <input type="text" id="answerInput" placeholder="Tu respuesta">
+                    <button onclick="checkAnswer()">Comprobar</button>
+                    <button onclick="nextQuestion()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Nueva Pregunta</button>
+                </div>
+                <div id="feedback" style="margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center;"></div>
+            </div>
+
+            <div id="practiceExplanation"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentTab = 'aprender';
+        let score = 0;
+        let currentQuestion = null;
+
+        // Helper function to format numbers with space as thousand separator and dot as decimal
+        function formatNumber(num) {
+            if (typeof num !== 'number') {
+                num = parseFloat(num);
+            }
+            if (isNaN(num)) return '0';
+            
+            const parts = num.toString().split('.');
+            const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            const decimalPart = parts[1] ? '.' + parts[1] : '';
+            return integerPart + decimalPart;
+        }
+
+        // Helper function to parse input accepting both dot and comma as decimal separator
+        function parseNumberInput(input) {
+            if (typeof input === 'number') return input;
+            // Replace comma with dot for decimal separator, remove spaces
+            const cleaned = input.toString().replace(/\s/g, '').replace(',', '.');
+            return parseFloat(cleaned);
+        }
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            currentTab = tabName;
+
+            // Generate question if practice tab
+            if (tabName === 'practica') {
+                nextQuestion();
+            }
+        }
+
+        function decomposeNumber() {
+            const num = parseInt(document.getElementById('decomposeInput').value);
+            
+            if (isNaN(num) || num < 0 || num > 999999) {
+                document.getElementById('decomposeResult').innerHTML = `
+                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                        ⚠️ Por favor, introduce un número entre 0 y 999 999
+                    </div>
+                `;
+                return;
+            }
+
+            const digits = num.toString().padStart(6, '0').split('').map(d => parseInt(d));
+            const places = ['CM', 'DM', 'UM', 'C', 'D', 'U'];
+            const values = [100000, 10000, 1000, 100, 10, 1];
+            const names = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
+
+            let html = `
+                <div class="decomposition-area">
+                    <div class="number-display">${formatNumber(num)}</div>
+                    
+                    <div class="digit-breakdown">
+            `;
+
+            let expandedParts = [];
+            let explanations = [];
+
+            for (let i = 0; i < 6; i++) {
+                if (digits[i] > 0) {
+                    html += `
+                        <div class="digit-box">
+                            <div class="digit">${digits[i]}</div>
+                            <div class="digit-place">${places[i]}</div>
+                        </div>
+                    `;
+                    const value = digits[i] * values[i];
+                    expandedParts.push(formatNumber(value));
+                    explanations.push(`<p><strong>${digits[i]}</strong> ${names[i]} = ${digits[i]} × ${formatNumber(values[i])} = ${formatNumber(value)}</p>`);
+                }
+            }
+
+            html += `
+                    </div>
+                    <div class="expanded-form">
+                        ${expandedParts.join(' + ')}
+                    </div>
+                    <div style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #2c3e50;">
+                        ${explanations.join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('decomposeResult').innerHTML = html;
+        }
+
+        function composeNumber() {
+            const cm = parseInt(document.getElementById('cm').value) || 0;
+            const dm = parseInt(document.getElementById('dm').value) || 0;
+            const um = parseInt(document.getElementById('um').value) || 0;
+            const c = parseInt(document.getElementById('c').value) || 0;
+            const d = parseInt(document.getElementById('d').value) || 0;
+            const u = parseInt(document.getElementById('u').value) || 0;
+
+            const total = (cm * 100000) + (dm * 10000) + (um * 1000) + (c * 100) + (d * 10) + u;
+
+            let parts = [];
+            if (cm > 0) parts.push(`${cm * 100000}`);
+            if (dm > 0) parts.push(`${dm * 10000}`);
+            if (um > 0) parts.push(`${um * 1000}`);
+            if (c > 0) parts.push(`${c * 100}`);
+            if (d > 0) parts.push(`${d * 10}`);
+            if (u > 0) parts.push(`${u}`);
+
+            const html = `
+                <div class="decomposition-area">
+                    <div class="expanded-form">
+                        ${parts.join(' + ')} = ${formatNumber(total)}
+                    </div>
+                    <div class="number-display">${formatNumber(total)}</div>
+                    <div style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #2c3e50;">
+                        <p>✅ El número compuesto es: <strong style="font-size: 1.5em; color: #667eea;">${formatNumber(total)}</strong></p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('composeResult').innerHTML = html;
+        }
+
+        function decomposeDecimal() {
+            const input = document.getElementById('decimalInput').value.trim();
+            const num = parseNumberInput(input);
+            
+            if (isNaN(num) || num < 0 || num >= 1000000) {
+                document.getElementById('decimalResult').innerHTML = `
+                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                        ⚠️ Por favor, introduce un número válido (puede tener hasta 3 decimales)
+                    </div>
+                `;
+                return;
+            }
+
+            const parts = num.toString().split('.');
+            const integerPart = parts[0] || '0';
+            const decimalPart = parts[1] || '';
+
+            if (decimalPart.length > 3) {
+                document.getElementById('decimalResult').innerHTML = `
+                    <div class="result-box" style="background: #f8d7da; color: #721c24;">
+                        ⚠️ Máximo 3 decimales permitidos
+                    </div>
+                `;
+                return;
+            }
+
+            let html = `<div class="decomposition-area">
+                <div class="number-display">${num}</div>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0;">
+            `;
+
+            // Integer part
+            const intDigits = integerPart.padStart(6, '0').split('').map(d => parseInt(d));
+            const intPlaces = ['CM', 'DM', 'UM', 'C', 'D', 'U'];
+            const intValues = [100000, 10000, 1000, 100, 10, 1];
+            const intNames = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
+
+            let integerHTML = '<div style="text-align: center;"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
+            let hasInteger = false;
+            let expandedParts = [];
+            let explanations = [];
+
+            for (let i = 0; i < 6; i++) {
+                if (intDigits[i] > 0) {
+                    hasInteger = true;
+                    integerHTML += `
+                        <div class="digit-box">
+                            <div class="digit">${intDigits[i]}</div>
+                            <div class="digit-place">${intPlaces[i]}</div>
+                        </div>
+                    `;
+                    const value = intDigits[i] * intValues[i];
+                    expandedParts.push(value);
+                    explanations.push(`<p><strong>${intDigits[i]}</strong> ${intNames[i]} = ${intDigits[i]} × ${formatNumber(intValues[i])} = ${formatNumber(value)}</p>`);
+                }
+            }
+
+            if (!hasInteger) {
+                integerHTML += '<div class="digit-box"><div class="digit">0</div><div class="digit-place">U</div></div>';
+                expandedParts.push(0);
+                explanations.push('<p><strong>0</strong> Unidades</p>');
+            }
+
+            integerHTML += '</div></div>';
+            html += integerHTML;
+
+            // Decimal part
+            if (decimalPart) {
+                html += '<div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>';
+                html += '<div style="text-align: center;"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
+
+                const decDigits = decimalPart.padEnd(3, '0').split('').map(d => parseInt(d));
+                const decPlaces = ['d', 'c', 'm'];
+                const decValues = [0.1, 0.01, 0.001];
+                const decNames = ['Décimas', 'Centésimas', 'Milésimas'];
+
+                for (let i = 0; i < decimalPart.length; i++) {
+                    html += `
+                        <div class="digit-box" style="border-color: #e74c3c;">
+                            <div class="digit" style="color: #e74c3c;">${decDigits[i]}</div>
+                            <div class="digit-place">${decPlaces[i]}</div>
+                        </div>
+                    `;
+                    const value = decDigits[i] * decValues[i];
+                    expandedParts.push(value);
+                    explanations.push(`<p style="color: #e74c3c;"><strong>${decDigits[i]}</strong> ${decNames[i]} = ${decDigits[i]} × ${decValues[i]} = ${value}</p>`);
+                }
+
+                html += '</div></div>';
+            }
+
+            html += `</div>
+                <div class="expanded-form">
+                    ${expandedParts.join(' + ')}
+                </div>
+                <div style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #2c3e50;">
+                    ${explanations.join('')}
+                </div>
+            </div>`;
+
+            document.getElementById('decimalResult').innerHTML = html;
+        }
+
+        function nextQuestion() {
+            const types = ['decompose', 'compose', 'identify', 'decimal'];
+            const type = types[Math.floor(Math.random() * types.length)];
+            
+            document.getElementById('answerInput').value = '';
+            document.getElementById('feedback').innerHTML = '';
+            document.getElementById('practiceExplanation').innerHTML = '';
+
+            if (type === 'decompose') {
+                // Generate a number with unique digits to avoid ambiguity
+                let num;
+                let hasUniqueDigits = false;
+                while (!hasUniqueDigits) {
+                    num = Math.floor(Math.random() * 999999) + 1;
+                    const digitSet = new Set(num.toString().split(''));
+                    hasUniqueDigits = digitSet.size === num.toString().length;
+                }
+                currentQuestion = {
+                    type: 'decompose',
+                    number: num,
+                    answer: num
+                };
+                document.getElementById('questionText').innerHTML = `
+                    ¿Cuánto vale el dígito <strong style="color: #667eea; font-size: 1.5em;">${getRandomDigit(num)}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${formatNumber(num)}</strong>?
+                `;
+            } else if (type === 'compose') {
+                const values = generateRandomValues();
+                const total = values.total;
+                currentQuestion = {
+                    type: 'compose',
+                    values: values,
+                    answer: total
+                };
+                document.getElementById('questionText').innerHTML = `
+                    ¿Qué número se forma con: <strong style="color: #667eea;">${values.text}</strong>?
+                `;
+            } else if (type === 'identify') {
+                const num = Math.floor(Math.random() * 999999) + 1;
+                const positions = ['CM', 'DM', 'UM', 'C', 'D', 'U'];
+                const posNames = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
+                const pos = Math.floor(Math.random() * 6);
+                const digits = num.toString().padStart(6, '0').split('').map(d => parseInt(d));
+                
+                currentQuestion = {
+                    type: 'identify',
+                    number: num,
+                    position: pos,
+                    answer: digits[pos]
+                };
+                document.getElementById('questionText').innerHTML = `
+                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${posNames[pos]}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${formatNumber(num)}</strong>?
+                `;
+            } else if (type === 'decimal') {
+                const intPart = Math.floor(Math.random() * 1000);
+                const decPart = Math.floor(Math.random() * 1000);
+                const num = parseFloat(intPart + '.' + decPart.toString().padStart(3, '0'));
+                const decimalPositions = ['décimas', 'centésimas', 'milésimas'];
+                const pos = Math.floor(Math.random() * 3);
+                const decDigits = decPart.toString().padStart(3, '0').split('').map(d => parseInt(d));
+                
+                currentQuestion = {
+                    type: 'decimal',
+                    number: num,
+                    position: pos,
+                    answer: decDigits[pos]
+                };
+                document.getElementById('questionText').innerHTML = `
+                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${decimalPositions[pos]}</strong> en el número <strong style="color: #e74c3c; font-size: 1.5em;">${num}</strong>?
+                `;
+            }
+        }
+
+        function getRandomDigit(num) {
+            const str = num.toString();
+            const digit = str[Math.floor(Math.random() * str.length)];
+            const positions = [];
+            
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === digit) {
+                    positions.push(i);
+                }
+            }
+            
+            const pos = positions[Math.floor(Math.random() * positions.length)];
+            const values = [100000, 10000, 1000, 100, 10, 1];
+            const paddedStr = str.padStart(6, '0');
+            const index = 6 - str.length + pos;
+            
+            currentQuestion.answer = parseInt(digit) * values[index];
+            return digit;
+        }
+
+        function generateRandomValues() {
+            const values = [];
+            const names = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
+            const multipliers = [100000, 10000, 1000, 100, 10, 1];
+            let total = 0;
+            let text = [];
+            
+            const count = Math.floor(Math.random() * 3) + 2; // 2-4 values
+            const indices = [];
+            while (indices.length < count) {
+                const idx = Math.floor(Math.random() * 6);
+                if (!indices.includes(idx)) {
+                    indices.push(idx);
+                }
+            }
+            
+            indices.sort((a, b) => a - b);
+            
+            for (const idx of indices) {
+                const digit = Math.floor(Math.random() * 9) + 1;
+                total += digit * multipliers[idx];
+                text.push(`${digit} ${names[idx]}`);
+            }
+            
+            return { total, text: text.join(' + ') };
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answerInput').value.trim();
+            const correctAnswer = currentQuestion.answer;
+            
+            if (userAnswer === '') {
+                document.getElementById('feedback').innerHTML = '<span style="color: #ff6b6b;">⚠️ Por favor, introduce una respuesta</span>';
+                return;
+            }
+            
+            const userNum = parseNumberInput(userAnswer);
+            
+            if (userNum === correctAnswer) {
+                score += 10;
+                document.getElementById('score').textContent = score;
+                document.getElementById('feedback').innerHTML = '<span style="color: #51cf66;">✅ ¡Correcto! +10 puntos</span>';
+                
+                updateScore();
+                
+                setTimeout(() => {
+                    nextQuestion();
+                }, 2000);
+            } else {
+                score = Math.max(0, score - 15);
+                document.getElementById('score').textContent = score;
+                document.getElementById('feedback').innerHTML = `<span style="color: #ff6b6b;">❌ Incorrecto. La respuesta correcta es: ${formatNumber(correctAnswer)} (-15 puntos)</span>`;
+                
+                // Show explanation
+                showExplanation();
+            }
+            
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+            
+            let level = 'Principiante';
+            if (score >= 150) level = '🌟 Experto en Números';
+            else if (score >= 100) level = '⭐ Estudiante Avanzado';
+            else if (score >= 50) level = '✨ Buen Estudiante';
+            
+            document.getElementById('level').textContent = level;
+        }
+
+        function showExplanation() {
+            let explanation = '';
+            
+            if (currentQuestion.type === 'decompose' || currentQuestion.type === 'identify') {
+                const num = currentQuestion.number;
+                const digits = num.toString().padStart(6, '0').split('').map(d => parseInt(d));
+                const places = ['CM', 'DM', 'UM', 'C', 'D', 'U'];
+                const values = [100000, 10000, 1000, 100, 10, 1];
+                const names = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
+                
+                explanation = '<div class="info-box" style="margin-top: 20px;"><div class="info-title">📖 Explicación:</div><div class="info-text">';
+                
+                for (let i = 0; i < 6; i++) {
+                    if (digits[i] > 0) {
+                        explanation += `<p><strong>${digits[i]}</strong> en posición ${places[i]} = ${digits[i]} × ${formatNumber(values[i])} = ${formatNumber(digits[i] * values[i])}</p>`;
+                    }
+                }
+                
+                explanation += '</div></div>';
+            }
+            
+            document.getElementById('practiceExplanation').innerHTML = explanation;
+        }
+
+        // Initialize
+        nextQuestion();
+    </script>
+</body>
+</html>
