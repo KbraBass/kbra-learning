@@ -53,12 +53,12 @@
 
         <!-- PERÍMETRO TAB -->
         <div id="perimetro" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📏 ¿Qué es el Perímetro?</h2>
+            <h2 class="section-header">📏 ¿Qué es el Perímetro?</h2>
             
             <div class="explanation">
                 <h3>El perímetro es el borde</h3>
                 <p>El perímetro es la distancia alrededor de una forma. ¡Es como caminar por el borde de un jardín!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="mt-10">
                     <li><strong>Cuadrado:</strong> suma los 4 lados (o lado × 4)</li>
                     <li><strong>Rectángulo:</strong> suma largo + largo + ancho + ancho</li>
                     <li><strong>Triángulo:</strong> suma los 3 lados</li>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="input-section">
-                <h3 style="margin-bottom: 20px;">Calcula el Perímetro de un Cuadrado</h3>
+                <h3 class="mb-20">Calcula el Perímetro de un Cuadrado</h3>
                 <div class="input-group">
                     <label for="square-side">Lado del cuadrado:</label>
                     <input type="number" id="square-side" placeholder="5" min="1" max="50" value="5">
@@ -77,8 +77,8 @@
 
             <div class="shape-visual" id="square-visual"></div>
 
-            <div class="input-section" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 20px;">Calcula el Perímetro de un Rectángulo</h3>
+            <div class="input-section" class="mt-30">
+                <h3 class="mb-20">Calcula el Perímetro de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length">Largo:</label>
                     <input type="number" id="rect-length" placeholder="8" min="1" max="50" value="8">
@@ -101,12 +101,12 @@
 
         <!-- ÁREA TAB -->
         <div id="area" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📦 ¿Qué es el Área?</h2>
+            <h2 class="section-header">📦 ¿Qué es el Área?</h2>
             
             <div class="explanation">
                 <h3>El área es el espacio dentro</h3>
                 <p>El área es cuánto espacio hay DENTRO de una forma. Se mide en unidades cuadradas (cm², m²).</p>
-                <ul style="margin-top: 10px;">
+                <ul class="mt-10">
                     <li><strong>Cuadrado:</strong> lado × lado</li>
                     <li><strong>Rectángulo:</strong> largo × ancho</li>
                     <li><strong>Triángulo:</strong> (base × altura) ÷ 2</li>
@@ -114,7 +114,7 @@
             </div>
 
             <div class="input-section">
-                <h3 style="margin-bottom: 20px;">Calcula el Área de un Cuadrado</h3>
+                <h3 class="mb-20">Calcula el Área de un Cuadrado</h3>
                 <div class="input-group">
                     <label for="square-side-area">Lado del cuadrado:</label>
                     <input type="number" id="square-side-area" placeholder="6" min="1" max="50" value="6">
@@ -125,8 +125,8 @@
 
             <div class="shape-visual" id="square-area-visual"></div>
 
-            <div class="input-section" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 20px;">Calcula el Área de un Rectángulo</h3>
+            <div class="input-section" class="mt-30">
+                <h3 class="mb-20">Calcula el Área de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length-area">Largo:</label>
                     <input type="number" id="rect-length-area" placeholder="8" min="1" max="50" value="8">
@@ -149,12 +149,12 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="section-header" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div class="shape-visual" id="practice-visual"></div>
 
@@ -464,11 +464,11 @@
             
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

@@ -926,6 +926,61 @@ button:disabled {
 .grid-cell-border-pink {
     border: 1px solid rgba(240, 147, 251, 0.3);
 }
+
+/* Grid utilities */
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Table styles */
+.table-full {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table-header-row {
+    background: #667eea;
+    color: white;
+}
+
+/* Concept box */
+.concept-box-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+/* List styles */
+.list-clean {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+}
+
+/* Text with top border */
+.text-top-border {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Center text with margin */
+.text-center-mb {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
 .large-result-text {
     text-align: center;
     color: #333;

@@ -387,10 +387,10 @@
         <!-- TAB 1: APRENDER -->
         <div id="aprender" class="tab-content active">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">📖 ¿Qué es la Composición y Descomposición?</h2>
+                <h2 class="mb-15">📖 ¿Qué es la Composición y Descomposición?</h2>
                 <p><strong>Descomponer</strong> un número significa separarlo en sus partes según el valor posicional de cada dígito.</p>
-                <p style="margin-top: 10px;"><strong>Componer</strong> un número significa juntar todas las partes para formar el número completo.</p>
-                <p style="margin-top: 10px;">Por ejemplo: <strong>3 456</strong> se descompone en:<br>
+                <p class="mt-10"><strong>Componer</strong> un número significa juntar todas las partes para formar el número completo.</p>
+                <p class="mt-10">Por ejemplo: <strong>3 456</strong> se descompone en:<br>
                 3 Unidades de Millar + 4 Centenas + 5 Decenas + 6 Unidades</p>
             </div>
 
@@ -488,7 +488,7 @@
         <!-- TAB 2: DESCOMPONER -->
         <div id="descomponer" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">➗ Descomponer un Número</h2>
+                <h2 class="mb-15">➗ Descomponer un Número</h2>
                 <p>Introduce un número (hasta 6 dígitos) y verás cómo se descompone en sus valores posicionales.</p>
             </div>
 
@@ -506,7 +506,7 @@
         <!-- TAB 3: COMPONER -->
         <div id="componer" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">➕ Componer un Número</h2>
+                <h2 class="mb-15">➕ Componer un Número</h2>
                 <p>Introduce los valores de cada posición y descubre qué número forman juntos.</p>
             </div>
 
@@ -549,9 +549,9 @@
         <!-- TAB 4: DECIMALES -->
         <div id="decimales" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">🔢 Números con Decimales</h2>
+                <h2 class="mb-15">🔢 Números con Decimales</h2>
                 <p>Los decimales son partes más pequeñas que la unidad. Van después del punto decimal.</p>
-                <p style="margin-top: 10px;">Por ejemplo: <strong>123.456</strong> tiene tres decimales.</p>
+                <p class="mt-10">Por ejemplo: <strong>123.456</strong> tiene tres decimales.</p>
             </div>
 
             <h2 style="color: #667eea; margin: 25px 0 15px 0; text-align: center;">📊 Valores Decimales</h2>
@@ -579,7 +579,7 @@
                 <div class="number-display">123.456</div>
                 
                 <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0;">
-                    <div style="text-align: center;">
+                    <div class="text-center">
                         <h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3>
                         <div class="digit-breakdown">
                             <div class="digit-box">
@@ -599,7 +599,7 @@
 
                     <div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>
 
-                    <div style="text-align: center;">
+                    <div class="text-center">
                         <h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3>
                         <div class="digit-breakdown">
                             <div class="digit-box" style="border-color: #e74c3c;">
@@ -650,7 +650,7 @@
         <!-- TAB 5: PRÁCTICA -->
         <div id="practica" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">🏆 ¡Pon a Prueba tus Conocimientos!</h2>
+                <h2 class="mb-15">🏆 ¡Pon a Prueba tus Conocimientos!</h2>
                 <p>Responde las preguntas sobre composición y descomposición de números.</p>
             </div>
 
@@ -847,7 +847,7 @@
             const intValues = [100000, 10000, 1000, 100, 10, 1];
             const intNames = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
 
-            let integerHTML = '<div style="text-align: center;"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
+            let integerHTML = '<div class="text-center"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
             let hasInteger = false;
             let expandedParts = [];
             let explanations = [];
@@ -879,7 +879,7 @@
             // Decimal part
             if (decimalPart) {
                 html += '<div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>';
-                html += '<div style="text-align: center;"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
+                html += '<div class="text-center"><h3 style="color: #667eea; margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
 
                 const decDigits = decimalPart.padEnd(3, '0').split('').map(d => parseInt(d));
                 const decPlaces = ['d', 'c', 'm'];
@@ -1086,7 +1086,7 @@
                 const values = [100000, 10000, 1000, 100, 10, 1];
                 const names = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
                 
-                explanation = '<div class="info-box" style="margin-top: 20px;"><div class="info-title">📖 Explicación:</div><div class="info-text">';
+                explanation = '<div class="info-box" class="mt-20"><div class="info-title">📖 Explicación:</div><div class="info-text">';
                 
                 for (let i = 0; i < 6; i++) {
                     if (digits[i] > 0) {

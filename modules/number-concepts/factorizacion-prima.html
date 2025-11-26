@@ -166,7 +166,7 @@
 
         <!-- APRENDER TAB -->
         <div id="aprender" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📚 ¿Qué es la Factorización Prima?</h2>
+            <h2 class="section-header">📚 ¿Qué es la Factorización Prima?</h2>
             
             <div class="explanation">
                 <h3>Números Primos</h3>
@@ -193,7 +193,7 @@
 
         <!-- PRIMOS TAB -->
         <div id="primos" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">⭐ Números Primos del 1 al 100</h2>
+            <h2 class="section-header">⭐ Números Primos del 1 al 100</h2>
             
             <div class="explanation">
                 <h3>Los primeros números primos</h3>
@@ -237,12 +237,12 @@
                 <button class="calc-button" onclick="testPrime()">Comprobar</button>
             </div>
 
-            <div id="prime-test-result" style="margin-top: 30px;"></div>
+            <div id="prime-test-result" class="mt-30"></div>
         </div>
 
         <!-- FACTORIZAR TAB -->
         <div id="factorizar" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🌲 Árbol de Factorización</h2>
+            <h2 class="section-header">🌲 Árbol de Factorización</h2>
             
             <div class="explanation">
                 <h3>¿Cómo factorizar un número?</h3>
@@ -258,9 +258,9 @@
                 <button class="calc-button" onclick="factorizeNumber()">Factorizar</button>
             </div>
 
-            <div id="factor-result" style="margin-top: 30px;"></div>
+            <div id="factor-result" class="mt-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="mt-30">
                 <h3>📝 Pasos para Factorizar:</h3>
                 <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
                     <li>Empieza probando con 2 (el primo más pequeño)</li>
@@ -273,7 +273,7 @@
 
         <!-- COMPONER TAB -->
         <div id="componer" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">➕ Componer desde Factores</h2>
+            <h2 class="section-header">➕ Componer desde Factores</h2>
             
             <div class="explanation">
                 <h3>El proceso inverso</h3>
@@ -303,9 +303,9 @@
                 <button class="calc-button" onclick="composeFromFactors()">Multiplicar</button>
             </div>
 
-            <div id="compose-result" style="margin-top: 30px;"></div>
+            <div id="compose-result" class="mt-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="mt-30">
                 <h3>💡 Ejemplo:</h3>
                 <p><strong>2 × 2 × 3 × 5</strong> = ?</p>
                 <p>Paso 1: 2 × 2 = 4</p>
@@ -316,12 +316,12 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="section-header" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
 
@@ -589,11 +589,11 @@
             
             if (correct) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Correcto! 🎉<br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es: <strong>${currentQuestion.answer.join(', ')}</strong><br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Intenta de nuevo! 😊<br>La respuesta correcta es: <strong>${currentQuestion.answer.join(', ')}</strong><br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

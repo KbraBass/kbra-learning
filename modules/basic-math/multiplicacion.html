@@ -53,12 +53,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 Multiplicación Visual</h2>
+            <h2 class="section-header">🎯 Multiplicación Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es multiplicar?</h3>
                 <p>Multiplicar es sumar un número muchas veces. Por ejemplo: 3 × 4 significa "sumar 3, cuatro veces" = 3 + 3 + 3 + 3 = 12</p>
-                <ul style="margin-top: 10px;">
+                <ul class="mt-10">
                     <li><strong>3 × 4</strong> = 3 + 3 + 3 + 3 = 12</li>
                     <li><strong>5 × 2</strong> = 5 + 5 = 10</li>
                     <li><strong>4 × 3</strong> = 4 + 4 + 4 = 12</li>
@@ -66,12 +66,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-input-container">
+                    <div class="input-group" class="m-0">
                         <input type="number" id="mult1" placeholder="3" min="0" max="12" value="3">
                     </div>
-                    <div style="font-size: 2em;">×</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="fs-2em">×</div>
+                    <div class="input-group" class="m-0">
                         <input type="number" id="mult2" placeholder="4" min="0" max="12" value="4">
                     </div>
                 </div>
@@ -91,7 +91,7 @@
 
         <!-- TABLAS TAB -->
         <div id="tablas" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📊 Tablas de Multiplicar</h2>
+            <h2 class="section-header">📊 Tablas de Multiplicar</h2>
             
             <div class="explanation">
                 <h3>Selecciona una tabla para ver todos sus resultados</h3>
@@ -118,14 +118,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container">
                     <!-- Score display will be inserted here -->
                 </div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;">Resuelve la multiplicación:</h3>
+                <h3 class="section-header">Resuelve la multiplicación:</h3>
                 <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
 
                 <div class="input-section">
@@ -239,7 +239,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} × ${num2} = ${product} 🎉<br>
-                    <small style="font-size: 0.8em;">Esto es como sumar ${num1}, ${num2} veces!</small>
+                    <small class="fs-08em">Esto es como sumar ${num1}, ${num2} veces!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -274,7 +274,7 @@
                 return;
             }
             
-            let html = `<h3 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Tabla del ${table}</h3>`;
+            let html = `<h3 class="section-header">Tabla del ${table}</h3>`;
             html += '<div style="max-width: 400px; margin: 0 auto;">';
             
             for (let i = 1; i <= 10; i++) {
@@ -333,7 +333,7 @@
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="color-333">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos</small>
@@ -343,7 +343,7 @@
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="color-333">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando!</small>

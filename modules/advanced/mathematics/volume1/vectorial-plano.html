@@ -17,8 +17,8 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Geometría Vectorial del Plano</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="color-white mt-0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Geometría Vectorial:</p>
                 <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
                     <li><strong>v⃗, u⃗, w⃗</strong> = Vectores (flechas sobre letras)</li>
@@ -123,40 +123,40 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Módulo de un Vector</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 1: Módulo de un Vector</h4>
                 <p><strong>Problema:</strong> Calcular |v⃗| si v⃗ = (3, 4)</p>
                 <p><strong>Solución:</strong></p>
                 <p>|v⃗| = √(3² + 4²) = √(9 + 16) = √25 = 5</p>
                 <p><strong>Respuesta:</strong> |v⃗| = 5</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Producto Escalar</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 2: Producto Escalar</h4>
                 <p><strong>Problema:</strong> Calcular v⃗ · u⃗ si v⃗ = (2, 3) y u⃗ = (4, 1)</p>
                 <p><strong>Solución:</strong></p>
                 <p>v⃗ · u⃗ = 2×4 + 3×1 = 8 + 3 = 11</p>
                 <p><strong>Respuesta:</strong> v⃗ · u⃗ = 11</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Vectores Perpendiculares</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 3: Vectores Perpendiculares</h4>
                 <p><strong>Problema:</strong> ¿Son perpendiculares v⃗ = (2, -3) y u⃗ = (3, 2)?</p>
                 <p><strong>Solución:</strong></p>
                 <p>v⃗ · u⃗ = 2×3 + (-3)×2 = 6 - 6 = 0</p>
                 <p><strong>Respuesta:</strong> SÍ, son perpendiculares (producto escalar = 0)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Ecuación de la Recta</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 4: Ecuación de la Recta</h4>
                 <p><strong>Problema:</strong> Escribir la ecuación vectorial de la recta que pasa por P(1,2) con vector director v⃗=(3,4)</p>
                 <p><strong>Solución:</strong></p>
                 <p>(x,y) = (1,2) + λ(3,4)</p>
                 <p><strong>Respuesta:</strong> (x,y) = (1,2) + λ(3,4)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Distancia Punto-Recta</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 5: Distancia Punto-Recta</h4>
                 <p><strong>Problema:</strong> Distancia de P(1,1) a la recta 3x + 4y - 5 = 0</p>
                 <p><strong>Solución:</strong></p>
                 <p>d = |3(1) + 4(1) - 5| / √(3² + 4²) = |3 + 4 - 5| / √25 = 2/5 = 0.4</p>
@@ -224,7 +224,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='sistemas-ecuaciones.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -248,7 +248,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='sistemas-ecuaciones.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -303,7 +303,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="d-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

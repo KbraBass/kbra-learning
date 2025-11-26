@@ -200,7 +200,7 @@
 
         <!-- ANALÓGICO TAB -->
         <div id="analogico" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🕐 Reloj Analógico</h2>
+            <h2 class="section-header">🕐 Reloj Analógico</h2>
             
             <div class="explanation">
                 <h3>Las Manecillas del Reloj</h3>
@@ -246,7 +246,7 @@
 
         <!-- DIGITAL TAB -->
         <div id="digital" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔢 Reloj Digital</h2>
+            <h2 class="section-header">🔢 Reloj Digital</h2>
             
             <div class="explanation">
                 <h3>Formato 24 horas</h3>
@@ -278,7 +278,7 @@
 
         <!-- LENGUAJE TAB -->
         <div id="lenguaje" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">💬 Lenguaje Natural</h2>
+            <h2 class="section-header">💬 Lenguaje Natural</h2>
             
             <div class="explanation">
                 <h3>¿Cómo decimos la hora?</h3>
@@ -329,7 +329,7 @@
 
         <!-- ZONAS TAB -->
         <div id="zonas" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🌍 Zonas Horarias</h2>
+            <h2 class="section-header">🌍 Zonas Horarias</h2>
             
             <div class="explanation">
                 <h3>El mundo tiene diferentes horas</h3>
@@ -353,12 +353,12 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="section-header" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div id="practice-visual" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"></div>
 
@@ -561,11 +561,11 @@
             
             if (userHour === currentQuestion.hour && userMinute === currentQuestion.minute) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="color-333">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

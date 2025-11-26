@@ -50,12 +50,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 División Visual</h2>
+            <h2 class="section-header">🎯 División Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es dividir?</h3>
                 <p>Dividir es repartir en partes iguales. Si tienes 12 galletas y quieres repartirlas entre 3 amigos, ¡cada uno recibe 4 galletas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="mt-10">
                     <li><strong>12 ÷ 3</strong> = 4 (Repartimos 12 en 3 grupos)</li>
                     <li><strong>20 ÷ 4</strong> = 5 (Repartimos 20 en 4 grupos)</li>
                     <li><strong>15 ÷ 5</strong> = 3 (Repartimos 15 en 5 grupos)</li>
@@ -63,13 +63,13 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-input-container">
+                    <div class="input-group" class="m-0">
                         <label style="font-size: 1em;">Cantidad total:</label>
                         <input type="number" id="div1" placeholder="12" min="1" max="100" value="12">
                     </div>
-                    <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="fs-2em">÷</div>
+                    <div class="input-group" class="m-0">
                         <label style="font-size: 1em;">Grupos:</label>
                         <input type="number" id="div2" placeholder="3" min="1" max="12" value="3">
                     </div>
@@ -90,12 +90,12 @@
 
         <!-- EXACTA TAB -->
         <div id="exacta" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎲 División Exacta y con Resto</h2>
+            <h2 class="section-header">🎲 División Exacta y con Resto</h2>
             
             <div class="explanation">
                 <h3>¿Qué pasa cuando no se puede repartir exactamente?</h3>
                 <p>A veces sobran cosas. Si tienes 13 caramelos y los repartes entre 4 amigos, cada uno recibe 3 y ¡sobra 1!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="mt-10">
                     <li><strong>13 ÷ 4</strong> = 3 (y sobra 1)</li>
                     <li><strong>17 ÷ 5</strong> = 3 (y sobran 2)</li>
                     <li><strong>25 ÷ 6</strong> = 4 (y sobra 1)</li>
@@ -103,13 +103,13 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-input-container">
+                    <div class="input-group" class="m-0">
                         <label style="font-size: 1em;">Dividendo:</label>
                         <input type="number" id="exact1" placeholder="13" min="1" max="100" value="13">
                     </div>
-                    <div style="font-size: 2em;">÷</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="fs-2em">÷</div>
+                    <div class="input-group" class="m-0">
                         <label style="font-size: 1em;">Divisor:</label>
                         <input type="number" id="exact2" placeholder="4" min="1" max="12" value="4">
                     </div>
@@ -130,14 +130,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-header">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container">
                     <!-- Score display will be inserted here -->
                 </div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;">Resuelve la división:</h3>
+                <h3 class="section-header">Resuelve la división:</h3>
                 <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
 
                 <div class="input-section">
@@ -259,14 +259,14 @@
                 result.innerHTML = `
                     <div>
                         ${num1} ÷ ${num2} = ${quotient} 🎉<br>
-                        <small style="font-size: 0.8em;">¡División exacta! Cada grupo tiene ${quotient}</small>
+                        <small class="fs-08em">¡División exacta! Cada grupo tiene ${quotient}</small>
                     </div>
                 `;
             } else {
                 result.innerHTML = `
                     <div>
                         ${num1} ÷ ${num2} = ${quotient} (sobran ${remainder}) 🎉<br>
-                        <small style="font-size: 0.8em;">Cada grupo tiene ${quotient} y sobran ${remainder}</small>
+                        <small class="fs-08em">Cada grupo tiene ${quotient} y sobran ${remainder}</small>
                     </div>
                 `;
             }
@@ -337,14 +337,14 @@
                 result.innerHTML = `
                     <div>
                         Cociente: ${quotient} - Resto: 0 🎉<br>
-                        <small style="font-size: 0.8em;">¡División exacta!</small>
+                        <small class="fs-08em">¡División exacta!</small>
                     </div>
                 `;
             } else {
                 result.innerHTML = `
                     <div>
                         Cociente: ${quotient} - Resto: ${remainder} 🎉<br>
-                        <small style="font-size: 0.8em;">Mira la explicación abajo</small>
+                        <small class="fs-08em">Mira la explicación abajo</small>
                     </div>
                 `;
             }
@@ -430,7 +430,7 @@
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="color-333">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos</small>
@@ -440,7 +440,7 @@
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="color-333">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando!</small>

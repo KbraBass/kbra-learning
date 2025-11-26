@@ -17,8 +17,8 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Sistemas de Ecuaciones Lineales</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="color-white mt-0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Sistemas de Ecuaciones:</p>
                 <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
                     <li><strong>{</strong> = Llave que agrupa las ecuaciones de un sistema</li>
@@ -128,8 +128,8 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Método de Sustitución</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 1: Método de Sustitución</h4>
                 <p><strong>Problema:</strong> { x + y = 5 ; 2x - y = 1 }</p>
                 <p><strong>Solución:</strong></p>
                 <p>Paso 1: Despejamos y de la primera: y = 5 - x</p>
@@ -139,8 +139,8 @@
                 <p><strong>Respuesta:</strong> x = 2, y = 3</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Método de Reducción</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 2: Método de Reducción</h4>
                 <p><strong>Problema:</strong> { 3x + 2y = 12 ; 5x - 2y = 4 }</p>
                 <p><strong>Solución:</strong></p>
                 <p>Paso 1: Los coeficientes de y ya son opuestos</p>
@@ -149,8 +149,8 @@
                 <p><strong>Respuesta:</strong> x = 2, y = 3</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Regla de Cramer</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="color-success">Ejemplo 3: Regla de Cramer</h4>
                 <p><strong>Problema:</strong> { 2x + y = 5 ; x - 3y = -8 }</p>
                 <p><strong>Solución:</strong></p>
                 <p>|A| = 2(-3) - 1(1) = -6 - 1 = -7</p>
@@ -225,7 +225,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='matrices.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -248,7 +248,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2">
                 <button class="btn btn-secondary" onclick="window.location.href='matrices.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -303,7 +303,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="d-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

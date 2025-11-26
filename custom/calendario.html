@@ -538,7 +538,7 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
+                <h3 class="mb-15">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
                 <button class="calc-button" onclick="findNextHoliday()">📅 Ver Próximo Festivo</button>
                 <div class="result" id="next-holiday-result"></div>
             </div>
@@ -560,7 +560,7 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🎂 Tu Fecha de Nacimiento</h3>
+                <h3 class="mb-15">🎂 Tu Fecha de Nacimiento</h3>
                 <input type="date" id="birthdate" style="width: 300px;">
                 <br>
                 <button class="calc-button" onclick="calculateAge()">🎉 Calcular Edad</button>
@@ -568,7 +568,7 @@
 
             <div class="result" id="age-result"></div>
 
-            <div class="info-grid" id="birthday-info" style="display: none;">
+            <div class="info-grid" id="birthday-info" class="d-none">
                 <div class="info-card">
                     <h3>🎂 Tu Edad</h3>
                     <div class="big-number" id="age-years">0</div>
@@ -594,8 +594,8 @@
                 </div>
             </div>
 
-            <div class="date-input" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 15px;">🗓️ ¿Es Año Bisiesto?</h3>
+            <div class="date-input" class="mt-30">
+                <h3 class="mb-15">🗓️ ¿Es Año Bisiesto?</h3>
                 <input type="number" id="leap-year" placeholder="Año (ej: 2024)" min="1900" max="2100">
                 <br>
                 <button class="calc-button" onclick="checkLeapYear()">🔍 Verificar</button>
@@ -620,7 +620,7 @@
         <div id="practica" class="content tab-content">
             <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🏆 ¡Practica el Calendario!</h2>
             
-            <div style="text-align: center; margin-bottom: 20px;">
+            <div class="practice-score">
                 <span class="score-display">Puntos: <span id="score">0</span></span>
                 <span class="score-display">Nivel: <span id="level">Principiante</span></span>
             </div>
