@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preliminares: Números y Conjuntos - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Números y Conjuntos</h2>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3 style="color: white;">🔢 Glosario de Símbolos Matemáticos</h3>
+                <p style="margin-bottom: 1.5rem;">Antes de comenzar, familiarízate con los símbolos que utilizaremos:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">ℕ</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Naturales</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Números para contar</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">ℤ</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Enteros</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Incluye negativos</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">ℚ</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Racionales</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Fracciones</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">𝕀</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Irracionales</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">No son fracciones</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">ℝ</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Reales</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Todos los números</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∈</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Pertenece</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Está en el conjunto</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∉</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">No pertenece</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">No está en el conjunto</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∪</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Unión</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Todos los elementos</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∩</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Intersección</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Elementos comunes</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⊂</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Subconjunto</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Contenido estricto</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⊆</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Subconjunto o igual</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Contenido o igual</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∅</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Conjunto vacío</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Sin elementos</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">|</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Tal que</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Condición</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">≠</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Diferente</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">No igual</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">≤</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Menor o igual</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">≤</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">≥</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Mayor o igual</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">≥</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">&lt;</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Menor que</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Estrictamente menor</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">&gt;</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Mayor que</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Estrictamente mayor</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">∞</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Infinito</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Sin límite</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">|x|</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Valor absoluto</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Distancia al cero</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">[a,b]</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Intervalo cerrado</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Incluye extremos</div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">(a,b)</div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Intervalo abierto</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Excluye extremos</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>1. Los Conjuntos Numéricos</h3>
+
+            <div class="info-box" style="border-left: 4px solid #667eea;">
+                <h4>📐 Números Naturales (ℕ)</h4>
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .symbol-glossary h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .symbol-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .symbol {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .symbol-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .symbol-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .concept-box {
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .concept-box h4 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .example-box {
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #764ba2;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box h4 {
+            margin-top: 0;
+            color: #764ba2;
+        }
+
+        .number-hierarchy {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .number-set {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .number-set .symbol {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .number-set h4 {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tool-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .tool-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .tool-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .tool-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .tool-result {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            min-height: 50px;
+            font-size: 1.1rem;
+        }
+
+        .interval-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .interval-table th,
+        .interval-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .interval-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .interval-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .formula-box {
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .symbol-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .number-hierarchy {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Números y Conjuntos</h2>
+
+            <div class="symbol-glossary">
+                <h3>🔢 Glosario de Símbolos Matemáticos</h3>
+                <p>Antes de comenzar, familiarízate con los símbolos que utilizaremos:</p>
+                
+                <div class="symbol-grid">
+                    <div class="symbol-item">
+                        <span class="symbol">ℕ</span>
+                        <div class="symbol-name">Naturales</div>
+                        <div class="symbol-desc">Números para contar</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">ℤ</span>
+                        <div class="symbol-name">Enteros</div>
+                        <div class="symbol-desc">Incluye negativos</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">ℚ</span>
+                        <div class="symbol-name">Racionales</div>
+                        <div class="symbol-desc">Fracciones</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">𝕀</span>
+                        <div class="symbol-name">Irracionales</div>
+                        <div class="symbol-desc">No son fracciones</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">ℝ</span>
+                        <div class="symbol-name">Reales</div>
+                        <div class="symbol-desc">Todos los números</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∈</span>
+                        <div class="symbol-name">Pertenece</div>
+                        <div class="symbol-desc">Está en el conjunto</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∉</span>
+                        <div class="symbol-name">No pertenece</div>
+                        <div class="symbol-desc">No está en el conjunto</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∪</span>
+                        <div class="symbol-name">Unión</div>
+                        <div class="symbol-desc">Todos los elementos</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∩</span>
+                        <div class="symbol-name">Intersección</div>
+                        <div class="symbol-desc">Elementos comunes</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">⊂</span>
+                        <div class="symbol-name">Subconjunto</div>
+                        <div class="symbol-desc">Contenido estricto</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">⊆</span>
+                        <div class="symbol-name">Subconjunto o igual</div>
+                        <div class="symbol-desc">Contenido o igual</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∅</span>
+                        <div class="symbol-name">Conjunto vacío</div>
+                        <div class="symbol-desc">Sin elementos</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">|</span>
+                        <div class="symbol-name">Tal que</div>
+                        <div class="symbol-desc">Condición</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">≠</span>
+                        <div class="symbol-name">Diferente</div>
+                        <div class="symbol-desc">No igual</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">≤</span>
+                        <div class="symbol-name">Menor o igual</div>
+                        <div class="symbol-desc">≤</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">≥</span>
+                        <div class="symbol-name">Mayor o igual</div>
+                        <div class="symbol-desc">≥</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">&lt;</span>
+                        <div class="symbol-name">Menor que</div>
+                        <div class="symbol-desc">Estrictamente menor</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">&gt;</span>
+                        <div class="symbol-name">Mayor que</div>
+                        <div class="symbol-desc">Estrictamente mayor</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">∞</span>
+                        <div class="symbol-name">Infinito</div>
+                        <div class="symbol-desc">Sin límite</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">|x|</span>
+                        <div class="symbol-name">Valor absoluto</div>
+                        <div class="symbol-desc">Distancia al cero</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">[a,b]</span>
+                        <div class="symbol-name">Intervalo cerrado</div>
+                        <div class="symbol-desc">Incluye extremos</div>
+                    </div>
+                    <div class="symbol-item">
+                        <span class="symbol">(a,b)</span>
+                        <div class="symbol-name">Intervalo abierto</div>
+                        <div class="symbol-desc">Excluye extremos</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>1. Los Conjuntos Numéricos</h3>
+
+            <div class="concept-box">
+                <h4>📐 Números Naturales (ℕ)</h4>
+                <p>Los números naturales son los que utilizamos para contar: 1, 2, 3, 4, 5, ...</p>
+                <p><strong>Notación:</strong> ℕ = {1, 2, 3, 4, 5, ...}</p>
+                <p><strong>Nota:</strong> Algunos autores incluyen el 0, escribiendo ℕ₀ = {0, 1, 2, 3, ...}</p>
+                <p><strong>Propiedades:</strong></p>
+                <ul>
+                    <li>Sirven para contar objetos</li>
+                    <li>No tienen límite superior (son infinitos)</li>
+                    <li>Están ordenados: 1 &lt; 2 &lt; 3 &lt; ...</li>
+                    <li>Cerrados para suma y multiplicación</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>🔢 Números Enteros (ℤ)</h4>
+                <p>Los números enteros incluyen los naturales, sus opuestos negativos y el cero.</p>
+                <p><strong>Notación:</strong> ℤ = {..., -3, -2, -1, 0, 1, 2, 3, ...}</p>
+                <p><strong>Propiedades:</strong></p>
+                <ul>
+                    <li>Contienen a todos los naturales: ℕ ⊂ ℤ</li>
+                    <li>Incluyen números negativos</li>
+                    <li>Cerrados para suma, resta y multiplicación</li>
+                    <li>No cerrados para división</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>➗ Números Racionales (ℚ)</h4>
+                <p>Los números racionales son aquellos que pueden expresarse como fracción de dos enteros.</p>
+                <p><strong>Notación:</strong> ℚ = {p/q | p, q ∈ ℤ, q ≠ 0}</p>
+                <p><strong>Ejemplos:</strong></p>
+                <ul>
+                    <li>1/2 = 0.5</li>
+                    <li>3/4 = 0.75</li>
+                    <li>-2/5 = -0.4</li>
+                    <li>7 = 7/1</li>
+                    <li>0.333... = 1/3</li>
+                </ul>
+                <p><strong>Propiedades:</strong></p>
+                <ul>
+                    <li>Contienen a todos los enteros: ℤ ⊂ ℚ</li>
+                    <li>Su expansión decimal es finita o periódica</li>
+                    <li>Cerrados para las cuatro operaciones (excepto división por cero)</li>
+                    <li>Son densos en la recta real</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>🌀 Números Irracionales (𝕀)</h4>
+                <p>Los números irracionales NO pueden expresarse como fracción de dos enteros.</p>
+                <p><strong>Ejemplos famosos:</strong></p>
+                <ul>
+                    <li>π = 3.14159265358979...</li>
+                    <li>e = 2.71828182845904...</li>
+                    <li>√2 = 1.41421356237...</li>
+                    <li>√3 = 1.73205080756...</li>
+                    <li>φ = 1.61803398874... (número áureo)</li>
+                </ul>
+                <p><strong>Propiedades:</strong></p>
+                <ul>
+                    <li>Su expansión decimal es infinita no periódica</li>
+                    <li>No forman un conjunto cerrado para las operaciones</li>
+                    <li>Complementan a los racionales en los reales</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>🌐 Números Reales (ℝ)</h4>
+                <p>Los números reales son la unión de los racionales e irracionales.</p>
+                <p><strong>Notación:</strong> ℝ = ℚ ∪ 𝕀</p>
+                <p><strong>Propiedades fundamentales:</strong></p>
+                <ul>
+                    <li>Completos: no tienen "huecos"</li>
+                    <li>Ordenados: dados dos números, uno es mayor que el otro</li>
+                    <li>Arquimedianos: dado cualquier número, podemos encontrar un natural mayor</li>
+                    <li>Continuos: representan toda la recta numérica</li>
+                </ul>
+            </div>
+
+            <div class="number-hierarchy">
+                <div class="number-set">
+                    <div class="symbol">ℕ</div>
+                    <h4>Naturales</h4>
+                    <p>1, 2, 3, 4, ...</p>
+                </div>
+                <div class="number-set">
+                    <div class="symbol">ℤ</div>
+                    <h4>Enteros</h4>
+                    <p>..., -2, -1, 0, 1, 2, ...</p>
+                </div>
+                <div class="number-set">
+                    <div class="symbol">ℚ</div>
+                    <h4>Racionales</h4>
+                    <p>p/q, q ≠ 0</p>
+                </div>
+                <div class="number-set">
+                    <div class="symbol">𝕀</div>
+                    <h4>Irracionales</h4>
+                    <p>π, e, √2, ...</p>
+                </div>
+                <div class="number-set">
+                    <div class="symbol">ℝ</div>
+                    <h4>Reales</h4>
+                    <p>ℚ ∪ 𝕀</p>
+                </div>
+            </div>
+
+            <h3>2. Operaciones con Conjuntos</h3>
+
+            <div class="concept-box">
+                <h4>∪ Unión de Conjuntos</h4>
+                <p>La unión de dos conjuntos A y B, denotada A ∪ B, es el conjunto de todos los elementos que pertenecen a A, a B, o a ambos.</p>
+                <div class="formula-box">A ∪ B = {x | x ∈ A o x ∈ B}</div>
+                <p><strong>Ejemplo:</strong> Si A = {1, 2, 3} y B = {3, 4, 5}, entonces A ∪ B = {1, 2, 3, 4, 5}</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>∩ Intersección de Conjuntos</h4>
+                <p>La intersección de dos conjuntos A y B, denotada A ∩ B, es el conjunto de elementos que pertenecen simultáneamente a A y a B.</p>
+                <div class="formula-box">A ∩ B = {x | x ∈ A y x ∈ B}</div>
+                <p><strong>Ejemplo:</strong> Si A = {1, 2, 3} y B = {2, 3, 4}, entonces A ∩ B = {2, 3}</p>
+            </div>
+
+            <div class="concept-box">
+                <h4>− Diferencia de Conjuntos</h4>
+                <p>La diferencia de dos conjuntos A y B, denotada A − B, es el conjunto de elementos que pertenecen a A pero no a B.</p>
+                <div class="formula-box">A − B = {x | x ∈ A y x ∉ B}</div>
+                <p><strong>Ejemplo:</strong> Si A = {1, 2, 3, 4} y B = {3, 4, 5}, entonces A − B = {1, 2}</p>
+            </div>
+
+            <h3>3. Intervalos en ℝ</h3>
+
+            <p>Los intervalos son subconjuntos de los números reales que contienen todos los números entre dos extremos.</p>
+
+            <table class="interval-table">
+                <thead>
+                    <tr>
+                        <th>Notación</th>
+                        <th>Descripción</th>
+                        <th>Conjunto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[a, b]</td>
+                        <td>Intervalo cerrado</td>
+                        <td>{x ∈ ℝ | a ≤ x ≤ b}</td>
+                    </tr>
+                    <tr>
+                        <td>(a, b)</td>
+                        <td>Intervalo abierto</td>
+                        <td>{x ∈ ℝ | a &lt; x &lt; b}</td>
+                    </tr>
+                    <tr>
+                        <td>[a, b)</td>
+                        <td>Semiabierto por la derecha</td>
+                        <td>{x ∈ ℝ | a ≤ x &lt; b}</td>
+                    </tr>
+                    <tr>
+                        <td>(a, b]</td>
+                        <td>Semiabierto por la izquierda</td>
+                        <td>{x ∈ ℝ | a &lt; x ≤ b}</td>
+                    </tr>
+                    <tr>
+                        <td>[a, ∞)</td>
+                        <td>Intervalo infinito</td>
+                        <td>{x ∈ ℝ | x ≥ a}</td>
+                    </tr>
+                    <tr>
+                        <td>(-∞, b]</td>
+                        <td>Intervalo infinito</td>
+                        <td>{x ∈ ℝ | x ≤ b}</td>
+                    </tr>
+                    <tr>
+                        <td>(-∞, ∞)</td>
+                        <td>Toda la recta real</td>
+                        <td>ℝ</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>4. Valor Absoluto</h3>
+
+            <div class="concept-box">
+                <h4>Definición de Valor Absoluto</h4>
+                <p>El valor absoluto de un número real x, denotado |x|, es la distancia de x al origen (0) en la recta numérica.</p>
+                <div class="formula-box">
+                    |x| = {<br>
+                    &nbsp;&nbsp;x, si x ≥ 0<br>
+                    &nbsp;&nbsp;-x, si x &lt; 0
+                </div>
+                <p><strong>Propiedades importantes:</strong></p>
+                <ul>
+                    <li>|x| ≥ 0 para todo x ∈ ℝ</li>
+                    <li>|x| = 0 si y solo si x = 0</li>
+                    <li>|x| = |-x|</li>
+                    <li>|x · y| = |x| · |y|</li>
+                    <li>|x + y| ≤ |x| + |y| (desigualdad triangular)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplos de Valor Absoluto</h4>
+                <ul>
+                    <li>|5| = 5</li>
+                    <li>|-5| = 5</li>
+                    <li>|0| = 0</li>
+                    <li>|-3.7| = 3.7</li>
+                    <li>|π| = π ≈ 3.14159</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="example-box">
+                <h4>Ejemplo 1: Clasificación de Números</h4>
+                <p><strong>Pregunta:</strong> Clasifica los siguientes números en los conjuntos ℕ, ℤ, ℚ, 𝕀, ℝ:</p>
+                <p>a) 5 &nbsp;&nbsp; b) -3 &nbsp;&nbsp; c) 2/3 &nbsp;&nbsp; d) √2 &nbsp;&nbsp; e) 0</p>
+                
+                <p><strong>Solución:</strong></p>
+                <ul>
+                    <li><strong>a) 5:</strong> 5 ∈ ℕ, 5 ∈ ℤ, 5 ∈ ℚ, 5 ∈ ℝ</li>
+                    <li><strong>b) -3:</strong> -3 ∈ ℤ, -3 ∈ ℚ, -3 ∈ ℝ (no es natural porque es negativo)</li>
+                    <li><strong>c) 2/3:</strong> 2/3 ∈ ℚ, 2/3 ∈ ℝ (es fracción, por tanto racional)</li>
+                    <li><strong>d) √2:</strong> √2 ∈ 𝕀, √2 ∈ ℝ (es irracional, no puede expresarse como fracción)</li>
+                    <li><strong>e) 0:</strong> 0 ∈ ℤ, 0 ∈ ℚ, 0 ∈ ℝ (no es natural en la definición estándar)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 2: Operaciones con Conjuntos</h4>
+                <p><strong>Dados:</strong> A = {1, 2, 3, 4, 5} y B = {3, 4, 5, 6, 7}</p>
+                <p><strong>Calcula:</strong></p>
+                
+                <p><strong>a) A ∪ B (Unión)</strong></p>
+                <p>Todos los elementos que están en A, en B, o en ambos:</p>
+                <p>A ∪ B = {1, 2, 3, 4, 5, 6, 7}</p>
+                
+                <p><strong>b) A ∩ B (Intersección)</strong></p>
+                <p>Elementos que están simultáneamente en A y en B:</p>
+                <p>A ∩ B = {3, 4, 5}</p>
+                
+                <p><strong>c) A − B (Diferencia)</strong></p>
+                <p>Elementos que están en A pero no en B:</p>
+                <p>A − B = {1, 2}</p>
+                
+                <p><strong>d) B − A (Diferencia)</strong></p>
+                <p>Elementos que están en B pero no en A:</p>
+                <p>B − A = {6, 7}</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 3: Intervalos</h4>
+                <p><strong>Expresa en notación de intervalo y en forma de conjunto:</strong></p>
+                
+                <p><strong>a) Todos los números entre 2 y 7, incluyendo ambos extremos</strong></p>
+                <p>Notación de intervalo: [2, 7]</p>
+                <p>Forma de conjunto: {x ∈ ℝ | 2 ≤ x ≤ 7}</p>
+                
+                <p><strong>b) Todos los números mayores que -1 pero menores que 4</strong></p>
+                <p>Notación de intervalo: (-1, 4)</p>
+                <p>Forma de conjunto: {x ∈ ℝ | -1 &lt; x &lt; 4}</p>
+                
+                <p><strong>c) Todos los números mayores o iguales a 5</strong></p>
+                <p>Notación de intervalo: [5, ∞)</p>
+                <p>Forma de conjunto: {x ∈ ℝ | x ≥ 5}</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 4: Valor Absoluto</h4>
+                <p><strong>Calcula:</strong></p>
+                
+                <p><strong>a) |7|</strong></p>
+                <p>Como 7 ≥ 0, entonces |7| = 7</p>
+                
+                <p><strong>b) |-12|</strong></p>
+                <p>Como -12 &lt; 0, entonces |-12| = -(-12) = 12</p>
+                
+                <p><strong>c) |0|</strong></p>
+                <p>|0| = 0</p>
+                
+                <p><strong>d) |-3| + |5|</strong></p>
+                <p>|-3| + |5| = 3 + 5 = 8</p>
+                
+                <p><strong>e) |(-2) · (4)|</strong></p>
+                <p>|(-2) · (4)| = |-8| = 8</p>
+                <p>O usando la propiedad: |(-2) · (4)| = |-2| · |4| = 2 · 4 = 8</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 5: Problema Aplicado</h4>
+                <p><strong>Problema:</strong> En una clase hay 25 estudiantes. 15 estudian francés, 18 estudian alemán, y 8 estudian ambos idiomas. ¿Cuántos estudiantes no estudian ninguno de estos dos idiomas?</p>
+                
+                <p><strong>Solución:</strong></p>
+                <p>Sea F = estudiantes que estudian francés, A = estudiantes que estudian alemán</p>
+                <ul>
+                    <li>n(F) = 15</li>
+                    <li>n(A) = 18</li>
+                    <li>n(F ∩ A) = 8</li>
+                </ul>
+                
+                <p>Usando la fórmula de unión:</p>
+                <p>n(F ∪ A) = n(F) + n(A) − n(F ∩ A)</p>
+                <p>n(F ∪ A) = 15 + 18 − 8 = 25</p>
+                
+                <p>Estudiantes que no estudian ningún idioma:</p>
+                <p>25 − 25 = 0</p>
+                
+                <p><strong>Respuesta:</strong> Todos los estudiantes estudian al menos uno de los dos idiomas.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 6: Demostrando Propiedades</h4>
+                <p><strong>Demuestra que √2 es irracional</strong></p>
+                
+                <p><strong>Demostración por contradicción:</strong></p>
+                <ol>
+                    <li>Supongamos que √2 es racional, es decir, √2 = p/q donde p, q ∈ ℤ, q ≠ 0, y la fracción está en su forma más simple (p y q no tienen factores comunes).</li>
+                    <li>Elevando al cuadrado: 2 = p²/q²</li>
+                    <li>Multiplicando por q²: 2q² = p²</li>
+                    <li>Esto significa que p² es par, por lo tanto p también es par (si p fuera impar, p² sería impar).</li>
+                    <li>Si p es par, podemos escribir p = 2k para algún entero k.</li>
+                    <li>Sustituyendo: 2q² = (2k)² = 4k²</li>
+                    <li>Simplificando: q² = 2k²</li>
+                    <li>Esto significa que q² es par, por lo tanto q también es par.</li>
+                    <li>Pero si tanto p como q son pares, tienen un factor común (2), lo que contradice nuestra suposición de que la fracción estaba en su forma más simple.</li>
+                    <li>Por lo tanto, nuestra suposición inicial es falsa: √2 no puede ser racional.</li>
+                </ol>
+                
+                <p><strong>Conclusión:</strong> √2 ∈ 𝕀 (es irracional)</p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>Clasificador de Números</h3>
+                <p>Ingresa un número y descubre a qué conjuntos pertenece:</p>
+                <input type="text" id="numberInput" class="tool-input" placeholder="Ingresa un número (ej: 5, -3, 2.5, pi)">
+                <button class="tool-button" onclick="classifyNumber()">Clasificar</button>
+                <div class="tool-result" id="classifyResult">Ingresa un número para clasificarlo</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>Calculadora de Operaciones con Conjuntos</h3>
+                <p>Ingresa dos conjuntos separados por comas:</p>
+                <input type="text" id="setA" class="tool-input" placeholder="Conjunto A (ej: 1, 2, 3)">
+                <input type="text" id="setB" class="tool-input" placeholder="Conjunto B (ej: 2, 3, 4)">
+                <div>
+                    <button class="tool-button" onclick="calculateUnion()">A ∪ B</button>
+                    <button class="tool-button" onclick="calculateIntersection()">A ∩ B</button>
+                    <button class="tool-button" onclick="calculateDifference()">A − B</button>
+                </div>
+                <div class="tool-result" id="setResult">Ingresa los conjuntos para calcular</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>Calculadora de Valor Absoluto</h3>
+                <p>Calcula el valor absoluto de cualquier número:</p>
+                <input type="number" step="any" id="absInput" class="tool-input" placeholder="Ingresa un número">
+                <button class="tool-button" onclick="calculateAbsolute()">Calcular |x|</button>
+                <div class="tool-result" id="absResult">Ingresa un número para calcular su valor absoluto</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica Guiada</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='../index.html'">⬅️ Volver a Matemáticas</button>
+                <button class="btn btn-primary" onclick="window.location.href='estadistica.html'">Siguiente: Estadística ➡️</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="concept-box">
+                <h4>📌 Puntos Clave</h4>
+                <ul>
+                    <li>Los conjuntos numéricos se organizan jerárquicamente: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</li>
+                    <li>Todo número natural es entero, todo entero es racional, todo racional es real</li>
+                    <li>Los números irracionales no pueden expresarse como fracción</li>
+                    <li>Las operaciones básicas con conjuntos son: unión (∪), intersección (∩) y diferencia (−)</li>
+                    <li>Los intervalos representan conjuntos continuos de números reales</li>
+                    <li>El valor absoluto mide la distancia al cero y siempre es no negativo</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>📐 Fórmulas Importantes</h4>
+                <ul>
+                    <li><strong>Valor absoluto:</strong> |x| ≥ 0 para todo x ∈ ℝ</li>
+                    <li><strong>Simetría:</strong> |x| = |-x|</li>
+                    <li><strong>Producto:</strong> |x·y| = |x|·|y|</li>
+                    <li><strong>Cardinalidad de unión:</strong> n(A ∪ B) = n(A) + n(B) − n(A ∩ B)</li>
+                    <li><strong>Desigualdad triangular:</strong> |x + y| ≤ |x| + |y|</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>🎯 ¿Qué sigue?</h4>
+                <p>Ahora que dominas los fundamentos de números y conjuntos, estás preparado para:</p>
+                <ul>
+                    <li>📊 Trabajar con estadística y combinatoria</li>
+                    <li>🔢 Aplicar estos conceptos en álgebra avanzada</li>
+                    <li>📈 Resolver problemas más complejos con números reales</li>
+                    <li>🧮 Estudiar funciones y su dominio</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>🎓 Para Profundizar</h4>
+                <p><strong>Teoría de conjuntos:</strong> Las propiedades de los conjuntos numéricos son fundamentales para toda la matemática superior. El concepto de completitud de ℝ es especialmente importante en análisis matemático.</p>
+                <p><strong>Aplicaciones:</strong> Los intervalos y el valor absoluto son esenciales en el estudio de límites, continuidad y derivadas en cálculo.</p>
+                <p><strong>Historia:</strong> El descubrimiento de los números irracionales por los pitagóricos marcó un momento crucial en la historia de las matemáticas, demostrando que no todos los números pueden expresarse como razones.</p>
+            </div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='../index.html'">⬅️ Volver a Matemáticas</button>
+                <button class="btn btn-primary" onclick="window.location.href='estadistica.html'">Siguiente: Estadística ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'preliminares-numeros';
+        const MODULE_TITLE = 'Preliminares: Números y Conjuntos';
+
+        // Initialize module
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load shared components
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            
+            Components.createScoreDisplay();
+            
+            // Load exercises
+            loadExercises();
+            
+            // Update gamification display
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        // Exercise data
+        const exercises = [
+            {
+                id: 1,
+                question: '¿Es √16 un número natural?',
+                type: 'select',
+                options: ['Sí', 'No'],
+                correct: 'Sí',
+                hint: '√16 = 4, y 4 es un número que usamos para contar.'
+            },
+            {
+                id: 2,
+                question: 'Si A = {1,2,3} y B = {2,3,4}, ¿cuántos elementos tiene A ∩ B?',
+                type: 'number',
+                correct: '2',
+                hint: 'La intersección contiene los elementos comunes a ambos conjuntos.'
+            },
+            {
+                id: 3,
+                question: '¿Cuál es el valor de |-7|?',
+                type: 'number',
+                correct: '7',
+                hint: 'El valor absoluto siempre es positivo o cero.'
+            },
+            {
+                id: 4,
+                question: 'El número π es:',
+                type: 'select',
+                options: ['Natural', 'Entero', 'Racional', 'Irracional'],
+                correct: 'Irracional',
+                hint: 'π no puede expresarse como fracción y sus decimales son infinitos no periódicos.'
+            },
+            {
+                id: 5,
+                question: 'Si A = {1,2,3,4} y B = {3,4,5,6}, ¿cuántos elementos tiene A ∪ B?',
+                type: 'number',
+                correct: '6',
+                hint: 'La unión contiene todos los elementos de ambos conjuntos sin repetir.'
+            },
+            {
+                id: 6,
+                question: '¿Cuál es el valor de |−3.5|?',
+                type: 'number',
+                correct: '3.5',
+                hint: 'El valor absoluto es la distancia al cero.'
+            },
+            {
+                id: 7,
+                question: 'El número 0 pertenece a:',
+                type: 'select',
+                options: ['Solo ℕ', 'Solo ℤ', 'ℤ y ℚ', 'Solo ℝ'],
+                correct: 'ℤ y ℚ',
+                hint: 'El 0 no es natural en la definición estándar, pero sí es entero.'
+            },
+            {
+                id: 8,
+                question: 'Si A = {1,2,3} y B = {4,5,6}, ¿cuántos elementos tiene A ∩ B?',
+                type: 'number',
+                correct: '0',
+                hint: 'La intersección contiene elementos comunes. ¿Hay alguno?'
+            },
+            {
+                id: 9,
+                question: '¿Es √2 + √3 un número racional?',
+                type: 'select',
+                options: ['Sí', 'No'],
+                correct: 'No',
+                hint: 'La suma de dos irracionales puede ser racional o irracional. En este caso es irracional.'
+            },
+            {
+                id: 10,
+                question: '¿Cuántos elementos tiene el conjunto vacío?',
+                type: 'number',
+                correct: '0',
+                hint: 'El conjunto vacío (∅) no contiene ningún elemento.'
+            }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => {
+                const inputHTML = ex.type === 'select' 
+                    ? `<select id="ex${ex.id}" class="input-field">
+                           <option value="">Selecciona...</option>
+                           ${ex.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                       </select>`
+                    : `<input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">`;
+                
+                return `
+                    <div class="exercise-card" data-exercise="${ex.id}">
+                        <h4>Ejercicio ${ex.id}</h4>
+                        <p>${ex.question}</p>
+                        ${inputHTML}
+                        <div class="button-group">
+                            <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                            <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                        </div>
+                        <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                        <div id="feedback${ex.id}" class="feedback"></div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = input.value.trim();
+
+            if (!userAnswer) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const isCorrect = userAnswer.toLowerCase() === exercise.correct.toLowerCase();
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function classifyNumber() {
+            const input = document.getElementById('numberInput').value.trim().toLowerCase();
+            const result = document.getElementById('classifyResult');
+            
+            if (!input) {
+                result.innerHTML = '⚠️ Por favor ingresa un número';
+                return;
+            }
+            
+            // Special cases
+            if (input === 'pi' || input === 'π') {
+                result.innerHTML = '<strong>π</strong> pertenece a: Irracional (𝕀), Real (ℝ)';
+                return;
+            }
+            if (input === 'e') {
+                result.innerHTML = '<strong>e</strong> pertenece a: Irracional (𝕀), Real (ℝ)';
+                return;
+            }
+            
+            const num = parseFloat(input);
+            
+            if (isNaN(num)) {
+                result.innerHTML = '⚠️ Por favor ingresa un número válido';
+                return;
+            }
+            
+            let classification = [];
+            
+            if (Number.isInteger(num)) {
+                if (num > 0) {
+                    classification.push('Natural (ℕ)');
+                }
+                classification.push('Entero (ℤ)');
+            }
+            classification.push('Racional (ℚ)');
+            classification.push('Real (ℝ)');
+            
+            result.innerHTML = `<strong>${input}</strong> pertenece a: ${classification.join(', ')}`;
+        }
+
+        function parseSet(str) {
+            return str.split(',').map(s => s.trim()).filter(s => s !== '');
+        }
+
+        function calculateUnion() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            
+            if (a.length === 0 || b.length === 0) {
+                document.getElementById('setResult').innerHTML = '⚠️ Por favor ingresa ambos conjuntos';
+                return;
+            }
+            
+            const union = [...new Set([...a, ...b])].sort();
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A ∪ B =</strong> {${union.join(', ')}}`;
+        }
+
+        function calculateIntersection() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            
+            if (a.length === 0 || b.length === 0) {
+                document.getElementById('setResult').innerHTML = '⚠️ Por favor ingresa ambos conjuntos';
+                return;
+            }
+            
+            const intersection = a.filter(x => b.includes(x)).sort();
+            const result = intersection.length > 0 ? `{${intersection.join(', ')}}` : '∅ (conjunto vacío)';
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A ∩ B =</strong> ${result}`;
+        }
+
+        function calculateDifference() {
+            const a = parseSet(document.getElementById('setA').value);
+            const b = parseSet(document.getElementById('setB').value);
+            
+            if (a.length === 0 || b.length === 0) {
+                document.getElementById('setResult').innerHTML = '⚠️ Por favor ingresa ambos conjuntos';
+                return;
+            }
+            
+            const difference = a.filter(x => !b.includes(x)).sort();
+            const result = difference.length > 0 ? `{${difference.join(', ')}}` : '∅ (conjunto vacío)';
+            document.getElementById('setResult').innerHTML = 
+                `<strong>A − B =</strong> ${result}`;
+        }
+
+        function calculateAbsolute() {
+            const num = parseFloat(document.getElementById('absInput').value);
+            const result = document.getElementById('absResult');
+            
+            if (isNaN(num)) {
+                result.innerHTML = '⚠️ Por favor ingresa un número válido';
+                return;
+            }
+            
+            result.innerHTML = `<strong>|${num}| = ${Math.abs(num)}</strong>`;
+        }
+    </script>
+</body>
+</html>

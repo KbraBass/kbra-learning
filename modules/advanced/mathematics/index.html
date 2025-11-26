@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas Avanzadas - Kbra Learning</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../../css/core.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    
+    <style>
+        .math-header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .math-header h1 {
+            margin: 0 0 15px 0;
+            font-size: 3em;
+        }
+
+        .math-header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .volumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .volume-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .volume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .volume-header {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--vol-color1), var(--vol-color2));
+            color: white;
+            text-align: center;
+        }
+
+        .volume-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .volume-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .volume-subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .volume-body {
+            padding: 30px;
+        }
+
+        .volume-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        .topics-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .topics-list li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: rgba(102, 126, 234, 0.05);
+            border-left: 4px solid var(--vol-color1);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .topics-list li:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(5px);
+        }
+
+        .volume-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .volume-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-text {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-banner {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .progress-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+        }
+
+        .progress-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .progress-label {
+            color: #666;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .volumes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Volver a Aprendizaje Avanzado</a>
+
+        <div class="math-header">
+            <h1>📐 Matemáticas Avanzadas 📐</h1>
+            <p>Domina el álgebra, la geometría analítica y el cálculo</p>
+            <p style="margin-top: 10px; font-size: 1em; opacity: 0.85;">
+                Contenido completo en dos volúmenes • Teoría • Ejemplos • Herramientas • Práctica
+            </p>
+        </div>
+
+        <div class="progress-banner">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 10px;">Tu Progreso en Matemáticas Avanzadas</h2>
+            <div class="progress-grid">
+                <div class="progress-box">
+                    <span class="progress-value" id="math-modules-completed">0</span>
+                    <span class="progress-label">Módulos Completados</span>
+                </div>
+                <div class="progress-box">
+                    <span class="progress-value" id="math-total-points">0</span>
+                    <span class="progress-label">Puntos Totales</span>
+                </div>
+                <div class="progress-box">
+                    <span class="progress-value" id="math-exercises">0</span>
+                    <span class="progress-label">Ejercicios Resueltos</span>
+                </div>
+                <div class="progress-box">
+                    <span class="progress-value" id="math-streak">0</span>
+                    <span class="progress-label">Racha de Días</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: var(--primary-color); margin: 40px 0 30px 0;">Elige tu Volumen</h2>
+
+        <div class="volumes-grid">
+            <!-- Volume I -->
+            <a href="volume1/index.html" class="volume-card" style="--vol-color1: #667eea; --vol-color2: #764ba2;">
+                <div class="volume-header">
+                    <div class="volume-number">VOLUMEN I</div>
+                    <h2 class="volume-title">Álgebra y Geometría</h2>
+                    <p class="volume-subtitle">Fundamentos Matemáticos</p>
+                </div>
+                <div class="volume-body">
+                    <p class="volume-description">
+                        Domina los fundamentos del álgebra avanzada, la geometría analítica y el álgebra lineal. 
+                        Desde números y conjuntos hasta vectores en el espacio.
+                    </p>
+                    
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">📚 Contenido:</h3>
+                    <ul class="topics-list">
+                        <li>📊 Números y Conjuntos</li>
+                        <li>📈 Estadística y Combinatoria</li>
+                        <li>🔢 Polinomios y Fracciones</li>
+                        <li>📐 Geometría y Trigonometría</li>
+                        <li>🔲 Matrices y Determinantes</li>
+                        <li>⚖️ Sistemas de Ecuaciones</li>
+                        <li>📍 Vectores en el Plano</li>
+                        <li>🌐 Vectores en el Espacio</li>
+                    </ul>
+
+                    <div class="volume-stats">
+                        <div class="volume-stat">
+                            <span class="stat-number">8</span>
+                            <span class="stat-text">Módulos</span>
+                        </div>
+                        <div class="volume-stat">
+                            <span class="stat-number" id="vol1-completed">0</span>
+                            <span class="stat-text">Completados</span>
+                        </div>
+                        <div class="volume-stat">
+                            <span class="stat-number" id="vol1-points">0</span>
+                            <span class="stat-text">Puntos</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Volume II -->
+            <a href="volume2/index.html" class="volume-card" style="--vol-color1: #f093fb; --vol-color2: #f5576c;">
+                <div class="volume-header" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <div class="volume-number">VOLUMEN II</div>
+                    <h2 class="volume-title">Cálculo y Análisis</h2>
+                    <p class="volume-subtitle">Matemáticas Superiores</p>
+                </div>
+                <div class="volume-body">
+                    <p class="volume-description">
+                        Explora el mundo del cálculo diferencial e integral. 
+                        Aprende sobre límites, derivadas, representación de funciones e integrales.
+                    </p>
+                    
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">📚 Contenido:</h3>
+                    <ul class="topics-list">
+                        <li>∞ Números Reales</li>
+                        <li>📊 Funciones Elementales I</li>
+                        <li>📈 Funciones Elementales II</li>
+                        <li>🎯 Límites y Continuidad</li>
+                        <li>📉 Derivadas</li>
+                        <li>📊 Representación de Funciones</li>
+                        <li>∫ Integrales</li>
+                    </ul>
+
+                    <div class="volume-stats">
+                        <div class="volume-stat">
+                            <span class="stat-number">7</span>
+                            <span class="stat-text">Módulos</span>
+                        </div>
+                        <div class="volume-stat">
+                            <span class="stat-number" id="vol2-completed">0</span>
+                            <span class="stat-text">Completados</span>
+                        </div>
+                        <div class="volume-stat">
+                            <span class="stat-number" id="vol2-points">0</span>
+                            <span class="stat-text">Puntos</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../../lib/storage.js"></script>
+    <script src="../../../lib/gamification.js"></script>
+
+    <script>
+        function init() {
+            loadMathStats();
+        }
+
+        function loadMathStats() {
+            try {
+                const kbraLearning = localStorage.getItem('kbra-learning');
+                if (!kbraLearning) {
+                    setDefaultStats();
+                    return;
+                }
+
+                const data = JSON.parse(kbraLearning);
+                
+                // Volume I module IDs
+                const vol1Modules = [
+                    'preliminares-numeros', 'estadistica', 'polinomios', 'geometria-trigonometria',
+                    'matrices', 'sistemas', 'vectores-plano', 'vectores-espacio'
+                ];
+                
+                // Volume II module IDs
+                const vol2Modules = [
+                    'preliminares-reales', 'funciones-elementales-1', 'funciones-elementales-2',
+                    'limites', 'derivadas', 'representacion', 'integral'
+                ];
+                
+                let vol1Completed = 0, vol1Points = 0;
+                let vol2Completed = 0, vol2Points = 0;
+                let totalExercises = 0;
+                
+                vol1Modules.forEach(moduleId => {
+                    if (data.modules && data.modules[moduleId]) {
+                        const moduleData = data.modules[moduleId];
+                        vol1Points += moduleData.points || 0;
+                        if (moduleData.exercises) {
+                            totalExercises += (moduleData.exercises.correct || 0) + (moduleData.exercises.incorrect || 0);
+                            if (moduleData.exercises.correct >= 10) vol1Completed++;
+                        }
+                    }
+                });
+                
+                vol2Modules.forEach(moduleId => {
+                    if (data.modules && data.modules[moduleId]) {
+                        const moduleData = data.modules[moduleId];
+                        vol2Points += moduleData.points || 0;
+                        if (moduleData.exercises) {
+                            totalExercises += (moduleData.exercises.correct || 0) + (moduleData.exercises.incorrect || 0);
+                            if (moduleData.exercises.correct >= 10) vol2Completed++;
+                        }
+                    }
+                });
+                
+                document.getElementById('math-modules-completed').textContent = vol1Completed + vol2Completed;
+                document.getElementById('math-total-points').textContent = vol1Points + vol2Points;
+                document.getElementById('math-exercises').textContent = totalExercises;
+                document.getElementById('math-streak').textContent = data.streak || 0;
+                
+                document.getElementById('vol1-completed').textContent = vol1Completed;
+                document.getElementById('vol1-points').textContent = vol1Points;
+                document.getElementById('vol2-completed').textContent = vol2Completed;
+                document.getElementById('vol2-points').textContent = vol2Points;
+                
+            } catch (error) {
+                console.error('Error loading math stats:', error);
+                setDefaultStats();
+            }
+        }
+
+        function setDefaultStats() {
+            document.getElementById('math-modules-completed').textContent = '0';
+            document.getElementById('math-total-points').textContent = '0';
+            document.getElementById('math-exercises').textContent = '0';
+            document.getElementById('math-streak').textContent = '0';
+            document.getElementById('vol1-completed').textContent = '0';
+            document.getElementById('vol1-points').textContent = '0';
+            document.getElementById('vol2-completed').textContent = '0';
+            document.getElementById('vol2-points').textContent = '0';
+        }
+
+        init();
+    </script>
+</body>
+</html>

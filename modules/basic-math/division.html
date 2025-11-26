@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende a Dividir como Yago! - División Divertida</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific overrides */
+        .division-groups {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .group {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+        
+        #exact-explanation h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        #exact-explanation div {
+            font-size: 1.3em;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header will be inserted here -->
+        <div id="header-container"></div>
+
+        <!-- Tabs will be inserted here -->
+        <div id="tabs-container"></div>
+
+        <!-- BÁSICA TAB -->
+        <div id="basica" class="content tab-content active">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 División Visual</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué es dividir?</h3>
+                <p>Dividir es repartir en partes iguales. Si tienes 12 galletas y quieres repartirlas entre 3 amigos, ¡cada uno recibe 4 galletas!</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>12 ÷ 3</strong> = 4 (Repartimos 12 en 3 grupos)</li>
+                    <li><strong>20 ÷ 4</strong> = 5 (Repartimos 20 en 4 grupos)</li>
+                    <li><strong>15 ÷ 5</strong> = 3 (Repartimos 15 en 5 grupos)</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="input-group" style="margin: 0;">
+                        <label style="font-size: 1em;">Cantidad total:</label>
+                        <input type="number" id="div1" placeholder="12" min="1" max="100" value="12">
+                    </div>
+                    <div style="font-size: 2em;">÷</div>
+                    <div class="input-group" style="margin: 0;">
+                        <label style="font-size: 1em;">Grupos:</label>
+                        <input type="number" id="div2" placeholder="3" min="1" max="12" value="3">
+                    </div>
+                </div>
+                <button class="calc-button" onclick="divide()">🎯 ¡Dividir!</button>
+                <div class="result" id="div-result">¡Escribe dos números y divide!</div>
+            </div>
+
+            <div id="visual-div" class="visual-demo">
+                <!-- Se generará dinámicamente -->
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>Dividir por 1 siempre da el mismo número: 8 ÷ 1 = 8. ¡Es como no repartir nada! Y cualquier número dividido por sí mismo da 1: 5 ÷ 5 = 1 ✨</p>
+            </div>
+        </div>
+
+        <!-- EXACTA TAB -->
+        <div id="exacta" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎲 División Exacta y con Resto</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué pasa cuando no se puede repartir exactamente?</h3>
+                <p>A veces sobran cosas. Si tienes 13 caramelos y los repartes entre 4 amigos, cada uno recibe 3 y ¡sobra 1!</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>13 ÷ 4</strong> = 3 (y sobra 1)</li>
+                    <li><strong>17 ÷ 5</strong> = 3 (y sobran 2)</li>
+                    <li><strong>25 ÷ 6</strong> = 4 (y sobra 1)</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="input-group" style="margin: 0;">
+                        <label style="font-size: 1em;">Dividendo:</label>
+                        <input type="number" id="exact1" placeholder="13" min="1" max="100" value="13">
+                    </div>
+                    <div style="font-size: 2em;">÷</div>
+                    <div class="input-group" style="margin: 0;">
+                        <label style="font-size: 1em;">Divisor:</label>
+                        <input type="number" id="exact2" placeholder="4" min="1" max="12" value="4">
+                    </div>
+                </div>
+                <button class="calc-button" onclick="divideExact()">🎯 ¡Calcular!</button>
+                <div class="result" id="exact-result">¡Descubre el cociente y el resto!</div>
+            </div>
+
+            <div id="exact-explanation" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px 0; color: #333;">
+                <!-- Se generará dinámicamente -->
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Truco:</h3>
+                <p>¡La división es lo contrario de la multiplicación! Si 20 ÷ 4 = 5, entonces 5 × 4 = 20. Úsalo para comprobar tus respuestas 🎯</p>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container">
+                    <!-- Score display will be inserted here -->
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;">Resuelve la división:</h3>
+                <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta:</label>
+                        <input type="number" id="practice-answer" placeholder="?">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Aprende las tablas de multiplicar, ¡te ayudarán con la división!</li>
+                    <li>Comprueba dividiendo con multiplicación: 12 ÷ 3 = 4, entonces 4 × 3 = 12 ✓</li>
+                    <li>Empieza con divisiones fáciles y ve subiendo de nivel</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared JavaScript Libraries -->
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'division'; // Module identifier for storage
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            // Render header
+            const headerHtml = Components.createHeader(
+                '➗ ¡Aprende a Dividir como Yago! ➗',
+                'Descubre cómo repartir números en partes iguales',
+                'index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            // Render tabs
+            const tabs = [
+                { id: 'basica', label: 'División Básica' },
+                { id: 'exacta', label: 'División Exacta' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'basica');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            // Load saved module data
+            const moduleData = Storage.getModuleData(MODULE_ID);
+            
+            // Render score display
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            // Update score from storage
+            updateScoreDisplay();
+            
+            // Add Enter key support
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const button = this.closest('.input-section').querySelector('button');
+                        if (button && !button.disabled) {
+                            button.click();
+                        }
+                    }
+                });
+            });
+            
+            // Update streak
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            buttons.forEach(button => {
+                if (button.textContent.includes(tabName === 'basica' ? 'Básica' : 
+                                                  tabName === 'exacta' ? 'Exacta' : 
+                                                  'Práctica')) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function divide() {
+            const num1 = parseInt(document.getElementById('div1').value);
+            const num2 = parseInt(document.getElementById('div2').value);
+            const result = document.getElementById('div-result');
+            
+            if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+                result.textContent = '¡Por favor, escribe números válidos mayores que 0!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            if (num2 === 0) {
+                result.textContent = '¡No se puede dividir por 0!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const quotient = Math.floor(num1 / num2);
+            const remainder = num1 % num2;
+            
+            if (remainder === 0) {
+                result.innerHTML = `
+                    <div>
+                        ${num1} ÷ ${num2} = ${quotient} 🎉<br>
+                        <small style="font-size: 0.8em;">¡División exacta! Cada grupo tiene ${quotient}</small>
+                    </div>
+                `;
+            } else {
+                result.innerHTML = `
+                    <div>
+                        ${num1} ÷ ${num2} = ${quotient} (sobran ${remainder}) 🎉<br>
+                        <small style="font-size: 0.8em;">Cada grupo tiene ${quotient} y sobran ${remainder}</small>
+                    </div>
+                `;
+            }
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            generateVisualDivision(num1, num2);
+        }
+
+        function generateVisualDivision(num1, num2) {
+            const container = document.getElementById('visual-div');
+            const quotient = Math.floor(num1 / num2);
+            const remainder = num1 % num2;
+            
+            if (num1 > 60) {
+                container.innerHTML = `<p style="text-align: center; color: #333; font-size: 1.2em;">¡El resultado es ${quotient}${remainder > 0 ? ' y sobran ' + remainder : ''}! Es demasiado grande para mostrarlo visualmente.</p>`;
+                return;
+            }
+            
+            let html = '<div class="division-groups">';
+            
+            // Create groups
+            for (let i = 0; i < num2; i++) {
+                html += '<div class="group">';
+                for (let j = 0; j < quotient; j++) {
+                    html += '<div class="item-block">★</div>';
+                }
+                html += `<div style="margin-top: 5px; text-align: center; color: var(--primary-color); font-weight: bold;">Grupo ${i + 1}</div>`;
+                html += '</div>';
+            }
+            
+            html += '</div>';
+            
+            // Show remainder if exists
+            if (remainder > 0) {
+                html += '<div style="margin-top: 20px; text-align: center;">';
+                html += '<p style="color: #333; font-size: 1.2em; margin-bottom: 10px;">Sobran:</p>';
+                html += '<div style="display: flex; gap: 5px; justify-content: center;">';
+                for (let i = 0; i < remainder; i++) {
+                    html += '<div class="item-block">★</div>';
+                }
+                html += '</div></div>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        function divideExact() {
+            const num1 = parseInt(document.getElementById('exact1').value);
+            const num2 = parseInt(document.getElementById('exact2').value);
+            const result = document.getElementById('exact-result');
+            
+            if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+                result.textContent = '¡Por favor, escribe números válidos mayores que 0!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            if (num2 === 0) {
+                result.textContent = '¡No se puede dividir por 0!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const quotient = Math.floor(num1 / num2);
+            const remainder = num1 % num2;
+            
+            if (remainder === 0) {
+                result.innerHTML = `
+                    <div>
+                        Cociente: ${quotient} - Resto: 0 🎉<br>
+                        <small style="font-size: 0.8em;">¡División exacta!</small>
+                    </div>
+                `;
+            } else {
+                result.innerHTML = `
+                    <div>
+                        Cociente: ${quotient} - Resto: ${remainder} 🎉<br>
+                        <small style="font-size: 0.8em;">Mira la explicación abajo</small>
+                    </div>
+                `;
+            }
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            explainDivision(num1, num2, quotient, remainder);
+        }
+
+        function explainDivision(dividend, divisor, quotient, remainder) {
+            const container = document.getElementById('exact-explanation');
+            
+            let html = '<h3>Comprobación:</h3>';
+            html += '<div>';
+            html += `<p><strong>Dividendo:</strong> ${dividend} (el número que dividimos)</p>`;
+            html += `<p><strong>Divisor:</strong> ${divisor} (entre cuánto dividimos)</p>`;
+            html += `<p><strong>Cociente:</strong> ${quotient} (el resultado)</p>`;
+            html += `<p><strong>Resto:</strong> ${remainder} (lo que sobra)</p>`;
+            html += '<hr style="margin: 15px 0; border: 1px solid var(--primary-color);">';
+            html += '<p><strong>Comprobación:</strong></p>';
+            html += `<p>${divisor} × ${quotient} + ${remainder} = ${divisor * quotient + remainder}</p>`;
+            
+            if (divisor * quotient + remainder === dividend) {
+                html += '<p style="color: #00b894; font-weight: bold;">✓ ¡Correcto!</p>';
+            }
+            
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+
+        function generateQuestion() {
+            const difficulty = Math.random();
+            let num1, num2;
+            
+            if (difficulty < 0.5) {
+                // Fácil: tablas básicas
+                num2 = Math.floor(Math.random() * 9) + 2; // 2-10
+                const mult = Math.floor(Math.random() * 9) + 1; // 1-9
+                num1 = num2 * mult;
+            } else {
+                // Medio: divisiones más difíciles
+                num2 = Math.floor(Math.random() * 8) + 2; // 2-9
+                const mult = Math.floor(Math.random() * 11) + 2; // 2-12
+                num1 = num2 * mult;
+            }
+            
+            currentQuestion = {
+                num1: num1,
+                num2: num2,
+                answer: Math.floor(num1 / num2)
+            };
+            
+            document.getElementById('practice-question').textContent = `${num1} ÷ ${num2} = ?`;
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            questionAnswered = false;
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('practice-answer').value);
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) {
+                return;
+            }
+            
+            if (isNaN(userAnswer)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            if (userAnswer === currentQuestion.answer) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `
+                    <div style="color: #333;">
+                        ¡Correcto! 🎉<br>
+                        ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
+                        <small>+10 puntos</small>
+                    </div>
+                `;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `
+                    <div style="color: #333;">
+                        ¡Intenta de nuevo! 😊<br>
+                        ${currentQuestion.num1} ÷ ${currentQuestion.num2} = ${currentQuestion.answer}<br>
+                        <small>-5 puntos. ¡Sigue practicando!</small>
+                    </div>
+                `;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            const totalPoints = Storage.getTotalPoints();
+            const level = Gamification.getCurrentLevel();
+            
+            document.getElementById('score').textContent = totalPoints;
+            document.getElementById('level').textContent = level.name;
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 7: Geometría Vectorial del Espacio - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Geometría Vectorial del Espacio</h2>
+
+            <div class="info-box" style="background: var(--gradient-primary); color: white;">
+                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+                <p>Símbolos utilizados en Geometría Vectorial 3D:</p>
+                <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
+                    <li><strong>v⃗, u⃗, w⃗</strong> = Vectores en el espacio</li>
+                    <li><strong>(x, y, z)</strong> = Componentes de un vector en ℝ³</li>
+                    <li><strong>|v⃗|</strong> = Módulo o longitud del vector</li>
+                    <li><strong>v⃗ · u⃗</strong> = Producto escalar</li>
+                    <li><strong>v⃗ × u⃗</strong> = Producto vectorial (cross product)</li>
+                    <li><strong>[v⃗, u⃗, w⃗]</strong> = Producto mixto</li>
+                    <li><strong>⊥</strong> = Perpendicular (ortogonal)</li>
+                    <li><strong>∥</strong> = Paralelo</li>
+                    <li><strong>π</strong> = Plano en el espacio</li>
+                    <li><strong>n⃗</strong> = Vector normal (perpendicular a un plano)</li>
+                </ul>
+            </div>
+
+            <h3>1. Vectores en el Espacio ℝ³</h3>
+            <div class="info-box">
+                <h4>Definición</h4>
+                <p>Un vector en el espacio tridimensional se representa con tres componentes:</p>
+                <div class="formula-box">
+                    v⃗ = (v<sub>x</sub>, v<sub>y</sub>, v<sub>z</sub>)<br>
+                    |v⃗| = √(v<sub>x</sub>² + v<sub>y</sub>² + v<sub>z</sub>²)
+                </div>
+            </div>
+
+            <h3>2. Operaciones con Vectores 3D</h3>
+            <div class="info-box">
+                <h4>Suma y Producto por Escalar</h4>
+                <div class="formula-box">
+                    <strong>Suma:</strong> v⃗ + u⃗ = (v<sub>x</sub>+u<sub>x</sub>, v<sub>y</sub>+u<sub>y</sub>, v<sub>z</sub>+u<sub>z</sub>)<br>
+                    <strong>Escalar:</strong> λ·v⃗ = (λv<sub>x</sub>, λv<sub>y</sub>, λv<sub>z</sub>)
+                </div>
+            </div>
+
+            <h3>3. Producto Escalar</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    v⃗ · u⃗ = v<sub>x</sub>u<sub>x</sub> + v<sub>y</sub>u<sub>y</sub> + v<sub>z</sub>u<sub>z</sub> = |v⃗||u⃗|cos(α)
+                </div>
+                <div class="exam-important">
+                    <strong>Perpendicularidad:</strong> v⃗ ⊥ u⃗ ⟺ v⃗ · u⃗ = 0
+                </div>
+            </div>
+
+            <h3>4. Producto Vectorial</h3>
+            <div class="info-box">
+                <h4>Definición y Cálculo</h4>
+                <p>El producto vectorial v⃗ × u⃗ es un vector perpendicular a ambos:</p>
+                <div class="formula-box">
+                    v⃗ × u⃗ = |i⃗ j⃗ k⃗|<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|v<sub>x</sub> v<sub>y</sub> v<sub>z</sub>|<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|u<sub>x</sub> u<sub>y</sub> u<sub>z</sub>|
+                </div>
+                <p>Resultado:</p>
+                <div class="formula-box">
+                    v⃗ × u⃗ = (v<sub>y</sub>u<sub>z</sub>-v<sub>z</sub>u<sub>y</sub>, v<sub>z</sub>u<sub>x</sub>-v<sub>x</sub>u<sub>z</sub>, v<sub>x</sub>u<sub>y</sub>-v<sub>y</sub>u<sub>x</sub>)
+                </div>
+                <p><strong>Propiedades:</strong></p>
+                <ul>
+                    <li>v⃗ × u⃗ ⊥ v⃗ y v⃗ × u⃗ ⊥ u⃗</li>
+                    <li>|v⃗ × u⃗| = |v⃗||u⃗|sin(α)</li>
+                    <li>v⃗ × u⃗ = -u⃗ × v⃗ (anticonmutativo)</li>
+                    <li>v⃗ ∥ u⃗ ⟺ v⃗ × u⃗ = 0⃗</li>
+                </ul>
+            </div>
+
+            <h3>5. Producto Mixto</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    [v⃗, u⃗, w⃗] = v⃗ · (u⃗ × w⃗) = det|v<sub>x</sub> v<sub>y</sub> v<sub>z</sub>|<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|u<sub>x</sub> u<sub>y</sub> u<sub>z</sub>|<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|w<sub>x</sub> w<sub>y</sub> w<sub>z</sub>|
+                </div>
+                <p><strong>Interpretación:</strong> Volumen del paralelepípedo formado por los tres vectores</p>
+            </div>
+
+            <h3>6. Ecuaciones de la Recta en ℝ³</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Forma</th><th>Ecuación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Vectorial</strong></td><td>(x,y,z) = (x₀,y₀,z₀) + λ(v<sub>x</sub>,v<sub>y</sub>,v<sub>z</sub>)</td></tr>
+                    <tr><td><strong>Paramétricas</strong></td><td>x=x₀+λv<sub>x</sub>, y=y₀+λv<sub>y</sub>, z=z₀+λv<sub>z</sub></td></tr>
+                    <tr><td><strong>Continua</strong></td><td>(x-x₀)/v<sub>x</sub> = (y-y₀)/v<sub>y</sub> = (z-z₀)/v<sub>z</sub></td></tr>
+                </tbody>
+            </table>
+
+            <h3>7. Ecuación del Plano</h3>
+            <div class="info-box">
+                <h4>Formas de la Ecuación</h4>
+                <div class="formula-box">
+                    <strong>General:</strong> Ax + By + Cz + D = 0<br>
+                    <strong>Vectorial:</strong> (r⃗ - r⃗₀) · n⃗ = 0<br>
+                    <strong>Paramétrica:</strong> r⃗ = r⃗₀ + λu⃗ + μv⃗
+                </div>
+                <p>Donde <strong>n⃗ = (A, B, C)</strong> es el vector normal al plano</p>
+            </div>
+
+            <h3>8. Posiciones Relativas</h3>
+            <div class="info-box">
+                <h4>Recta-Recta en ℝ³</h4>
+                <ul>
+                    <li><strong>Paralelas:</strong> Vectores directores proporcionales</li>
+                    <li><strong>Secantes:</strong> Se cortan en un punto</li>
+                    <li><strong>Cruzadas:</strong> No se cortan y no son paralelas</li>
+                </ul>
+                <h4 style="margin-top: 1rem;">Recta-Plano</h4>
+                <ul>
+                    <li><strong>Paralela:</strong> Vector director ⊥ vector normal</li>
+                    <li><strong>Contenida:</strong> Punto de la recta pertenece al plano y son paralelos</li>
+                    <li><strong>Secante:</strong> Se cortan en un punto</li>
+                </ul>
+            </div>
+
+            <h3>9. Distancias en el Espacio</h3>
+            <div class="info-box">
+                <h4>Distancia Punto-Plano</h4>
+                <p>Plano: Ax + By + Cz + D = 0, Punto: P(x₀,y₀,z₀)</p>
+                <div class="formula-box">
+                    d(P,π) = |Ax₀ + By₀ + Cz₀ + D| / √(A² + B² + C²)
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 1: Módulo en ℝ³</h4>
+                <p><strong>Problema:</strong> Calcular |v⃗| si v⃗ = (2, 3, 6)</p>
+                <p><strong>Solución:</strong></p>
+                <p>|v⃗| = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = 7</p>
+                <p><strong>Respuesta:</strong> |v⃗| = 7</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 2: Producto Escalar en ℝ³</h4>
+                <p><strong>Problema:</strong> Calcular v⃗ · u⃗ si v⃗ = (1, 2, 3) y u⃗ = (4, 5, 6)</p>
+                <p><strong>Solución:</strong></p>
+                <p>v⃗ · u⃗ = 1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32</p>
+                <p><strong>Respuesta:</strong> v⃗ · u⃗ = 32</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 3: Producto Vectorial</h4>
+                <p><strong>Problema:</strong> Calcular v⃗ × u⃗ si v⃗ = (1, 0, 0) y u⃗ = (0, 1, 0)</p>
+                <p><strong>Solución:</strong></p>
+                <p>v⃗ × u⃗ = (0×0-0×1, 0×0-1×0, 1×1-0×0) = (0, 0, 1)</p>
+                <p><strong>Respuesta:</strong> v⃗ × u⃗ = (0, 0, 1) = k⃗</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 4: Ecuación del Plano</h4>
+                <p><strong>Problema:</strong> Escribir la ecuación general del plano con vector normal n⃗=(1,2,3) que pasa por P(1,0,-1)</p>
+                <p><strong>Solución:</strong></p>
+                <p>1(x-1) + 2(y-0) + 3(z+1) = 0</p>
+                <p>x - 1 + 2y + 3z + 3 = 0</p>
+                <p><strong>Respuesta:</strong> x + 2y + 3z + 2 = 0</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 5: Distancia Punto-Plano</h4>
+                <p><strong>Problema:</strong> Distancia de P(1,1,1) al plano x + y + z - 6 = 0</p>
+                <p><strong>Solución:</strong></p>
+                <p>d = |1 + 1 + 1 - 6| / √(1² + 1² + 1²) = |-3| / √3 = 3/√3 = √3 ≈ 1.73</p>
+                <p><strong>Respuesta:</strong> d = √3 ≈ 1.73 unidades</p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📏 Calculadora de Módulo en ℝ³</h3>
+                <p>Calcula el módulo de un vector en el espacio</p>
+                
+                <div class="tool-input-group">
+                    <label>Vector (vx, vy, vz):</label>
+                    <input type="text" id="modulo3d-vector" placeholder="Ej: 2,3,6">
+                </div>
+                
+                <button class="calc-button" onclick="calculateModulo3D()">Calcular</button>
+                <div class="calc-result" id="modulo3d-result">Ingresa el vector</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>✖️ Producto Vectorial</h3>
+                <p>Calcula el producto vectorial v⃗ × u⃗</p>
+                
+                <div class="tool-input-group">
+                    <label>Vector v⃗:</label>
+                    <input type="text" id="cross-v" placeholder="Ej: 1,0,0">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Vector u⃗:</label>
+                    <input type="text" id="cross-u" placeholder="Ej: 0,1,0">
+                </div>
+                
+                <button class="calc-button" onclick="calculateCrossProduct()">Calcular</button>
+                <div class="calc-result" id="cross-result">Ingresa ambos vectores</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📐 Distancia Punto-Plano</h3>
+                <p>Calcula la distancia de un punto a un plano</p>
+                
+                <div class="tool-input-group">
+                    <label>Punto P(x,y,z):</label>
+                    <input type="text" id="dist3d-point" placeholder="Ej: 1,1,1">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Plano Ax+By+Cz+D=0 (A,B,C,D):</label>
+                    <input type="text" id="dist3d-plane" placeholder="Ej: 1,1,1,-6">
+                </div>
+                
+                <button class="calc-button" onclick="calculateDistance3D()">Calcular</button>
+                <div class="calc-result" id="dist3d-result">Ingresa punto y plano</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='vectorial-plano.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Vector en ℝ³:</strong> v⃗ = (v<sub>x</sub>, v<sub>y</sub>, v<sub>z</sub>)</li>
+                    <li><strong>Módulo:</strong> |v⃗| = √(v<sub>x</sub>² + v<sub>y</sub>² + v<sub>z</sub>²)</li>
+                    <li><strong>Producto escalar:</strong> v⃗·u⃗ = v<sub>x</sub>u<sub>x</sub> + v<sub>y</sub>u<sub>y</sub> + v<sub>z</sub>u<sub>z</sub></li>
+                    <li><strong>Producto vectorial:</strong> v⃗×u⃗ perpendicular a ambos, |v⃗×u⃗| = |v⃗||u⃗|sin(α)</li>
+                    <li><strong>Producto mixto:</strong> [v⃗,u⃗,w⃗] = volumen del paralelepípedo</li>
+                    <li><strong>Plano:</strong> Ax + By + Cz + D = 0, n⃗=(A,B,C) normal</li>
+                    <li><strong>Recta en ℝ³:</strong> r⃗ = r⃗₀ + λd⃗</li>
+                    <li><strong>Distancia punto-plano:</strong> d = |Ax₀+By₀+Cz₀+D|/√(A²+B²+C²)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Consejos de Estudio</h4>
+                <ul>
+                    <li>El producto vectorial es anticonmutativo: v⃗×u⃗ = -u⃗×v⃗</li>
+                    <li>Usa la regla de la mano derecha para el producto vectorial</li>
+                    <li>Vectores paralelos tienen producto vectorial nulo</li>
+                    <li>El vector normal a un plano es perpendicular a todos los vectores del plano</li>
+                    <li>En ℝ³, dos rectas pueden ser cruzadas (ni paralelas ni secantes)</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='vectorial-plano.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'vectorial-espacio';
+        const MODULE_TITLE = 'Tema 7: Geometría Vectorial del Espacio';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            Components.createScoreDisplay();
+            
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'Calcular |v⃗| si v⃗ = (2, 3, 6)', correct: '7', hint: '|v⃗| = √(2²+3²+6²) = √49 = 7' },
+            { id: 2, question: 'Si v⃗=(1,2,3) y u⃗=(4,5,6), ¿cuánto vale v⃗·u⃗?', correct: '32', hint: 'v⃗·u⃗ = 1×4 + 2×5 + 3×6 = 4+10+18 = 32' },
+            { id: 3, question: '¿Son perpendiculares v⃗=(1,0,0) y u⃗=(0,1,0)? (1=SÍ, 0=NO)', correct: '1', hint: 'v⃗·u⃗ = 1×0 + 0×1 + 0×0 = 0 → SÍ son perpendiculares' },
+            { id: 4, question: 'Si v⃗=(3,4,0), ¿cuánto vale |v⃗|?', correct: '5', hint: '|v⃗| = √(3²+4²+0²) = √25 = 5' },
+            { id: 5, question: 'Producto vectorial i⃗×j⃗. Componente z:', correct: '1', hint: 'i⃗×j⃗ = (1,0,0)×(0,1,0) = (0,0,1) = k⃗. Componente z = 1' },
+            { id: 6, question: 'Si v⃗=(2,0,0) y u⃗=(4,0,0), ¿son paralelos? (1=SÍ, 0=NO)', correct: '1', hint: 'v⃗ = (1/2)u⃗, proporcionales → SÍ son paralelos' },
+            { id: 7, question: 'Distancia de P(0,0,0) al plano x+y+z-3=0 (√3≈1.73)', correct: '1.73', hint: 'd = |0+0+0-3|/√(1²+1²+1²) = 3/√3 = √3 ≈ 1.73' },
+            { id: 8, question: 'Si v⃗=(1,1,1), ¿cuánto vale 2v⃗? Componente x:', correct: '2', hint: '2v⃗ = (2×1, 2×1, 2×1) = (2,2,2). Componente x = 2' },
+            { id: 9, question: 'Vector normal al plano 2x+3y+4z-1=0. Componente y:', correct: '3', hint: 'Vector normal n⃗ = (A,B,C) = (2,3,4). Componente y = 3' },
+            { id: 10, question: 'Si |v⃗|=6 y v⃗=(3,0,z), ¿cuánto vale z²?', correct: '27', hint: '√(9+0+z²)=6 → 9+z²=36 → z²=27' }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card" data-exercise="${ex.id}">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta numérica.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const correctValue = parseFloat(exercise.correct);
+            const isCorrect = Math.abs(userAnswer - correctValue) <= 0.01;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function calculateModulo3D() {
+            const vectorStr = document.getElementById('modulo3d-vector').value;
+            const result = document.getElementById('modulo3d-result');
+            
+            if (!vectorStr) {
+                result.textContent = '⚠️ Por favor, ingresa el vector';
+                return;
+            }
+            
+            const [vx, vy, vz] = vectorStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if (isNaN(vx) || isNaN(vy) || isNaN(vz)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: vx,vy,vz';
+                return;
+            }
+            
+            const modulo = Math.sqrt(vx*vx + vy*vy + vz*vz);
+            
+            result.innerHTML = `
+                <strong>Vector:</strong> v⃗ = (${vx}, ${vy}, ${vz})<br>
+                <strong>Cálculo:</strong> |v⃗| = √(${vx}² + ${vy}² + ${vz}²) = √${vx*vx + vy*vy + vz*vz}<br>
+                <strong>Módulo:</strong> |v⃗| = ${modulo.toFixed(2)}
+            `;
+        }
+
+        function calculateCrossProduct() {
+            const vStr = document.getElementById('cross-v').value;
+            const uStr = document.getElementById('cross-u').value;
+            const result = document.getElementById('cross-result');
+            
+            if (!vStr || !uStr) {
+                result.textContent = '⚠️ Por favor, ingresa ambos vectores';
+                return;
+            }
+            
+            const [vx, vy, vz] = vStr.split(',').map(n => parseFloat(n.trim()));
+            const [ux, uy, uz] = uStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if (isNaN(vx) || isNaN(vy) || isNaN(vz) || isNaN(ux) || isNaN(uy) || isNaN(uz)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: vx,vy,vz';
+                return;
+            }
+            
+            const crossX = vy*uz - vz*uy;
+            const crossY = vz*ux - vx*uz;
+            const crossZ = vx*uy - vy*ux;
+            
+            const modulo = Math.sqrt(crossX*crossX + crossY*crossY + crossZ*crossZ);
+            const isParallel = modulo < 0.001;
+            
+            result.innerHTML = `
+                <strong>Vectores:</strong> v⃗ = (${vx}, ${vy}, ${vz}), u⃗ = (${ux}, ${uy}, ${uz})<br>
+                <strong>Producto vectorial:</strong> v⃗×u⃗ = (${crossX.toFixed(2)}, ${crossY.toFixed(2)}, ${crossZ.toFixed(2)})<br>
+                <strong>Módulo:</strong> |v⃗×u⃗| = ${modulo.toFixed(2)}<br>
+                ${isParallel ? '<strong>✓ Los vectores son paralelos</strong>' : '<strong>✓ El resultado es perpendicular a ambos</strong>'}
+            `;
+        }
+
+        function calculateDistance3D() {
+            const pointStr = document.getElementById('dist3d-point').value;
+            const planeStr = document.getElementById('dist3d-plane').value;
+            const result = document.getElementById('dist3d-result');
+            
+            if (!pointStr || !planeStr) {
+                result.textContent = '⚠️ Por favor, completa todos los campos';
+                return;
+            }
+            
+            const [x0, y0, z0] = pointStr.split(',').map(n => parseFloat(n.trim()));
+            const [A, B, C, D] = planeStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if ([x0,y0,z0,A,B,C,D].some(isNaN)) {
+                result.textContent = '⚠️ Formato incorrecto';
+                return;
+            }
+            
+            const distance = Math.abs(A*x0 + B*y0 + C*z0 + D) / Math.sqrt(A*A + B*B + C*C);
+            
+            result.innerHTML = `
+                <strong>Punto:</strong> P(${x0}, ${y0}, ${z0})<br>
+                <strong>Plano:</strong> ${A}x + ${B}y + ${C}z + ${D} = 0<br>
+                <strong>Cálculo:</strong> d = |${A}×${x0} + ${B}×${y0} + ${C}×${z0} + ${D}| / √(${A}² + ${B}² + ${C}²)<br>
+                <strong>Distancia:</strong> d = ${distance.toFixed(2)} unidades
+            `;
+        }
+    </script>
+</body>
+</html>

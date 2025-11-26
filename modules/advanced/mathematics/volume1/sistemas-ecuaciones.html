@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Sistemas de Ecuaciones - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Sistemas de Ecuaciones Lineales</h2>
+
+            <div class="info-box" style="background: var(--gradient-primary); color: white;">
+                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+                <p>Símbolos utilizados en Sistemas de Ecuaciones:</p>
+                <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
+                    <li><strong>{</strong> = Llave que agrupa las ecuaciones de un sistema</li>
+                    <li><strong>x, y, z</strong> = Incógnitas del sistema (valores desconocidos)</li>
+                    <li><strong>=</strong> = Igualdad (relación entre los dos miembros)</li>
+                    <li><strong>SCD</strong> = Sistema Compatible Determinado (solución única)</li>
+                    <li><strong>SCI</strong> = Sistema Compatible Indeterminado (infinitas soluciones)</li>
+                    <li><strong>SI</strong> = Sistema Incompatible (sin solución)</li>
+                    <li><strong>|A|</strong> = Determinante de la matriz de coeficientes</li>
+                    <li><strong>A|b</strong> = Matriz ampliada (coeficientes + términos independientes)</li>
+                    <li><strong>rango(A)</strong> = Rango de la matriz</li>
+                </ul>
+            </div>
+
+            <h3>1. ¿Qué es un Sistema de Ecuaciones?</h3>
+            <div class="info-box">
+                <h4>Definición</h4>
+                <p>Un sistema de ecuaciones lineales es un conjunto de ecuaciones que comparten las mismas incógnitas. La solución es el conjunto de valores que satisfacen todas las ecuaciones simultáneamente.</p>
+                <div class="formula-box">
+                    { ax + by = c<br>
+                    { dx + ey = f
+                </div>
+            </div>
+
+            <h3>2. Clasificación de Sistemas</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Tipo</th><th>Descripción</th><th>Condición</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>SCD</strong></td><td>Compatible Determinado</td><td>Solución única</td></tr>
+                    <tr><td><strong>SCI</strong></td><td>Compatible Indeterminado</td><td>Infinitas soluciones</td></tr>
+                    <tr><td><strong>SI</strong></td><td>Incompatible</td><td>Sin solución</td></tr>
+                </tbody>
+            </table>
+
+            <h3>3. Método de Sustitución</h3>
+            <div class="info-box">
+                <h4>Pasos</h4>
+                <ol>
+                    <li>Despejar una incógnita en una ecuación</li>
+                    <li>Sustituir en la otra ecuación</li>
+                    <li>Resolver la ecuación resultante</li>
+                    <li>Sustituir el valor hallado en la primera expresión</li>
+                </ol>
+            </div>
+
+            <h3>4. Método de Igualación</h3>
+            <div class="info-box">
+                <h4>Pasos</h4>
+                <ol>
+                    <li>Despejar la misma incógnita en ambas ecuaciones</li>
+                    <li>Igualar las dos expresiones obtenidas</li>
+                    <li>Resolver la ecuación resultante</li>
+                    <li>Sustituir para hallar la otra incógnita</li>
+                </ol>
+            </div>
+
+            <h3>5. Método de Reducción (Eliminación)</h3>
+            <div class="info-box">
+                <h4>Pasos</h4>
+                <ol>
+                    <li>Multiplicar las ecuaciones para igualar coeficientes</li>
+                    <li>Sumar o restar para eliminar una incógnita</li>
+                    <li>Resolver la ecuación de una incógnita</li>
+                    <li>Sustituir para hallar la otra</li>
+                </ol>
+            </div>
+
+            <h3>6. Regla de Cramer</h3>
+            <div class="info-box">
+                <h4>Fórmula</h4>
+                <p>Para un sistema de 2 ecuaciones con 2 incógnitas:</p>
+                <div class="formula-box">
+                    x = |A<sub>x</sub>| / |A|<br>
+                    y = |A<sub>y</sub>| / |A|
+                </div>
+                <p>Donde <strong>|A|</strong> es el determinante de coeficientes, <strong>|A<sub>x</sub>|</strong> y <strong>|A<sub>y</sub>|</strong> son los determinantes sustituyendo la columna respectiva por los términos independientes.</p>
+                <div class="exam-important">
+                    <strong>Condición:</strong> |A| ≠ 0 (sistema compatible determinado)
+                </div>
+            </div>
+
+            <h3>7. Método de Gauss</h3>
+            <div class="info-box">
+                <p>Transforma la matriz ampliada en forma escalonada mediante operaciones elementales:</p>
+                <ul>
+                    <li>Intercambiar filas</li>
+                    <li>Multiplicar una fila por un número no nulo</li>
+                    <li>Sumar a una fila otra multiplicada por un número</li>
+                </ul>
+            </div>
+
+            <h3>8. Teorema de Rouché-Frobenius</h3>
+            <div class="info-box">
+                <h4>Criterio de Clasificación</h4>
+                <p>Sea <strong>rango(A)</strong> el rango de la matriz de coeficientes y <strong>rango(A|b)</strong> el de la ampliada:</p>
+                <ul>
+                    <li><strong>SCD:</strong> rango(A) = rango(A|b) = n° incógnitas</li>
+                    <li><strong>SCI:</strong> rango(A) = rango(A|b) < n° incógnitas</li>
+                    <li><strong>SI:</strong> rango(A) ≠ rango(A|b)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 1: Método de Sustitución</h4>
+                <p><strong>Problema:</strong> { x + y = 5 ; 2x - y = 1 }</p>
+                <p><strong>Solución:</strong></p>
+                <p>Paso 1: Despejamos y de la primera: y = 5 - x</p>
+                <p>Paso 2: Sustituimos en la segunda: 2x - (5 - x) = 1</p>
+                <p>Paso 3: Resolvemos: 2x - 5 + x = 1 → 3x = 6 → x = 2</p>
+                <p>Paso 4: Sustituimos: y = 5 - 2 = 3</p>
+                <p><strong>Respuesta:</strong> x = 2, y = 3</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 2: Método de Reducción</h4>
+                <p><strong>Problema:</strong> { 3x + 2y = 12 ; 5x - 2y = 4 }</p>
+                <p><strong>Solución:</strong></p>
+                <p>Paso 1: Los coeficientes de y ya son opuestos</p>
+                <p>Paso 2: Sumamos ambas ecuaciones: 8x = 16 → x = 2</p>
+                <p>Paso 3: Sustituimos en la primera: 3(2) + 2y = 12 → 2y = 6 → y = 3</p>
+                <p><strong>Respuesta:</strong> x = 2, y = 3</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 3: Regla de Cramer</h4>
+                <p><strong>Problema:</strong> { 2x + y = 5 ; x - 3y = -8 }</p>
+                <p><strong>Solución:</strong></p>
+                <p>|A| = 2(-3) - 1(1) = -6 - 1 = -7</p>
+                <p>|A<sub>x</sub>| = 5(-3) - 1(-8) = -15 + 8 = -7</p>
+                <p>|A<sub>y</sub>| = 2(-8) - 5(1) = -16 - 5 = -21</p>
+                <p>x = -7 / -7 = 1</p>
+                <p>y = -21 / -7 = 3</p>
+                <p><strong>Respuesta:</strong> x = 1, y = 3</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-warning);">
+                <h4 style="color: var(--color-warning);">Ejemplo 4: Sistema Incompatible</h4>
+                <p><strong>Problema:</strong> { x + y = 5 ; x + y = 3 }</p>
+                <p><strong>Solución:</strong></p>
+                <p>Restando ambas ecuaciones: 0 = 2 (contradicción)</p>
+                <p><strong>Conclusión:</strong> Sistema Incompatible (SI), sin solución</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-info);">
+                <h4 style="color: var(--color-info);">Ejemplo 5: Sistema Compatible Indeterminado</h4>
+                <p><strong>Problema:</strong> { 2x + y = 4 ; 4x + 2y = 8 }</p>
+                <p><strong>Solución:</strong></p>
+                <p>La segunda ecuación es el doble de la primera (ecuaciones dependientes)</p>
+                <p><strong>Conclusión:</strong> Sistema Compatible Indeterminado (SCI), infinitas soluciones: y = 4 - 2x</p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>🔢 Resolución por Regla de Cramer</h3>
+                <p>Resuelve un sistema 2×2 usando la regla de Cramer</p>
+                
+                <div class="tool-input-group">
+                    <label>Primera ecuación: ax + by = c</label>
+                    <input type="text" id="cramer-eq1" placeholder="Ej: 2,1,5 (a,b,c separados por comas)">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Segunda ecuación: dx + ey = f</label>
+                    <input type="text" id="cramer-eq2" placeholder="Ej: 1,-3,-8">
+                </div>
+                
+                <button class="calc-button" onclick="solveCramer()">Resolver</button>
+                <div class="calc-result" id="cramer-result">Ingresa las dos ecuaciones</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📊 Clasificador de Sistemas</h3>
+                <p>Determina si un sistema es SCD, SCI o SI</p>
+                
+                <div class="tool-input-group">
+                    <label>Primera ecuación: ax + by = c</label>
+                    <input type="text" id="class-eq1" placeholder="Ej: 1,1,5">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Segunda ecuación: dx + ey = f</label>
+                    <input type="text" id="class-eq2" placeholder="Ej: 1,1,3">
+                </div>
+                
+                <button class="calc-button" onclick="classifySystem()">Clasificar</button>
+                <div class="calc-result" id="class-result">Ingresa las dos ecuaciones</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='matrices.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Sistema de ecuaciones:</strong> Conjunto de ecuaciones con incógnitas comunes</li>
+                    <li><strong>SCD:</strong> Solución única (|A| ≠ 0)</li>
+                    <li><strong>SCI:</strong> Infinitas soluciones (ecuaciones dependientes)</li>
+                    <li><strong>SI:</strong> Sin solución (ecuaciones contradictorias)</li>
+                    <li><strong>Métodos:</strong> Sustitución, igualación, reducción, Cramer, Gauss</li>
+                    <li><strong>Regla de Cramer:</strong> x = |A<sub>x</sub>|/|A|, y = |A<sub>y</sub>|/|A|</li>
+                    <li><strong>Rouché-Frobenius:</strong> Compara rangos de A y A|b</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='matrices.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'sistemas-ecuaciones';
+        const MODULE_TITLE = 'Tema 5: Sistemas de Ecuaciones Lineales';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            Components.createScoreDisplay();
+            
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'Resolver: { x + y = 10 ; x - y = 2 }. ¿Cuánto vale x?', type: 'number', correct: '6', hint: 'Suma ambas ecuaciones: 2x = 12, entonces x = 6' },
+            { id: 2, question: 'Sistema: { x + y = 5 ; x + y = 3 }. ¿Qué tipo es? (1=SCD, 2=SCI, 3=SI)', type: 'number', correct: '3', hint: 'Restando: 0 = 2, contradicción. Es Sistema Incompatible (SI) → 3' },
+            { id: 3, question: 'Resolver: { 2x + y = 7 ; x = 3 }. ¿Cuánto vale y?', type: 'number', correct: '1', hint: 'Sustituye x=3 en la primera: 2(3) + y = 7 → y = 1' },
+            { id: 4, question: 'Si |A| = 0, ¿puede usarse Cramer? (1=SÍ, 0=NO)', type: 'number', correct: '0', hint: 'Cramer requiere |A| ≠ 0. Si |A| = 0, NO se puede usar → 0' },
+            { id: 5, question: 'Resolver: { 3x + 2y = 12 ; 5x - 2y = 4 }. ¿Cuánto vale x?', type: 'number', correct: '2', hint: 'Suma ambas: 8x = 16, entonces x = 2' },
+            { id: 6, question: 'Sistema: { 2x + y = 4 ; 4x + 2y = 8 }. ¿Qué tipo? (1=SCD, 2=SCI, 3=SI)', type: 'number', correct: '2', hint: 'La segunda es 2× la primera. Infinitas soluciones → SCI → 2' },
+            { id: 7, question: 'Resolver: { x + 2y = 8 ; x = 4 }. ¿Cuánto vale y?', type: 'number', correct: '2', hint: 'Sustituye x=4: 4 + 2y = 8 → 2y = 4 → y = 2' },
+            { id: 8, question: 'Si rango(A) ≠ rango(A|b), ¿qué tipo de sistema es? (1=SCD, 2=SCI, 3=SI)', type: 'number', correct: '3', hint: 'Por Rouché-Frobenius, rangos diferentes → Sistema Incompatible → 3' },
+            { id: 9, question: 'Resolver: { x - y = 1 ; x + y = 5 }. ¿Cuánto vale y?', type: 'number', correct: '2', hint: 'Suma: 2x = 6 → x = 3. Luego: 3 - y = 1 → y = 2' },
+            { id: 10, question: 'Sistema: { x = 2 ; y = 3 }. ¿Qué tipo es? (1=SCD, 2=SCI, 3=SI)', type: 'number', correct: '1', hint: 'Solución única: x=2, y=3. Es SCD → 1' }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card" data-exercise="${ex.id}">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = input.value.trim();
+
+            if (!userAnswer) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const isCorrect = userAnswer === exercise.correct;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function solveCramer() {
+            const eq1Str = document.getElementById('cramer-eq1').value;
+            const eq2Str = document.getElementById('cramer-eq2').value;
+            const result = document.getElementById('cramer-result');
+            
+            if (!eq1Str || !eq2Str) {
+                result.textContent = '⚠️ Por favor, ingresa ambas ecuaciones';
+                return;
+            }
+            
+            const [a, b, c] = eq1Str.split(',').map(n => parseFloat(n.trim()));
+            const [d, e, f] = eq2Str.split(',').map(n => parseFloat(n.trim()));
+            
+            if ([a,b,c,d,e,f].some(isNaN)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: a,b,c';
+                return;
+            }
+            
+            const detA = a*e - b*d;
+            
+            if (detA === 0) {
+                result.innerHTML = '<strong>|A| = 0</strong><br>No se puede usar Cramer (sistema no tiene solución única)';
+                return;
+            }
+            
+            const detAx = c*e - b*f;
+            const detAy = a*f - c*d;
+            
+            const x = detAx / detA;
+            const y = detAy / detA;
+            
+            result.innerHTML = `
+                <strong>Sistema:</strong><br>
+                ${a}x + ${b}y = ${c}<br>
+                ${d}x + ${e}y = ${f}<br><br>
+                <strong>Determinantes:</strong><br>
+                |A| = ${detA}<br>
+                |A<sub>x</sub>| = ${detAx}<br>
+                |A<sub>y</sub>| = ${detAy}<br><br>
+                <strong>Solución:</strong><br>
+                x = ${x.toFixed(2)}<br>
+                y = ${y.toFixed(2)}
+            `;
+        }
+
+        function classifySystem() {
+            const eq1Str = document.getElementById('class-eq1').value;
+            const eq2Str = document.getElementById('class-eq2').value;
+            const result = document.getElementById('class-result');
+            
+            if (!eq1Str || !eq2Str) {
+                result.textContent = '⚠️ Por favor, ingresa ambas ecuaciones';
+                return;
+            }
+            
+            const [a, b, c] = eq1Str.split(',').map(n => parseFloat(n.trim()));
+            const [d, e, f] = eq2Str.split(',').map(n => parseFloat(n.trim()));
+            
+            if ([a,b,c,d,e,f].some(isNaN)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: a,b,c';
+                return;
+            }
+            
+            const detA = a*e - b*d;
+            
+            let classification = '';
+            let explanation = '';
+            
+            if (detA !== 0) {
+                classification = 'SCD (Compatible Determinado)';
+                explanation = '|A| ≠ 0 → Solución única';
+            } else {
+                // Check if equations are proportional
+                const ratio1 = (a !== 0) ? d/a : (b !== 0) ? e/b : 0;
+                const ratio2 = (a !== 0) ? (c/a) : (b !== 0) ? (f/b) : 0;
+                
+                if (Math.abs(ratio1 - ratio2) < 0.001) {
+                    classification = 'SCI (Compatible Indeterminado)';
+                    explanation = '|A| = 0 y ecuaciones proporcionales → Infinitas soluciones';
+                } else {
+                    classification = 'SI (Incompatible)';
+                    explanation = '|A| = 0 y ecuaciones NO proporcionales → Sin solución';
+                }
+            }
+            
+            result.innerHTML = `
+                <strong>Sistema:</strong><br>
+                ${a}x + ${b}y = ${c}<br>
+                ${d}x + ${e}y = ${f}<br><br>
+                <strong>Clasificación:</strong> ${classification}<br>
+                <strong>Razón:</strong> ${explanation}
+            `;
+        }
+    </script>
+</body>
+</html>

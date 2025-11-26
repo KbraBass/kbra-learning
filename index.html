@@ -35,6 +35,46 @@
             <button class="btn btn-primary" onclick="startLearning()">Start Learning</button>
         </section>
 
+        <!-- NEW: Modules Hub Link -->
+        <section class="modules-hub-section" id="modules-hub-section" style="display: none;">
+            <div class="hub-banner">
+                <h2>🎓 Learning Modules Hub</h2>
+                <p>Explore our comprehensive collection of interactive learning modules</p>
+                <a href="modules/index.html" class="btn btn-primary btn-large">Enter Modules Hub →</a>
+            </div>
+            <div class="hub-stats" id="hub-stats">
+                <div class="hub-stat-card">
+                    <span class="hub-stat-icon">📚</span>
+                    <span class="hub-stat-value" id="total-modules">13</span>
+                    <span class="hub-stat-label">Total Modules</span>
+                </div>
+                <div class="hub-stat-card">
+                    <span class="hub-stat-icon">✅</span>
+                    <span class="hub-stat-value" id="completed-modules">0</span>
+                    <span class="hub-stat-label">Completed</span>
+                </div>
+                <div class="hub-stat-card">
+                    <span class="hub-stat-icon">⭐</span>
+                    <span class="hub-stat-value" id="module-points">0</span>
+                    <span class="hub-stat-label">Points Earned</span>
+                </div>
+                <div class="hub-stat-card">
+                    <span class="hub-stat-icon">🔥</span>
+                    <span class="hub-stat-value" id="current-streak">0</span>
+                    <span class="hub-stat-label">Day Streak</span>
+                </div>
+            </div>
+            <div class="categories-preview">
+                <h3>Categories Available:</h3>
+                <div class="category-tags">
+                    <span class="category-tag">🔢 Basic Math (4)</span>
+                    <span class="category-tag">📐 Geometry (3)</span>
+                    <span class="category-tag">🎯 Number Concepts (3)</span>
+                    <span class="category-tag">⏰ Time Concepts (3)</span>
+                </div>
+            </div>
+        </section>
+
         <section class="lessons-section" id="lessons-section" style="display: none;">
             <h2>Choose Your Lesson</h2>
             <div class="lessons-grid" id="lessons-grid">
@@ -97,7 +137,11 @@
 
     <footer>
         <nav class="bottom-nav">
-            <button class="nav-btn active" onclick="showSection('lessons')">
+            <button class="nav-btn" onclick="showSection('modules')">
+                <span class="nav-icon">🎓</span>
+                <span class="nav-label">Modules</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('lessons')">
                 <span class="nav-icon">📚</span>
                 <span class="nav-label">Lessons</span>
             </button>

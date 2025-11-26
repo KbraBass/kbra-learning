@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje Avanzado - Kbra Learning</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        .advanced-header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .advanced-header h1 {
+            margin: 0 0 15px 0;
+            font-size: 3em;
+        }
+
+        .advanced-header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--card-color1), var(--card-color2));
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .subject-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .subject-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--card-color1), var(--card-color2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subject-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .subject-meta {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #888;
+            font-size: 0.95em;
+        }
+
+        .meta-icon {
+            font-size: 1.2em;
+        }
+
+        .coming-soon {
+            background: rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .coming-soon::after {
+            content: 'PRÓXIMAMENTE';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-banner {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Volver al Centro de Módulos</a>
+
+        <div class="advanced-header">
+            <h1>🎓 Aprendizaje Avanzado 🎓</h1>
+            <p>Contenido universitario y profesional para adolescentes y adultos</p>
+        </div>
+
+        <div class="stats-banner">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 10px;">Tu Progreso en Nivel Avanzado</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-value" id="total-advanced-modules">15</span>
+                    <span class="stat-label">Módulos Disponibles</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="completed-advanced">0</span>
+                    <span class="stat-label">Completados</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="advanced-points">0</span>
+                    <span class="stat-label">Puntos Ganados</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="advanced-streak">0</span>
+                    <span class="stat-label">Racha de Días</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: var(--primary-color); margin: 40px 0 30px 0;">Elige tu Área de Estudio</h2>
+
+        <div class="subjects-grid">
+            <!-- Mathematics -->
+            <a href="mathematics/index.html" class="subject-card" style="--card-color1: #667eea; --card-color2: #764ba2;">
+                <span class="subject-icon">📐</span>
+                <h2 class="subject-title">Matemáticas Avanzadas</h2>
+                <p class="subject-description">
+                    Álgebra, geometría analítica, cálculo diferencial e integral. 
+                    Domina las matemáticas de nivel universitario con ejemplos y práctica interactiva.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>15 módulos</span>
+                    </span>
+                    <span class="meta-item">
+                        <span class="meta-icon">📊</span>
+                        <span>2 volúmenes</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Physics - Coming Soon -->
+            <div class="subject-card coming-soon" style="--card-color1: #f093fb; --card-color2: #f5576c;">
+                <span class="subject-icon">⚛️</span>
+                <h2 class="subject-title">Física</h2>
+                <p class="subject-description">
+                    Mecánica clásica, termodinámica, electromagnetismo y física moderna. 
+                    Comprende las leyes que rigen el universo.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>Próximamente</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Chemistry - Coming Soon -->
+            <div class="subject-card coming-soon" style="--card-color1: #a8edea; --card-color2: #fed6e3;">
+                <span class="subject-icon">🧪</span>
+                <h2 class="subject-title">Química</h2>
+                <p class="subject-description">
+                    Química general, orgánica e inorgánica. 
+                    Explora la composición y transformación de la materia.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>Próximamente</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Programming - Coming Soon -->
+            <div class="subject-card coming-soon" style="--card-color1: #4facfe; --card-color2: #00f2fe;">
+                <span class="subject-icon">💻</span>
+                <h2 class="subject-title">Programación</h2>
+                <p class="subject-description">
+                    Algoritmos, estructuras de datos, desarrollo web y aplicaciones. 
+                    Aprende a crear software profesional.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>Próximamente</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Biology - Coming Soon -->
+            <div class="subject-card coming-soon" style="--card-color1: #43e97b; --card-color2: #38f9d7;">
+                <span class="subject-icon">🧬</span>
+                <h2 class="subject-title">Biología</h2>
+                <p class="subject-description">
+                    Biología celular, genética, evolución y ecología. 
+                    Descubre los secretos de la vida.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>Próximamente</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Economics - Coming Soon -->
+            <div class="subject-card coming-soon" style="--card-color1: #fa709a; --card-color2: #fee140;">
+                <span class="subject-icon">📈</span>
+                <h2 class="subject-title">Economía</h2>
+                <p class="subject-description">
+                    Microeconomía, macroeconomía y finanzas. 
+                    Comprende cómo funcionan los mercados y la economía global.
+                </p>
+                <div class="subject-meta">
+                    <span class="meta-item">
+                        <span class="meta-icon">📚</span>
+                        <span>Próximamente</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+
+    <script>
+        function init() {
+            loadAdvancedStats();
+        }
+
+        function loadAdvancedStats() {
+            try {
+                const kbraLearning = localStorage.getItem('kbra-learning');
+                if (!kbraLearning) {
+                    document.getElementById('completed-advanced').textContent = '0';
+                    document.getElementById('advanced-points').textContent = '0';
+                    document.getElementById('advanced-streak').textContent = '0';
+                    return;
+                }
+
+                const data = JSON.parse(kbraLearning);
+                
+                // Advanced math module IDs (15 total)
+                const advancedModuleIds = [
+                    // Volume I (8 modules)
+                    'preliminares-numeros', 'estadistica', 'polinomios', 'geometria-trigonometria',
+                    'matrices', 'sistemas', 'vectores-plano', 'vectores-espacio',
+                    // Volume II (7 modules)
+                    'preliminares-reales', 'funciones-elementales-1', 'funciones-elementales-2',
+                    'limites', 'derivadas', 'representacion', 'integral'
+                ];
+                
+                let completedCount = 0;
+                let totalPoints = 0;
+                
+                advancedModuleIds.forEach(moduleId => {
+                    if (data.modules && data.modules[moduleId]) {
+                        const moduleData = data.modules[moduleId];
+                        totalPoints += moduleData.points || 0;
+                        
+                        if (moduleData.exercises && moduleData.exercises.correct >= 10) {
+                            completedCount++;
+                        }
+                    }
+                });
+                
+                document.getElementById('completed-advanced').textContent = completedCount;
+                document.getElementById('advanced-points').textContent = totalPoints;
+                document.getElementById('advanced-streak').textContent = data.streak || 0;
+                
+            } catch (error) {
+                console.error('Error loading advanced stats:', error);
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>

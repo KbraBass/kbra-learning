@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 6: Geometría Vectorial del Plano - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Geometría Vectorial del Plano</h2>
+
+            <div class="info-box" style="background: var(--gradient-primary); color: white;">
+                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+                <p>Símbolos utilizados en Geometría Vectorial:</p>
+                <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
+                    <li><strong>v⃗, u⃗, w⃗</strong> = Vectores (flechas sobre letras)</li>
+                    <li><strong>(x, y)</strong> = Componentes de un vector en el plano</li>
+                    <li><strong>|v⃗|</strong> = Módulo o longitud del vector v⃗</li>
+                    <li><strong>v⃗ · u⃗</strong> = Producto escalar de vectores</li>
+                    <li><strong>⊥</strong> = Perpendicular (vectores ortogonales)</li>
+                    <li><strong>∥</strong> = Paralelo</li>
+                    <li><strong>λ</strong> = Parámetro o escalar real</li>
+                    <li><strong>cos α</strong> = Coseno del ángulo entre vectores</li>
+                    <li><strong>P, Q, R</strong> = Puntos en el plano</li>
+                    <li><strong>d(P,Q)</strong> = Distancia entre puntos P y Q</li>
+                </ul>
+            </div>
+
+            <h3>1. Vectores en el Plano</h3>
+            <div class="info-box">
+                <h4>Definición y Representación</h4>
+                <p>Un vector en el plano ℝ² es un segmento orientado caracterizado por:</p>
+                <ul>
+                    <li><strong>Módulo:</strong> Longitud del vector</li>
+                    <li><strong>Dirección:</strong> Recta que lo contiene</li>
+                    <li><strong>Sentido:</strong> Orientación de la flecha</li>
+                </ul>
+                <div class="formula-box">
+                    v⃗ = (v<sub>x</sub>, v<sub>y</sub>)<br>
+                    |v⃗| = √(v<sub>x</sub>² + v<sub>y</sub>²)
+                </div>
+            </div>
+
+            <h3>2. Operaciones con Vectores</h3>
+            <div class="info-box">
+                <h4>Suma y Producto por Escalar</h4>
+                <div class="formula-box">
+                    <strong>Suma:</strong> v⃗ + u⃗ = (v<sub>x</sub> + u<sub>x</sub>, v<sub>y</sub> + u<sub>y</sub>)<br>
+                    <strong>Producto por escalar:</strong> λ·v⃗ = (λv<sub>x</sub>, λv<sub>y</sub>)<br>
+                    <strong>Resta:</strong> v⃗ - u⃗ = (v<sub>x</sub> - u<sub>x</sub>, v<sub>y</sub> - u<sub>y</sub>)
+                </div>
+            </div>
+
+            <h3>3. Producto Escalar</h3>
+            <div class="info-box">
+                <h4>Definición y Propiedades</h4>
+                <p>El producto escalar de dos vectores es un número real:</p>
+                <div class="formula-box">
+                    v⃗ · u⃗ = v<sub>x</sub>·u<sub>x</sub> + v<sub>y</sub>·u<sub>y</sub> = |v⃗|·|u⃗|·cos(α)
+                </div>
+                <div class="exam-important">
+                    <strong>Vectores perpendiculares:</strong> v⃗ ⊥ u⃗ ⟺ v⃗ · u⃗ = 0
+                </div>
+            </div>
+
+            <h3>4. Ángulo entre Vectores</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    cos(α) = (v⃗ · u⃗) / (|v⃗|·|u⃗|)
+                </div>
+            </div>
+
+            <h3>5. Vectores Unitarios</h3>
+            <div class="info-box">
+                <p>Un vector unitario tiene módulo 1. Para obtenerlo:</p>
+                <div class="formula-box">
+                    û = v⃗ / |v⃗| = (v<sub>x</sub>/|v⃗|, v<sub>y</sub>/|v⃗|)
+                </div>
+            </div>
+
+            <h3>6. Ecuaciones de la Recta</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Forma</th><th>Ecuación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Vectorial</strong></td><td>(x,y) = (x₀,y₀) + λ(v<sub>x</sub>,v<sub>y</sub>)</td></tr>
+                    <tr><td><strong>Paramétricas</strong></td><td>x = x₀ + λv<sub>x</sub> ; y = y₀ + λv<sub>y</sub></td></tr>
+                    <tr><td><strong>Continua</strong></td><td>(x-x₀)/v<sub>x</sub> = (y-y₀)/v<sub>y</sub></td></tr>
+                    <tr><td><strong>General</strong></td><td>Ax + By + C = 0</td></tr>
+                    <tr><td><strong>Explícita</strong></td><td>y = mx + n</td></tr>
+                </tbody>
+            </table>
+
+            <h3>7. Posiciones Relativas de Rectas</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Paralelas:</strong> Vectores directores proporcionales</li>
+                    <li><strong>Perpendiculares:</strong> Producto escalar de vectores directores = 0</li>
+                    <li><strong>Secantes:</strong> Se cortan en un punto</li>
+                </ul>
+            </div>
+
+            <h3>8. Distancias</h3>
+            <div class="info-box">
+                <h4>Distancia punto a recta</h4>
+                <p>Recta: Ax + By + C = 0, Punto: P(x₀,y₀)</p>
+                <div class="formula-box">
+                    d(P,r) = |Ax₀ + By₀ + C| / √(A² + B²)
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 1: Módulo de un Vector</h4>
+                <p><strong>Problema:</strong> Calcular |v⃗| si v⃗ = (3, 4)</p>
+                <p><strong>Solución:</strong></p>
+                <p>|v⃗| = √(3² + 4²) = √(9 + 16) = √25 = 5</p>
+                <p><strong>Respuesta:</strong> |v⃗| = 5</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 2: Producto Escalar</h4>
+                <p><strong>Problema:</strong> Calcular v⃗ · u⃗ si v⃗ = (2, 3) y u⃗ = (4, 1)</p>
+                <p><strong>Solución:</strong></p>
+                <p>v⃗ · u⃗ = 2×4 + 3×1 = 8 + 3 = 11</p>
+                <p><strong>Respuesta:</strong> v⃗ · u⃗ = 11</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 3: Vectores Perpendiculares</h4>
+                <p><strong>Problema:</strong> ¿Son perpendiculares v⃗ = (2, -3) y u⃗ = (3, 2)?</p>
+                <p><strong>Solución:</strong></p>
+                <p>v⃗ · u⃗ = 2×3 + (-3)×2 = 6 - 6 = 0</p>
+                <p><strong>Respuesta:</strong> SÍ, son perpendiculares (producto escalar = 0)</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 4: Ecuación de la Recta</h4>
+                <p><strong>Problema:</strong> Escribir la ecuación vectorial de la recta que pasa por P(1,2) con vector director v⃗=(3,4)</p>
+                <p><strong>Solución:</strong></p>
+                <p>(x,y) = (1,2) + λ(3,4)</p>
+                <p><strong>Respuesta:</strong> (x,y) = (1,2) + λ(3,4)</p>
+            </div>
+
+            <div class="info-box" style="border-left-color: var(--color-success);">
+                <h4 style="color: var(--color-success);">Ejemplo 5: Distancia Punto-Recta</h4>
+                <p><strong>Problema:</strong> Distancia de P(1,1) a la recta 3x + 4y - 5 = 0</p>
+                <p><strong>Solución:</strong></p>
+                <p>d = |3(1) + 4(1) - 5| / √(3² + 4²) = |3 + 4 - 5| / √25 = 2/5 = 0.4</p>
+                <p><strong>Respuesta:</strong> d = 0.4 unidades</p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📏 Calculadora de Módulo</h3>
+                <p>Calcula el módulo de un vector en el plano</p>
+                
+                <div class="tool-input-group">
+                    <label>Vector (vx, vy):</label>
+                    <input type="text" id="modulo-vector" placeholder="Ej: 3,4">
+                </div>
+                
+                <button class="calc-button" onclick="calculateModulo()">Calcular</button>
+                <div class="calc-result" id="modulo-result">Ingresa el vector</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>⚫ Producto Escalar</h3>
+                <p>Calcula el producto escalar de dos vectores</p>
+                
+                <div class="tool-input-group">
+                    <label>Vector v⃗:</label>
+                    <input type="text" id="dot-v" placeholder="Ej: 2,3">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Vector u⃗:</label>
+                    <input type="text" id="dot-u" placeholder="Ej: 4,1">
+                </div>
+                
+                <button class="calc-button" onclick="calculateDotProduct()">Calcular</button>
+                <div class="calc-result" id="dot-result">Ingresa ambos vectores</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📐 Distancia Punto-Recta</h3>
+                <p>Calcula la distancia de un punto a una recta</p>
+                
+                <div class="tool-input-group">
+                    <label>Punto P(x,y):</label>
+                    <input type="text" id="dist-point" placeholder="Ej: 1,1">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Recta Ax+By+C=0 (A,B,C):</label>
+                    <input type="text" id="dist-line" placeholder="Ej: 3,4,-5">
+                </div>
+                
+                <button class="calc-button" onclick="calculateDistance()">Calcular</button>
+                <div class="calc-result" id="dist-result">Ingresa punto y recta</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='sistemas-ecuaciones.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Vector:</strong> v⃗ = (v<sub>x</sub>, v<sub>y</sub>), caracterizado por módulo, dirección y sentido</li>
+                    <li><strong>Módulo:</strong> |v⃗| = √(v<sub>x</sub>² + v<sub>y</sub>²)</li>
+                    <li><strong>Suma:</strong> v⃗ + u⃗ = (v<sub>x</sub>+u<sub>x</sub>, v<sub>y</sub>+u<sub>y</sub>)</li>
+                    <li><strong>Producto escalar:</strong> v⃗·u⃗ = v<sub>x</sub>u<sub>x</sub> + v<sub>y</sub>u<sub>y</sub></li>
+                    <li><strong>Perpendicularidad:</strong> v⃗ ⊥ u⃗ ⟺ v⃗·u⃗ = 0</li>
+                    <li><strong>Ángulo:</strong> cos(α) = (v⃗·u⃗)/(|v⃗||u⃗|)</li>
+                    <li><strong>Vector unitario:</strong> û = v⃗/|v⃗|</li>
+                    <li><strong>Distancia punto-recta:</strong> d = |Ax₀+By₀+C|/√(A²+B²)</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='sistemas-ecuaciones.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'vectorial-plano';
+        const MODULE_TITLE = 'Tema 6: Geometría Vectorial del Plano';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            Components.createScoreDisplay();
+            
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'Calcular |v⃗| si v⃗ = (3, 4)', correct: '5', hint: '|v⃗| = √(3² + 4²) = √25 = 5' },
+            { id: 2, question: 'Si v⃗ = (2, 1) y u⃗ = (3, 4), ¿cuánto vale v⃗·u⃗?', correct: '10', hint: 'v⃗·u⃗ = 2×3 + 1×4 = 6 + 4 = 10' },
+            { id: 3, question: '¿Son perpendiculares v⃗ = (1, 2) y u⃗ = (4, -2)? (1=SÍ, 0=NO)', correct: '1', hint: 'v⃗·u⃗ = 1×4 + 2×(-2) = 4-4 = 0 → SÍ son perpendiculares' },
+            { id: 4, question: 'Si v⃗ = (6, 8), ¿cuánto vale |v⃗|?', correct: '10', hint: '|v⃗| = √(6² + 8²) = √(36+64) = √100 = 10' },
+            { id: 5, question: 'Calcular v⃗ + u⃗ si v⃗ = (1, 2) y u⃗ = (3, 4). Componente x:', correct: '4', hint: 'Suma componente x: 1 + 3 = 4' },
+            { id: 6, question: 'Si v⃗ = (2, 3), ¿cuánto vale 3v⃗? Componente y:', correct: '9', hint: '3v⃗ = (3×2, 3×3) = (6, 9). Componente y = 9' },
+            { id: 7, question: 'Distancia de P(0,0) a recta x + y - 2 = 0 (√2 ≈ 1.41)', correct: '1.41', hint: 'd = |0+0-2|/√(1²+1²) = 2/√2 = √2 ≈ 1.41' },
+            { id: 8, question: '¿Son paralelos v⃗ = (2, 4) y u⃗ = (1, 2)? (1=SÍ, 0=NO)', correct: '1', hint: 'v⃗ = 2u⃗, son proporcionales → SÍ son paralelos' },
+            { id: 9, question: 'Si |v⃗| = 5 y v⃗ = (3, y), ¿cuánto vale y? (positivo)', correct: '4', hint: '√(3²+y²) = 5 → 9+y² = 25 → y² = 16 → y = 4' },
+            { id: 10, question: 'Calcular v⃗ - u⃗ si v⃗ = (5, 3) y u⃗ = (2, 1). Componente x:', correct: '3', hint: 'v⃗-u⃗ = (5-2, 3-1) = (3, 2). Componente x = 3' }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card" data-exercise="${ex.id}">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta numérica.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const correctValue = parseFloat(exercise.correct);
+            const isCorrect = Math.abs(userAnswer - correctValue) <= 0.01;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function calculateModulo() {
+            const vectorStr = document.getElementById('modulo-vector').value;
+            const result = document.getElementById('modulo-result');
+            
+            if (!vectorStr) {
+                result.textContent = '⚠️ Por favor, ingresa el vector';
+                return;
+            }
+            
+            const [vx, vy] = vectorStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if (isNaN(vx) || isNaN(vy)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: vx,vy';
+                return;
+            }
+            
+            const modulo = Math.sqrt(vx*vx + vy*vy);
+            
+            result.innerHTML = `
+                <strong>Vector:</strong> v⃗ = (${vx}, ${vy})<br>
+                <strong>Cálculo:</strong> |v⃗| = √(${vx}² + ${vy}²) = √${vx*vx + vy*vy}<br>
+                <strong>Módulo:</strong> |v⃗| = ${modulo.toFixed(2)}
+            `;
+        }
+
+        function calculateDotProduct() {
+            const vStr = document.getElementById('dot-v').value;
+            const uStr = document.getElementById('dot-u').value;
+            const result = document.getElementById('dot-result');
+            
+            if (!vStr || !uStr) {
+                result.textContent = '⚠️ Por favor, ingresa ambos vectores';
+                return;
+            }
+            
+            const [vx, vy] = vStr.split(',').map(n => parseFloat(n.trim()));
+            const [ux, uy] = uStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if (isNaN(vx) || isNaN(vy) || isNaN(ux) || isNaN(uy)) {
+                result.textContent = '⚠️ Formato incorrecto. Usa: vx,vy';
+                return;
+            }
+            
+            const dotProduct = vx*ux + vy*uy;
+            const isPerpendicular = Math.abs(dotProduct) < 0.001;
+            
+            result.innerHTML = `
+                <strong>Vectores:</strong> v⃗ = (${vx}, ${vy}), u⃗ = (${ux}, ${uy})<br>
+                <strong>Cálculo:</strong> v⃗·u⃗ = ${vx}×${ux} + ${vy}×${uy} = ${vx*ux} + ${vy*uy}<br>
+                <strong>Producto escalar:</strong> v⃗·u⃗ = ${dotProduct}<br>
+                ${isPerpendicular ? '<strong>✓ Son perpendiculares</strong>' : ''}
+            `;
+        }
+
+        function calculateDistance() {
+            const pointStr = document.getElementById('dist-point').value;
+            const lineStr = document.getElementById('dist-line').value;
+            const result = document.getElementById('dist-result');
+            
+            if (!pointStr || !lineStr) {
+                result.textContent = '⚠️ Por favor, completa todos los campos';
+                return;
+            }
+            
+            const [x0, y0] = pointStr.split(',').map(n => parseFloat(n.trim()));
+            const [A, B, C] = lineStr.split(',').map(n => parseFloat(n.trim()));
+            
+            if ([x0,y0,A,B,C].some(isNaN)) {
+                result.textContent = '⚠️ Formato incorrecto';
+                return;
+            }
+            
+            const distance = Math.abs(A*x0 + B*y0 + C) / Math.sqrt(A*A + B*B);
+            
+            result.innerHTML = `
+                <strong>Punto:</strong> P(${x0}, ${y0})<br>
+                <strong>Recta:</strong> ${A}x + ${B}y + ${C} = 0<br>
+                <strong>Cálculo:</strong> d = |${A}×${x0} + ${B}×${y0} + ${C}| / √(${A}² + ${B}²)<br>
+                <strong>Distancia:</strong> d = ${distance.toFixed(2)} unidades
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -293,6 +293,7 @@ function updateStatsDisplay() {
 function showSection(sectionName) {
     // Hide all sections
     document.getElementById('welcome-section').style.display = 'none';
+    document.getElementById('modules-hub-section').style.display = 'none';
     document.getElementById('lessons-section').style.display = 'none';
     document.getElementById('quiz-section').style.display = 'none';
     document.getElementById('achievements-section').style.display = 'none';
@@ -303,21 +304,27 @@ function showSection(sectionName) {
 
     // Show requested section
     switch(sectionName) {
+        case 'modules':
+            document.getElementById('modules-hub-section').style.display = 'block';
+            loadModulesStats();
+            document.querySelectorAll('.nav-btn')[0].classList.add('active');
+            break;
         case 'lessons':
             document.getElementById('lessons-section').style.display = 'block';
             renderLessons();
-            document.querySelectorAll('.nav-btn')[0].classList.add('active');
+            document.querySelectorAll('.nav-btn')[1].classList.add('active');
             break;
         case 'achievements':
             document.getElementById('achievements-section').style.display = 'block';
             renderAchievements();
-            document.querySelectorAll('.nav-btn')[1].classList.add('active');
+            document.querySelectorAll('.nav-btn')[2].classList.add('active');
             break;
     }
 }
 
 function startLearning() {
-    showSection('lessons');
+    showSection('modules');
+}
 }
 
 function backToLessons() {
@@ -510,14 +517,66 @@ function resetProgress() {
     if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
         localStorage.removeItem('kbraLearningProgress');
         updateStatsDisplay();
-        showSection('lessons');
+        showSection('modules');
         alert('Your progress has been reset!');
+    }
+}
+
+// Load Modules Stats from Shared Storage
+function loadModulesStats() {
+    try {
+        // Access the shared storage system used by modules
+        const kbraLearning = localStorage.getItem('kbra-learning');
+        if (!kbraLearning) {
+            // No data yet - show defaults
+            document.getElementById('completed-modules').textContent = '0';
+            document.getElementById('module-points').textContent = '0';
+            document.getElementById('current-streak').textContent = '0';
+            return;
+        }
+
+        const data = JSON.parse(kbraLearning);
+        
+        // Count completed modules (modules with 80%+ progress)
+        let completedCount = 0;
+        let totalPoints = 0;
+        
+        const moduleIds = [
+            'suma', 'resta', 'multiplicacion', 'division',
+            'perimetro-area', 'formas', 'angulos',
+            'redondeo', 'composicion-decimal', 'factorizacion-prima',
+            'reloj', 'calendario', 'estaciones'
+        ];
+        
+        moduleIds.forEach(moduleId => {
+            if (data.modules && data.modules[moduleId]) {
+                const moduleData = data.modules[moduleId];
+                totalPoints += moduleData.points || 0;
+                
+                // Check if module is completed (10+ correct answers)
+                if (moduleData.exercises && moduleData.exercises.correct >= 10) {
+                    completedCount++;
+                }
+            }
+        });
+        
+        // Update display
+        document.getElementById('completed-modules').textContent = completedCount;
+        document.getElementById('module-points').textContent = totalPoints;
+        document.getElementById('current-streak').textContent = data.streak || 0;
+        
+    } catch (error) {
+        console.error('Error loading modules stats:', error);
+        document.getElementById('completed-modules').textContent = '0';
+        document.getElementById('module-points').textContent = '0';
+        document.getElementById('current-streak').textContent = '0';
     }
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     updateStatsDisplay();
+    loadModulesStats();
     
     // Check if this is first visit
     const progress = loadProgress();

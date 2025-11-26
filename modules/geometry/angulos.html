@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende Ángulos! - Geometría Divertida</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific angle styles */
+        .angle-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .angle-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .angle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .angle-visual {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .angle-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .angle-arc {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+        }
+        
+        .angle-label {
+            position: absolute;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .interactive-angle {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #angle-canvas {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .angle-info {
+            text-align: center;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .protractor-tips {
+            background: rgba(78, 205, 196, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .protractor-tips ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header-container"></div>
+        <div id="tabs-container"></div>
+
+        <!-- TIPOS TAB -->
+        <div id="tipos" class="content tab-content active">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📐 Tipos de Ángulos</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué es un ángulo?</h3>
+                <p>Un ángulo es el espacio que hay entre dos líneas que se encuentran. Los medimos en grados (°).</p>
+            </div>
+
+            <div class="angle-types-grid">
+                <div class="angle-card">
+                    <h3>📏 Ángulo Agudo</h3>
+                    <div class="angle-visual">
+                        <svg width="150" height="150">
+                            <line x1="75" y1="120" x2="75" y2="30" stroke="var(--primary-color)" stroke-width="3"/>
+                            <line x1="75" y1="120" x2="140" y2="80" stroke="var(--primary-color)" stroke-width="3"/>
+                            <path d="M 75 100 Q 90 95 95 85" stroke="var(--accent-color)" fill="none" stroke-width="2"/>
+                            <text x="95" y="95" fill="var(--primary-color)" font-size="16">45°</text>
+                        </svg>
+                    </div>
+                    <p><strong>Menor que 90°</strong></p>
+                    <p>Es un ángulo "pequeño" o "cerrado"</p>
+                </div>
+
+                <div class="angle-card">
+                    <h3>⊿ Ángulo Recto</h3>
+                    <div class="angle-visual">
+                        <svg width="150" height="150">
+                            <line x1="75" y1="120" x2="75" y2="30" stroke="var(--primary-color)" stroke-width="3"/>
+                            <line x1="75" y1="120" x2="140" y2="120" stroke="var(--primary-color)" stroke-width="3"/>
+                            <rect x="75" y="105" width="15" height="15" fill="none" stroke="var(--accent-color)" stroke-width="2"/>
+                            <text x="95" y="100" fill="var(--primary-color)" font-size="16">90°</text>
+                        </svg>
+                    </div>
+                    <p><strong>Exactamente 90°</strong></p>
+                    <p>Como la esquina de un libro</p>
+                </div>
+
+                <div class="angle-card">
+                    <h3>📐 Ángulo Obtuso</h3>
+                    <div class="angle-visual">
+                        <svg width="150" height="150">
+                            <line x1="75" y1="120" x2="75" y2="30" stroke="var(--primary-color)" stroke-width="3"/>
+                            <line x1="75" y1="120" x2="30" y2="80" stroke="var(--primary-color)" stroke-width="3"/>
+                            <path d="M 75 100 Q 60 90 50 85" stroke="var(--accent-color)" fill="none" stroke-width="2"/>
+                            <text x="40" y="95" fill="var(--primary-color)" font-size="16">120°</text>
+                        </svg>
+                    </div>
+                    <p><strong>Mayor que 90° pero menor que 180°</strong></p>
+                    <p>Es un ángulo "abierto"</p>
+                </div>
+
+                <div class="angle-card">
+                    <h3>↔ Ángulo Llano</h3>
+                    <div class="angle-visual">
+                        <svg width="150" height="150">
+                            <line x1="20" y1="75" x2="130" y2="75" stroke="var(--primary-color)" stroke-width="3"/>
+                            <path d="M 40 75 Q 75 55 110 75" stroke="var(--accent-color)" fill="none" stroke-width="2"/>
+                            <text x="65" y="50" fill="var(--primary-color)" font-size="16">180°</text>
+                        </svg>
+                    </div>
+                    <p><strong>Exactamente 180°</strong></p>
+                    <p>Forma una línea recta</p>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>La palabra "ángulo" viene del latín "angulus" que significa "esquina". ¡Los ángulos están en todas las esquinas!</p>
+            </div>
+        </div>
+
+        <!-- MEDIR TAB -->
+        <div id="medir" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📏 ¿Cómo se Miden los Ángulos?</h2>
+            
+            <div class="explanation">
+                <h3>El Transportador</h3>
+                <p>Usamos una herramienta llamada <strong>transportador</strong> para medir ángulos. Tiene forma de semicírculo y está marcado de 0° a 180°.</p>
+            </div>
+
+            <div class="protractor-tips">
+                <h3>📐 Pasos para Medir un Ángulo:</h3>
+                <ol>
+                    <li><strong>Coloca el transportador:</strong> Pon el punto central del transportador exactamente en el vértice del ángulo (donde se juntan las líneas).</li>
+                    <li><strong>Alinea la línea base:</strong> Haz que una de las líneas del ángulo coincida con la línea de 0° del transportador.</li>
+                    <li><strong>Lee el número:</strong> Busca dónde la otra línea cruza los números del transportador.</li>
+                    <li><strong>¡Listo!</strong> Ese número es la medida del ángulo en grados.</li>
+                </ol>
+            </div>
+
+            <div class="explanation" style="margin-top: 30px;">
+                <h3>💡 Trucos Útiles:</h3>
+                <ul style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
+                    <li>Si el ángulo parece grande (abierto), probablemente es obtuso (más de 90°)</li>
+                    <li>Si parece pequeño (cerrado), probablemente es agudo (menos de 90°)</li>
+                    <li>Si parece la esquina de un cuadrado, es recto (exactamente 90°)</li>
+                    <li>Una vuelta completa son 360° (como dar la vuelta completa en círculo)</li>
+                </ul>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🎯 ¡Practica!</h3>
+                <p>Busca ángulos en tu casa: las esquinas de mesas (90°), las agujas del reloj, las escaleras. ¡Los ángulos están por todas partes!</p>
+            </div>
+        </div>
+
+        <!-- INTERACTIVO TAB -->
+        <div id="interactivo" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎮 Ángulo Interactivo</h2>
+            
+            <div class="explanation">
+                <h3>¡Crea tus propios ángulos!</h3>
+                <p>Mueve el control deslizante para cambiar el ángulo y ver cómo se clasifica.</p>
+            </div>
+
+            <div class="interactive-angle">
+                <canvas id="angle-canvas" width="300" height="300"></canvas>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="angle-slider">Ajusta el ángulo:</label>
+                    <input type="range" id="angle-slider" min="0" max="180" value="45" 
+                           style="width: 100%; max-width: 400px; margin: 10px auto; display: block;">
+                </div>
+            </div>
+
+            <div class="angle-info" id="angle-info">
+                <div id="angle-value">45°</div>
+                <div id="angle-type" style="font-size: 0.8em; color: var(--accent-color); margin-top: 10px;">Ángulo Agudo</div>
+            </div>
+
+            <div class="fun-facts" style="margin-top: 30px;">
+                <h3>🔍 Observa:</h3>
+                <ul>
+                    <li><strong>0°-89°:</strong> Ángulo Agudo (pequeño)</li>
+                    <li><strong>90°:</strong> Ángulo Recto (esquina perfecta)</li>
+                    <li><strong>91°-179°:</strong> Ángulo Obtuso (abierto)</li>
+                    <li><strong>180°:</strong> Ángulo Llano (línea recta)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                
+                <div id="practice-visual" style="min-height: 150px; display: flex; align-items: center; justify-content: center;">
+                    <canvas id="practice-canvas" width="200" height="200"></canvas>
+                </div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta (tipo de ángulo):</label>
+                        <select id="practice-answer">
+                            <option value="">-- Selecciona --</option>
+                            <option value="agudo">Agudo (menor que 90°)</option>
+                            <option value="recto">Recto (90°)</option>
+                            <option value="obtuso">Obtuso (mayor que 90°)</option>
+                            <option value="llano">Llano (180°)</option>
+                        </select>
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Si el ángulo parece pequeño y cerrado, probablemente es agudo</li>
+                    <li>Si parece la esquina de un cuadrado, es recto</li>
+                    <li>Si está muy abierto pero no es una línea, es obtuso</li>
+                    <li>Si forma una línea recta, es llano</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'angulos';
+        let currentAngle = 45;
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            const headerHtml = Components.createHeader(
+                '📐 ¡Aprende Ángulos! 📐',
+                'Descubre el mundo de los ángulos',
+                '../index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            const tabs = [
+                { id: 'tipos', label: 'Tipos de Ángulos' },
+                { id: 'medir', label: 'Medir Ángulos' },
+                { id: 'interactivo', label: 'Ángulo Interactivo' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'tipos');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            updateScoreDisplay();
+            
+            const slider = document.getElementById('angle-slider');
+            if (slider) {
+                slider.addEventListener('input', function() {
+                    currentAngle = parseInt(this.value);
+                    drawInteractiveAngle();
+                    updateAngleInfo();
+                });
+                drawInteractiveAngle();
+            }
+            
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                const labels = { tipos: 'Tipos', medir: 'Medir', interactivo: 'Interactivo', practica: 'Práctica' };
+                if (button.textContent.includes(labels[tabName])) {
+                    button.classList.add('active');
+                }
+            });
+            
+            if (tabName === 'interactivo') {
+                setTimeout(drawInteractiveAngle, 100);
+            }
+        }
+
+        function drawInteractiveAngle() {
+            const canvas = document.getElementById('angle-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, 300, 300);
+            
+            const centerX = 150;
+            const centerY = 200;
+            const radius = 100;
+            
+            // Base line
+            ctx.beginPath();
+            ctx.moveTo(centerX - radius, centerY);
+            ctx.lineTo(centerX + radius, centerY);
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Angle line
+            const angleRad = (currentAngle * Math.PI) / 180;
+            const endX = centerX + radius * Math.cos(Math.PI - angleRad);
+            const endY = centerY - radius * Math.sin(Math.PI - angleRad);
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 40, Math.PI, Math.PI - angleRad, true);
+            ctx.strokeStyle = '#FF6B6B';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Vertex dot
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 5, 0, 2 * Math.PI);
+            ctx.fillStyle = '#4ECDC4';
+            ctx.fill();
+        }
+
+        function updateAngleInfo() {
+            document.getElementById('angle-value').textContent = currentAngle + '°';
+            
+            let type = '';
+            if (currentAngle === 0) type = 'Sin ángulo';
+            else if (currentAngle < 90) type = 'Ángulo Agudo';
+            else if (currentAngle === 90) type = 'Ángulo Recto';
+            else if (currentAngle < 180) type = 'Ángulo Obtuso';
+            else if (currentAngle === 180) type = 'Ángulo Llano';
+            
+            document.getElementById('angle-type').textContent = type;
+        }
+
+        function generateQuestion() {
+            const angles = [
+                { value: 45, type: 'agudo' },
+                { value: 30, type: 'agudo' },
+                { value: 60, type: 'agudo' },
+                { value: 90, type: 'recto' },
+                { value: 120, type: 'obtuso' },
+                { value: 150, type: 'obtuso' },
+                { value: 135, type: 'obtuso' },
+                { value: 180, type: 'llano' }
+            ];
+            
+            currentQuestion = angles[Math.floor(Math.random() * angles.length)];
+            questionAnswered = false;
+            
+            document.getElementById('practice-question').textContent = `¿Qué tipo de ángulo es ${currentQuestion.value}°?`;
+            drawPracticeAngle(currentQuestion.value);
+            
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Selecciona tu respuesta!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function drawPracticeAngle(angle) {
+            const canvas = document.getElementById('practice-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, 200, 200);
+            
+            const centerX = 100;
+            const centerY = 150;
+            const radius = 70;
+            
+            // Base line
+            ctx.beginPath();
+            ctx.moveTo(centerX - radius, centerY);
+            ctx.lineTo(centerX + radius, centerY);
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Angle line
+            const angleRad = (angle * Math.PI) / 180;
+            const endX = centerX + radius * Math.cos(Math.PI - angleRad);
+            const endY = centerY - radius * Math.sin(Math.PI - angleRad);
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 30, Math.PI, Math.PI - angleRad, true);
+            ctx.strokeStyle = '#FF6B6B';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Vertex dot
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 4, 0, 2 * Math.PI);
+            ctx.fillStyle = '#4ECDC4';
+            ctx.fill();
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('practice-answer').value;
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) return;
+            
+            if (!userAnswer) {
+                result.textContent = '¡Por favor, selecciona una respuesta!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            const typeNames = {
+                'agudo': 'Agudo',
+                'recto': 'Recto',
+                'obtuso': 'Obtuso',
+                'llano': 'Llano'
+            };
+            
+            if (userAnswer === currentQuestion.type) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>+10 puntos</small></div>`;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>-5 puntos</small></div>`;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('score').textContent = Storage.getTotalPoints();
+            document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
+        }
+
+        init();
+    </script>
+</body>
+</html>

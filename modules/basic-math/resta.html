@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende a Restar como Yago! - Resta Divertida</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific overrides */
+        .item-block.removed {
+            opacity: 0.3;
+            text-decoration: line-through;
+        }
+        
+        #borrow-explanation h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        #borrow-explanation div {
+            font-size: 1.2em;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header will be inserted here -->
+        <div id="header-container"></div>
+
+        <!-- Tabs will be inserted here -->
+        <div id="tabs-container"></div>
+
+        <!-- BÁSICA TAB -->
+        <div id="basica" class="content tab-content active">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 Resta Visual</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué es restar?</h3>
+                <p>Restar es quitar cantidades. Si tienes 8 caramelos y te comes 3, ¡te quedan 5 caramelos!</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>8 - 3</strong> = 5 (Tenemos 8, quitamos 3)</li>
+                    <li><strong>10 - 4</strong> = 6 (Tenemos 10, quitamos 4)</li>
+                    <li><strong>7 - 2</strong> = 5 (Tenemos 7, quitamos 2)</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="input-group" style="margin: 0;">
+                        <input type="number" id="sub1" placeholder="8" min="0" max="20" value="8">
+                    </div>
+                    <div style="font-size: 2em;">-</div>
+                    <div class="input-group" style="margin: 0;">
+                        <input type="number" id="sub2" placeholder="3" min="0" max="20" value="3">
+                    </div>
+                </div>
+                <button class="calc-button" onclick="subtract()">🎯 ¡Restar!</button>
+                <div class="result" id="sub-result">¡Escribe dos números y restalos!</div>
+            </div>
+
+            <div id="visual-sub" class="visual-demo">
+                <!-- Se generará dinámicamente -->
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>Cuando restas 0 a un número, ¡no cambia! 9 - 0 = 9. Es como no quitar nada. Y si restas un número a sí mismo, siempre da 0: 5 - 5 = 0 ✨</p>
+            </div>
+        </div>
+
+        <!-- PRESTANDO TAB -->
+        <div id="prestando" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔟 Resta con Prestadas</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué es "pedir prestado" en la resta?</h3>
+                <p>Cuando el número de arriba es más pequeño que el de abajo, "pedimos prestado" de la siguiente columna. ¡Es como cambiar un billete de 10 por 10 monedas!</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>42 - 17</strong> = 25 (No podemos hacer 2 - 7, pedimos prestado)</li>
+                    <li><strong>53 - 28</strong> = 25 (Pedimos prestado de las decenas)</li>
+                    <li><strong>81 - 36</strong> = 45 (Pedimos prestado para restar)</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="input-group" style="margin: 0;">
+                        <input type="number" id="borrow1" placeholder="42" min="10" max="99" value="42">
+                    </div>
+                    <div style="font-size: 2em;">-</div>
+                    <div class="input-group" style="margin: 0;">
+                        <input type="number" id="borrow2" placeholder="17" min="10" max="99" value="17">
+                    </div>
+                </div>
+                <button class="calc-button" onclick="subtractWithBorrow()">🎯 ¡Restar con Prestadas!</button>
+                <div class="result" id="borrow-result">¡Prueba restar números más grandes!</div>
+            </div>
+
+            <div id="borrow-explanation" style="background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px 0; color: #333;">
+                <!-- Se generará dinámicamente -->
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Truco:</h3>
+                <p>Para restar 9, resta 10 y suma 1. Por ejemplo: 25 - 9 = (25 - 10) + 1 = 16. ¡Es mucho más fácil!</p>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container">
+                    <!-- Score display will be inserted here -->
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;">Resuelve la resta:</h3>
+                <p id="practice-question" style="font-size: 2em; text-align: center; margin: 20px 0; color: #333; font-weight: bold;"></p>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta:</label>
+                        <input type="number" id="practice-answer" placeholder="?">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Comprueba tu respuesta sumando: si 10 - 3 = 7, entonces 7 + 3 = 10 ✓</li>
+                    <li>Usa tus dedos cuando empieces a aprender</li>
+                    <li>Practica con números pequeños primero</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared JavaScript Libraries -->
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'resta'; // Module identifier for storage
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            // Render header
+            const headerHtml = Components.createHeader(
+                '➖ ¡Aprende a Restar como Yago! ➖',
+                'Descubre cómo quitar números es divertido',
+                'index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            // Render tabs
+            const tabs = [
+                { id: 'basica', label: 'Resta Básica' },
+                { id: 'prestando', label: 'Resta con Prestadas' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'basica');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            // Load saved module data
+            const moduleData = Storage.getModuleData(MODULE_ID);
+            
+            // Render score display
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            // Update score from storage
+            updateScoreDisplay();
+            
+            // Add Enter key support
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const button = this.closest('.input-section').querySelector('button');
+                        if (button && !button.disabled) {
+                            button.click();
+                        }
+                    }
+                });
+            });
+            
+            // Update streak
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            buttons.forEach(button => {
+                if (button.textContent.includes(tabName === 'basica' ? 'Básica' : 
+                                                  tabName === 'prestando' ? 'Prestadas' : 
+                                                  'Práctica')) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function subtract() {
+            const num1 = parseInt(document.getElementById('sub1').value);
+            const num2 = parseInt(document.getElementById('sub2').value);
+            const result = document.getElementById('sub-result');
+            
+            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
+                result.textContent = '¡Por favor, escribe números válidos!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            if (num2 > num1) {
+                result.textContent = '¡El segundo número no puede ser mayor que el primero!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const diff = num1 - num2;
+            
+            result.innerHTML = `
+                <div>
+                    ${num1} - ${num2} = ${diff} 🎉<br>
+                    <small style="font-size: 0.8em;">¡Quitamos ${num2} de ${num1}!</small>
+                </div>
+            `;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            generateVisualSubtract(num1, num2);
+        }
+
+        function generateVisualSubtract(num1, num2) {
+            const container = document.getElementById('visual-sub');
+            
+            if (num1 > 20) {
+                container.innerHTML = `<p style="text-align: center; color: #333; font-size: 1.2em;">¡El resultado es ${num1 - num2}! Es demasiado grande para mostrarlo visualmente, pero ¡lo calculaste bien!</p>`;
+                return;
+            }
+            
+            let html = '<div class="number-group">';
+            for (let i = 0; i < num1; i++) {
+                if (i < num2) {
+                    html += `<div class="item-block removed">🔴</div>`;
+                } else {
+                    html += `<div class="item-block">🟢</div>`;
+                }
+            }
+            html += '</div>';
+            
+            html += '<div style="font-size: 1.5em; color: #333; margin: 10px;">↓</div>';
+            html += `<div style="font-size: 3em; color: var(--primary-color); font-weight: bold;">Quedan ${num1 - num2}</div>`;
+            
+            container.innerHTML = html;
+        }
+
+        function subtractWithBorrow() {
+            const num1 = parseInt(document.getElementById('borrow1').value);
+            const num2 = parseInt(document.getElementById('borrow2').value);
+            const result = document.getElementById('borrow-result');
+            
+            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
+                result.textContent = '¡Por favor, escribe números válidos!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            if (num2 > num1) {
+                result.textContent = '¡El segundo número no puede ser mayor que el primero!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const diff = num1 - num2;
+            
+            result.innerHTML = `
+                <div>
+                    ${num1} - ${num2} = ${diff} 🎉<br>
+                    <small style="font-size: 0.8em;">¡Mira abajo cómo se hace paso a paso!</small>
+                </div>
+            `;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            explainBorrow(num1, num2, diff);
+        }
+
+        function explainBorrow(num1, num2, diff) {
+            const container = document.getElementById('borrow-explanation');
+            
+            const units1 = num1 % 10;
+            const tens1 = Math.floor(num1 / 10);
+            const units2 = num2 % 10;
+            const tens2 = Math.floor(num2 / 10);
+            
+            let html = '<h3>Paso a paso:</h3>';
+            html += '<div>';
+            
+            if (units1 < units2) {
+                const borrowedUnits = units1 + 10;
+                const newTens1 = tens1 - 1;
+                const unitsDiff = borrowedUnits - units2;
+                const tensDiff = newTens1 - tens2;
+                
+                html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} es menor que ${units2}, así que pedimos prestado 1 decena</p>`;
+                html += `<p>2️⃣ ${units1} + 10 = ${borrowedUnits}, ahora hacemos ${borrowedUnits} - ${units2} = ${unitsDiff}</p>`;
+                html += `<p>3️⃣ <strong>Decenas:</strong> Como pedimos 1 prestada, ${tens1} - 1 = ${newTens1}</p>`;
+                html += `<p>4️⃣ Ahora ${newTens1} - ${tens2} = ${tensDiff}</p>`;
+                html += `<p>5️⃣ <strong>Resultado final:</strong> ${tensDiff}${unitsDiff} = ${diff} ✨</p>`;
+            } else {
+                html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} - ${units2} = ${units1 - units2}</p>`;
+                html += `<p>2️⃣ <strong>Decenas:</strong> ${tens1} - ${tens2} = ${tens1 - tens2}</p>`;
+                html += `<p>3️⃣ <strong>Resultado final:</strong> ${diff} ✨</p>`;
+            }
+            
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+
+        function generateQuestion() {
+            const difficulty = Math.random();
+            let num1, num2;
+            
+            if (difficulty < 0.4) {
+                // Fácil: números menores a 10
+                num1 = Math.floor(Math.random() * 9) + 1;
+                num2 = Math.floor(Math.random() * num1);
+            } else if (difficulty < 0.7) {
+                // Medio: números entre 10 y 50
+                num1 = Math.floor(Math.random() * 40) + 10;
+                num2 = Math.floor(Math.random() * num1);
+            } else {
+                // Difícil: números entre 50 y 99
+                num1 = Math.floor(Math.random() * 49) + 50;
+                num2 = Math.floor(Math.random() * (num1 - 20)) + 10;
+            }
+            
+            currentQuestion = {
+                num1: num1,
+                num2: num2,
+                answer: num1 - num2
+            };
+            
+            document.getElementById('practice-question').textContent = `${num1} - ${num2} = ?`;
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            questionAnswered = false;
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('practice-answer').value);
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) {
+                return;
+            }
+            
+            if (isNaN(userAnswer)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            if (userAnswer === currentQuestion.answer) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `
+                    <div style="color: #333;">
+                        ¡Correcto! 🎉<br>
+                        ${currentQuestion.num1} - ${currentQuestion.num2} = ${currentQuestion.answer}<br>
+                        <small>+10 puntos</small>
+                    </div>
+                `;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `
+                    <div style="color: #333;">
+                        ¡Intenta de nuevo! 😊<br>
+                        ${currentQuestion.num1} - ${currentQuestion.num2} = ${currentQuestion.answer}<br>
+                        <small>-5 puntos. ¡Sigue practicando!</small>
+                    </div>
+                `;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            const totalPoints = Storage.getTotalPoints();
+            const level = Gamification.getCurrentLevel();
+            
+            document.getElementById('score').textContent = totalPoints;
+            document.getElementById('level').textContent = level.name;
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>

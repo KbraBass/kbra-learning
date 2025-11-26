@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Estadística y Probabilidad - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+    <style>
+        .warning-box {
+            background: linear-gradient(to right, #fff3cd, #ffeaa7);
+            border-left: 5px solid #ffc107;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .warning-box li {
+            margin: 0.5rem 0;
+        }
+
+        .symbol-glossary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .symbol-list {
+            list-style: none;
+            padding-left: 0;
+            line-height: 2;
+        }
+
+        .symbol-list li {
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        .symbol-list strong {
+            color: #ffd700;
+        }
+
+        .concept-box {
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .concept-box h4 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .formula-box {
+            background: linear-gradient(to right, #fff8e1, #fffbeb);
+            border: 3px dashed #f59e0b;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #92400e;
+        }
+
+        .example-box {
+            background: linear-gradient(to right, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box h4 {
+            margin-top: 0;
+            color: #10b981;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .tool-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .tool-input-group {
+            margin: 1rem 0;
+        }
+
+        .tool-input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .tool-input-group input {
+            width: 100%;
+            max-width: 300px;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .calc-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem 0.5rem 0 0;
+            transition: transform 0.2s;
+        }
+
+        .calc-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .calc-result {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            min-height: 60px;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #f0f4ff;
+        }
+
+        .exam-important {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .formula-box {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <div class="warning-box">
+            <h3>⚠️ Nota Importante</h3>
+            <p><strong>Este tema NO es materia de examen</strong>, excepto:</p>
+            <ul>
+                <li>✅ Principios Básicos de Combinatoria (Sección 1.4)</li>
+                <li>✅ Fórmula de combinaciones sin repetición (Sección 1.5.3)</li>
+            </ul>
+        </div>
+
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Principios de Combinatoria</h2>
+
+            <div class="symbol-glossary">
+                <h3>📖 Glosario de Símbolos Matemáticos</h3>
+                <p style="margin-bottom: 1.5rem;">Símbolos utilizados en Combinatoria:</p>
+                <ul class="symbol-list">
+                    <li><strong>n!</strong> = Factorial de n = n × (n-1) × (n-2) × ... × 2 × 1</li>
+                    <li><strong>0!</strong> = 1 (por definición)</li>
+                    <li><strong>P(n)</strong> = Permutaciones de n elementos (orden importa)</li>
+                    <li><strong>V(n,r)</strong> = Variaciones: ordenar r de n elementos</li>
+                    <li><strong>C(n,r)</strong> = Combinaciones: seleccionar r de n elementos (orden NO importa)</li>
+                    <li><strong>(n r)</strong> = Notación alternativa para C(n,r) (coeficiente binomial)</li>
+                    <li><strong>m × n</strong> = Multiplicación (principio multiplicativo)</li>
+                    <li><strong>m + n</strong> = Adición (principio aditivo)</li>
+                    <li><strong>≠</strong> = Distinto de / no igual a</li>
+                    <li><strong>∈</strong> = Pertenece a (ejemplo: r ∈ ℕ)</li>
+                </ul>
+                <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid rgba(255,255,255,0.3);">
+                    <p><strong>Ejemplo de lectura:</strong><br>
+                    C(5,2) = 5!/(2!×3!) se lee: "Combinaciones de 5 elementos tomados de 2 en 2 es igual a 5 factorial dividido por 2 factorial por 3 factorial"</p>
+                </div>
+            </div>
+
+            <h3>1. Principios Básicos de Conteo</h3>
+            
+            <div class="concept-box">
+                <h4>Principio de Multiplicación</h4>
+                <p>Si un evento puede ocurrir de <strong>m</strong> maneras diferentes y, después de que esto suceda, 
+                un segundo evento puede ocurrir de <strong>n</strong> maneras diferentes, entonces ambos eventos 
+                pueden ocurrir de <strong>m × n</strong> maneras diferentes.</p>
+                <div class="example-box" style="margin-top: 1rem;">
+                    <p><strong>Ejemplo:</strong> Si tienes 3 camisas y 4 pantalones, puedes vestirte de 3 × 4 = 12 maneras diferentes.</p>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h4>Principio de Adición</h4>
+                <p>Si un evento puede ocurrir de <strong>m</strong> maneras diferentes y otro evento (que no puede 
+                ocurrir al mismo tiempo) puede ocurrir de <strong>n</strong> maneras diferentes, entonces uno u otro 
+                evento puede ocurrir de <strong>m + n</strong> maneras.</p>
+            </div>
+
+            <h3>2. Permutaciones</h3>
+            <p>Ordenación de n elementos donde <strong>el orden SÍ importa</strong>.</p>
+            
+            <div class="formula-box">
+                P(n) = n! = n × (n-1) × (n-2) × ... × 2 × 1
+            </div>
+
+            <p><strong>Ejemplo:</strong> Las permutaciones de {A, B, C} son: ABC, ACB, BAC, BCA, CAB, CBA = 3! = 6</p>
+
+            <h3>3. Variaciones</h3>
+            <p>Ordenaciones de r elementos tomados de n elementos, donde <strong>el orden SÍ importa</strong>.</p>
+            
+            <div class="formula-box">
+                V(n,r) = n! / (n-r)!
+            </div>
+
+            <h3>4. Combinaciones</h3>
+            <div class="exam-important">
+                ⚠️ IMPORTANTE PARA EXAMEN
+            </div>
+            <p>Selecciones de r elementos tomados de n elementos, donde <strong>el orden NO importa</strong>.</p>
+            
+            <div class="formula-box">
+                C(n,r) = n! / (r!(n-r)!)
+            </div>
+
+            <div class="concept-box">
+                <h4>📌 Fórmula de Combinaciones sin Repetición (Sección 1.5.3)</h4>
+                <p>Esta es la fórmula clave que SÍ debes conocer para el examen:</p>
+                <div class="formula-box" style="margin: 1rem 0; font-size: 1.3rem;">
+                    C(n,r) = (n r) = n! / (r!(n-r)!)
+                </div>
+                <p><strong>Ejemplo:</strong> C(5,2) = 5!/(2!×3!) = 120/(2×6) = 10</p>
+                <p>Esto significa: de 5 elementos, podemos seleccionar 2 de 10 maneras diferentes.</p>
+            </div>
+
+            <h3>5. Propiedades de las Combinaciones</h3>
+            <ul>
+                <li><strong>C(n, 0) = 1</strong> (solo hay una forma de no elegir nada)</li>
+                <li><strong>C(n, n) = 1</strong> (solo hay una forma de elegir todos)</li>
+                <li><strong>C(n, r) = C(n, n-r)</strong> (propiedad simétrica)</li>
+                <li><strong>C(n, r) + C(n, r+1) = C(n+1, r+1)</strong> (identidad de Pascal)</li>
+            </ul>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="example-box">
+                <h4>Ejemplo 1: Principio de Multiplicación</h4>
+                <p><strong>Problema:</strong> Un restaurante ofrece 4 entradas, 6 platos principales y 3 postres. ¿De cuántas formas se puede elegir un menú completo?</p>
+                <p><strong>Solución:</strong></p>
+                <p>Aplicamos el principio de multiplicación:</p>
+                <p><strong>Total = 4 × 6 × 3 = 72 menús diferentes</strong></p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 2: Permutaciones</h4>
+                <p><strong>Problema:</strong> ¿De cuántas formas pueden sentarse 5 personas en una fila?</p>
+                <p><strong>Solución:</strong></p>
+                <p>P(5) = 5! = 5 × 4 × 3 × 2 × 1 = <strong>120 formas</strong></p>
+                <p><strong>Explicación:</strong> Para el primer asiento hay 5 opciones, para el segundo 4, para el tercero 3, etc.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 3: Variaciones</h4>
+                <p><strong>Problema:</strong> En una carrera de 10 corredores, ¿de cuántas formas pueden quedar los 3 primeros lugares?</p>
+                <p><strong>Solución:</strong></p>
+                <p>V(10,3) = 10!/(10-3)! = 10!/7! = 10 × 9 × 8 = <strong>720 formas</strong></p>
+                <p><strong>Explicación:</strong> El orden importa (1°, 2°, 3° son distintos), y solo elegimos 3 de 10.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 4: Combinaciones ⚠️ IMPORTANTE</h4>
+                <p><strong>Problema:</strong> De un grupo de 8 estudiantes, ¿de cuántas formas se puede seleccionar un comité de 3?</p>
+                <p><strong>Solución:</strong></p>
+                <p>C(8,3) = 8!/(3!×5!) = (8×7×6)/(3×2×1) = 336/6 = <strong>56 formas</strong></p>
+                <p><strong>Explicación:</strong> El orden NO importa (el comité {A,B,C} es igual a {C,A,B}).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 5: Combinaciones - Aplicación</h4>
+                <p><strong>Problema:</strong> ¿Cuántas manos de 5 cartas se pueden formar de un mazo de 52 cartas?</p>
+                <p><strong>Solución:</strong></p>
+                <p>C(52,5) = 52!/(5!×47!) = <strong>2,598,960 manos diferentes</strong></p>
+                <p><strong>Explicación:</strong> En una mano de póker, el orden en que recibes las cartas no importa.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Ejemplo 6: Aplicación Combinada</h4>
+                <p><strong>Problema:</strong> Un equipo de fútbol tiene 20 jugadores. ¿De cuántas formas se puede elegir al capitán y al subcapitán?</p>
+                <p><strong>Solución:</strong></p>
+                <p>V(20,2) = 20!/(20-2)! = 20 × 19 = <strong>380 formas</strong></p>
+                <p><strong>Explicación:</strong> El orden importa porque capitán y subcapitán son roles diferentes.</p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Calculadoras Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>Calculadora de Factorial</h3>
+                <p>El factorial de un número n (escrito n!) es el producto de todos los enteros positivos hasta n.</p>
+                <div class="tool-input-group">
+                    <label>n! (ingresa n):</label>
+                    <input type="number" id="factorialInput" min="0" max="20" placeholder="Ej: 5">
+                </div>
+                <button class="calc-button" onclick="calculateFactorial()">Calcular n!</button>
+                <div class="calc-result" id="factorialResult">Ingresa un número para calcular su factorial</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>Calculadora de Permutaciones</h3>
+                <p>Calcula P(n): el número de formas de ordenar n elementos.</p>
+                <div class="tool-input-group">
+                    <label>Número de elementos (n):</label>
+                    <input type="number" id="permN" min="1" max="20" placeholder="Ej: 5">
+                </div>
+                <button class="calc-button" onclick="calculatePermutation()">Calcular P(n)</button>
+                <div class="calc-result" id="permResult">Ingresa el número de elementos</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>Calculadora de Variaciones</h3>
+                <p>Calcula V(n,r): el número de formas de ordenar r elementos de un total de n (orden importa).</p>
+                <div class="tool-input-group">
+                    <label>Total de elementos (n):</label>
+                    <input type="number" id="varN" min="1" max="20" placeholder="Ej: 10">
+                </div>
+                <div class="tool-input-group">
+                    <label>Elementos a tomar (r):</label>
+                    <input type="number" id="varR" min="1" max="20" placeholder="Ej: 3">
+                </div>
+                <button class="calc-button" onclick="calculateVariation()">Calcular V(n,r)</button>
+                <div class="calc-result" id="varResult">Ingresa ambos números</div>
+            </div>
+
+            <div class="tool-card" style="border: 3px solid #ef5350;">
+                <h3>⚠️ Calculadora de Combinaciones (IMPORTANTE PARA EXAMEN)</h3>
+                <p>Calcula C(n,r): el número de formas de seleccionar r elementos de un total de n (orden NO importa).</p>
+                <div class="tool-input-group">
+                    <label>Total de elementos (n):</label>
+                    <input type="number" id="combN" min="1" max="50" placeholder="Ej: 8">
+                </div>
+                <div class="tool-input-group">
+                    <label>Elementos a seleccionar (r):</label>
+                    <input type="number" id="combR" min="0" max="50" placeholder="Ej: 3">
+                </div>
+                <button class="calc-button" onclick="calculateCombination()">Calcular C(n,r)</button>
+                <div class="calc-result" id="combResult">Ingresa ambos números</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica Guiada</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="exam-important" style="font-size: 1.1rem; padding: 1.5rem;">
+                <h4 style="margin-top: 0;">🎯 Puntos Clave para el Examen</h4>
+                <ul>
+                    <li><strong>Principio de Multiplicación:</strong> Eventos secuenciales → multiplicar</li>
+                    <li><strong>Fórmula de Combinaciones (⚠️ MEMORIZAR):</strong> C(n,r) = n!/(r!(n-r)!)</li>
+                    <li><strong>Cuándo usar combinaciones:</strong> El orden NO importa</li>
+                    <li><strong>Propiedades:</strong> C(n,0)=1, C(n,n)=1, C(n,r)=C(n,n-r)</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>Diferencias Clave</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>¿Orden importa?</th>
+                            <th>Fórmula</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Permutaciones</strong></td>
+                            <td>SÍ</td>
+                            <td>n!</td>
+                            <td>Ordenar libros en estante</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Variaciones</strong></td>
+                            <td>SÍ</td>
+                            <td>n!/(n-r)!</td>
+                            <td>Podio en carrera</td>
+                        </tr>
+                        <tr style="background: #ffebee;">
+                            <td><strong>Combinaciones</strong></td>
+                            <td><strong>NO</strong></td>
+                            <td><strong>n!/(r!(n-r)!)</strong></td>
+                            <td><strong>Elegir comité</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="concept-box">
+                <h4>📝 Estrategia para Resolver Problemas</h4>
+                <ol>
+                    <li><strong>Identifica:</strong> ¿El orden importa?
+                        <ul>
+                            <li>SÍ → Permutaciones o Variaciones</li>
+                            <li>NO → Combinaciones ⚠️</li>
+                        </ul>
+                    </li>
+                    <li><strong>Determina:</strong> ¿Usas todos los elementos?
+                        <ul>
+                            <li>SÍ → Permutaciones (n!)</li>
+                            <li>NO → Variaciones o Combinaciones</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aplica la fórmula correcta</strong></li>
+                    <li><strong>Verifica:</strong> ¿El resultado tiene sentido?</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h4>🎓 Para Profundizar</h4>
+                <p>La combinatoria es fundamental en:</p>
+                <ul>
+                    <li><strong>Probabilidad:</strong> Calcular casos favorables y totales</li>
+                    <li><strong>Teoría de grafos:</strong> Contar caminos y configuraciones</li>
+                    <li><strong>Criptografía:</strong> Determinar seguridad de códigos</li>
+                    <li><strong>Optimización:</strong> Analizar alternativas posibles</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons" style="margin-top: 2rem;">
+                <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'estadistica';
+        const MODULE_TITLE = 'Tema 1: Estadística y Probabilidad';
+
+        // Initialize module
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            Components.createScoreDisplay();
+            
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        // Exercise data
+        const exercises = [
+            {
+                id: 1,
+                question: 'Calcula 4!',
+                type: 'number',
+                correct: '24',
+                hint: '4! = 4 × 3 × 2 × 1'
+            },
+            {
+                id: 2,
+                question: 'Calcula C(6,2)',
+                type: 'number',
+                correct: '15',
+                hint: 'C(6,2) = 6!/(2!×4!) = (6×5)/(2×1)'
+            },
+            {
+                id: 3,
+                question: '¿De cuántas formas se pueden ordenar 3 libros en un estante?',
+                type: 'number',
+                correct: '6',
+                hint: 'Es una permutación: P(3) = 3!'
+            },
+            {
+                id: 4,
+                question: 'De 7 candidatos, ¿de cuántas formas se puede elegir un comité de 4?',
+                type: 'number',
+                correct: '35',
+                hint: 'Es una combinación: C(7,4)'
+            },
+            {
+                id: 5,
+                question: 'Calcula C(5,0)',
+                type: 'number',
+                correct: '1',
+                hint: 'C(n,0) siempre es 1 (solo hay una forma de no elegir nada)'
+            },
+            {
+                id: 6,
+                question: 'Si hay 5 camisas y 3 pantalones, ¿de cuántas formas puedes vestirte? (usando principio de multiplicación)',
+                type: 'number',
+                correct: '15',
+                hint: 'Principio de multiplicación: 5 × 3'
+            },
+            {
+                id: 7,
+                question: 'Calcula 5!',
+                type: 'number',
+                correct: '120',
+                hint: '5! = 5 × 4 × 3 × 2 × 1'
+            },
+            {
+                id: 8,
+                question: 'Calcula C(10,2)',
+                type: 'number',
+                correct: '45',
+                hint: 'C(10,2) = 10!/(2!×8!) = (10×9)/(2×1)'
+            },
+            {
+                id: 9,
+                question: '¿De cuántas formas pueden quedar los 2 primeros lugares en una carrera de 8 personas?',
+                type: 'number',
+                correct: '56',
+                hint: 'El orden importa, usa variaciones: V(8,2) = 8 × 7'
+            },
+            {
+                id: 10,
+                question: 'Calcula C(6,6)',
+                type: 'number',
+                correct: '1',
+                hint: 'C(n,n) siempre es 1 (solo hay una forma de elegir todos)'
+            }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card" data-exercise="${ex.id}">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = input.value.trim();
+
+            if (!userAnswer) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const isCorrect = userAnswer === exercise.correct;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Factorial function
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1);
+        }
+
+        // Calculator functions
+        function calculateFactorial() {
+            const n = parseInt(document.getElementById('factorialInput').value);
+            const result = document.getElementById('factorialResult');
+            
+            if (isNaN(n) || n < 0) {
+                result.innerHTML = '⚠️ Por favor ingresa un número válido (0-20)';
+                return;
+            }
+            
+            if (n > 20) {
+                result.innerHTML = '⚠️ El número es demasiado grande. Ingresa un valor entre 0 y 20.';
+                return;
+            }
+            
+            const factValue = factorial(n);
+            result.innerHTML = `<strong>${n}! = ${factValue.toLocaleString()}</strong>`;
+        }
+
+        function calculatePermutation() {
+            const n = parseInt(document.getElementById('permN').value);
+            const result = document.getElementById('permResult');
+            
+            if (isNaN(n) || n < 1) {
+                result.innerHTML = '⚠️ Por favor ingresa un número válido (1-20)';
+                return;
+            }
+            
+            const permValue = factorial(n);
+            result.innerHTML = `<strong>P(${n}) = ${n}! = ${permValue.toLocaleString()}</strong><br>
+                <small>Hay ${permValue.toLocaleString()} formas de ordenar ${n} elementos</small>`;
+        }
+
+        function calculateVariation() {
+            const n = parseInt(document.getElementById('varN').value);
+            const r = parseInt(document.getElementById('varR').value);
+            const result = document.getElementById('varResult');
+            
+            if (isNaN(n) || isNaN(r) || n < 1 || r < 1) {
+                result.innerHTML = '⚠️ Por favor ingresa números válidos';
+                return;
+            }
+            
+            if (r > n) {
+                result.innerHTML = '⚠️ r no puede ser mayor que n';
+                return;
+            }
+            
+            const varValue = factorial(n) / factorial(n - r);
+            result.innerHTML = `<strong>V(${n},${r}) = ${varValue.toLocaleString()}</strong><br>
+                <small>Cálculo: ${n}! / ${n-r}! = ${varValue.toLocaleString()}</small>`;
+        }
+
+        function calculateCombination() {
+            const n = parseInt(document.getElementById('combN').value);
+            const r = parseInt(document.getElementById('combR').value);
+            const result = document.getElementById('combResult');
+            
+            if (isNaN(n) || isNaN(r) || n < 1 || r < 0) {
+                result.innerHTML = '⚠️ Por favor ingresa números válidos';
+                return;
+            }
+            
+            if (r > n) {
+                result.innerHTML = '⚠️ r no puede ser mayor que n';
+                return;
+            }
+            
+            const combValue = factorial(n) / (factorial(r) * factorial(n - r));
+            result.innerHTML = `<strong>C(${n},${r}) = ${combValue.toLocaleString()}</strong><br>
+                <small>Fórmula: ${n}! / (${r}! × ${n-r}!) = ${combValue.toLocaleString()}</small><br>
+                <small>Hay ${combValue.toLocaleString()} formas de seleccionar ${r} elementos de ${n}</small>`;
+        }
+    </script>
+</body>
+</html>
