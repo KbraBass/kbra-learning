@@ -53,12 +53,12 @@
 
         <!-- BÁSICA TAB -->
         <div id="basica" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎯 Multiplicación Visual</h2>
+            <h2 class="section-title">🎯 Multiplicación Visual</h2>
             
             <div class="explanation">
                 <h3>¿Qué es multiplicar?</h3>
                 <p>Multiplicar es sumar un número muchas veces. Por ejemplo: 3 × 4 significa "sumar 3, cuatro veces" = 3 + 3 + 3 + 3 = 12</p>
-                <ul style="margin-top: 10px;">
+                <ul class="list-spaced">
                     <li><strong>3 × 4</strong> = 3 + 3 + 3 + 3 = 12</li>
                     <li><strong>5 × 2</strong> = 5 + 5 = 10</li>
                     <li><strong>4 × 3</strong> = 4 + 4 + 4 = 12</li>
@@ -66,12 +66,12 @@
             </div>
 
             <div class="input-section">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-                    <div class="input-group" style="margin: 0;">
+                <div class="flex-center-wrapper">
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="mult1" placeholder="3" min="0" max="12" value="3">
                     </div>
-                    <div style="font-size: 2em;">×</div>
-                    <div class="input-group" style="margin: 0;">
+                    <div class="operator-display">×</div>
+                    <div class="input-group" class="input-group-inline">
                         <input type="number" id="mult2" placeholder="4" min="0" max="12" value="4">
                     </div>
                 </div>
@@ -91,7 +91,7 @@
 
         <!-- TABLAS TAB -->
         <div id="tablas" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📊 Tablas de Multiplicar</h2>
+            <h2 class="section-title">📊 Tablas de Multiplicar</h2>
             
             <div class="explanation">
                 <h3>Selecciona una tabla para ver todos sus resultados</h3>
@@ -118,7 +118,7 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container">
@@ -274,7 +274,7 @@
                 return;
             }
             
-            let html = `<h3 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Tabla del ${table}</h3>`;
+            let html = `<h3 class="section-title">Tabla del ${table}</h3>`;
             html += '<div style="max-width: 400px; margin: 0 auto;">';
             
             for (let i = 1; i <= 10; i++) {
