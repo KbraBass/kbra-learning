@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kbra Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎓 Kbra Learning Platform</h1>
+        <div class="user-stats">
+            <div class="stat">
+                <span class="stat-icon">⭐</span>
+                <span class="stat-value" id="total-points">0</span>
+                <span class="stat-label">Points</span>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">🏆</span>
+                <span class="stat-value" id="achievements-count">0</span>
+                <span class="stat-label">Achievements</span>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">📚</span>
+                <span class="stat-value" id="completed-lessons">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome-section" id="welcome-section">
+            <h2>Welcome to Your Learning Journey! 🚀</h2>
+            <p>Learn at your own pace with fun, interactive lessons and earn achievements along the way!</p>
+            <button class="btn btn-primary" onclick="startLearning()">Start Learning</button>
+        </section>
+
+        <section class="lessons-section" id="lessons-section" style="display: none;">
+            <h2>Choose Your Lesson</h2>
+            <div class="lessons-grid" id="lessons-grid">
+                <!-- Lessons will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="quiz-section" id="quiz-section" style="display: none;">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2 id="quiz-title">Quiz</h2>
+                    <div class="quiz-progress">
+                        <span id="current-question">1</span> / <span id="total-questions">5</span>
+                    </div>
+                </div>
+                <div class="quiz-content">
+                    <h3 id="question-text"></h3>
+                    <div class="options" id="options-container">
+                        <!-- Options will be dynamically loaded here -->
+                    </div>
+                </div>
+                <div class="quiz-footer">
+                    <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
+                    <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements-section" id="achievements-section" style="display: none;">
+            <h2>🏆 Your Achievements</h2>
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- Achievements will be dynamically loaded here -->
+            </div>
+            <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;">
+            <div class="results-container">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="results-content">
+                    <div class="score-display">
+                        <span class="score-label">Your Score:</span>
+                        <span class="score-value" id="final-score">0</span>
+                        <span class="score-total">/ <span id="max-score">0</span></span>
+                    </div>
+                    <p id="result-message"></p>
+                    <div class="points-earned">
+                        <span class="points-icon">⭐</span>
+                        <span id="points-earned">0</span>
+                        <span>Points Earned!</span>
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
+                    <button class="btn btn-primary" onclick="retryQuiz()">Try Again</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <button class="nav-btn active" onclick="showSection('lessons')">
+                <span class="nav-icon">📚</span>
+                <span class="nav-label">Lessons</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('achievements')">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-label">Achievements</span>
+            </button>
+            <button class="nav-btn" onclick="resetProgress()">
+                <span class="nav-icon">🔄</span>
+                <span class="nav-label">Reset</span>
+            </button>
+        </nav>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
