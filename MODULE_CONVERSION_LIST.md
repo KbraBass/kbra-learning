@@ -1,6 +1,6 @@
 # 📋 Lista de Conversión de Módulos
 
-**Progreso Total: 11/28 módulos completados (39.3%)**
+**Progreso Total: 12/28 módulos completados (42.9%)**
 
 ## Estado de Conversión
 
@@ -74,9 +74,11 @@
   - Trofeo: "Maestro del Redondeo"
   - Fecha: 27 Nov 2025
   
-- [ ] **composicion-decimal.html**
-  - Estado actual: No revisado
-  - Prioridad: Baja
+- [x] **composicion-decimal.html** - ✅ Completado
+  - Estado: Convertido a 6 pestañas estándar
+  - Examen final: 20 preguntas, 70% para aprobar
+  - Trofeo: "Maestro de la Composición"
+  - Fecha: 27 Nov 2025
   
 - [ ] **factorizacion-prima.html**
   - Estado actual: No revisado
@@ -102,13 +104,13 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 11 ✅
+- **Completados**: 12 ✅
 - **En progreso**: 0
-- **Pendientes**: 17+
-- **Progreso**: 39.3% (11/28)
+- **Pendientes**: 16+
+- **Progreso**: 42.9% (12/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
 - **Semana 2 (Geometría y Tiempo)**: ✅ 100% Completada (6/6)
-- **Semana 3 (Conceptos Numéricos)**: 🔄 33.3% Completada (1/3)
+- **Semana 3 (Conceptos Numéricos)**: 🔄 66.7% Completada (2/3)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
