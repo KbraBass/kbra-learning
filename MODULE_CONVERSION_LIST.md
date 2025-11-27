@@ -9,9 +9,11 @@
   - Trofeo: "Maestro de la Suma"
   - Fecha: 27 Nov 2025
   
-- [ ] **resta.html** 
-  - Estado actual: No revisado
-  - Prioridad: Alta
+- [x] **resta.html** - ✅ Completado
+  - Estado: Convertido a 6 pestañas estándar
+  - Examen final: 20 preguntas, 70% para aprobar
+  - Trofeo: "Experto en Resta"
+  - Fecha: 27 Nov 2025
   
 - [ ] **multiplicacion.html**
   - Estado actual: No revisado
@@ -80,10 +82,10 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 1 ✅
+- **Completados**: 2 ✅
 - **En progreso**: 0
-- **Pendientes**: 27+
-- **Progreso**: 3.6% (1/28)
+- **Pendientes**: 26+
+- **Progreso**: 7.1% (2/28)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
