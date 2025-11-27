@@ -1182,8 +1182,8 @@
                     
                     <strong>Producto vectorial:</strong><br>
                     u⃗ × v⃗ = (<span class="text-error-red">${i.toFixed(2)}</span>, 
-                              <span style="color: #10b981;">${j.toFixed(2)}</span>, 
-                              <span style="color: #3b82f6;">${k.toFixed(2)}</span>)<br><br>
+                              <span class="text-green-primary">${j.toFixed(2)}</span>, 
+                              <span class="text-blue-primary">${k.toFixed(2)}</span>)<br><br>
                     
                     <strong>Módulo:</strong> |u⃗ × v⃗| = ${Math.sqrt(i*i + j*j + k*k).toFixed(4)}<br><br>
                     
@@ -1223,9 +1223,9 @@
             
             let relacion = '';
             if (Math.abs(dotProduct) < 0.0001) {
-                relacion = '<br><strong style="color: #10b981;">⊥ Los vectores son PERPENDICULARES</strong>';
+                relacion = '<br><strong class="text-green-primary">⊥ Los vectores son PERPENDICULARES</strong>';
             } else if (Math.abs(Math.abs(cosTheta) - 1) < 0.0001) {
-                relacion = '<br><strong style="color: #3b82f6;">∥ Los vectores son PARALELOS</strong>';
+                relacion = '<br><strong class="text-blue-primary">∥ Los vectores son PARALELOS</strong>';
             }
             
             document.getElementById('resultado-dot').innerHTML = `
@@ -1289,7 +1289,7 @@
                     [u⃗, v⃗, w⃗] = ${productoMixto.toFixed(4)}<br><br>
                     
                     <strong class="text-success-lg">📦 Volumen del paralelepípedo:</strong><br>
-                    V = |[u⃗, v⃗, w⃗]| = <strong style="color: #10b981; font-size: 1.3em;">${volumen.toFixed(4)} u³</strong>
+                    V = |[u⃗, v⃗, w⃗]| = <strong class="text-green-primary-13">${volumen.toFixed(4)} u³</strong>
                 </div>
             `;
         }
@@ -1330,7 +1330,7 @@
                     √(${a}² + ${b}² + ${c}²) = √${a*a + b*b + c*c} = ${denominador.toFixed(4)}<br><br>
                     
                     <strong class="text-success-lg">📏 Distancia:</strong><br>
-                    d(P, π) = <strong style="color: #10b981; font-size: 1.3em;">${distancia.toFixed(4)} unidades</strong>
+                    d(P, π) = <strong class="text-green-primary-13">${distancia.toFixed(4)} unidades</strong>
                 </div>
             `;
         }

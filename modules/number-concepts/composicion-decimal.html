@@ -264,7 +264,7 @@
 
             <div class="input-section">
                 <h3>Escribe los valores de cada posición:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="grid-autofit-150">
                     <div class="input-group">
                         <label for="um-input">Unidades de Millar:</label>
                         <input type="number" id="um-input" placeholder="0" min="0" max="9" value="0">
@@ -467,7 +467,7 @@
             });
             
             html += '</div>';
-            html += '<div class="composition-row" style="margin-top: 30px; font-size: 1.5em;">';
+            html += '<div class="composition-row" class="mt-30-15">';
             html += parts.reverse().join(' <span class="plus-sign">+</span> ');
             html += '</div></div>';
             
@@ -514,7 +514,7 @@
             const wholeNum = parseInt(whole);
             
             let html = '<div class="composition-visual"><div class="number-display">' + num + '</div>';
-            html += '<div class="composition-row" style="flex-wrap: wrap;">';
+            html += '<div class="composition-row" class="flex-wrap-only">';
             html += `<span>${wholeNum} unidad${wholeNum !== 1 ? 'es' : ''}</span>`;
             
             if (decimal && decimal !== '0') {

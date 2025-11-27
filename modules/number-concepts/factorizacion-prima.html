@@ -228,7 +228,7 @@
                 <div class="prime-number">97</div>
             </div>
 
-            <div class="input-section" style="margin-top: 40px;">
+            <div class="input-section" class="mt-40">
                 <h3>¿Es este número primo?</h3>
                 <div class="input-group">
                     <label for="prime-test-input">Escribe un número:</label>
@@ -282,7 +282,7 @@
 
             <div class="input-section">
                 <h3>Multiplica estos factores primos:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="grid-autofit-120">
                     <div class="input-group">
                         <label for="factor1">Factor 1:</label>
                         <input type="number" id="factor1" placeholder="Ej: 2" min="2">
@@ -460,7 +460,7 @@
             
             if (!prime) {
                 const factors = getPrimeFactors(num);
-                html += `<p style="text-align: center; font-size: 1.2em; color: #666;">Factores primos: <strong class="text-primary-colored">${factors.join(' × ')}</strong></p>`;
+                html += `<p class="text-center-12-gray">Factores primos: <strong class="text-primary-colored">${factors.join(' × ')}</strong></p>`;
             }
             
             document.getElementById('prime-test-result').innerHTML = html;
@@ -500,7 +500,7 @@
                 .map(f => counts[f] > 1 ? `${f}^${counts[f]}` : f)
                 .join(' × ');
             
-            html += `<p class="margin-top-15">Forma exponencial: <strong style="color: var(--accent-color);">${exponential}</strong></p>`;
+            html += `<p class="margin-top-15">Forma exponencial: <strong class="text-accent">${exponential}</strong></p>`;
             html += '</div>';
             
             document.getElementById('factor-result').innerHTML = html;
@@ -525,7 +525,7 @@
             
             let html = '<div class="composition-box">';
             html += `<div class="composition-equation">${factors.join(' × ')} = ${result}</div>`;
-            html += `<p style="color: #666; font-size: 1.1em;">El número compuesto es: <strong class="primary-large-text">${result}</strong></p>`;
+            html += `<p class="text-gray-11">El número compuesto es: <strong class="primary-large-text">${result}</strong></p>`;
             html += '</div>';
             
             document.getElementById('compose-result').innerHTML = html;

@@ -2243,3 +2243,132 @@ tr:hover {
     text-align: center;
 }
 
+
+/* ==================== PHASE 9 UTILITY CLASSES ==================== */
+
+/* Grid Layouts */
+.grid-3col-gap10 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.grid-autofit-120 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.grid-autofit-150 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Flex Utilities */
+.flex-center-gap20-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flex-wrap-only {
+    flex-wrap: wrap;
+}
+
+.min-height-200-flex-center {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.min-height-80-flex-center {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text & Color Utilities */
+.text-center-mb-40 {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+}
+
+.text-center-12-gray {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.text-gray-11 {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.text-primary-13-mb15 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.text-center-30-mb {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Margin Utilities */
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-30-15 {
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+/* Button Styles */
+.button-pill-pink-large {
+    background: rgba(255, 255, 255, 0.95);
+    color: #f5576c;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Color Utilities for Math */
+.text-blue-primary {
+    color: #3b82f6;
+}
+
+.text-green-primary {
+    color: #10b981;
+}
+
+.text-green-primary-13 {
+    color: #10b981;
+    font-size: 1.3em;
+}
+
+/* Card Color Variables - Additional */
+.card-pink-light {
+    --card-color1: #fbc2eb;
+    --card-color2: #a6c1ee;
+}
+
+.card-pink-red {
+    --card-color1: #f093fb;
+    --card-color2: #f5576c;
+}
+
