@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Factorización Prima! - Conceptos Numéricos</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific factorization styles */
+        .prime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 10px;
+            margin: 30px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .prime-number {
+            background: rgba(78, 205, 196, 0.3);
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .prime-number:hover {
+            transform: scale(1.1);
+        }
+        
+        .factor-tree {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        
+        .tree-node {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .tree-value {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tree-prime {
+            background: var(--accent-color);
+        }
+        
+        .tree-branch {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 10px 0;
+        }
+        
+        .tree-connector {
+            width: 2px;
+            height: 30px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+        
+        .factor-list {
+            background: rgba(78, 205, 196, 0.2);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .factor-list h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .factor-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 15px 0;
+        }
+        
+        .composition-box {
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .composition-equation {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .times-sign {
+            color: var(--accent-color);
+            margin: 0 10px;
+        }
+        
+        .prime-test {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .test-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .test-result {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .is-prime {
+            background: rgba(78, 205, 196, 0.3);
+            color: var(--primary-color);
+        }
+        
+        .not-prime {
+            background: rgba(255, 107, 107, 0.3);
+            color: #c92a2a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header-container"></div>
+        <div id="tabs-container"></div>
+
+        <!-- APRENDER TAB -->
+        <div id="aprender" class="content tab-content active">
+            <h2 class="section-title">📚 ¿Qué es la Factorización Prima?</h2>
+            
+            <div class="explanation">
+                <h3>Números Primos</h3>
+                <p>Un <strong>número primo</strong> es un número mayor que 1 que solo se puede dividir exactamente por 1 y por sí mismo.</p>
+                <p class="margin-top-15"><strong>Ejemplos:</strong> 2, 3, 5, 7, 11, 13...</p>
+            </div>
+
+            <div class="explanation">
+                <h3>Factorización Prima</h3>
+                <p>Es el proceso de descomponer un número en sus factores primos. Es como encontrar los "bloques básicos" que forman un número.</p>
+                <p class="margin-top-15"><strong>Ejemplo:</strong> 12 = 2 × 2 × 3</p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¿Sabías que...?</h3>
+                <ul>
+                    <li>El número 2 es el único número primo par</li>
+                    <li>Todos los números pares mayores que 2 NO son primos</li>
+                    <li>Hay infinitos números primos (¡nunca se acaban!)</li>
+                    <li>La factorización prima de cada número es única</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PRIMOS TAB -->
+        <div id="primos" class="content tab-content">
+            <h2 class="section-title">⭐ Números Primos del 1 al 100</h2>
+            
+            <div class="explanation">
+                <h3>Los primeros números primos</h3>
+                <p>Aquí están todos los números primos menores que 100. ¡Son 25 en total!</p>
+            </div>
+
+            <div class="prime-grid">
+                <div class="prime-number">2</div>
+                <div class="prime-number">3</div>
+                <div class="prime-number">5</div>
+                <div class="prime-number">7</div>
+                <div class="prime-number">11</div>
+                <div class="prime-number">13</div>
+                <div class="prime-number">17</div>
+                <div class="prime-number">19</div>
+                <div class="prime-number">23</div>
+                <div class="prime-number">29</div>
+                <div class="prime-number">31</div>
+                <div class="prime-number">37</div>
+                <div class="prime-number">41</div>
+                <div class="prime-number">43</div>
+                <div class="prime-number">47</div>
+                <div class="prime-number">53</div>
+                <div class="prime-number">59</div>
+                <div class="prime-number">61</div>
+                <div class="prime-number">67</div>
+                <div class="prime-number">71</div>
+                <div class="prime-number">73</div>
+                <div class="prime-number">79</div>
+                <div class="prime-number">83</div>
+                <div class="prime-number">89</div>
+                <div class="prime-number">97</div>
+            </div>
+
+            <div class="input-section" class="mt-40">
+                <h3>¿Es este número primo?</h3>
+                <div class="input-group">
+                    <label for="prime-test-input">Escribe un número:</label>
+                    <input type="number" id="prime-test-input" placeholder="Ej: 17" min="2" max="1000">
+                </div>
+                <button class="calc-button" onclick="testPrime()">Comprobar</button>
+            </div>
+
+            <div id="prime-test-result" class="margin-top-30"></div>
+        </div>
+
+        <!-- FACTORIZAR TAB -->
+        <div id="factorizar" class="content tab-content">
+            <h2 class="section-title">🌲 Árbol de Factorización</h2>
+            
+            <div class="explanation">
+                <h3>¿Cómo factorizar un número?</h3>
+                <p>Divide el número por números primos (empezando por 2) hasta que solo queden factores primos.</p>
+            </div>
+
+            <div class="input-section">
+                <h3>Factoriza un número:</h3>
+                <div class="input-group">
+                    <label for="factor-input">Número (2-1000):</label>
+                    <input type="number" id="factor-input" placeholder="Ej: 24" min="2" max="1000">
+                </div>
+                <button class="calc-button" onclick="factorizeNumber()">Factorizar</button>
+            </div>
+
+            <div id="factor-result" class="margin-top-30"></div>
+
+            <div class="fun-facts" class="margin-top-30">
+                <h3>📝 Pasos para Factorizar:</h3>
+                <ol class="text-left-auto">
+                    <li>Empieza probando con 2 (el primo más pequeño)</li>
+                    <li>Si el número es divisible, divídelo</li>
+                    <li>Continúa con el resultado hasta que sea primo</li>
+                    <li>Si 2 no funciona, prueba con 3, luego 5, 7, etc.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- COMPONER TAB -->
+        <div id="componer" class="content tab-content">
+            <h2 class="section-title">➕ Componer desde Factores</h2>
+            
+            <div class="explanation">
+                <h3>El proceso inverso</h3>
+                <p>Si conoces los factores primos, puedes multiplicarlos para obtener el número original.</p>
+            </div>
+
+            <div class="input-section">
+                <h3>Multiplica estos factores primos:</h3>
+                <div class="grid-autofit-120">
+                    <div class="input-group">
+                        <label for="factor1">Factor 1:</label>
+                        <input type="number" id="factor1" placeholder="Ej: 2" min="2">
+                    </div>
+                    <div class="input-group">
+                        <label for="factor2">Factor 2:</label>
+                        <input type="number" id="factor2" placeholder="Ej: 2">
+                    </div>
+                    <div class="input-group">
+                        <label for="factor3">Factor 3 (opcional):</label>
+                        <input type="number" id="factor3" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="factor4">Factor 4 (opcional):</label>
+                        <input type="number" id="factor4" placeholder="">
+                    </div>
+                </div>
+                <button class="calc-button" onclick="composeFromFactors()">Multiplicar</button>
+            </div>
+
+            <div id="compose-result" class="margin-top-30"></div>
+
+            <div class="fun-facts" class="margin-top-30">
+                <h3>💡 Ejemplo:</h3>
+                <p><strong>2 × 2 × 3 × 5</strong> = ?</p>
+                <p>Paso 1: 2 × 2 = 4</p>
+                <p>Paso 2: 4 × 3 = 12</p>
+                <p>Paso 3: 12 × 5 = <strong>60</strong></p>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container"></div>
+
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                
+                <div id="practice-visual" class="result-container"></div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta:</label>
+                        <input type="text" id="practice-answer" placeholder="Ej: 2,2,3">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Empieza siempre probando con 2 (el primo más pequeño)</li>
+                    <li>Si el número es impar, prueba con 3, 5, 7...</li>
+                    <li>Escribe los factores separados por comas (Ej: 2,2,3)</li>
+                    <li>El orden no importa: 2×3 = 3×2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'factorizacion-prima';
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            const headerHtml = Components.createHeader(
+                '⭐ ¡Factorización Prima! ⭐',
+                'Descubre los bloques básicos de los números',
+                '../index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            const tabs = [
+                { id: 'aprender', label: '📚 Aprender' },
+                { id: 'primos', label: '⭐ Números Primos' },
+                { id: 'factorizar', label: '🌲 Factorizar' },
+                { id: 'componer', label: '➕ Componer' },
+                { id: 'practica', label: '🏆 Práctica' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'aprender');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            updateScoreDisplay();
+            
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const button = this.closest('.input-section').querySelector('.calc-button');
+                        if (button && !button.disabled) button.click();
+                    }
+                });
+            });
+            
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                if (button.textContent.includes(tabName) || 
+                    (tabName === 'aprender' && button.textContent.includes('Aprender')) ||
+                    (tabName === 'primos' && button.textContent.includes('Primos')) ||
+                    (tabName === 'factorizar' && button.textContent.includes('Factorizar')) ||
+                    (tabName === 'componer' && button.textContent.includes('Componer')) ||
+                    (tabName === 'practica' && button.textContent.includes('Práctica'))) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function isPrime(n) {
+            if (n < 2) return false;
+            if (n === 2) return true;
+            if (n % 2 === 0) return false;
+            for (let i = 3; i <= Math.sqrt(n); i += 2) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        function getPrimeFactors(n) {
+            const factors = [];
+            let divisor = 2;
+            
+            while (n > 1) {
+                while (n % divisor === 0) {
+                    factors.push(divisor);
+                    n = n / divisor;
+                }
+                divisor++;
+                if (divisor * divisor > n && n > 1) {
+                    factors.push(n);
+                    break;
+                }
+            }
+            
+            return factors;
+        }
+
+        function testPrime() {
+            const input = document.getElementById('prime-test-input');
+            const num = parseInt(input.value);
+            
+            if (isNaN(num) || num < 2) {
+                document.getElementById('prime-test-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número mayor que 1!</div>';
+                return;
+            }
+            
+            const prime = isPrime(num);
+            const resultClass = prime ? 'is-prime' : 'not-prime';
+            const resultText = prime ? 'Es PRIMO ✓' : 'NO es primo ✗';
+            
+            let html = '<div class="prime-test">';
+            html += `<div class="test-number">${num}</div>`;
+            html += `<div class="test-result ${resultClass}">${resultText}</div>`;
+            html += '</div>';
+            
+            if (!prime) {
+                const factors = getPrimeFactors(num);
+                html += `<p class="text-center-12-gray">Factores primos: <strong class="text-primary-colored">${factors.join(' × ')}</strong></p>`;
+            }
+            
+            document.getElementById('prime-test-result').innerHTML = html;
+        }
+
+        function factorizeNumber() {
+            const input = document.getElementById('factor-input');
+            const num = parseInt(input.value);
+            
+            if (isNaN(num) || num < 2) {
+                document.getElementById('factor-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número mayor que 1!</div>';
+                return;
+            }
+            
+            if (isPrime(num)) {
+                document.getElementById('factor-result').innerHTML = `
+                    <div class="factor-list">
+                        <h3>${num} es un número PRIMO</h3>
+                        <p>Los números primos solo se dividen por 1 y por sí mismos.</p>
+                        <div class="factor-display">${num} = ${num}</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            const factors = getPrimeFactors(num);
+            
+            let html = '<div class="factor-list">';
+            html += `<h3>Factorización Prima de ${num}</h3>`;
+            html += `<div class="factor-display">${num} = ${factors.join(' × ')}</div>`;
+            
+            // Count occurrences
+            const counts = {};
+            factors.forEach(f => counts[f] = (counts[f] || 0) + 1);
+            
+            const exponential = Object.keys(counts)
+                .map(f => counts[f] > 1 ? `${f}^${counts[f]}` : f)
+                .join(' × ');
+            
+            html += `<p class="margin-top-15">Forma exponencial: <strong class="text-accent">${exponential}</strong></p>`;
+            html += '</div>';
+            
+            document.getElementById('factor-result').innerHTML = html;
+        }
+
+        function composeFromFactors() {
+            const f1 = parseInt(document.getElementById('factor1').value);
+            const f2 = parseInt(document.getElementById('factor2').value);
+            const f3 = parseInt(document.getElementById('factor3').value) || null;
+            const f4 = parseInt(document.getElementById('factor4').value) || null;
+            
+            if (isNaN(f1) || isNaN(f2)) {
+                document.getElementById('compose-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, completa al menos los primeros dos factores!</div>';
+                return;
+            }
+            
+            const factors = [f1, f2];
+            if (f3) factors.push(f3);
+            if (f4) factors.push(f4);
+            
+            const result = factors.reduce((a, b) => a * b, 1);
+            
+            let html = '<div class="composition-box">';
+            html += `<div class="composition-equation">${factors.join(' × ')} = ${result}</div>`;
+            html += `<p class="text-gray-11">El número compuesto es: <strong class="primary-large-text">${result}</strong></p>`;
+            html += '</div>';
+            
+            document.getElementById('compose-result').innerHTML = html;
+        }
+
+        function generateQuestion() {
+            // Generate a number with 2-3 prime factors
+            const primes = [2, 3, 5, 7, 11, 13];
+            const numFactors = Math.random() < 0.7 ? 2 : 3;
+            
+            let number = 1;
+            const factors = [];
+            for (let i = 0; i < numFactors; i++) {
+                const prime = primes[Math.floor(Math.random() * Math.min(4, primes.length))];
+                factors.push(prime);
+                number *= prime;
+            }
+            
+            const answer = getPrimeFactors(number).sort((a, b) => a - b);
+            
+            currentQuestion = { number, answer };
+            questionAnswered = false;
+            
+            document.getElementById('practice-question').textContent = `Encuentra los factores primos de ${number}`;
+            document.getElementById('practice-visual').innerHTML = `<div class="number-box" class="text-xlarge">${number}</div>`;
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').innerHTML = '<small class="text-gray">Escribe los factores separados por comas (Ej: 2,2,3)</small>';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userInput = document.getElementById('practice-answer').value.trim();
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) return;
+            
+            if (!userInput) {
+                result.textContent = '¡Por favor, escribe los factores!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const userAnswer = userInput.split(',').map(s => parseInt(s.trim())).filter(n => !isNaN(n)).sort((a, b) => a - b);
+            
+            if (userAnswer.length === 0) {
+                result.textContent = '¡Por favor, escribe números separados por comas!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            const correct = JSON.stringify(userAnswer) === JSON.stringify(currentQuestion.answer);
+            
+            if (correct) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>+10 puntos</small></div>`;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es: <strong>${currentQuestion.answer.join(', ')}</strong><br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>-5 puntos</small></div>`;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('score').textContent = Storage.getTotalPoints();
+            document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
+        }
+
+        init();
+    </script>
+</body>
+</html>
