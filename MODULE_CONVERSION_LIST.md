@@ -40,9 +40,11 @@
   - Trofeo: "Experto en Ángulos"
   - Fecha: 27 Nov 2025
   
-- [ ] **perimetro-area.html**
-  - Estado actual: No revisado
-  - Prioridad: Media
+- [x] **perimetro-area.html** - ✅ Completado
+  - Estado: Convertido a 6 pestañas estándar
+  - Examen final: 20 preguntas, 70% para aprobar
+  - Trofeo: "Experto en Medidas"
+  - Fecha: 27 Nov 2025
 
 ### Prioridad Media - Conceptos de Tiempo (Semana 2)
 - [ ] **reloj.html**
@@ -90,12 +92,12 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 6 ✅
+- **Completados**: 7 ✅
 - **En progreso**: 0
-- **Pendientes**: 22+
-- **Progreso**: 21.4% (6/28)
+- **Pendientes**: 21+
+- **Progreso**: 25.0% (7/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
-- **Semana 2 (Geometría y Tiempo)**: 🔄 33.3% En Progreso (2/6)
+- **Semana 2 (Geometría y Tiempo)**: 🔄 50.0% En Progreso (3/6)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:

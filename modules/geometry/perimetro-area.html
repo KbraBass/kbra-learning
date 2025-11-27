@@ -37,7 +37,32 @@
             white-space: nowrap;
         }
         
-        #practice-visual .shape-container {
+        .position-top-center {
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .position-bottom-center {
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .position-left-middle {
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .position-right-middle {
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        #practice-visual .shape-container,
+        #exam-visual .shape-container {
             min-height: 200px;
             justify-content: center;
         }
@@ -51,17 +76,152 @@
         <!-- Tabs will be inserted here -->
         <div id="tabs-container"></div>
 
-        <!-- PERÍMETRO TAB -->
-        <div id="perimetro" class="content tab-content active">
-            <h2 class="section-title">📏 ¿Qué es el Perímetro?</h2>
+        <!-- GLOSARIO TAB -->
+        <div id="glosario" class="content tab-content active">
+            <h2 class="section-title">📖 Glosario de Perímetro y Área</h2>
             
             <div class="explanation">
-                <h3>El perímetro es el borde</h3>
+                <p class="intro-text">Aprende los términos clave relacionados con perímetro y área:</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Perímetro</h3>
+                <p><strong>Definición:</strong> La distancia alrededor de una figura geométrica. Es la suma de todos sus lados.</p>
+                <p><strong>Ejemplo:</strong> El perímetro de un cuadrado de lado 5 cm es 5+5+5+5 = 20 cm.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Área</h3>
+                <p><strong>Definición:</strong> El espacio que ocupa una figura geométrica en dos dimensiones. Se mide en unidades cuadradas (cm², m², km²).</p>
+                <p><strong>Ejemplo:</strong> El área de un rectángulo de 4 cm × 3 cm es 12 cm².</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Unidad Cuadrada</h3>
+                <p><strong>Definición:</strong> Medida de área que representa un cuadrado de 1 unidad por lado. Ejemplos: cm², m², km².</p>
+                <p><strong>Ejemplo:</strong> 1 m² es el área de un cuadrado de 1 metro por 1 metro.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Lado</h3>
+                <p><strong>Definición:</strong> Cada una de las líneas rectas que forman el borde de un polígono.</p>
+                <p><strong>Ejemplo:</strong> Un rectángulo tiene 4 lados: 2 largos y 2 anchos.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Fórmula</h3>
+                <p><strong>Definición:</strong> Una regla matemática que nos dice cómo calcular algo. Para perímetro y área, cada forma tiene su propia fórmula.</p>
+                <p><strong>Ejemplo:</strong> Fórmula del área de un cuadrado: A = lado × lado</p>
+            </div>
+        </div>
+
+        <!-- SÍMBOLOS TAB -->
+        <div id="simbolos" class="content tab-content">
+            <h2 class="section-title">🔣 Símbolos Matemáticos</h2>
+            
+            <div class="explanation">
+                <p class="intro-text">Conoce los símbolos que usamos para perímetro y área:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-large">P</div>
+                <h3>Perímetro</h3>
+                <p><strong>Símbolo:</strong> P (mayúscula)</p>
+                <p><strong>Uso:</strong> Representa el perímetro de una figura.</p>
+                <p><strong>Ejemplo:</strong> P = 20 cm (el perímetro es 20 centímetros)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-large">A</div>
+                <h3>Área</h3>
+                <p><strong>Símbolo:</strong> A (mayúscula)</p>
+                <p><strong>Uso:</strong> Representa el área de una figura.</p>
+                <p><strong>Ejemplo:</strong> A = 15 m² (el área es 15 metros cuadrados)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-large">²</div>
+                <h3>Unidad Cuadrada</h3>
+                <p><strong>Símbolo:</strong> ² (superíndice 2)</p>
+                <p><strong>Uso:</strong> Indica que una medida es de área (unidad × unidad).</p>
+                <p><strong>Ejemplo:</strong> 25 cm² significa 25 centímetros cuadrados</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-large">□</div>
+                <h3>Cuadrado</h3>
+                <p><strong>Símbolo:</strong> □</p>
+                <p><strong>Uso:</strong> Representa un cuadrado (4 lados iguales).</p>
+                <p><strong>Fórmulas:</strong> P = 4 × lado | A = lado × lado</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-large">▭</div>
+                <h3>Rectángulo</h3>
+                <p><strong>Símbolo:</strong> ▭</p>
+                <p><strong>Uso:</strong> Representa un rectángulo (lados opuestos iguales).</p>
+                <p><strong>Fórmulas:</strong> P = 2×(largo + ancho) | A = largo × ancho</p>
+            </div>
+        </div>
+
+        <!-- INTRODUCCIÓN TAB -->
+        <div id="introduccion" class="content tab-content">
+            <h2 class="section-title">📚 ¿Por qué aprender Perímetro y Área?</h2>
+            
+            <div class="explanation">
+                <p class="intro-text">Perímetro y área son conceptos fundamentales que usamos constantemente en la vida real:</p>
+            </div>
+
+            <div class="real-world-example">
+                <h3>🏡 En la Construcción y Arquitectura</h3>
+                <p><strong>Perímetro:</strong> Los arquitectos calculan el perímetro para saber cuánta cerca necesitan alrededor de un terreno o cuánta moldura poner en una habitación.</p>
+                <p><strong>Área:</strong> Calculan el área para saber cuántas baldosas se necesitan para cubrir un piso o cuánta pintura para una pared.</p>
+                <p class="example-detail">💡 <em>Ejemplo:</em> Si tu habitación mide 4m × 3m, su área es 12 m². Necesitas 12 m² de alfombra para cubrirla completamente.</p>
+            </div>
+
+            <div class="real-world-example">
+                <h3>🌾 En la Agricultura</h3>
+                <p><strong>Perímetro:</strong> Los agricultores calculan el perímetro de sus campos para saber cuánta valla necesitan.</p>
+                <p><strong>Área:</strong> Calculan el área para saber cuántas semillas plantar o cuánto fertilizante usar.</p>
+                <p class="example-detail">💡 <em>Ejemplo:</em> Un campo rectangular de 50m × 30m tiene un área de 1,500 m² y un perímetro de 160m.</p>
+            </div>
+
+            <div class="real-world-example">
+                <h3>🎨 En el Arte y Diseño</h3>
+                <p><strong>Perímetro:</strong> Los artistas calculan perímetros para crear marcos para sus obras.</p>
+                <p><strong>Área:</strong> Calculan áreas para determinar el tamaño del lienzo o papel que necesitan.</p>
+                <p class="example-detail">💡 <em>Ejemplo:</em> Un cuadro cuadrado de 40cm de lado tiene un área de 1,600 cm² y necesita un marco de 160cm de perímetro.</p>
+            </div>
+
+            <div class="real-world-example">
+                <h3>⚽ En Deportes</h3>
+                <p><strong>Perímetro:</strong> Las canchas deportivas tienen perímetros definidos para marcar los límites del juego.</p>
+                <p><strong>Área:</strong> El área de la cancha determina el espacio de juego disponible.</p>
+                <p class="example-detail">💡 <em>Ejemplo:</em> Una cancha de fútbol profesional mide aproximadamente 105m × 68m, con un área de 7,140 m².</p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Datos Curiosos!</h3>
+                <ul>
+                    <li>El Vaticano es el país más pequeño del mundo con un área de solo 0.44 km² (440,000 m²)</li>
+                    <li>Para calcular cuánta pintura necesitas, multiplicas el perímetro de la habitación por su altura</li>
+                    <li>Los mapas antiguos se medían en "acres" - una unidad de área que los agricultores podían labrar en un día</li>
+                    <li>Un campo de fútbol americano tiene exactamente 5,351 m² (incluidas las zonas de anotación)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content tab-content">
+            <h2 class="section-title">📐 Teoría y Práctica</h2>
+            
+            <div class="explanation">
+                <h3>📏 ¿Qué es el Perímetro?</h3>
                 <p>El perímetro es la distancia alrededor de una forma. ¡Es como caminar por el borde de un jardín!</p>
                 <ul class="list-spaced">
-                    <li><strong>Cuadrado:</strong> suma los 4 lados (o lado × 4)</li>
-                    <li><strong>Rectángulo:</strong> suma largo + largo + ancho + ancho</li>
-                    <li><strong>Triángulo:</strong> suma los 3 lados</li>
+                    <li><strong>Cuadrado:</strong> P = lado × 4 (suma los 4 lados iguales)</li>
+                    <li><strong>Rectángulo:</strong> P = 2 × (largo + ancho)</li>
+                    <li><strong>Triángulo:</strong> P = lado₁ + lado₂ + lado₃</li>
                 </ul>
             </div>
 
@@ -77,7 +237,7 @@
 
             <div class="shape-visual" id="square-visual"></div>
 
-            <div class="input-section" class="margin-top-30">
+            <div class="input-section" style="margin-top: 30px;">
                 <h3 class="subsection-header">Calcula el Perímetro de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length">Largo:</label>
@@ -93,23 +253,13 @@
 
             <div class="shape-visual" id="rect-visual"></div>
 
-            <div class="fun-facts">
-                <h3>🌟 ¡Dato Curioso!</h3>
-                <p>Si tienes un terreno cuadrado de 10 metros por lado y quieres cercarlo, necesitas 40 metros de cerca (10 + 10 + 10 + 10 = 40). ¡Eso es el perímetro!</p>
-            </div>
-        </div>
-
-        <!-- ÁREA TAB -->
-        <div id="area" class="content tab-content">
-            <h2 class="section-title">📦 ¿Qué es el Área?</h2>
-            
-            <div class="explanation">
-                <h3>El área es el espacio dentro</h3>
+            <div class="explanation" style="margin-top: 40px;">
+                <h3>📦 ¿Qué es el Área?</h3>
                 <p>El área es cuánto espacio hay DENTRO de una forma. Se mide en unidades cuadradas (cm², m²).</p>
                 <ul class="list-spaced">
-                    <li><strong>Cuadrado:</strong> lado × lado</li>
-                    <li><strong>Rectángulo:</strong> largo × ancho</li>
-                    <li><strong>Triángulo:</strong> (base × altura) ÷ 2</li>
+                    <li><strong>Cuadrado:</strong> A = lado × lado</li>
+                    <li><strong>Rectángulo:</strong> A = largo × ancho</li>
+                    <li><strong>Triángulo:</strong> A = (base × altura) ÷ 2</li>
                 </ul>
             </div>
 
@@ -125,7 +275,7 @@
 
             <div class="shape-visual" id="square-area-visual"></div>
 
-            <div class="input-section" class="margin-top-30">
+            <div class="input-section" style="margin-top: 30px;">
                 <h3 class="subsection-header">Calcula el Área de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length-area">Largo:</label>
@@ -142,14 +292,18 @@
             <div class="shape-visual" id="rect-area-visual"></div>
 
             <div class="fun-facts">
-                <h3>🌟 ¡Dato Curioso!</h3>
-                <p>Si tu habitación mide 4 metros de largo por 3 metros de ancho, su área es 12 m². ¡Eso te dice cuánta alfombra necesitas para cubrirla!</p>
+                <h3>💡 Consejos para Recordar:</h3>
+                <ul>
+                    <li><strong>Perímetro:</strong> Piensa en "peri" = alrededor. Es la distancia ALREDEDOR de la figura.</li>
+                    <li><strong>Área:</strong> Es el espacio DENTRO. Cuenta cuántos cuadraditos caben dentro.</li>
+                    <li>El perímetro se mide en unidades simples (cm, m), el área en unidades cuadradas (cm², m²)</li>
+                </ul>
             </div>
         </div>
 
-        <!-- PRÁCTICA TAB -->
-        <div id="practica" class="content tab-content">
-            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+        <!-- ENTRENAMIENTO TAB -->
+        <div id="entrenamiento" class="content tab-content">
+            <h2 class="section-title">🎯 ¡Entrena tus Habilidades!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
@@ -170,13 +324,41 @@
             </div>
 
             <div class="fun-facts">
-                <h3>💡 Consejos:</h3>
+                <h3>💡 Consejos de Entrenamiento:</h3>
                 <ul>
-                    <li><strong>Perímetro:</strong> Suma todos los lados (el borde)</li>
+                    <li><strong>Perímetro:</strong> Suma todos los lados (el borde completo)</li>
                     <li><strong>Área:</strong> Multiplica largo × ancho (el espacio dentro)</li>
                     <li>Dibuja la forma en papel para visualizarla mejor</li>
+                    <li>Recuerda: Perímetro en unidades simples, Área en unidades cuadradas</li>
+                    <li>Practica hasta dominar cada tipo de cálculo</li>
                 </ul>
             </div>
+
+            <div class="gamification-info">
+                <h3>🏆 Sistema de Puntos:</h3>
+                <p>• <strong>Respuesta correcta:</strong> +10 puntos 🎉</p>
+                <p>• <strong>Respuesta incorrecta:</strong> -5 puntos 📚</p>
+                <p>• <strong>Practica sin límites</strong> para mejorar tu nivel</p>
+            </div>
+        </div>
+
+        <!-- EXAMEN FINAL TAB -->
+        <div id="examen" class="content tab-content">
+            <h2 class="section-title">📝 Examen Final de Perímetro y Área</h2>
+            
+            <div class="explanation">
+                <p class="intro-text">Completa este examen para demostrar tu dominio de perímetro y área.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Experto en Medidas" 🏆</p>
+            </div>
+
+            <div id="exam-status" class="exam-status"></div>
+
+            <div class="exam-area" id="exam-container">
+                <button class="calc-button" onclick="startExam()" id="start-exam-btn">🚀 Comenzar Examen</button>
+            </div>
+
+            <div id="exam-results" class="exam-results" style="display: none;"></div>
         </div>
     </div>
 
@@ -189,6 +371,12 @@
         const MODULE_ID = 'perimetro-area';
         let currentQuestion = null;
         let questionAnswered = false;
+        
+        // Exam state
+        let examQuestions = [];
+        let currentExamQuestion = 0;
+        let examAnswers = [];
+        let examInProgress = false;
 
         function init() {
             const headerHtml = Components.createHeader(
@@ -199,17 +387,21 @@
             document.getElementById('header-container').innerHTML = headerHtml;
 
             const tabs = [
-                { id: 'perimetro', label: 'Perímetro' },
-                { id: 'area', label: 'Área' },
-                { id: 'practica', label: '¡Práctica!' }
+                { id: 'glosario', label: 'Glosario' },
+                { id: 'simbolos', label: 'Símbolos' },
+                { id: 'introduccion', label: 'Introducción' },
+                { id: 'teoria', label: 'Teoría' },
+                { id: 'entrenamiento', label: 'Entrenamiento' },
+                { id: 'examen', label: 'Examen Final' }
             ];
-            const tabsHtml = Components.createTabs(tabs, 'perimetro');
+            const tabsHtml = Components.createTabs(tabs, 'glosario');
             document.getElementById('tabs-container').innerHTML = tabsHtml;
 
             const scoreHtml = Components.createScoreDisplay();
             document.getElementById('score-container').innerHTML = scoreHtml;
             
             updateScoreDisplay();
+            checkExamStatus();
             
             const inputs = document.querySelectorAll('input[type="number"]');
             inputs.forEach(input => {
@@ -236,9 +428,11 @@
             document.getElementById(tabName).classList.add('active');
             
             buttons.forEach(button => {
-                if (button.textContent.includes(tabName === 'perimetro' ? 'Perímetro' : 
-                                                  tabName === 'area' ? 'Área' : 
-                                                  'Práctica')) {
+                const buttonText = button.textContent.toLowerCase();
+                const tabText = tabName.toLowerCase();
+                if (buttonText.includes(tabText) || 
+                    (tabText === 'entrenamiento' && buttonText.includes('entrenamiento')) ||
+                    (tabText === 'examen' && buttonText.includes('examen'))) {
                     button.classList.add('active');
                 }
             });
@@ -265,10 +459,10 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" class="position-top-center">${side}</div>
-                        <div class="dimension-label" class="position-bottom-center">${side}</div>
-                        <div class="dimension-label" class="position-left-middle">${side}</div>
-                        <div class="dimension-label" class="position-right-middle">${side}</div>
+                        <div class="dimension-label position-top-center">${side}</div>
+                        <div class="dimension-label position-bottom-center">${side}</div>
+                        <div class="dimension-label position-left-middle">${side}</div>
+                        <div class="dimension-label position-right-middle">${side}</div>
                     </div>
                     <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
                 </div>
@@ -296,10 +490,10 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" class="position-top-center">${length}</div>
-                        <div class="dimension-label" class="position-bottom-center">${length}</div>
-                        <div class="dimension-label" class="position-left-middle">${width}</div>
-                        <div class="dimension-label" class="position-right-middle">${width}</div>
+                        <div class="dimension-label position-top-center">${length}</div>
+                        <div class="dimension-label position-bottom-center">${length}</div>
+                        <div class="dimension-label position-left-middle">${width}</div>
+                        <div class="dimension-label position-right-middle">${width}</div>
                     </div>
                     <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
                 </div>
@@ -388,45 +582,45 @@
             if (type === 'square-perimeter') {
                 side = Math.floor(Math.random() * 8) + 3;
                 answer = side * 4;
-                question = `¿Cuál es el PERÍMETRO de un cuadrado de lado ${side}?`;
+                question = `¿Cuál es el PERÍMETRO de un cuadrado de lado ${side} unidades?`;
                 const scale = Math.min(150 / side, 15);
                 visualHTML = `
                     <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;">
-                        <div class="dimension-label" class="position-top-center">${side}</div>
+                        <div class="dimension-label position-top-center">${side}</div>
                     </div>
                 `;
             } else if (type === 'rect-perimeter') {
                 length = Math.floor(Math.random() * 8) + 4;
                 width = Math.floor(Math.random() * 6) + 2;
                 answer = (length * 2) + (width * 2);
-                question = `¿Cuál es el PERÍMETRO de un rectángulo de ${length} × ${width}?`;
+                question = `¿Cuál es el PERÍMETRO de un rectángulo de ${length} × ${width} unidades?`;
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" class="position-top-center">${length}</div>
-                        <div class="dimension-label" class="position-left-middle">${width}</div>
+                        <div class="dimension-label position-top-center">${length}</div>
+                        <div class="dimension-label position-left-middle">${width}</div>
                     </div>
                 `;
             } else if (type === 'square-area') {
                 side = Math.floor(Math.random() * 8) + 3;
                 answer = side * side;
-                question = `¿Cuál es el ÁREA de un cuadrado de lado ${side}?`;
+                question = `¿Cuál es el ÁREA de un cuadrado de lado ${side} unidades?`;
                 const scale = Math.min(150 / side, 15);
                 visualHTML = `
                     <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;">
-                        <div class="dimension-label" class="position-top-center">${side}</div>
+                        <div class="dimension-label position-top-center">${side}</div>
                     </div>
                 `;
             } else {
                 length = Math.floor(Math.random() * 8) + 4;
                 width = Math.floor(Math.random() * 6) + 2;
                 answer = length * width;
-                question = `¿Cuál es el ÁREA de un rectángulo de ${length} × ${width}?`;
+                question = `¿Cuál es el ÁREA de un rectángulo de ${length} × ${width} unidades?`;
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" class="position-top-center">${length}</div>
-                        <div class="dimension-label" class="position-left-middle">${width}</div>
+                        <div class="dimension-label position-top-center">${length}</div>
+                        <div class="dimension-label position-left-middle">${width}</div>
                     </div>
                 `;
             }
@@ -473,6 +667,232 @@
             }
             
             updateScoreDisplay();
+        }
+
+        // Exam Functions
+        function checkExamStatus() {
+            const examData = Storage.getFinalTestData(MODULE_ID);
+            const statusDiv = document.getElementById('exam-status');
+            
+            if (examData && examData.passed) {
+                const percentage = Math.round((examData.score / 20) * 100);
+                statusDiv.innerHTML = `
+                    <div class="exam-passed">
+                        <h3>✅ ¡Examen Aprobado!</h3>
+                        <p>Puntuación: ${examData.score}/20 (${percentage}%)</p>
+                        <p>🏆 Has obtenido el trofeo "Experto en Medidas"</p>
+                        <p>Intentos realizados: ${examData.attempts}</p>
+                        <button class="calc-button" onclick="retakeExam()">🔄 Reintentar Examen</button>
+                    </div>
+                `;
+            } else if (examData && examData.attempts > 0) {
+                const percentage = Math.round((examData.score / 20) * 100);
+                statusDiv.innerHTML = `
+                    <div class="exam-failed">
+                        <h3>📚 Intenta de Nuevo</h3>
+                        <p>Último intento: ${examData.score}/20 (${percentage}%) - necesitas 70% para aprobar</p>
+                        <p>Intentos realizados: ${examData.attempts}</p>
+                        <p>💡 Practica más en la pestaña "Entrenamiento" antes de reintentar</p>
+                    </div>
+                `;
+            }
+        }
+
+        function startExam() {
+            examQuestions = generateExamQuestions();
+            currentExamQuestion = 0;
+            examAnswers = [];
+            examInProgress = true;
+            
+            document.getElementById('start-exam-btn').style.display = 'none';
+            showExamQuestion();
+        }
+
+        function retakeExam() {
+            document.getElementById('exam-results').style.display = 'none';
+            document.getElementById('exam-status').innerHTML = '';
+            document.getElementById('start-exam-btn').style.display = 'block';
+        }
+
+        function generateExamQuestions() {
+            const questions = [];
+            const types = ['square-perimeter', 'rect-perimeter', 'square-area', 'rect-area'];
+            
+            // Generate 20 random questions
+            for (let i = 0; i < 20; i++) {
+                const type = types[Math.floor(Math.random() * types.length)];
+                let q = {};
+                
+                if (type === 'square-perimeter') {
+                    const side = Math.floor(Math.random() * 10) + 2;
+                    q = {
+                        question: `¿Cuál es el perímetro de un cuadrado de lado ${side} unidades?`,
+                        answer: side * 4,
+                        type: 'square-perimeter',
+                        side: side
+                    };
+                } else if (type === 'rect-perimeter') {
+                    const length = Math.floor(Math.random() * 10) + 3;
+                    const width = Math.floor(Math.random() * 8) + 2;
+                    q = {
+                        question: `¿Cuál es el perímetro de un rectángulo de ${length} × ${width} unidades?`,
+                        answer: (length * 2) + (width * 2),
+                        type: 'rect-perimeter',
+                        length: length,
+                        width: width
+                    };
+                } else if (type === 'square-area') {
+                    const side = Math.floor(Math.random() * 10) + 2;
+                    q = {
+                        question: `¿Cuál es el área de un cuadrado de lado ${side} unidades?`,
+                        answer: side * side,
+                        type: 'square-area',
+                        side: side
+                    };
+                } else {
+                    const length = Math.floor(Math.random() * 10) + 3;
+                    const width = Math.floor(Math.random() * 8) + 2;
+                    q = {
+                        question: `¿Cuál es el área de un rectángulo de ${length} × ${width} unidades?`,
+                        answer: length * width,
+                        type: 'rect-area',
+                        length: length,
+                        width: width
+                    };
+                }
+                
+                questions.push(q);
+            }
+            
+            return questions;
+        }
+
+        function showExamQuestion() {
+            if (currentExamQuestion >= examQuestions.length) {
+                finishExam();
+                return;
+            }
+            
+            const q = examQuestions[currentExamQuestion];
+            let visualHTML = '';
+            
+            if (q.type === 'square-perimeter' || q.type === 'square-area') {
+                const scale = Math.min(150 / q.side, 15);
+                visualHTML = `
+                    <div class="visual-square" style="width: ${q.side * scale}px; height: ${q.side * scale}px;">
+                        <div class="dimension-label position-top-center">${q.side}</div>
+                    </div>
+                `;
+            } else {
+                const scale = Math.min(200 / q.length, 150 / q.width, 15);
+                visualHTML = `
+                    <div class="visual-rectangle" style="width: ${q.length * scale}px; height: ${q.width * scale}px;">
+                        <div class="dimension-label position-top-center">${q.length}</div>
+                        <div class="dimension-label position-left-middle">${q.width}</div>
+                    </div>
+                `;
+            }
+            
+            const html = `
+                <div class="exam-question">
+                    <h3>Pregunta ${currentExamQuestion + 1} de ${examQuestions.length}</h3>
+                    <p class="question-text">${q.question}</p>
+                    <div class="shape-visual">
+                        <div class="shape-container">${visualHTML}</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="exam-answer">Tu respuesta:</label>
+                        <input type="number" id="exam-answer" placeholder="?" autofocus>
+                    </div>
+                    <button class="calc-button" onclick="submitExamAnswer()">➡️ Siguiente</button>
+                </div>
+            `;
+            
+            document.getElementById('exam-container').innerHTML = html;
+            
+            // Add enter key support
+            document.getElementById('exam-answer').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    submitExamAnswer();
+                }
+            });
+        }
+
+        function submitExamAnswer() {
+            const answer = parseInt(document.getElementById('exam-answer').value);
+            
+            if (isNaN(answer)) {
+                alert('Por favor, escribe un número');
+                return;
+            }
+            
+            examAnswers.push(answer);
+            currentExamQuestion++;
+            showExamQuestion();
+        }
+
+        function finishExam() {
+            let correctCount = 0;
+            
+            for (let i = 0; i < examQuestions.length; i++) {
+                if (examAnswers[i] === examQuestions[i].answer) {
+                    correctCount++;
+                }
+            }
+            
+            const passed = correctCount >= 14; // 70% of 20
+            
+            // Save exam result (score is number correct out of total questions)
+            Storage.saveFinalTestResults(MODULE_ID, correctCount, examQuestions.length, passed);
+            
+            // Award trophy if passed
+            if (passed) {
+                Storage.awardTrophy('perimetro-area');
+                Gamification.showTrophyToast('perimetro-area');
+            }
+            
+            const percentage = Math.round((correctCount / examQuestions.length) * 100);
+            
+            // Show results
+            let resultHTML = `
+                <div class="exam-summary ${passed ? 'passed' : 'failed'}">
+                    <h2>${passed ? '🎉 ¡Felicitaciones!' : '📚 Sigue Practicando'}</h2>
+                    <h3>Resultado: ${correctCount}/${examQuestions.length} (${percentage}%)</h3>
+                    <p>${correctCount} de ${examQuestions.length} respuestas correctas</p>
+                    ${passed ? 
+                        '<p class="trophy-message">🏆 ¡Has obtenido el trofeo "Experto en Medidas"!</p>' : 
+                        '<p>Necesitas 70% para aprobar (14/20). ¡Practica más e inténtalo de nuevo!</p>'}
+                </div>
+                <div class="exam-review">
+                    <h3>Revisión de Respuestas:</h3>
+            `;
+            
+            for (let i = 0; i < examQuestions.length; i++) {
+                const q = examQuestions[i];
+                const userAnswer = examAnswers[i];
+                const correct = userAnswer === q.answer;
+                
+                resultHTML += `
+                    <div class="review-item ${correct ? 'correct' : 'incorrect'}">
+                        <p><strong>Pregunta ${i + 1}:</strong> ${q.question}</p>
+                        <p>Tu respuesta: ${userAnswer} ${correct ? '✅' : '❌'}</p>
+                        ${!correct ? `<p>Respuesta correcta: ${q.answer}</p>` : ''}
+                    </div>
+                `;
+            }
+            
+            resultHTML += `
+                </div>
+                <button class="calc-button" onclick="retakeExam()">🔄 Intentar de Nuevo</button>
+                <button class="calc-button" onclick="showTab('glosario')">📚 Volver al Inicio</button>
+            `;
+            
+            document.getElementById('exam-container').innerHTML = '';
+            document.getElementById('exam-results').innerHTML = resultHTML;
+            document.getElementById('exam-results').style.display = 'block';
+            
+            examInProgress = false;
+            checkExamStatus();
         }
 
         function updateScoreDisplay() {
