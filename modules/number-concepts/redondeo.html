@@ -125,6 +125,52 @@
             font-weight: bold;
             color: var(--primary-color);
         }
+
+        .glossary-term {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .glossary-term h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .symbol-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .symbol-icon {
+            font-size: 3em;
+            color: var(--primary-color);
+        }
+
+        .symbol-content {
+            flex: 1;
+        }
+
+        .application-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .application-card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -132,174 +178,346 @@
         <div id="header-container"></div>
         <div id="tabs-container"></div>
 
-        <!-- DECENAS TAB -->
-        <div id="decenas" class="content tab-content active">
-            <h2 class="section-title">🔟 Redondear a Decenas</h2>
+        <!-- GLOSARIO TAB -->
+        <div id="glosario" class="content tab-content active">
+            <h2 class="section-title">📖 Glosario de Redondeo</h2>
             
             <div class="explanation">
-                <h3>¿Qué significa redondear?</h3>
-                <p>Redondear es encontrar el número más cercano que termina en 0. Es como encontrar el "vecino más cercano" en la recta numérica.</p>
+                <p>Aprende los términos clave relacionados con el redondeo de números:</p>
             </div>
 
-            <div class="rule-box">
-                <h3>📏 Regla para Decenas:</h3>
-                <ul class="line-height-relaxed">
-                    <li><strong>Si las unidades son 0, 1, 2, 3, o 4:</strong> Se redondea HACIA ABAJO (mantén la decena)</li>
-                    <li><strong>Si las unidades son 5, 6, 7, 8, o 9:</strong> Se redondea HACIA ARRIBA (aumenta la decena)</li>
-                </ul>
+            <div class="glossary-term">
+                <h3>🔵 Redondeo</h3>
+                <p><strong>Definición:</strong> Es el proceso de aproximar un número al valor más cercano de una posición específica (decenas, centenas, etc.). Nos ayuda a simplificar números y hacer cálculos mentales más rápidos.</p>
+                <p><strong>Ejemplo:</strong> 47 redondeado a la decena más cercana es 50.</p>
             </div>
 
-            <div class="input-section">
-                <h3>Prueba con un número:</h3>
-                <div class="input-group">
-                    <label for="decenas-input">Escribe un número:</label>
-                    <input type="number" id="decenas-input" placeholder="Ej: 47" min="0" max="999">
-                </div>
-                <button class="calc-button" onclick="roundToDecenas()">Redondear</button>
-                <div class="result" id="decenas-result"></div>
+            <div class="glossary-term">
+                <h3>🔵 Decena</h3>
+                <p><strong>Definición:</strong> Es un grupo de 10 unidades. La posición de las decenas es la segunda desde la derecha en un número. Los números que terminan en 0 son decenas exactas.</p>
+                <p><strong>Ejemplo:</strong> En el número 47, el 4 está en la posición de las decenas (4 × 10 = 40).</p>
             </div>
 
-            <div class="examples-grid">
-                <div class="example-card">
-                    <div class="original">23</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">20</div>
+            <div class="glossary-term">
+                <h3>🔵 Centena</h3>
+                <p><strong>Definición:</strong> Es un grupo de 100 unidades. La posición de las centenas es la tercera desde la derecha. Los números que terminan en 00 son centenas exactas.</p>
+                <p><strong>Ejemplo:</strong> En el número 347, el 3 está en la posición de las centenas (3 × 100 = 300).</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Millar</h3>
+                <p><strong>Definición:</strong> Es un grupo de 1,000 unidades. La posición de los millares es la cuarta desde la derecha. Los números que terminan en 000 son millares exactos.</p>
+                <p><strong>Ejemplo:</strong> En el número 3,478, el 3 está en la posición de los millares (3 × 1,000 = 3,000).</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Aproximación</h3>
+                <p><strong>Definición:</strong> Es el resultado de redondear un número. La aproximación es el número más cercano que tiene ceros en las posiciones menores a la que estamos redondeando.</p>
+                <p><strong>Ejemplo:</strong> La aproximación de 347 a la centena más cercana es 300.</p>
+            </div>
+        </div>
+
+        <!-- SÍMBOLOS TAB -->
+        <div id="simbolos" class="content tab-content">
+            <h2 class="section-title">🔣 Símbolos de Redondeo</h2>
+            
+            <div class="explanation">
+                <p>Conoce los símbolos y notaciones que se usan al trabajar con redondeo:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-icon">≈</div>
+                <div class="symbol-content">
+                    <h3>Símbolo de Aproximación (≈)</h3>
+                    <p><strong>Significado:</strong> "Aproximadamente igual a"</p>
+                    <p><strong>Uso:</strong> Se utiliza para indicar que un número ha sido redondeado.</p>
+                    <p><strong>Ejemplo:</strong> 47 ≈ 50 (47 es aproximadamente igual a 50 cuando se redondea a la decena)</p>
                 </div>
-                <div class="example-card">
-                    <div class="original">47</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">50</div>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-icon">↑</div>
+                <div class="symbol-content">
+                    <h3>Flecha hacia arriba (↑)</h3>
+                    <p><strong>Significado:</strong> Redondear hacia arriba</p>
+                    <p><strong>Uso:</strong> Indica que el número se aproxima al valor superior más cercano.</p>
+                    <p><strong>Ejemplo:</strong> 47 ↑ 50 (de 47 a 50, redondeamos hacia arriba)</p>
                 </div>
-                <div class="example-card">
-                    <div class="original">65</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">70</div>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-icon">↓</div>
+                <div class="symbol-content">
+                    <h3>Flecha hacia abajo (↓)</h3>
+                    <p><strong>Significado:</strong> Redondear hacia abajo</p>
+                    <p><strong>Uso:</strong> Indica que el número se aproxima al valor inferior más cercano.</p>
+                    <p><strong>Ejemplo:</strong> 23 ↓ 20 (de 23 a 20, redondeamos hacia abajo)</p>
                 </div>
-                <div class="example-card">
-                    <div class="original">82</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">80</div>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-icon">0</div>
+                <div class="symbol-content">
+                    <h3>Ceros (0)</h3>
+                    <p><strong>Significado:</strong> Posiciones sin valor</p>
+                    <p><strong>Uso:</strong> Los números redondeados siempre terminan en ceros en las posiciones menores.</p>
+                    <p><strong>Ejemplo:</strong> Al redondear a centenas: 347 → 30<strong>0</strong> (el 0 reemplaza las decenas y unidades)</p>
+                </div>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-icon">5</div>
+                <div class="symbol-content">
+                    <h3>El número 5 (Regla del 5)</h3>
+                    <p><strong>Significado:</strong> Punto de decisión</p>
+                    <p><strong>Uso:</strong> Si el dígito es 5 o mayor, redondeamos hacia arriba. Si es menor que 5, redondeamos hacia abajo.</p>
+                    <p><strong>Ejemplo:</strong> 45 → 50 (5 ≥ 5, redondeamos arriba) | 44 → 40 (4 < 5, redondeamos abajo)</p>
                 </div>
             </div>
         </div>
 
-        <!-- CENTENAS TAB -->
-        <div id="centenas" class="content tab-content">
-            <h2 class="section-title">💯 Redondear a Centenas</h2>
+        <!-- INTRODUCCIÓN TAB -->
+        <div id="introduccion" class="content tab-content">
+            <h2 class="section-title">📚 Introducción al Redondeo</h2>
             
             <div class="explanation">
-                <h3>¡Ahora con números más grandes!</h3>
-                <p>Redondear a centenas significa encontrar el número más cercano que termina en 00.</p>
+                <h3>¿Por qué es importante el redondeo?</h3>
+                <p>El redondeo es una habilidad matemática fundamental que usamos todos los días sin darnos cuenta. Nos ayuda a simplificar números grandes y hacer estimaciones rápidas en situaciones cotidianas.</p>
             </div>
 
-            <div class="rule-box">
-                <h3>📏 Regla para Centenas:</h3>
-                <ul class="line-height-relaxed">
-                    <li><strong>Mira las DECENAS (el segundo dígito):</strong></li>
-                    <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
-                    <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+            <div class="application-card">
+                <h4>🛒 En las Compras</h4>
+                <p>Cuando vas al supermercado, redondeas los precios para estimar cuánto gastarás:</p>
+                <ul>
+                    <li>Manzanas: $23.50 ≈ $20 (redondeo a decenas)</li>
+                    <li>Pan: $47.80 ≈ $50</li>
+                    <li>Leche: $28.90 ≈ $30</li>
+                    <li><strong>Estimación total:</strong> $20 + $50 + $30 = $100 (más fácil de calcular que $23.50 + $47.80 + $28.90)</li>
                 </ul>
             </div>
 
-            <div class="input-section">
-                <h3>Prueba con un número:</h3>
-                <div class="input-group">
-                    <label for="centenas-input">Escribe un número:</label>
-                    <input type="number" id="centenas-input" placeholder="Ej: 347" min="0" max="9999">
-                </div>
-                <button class="calc-button" onclick="roundToCentenas()">Redondear</button>
-                <div class="result" id="centenas-result"></div>
+            <div class="application-card">
+                <h4>📊 En Estadísticas y Noticias</h4>
+                <p>Los periódicos y noticieros redondean números grandes para hacerlos más comprensibles:</p>
+                <ul>
+                    <li>"La población de la ciudad es de 2 millones" (en lugar de 2,347,892 habitantes)</li>
+                    <li>"El estadio tiene capacidad para 50,000 personas" (en lugar de 49,678)</li>
+                    <li>"La empresa generó ingresos de 100 millones" (en lugar de $98,345,672)</li>
+                </ul>
             </div>
 
-            <div class="examples-grid">
-                <div class="example-card">
-                    <div class="original">230</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">200</div>
-                </div>
-                <div class="example-card">
-                    <div class="original">478</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">500</div>
-                </div>
-                <div class="example-card">
-                    <div class="original">650</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">700</div>
-                </div>
-                <div class="example-card">
-                    <div class="original">824</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">800</div>
-                </div>
+            <div class="application-card">
+                <h4>⏰ En el Tiempo</h4>
+                <p>Redondeamos el tiempo para dar respuestas aproximadas:</p>
+                <ul>
+                    <li>"Son las 3" (cuando son las 3:02 o 2:58)</li>
+                    <li>"Llego en 10 minutos" (cuando son 9 o 11 minutos)</li>
+                    <li>"La película dura 2 horas" (cuando dura 1:57 o 2:03)</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h4>📏 En Mediciones</h4>
+                <p>Al medir distancias o cantidades, usamos redondeo para simplificar:</p>
+                <ul>
+                    <li>"La ciudad está a 100 kilómetros" (en lugar de 98.7 km)</li>
+                    <li>"Peso 70 kilos" (en lugar de 69.3 kg)</li>
+                    <li>"La habitación mide 4 metros" (en lugar de 3.87 m)</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h4>💰 En Finanzas y Presupuestos</h4>
+                <p>Al planificar gastos, redondeamos para hacer cálculos más sencillos:</p>
+                <ul>
+                    <li>Renta: $4,850 ≈ $5,000</li>
+                    <li>Comida: $1,230 ≈ $1,000</li>
+                    <li>Transporte: $780 ≈ $800</li>
+                    <li><strong>Presupuesto mensual:</strong> $5,000 + $1,000 + $800 = $6,800</li>
+                </ul>
             </div>
 
             <div class="fun-facts">
-                <h3>💡 Truco:</h3>
-                <p>Para redondear 347 a centenas: mira el 4 (decenas). Como es menor que 5, mantienes el 3 → <strong>300</strong></p>
-            </div>
-        </div>
-
-        <!-- MILLARES TAB -->
-        <div id="millares" class="content tab-content">
-            <h2 class="section-title">🔢 Redondear a Millares</h2>
-            
-            <div class="explanation">
-                <h3>¡Los números más grandes!</h3>
-                <p>Redondear a millares significa encontrar el número más cercano que termina en 000.</p>
-            </div>
-
-            <div class="rule-box">
-                <h3>📏 Regla para Millares:</h3>
-                <ul class="line-height-relaxed">
-                    <li><strong>Mira las CENTENAS (el segundo dígito desde la izquierda en números de 4 dígitos):</strong></li>
-                    <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
-                    <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+                <h3>💡 ¿Sabías que...?</h3>
+                <ul>
+                    <li>El redondeo existe desde la antigua Mesopotamia, hace más de 4,000 años</li>
+                    <li>Los científicos usan redondeo para simplificar números con muchos decimales</li>
+                    <li>En computación, el redondeo ayuda a que los programas funcionen más rápido</li>
+                    <li>Tu cerebro automáticamente redondea números cuando piensas en cantidades grandes</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="input-section">
-                <h3>Prueba con un número:</h3>
-                <div class="input-group">
-                    <label for="millares-input">Escribe un número:</label>
-                    <input type="number" id="millares-input" placeholder="Ej: 3478" min="0" max="99999">
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content tab-content">
+            <h2 class="section-title">📖 Teoría del Redondeo</h2>
+
+            <!-- Decenas Section -->
+            <div class="theory-section">
+                <h3>🔟 Redondear a Decenas</h3>
+                
+                <div class="explanation">
+                    <p>Redondear es encontrar el número más cercano que termina en 0. Es como encontrar el "vecino más cercano" en la recta numérica.</p>
                 </div>
-                <button class="calc-button" onclick="roundToMillares()">Redondear</button>
-                <div class="result" id="millares-result"></div>
+
+                <div class="rule-box">
+                    <h3>📏 Regla para Decenas:</h3>
+                    <ul class="line-height-relaxed">
+                        <li><strong>Si las unidades son 0, 1, 2, 3, o 4:</strong> Se redondea HACIA ABAJO (mantén la decena)</li>
+                        <li><strong>Si las unidades son 5, 6, 7, 8, o 9:</strong> Se redondea HACIA ARRIBA (aumenta la decena)</li>
+                    </ul>
+                </div>
+
+                <div class="input-section">
+                    <h3>Prueba con un número:</h3>
+                    <div class="input-group">
+                        <label for="decenas-input">Escribe un número:</label>
+                        <input type="number" id="decenas-input" placeholder="Ej: 47" min="0" max="999">
+                    </div>
+                    <button class="calc-button" onclick="roundToDecenas()">Redondear</button>
+                    <div class="result" id="decenas-result"></div>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="original">23</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">20</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">47</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">50</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">65</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">70</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">82</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">80</div>
+                    </div>
+                </div>
             </div>
 
-            <div class="examples-grid">
-                <div class="example-card">
-                    <div class="original">2300</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">2000</div>
+            <!-- Centenas Section -->
+            <div class="theory-section" style="margin-top: 40px;">
+                <h3>💯 Redondear a Centenas</h3>
+                
+                <div class="explanation">
+                    <p>Redondear a centenas significa encontrar el número más cercano que termina en 00.</p>
                 </div>
-                <div class="example-card">
-                    <div class="original">4780</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">5000</div>
+
+                <div class="rule-box">
+                    <h3>📏 Regla para Centenas:</h3>
+                    <ul class="line-height-relaxed">
+                        <li><strong>Mira las DECENAS (el segundo dígito):</strong></li>
+                        <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
+                        <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+                    </ul>
                 </div>
-                <div class="example-card">
-                    <div class="original">6500</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">7000</div>
+
+                <div class="input-section">
+                    <h3>Prueba con un número:</h3>
+                    <div class="input-group">
+                        <label for="centenas-input">Escribe un número:</label>
+                        <input type="number" id="centenas-input" placeholder="Ej: 347" min="0" max="9999">
+                    </div>
+                    <button class="calc-button" onclick="roundToCentenas()">Redondear</button>
+                    <div class="result" id="centenas-result"></div>
                 </div>
-                <div class="example-card">
-                    <div class="original">8240</div>
-                    <div class="arrow">↓</div>
-                    <div class="rounded">8000</div>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="original">230</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">200</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">478</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">500</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">650</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">700</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">824</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">800</div>
+                    </div>
+                </div>
+
+                <div class="fun-facts">
+                    <h3>💡 Truco:</h3>
+                    <p>Para redondear 347 a centenas: mira el 4 (decenas). Como es menor que 5, mantienes el 3 → <strong>300</strong></p>
                 </div>
             </div>
 
-            <div class="fun-facts">
-                <h3>🌟 ¿Sabías que...?</h3>
-                <p>El redondeo se usa en la vida real para hacer estimaciones rápidas. Por ejemplo, si algo cuesta 4,780 pesos, puedes decir "cuesta como 5,000 pesos" para calcular más fácil.</p>
+            <!-- Millares Section -->
+            <div class="theory-section" style="margin-top: 40px;">
+                <h3>🔢 Redondear a Millares</h3>
+                
+                <div class="explanation">
+                    <p>Redondear a millares significa encontrar el número más cercano que termina en 000.</p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>📏 Regla para Millares:</h3>
+                    <ul class="line-height-relaxed">
+                        <li><strong>Mira las CENTENAS (el segundo dígito desde la izquierda en números de 4 dígitos):</strong></li>
+                        <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
+                        <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+                    </ul>
+                </div>
+
+                <div class="input-section">
+                    <h3>Prueba con un número:</h3>
+                    <div class="input-group">
+                        <label for="millares-input">Escribe un número:</label>
+                        <input type="number" id="millares-input" placeholder="Ej: 3478" min="0" max="99999">
+                    </div>
+                    <button class="calc-button" onclick="roundToMillares()">Redondear</button>
+                    <div class="result" id="millares-result"></div>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="original">2300</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">2000</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">4780</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">5000</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">6500</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">7000</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="original">8240</div>
+                        <div class="arrow">↓</div>
+                        <div class="rounded">8000</div>
+                    </div>
+                </div>
+
+                <div class="fun-facts">
+                    <h3>🌟 ¿Sabías que...?</h3>
+                    <p>El redondeo se usa en la vida real para hacer estimaciones rápidas. Por ejemplo, si algo cuesta 4,780 pesos, puedes decir "cuesta como 5,000 pesos" para calcular más fácil.</p>
+                </div>
             </div>
         </div>
 
-        <!-- PRÁCTICA TAB -->
-        <div id="practica" class="content tab-content">
-            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+        <!-- ENTRENAMIENTO TAB -->
+        <div id="entrenamiento" class="content tab-content">
+            <h2 class="section-title">🏆 Entrenamiento</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
@@ -331,6 +549,23 @@
                 </ul>
             </div>
         </div>
+
+        <!-- EXAMEN FINAL TAB -->
+        <div id="examen-final" class="content tab-content">
+            <h2 class="section-title">📝 Examen Final de Redondeo</h2>
+            
+            <div class="explanation">
+                <p>Completa este examen para demostrar tu dominio del redondeo de números.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro del Redondeo" 🏆</p>
+            </div>
+
+            <div id="exam-container">
+                <button class="calc-button" onclick="startExam()" id="start-exam-btn">Comenzar Examen</button>
+                <div id="exam-questions"></div>
+                <div id="exam-result"></div>
+            </div>
+        </div>
     </div>
 
     <script src="../../lib/storage.js"></script>
@@ -341,6 +576,38 @@
         const MODULE_ID = 'redondeo';
         let currentQuestion = null;
         let questionAnswered = false;
+        let examQuestions = [];
+        let examAnswers = {};
+        let examStarted = false;
+
+        // Exam question bank (25 questions, select 20 randomly)
+        const examQuestionBank = [
+            { q: "Redondea 34 a la decena más cercana:", a: 30, type: "decenas" },
+            { q: "Redondea 78 a la decena más cercana:", a: 80, type: "decenas" },
+            { q: "Redondea 45 a la decena más cercana:", a: 50, type: "decenas" },
+            { q: "Redondea 92 a la decena más cercana:", a: 90, type: "decenas" },
+            { q: "Redondea 17 a la decena más cercana:", a: 20, type: "decenas" },
+            { q: "Redondea 234 a la centena más cercana:", a: 200, type: "centenas" },
+            { q: "Redondea 567 a la centena más cercana:", a: 600, type: "centenas" },
+            { q: "Redondea 850 a la centena más cercana:", a: 900, type: "centenas" },
+            { q: "Redondea 491 a la centena más cercana:", a: 500, type: "centenas" },
+            { q: "Redondea 123 a la centena más cercana:", a: 100, type: "centenas" },
+            { q: "Redondea 2,340 a la millar más cercano:", a: 2000, type: "millares" },
+            { q: "Redondea 5,678 a la millar más cercano:", a: 6000, type: "millares" },
+            { q: "Redondea 8,500 a la millar más cercano:", a: 9000, type: "millares" },
+            { q: "Redondea 4,912 a la millar más cercano:", a: 5000, type: "millares" },
+            { q: "Redondea 1,234 a la millar más cercano:", a: 1000, type: "millares" },
+            { q: "Redondea 56 a la decena más cercana:", a: 60, type: "decenas" },
+            { q: "Redondea 23 a la decena más cercana:", a: 20, type: "decenas" },
+            { q: "Redondea 389 a la centena más cercana:", a: 400, type: "centenas" },
+            { q: "Redondea 712 a la centena más cercana:", a: 700, type: "centenas" },
+            { q: "Redondea 3,789 a la millar más cercano:", a: 4000, type: "millares" },
+            { q: "Redondea 6,234 a la millar más cercano:", a: 6000, type: "millares" },
+            { q: "Redondea 88 a la decena más cercana:", a: 90, type: "decenas" },
+            { q: "Redondea 445 a la centena más cercana:", a: 400, type: "centenas" },
+            { q: "Redondea 7,650 a la millar más cercano:", a: 8000, type: "millares" },
+            { q: "Redondea 955 a la centena más cercana:", a: 1000, type: "centenas" }
+        ];
 
         function init() {
             const headerHtml = Components.createHeader(
@@ -351,12 +618,14 @@
             document.getElementById('header-container').innerHTML = headerHtml;
 
             const tabs = [
-                { id: 'decenas', label: 'Decenas' },
-                { id: 'centenas', label: 'Centenas' },
-                { id: 'millares', label: 'Millares' },
-                { id: 'practica', label: '¡Práctica!' }
+                { id: 'glosario', label: 'Glosario' },
+                { id: 'simbolos', label: 'Símbolos' },
+                { id: 'introduccion', label: 'Introducción' },
+                { id: 'teoria', label: 'Teoría' },
+                { id: 'entrenamiento', label: 'Entrenamiento' },
+                { id: 'examen-final', label: 'Examen Final' }
             ];
-            const tabsHtml = Components.createTabs(tabs, 'decenas');
+            const tabsHtml = Components.createTabs(tabs, 'glosario');
             document.getElementById('tabs-container').innerHTML = tabsHtml;
 
             const scoreHtml = Components.createScoreDisplay();
@@ -375,6 +644,7 @@
             });
             
             Storage.updateStreak();
+            checkExamStatus();
         }
 
         function showTab(tabName) {
@@ -384,7 +654,7 @@
             document.getElementById(tabName).classList.add('active');
             
             document.querySelectorAll('.tab-button').forEach(button => {
-                if (button.textContent.toLowerCase().includes(tabName)) {
+                if (button.getAttribute('onclick').includes(tabName)) {
                     button.classList.add('active');
                 }
             });
@@ -517,6 +787,128 @@
         function updateScoreDisplay() {
             document.getElementById('score').textContent = Storage.getTotalPoints();
             document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
+        }
+
+        // Exam functions
+        function checkExamStatus() {
+            const examData = Storage.getFinalExamData(MODULE_ID);
+            if (examData && examData.passed) {
+                const container = document.getElementById('exam-container');
+                container.innerHTML = `
+                    <div class="result" style="background: rgba(78, 205, 196, 0.3); padding: 30px; border-radius: 15px; text-align: center;">
+                        <h3 style="color: var(--primary-color); margin-top: 0;">¡Examen Aprobado! 🎉</h3>
+                        <p style="font-size: 1.2em; margin: 20px 0;">
+                            <strong>Calificación:</strong> ${examData.score}%<br>
+                            <strong>Intentos:</strong> ${examData.attempts}
+                        </p>
+                        <p style="font-size: 1.1em;">Has obtenido el trofeo: <strong>"Maestro del Redondeo"</strong> 🏆</p>
+                        <button class="calc-button" onclick="resetExam()" style="margin-top: 20px;">Reintentar Examen</button>
+                    </div>
+                `;
+            }
+        }
+
+        function startExam() {
+            examStarted = true;
+            examAnswers = {};
+            
+            // Select 20 random questions from the bank
+            const shuffled = [...examQuestionBank].sort(() => Math.random() - 0.5);
+            examQuestions = shuffled.slice(0, 20);
+            
+            let html = '<div class="exam-questions-list">';
+            examQuestions.forEach((q, index) => {
+                html += `
+                    <div class="exam-question" style="background: white; padding: 20px; margin: 15px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 1.1em; margin-bottom: 15px;"><strong>Pregunta ${index + 1}:</strong> ${q.q}</p>
+                        <div class="input-group">
+                            <input type="number" id="exam-answer-${index}" placeholder="Tu respuesta" style="font-size: 1.1em;">
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            html += '<button class="calc-button" onclick="submitExam()" style="margin-top: 20px; font-size: 1.2em; padding: 15px 40px;">Enviar Examen</button>';
+            
+            document.getElementById('exam-questions').innerHTML = html;
+            document.getElementById('start-exam-btn').style.display = 'none';
+        }
+
+        function submitExam() {
+            let correctCount = 0;
+            
+            examQuestions.forEach((q, index) => {
+                const userAnswer = parseInt(document.getElementById(`exam-answer-${index}`).value);
+                examAnswers[index] = userAnswer;
+                if (userAnswer === q.a) {
+                    correctCount++;
+                }
+            });
+            
+            const score = Math.round((correctCount / examQuestions.length) * 100);
+            const passed = score >= 70;
+            
+            // Save exam result
+            Storage.saveFinalExamResult(MODULE_ID, score, passed);
+            
+            let resultHtml = `
+                <div class="result" style="background: ${passed ? 'rgba(78, 205, 196, 0.3)' : 'rgba(255, 107, 107, 0.3)'}; padding: 30px; margin-top: 30px; border-radius: 15px; text-align: center;">
+                    <h3 style="color: var(--primary-color); margin-top: 0;">
+                        ${passed ? '¡Felicitaciones! 🎉' : '¡Sigue Practicando! 💪'}
+                    </h3>
+                    <p style="font-size: 1.5em; margin: 20px 0;">
+                        <strong>Calificación: ${score}%</strong><br>
+                        <small>(${correctCount} de ${examQuestions.length} correctas)</small>
+                    </p>
+            `;
+            
+            if (passed) {
+                // Award trophy
+                Storage.awardTrophy('redondeo');
+                Gamification.showTrophyToast('Maestro del Redondeo');
+                
+                resultHtml += `
+                    <p style="font-size: 1.2em; color: var(--primary-color);">
+                        <strong>🏆 Has obtenido el trofeo "Maestro del Redondeo"</strong>
+                    </p>
+                    <p>¡Has demostrado dominio del redondeo de números!</p>
+                `;
+            } else {
+                resultHtml += `
+                    <p>Necesitas 70% o más para aprobar. ¡Practica más en la pestaña de Entrenamiento!</p>
+                    <button class="calc-button" onclick="resetExam()" style="margin-top: 20px;">Reintentar Examen</button>
+                `;
+            }
+            
+            resultHtml += '</div>';
+            
+            // Show detailed results
+            resultHtml += '<div style="margin-top: 30px;"><h3>Revisión de Respuestas:</h3>';
+            examQuestions.forEach((q, index) => {
+                const userAnswer = examAnswers[index];
+                const isCorrect = userAnswer === q.a;
+                resultHtml += `
+                    <div style="background: ${isCorrect ? 'rgba(78, 205, 196, 0.2)' : 'rgba(255, 107, 107, 0.2)'}; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                        <p><strong>Pregunta ${index + 1}:</strong> ${q.q}</p>
+                        <p>Tu respuesta: <strong>${userAnswer || 'No contestada'}</strong></p>
+                        <p>Respuesta correcta: <strong>${q.a}</strong></p>
+                        <p>${isCorrect ? '✅ Correcto' : '❌ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+            resultHtml += '</div>';
+            
+            document.getElementById('exam-result').innerHTML = resultHtml;
+            document.getElementById('exam-questions').innerHTML = '';
+        }
+
+        function resetExam() {
+            examStarted = false;
+            examAnswers = {};
+            examQuestions = [];
+            document.getElementById('exam-questions').innerHTML = '';
+            document.getElementById('exam-result').innerHTML = '';
+            document.getElementById('start-exam-btn').style.display = 'block';
         }
 
         init();

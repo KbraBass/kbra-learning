@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende a Redondear! - Conceptos Numéricos</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific rounding styles */
+        .number-line {
+            width: 100%;
+            max-width: 600px;
+            height: 100px;
+            margin: 30px auto;
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .line {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .tick {
+            position: absolute;
+            bottom: 23px;
+            width: 2px;
+            height: 17px;
+            background: var(--primary-color);
+        }
+        
+        .tick-label {
+            position: absolute;
+            bottom: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        
+        .number-marker {
+            position: absolute;
+            bottom: 35px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .rounding-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .number-box {
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 20px 30px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .arrow {
+            font-size: 2em;
+            color: var(--accent-color);
+        }
+        
+        .rule-box {
+            background: rgba(78, 205, 196, 0.2);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .rule-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .example-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-card .original {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .example-card .rounded {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header-container"></div>
+        <div id="tabs-container"></div>
+
+        <!-- DECENAS TAB -->
+        <div id="decenas" class="content tab-content active">
+            <h2 class="section-title">🔟 Redondear a Decenas</h2>
+            
+            <div class="explanation">
+                <h3>¿Qué significa redondear?</h3>
+                <p>Redondear es encontrar el número más cercano que termina en 0. Es como encontrar el "vecino más cercano" en la recta numérica.</p>
+            </div>
+
+            <div class="rule-box">
+                <h3>📏 Regla para Decenas:</h3>
+                <ul class="line-height-relaxed">
+                    <li><strong>Si las unidades son 0, 1, 2, 3, o 4:</strong> Se redondea HACIA ABAJO (mantén la decena)</li>
+                    <li><strong>Si las unidades son 5, 6, 7, 8, o 9:</strong> Se redondea HACIA ARRIBA (aumenta la decena)</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Prueba con un número:</h3>
+                <div class="input-group">
+                    <label for="decenas-input">Escribe un número:</label>
+                    <input type="number" id="decenas-input" placeholder="Ej: 47" min="0" max="999">
+                </div>
+                <button class="calc-button" onclick="roundToDecenas()">Redondear</button>
+                <div class="result" id="decenas-result"></div>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="original">23</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">20</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">47</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">50</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">65</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">70</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">82</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">80</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTENAS TAB -->
+        <div id="centenas" class="content tab-content">
+            <h2 class="section-title">💯 Redondear a Centenas</h2>
+            
+            <div class="explanation">
+                <h3>¡Ahora con números más grandes!</h3>
+                <p>Redondear a centenas significa encontrar el número más cercano que termina en 00.</p>
+            </div>
+
+            <div class="rule-box">
+                <h3>📏 Regla para Centenas:</h3>
+                <ul class="line-height-relaxed">
+                    <li><strong>Mira las DECENAS (el segundo dígito):</strong></li>
+                    <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
+                    <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Prueba con un número:</h3>
+                <div class="input-group">
+                    <label for="centenas-input">Escribe un número:</label>
+                    <input type="number" id="centenas-input" placeholder="Ej: 347" min="0" max="9999">
+                </div>
+                <button class="calc-button" onclick="roundToCentenas()">Redondear</button>
+                <div class="result" id="centenas-result"></div>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="original">230</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">200</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">478</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">500</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">650</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">700</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">824</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">800</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Truco:</h3>
+                <p>Para redondear 347 a centenas: mira el 4 (decenas). Como es menor que 5, mantienes el 3 → <strong>300</strong></p>
+            </div>
+        </div>
+
+        <!-- MILLARES TAB -->
+        <div id="millares" class="content tab-content">
+            <h2 class="section-title">🔢 Redondear a Millares</h2>
+            
+            <div class="explanation">
+                <h3>¡Los números más grandes!</h3>
+                <p>Redondear a millares significa encontrar el número más cercano que termina en 000.</p>
+            </div>
+
+            <div class="rule-box">
+                <h3>📏 Regla para Millares:</h3>
+                <ul class="line-height-relaxed">
+                    <li><strong>Mira las CENTENAS (el segundo dígito desde la izquierda en números de 4 dígitos):</strong></li>
+                    <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
+                    <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3>Prueba con un número:</h3>
+                <div class="input-group">
+                    <label for="millares-input">Escribe un número:</label>
+                    <input type="number" id="millares-input" placeholder="Ej: 3478" min="0" max="99999">
+                </div>
+                <button class="calc-button" onclick="roundToMillares()">Redondear</button>
+                <div class="result" id="millares-result"></div>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="original">2300</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">2000</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">4780</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">5000</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">6500</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">7000</div>
+                </div>
+                <div class="example-card">
+                    <div class="original">8240</div>
+                    <div class="arrow">↓</div>
+                    <div class="rounded">8000</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¿Sabías que...?</h3>
+                <p>El redondeo se usa en la vida real para hacer estimaciones rápidas. Por ejemplo, si algo cuesta 4,780 pesos, puedes decir "cuesta como 5,000 pesos" para calcular más fácil.</p>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container"></div>
+
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                
+                <div id="practice-visual" class="min-height-80-flex-center">
+                    <div class="number-box" id="practice-number" class="text-xlarge">?</div>
+                </div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta:</label>
+                        <input type="number" id="practice-answer" placeholder="?">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Identifica qué posición debes mirar (unidades, decenas, o centenas)</li>
+                    <li>Si el dígito es menor que 5, redondea ABAJO</li>
+                    <li>Si el dígito es 5 o mayor, redondea ARRIBA</li>
+                    <li>¡Practica mucho y se volverá automático!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'redondeo';
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            const headerHtml = Components.createHeader(
+                '🔟 ¡Aprende a Redondear! 🔟',
+                'Redondea números a decenas, centenas y millares',
+                '../index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            const tabs = [
+                { id: 'decenas', label: 'Decenas' },
+                { id: 'centenas', label: 'Centenas' },
+                { id: 'millares', label: 'Millares' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'decenas');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            updateScoreDisplay();
+            
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const button = this.closest('.input-section').querySelector('.calc-button');
+                        if (button && !button.disabled) button.click();
+                    }
+                });
+            });
+            
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                if (button.textContent.toLowerCase().includes(tabName)) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function roundToDecenas() {
+            const input = document.getElementById('decenas-input');
+            const result = document.getElementById('decenas-result');
+            const num = parseInt(input.value);
+            
+            if (isNaN(num)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const unidades = num % 10;
+            const rounded = unidades < 5 ? num - unidades : num + (10 - unidades);
+            
+            result.innerHTML = `
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
+                    <small>Unidades: ${unidades} ${unidades < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
+                </div>
+            `;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+        }
+
+        function roundToCentenas() {
+            const input = document.getElementById('centenas-input');
+            const result = document.getElementById('centenas-result');
+            const num = parseInt(input.value);
+            
+            if (isNaN(num)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const decenas = Math.floor((num % 100) / 10);
+            const rounded = Math.round(num / 100) * 100;
+            
+            result.innerHTML = `
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
+                    <small>Decenas: ${decenas} ${decenas < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
+                </div>
+            `;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+        }
+
+        function roundToMillares() {
+            const input = document.getElementById('millares-input');
+            const result = document.getElementById('millares-result');
+            const num = parseInt(input.value);
+            
+            if (isNaN(num)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const centenas = Math.floor((num % 1000) / 100);
+            const rounded = Math.round(num / 1000) * 1000;
+            
+            result.innerHTML = `
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
+                    <small>Centenas: ${centenas} ${centenas < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
+                </div>
+            `;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+        }
+
+        function generateQuestion() {
+            const types = [
+                { type: 'decenas', min: 11, max: 99, divisor: 10, name: 'decenas' },
+                { type: 'centenas', min: 101, max: 999, divisor: 100, name: 'centenas' },
+                { type: 'millares', min: 1001, max: 9999, divisor: 1000, name: 'millares' }
+            ];
+            
+            const selected = types[Math.floor(Math.random() * types.length)];
+            const number = Math.floor(Math.random() * (selected.max - selected.min + 1)) + selected.min;
+            const rounded = Math.round(number / selected.divisor) * selected.divisor;
+            
+            currentQuestion = { number, rounded, type: selected.name };
+            questionAnswered = false;
+            
+            document.getElementById('practice-question').textContent = `Redondea ${number} a ${selected.name}`;
+            document.getElementById('practice-number').textContent = number;
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('practice-answer').value);
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) return;
+            
+            if (isNaN(userAnswer)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            if (userAnswer === currentQuestion.rounded) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.number} redondeado a ${currentQuestion.type} es <strong>${currentQuestion.rounded}</strong><br><small>+10 puntos</small></div>`;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.rounded}</strong><br><small>-5 puntos</small></div>`;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('score').textContent = Storage.getTotalPoints();
+            document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
+        }
+
+        init();
+    </script>
+</body>
+</html>
