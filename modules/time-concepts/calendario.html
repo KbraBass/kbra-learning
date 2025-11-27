@@ -130,6 +130,35 @@
             margin: 30px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        
+        .glossary-term {
+            background: white;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glossary-term h3 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+        }
+        
+        .symbol-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .symbol-display {
+            font-size: 4em;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -137,13 +166,169 @@
         <div id="header-container"></div>
         <div id="tabs-container"></div>
 
-        <!-- CALENDARIO TAB -->
-        <div id="calendario" class="content tab-content active">
-            <h2 class="section-title">📅 El Calendario</h2>
+        <!-- GLOSARIO TAB -->
+        <div id="glosario" class="content tab-content active">
+            <h2 class="section-title">📖 Glosario de Calendario</h2>
             
             <div class="explanation">
-                <h3>¿Qué es un calendario?</h3>
-                <p>Un calendario es una herramienta que nos ayuda a organizar el tiempo en días, semanas, meses y años.</p>
+                <p>Aprende los términos clave relacionados con el calendario y el tiempo:</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Calendario</h3>
+                <p><strong>Definición:</strong> Sistema de organización del tiempo en días, semanas, meses y años. Nos ayuda a planificar y recordar fechas importantes.</p>
+                <p><strong>Ejemplo:</strong> "El calendario escolar muestra que las vacaciones de verano empiezan el 22 de junio."</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Mes</h3>
+                <p><strong>Definición:</strong> División del año que originalmente se basaba en el ciclo lunar. Un año tiene 12 meses con diferentes cantidades de días (28-31).</p>
+                <p><strong>Ejemplo:</strong> "Mi cumpleaños es en el mes de abril."</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Semana</h3>
+                <p><strong>Definición:</strong> Período de 7 días consecutivos que se repite continuamente. Va de lunes a domingo en la mayoría de calendarios.</p>
+                <p><strong>Ejemplo:</strong> "Esta semana tenemos examen el jueves."</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Año Bisiesto</h3>
+                <p><strong>Definición:</strong> Año que tiene 366 días en lugar de 365. Ocurre cada 4 años y febrero tiene 29 días en vez de 28.</p>
+                <p><strong>Ejemplo:</strong> "2024 es un año bisiesto, por eso febrero tuvo 29 días."</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔵 Festivo</h3>
+                <p><strong>Definición:</strong> Día especial en el que se celebra algo importante y generalmente no se trabaja ni se va a la escuela.</p>
+                <p><strong>Ejemplo:</strong> "El 25 de diciembre es un día festivo: ¡Navidad!"</p>
+            </div>
+        </div>
+
+        <!-- SÍMBOLOS TAB -->
+        <div id="simbolos" class="content tab-content">
+            <h2 class="section-title">🔣 Símbolos del Calendario</h2>
+            
+            <div class="explanation">
+                <p>Aprende los símbolos y notaciones que usamos para escribir fechas:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">📅</div>
+                <h3>Calendario</h3>
+                <p><strong>Uso:</strong> Representa un calendario o una fecha</p>
+                <p><strong>Ejemplo:</strong> "Abre el 📅 para ver qué día es hoy"</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">/</div>
+                <h3>Barra (Separador de fecha)</h3>
+                <p><strong>Uso:</strong> Separa el día, mes y año en una fecha</p>
+                <p><strong>Ejemplo:</strong> "27/11/2025" (día/mes/año)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">-</div>
+                <h3>Guion (Separador alternativo)</h3>
+                <p><strong>Uso:</strong> También se usa para separar partes de una fecha</p>
+                <p><strong>Ejemplo:</strong> "2025-11-27" (formato ISO: año-mes-día)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">D/M/A</div>
+                <h3>Formato Español</h3>
+                <p><strong>Uso:</strong> En España usamos día/mes/año</p>
+                <p><strong>Ejemplo:</strong> "15/08/2025" = 15 de agosto de 2025</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">🔄</div>
+                <h3>Repetición/Ciclo</h3>
+                <p><strong>Uso:</strong> Indica eventos que se repiten</p>
+                <p><strong>Ejemplo:</strong> "🔄 Cada lunes" = Se repite todos los lunes</p>
+            </div>
+        </div>
+
+        <!-- INTRODUCCIÓN TAB -->
+        <div id="introduccion" class="content tab-content">
+            <h2 class="section-title">📚 Introducción al Calendario</h2>
+            
+            <div class="explanation">
+                <h3>¿Por qué es importante el calendario?</h3>
+                <p>El calendario es una herramienta fundamental en nuestra vida diaria que nos ayuda a:</p>
+                <ul>
+                    <li><strong>Organizar</strong> nuestras actividades y compromisos</li>
+                    <li><strong>Recordar</strong> fechas importantes como cumpleaños y festivos</li>
+                    <li><strong>Planificar</strong> eventos futuros como viajes o exámenes</li>
+                    <li><strong>Coordinar</strong> reuniones y citas con otras personas</li>
+                    <li><strong>Entender</strong> ciclos naturales como las estaciones</li>
+                </ul>
+            </div>
+
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3>🏫 En la Escuela</h3>
+                    <p>Los calendarios escolares marcan:</p>
+                    <ul>
+                        <li>Días de clase y vacaciones</li>
+                        <li>Fechas de exámenes</li>
+                        <li>Entregas de trabajos</li>
+                        <li>Eventos y excursiones</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-card">
+                    <h3>👨‍👩‍👧‍👦 En Familia</h3>
+                    <p>Las familias usan calendarios para:</p>
+                    <ul>
+                        <li>Recordar cumpleaños</li>
+                        <li>Planificar vacaciones</li>
+                        <li>Programar visitas médicas</li>
+                        <li>Organizar celebraciones</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-card">
+                    <h3>⚽ En Deportes</h3>
+                    <p>Los calendarios deportivos incluyen:</p>
+                    <ul>
+                        <li>Fechas de partidos</li>
+                        <li>Torneos y campeonatos</li>
+                        <li>Entrenamientos especiales</li>
+                        <li>Temporadas deportivas</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-card">
+                    <h3>🎉 Celebraciones</h3>
+                    <p>Días festivos importantes:</p>
+                    <ul>
+                        <li>Año Nuevo (1 enero)</li>
+                        <li>Reyes Magos (6 enero)</li>
+                        <li>Semana Santa (marzo/abril)</li>
+                        <li>Navidad (25 diciembre)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>📆 Datos Curiosos:</h3>
+                <ul>
+                    <li>El calendario que usamos se llama <strong>Gregoriano</strong> y fue introducido por el Papa Gregorio XIII en 1582</li>
+                    <li>Los nombres de los meses vienen del latín y algunos honran a emperadores romanos</li>
+                    <li>Septiembre, octubre, noviembre y diciembre significan 7º, 8º, 9º y 10º mes, ¡pero ahora son el 9º, 10º, 11º y 12º!</li>
+                    <li>No todos los países usan el mismo calendario: algunos usan calendarios lunares</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content tab-content">
+            <h2 class="section-title">📅 El Calendario Interactivo</h2>
+            
+            <div class="explanation">
+                <h3>Explora el calendario</h3>
+                <p>Usa los botones para navegar entre meses y descubre la estructura del calendario.</p>
             </div>
 
             <div class="calendar-container">
@@ -164,51 +349,8 @@
                     <li>Un día tiene <strong>24 horas</strong></li>
                 </ul>
             </div>
-        </div>
 
-        <!-- CONCEPTOS TAB -->
-        <div id="conceptos" class="content tab-content">
-            <h2 class="section-title">📖 Conceptos del Tiempo</h2>
-            
-            <div class="concepts-grid">
-                <div class="concept-card">
-                    <h3>🌅 Día</h3>
-                    <p>El tiempo que tarda la Tierra en dar una vuelta sobre sí misma.</p>
-                    <p><strong>24 horas</strong></p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>📅 Semana</h3>
-                    <p>Un conjunto de 7 días consecutivos.</p>
-                    <p><strong>Lunes a Domingo</strong></p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>📆 Mes</h3>
-                    <p>Aproximadamente el tiempo de un ciclo lunar.</p>
-                    <p><strong>28-31 días</strong></p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🌍 Año</h3>
-                    <p>El tiempo que tarda la Tierra en dar una vuelta alrededor del Sol.</p>
-                    <p><strong>365 o 366 días</strong></p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🔄 Año Bisiesto</h3>
-                    <p>Cada 4 años, febrero tiene 29 días en vez de 28.</p>
-                    <p><strong>Próximo: 2028</strong></p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🗓️ Década</h3>
-                    <p>Un período de 10 años.</p>
-                    <p><strong>2020-2029</strong></p>
-                </div>
-            </div>
-
-            <h3 class="text-center-mb-40">Los 12 Meses del Año</h3>
+            <h3 class="text-center">Los 12 Meses del Año</h3>
             
             <div class="months-grid">
                 <div class="month-card"><div class="month-name">Enero</div><div class="month-days">31 días</div></div>
@@ -224,84 +366,7 @@
                 <div class="month-card"><div class="month-name">Noviembre</div><div class="month-days">30 días</div></div>
                 <div class="month-card"><div class="month-name">Diciembre</div><div class="month-days">31 días</div></div>
             </div>
-        </div>
 
-        <!-- FESTIVOS TAB -->
-        <div id="festivos" class="content tab-content">
-            <h2 class="section-title">🎉 Festivos de Madrid</h2>
-            
-            <div class="explanation">
-                <h3>Días Festivos en Madrid</h3>
-                <p>Estos son los días festivos principales en la Comunidad de Madrid durante el año.</p>
-            </div>
-
-            <div class="concepts-grid">
-                <div class="concept-card">
-                    <h3>🎆 1 de Enero</h3>
-                    <p><strong>Año Nuevo</strong></p>
-                    <p>Inicio del año calendario</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>👑 6 de Enero</h3>
-                    <p><strong>Reyes Magos</strong></p>
-                    <p>Día de los Reyes Magos</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>✝️ Marzo/Abril</h3>
-                    <p><strong>Semana Santa</strong></p>
-                    <p>Jueves y Viernes Santo</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>👷 1 de Mayo</h3>
-                    <p><strong>Día del Trabajo</strong></p>
-                    <p>Fiesta Internacional</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🏛️ 2 de Mayo</h3>
-                    <p><strong>Comunidad de Madrid</strong></p>
-                    <p>Día de la Comunidad</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🙏 15 de Agosto</h3>
-                    <p><strong>Asunción</strong></p>
-                    <p>Fiesta religiosa</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🇪🇸 12 de Octubre</h3>
-                    <p><strong>Fiesta Nacional</strong></p>
-                    <p>Día de la Hispanidad</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🙏 1 de Noviembre</h3>
-                    <p><strong>Todos los Santos</strong></p>
-                    <p>Fiesta religiosa</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🏛️ 6 de Diciembre</h3>
-                    <p><strong>Día de la Constitución</strong></p>
-                    <p>Constitución Española</p>
-                </div>
-                
-                <div class="concept-card">
-                    <h3>🎄 25 de Diciembre</h3>
-                    <p><strong>Navidad</strong></p>
-                    <p>Celebración del nacimiento de Jesús</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CALCULADORA TAB -->
-        <div id="calculadora" class="content tab-content">
-            <h2 class="section-title">🧮 Calculadora de Fechas</h2>
-            
             <div class="date-calculator">
                 <h3>¿Cuántos días faltan?</h3>
                 <div class="input-section">
@@ -327,9 +392,9 @@
             </div>
         </div>
 
-        <!-- PRÁCTICA TAB -->
-        <div id="practica" class="content tab-content">
-            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+        <!-- ENTRENAMIENTO TAB -->
+        <div id="entrenamiento" class="content tab-content">
+            <h2 class="section-title">🏆 Entrenamiento</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
@@ -341,7 +406,7 @@
                 <div class="input-section">
                     <div class="input-group">
                         <label for="practice-answer">Tu respuesta:</label>
-                        <input type="text" id="practice-answer" placeholder="?">
+                        <input type="text" id="practice-answer" placeholder="?" onkeypress="if(event.key==='Enter') checkAnswer()">
                     </div>
                     <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
                     <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
@@ -355,7 +420,26 @@
                     <li>Aprende el orden de los meses y sus días</li>
                     <li>Recuerda: "30 días trae septiembre, abril, junio y noviembre"</li>
                     <li>Los días de la semana siempre van en el mismo orden</li>
+                    <li>Los meses con 31 días son: enero, marzo, mayo, julio, agosto, octubre y diciembre</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- EXAMEN FINAL TAB -->
+        <div id="examen-final" class="content tab-content">
+            <h2 class="section-title">📝 Examen Final de Calendario</h2>
+            
+            <div class="explanation">
+                <p>Completa este examen para demostrar tu dominio del calendario.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro del Calendario" 🏆</p>
+            </div>
+
+            <div class="exam-container">
+                <div id="exam-progress"></div>
+                <div id="exam-question-container"></div>
+                <div id="exam-result" style="display: none;"></div>
+                <button class="primary-button" onclick="startExam()">Comenzar Examen</button>
             </div>
         </div>
     </div>
@@ -369,6 +453,10 @@
         let currentQuestion = null;
         let questionAnswered = false;
         let currentDate = new Date();
+        let examQuestions = [];
+        let currentExamQuestion = 0;
+        let examAnswers = [];
+        let examStarted = false;
 
         const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
@@ -383,13 +471,14 @@
             document.getElementById('header-container').innerHTML = headerHtml;
 
             const tabs = [
-                { id: 'calendario', label: 'Calendario' },
-                { id: 'conceptos', label: 'Conceptos' },
-                { id: 'festivos', label: 'Festivos Madrid' },
-                { id: 'calculadora', label: 'Calculadora de Fechas' },
-                { id: 'practica', label: '¡Práctica!' }
+                { id: 'glosario', label: 'Glosario' },
+                { id: 'simbolos', label: 'Símbolos' },
+                { id: 'introduccion', label: 'Introducción' },
+                { id: 'teoria', label: 'Teoría' },
+                { id: 'entrenamiento', label: 'Entrenamiento' },
+                { id: 'examen-final', label: 'Examen Final' }
             ];
-            const tabsHtml = Components.createTabs(tabs, 'calendario');
+            const tabsHtml = Components.createTabs(tabs, 'glosario');
             document.getElementById('tabs-container').innerHTML = tabsHtml;
 
             const scoreHtml = Components.createScoreDisplay();
@@ -406,12 +495,19 @@
             
             document.getElementById(tabName).classList.add('active');
             
+            const tabLabels = {
+                'glosario': 'Glosario',
+                'simbolos': 'Símbolos',
+                'introduccion': 'Introducción',
+                'teoria': 'Teoría',
+                'entrenamiento': 'Entrenamiento',
+                'examen-final': 'Examen Final'
+            };
+            
             document.querySelectorAll('.tab-button').forEach(button => {
-                if (button.textContent.includes('Calendario') && tabName === 'calendario') button.classList.add('active');
-                else if (button.textContent.includes('Conceptos') && tabName === 'conceptos') button.classList.add('active');
-                else if (button.textContent.includes('Festivos') && tabName === 'festivos') button.classList.add('active');
-                else if (button.textContent.includes('Calculadora') && tabName === 'calculadora') button.classList.add('active');
-                else if (button.textContent.includes('Práctica') && tabName === 'practica') button.classList.add('active');
+                if (button.textContent.includes(tabLabels[tabName])) {
+                    button.classList.add('active');
+                }
             });
         }
 
@@ -469,7 +565,7 @@
                 result.innerHTML = `<div class="text-dark">Esa fecha ya pasó hace <strong>${Math.abs(diffDays)} días</strong></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             } else if (diffDays === 0) {
-                result.innerHTML = '<div class="text-dark"><strong>¡Es hoy!</strong> 🎉</div>';
+                result.innerHTML = '<div class="text-dark"><strong>¡Es hoy!</strong> 🎉</div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 result.innerHTML = `<div class="text-dark">Faltan <strong>${diffDays} días</strong></div>`;
@@ -501,7 +597,9 @@
                 { q: '¿Cuántos días tiene enero?', a: '31' },
                 { q: '¿Cuántos días tiene abril?', a: '30' },
                 { q: '¿Qué mes tiene 28 o 29 días?', a: 'febrero' },
-                { q: '¿Cuántas horas tiene un día?', a: '24' }
+                { q: '¿Cuántas horas tiene un día?', a: '24' },
+                { q: '¿Cuántos días tiene diciembre?', a: '31' },
+                { q: '¿Cuántos días tiene septiembre?', a: '30' }
             ];
             
             currentQuestion = questions[Math.floor(Math.random() * questions.length)];
@@ -546,6 +644,169 @@
             }
             
             updateScoreDisplay();
+        }
+
+        function startExam() {
+            if (examStarted) {
+                if (!confirm('¿Quieres reiniciar el examen? Perderás tu progreso actual.')) {
+                    return;
+                }
+            }
+            
+            const allQuestions = [
+                { q: '¿Cuántos días tiene una semana?', a: '7' },
+                { q: '¿Cuántos meses tiene un año?', a: '12' },
+                { q: '¿Cuántos días tiene un año normal?', a: '365' },
+                { q: '¿Cuántos días tiene un año bisiesto?', a: '366' },
+                { q: '¿Cuántos días tiene febrero en un año normal?', a: '28' },
+                { q: '¿Cuántos días tiene febrero en un año bisiesto?', a: '29' },
+                { q: '¿Cuántos días tiene enero?', a: '31' },
+                { q: '¿Cuántos días tiene abril?', a: '30' },
+                { q: '¿Cuántos días tiene diciembre?', a: '31' },
+                { q: '¿Cuántos días tiene septiembre?', a: '30' },
+                { q: '¿Cuántas horas tiene un día?', a: '24' },
+                { q: '¿Qué mes es el primero del año?', a: 'enero' },
+                { q: '¿Qué mes es el último del año?', a: 'diciembre' },
+                { q: '¿Qué mes tiene 28 o 29 días?', a: 'febrero' },
+                { q: '¿Cuántos días tiene mayo?', a: '31' },
+                { q: '¿Cuántos días tiene junio?', a: '30' },
+                { q: '¿Cuántos días tiene octubre?', a: '31' },
+                { q: '¿Cuántos días tiene noviembre?', a: '30' },
+                { q: '¿Qué mes viene después de enero?', a: 'febrero' },
+                { q: '¿Qué mes viene antes de diciembre?', a: 'noviembre' },
+                { q: '¿Cuántos meses tienen 31 días?', a: '7' },
+                { q: '¿Cuántos meses tienen 30 días?', a: '4' },
+                { q: '¿En qué mes está la Navidad?', a: 'diciembre' },
+                { q: '¿Cuántos días tiene agosto?', a: '31' },
+                { q: '¿Cuántos días tiene julio?', a: '31' },
+                { q: '¿Qué mes viene después de febrero?', a: 'marzo' },
+                { q: '¿Cuántos días tiene marzo?', a: '31' },
+                { q: '¿Cada cuántos años hay un año bisiesto?', a: '4' },
+                { q: '¿Qué día de la semana viene después del domingo?', a: 'lunes' },
+                { q: '¿Qué día de la semana viene antes del sábado?', a: 'viernes' }
+            ];
+            
+            examQuestions = [];
+            while (examQuestions.length < 20) {
+                const q = allQuestions[Math.floor(Math.random() * allQuestions.length)];
+                if (!examQuestions.find(eq => eq.q === q.q)) {
+                    examQuestions.push(q);
+                }
+            }
+            
+            currentExamQuestion = 0;
+            examAnswers = [];
+            examStarted = true;
+            
+            document.querySelector('.exam-container button').style.display = 'none';
+            document.getElementById('exam-result').style.display = 'none';
+            
+            showExamQuestion();
+        }
+
+        function showExamQuestion() {
+            const container = document.getElementById('exam-question-container');
+            const progress = document.getElementById('exam-progress');
+            
+            progress.innerHTML = `<p>Pregunta ${currentExamQuestion + 1} de ${examQuestions.length}</p>`;
+            
+            const q = examQuestions[currentExamQuestion];
+            container.innerHTML = `
+                <div class="explanation">
+                    <h3>${q.q}</h3>
+                    <div class="input-section">
+                        <input type="text" id="exam-answer" placeholder="Tu respuesta" onkeypress="if(event.key==='Enter') submitExamAnswer()">
+                        <button class="primary-button" onclick="submitExamAnswer()">Siguiente</button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('exam-answer').focus();
+        }
+
+        function submitExamAnswer() {
+            const answer = document.getElementById('exam-answer').value.trim().toLowerCase();
+            
+            if (!answer) {
+                alert('Por favor, escribe una respuesta antes de continuar.');
+                return;
+            }
+            
+            const correct = answer === examQuestions[currentExamQuestion].a.toLowerCase();
+            examAnswers.push({
+                question: examQuestions[currentExamQuestion].q,
+                userAnswer: answer,
+                correctAnswer: examQuestions[currentExamQuestion].a,
+                correct: correct
+            });
+            
+            currentExamQuestion++;
+            
+            if (currentExamQuestion < examQuestions.length) {
+                showExamQuestion();
+            } else {
+                showExamResults();
+            }
+        }
+
+        function showExamResults() {
+            const container = document.getElementById('exam-question-container');
+            const resultDiv = document.getElementById('exam-result');
+            const progress = document.getElementById('exam-progress');
+            
+            container.innerHTML = '';
+            progress.innerHTML = '';
+            
+            const correctCount = examAnswers.filter(a => a.correct).length;
+            const percentage = (correctCount / examQuestions.length * 100).toFixed(0);
+            const passed = percentage >= 70;
+            
+            let resultHTML = `
+                <div class="explanation ${passed ? 'success' : 'error'}">
+                    <h3>${passed ? '¡Felicitaciones! 🎉' : '¡Sigue practicando! 💪'}</h3>
+                    <p>Obtuviste <strong>${correctCount}</strong> de <strong>${examQuestions.length}</strong> respuestas correctas</p>
+                    <p>Porcentaje: <strong>${percentage}%</strong></p>
+                    ${passed ? '<p>¡Has aprobado el examen!</p>' : '<p>Necesitas al menos 70% para aprobar. ¡Intenta de nuevo!</p>'}
+                </div>
+                
+                <h3>Resumen de respuestas:</h3>
+                <div class="concepts-grid">
+            `;
+            
+            examAnswers.forEach((answer, index) => {
+                resultHTML += `
+                    <div class="concept-card ${answer.correct ? 'correct-answer' : 'incorrect-answer'}">
+                        <h4>Pregunta ${index + 1}</h4>
+                        <p><strong>${answer.question}</strong></p>
+                        <p>Tu respuesta: ${answer.userAnswer}</p>
+                        ${!answer.correct ? `<p>Respuesta correcta: <strong>${answer.correctAnswer}</strong></p>` : '<p>✅ Correcto</p>'}
+                    </div>
+                `;
+            });
+            
+            resultHTML += `
+                </div>
+                <button class="primary-button" onclick="resetExam()">Volver a intentar</button>
+            `;
+            
+            resultDiv.innerHTML = resultHTML;
+            resultDiv.style.display = 'block';
+            
+            if (passed) {
+                Storage.completeModule(MODULE_ID, percentage);
+                Gamification.awardTrophy('calendario');
+                setTimeout(() => {
+                    alert('¡Felicidades! Has ganado el trofeo "Maestro del Calendario" 🏆');
+                }, 500);
+            }
+        }
+
+        function resetExam() {
+            examStarted = false;
+            document.querySelector('.exam-container button').style.display = 'block';
+            document.getElementById('exam-question-container').innerHTML = '';
+            document.getElementById('exam-result').style.display = 'none';
+            document.getElementById('exam-progress').innerHTML = '';
         }
 
         function updateScoreDisplay() {
