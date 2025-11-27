@@ -1,6 +1,6 @@
 # 📋 Lista de Conversión de Módulos
 
-**Progreso Total: 20/28 módulos completados (71.4%)**
+**Progreso Total: 22/28 módulos completados (78.6%)**
 
 ## Estado de Conversión
 
@@ -114,7 +114,7 @@
     - Trofeo: "Maestro de Determinantes"
     - Fecha: 27 Nov 2025
   
-- [ ] **Volume 2** - 8 módulos
+- [ ] **Volume 2** - 10 módulos
   - [x] preliminares-reales.html - ✅ Completado
     - Estado: Convertido a 6 pestañas estándar
     - Examen final: 20 preguntas, 70% para aprobar
@@ -130,23 +130,29 @@
     - Examen final: 20 preguntas, 70% para aprobar
     - Trofeo: "Maestro de Funciones II"
     - Fecha: 27 Nov 2025
-  - [ ] representacion.html
+  - [x] representacion.html - ✅ Completado
+    - Estado: Convertido a 6 pestañas estándar
+    - Examen final: 20 preguntas, 70% para aprobar
+    - Trofeo: "Maestro de Representación"
+    - Fecha: 27 Nov 2025
   - [ ] limites.html
+  - [ ] continuidad.html
   - [ ] derivadas.html
   - [ ] integral.html
-  - [otros]
+  - [ ] aplicaciones.html
+  - [ ] series.html
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 21 ✅
+- **Completados**: 22 ✅
 - **En progreso**: 0
-- **Pendientes**: 7+
-- **Progreso**: 75.0% (21/28)
+- **Pendientes**: 6
+- **Progreso**: 78.6% (22/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
 - **Semana 2 (Geometría y Tiempo)**: ✅ 100% Completada (6/6)
 - **Semana 3 (Conceptos Numéricos)**: ✅ 100% Completada (3/3)
 - **Semana 4+ (Matemáticas Avanzadas Volume 1)**: ✅ 100% Completada (5/5)
-- **Semana 4+ (Matemáticas Avanzadas Volume 2)**: 🔄 20% Completada (2/10)
+- **Semana 4+ (Matemáticas Avanzadas Volume 2)**: 🔄 40% Completada (4/10)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
