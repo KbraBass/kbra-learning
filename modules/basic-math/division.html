@@ -301,9 +301,9 @@
             
             // Show remainder if exists
             if (remainder > 0) {
-                html += '<div style="margin-top: 20px; text-align: center;">';
-                html += '<p style="color: #333; font-size: 1.2em; margin-bottom: 10px;">Sobran:</p>';
-                html += '<div style="display: flex; gap: 5px; justify-content: center;">';
+                html += '<div class="text-center-mt">';
+                html += '<p class="text-dark-xl-mb">Sobran:</p>';
+                html += '<div class="flex-gap-sm-center">';
                 for (let i = 0; i < remainder; i++) {
                     html += '<div class="item-block">★</div>';
                 }
@@ -367,7 +367,7 @@
             html += `<p>${divisor} × ${quotient} + ${remainder} = ${divisor * quotient + remainder}</p>`;
             
             if (divisor * quotient + remainder === dividend) {
-                html += '<p style="color: #00b894; font-weight: bold;">✓ ¡Correcto!</p>';
+                html += '<p class="text-green-bold">✓ ¡Correcto!</p>';
             }
             
             html += '</div>';

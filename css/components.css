@@ -1308,3 +1308,178 @@ tr:hover {
     --card-color2: #764ba2;
 }
 
+/* Additional patterns for Phase 5 */
+.mb-15 {
+    margin-bottom: var(--space-md);
+}
+
+.text-center-mb {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.text-center-mb-sm {
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+.text-center-gray-mb {
+    text-align: center;
+    color: #666;
+    margin-bottom: var(--space-lg);
+}
+
+.text-center-margin-30 {
+    text-align: center;
+    margin: var(--space-2xl) 0;
+    color: #f093fb;
+}
+
+.display-none {
+    display: none;
+}
+
+.flex-gap-sm-center {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.flex-gap-center {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+.flex-wrap-gap-center {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin: var(--space-lg) 0;
+}
+
+.flex-align-gap {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.text-xlarge-primary {
+    font-size: 3em;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.text-xlarge-pink {
+    font-size: 3em;
+    color: #f5576c;
+    font-weight: bold;
+}
+
+.text-large-muted {
+    font-size: 1.5em;
+    color: #333;
+    margin: var(--space-sm);
+}
+
+.text-xl-bold {
+    font-size: var(--text-xl);
+    font-weight: bold;
+}
+
+.text-xl-bold-center {
+    margin-top: var(--space-lg);
+    font-size: var(--text-xl);
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-center-mt {
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+.text-primary-large-mb {
+    color: #f5576c;
+    font-size: 1.5em;
+}
+
+.text-primary-xl {
+    color: var(--color-primary);
+    font-size: 1.3em;
+}
+
+.text-dark-xl-mb {
+    color: #333;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.text-green-bold {
+    color: #00b894;
+    font-weight: bold;
+}
+
+.ml-20-mt-10 {
+    margin-left: var(--space-lg);
+    margin-top: var(--space-sm);
+}
+
+.gradient-teal-green {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+}
+
+.gradient-green-blue {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.card-pink-blue {
+    --card-color1: #fbc2eb;
+    --card-color2: #a6c1ee;
+}
+
+.card-green-blue {
+    --card-color1: #84fab0;
+    --card-color2: #8fd3f4;
+}
+
+.result-container-tall {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-button {
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.width-200 {
+    width: 200px;
+    height: 200px;
+}
+
+.width-400 {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.width-12 {
+    width: 12px;
+    height: 12px;
+}
+
+.width-full-max-400 {
+    width: 100%;
+    max-width: 400px;
+    margin: var(--space-sm) auto;
+    display: block;
+}
+

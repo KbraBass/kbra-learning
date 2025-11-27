@@ -472,7 +472,7 @@
             
             html += '<div class="text-large-dark">=</div>';
             
-            html += `<div style="font-size: 3em; color: #f5576c; font-weight: bold;">${num1 + num2}</div>`;
+            html += `<div class="text-xlarge-pink">${num1 + num2}</div>`;
             
             container.innerHTML = html;
         }
@@ -514,7 +514,7 @@
             const finalUnits = unitsSum % 10;
             const tensSum = tens1 + tens2 + carry;
             
-            let html = '<h3 style="color: #f5576c; margin-bottom: 15px;">Paso a paso:</h3>';
+            let html = '<h3 class="text-error" class="mb-15">Paso a paso:</h3>';
             html += '<div class="text-xl-relaxed">';
             html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} + ${units2} = ${unitsSum}`;
             if (carry > 0) {

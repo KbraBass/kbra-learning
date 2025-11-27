@@ -219,13 +219,13 @@
             </div>
 
             <div class="time-selector">
-                <label style="display: flex; align-items: center; gap: 10px;">
+                <label class="flex-align-gap">
                     <span>Hora:</span>
                     <select id="hour-select" onchange="updateAnalogClock()">
                         ${Array.from({length: 12}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
                     </select>
                 </label>
-                <label style="display: flex; align-items: center; gap: 10px;">
+                <label class="flex-align-gap">
                     <span>Minutos:</span>
                     <select id="minute-select" onchange="updateAnalogClock()">
                         ${[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(m => `<option value="${m}">${m.toString().padStart(2, '0')}</option>`).join('')}
@@ -519,11 +519,11 @@
             const minuteDegrees = minute * 6;
             
             document.getElementById('practice-visual').innerHTML = `
-                <div class="clock-container" style="width: 200px; height: 200px;">
+                <div class="clock-container" class="width-200">
                     <div class="clock-face">
                         <div class="clock-hand hour-hand" style="transform: rotate(${hourDegrees}deg); width: 6px; height: 60px; margin-left: -3px;"></div>
                         <div class="clock-hand minute-hand" style="transform: rotate(${minuteDegrees}deg); width: 4px; height: 80px; margin-left: -2px;"></div>
-                        <div class="clock-center" style="width: 12px; height: 12px;"></div>
+                        <div class="clock-center" class="width-12"></div>
                     </div>
                 </div>
             `;

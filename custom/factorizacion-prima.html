@@ -581,7 +581,7 @@
         <!-- TAB 5: PRÁCTICA -->
         <div id="practica" class="tab-content">
             <div class="explanation">
-                <h2 style="margin-bottom: 15px;">🏆 ¡Practica la Factorización!</h2>
+                <h2 class="mb-15">🏆 ¡Practica la Factorización!</h2>
                 <p>Resuelve ejercicios de factorización prima y suma puntos.</p>
             </div>
 
@@ -600,7 +600,7 @@
                     <button onclick="checkAnswer()">Comprobar</button>
                     <button onclick="nextQuestion()" class="gradient-primary">Nueva Pregunta</button>
                 </div>
-                <div id="feedback" style="margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center;"></div>
+                <div id="feedback" class="text-xl-bold-center"></div>
             </div>
 
             <div id="practiceExplanation"></div>
@@ -705,7 +705,7 @@
             
             if (prime) {
                 resultDiv.innerHTML = `
-                    <div class="result-box" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                    <div class="result-box" class="gradient-green-blue">
                         ✅ <strong>${num}</strong> es un número PRIMO
                         <p class="small-hint-spaced">Solo es divisible por 1 y ${num}</p>
                     </div>
@@ -749,7 +749,7 @@
                 resultDiv.innerHTML = `
                     <div class="factorization-area">
                         <div class="number-display">${num}</div>
-                        <div class="result-box" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                        <div class="result-box" class="gradient-green-blue">
                             ⭐ ¡${num} es un número PRIMO!
                             <p class="small-hint-spaced">No se puede factorizar más</p>
                         </div>
@@ -861,7 +861,7 @@
                     </div>
 
                     <div class="verification-box">
-                        El número compuesto es: <strong style="font-size: 1.5em;">${formatNumber(product)}</strong>
+                        El número compuesto es: <strong class="text-large">${formatNumber(product)}</strong>
                     </div>
                 </div>
             `;
@@ -888,7 +888,7 @@
                     answer: getPrimeFactors(num)
                 };
                 document.getElementById('questionText').innerHTML = `
-                    Factoriza el número <strong style="color: #f5576c; font-size: 1.5em;">${num}</strong>
+                    Factoriza el número <strong class="text-primary-large-mb">${num}</strong>
                     <p class="small-hint-top">Escribe los factores primos separados por comas (Ej: 2, 2, 3)</p>
                 `;
             } else if (type === 'compose') {
@@ -911,7 +911,7 @@
                     answer: isPrime(num)
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿El número <strong style="color: #f5576c; font-size: 1.5em;">${num}</strong> es primo?
+                    ¿El número <strong class="text-primary-large-mb">${num}</strong> es primo?
                     <p class="small-hint-top">Responde: si o no</p>
                 `;
             }

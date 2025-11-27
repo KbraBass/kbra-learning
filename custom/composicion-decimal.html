@@ -494,7 +494,7 @@
 
             <div class="input-section">
                 <div class="input-group">
-                    <label style="font-size: 1.2em; font-weight: bold;">Número a descomponer:</label>
+                    <label class="text-xl-bold">Número a descomponer:</label>
                     <input type="number" id="decomposeInput" placeholder="Ej: 523741" min="0" max="999999">
                     <button onclick="decomposeNumber()">Descomponer</button>
                 </div>
@@ -580,7 +580,7 @@
                 
                 <div class="flex-center-gap">
                     <div class="text-center-block">
-                        <h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Entera</h3>
+                        <h3 class="text-primary-colored" class="mb-15">Parte Entera</h3>
                         <div class="digit-breakdown">
                             <div class="digit-box">
                                 <div class="digit">1</div>
@@ -597,10 +597,10 @@
                         </div>
                     </div>
 
-                    <div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>
+                    <div class="text-xlarge-primary">.</div>
 
                     <div class="text-center-block">
-                        <h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Decimal</h3>
+                        <h3 class="text-primary-colored" class="mb-15">Parte Decimal</h3>
                         <div class="digit-breakdown">
                             <div class="digit-box" class="border-danger">
                                 <div class="digit" class="text-danger">4</div>
@@ -637,7 +637,7 @@
                 
                 <div class="input-section" style="background: white; margin-top: 20px;">
                     <div class="input-group">
-                        <label style="font-size: 1.2em; font-weight: bold;">Número con decimales:</label>
+                        <label class="text-xl-bold">Número con decimales:</label>
                         <input type="text" id="decimalInput" placeholder="Ej: 123.456" pattern="[0-9]*\.?[0-9]*">
                         <button onclick="decomposeDecimal()">Descomponer</button>
                     </div>
@@ -669,7 +669,7 @@
                     <button onclick="checkAnswer()">Comprobar</button>
                     <button onclick="nextQuestion()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Nueva Pregunta</button>
                 </div>
-                <div id="feedback" style="margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center;"></div>
+                <div id="feedback" class="text-xl-bold-center"></div>
             </div>
 
             <div id="practiceExplanation"></div>
@@ -847,7 +847,7 @@
             const intValues = [100000, 10000, 1000, 100, 10, 1];
             const intNames = ['Centenas de Millar', 'Decenas de Millar', 'Unidades de Millar', 'Centenas', 'Decenas', 'Unidades'];
 
-            let integerHTML = '<div class="text-center-block"><h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Entera</h3><div class="digit-breakdown">';
+            let integerHTML = '<div class="text-center-block"><h3 class="text-primary-colored" class="mb-15">Parte Entera</h3><div class="digit-breakdown">';
             let hasInteger = false;
             let expandedParts = [];
             let explanations = [];
@@ -878,8 +878,8 @@
 
             // Decimal part
             if (decimalPart) {
-                html += '<div style="font-size: 3em; color: #667eea; font-weight: bold;">.</div>';
-                html += '<div class="text-center-block"><h3 class="text-primary-colored" style="margin-bottom: 15px;">Parte Decimal</h3><div class="digit-breakdown">';
+                html += '<div class="text-xlarge-primary">.</div>';
+                html += '<div class="text-center-block"><h3 class="text-primary-colored" class="mb-15">Parte Decimal</h3><div class="digit-breakdown">';
 
                 const decDigits = decimalPart.padEnd(3, '0').split('').map(d => parseInt(d));
                 const decPlaces = ['d', 'c', 'm'];
@@ -947,7 +947,7 @@
                     answer: total
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Qué número se forma con: <strong style="color: #667eea;">${values.text}</strong>?
+                    ¿Qué número se forma con: <strong class="text-primary-colored">${values.text}</strong>?
                 `;
             } else if (type === 'identify') {
                 const num = Math.floor(Math.random() * 999999) + 1;
@@ -963,7 +963,7 @@
                     answer: digits[pos]
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${posNames[pos]}</strong> en el número <strong class="text-error-large">${formatNumber(num)}</strong>?
+                    ¿Qué dígito está en la posición de <strong class="text-primary-xl">${posNames[pos]}</strong> en el número <strong class="text-error-large">${formatNumber(num)}</strong>?
                 `;
             } else if (type === 'decimal') {
                 const intPart = Math.floor(Math.random() * 1000);
@@ -980,7 +980,7 @@
                     answer: decDigits[pos]
                 };
                 document.getElementById('questionText').innerHTML = `
-                    ¿Qué dígito está en la posición de <strong style="color: #667eea; font-size: 1.3em;">${decimalPositions[pos]}</strong> en el número <strong class="text-error-large">${num}</strong>?
+                    ¿Qué dígito está en la posición de <strong class="text-primary-xl">${decimalPositions[pos]}</strong> en el número <strong class="text-error-large">${num}</strong>?
                 `;
             }
         }
