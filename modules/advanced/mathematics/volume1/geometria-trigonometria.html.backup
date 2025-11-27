@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Geometría y Trigonometría - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- Teoría -->
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Elementos de Geometría y Trigonometría</h2>
+
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
+                <p>Símbolos utilizados en Geometría y Trigonometría:</p>
+                <ul class="list-none-lh2-mt">
+                    <li><strong>△</strong> = Triángulo</li>
+                    <li><strong>∠</strong> = Ángulo</li>
+                    <li><strong>⊥</strong> = Perpendicular</li>
+                    <li><strong>∥</strong> = Paralelo</li>
+                    <li><strong>≅</strong> = Congruente (igual forma y tamaño)</li>
+                    <li><strong>∼</strong> = Semejante (igual forma, diferente tamaño)</li>
+                    <li><strong>π</strong> = Pi (≈3.14159), razón entre circunferencia y diámetro</li>
+                    <li><strong>sin, cos, tan</strong> = Razones trigonométricas: seno, coseno, tangente</li>
+                    <li><strong>°</strong> = Grados (medida de ángulo)</li>
+                    <li><strong>rad</strong> = Radianes (medida de ángulo, π rad = 180°)</li>
+                </ul>
+            </div>
+
+            <h3>1. Teorema de Pitágoras</h3>
+            <div class="info-box">
+                <h4>Teorema Fundamental de Triángulos Rectángulos</h4>
+                <p>En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.</p>
+                <div class="formula-box">
+                    a² + b² = c²
+                </div>
+                <p>Donde <strong>c</strong> es la hipotenusa (lado más largo) y <strong>a, b</strong> son los catetos (lados que forman el ángulo recto).</p>
+            </div>
+
+            <h3>2. Teorema de Thales</h3>
+            <div class="info-box">
+                <h4>Proporcionalidad en Rectas Paralelas</h4>
+                <p>Si tres o más rectas paralelas son cortadas por dos transversales, los segmentos determinados en una de las transversales son proporcionales a los segmentos correspondientes en la otra.</p>
+                <div class="formula-box">
+                    a/b = c/d
+                </div>
+            </div>
+
+            <h3>3. Semejanza de Triángulos</h3>
+            <div class="info-box">
+                <h4>Criterios de Semejanza</h4>
+                <p>Dos triángulos son semejantes (∼) si sus ángulos correspondientes son iguales y sus lados proporcionales.</p>
+                <p><strong>Criterios:</strong></p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Criterio</th><th>Condición</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>AA</strong></td><td>Dos ángulos correspondientes iguales</td></tr>
+                        <tr><td><strong>LAL</strong></td><td>Dos lados proporcionales y ángulo igual entre ellos</td></tr>
+                        <tr><td><strong>LLL</strong></td><td>Tres lados proporcionales</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4. Círculo Trigonométrico</h3>
+            <div class="info-box">
+                <h4>Círculo Unitario</h4>
+                <p>Es un círculo de radio 1 centrado en el origen. Un ángulo α en posición estándar tiene su vértice en el origen y un lado sobre el eje X positivo.</p>
+                <p>Para un punto P(x,y) en el círculo trigonométrico:</p>
+                <div class="formula-box">
+                    x = cos(α)  ,  y = sin(α)
+                </div>
+            </div>
+
+            <h3>5. Razones Trigonométricas</h3>
+            <div class="info-box">
+                <h4>Definiciones en Triángulo Rectángulo</h4>
+                <p>En un triángulo rectángulo con ángulo α:</p>
+                <div class="formula-box">
+                    sin(α) = cateto opuesto / hipotenusa<br>
+                    cos(α) = cateto adyacente / hipotenusa<br>
+                    tan(α) = cateto opuesto / cateto adyacente = sin(α)/cos(α)
+                </div>
+            </div>
+
+            <h3>6. Ángulos Notables</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Ángulo</th><th>sin</th><th>cos</th><th>tan</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>30°</td><td>1/2</td><td>√3/2</td><td>√3/3</td></tr>
+                    <tr><td>45°</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+                    <tr><td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+                    <tr><td>90°</td><td>1</td><td>0</td><td>∞</td></tr>
+                </tbody>
+            </table>
+
+            <h3>7. Identidades Trigonométricas Fundamentales</h3>
+            <div class="formula-box">
+                sin²(α) + cos²(α) = 1<br>
+                tan(α) = sin(α) / cos(α)<br>
+                1 + tan²(α) = 1/cos²(α)
+            </div>
+        </div>
+
+        <!-- Ejemplos -->
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Teorema de Pitágoras</h4>
+                <p><strong>Problema:</strong> Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuál es la longitud de la hipotenusa?</p>
+                <p><strong>Solución:</strong></p>
+                <p>Aplicamos el teorema de Pitágoras: a² + b² = c²</p>
+                <p>3² + 4² = c²</p>
+                <p>9 + 16 = c²</p>
+                <p>25 = c²</p>
+                <p>c = √25 = 5 cm</p>
+                <p><strong>Respuesta:</strong> La hipotenusa mide <strong>5 cm</strong></p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Conversión de Ángulos</h4>
+                <p><strong>Problema:</strong> Convertir 60° a radianes.</p>
+                <p><strong>Solución:</strong></p>
+                <p>Usamos la relación: 180° = π rad</p>
+                <p>60° × (π/180°) = 60π/180 = π/3 rad</p>
+                <p><strong>Respuesta:</strong> 60° = <strong>π/3 radianes</strong> (≈ 1.047 rad)</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Cálculo de Razones Trigonométricas</h4>
+                <p><strong>Problema:</strong> En un triángulo rectángulo, la hipotenusa mide 10 y un cateto mide 6. Calcular sin(α), cos(α) y tan(α) para el ángulo α opuesto al cateto de 6.</p>
+                <p><strong>Solución:</strong></p>
+                <p>Primero hallamos el otro cateto: b² + 6² = 10²</p>
+                <p>b² = 100 - 36 = 64  →  b = 8</p>
+                <p>sin(α) = 6/10 = 0.6</p>
+                <p>cos(α) = 8/10 = 0.8</p>
+                <p>tan(α) = 6/8 = 0.75</p>
+                <p><strong>Respuesta:</strong> sin(α) = 0.6, cos(α) = 0.8, tan(α) = 0.75</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Semejanza de Triángulos</h4>
+                <p><strong>Problema:</strong> Dos triángulos son semejantes con razón de semejanza 2:3. Si el menor tiene lados 4, 5 y 6 cm, ¿cuáles son los lados del mayor?</p>
+                <p><strong>Solución:</strong></p>
+                <p>Razón = 3/2 = 1.5</p>
+                <p>Lados del triángulo mayor: 4×1.5 = 6 cm, 5×1.5 = 7.5 cm, 6×1.5 = 9 cm</p>
+                <p><strong>Respuesta:</strong> <strong>6 cm, 7.5 cm y 9 cm</strong></p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Ángulos Notables</h4>
+                <p><strong>Problema:</strong> Calcular el valor exacto de sin(30°) + cos(60°)</p>
+                <p><strong>Solución:</strong></p>
+                <p>De la tabla de ángulos notables:</p>
+                <p>sin(30°) = 1/2</p>
+                <p>cos(60°) = 1/2</p>
+                <p>sin(30°) + cos(60°) = 1/2 + 1/2 = 1</p>
+                <p><strong>Respuesta:</strong> <strong>1</strong></p>
+            </div>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📐 Calculadora del Teorema de Pitágoras</h3>
+                <p>Calcula la hipotenusa conociendo los catetos</p>
+                
+                <div class="tool-input-group">
+                    <label>Cateto a:</label>
+                    <input type="number" id="cateto-a" step="0.01" placeholder="Ej: 3">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Cateto b:</label>
+                    <input type="number" id="cateto-b" step="0.01" placeholder="Ej: 4">
+                </div>
+                
+                <button class="calc-button" onclick="calculatePythagorean()">Calcular</button>
+                <div class="calc-result" id="pythag-result">Ingresa los catetos</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>🔄 Convertidor de Ángulos</h3>
+                <p>Convierte entre grados y radianes</p>
+                
+                <div class="tool-input-group">
+                    <label>Valor del ángulo:</label>
+                    <input type="number" id="angle-value" step="0.01" placeholder="Ej: 60">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Convertir de:</label>
+                    <select id="angle-from">
+                        <option value="deg">Grados (°)</option>
+                        <option value="rad">Radianes (rad)</option>
+                    </select>
+                </div>
+                
+                <button class="calc-button" onclick="convertAngle()">Convertir</button>
+                <div class="calc-result" id="angle-result">Ingresa el valor</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📊 Calculadora Trigonométrica</h3>
+                <p>Calcula sin, cos y tan de un ángulo</p>
+                
+                <div class="tool-input-group">
+                    <label>Ángulo (grados):</label>
+                    <input type="number" id="trig-angle" step="0.01" placeholder="Ej: 30">
+                </div>
+                
+                <button class="calc-button" onclick="calculateTrig()">Calcular</button>
+                <div class="calc-result" id="trig-result">Ingresa el ángulo</div>
+            </div>
+        </div>
+
+        <!-- Práctica -->
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+
+            <div id="exercises-container"></div>
+
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='polinomios.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen del Tema</h2>
+
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Teorema de Pitágoras:</strong> a² + b² = c² (triángulos rectángulos)</li>
+                    <li><strong>Teorema de Thales:</strong> Proporcionalidad en rectas paralelas</li>
+                    <li><strong>Semejanza:</strong> Triángulos con ángulos iguales y lados proporcionales</li>
+                    <li><strong>Conversión:</strong> 180° = π rad, usar factor π/180 o 180/π</li>
+                    <li><strong>Razones trigonométricas:</strong> sin = op/hip, cos = ady/hip, tan = op/ady</li>
+                    <li><strong>Identidad fundamental:</strong> sin²(α) + cos²(α) = 1</li>
+                    <li><strong>Ángulos notables:</strong> Memorizar valores de 0°, 30°, 45°, 60°, 90°</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='polinomios.html'">⬅️ Tema Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'geometria-trigonometria';
+        const MODULE_TITLE = 'Tema 3: Elementos de Geometría y Trigonometría';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, '../index.html');
+            
+            const tabs = [
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ];
+            Components.createTabs(tabs, 'teoria');
+            Components.createScoreDisplay();
+            
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'Un triángulo rectángulo tiene catetos de 5 y 12. ¿Cuál es su hipotenusa?', type: 'number', correct: '13', hint: 'Aplica el teorema de Pitágoras: 5² + 12² = c². Calcula √(25+144) = √169' },
+            { id: 2, question: 'Convertir 90° a radianes (responde en forma decimal, ej: 1.57)', type: 'number', correct: '1.5708', tolerance: 0.01, hint: 'Usa radianes = grados × (π/180). Entonces 90 × (π/180) = π/2 ≈ 1.5708' },
+            { id: 3, question: '¿Cuánto vale sin(30°)? (responde en forma decimal)', type: 'number', correct: '0.5', hint: 'Consulta la tabla de ángulos notables. sin(30°) = 1/2 = 0.5' },
+            { id: 4, question: 'Si cos(α) = 0.6 en un triángulo rectángulo con hipotenusa 10, ¿cuánto mide el cateto adyacente?', type: 'number', correct: '6', hint: 'cos(α) = cateto adyacente / hipotenusa. Entonces: cateto = 0.6 × 10 = 6' },
+            { id: 5, question: '¿Cuánto vale tan(45°)?', type: 'number', correct: '1', hint: 'En un triángulo de 45°-45°-90°, los dos catetos son iguales. Por tanto tan(45°) = 1' },
+            { id: 6, question: 'Si sin(α) = 0.8, ¿cuánto vale cos(α)? (valor positivo, decimal)', type: 'number', correct: '0.6', hint: 'Usa sin²(α) + cos²(α) = 1. Despeja: cos²(α) = 1 - 0.64 = 0.36, entonces cos(α) = 0.6' },
+            { id: 7, question: 'Dos triángulos semejantes tienen razón 1:2. Si el menor tiene perímetro 12, ¿cuál es el perímetro del mayor?', type: 'number', correct: '24', hint: 'La razón de perímetros es igual a la razón de semejanza: 12 × 2 = 24' },
+            { id: 8, question: 'Convertir π/4 radianes a grados', type: 'number', correct: '45', hint: 'Usa grados = radianes × (180/π). Entonces (π/4) × (180/π) = 180/4 = 45°' },
+            { id: 9, question: 'Si tan(α) = 3/4, ¿cuánto vale sin(α)? (decimal)', type: 'number', correct: '0.6', hint: 'Triángulo con catetos 3 y 4, hipotenusa = 5. Entonces sin(α) = 3/5 = 0.6' },
+            { id: 10, question: '¿Cuánto vale cos(60°) × 2? (decimal)', type: 'number', correct: '1', hint: 'De la tabla, cos(60°) = 1/2 = 0.5. Entonces 0.5 × 2 = 1' }
+        ];
+
+        function loadExercises() {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card" data-exercise="${ex.id}">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta numérica.';
+                feedback.style.display = 'block';
+                return;
+            }
+
+            const correctValue = parseFloat(exercise.correct);
+            const tolerance = exercise.tolerance || 0.01;
+            const isCorrect = Math.abs(userAnswer - correctValue) <= tolerance;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Interactive tools
+        function calculatePythagorean() {
+            const a = parseFloat(document.getElementById('cateto-a').value);
+            const b = parseFloat(document.getElementById('cateto-b').value);
+            const result = document.getElementById('pythag-result');
+            
+            if (isNaN(a) || isNaN(b)) {
+                result.textContent = '⚠️ Por favor, completa ambos catetos';
+                return;
+            }
+            
+            const c = Math.sqrt(a * a + b * b);
+            result.innerHTML = `
+                <strong>Cálculo:</strong> √(${a}² + ${b}²) = √(${a*a} + ${b*b}) = √${a*a + b*b}<br>
+                <strong>Hipotenusa:</strong> c = ${c.toFixed(2)}
+            `;
+        }
+
+        function convertAngle() {
+            const value = parseFloat(document.getElementById('angle-value').value);
+            const from = document.getElementById('angle-from').value;
+            const result = document.getElementById('angle-result');
+            
+            if (isNaN(value)) {
+                result.textContent = '⚠️ Por favor, ingresa un valor';
+                return;
+            }
+            
+            if (from === 'deg') {
+                const rad = value * Math.PI / 180;
+                result.innerHTML = `
+                    <strong>${value}°</strong> = <strong>${rad.toFixed(4)} radianes</strong><br>
+                    Equivalente a ${(value / 180).toFixed(3)}π rad
+                `;
+            } else {
+                const deg = value * 180 / Math.PI;
+                result.innerHTML = `
+                    <strong>${value} rad</strong> = <strong>${deg.toFixed(2)}°</strong><br>
+                    Equivalente a ${(value / Math.PI).toFixed(3)}π rad
+                `;
+            }
+        }
+
+        function calculateTrig() {
+            const angleDeg = parseFloat(document.getElementById('trig-angle').value);
+            const result = document.getElementById('trig-result');
+            
+            if (isNaN(angleDeg)) {
+                result.textContent = '⚠️ Por favor, ingresa un ángulo';
+                return;
+            }
+            
+            const angleRad = angleDeg * Math.PI / 180;
+            const sinVal = Math.sin(angleRad);
+            const cosVal = Math.cos(angleRad);
+            const tanVal = Math.tan(angleRad);
+            
+            result.innerHTML = `
+                <strong>Ángulo:</strong> ${angleDeg}° (${angleRad.toFixed(4)} rad)<br>
+                <strong>sin(${angleDeg}°):</strong> ${sinVal.toFixed(4)}<br>
+                <strong>cos(${angleDeg}°):</strong> ${cosVal.toFixed(4)}<br>
+                <strong>tan(${angleDeg}°):</strong> ${Math.abs(tanVal) > 1000 ? '∞' : tanVal.toFixed(4)}
+            `;
+        }
+    </script>
+</body>
+</html>
