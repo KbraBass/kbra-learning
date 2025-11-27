@@ -1032,8 +1032,8 @@
                 </ul>
             </div>
 
-            <div class="summary-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px;">
-                <h3 style="color: white;">🎓 Aplicaciones</h3>
+            <div class="summary-section" class="summary-gradient-primary">
+                <h3 class="text-white">🎓 Aplicaciones</h3>
                 <ul>
                     <li><strong>Física:</strong> Fuerzas, momentos, velocidades en 3D</li>
                     <li><strong>Ingeniería:</strong> Análisis estructural, mecánica</li>
@@ -1044,7 +1044,7 @@
 
             <div class="summary-section">
                 <h3>✅ Checklist de Dominio del Tema</h3>
-                <ul style="list-style-type: none; padding-left: 0;">
+                <ul class="list-no-bullets">
                     <li>☐ Sé calcular el módulo de un vector en 3D</li>
                     <li>☐ Domino el producto escalar y puedo calcular ángulos</li>
                     <li>☐ Puedo calcular el producto vectorial correctamente</li>
@@ -1236,11 +1236,11 @@
                     
                     <strong>Producto escalar:</strong><br>
                     u⃗ · v⃗ = ${ux}·${vx} + ${uy}·${vy} + ${uz}·${vz}<br>
-                    u⃗ · v⃗ = <strong style="color: #10b981; font-size: 1.1em;">${dotProduct.toFixed(4)}</strong><br><br>
+                    u⃗ · v⃗ = <strong class="text-green-11em">${dotProduct.toFixed(4)}</strong><br><br>
                     
                     <strong>Ángulo:</strong><br>
                     cos θ = (u⃗ · v⃗) / (|u⃗| · |v⃗|) = ${cosTheta.toFixed(4)}<br>
-                    θ = <strong style="color: #8b5cf6; font-size: 1.1em;">${thetaDeg.toFixed(2)}°</strong> 
+                    θ = <strong class="text-purple-11em">${thetaDeg.toFixed(2)}°</strong> 
                     (${thetaRad.toFixed(4)} radianes)
                     ${relacion}
                 </div>
@@ -1356,9 +1356,9 @@
                 completedExercises++;
                 correctAnswers++;
                 resultDiv.innerHTML = `
-                    <p style="color: #10b981; font-weight: bold;">
+                    <p class="text-green-bold">
                         ✅ ¡Correcto! Has ganado 10 puntos. 
-                        <span style="font-size: 1.2em;">🎉</span>
+                        <span class="text-12em">🎉</span>
                     </p>
                 `;
                 saveProgress();
@@ -1366,7 +1366,7 @@
             } else {
                 completedExercises++;
                 resultDiv.innerHTML = `
-                    <p style="color: #ef4444; font-weight: bold;">
+                    <p class="text-red-bold">
                         ❌ Incorrecto. La respuesta correcta es: <strong>${correctAnswer.toFixed(2)}</strong>
                     </p>
                 `;

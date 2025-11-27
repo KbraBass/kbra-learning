@@ -933,7 +933,7 @@
                 if (Math.abs(ratio1 - ratio2) < 0.0001 && Math.abs(ratio1 - ratio3) < 0.0001) {
                     resultDiv.innerHTML += `
                         <p><strong>|A| = ${detA.toFixed(4)} ≈ 0</strong></p>
-                        <p style="color: #ffc107;"><strong>Sistema Compatible Indeterminado (SCI)</strong></p>
+                        <p class="text-warning-amber"><strong>Sistema Compatible Indeterminado (SCI)</strong></p>
                         <p>Las ecuaciones son proporcionales → Infinitas soluciones</p>
                     `;
                 } else {
@@ -960,11 +960,11 @@
                 <p>|Aₓ| = ${c1}×${b2} - ${c2}×${b1} = ${detX.toFixed(4)}</p>
                 <p>|Aᵧ| = ${a1}×${c2} - ${a2}×${c1} = ${detY.toFixed(4)}</p>
                 <p><strong>Solución:</strong></p>
-                <p style="font-size: 1.2em; color: #667eea;">
+                <p class="text-primary-12em">
                     <strong>x = ${x.toFixed(4)}</strong><br>
                     <strong>y = ${y.toFixed(4)}</strong>
                 </p>
-                <p style="margin-top: 15px; color: #28a745;">
+                <p class="text-success-mt15">
                     ✓ Sistema Compatible Determinado (solución única)
                 </p>
             `;
@@ -997,7 +997,7 @@
             
             if (Math.abs(detA) > 0.0001) {
                 resultDiv.innerHTML += `
-                    <p style="color: #28a745; font-size: 1.2em;">
+                    <p class="text-success-12em">
                         <strong>✓ Sistema Compatible Determinado (SCD)</strong>
                     </p>
                     <p>El determinante es diferente de cero → Solución única</p>
@@ -1023,7 +1023,7 @@
                 
                 if (sameRatio) {
                     resultDiv.innerHTML += `
-                        <p style="color: #ffc107; font-size: 1.2em;">
+                        <p class="text-warning-12em">
                             <strong>⚠ Sistema Compatible Indeterminado (SCI)</strong>
                         </p>
                         <p>Ecuaciones proporcionales → Infinitas soluciones</p>
@@ -1031,7 +1031,7 @@
                     `;
                 } else {
                     resultDiv.innerHTML += `
-                        <p style="color: #dc3545; font-size: 1.2em;">
+                        <p class="text-danger-12em">
                             <strong>✗ Sistema Incompatible (SI)</strong>
                         </p>
                         <p>Contradicción → Sin solución</p>
