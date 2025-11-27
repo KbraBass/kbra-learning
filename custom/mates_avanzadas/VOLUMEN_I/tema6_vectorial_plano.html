@@ -516,7 +516,7 @@
                     u⃗ · v⃗ = uₓ·vₓ + uᵧ·vᵧ
                 </div>
                 <p><strong>Propiedades:</strong></p>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li>u⃗ · v⃗ = |u⃗| · |v⃗| · cos(θ)</li>
                     <li>Si u⃗ · v⃗ = 0 → los vectores son perpendiculares (⊥)</li>
                     <li>u⃗ · u⃗ = |u⃗|²</li>
@@ -566,7 +566,7 @@
 
                 <h3>7. Posiciones Relativas de Rectas</h3>
                 <p>Dadas dos rectas r y s:</p>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li><strong>Paralelas:</strong> Vectores directores proporcionales, no se cortan</li>
                     <li><strong>Secantes:</strong> Se cortan en un punto</li>
                     <li><strong>Coincidentes:</strong> La misma recta</li>
@@ -665,13 +665,13 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
                         <label><strong>Vector u⃗:</strong></label>
-                        <input type="number" id="dot_ux" placeholder="uₓ" step="0.01" style="margin: 5px 0;">
-                        <input type="number" id="dot_uy" placeholder="uᵧ" step="0.01" style="margin: 5px 0;">
+                        <input type="number" id="dot_ux" placeholder="uₓ" step="0.01" class="margin-5-v">
+                        <input type="number" id="dot_uy" placeholder="uᵧ" step="0.01" class="margin-5-v">
                     </div>
                     <div>
                         <label><strong>Vector v⃗:</strong></label>
-                        <input type="number" id="dot_vx" placeholder="vₓ" step="0.01" style="margin: 5px 0;">
-                        <input type="number" id="dot_vy" placeholder="vᵧ" step="0.01" style="margin: 5px 0;">
+                        <input type="number" id="dot_vx" placeholder="vₓ" step="0.01" class="margin-5-v">
+                        <input type="number" id="dot_vy" placeholder="vᵧ" step="0.01" class="margin-5-v">
                     </div>
                 </div>
                 <button onclick="calculateDotProduct()">Calcular Producto Escalar</button>
@@ -684,13 +684,13 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
                         <label><strong>Vector u⃗ (azul):</strong></label>
-                        <input type="number" id="vis_ux" placeholder="uₓ" step="0.1" value="3" style="margin: 5px 0;">
-                        <input type="number" id="vis_uy" placeholder="uᵧ" step="0.1" value="2" style="margin: 5px 0;">
+                        <input type="number" id="vis_ux" placeholder="uₓ" step="0.1" value="3" class="margin-5-v">
+                        <input type="number" id="vis_uy" placeholder="uᵧ" step="0.1" value="2" class="margin-5-v">
                     </div>
                     <div>
                         <label><strong>Vector v⃗ (rojo):</strong></label>
-                        <input type="number" id="vis_vx" placeholder="vₓ" step="0.1" value="1" style="margin: 5px 0;">
-                        <input type="number" id="vis_vy" placeholder="vᵧ" step="0.1" value="4" style="margin: 5px 0;">
+                        <input type="number" id="vis_vx" placeholder="vₓ" step="0.1" value="1" class="margin-5-v">
+                        <input type="number" id="vis_vy" placeholder="vᵧ" step="0.1" value="4" class="margin-5-v">
                     </div>
                 </div>
                 <button onclick="drawVectors()">Visualizar Vectores</button>
@@ -703,13 +703,13 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
                         <label><strong>Punto P:</strong></label>
-                        <input type="number" id="dist_px" placeholder="x₁" step="0.01" style="margin: 5px 0;">
-                        <input type="number" id="dist_py" placeholder="y₁" step="0.01" style="margin: 5px 0;">
+                        <input type="number" id="dist_px" placeholder="x₁" step="0.01" class="margin-5-v">
+                        <input type="number" id="dist_py" placeholder="y₁" step="0.01" class="margin-5-v">
                     </div>
                     <div>
                         <label><strong>Punto Q:</strong></label>
-                        <input type="number" id="dist_qx" placeholder="x₂" step="0.01" style="margin: 5px 0;">
-                        <input type="number" id="dist_qy" placeholder="y₂" step="0.01" style="margin: 5px 0;">
+                        <input type="number" id="dist_qx" placeholder="x₂" step="0.01" class="margin-5-v">
+                        <input type="number" id="dist_qy" placeholder="y₂" step="0.01" class="margin-5-v">
                     </div>
                 </div>
                 <button onclick="calculateDistance()">Calcular Distancia</button>
@@ -948,7 +948,7 @@
             const resultDiv = document.getElementById('modResult');
             
             if (isNaN(x) || isNaN(y)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, introduce ambas componentes.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, introduce ambas componentes.</p>';
                 return;
             }
             
@@ -974,7 +974,7 @@
             const resultDiv = document.getElementById('dotResult');
             
             if ([ux, uy, vx, vy].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todas las componentes.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todas las componentes.</p>';
                 return;
             }
             
@@ -1107,7 +1107,7 @@
             const resultDiv = document.getElementById('distResult');
             
             if ([px, py, qx, qy].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todas las coordenadas.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todas las coordenadas.</p>';
                 return;
             }
             

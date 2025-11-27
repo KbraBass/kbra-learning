@@ -523,40 +523,40 @@
                 <h3>6. Ángulos Notables</h3>
                 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
                     <tr style="background: #667eea; color: white;">
-                        <th style="padding: 10px; border: 1px solid #ddd;">Ángulo</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">sin</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">cos</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">tan</th>
+                        <th class="border-cell">Ángulo</th>
+                        <th class="border-cell">sin</th>
+                        <th class="border-cell">cos</th>
+                        <th class="border-cell">tan</th>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">0°</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td class="border-cell">0°</td>
+                        <td class="border-cell">0</td>
+                        <td class="border-cell">1</td>
+                        <td class="border-cell">0</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">30°</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">1/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√3/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√3/3</td>
+                        <td class="border-cell">30°</td>
+                        <td class="border-cell">1/2</td>
+                        <td class="border-cell">√3/2</td>
+                        <td class="border-cell">√3/3</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">45°</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√2/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√2/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td class="border-cell">45°</td>
+                        <td class="border-cell">√2/2</td>
+                        <td class="border-cell">√2/2</td>
+                        <td class="border-cell">1</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">60°</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√3/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">1/2</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">√3</td>
+                        <td class="border-cell">60°</td>
+                        <td class="border-cell">√3/2</td>
+                        <td class="border-cell">1/2</td>
+                        <td class="border-cell">√3</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">90°</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">∞</td>
+                        <td class="border-cell">90°</td>
+                        <td class="border-cell">1</td>
+                        <td class="border-cell">0</td>
+                        <td class="border-cell">∞</td>
                     </tr>
                 </table>
 
@@ -907,7 +907,7 @@
             const resultDiv = document.getElementById('pythagResult');
             
             if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, introduce valores válidos para ambos catetos.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, introduce valores válidos para ambos catetos.</p>';
                 return;
             }
             
@@ -929,7 +929,7 @@
             const resultDiv = document.getElementById('angleResult');
             
             if (isNaN(value)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, introduce un valor válido.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, introduce un valor válido.</p>';
                 return;
             }
             
@@ -959,7 +959,7 @@
             const resultDiv = document.getElementById('trigResult');
             
             if (isNaN(angleDeg)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, introduce un ángulo válido.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, introduce un ángulo válido.</p>';
                 return;
             }
             

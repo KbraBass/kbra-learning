@@ -504,7 +504,7 @@
                 </div>
 
                 <h3>2. Clasificación de Sistemas</h3>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li><strong>Compatible Determinado (SCD):</strong> Tiene solución única</li>
                     <li><strong>Compatible Indeterminado (SCI):</strong> Tiene infinitas soluciones</li>
                     <li><strong>Incompatible (SI):</strong> No tiene solución</li>
@@ -512,7 +512,7 @@
 
                 <h3>3. Método de Sustitución</h3>
                 <p><strong>Pasos:</strong></p>
-                <ol style="margin-left: 20px; line-height: 2;">
+                <ol class="ml-20-lh-2">
                     <li>Despejar una incógnita en una ecuación</li>
                     <li>Sustituir en la otra ecuación</li>
                     <li>Resolver la ecuación resultante</li>
@@ -521,7 +521,7 @@
 
                 <h3>4. Método de Igualación</h3>
                 <p><strong>Pasos:</strong></p>
-                <ol style="margin-left: 20px; line-height: 2;">
+                <ol class="ml-20-lh-2">
                     <li>Despejar la misma incógnita en ambas ecuaciones</li>
                     <li>Igualar las dos expresiones obtenidas</li>
                     <li>Resolver la ecuación resultante</li>
@@ -530,7 +530,7 @@
 
                 <h3>5. Método de Reducción (Eliminación)</h3>
                 <p><strong>Pasos:</strong></p>
-                <ol style="margin-left: 20px; line-height: 2;">
+                <ol class="ml-20-lh-2">
                     <li>Multiplicar las ecuaciones para igualar coeficientes</li>
                     <li>Sumar o restar para eliminar una incógnita</li>
                     <li>Resolver la ecuación de una incógnita</li>
@@ -548,7 +548,7 @@
 
                 <h3>7. Método de Gauss</h3>
                 <p>Transforma la matriz ampliada en forma escalonada mediante operaciones elementales:</p>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li>Intercambiar filas</li>
                     <li>Multiplicar una fila por un número ≠ 0</li>
                     <li>Sumar a una fila otra multiplicada por un número</li>
@@ -557,7 +557,7 @@
 
                 <h3>8. Teorema de Rouché-Frobenius</h3>
                 <p>Para un sistema Ax = b:</p>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li><strong>SCD:</strong> rango(A) = rango(A|b) = número de incógnitas</li>
                     <li><strong>SCI:</strong> rango(A) = rango(A|b) < número de incógnitas</li>
                     <li><strong>SI:</strong> rango(A) ≠ rango(A|b)</li>
@@ -911,7 +911,7 @@
             const resultDiv = document.getElementById('sysResult');
             
             if ([a1, b1, c1, a2, b2, c2].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los coeficientes.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todos los coeficientes.</p>';
                 return;
             }
             
@@ -939,7 +939,7 @@
                 } else {
                     resultDiv.innerHTML += `
                         <p><strong>|A| = ${detA.toFixed(4)} ≈ 0</strong></p>
-                        <p style="color: red;"><strong>Sistema Incompatible (SI)</strong></p>
+                        <p class="text-red"><strong>Sistema Incompatible (SI)</strong></p>
                         <p>Contradicción → Sin solución</p>
                     `;
                 }
@@ -981,7 +981,7 @@
             const resultDiv = document.getElementById('classResult');
             
             if ([a1, b1, c1, a2, b2, c2].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los coeficientes.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todos los coeficientes.</p>';
                 return;
             }
             
