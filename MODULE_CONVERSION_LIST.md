@@ -34,9 +34,11 @@
   - Trofeo: "Maestro de las Formas"
   - Fecha: 27 Nov 2025
   
-- [ ] **angulos.html**
-  - Estado actual: No revisado
-  - Prioridad: Media
+- [x] **angulos.html** - ✅ Completado
+  - Estado: Convertido a 6 pestañas estándar
+  - Examen final: 20 preguntas, 70% para aprobar
+  - Trofeo: "Experto en Ángulos"
+  - Fecha: 27 Nov 2025
   
 - [ ] **perimetro-area.html**
   - Estado actual: No revisado
@@ -88,12 +90,12 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 5 ✅
+- **Completados**: 6 ✅
 - **En progreso**: 0
-- **Pendientes**: 23+
-- **Progreso**: 17.9% (5/28)
+- **Pendientes**: 22+
+- **Progreso**: 21.4% (6/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
-- **Semana 2 (Geometría y Tiempo)**: 🔄 16.7% En Progreso (1/6)
+- **Semana 2 (Geometría y Tiempo)**: 🔄 33.3% En Progreso (2/6)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
