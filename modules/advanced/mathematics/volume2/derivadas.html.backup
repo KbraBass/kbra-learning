@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Derivadas - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Derivadas</h2>
+
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
+                <ul class="list-unstyled-lh2">
+                    <li><strong>f'(x), df/dx</strong> = Derivada de f</li>
+                    <li><strong>y'</strong> = Derivada de y</li>
+                    <li><strong>d²f/dx²</strong> = Derivada segunda</li>
+                    <li><strong>∂</strong> = Derivada parcial</li>
+                    <li><strong>Δx, Δy</strong> = Incrementos</li>
+                </ul>
+            </div>
+
+            <h3>1. Concepto de Derivada</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    f'(x) = lim(h→0) [f(x+h) - f(x)] / h
+                </div>
+                <p><strong>Significado:</strong> Tasa de cambio instantánea de f en x</p>
+                <p><strong>Interpretación geométrica:</strong> Pendiente de la recta tangente</p>
+            </div>
+
+            <h3>2. Reglas de Derivación</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Función</th><th>Derivada</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>c (constante)</td><td>0</td></tr>
+                    <tr><td>xⁿ</td><td>n·xⁿ⁻¹</td></tr>
+                    <tr><td>sin(x)</td><td>cos(x)</td></tr>
+                    <tr><td>cos(x)</td><td>-sin(x)</td></tr>
+                    <tr><td>eˣ</td><td>eˣ</td></tr>
+                    <tr><td>ln(x)</td><td>1/x</td></tr>
+                    <tr><td>aˣ</td><td>aˣ·ln(a)</td></tr>
+                    <tr><td>logₐ(x)</td><td>1/(x·ln(a))</td></tr>
+                </tbody>
+            </table>
+
+            <h3>3. Operaciones con Derivadas</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Suma:</strong> (f + g)' = f' + g'</li>
+                    <li><strong>Producto por constante:</strong> (c·f)' = c·f'</li>
+                    <li><strong>Producto:</strong> (f·g)' = f'·g + f·g'</li>
+                    <li><strong>Cociente:</strong> (f/g)' = (f'·g - f·g') / g²</li>
+                </ul>
+            </div>
+
+            <h3>4. Regla de la Cadena</h3>
+            <div class="info-box">
+                <div class="formula-box">
+                    [f(g(x))]' = f'(g(x)) · g'(x)
+                </div>
+                <div class="exam-important">
+                    <strong>Fundamental:</strong> Para funciones compuestas
+                </div>
+                <p><strong>Ejemplo:</strong> [(x²+1)³]' = 3(x²+1)² · 2x</p>
+            </div>
+
+            <h3>5. Derivación Implícita</h3>
+            <div class="info-box">
+                <p>Para ecuaciones F(x,y)=0 donde y depende de x:</p>
+                <ol>
+                    <li>Derivar ambos lados respecto a x</li>
+                    <li>Recordar que dy/dx es la incógnita</li>
+                    <li>Despejar dy/dx</li>
+                </ol>
+                <p><strong>Ejemplo:</strong> x²+y²=25 → 2x+2y·y'=0 → y'=-x/y</p>
+            </div>
+
+            <h3>6. Derivadas de Orden Superior</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Segunda derivada:</strong> f''(x) = [f'(x)]'</li>
+                    <li><strong>Tercera derivada:</strong> f'''(x) = [f''(x)]'</li>
+                    <li><strong>n-ésima derivada:</strong> f⁽ⁿ⁾(x)</li>
+                </ul>
+                <p><strong>Interpretación física:</strong> f''(x) es la aceleración si f(x) es la posición</p>
+            </div>
+
+            <h3>7. Aplicaciones</h3>
+            <div class="info-box">
+                <h4>Recta Tangente en (a, f(a)):</h4>
+                <div class="formula-box">
+                    y - f(a) = f'(a)(x - a)
+                </div>
+                <h4>Velocidad y Aceleración:</h4>
+                <ul>
+                    <li>v(t) = s'(t) (velocidad)</li>
+                    <li>a(t) = v'(t) = s''(t) (aceleración)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Potencia</h4>
+                <p><strong>Problema:</strong> f(x) = x⁴</p>
+                <p><strong>Solución:</strong> f'(x) = 4x³</p>
+                <p><strong>Respuesta:</strong> 4x³</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Producto</h4>
+                <p><strong>Problema:</strong> f(x) = x² · sin(x)</p>
+                <p><strong>Solución:</strong> f'(x) = 2x·sin(x) + x²·cos(x)</p>
+                <p><strong>Respuesta:</strong> 2x·sin(x) + x²·cos(x)</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Cociente</h4>
+                <p><strong>Problema:</strong> f(x) = x/(x+1)</p>
+                <p><strong>Solución:</strong> f'(x) = [1·(x+1) - x·1]/(x+1)² = 1/(x+1)²</p>
+                <p><strong>Respuesta:</strong> 1/(x+1)²</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Cadena</h4>
+                <p><strong>Problema:</strong> f(x) = (2x+3)⁵</p>
+                <p><strong>Solución:</strong> f'(x) = 5(2x+3)⁴ · 2 = 10(2x+3)⁴</p>
+                <p><strong>Respuesta:</strong> 10(2x+3)⁴</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Tangente</h4>
+                <p><strong>Problema:</strong> Recta tangente a f(x)=x² en x=1</p>
+                <p><strong>Solución:</strong> f'(x)=2x, f'(1)=2, f(1)=1 → y-1=2(x-1) → y=2x-1</p>
+                <p><strong>Respuesta:</strong> y = 2x - 1</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📐 Derivada de Potencias</h3>
+                <p>Calcula la derivada de f(x) = axⁿ</p>
+                <div class="tool-input-group">
+                    <label>Coeficiente a:</label>
+                    <input type="number" step="any" id="der-a" placeholder="Ej: 3">
+                </div>
+                <div class="tool-input-group">
+                    <label>Exponente n:</label>
+                    <input type="number" step="any" id="der-n" placeholder="Ej: 4">
+                </div>
+                <button class="calc-button" onclick="calculateDerivative()">Derivar</button>
+                <div class="calc-result" id="der-result">Ingresa los datos</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📏 Recta Tangente</h3>
+                <p>Encuentra la ecuación de la recta tangente</p>
+                <div class="tool-input-group">
+                    <label>f(x) = ax² + bx + c</label>
+                    <input type="text" id="tang-coef" placeholder="Ej: 1,0,0">
+                </div>
+                <div class="tool-input-group">
+                    <label>Punto x₀:</label>
+                    <input type="number" step="any" id="tang-x0" placeholder="Ej: 2">
+                </div>
+                <button class="calc-button" onclick="calculateTangent()">Calcular</button>
+                <div class="calc-result" id="tang-result">Ingresa los datos</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>🔢 Derivada en un Punto</h3>
+                <p>Evalúa f'(x₀) para f(x)=x²</p>
+                <div class="tool-input-group">
+                    <label>Punto x₀:</label>
+                    <input type="number" step="any" id="eval-x0" placeholder="Ej: 3">
+                </div>
+                <button class="calc-button" onclick="evaluateDerivative()">Evaluar</button>
+                <div class="calc-result" id="eval-result">Ingresa el punto</div>
+            </div>
+        </div>
+
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+            <div id="exercises-container"></div>
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">Siguiente ➡️</button>
+            </div>
+        </div>
+
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen</h2>
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>Derivada:</strong> Tasa de cambio instantánea</li>
+                    <li><strong>Potencia:</strong> (xⁿ)' = n·xⁿ⁻¹</li>
+                    <li><strong>Producto:</strong> (f·g)' = f'g + fg'</li>
+                    <li><strong>Cociente:</strong> (f/g)' = (f'g-fg')/g²</li>
+                    <li><strong>Cadena:</strong> [f(g)]' = f'(g)·g'</li>
+                    <li><strong>Tangente:</strong> y-f(a) = f'(a)(x-a)</li>
+                </ul>
+            </div>
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">Siguiente ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'derivadas';
+        const MODULE_TITLE = 'Tema 4: Derivadas';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, 'index.html');
+            Components.createTabs([
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ], 'teoria');
+            Components.createScoreDisplay();
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'Deriva x³', correct: '3', hint: 'n·xⁿ⁻¹ con n=3 → 3x²' },
+            { id: 2, question: 'Deriva 5 (constante)', correct: '0', hint: 'Constantes derivan a 0' },
+            { id: 3, question: 'Deriva x⁵ [coeficiente de x⁴]', correct: '5', hint: '5x⁴, coef es 5' },
+            { id: 4, question: 'Deriva eˣ [coeficiente]', correct: '1', hint: '(eˣ)\'=eˣ, coef 1' },
+            { id: 5, question: 'Deriva ln(x) [denominador]', correct: '1', hint: '1/x, denom es x' },
+            { id: 6, question: 'Deriva sin(x) → cos(x), evalúa en π [valor]', correct: '-1', hint: 'cos(π)=-1' },
+            { id: 7, question: 'Pendiente tangente f(x)=x² en x=2', correct: '4', hint: 'f\'(x)=2x, f\'(2)=4' },
+            { id: 8, question: '(x²)\'=2x, segunda derivada coef', correct: '2', hint: '(2x)\'=2' },
+            { id: 9, question: 'Deriva 2x³ [coef de x²]', correct: '6', hint: '6x², coef 6' },
+            { id: 10, question: 'f(x)=x⁴, f\'(1)=?', correct: '4', hint: 'f\'(x)=4x³, f\'(1)=4' }
+        ];
+
+        function loadExercises() {
+            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
+                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
+                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                </div>
+                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
+                <div id="feedback${ex.id}" class="feedback"></div></div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function calculateDerivative() {
+            const a = parseFloat(document.getElementById('der-a').value);
+            const n = parseFloat(document.getElementById('der-n').value);
+            const result = document.getElementById('der-result');
+            
+            if (isNaN(a) || isNaN(n)) {
+                result.textContent = '⚠️ Completa ambos campos';
+                return;
+            }
+            
+            const newCoef = a * n;
+            const newExp = n - 1;
+            
+            result.innerHTML = `
+                <strong>Función original:</strong> f(x) = ${a}x^${n}<br>
+                <strong>Derivada:</strong> f'(x) = ${newCoef}x^${newExp}
+            `;
+        }
+
+        function calculateTangent() {
+            const coefStr = document.getElementById('tang-coef').value;
+            const x0 = parseFloat(document.getElementById('tang-x0').value);
+            const result = document.getElementById('tang-result');
+            
+            if (!coefStr || isNaN(x0)) {
+                result.textContent = '⚠️ Completa todos los campos';
+                return;
+            }
+            
+            const [a, b, c] = coefStr.split(',').map(n => parseFloat(n.trim()));
+            const fx0 = a*x0*x0 + b*x0 + c;
+            const fpx0 = 2*a*x0 + b;
+            const b_tang = fx0 - fpx0*x0;
+            
+            result.innerHTML = `
+                <strong>Punto:</strong> (${x0}, ${fx0.toFixed(2)})<br>
+                <strong>Pendiente:</strong> m = ${fpx0.toFixed(2)}<br>
+                <strong>Ecuación:</strong> y = ${fpx0.toFixed(2)}x + ${b_tang.toFixed(2)}
+            `;
+        }
+
+        function evaluateDerivative() {
+            const x0 = parseFloat(document.getElementById('eval-x0').value);
+            const result = document.getElementById('eval-result');
+            
+            if (isNaN(x0)) {
+                result.textContent = '⚠️ Ingresa el punto';
+                return;
+            }
+            
+            const derValue = 2 * x0;
+            
+            result.innerHTML = `
+                <strong>f(x) = x²</strong><br>
+                <strong>f'(x) = 2x</strong><br>
+                <strong>f'(${x0}) = ${derValue}</strong>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -114,7 +114,7 @@
     - Trofeo: "Maestro de Determinantes"
     - Fecha: 27 Nov 2025
   
-- [ ] **Volume 2** - 10 módulos
+- [ ] **Volume 2** - 10 módulos (60% completado - 6/10)
   - [x] preliminares-reales.html - ✅ Completado
     - Estado: Convertido a 6 pestañas estándar
     - Examen final: 20 preguntas, 70% para aprobar
@@ -140,23 +140,26 @@
     - Examen final: 20 preguntas, 70% para aprobar
     - Trofeo: "Maestro de Límites"
     - Fecha: 27 Nov 2025
-  - [ ] continuidad.html
-  - [ ] derivadas.html
+  - [x] derivadas.html - ✅ Completado
+    - Estado: Convertido a 6 pestañas estándar
+    - Examen final: 20 preguntas, 70% para aprobar
+    - Trofeo: "Maestro de Derivadas"
+    - Fecha: 27 Nov 2025
   - [ ] integral.html
   - [ ] aplicaciones.html
   - [ ] series.html
 
 ## Resumen
-- **Total de módulos**: 28+
-- **Completados**: 23 ✅
+- **Total de módulos**: 28
+- **Completados**: 24 ✅
 - **En progreso**: 0
-- **Pendientes**: 5
-- **Progreso**: 82.1% (23/28)
+- **Pendientes**: 4
+- **Progreso**: 85.7% (24/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
 - **Semana 2 (Geometría y Tiempo)**: ✅ 100% Completada (6/6)
 - **Semana 3 (Conceptos Numéricos)**: ✅ 100% Completada (3/3)
 - **Semana 4+ (Matemáticas Avanzadas Volume 1)**: ✅ 100% Completada (5/5)
-- **Semana 4+ (Matemáticas Avanzadas Volume 2)**: 🔄 50% Completada (5/10)
+- **Semana 4+ (Matemáticas Avanzadas Volume 2)**: 🔄 60% Completada (6/10)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
