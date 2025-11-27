@@ -350,12 +350,12 @@
 
         <!-- DECENAS TAB -->
         <div id="decenas" class="content tab-content active">
-            <h2 style="text-align: center; color: #4a90e2; margin-bottom: 20px;">🔟 Redondeo a las Decenas</h2>
+            <h2 class="section-title">🔟 Redondeo a las Decenas</h2>
             
             <div class="explanation">
                 <h3>¿Qué significa redondear a las decenas?</h3>
                 <p>Redondear a las decenas significa encontrar el múltiplo de 10 más cercano. ¡Mira las unidades!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>Si las unidades son 0, 1, 2, 3, 4:</strong> Redondea hacia abajo</li>
                     <li><strong>Si las unidades son 5, 6, 7, 8, 9:</strong> Redondea hacia arriba</li>
                 </ul>
@@ -382,12 +382,12 @@
 
         <!-- CENTENAS TAB -->
         <div id="centenas" class="content tab-content">
-            <h2 style="text-align: center; color: #4a90e2; margin-bottom: 20px;">💯 Redondeo a las Centenas</h2>
+            <h2 class="section-title">💯 Redondeo a las Centenas</h2>
             
             <div class="explanation">
                 <h3>¿Qué significa redondear a las centenas?</h3>
                 <p>Redondear a las centenas significa encontrar el múltiplo de 100 más cercano. ¡Mira las decenas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>Si las decenas son 0, 1, 2, 3, 4:</strong> Redondea hacia abajo</li>
                     <li><strong>Si las decenas son 5, 6, 7, 8, 9:</strong> Redondea hacia arriba</li>
                 </ul>
@@ -414,12 +414,12 @@
 
         <!-- MILLARES TAB -->
         <div id="millares" class="content tab-content">
-            <h2 style="text-align: center; color: #4a90e2; margin-bottom: 20px;">🏢 Redondeo a los Millares</h2>
+            <h2 class="section-title">🏢 Redondeo a los Millares</h2>
             
             <div class="explanation">
                 <h3>¿Qué significa redondear a los millares?</h3>
                 <p>Redondear a los millares significa encontrar el múltiplo de 1000 más cercano. ¡Mira las centenas!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="spaced-paragraph">
                     <li><strong>Si las centenas son 0, 1, 2, 3, 4:</strong> Redondea hacia abajo</li>
                     <li><strong>Si las centenas son 5, 6, 7, 8, 9:</strong> Redondea hacia arriba</li>
                 </ul>
@@ -446,7 +446,7 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #4a90e2; margin-bottom: 20px;">🎮 ¡Zona de Práctica!</h2>
+            <h2 class="section-title">🎮 ¡Zona de Práctica!</h2>
             
             <div class="score-display">
                 <span>Puntuación: </span><span id="score">0</span> puntos
@@ -460,11 +460,11 @@
                     ¡Haz clic en "Nueva Pregunta" para empezar!
                 </div>
                 
-                <div style="text-align: center;">
+                <div class="text-center-block">
                     <button class="round-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
                 </div>
                 
-                <div class="input-section" style="margin-top: 20px;">
+                <div class="input-section" class="margin-top-20">
                     <div class="input-group">
                         <label for="practice-answer">Tu respuesta:</label>
                         <input type="number" id="practice-answer" placeholder="¿Cuál es tu respuesta?">
@@ -472,7 +472,7 @@
                     <button class="round-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
                 </div>
                 
-                <div class="result" id="practice-result" style="color: #333;">¡Escribe tu respuesta!</div>
+                <div class="result" id="practice-result" class="text-dark">¡Escribe tu respuesta!</div>
             </div>
 
             <div class="fun-facts">
@@ -551,9 +551,9 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
-                    <small style="font-size: 0.8em;">${explanation}</small>
+                    <small class="text-small-hint">${explanation}</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -583,9 +583,9 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
-                    <small style="font-size: 0.8em;">${explanation}</small>
+                    <small class="text-small-hint">${explanation}</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -615,9 +615,9 @@
             }
             
             result.innerHTML = `
-                <div style="font-size: 1.2em;">
+                <div class="text-xl-relaxed">
                     ${formatNumber(number)} → ${formatNumber(rounded)}<br>
-                    <small style="font-size: 0.8em;">${explanation}</small>
+                    <small class="text-small-hint">${explanation}</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -648,8 +648,8 @@
             
             html += '</div>';
             html += '<div style="text-align: center; margin-top: 10px;">';
-            html += '<span style="color: #ff6b6b;">🔴 Número original</span> | ';
-            html += '<span style="color: #4ecdc4;">🟢 Número redondeado</span>';
+            html += '<span class="text-error">🔴 Número original</span> | ';
+            html += '<span class="text-teal">🟢 Número redondeado</span>';
             html += '</div>';
             
             container.innerHTML = html;
@@ -749,7 +749,7 @@
             if (userAnswer === currentQuestion.answer) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         ${formatNumber(currentQuestion.number)} → ${formatNumber(currentQuestion.answer)}<br>
                         <small>+10 puntos</small>
@@ -761,7 +761,7 @@
                 // Deduct 15 points for wrong answer, but don't go below 0
                 score = Math.max(0, score - 15);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Respuesta incorrecta! 😩<br>
                         La respuesta correcta es ${formatNumber(currentQuestion.answer)}<br>
                         <small>-15 puntos. ¡Genera una nueva pregunta para seguir!</small>

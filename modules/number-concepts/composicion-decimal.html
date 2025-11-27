@@ -174,7 +174,7 @@
 
         <!-- APRENDER TAB -->
         <div id="aprender" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📖 Composición y Descomposición</h2>
+            <h2 class="section-title">📖 Composición y Descomposición</h2>
             
             <div class="explanation">
                 <h3>¿Qué significan estos términos?</h3>
@@ -227,7 +227,7 @@
 
         <!-- DESCOMPONER TAB -->
         <div id="descomponer" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">➗ Descomponer Números</h2>
+            <h2 class="section-title">➗ Descomponer Números</h2>
             
             <div class="explanation">
                 <h3>Separa el número en sus partes</h3>
@@ -243,9 +243,9 @@
                 <button class="calc-button" onclick="decomposeNumber()">Descomponer</button>
             </div>
 
-            <div id="decompose-result" style="margin-top: 30px;"></div>
+            <div id="decompose-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>🎯 Ejemplo:</h3>
                 <p><strong>3,456</strong> se descompone en:</p>
                 <p>3,000 + 400 + 50 + 6</p>
@@ -255,7 +255,7 @@
 
         <!-- COMPONER TAB -->
         <div id="componer" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">➕ Componer Números</h2>
+            <h2 class="section-title">➕ Componer Números</h2>
             
             <div class="explanation">
                 <h3>Junta las partes para formar el número</h3>
@@ -264,7 +264,7 @@
 
             <div class="input-section">
                 <h3>Escribe los valores de cada posición:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="grid-autofit-150">
                     <div class="input-group">
                         <label for="um-input">Unidades de Millar:</label>
                         <input type="number" id="um-input" placeholder="0" min="0" max="9" value="0">
@@ -285,12 +285,12 @@
                 <button class="calc-button" onclick="composeNumber()">Componer</button>
             </div>
 
-            <div id="compose-result" style="margin-top: 30px;"></div>
+            <div id="compose-result" class="margin-top-30"></div>
         </div>
 
         <!-- DECIMALES TAB -->
         <div id="decimales" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔢 Números Decimales</h2>
+            <h2 class="section-title">🔢 Números Decimales</h2>
             
             <div class="explanation">
                 <h3>Los números después del punto</h3>
@@ -299,26 +299,26 @@
 
             <div class="decimal-grid">
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Décimos</h3>
+                    <h3 class="text-primary-colored">Décimos</h3>
                     <div class="decimal-example">0.1</div>
                     <p>Una décima parte de 1</p>
-                    <p style="margin-top: 10px;">10 décimos = 1 unidad</p>
+                    <p class="list-spaced">10 décimos = 1 unidad</p>
                 </div>
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Centésimos</h3>
+                    <h3 class="text-primary-colored">Centésimos</h3>
                     <div class="decimal-example">0.01</div>
                     <p>Una centésima parte de 1</p>
-                    <p style="margin-top: 10px;">100 centésimos = 1 unidad</p>
+                    <p class="list-spaced">100 centésimos = 1 unidad</p>
                 </div>
                 <div class="decimal-card">
-                    <h3 style="color: var(--primary-color);">Milésimos</h3>
+                    <h3 class="text-primary-colored">Milésimos</h3>
                     <div class="decimal-example">0.001</div>
                     <p>Una milésima parte de 1</p>
-                    <p style="margin-top: 10px;">1000 milésimos = 1 unidad</p>
+                    <p class="list-spaced">1000 milésimos = 1 unidad</p>
                 </div>
             </div>
 
-            <div class="input-section" style="margin-top: 30px;">
+            <div class="input-section" class="margin-top-30">
                 <h3>Descomponer un decimal:</h3>
                 <div class="input-group">
                     <label for="decimal-input">Número decimal:</label>
@@ -327,9 +327,9 @@
                 <button class="calc-button" onclick="decomposeDecimal()">Descomponer</button>
             </div>
 
-            <div id="decimal-result" style="margin-top: 30px;"></div>
+            <div id="decimal-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>💡 Ejemplo:</h3>
                 <p><strong>5.73</strong> significa:</p>
                 <p>5 unidades + 7 décimos + 3 centésimos</p>
@@ -339,14 +339,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="result-container"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -440,7 +440,7 @@
             const num = parseInt(input.value);
             
             if (isNaN(num) || num < 0) {
-                result.innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número válido!</div>';
+                result.innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número válido!</div>';
                 return;
             }
             
@@ -467,7 +467,7 @@
             });
             
             html += '</div>';
-            html += '<div class="composition-row" style="margin-top: 30px; font-size: 1.5em;">';
+            html += '<div class="composition-row" class="mt-30-15">';
             html += parts.reverse().join(' <span class="plus-sign">+</span> ');
             html += '</div></div>';
             
@@ -494,9 +494,9 @@
                         <span class="plus-sign">+</span>
                         <span>${u}</span>
                         <span class="equals-sign">=</span>
-                        <span style="color: var(--primary-color); font-size: 1.3em;">${total}</span>
+                        <span class="primary-large-text">${total}</span>
                     </div>
-                    <div class="number-display" style="margin-top: 20px;">${total.toLocaleString()}</div>
+                    <div class="number-display" class="margin-top-20">${total.toLocaleString()}</div>
                 </div>
             `;
         }
@@ -506,7 +506,7 @@
             const num = parseFloat(input.value);
             
             if (isNaN(num)) {
-                document.getElementById('decimal-result').innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número válido!</div>';
+                document.getElementById('decimal-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número válido!</div>';
                 return;
             }
             
@@ -514,7 +514,7 @@
             const wholeNum = parseInt(whole);
             
             let html = '<div class="composition-visual"><div class="number-display">' + num + '</div>';
-            html += '<div class="composition-row" style="flex-wrap: wrap;">';
+            html += '<div class="composition-row" class="flex-wrap-only">';
             html += `<span>${wholeNum} unidad${wholeNum !== 1 ? 'es' : ''}</span>`;
             
             if (decimal && decimal !== '0') {
@@ -547,7 +547,7 @@
                 currentQuestion = { num, answer, type: 'decompose' };
                 
                 document.getElementById('practice-question').textContent = `¿Cuál es el valor del dígito ${digit} en ${num}?`;
-                document.getElementById('practice-visual').innerHTML = `<div class="number-box" style="font-size: 3em;">${num}</div>`;
+                document.getElementById('practice-visual').innerHTML = `<div class="number-box" class="text-xlarge">${num}</div>`;
             } else {
                 const parts = [
                     Math.floor(Math.random() * 9) * 1000,
@@ -596,11 +596,11 @@
             
             if (userAnswer === currentQuestion.answer) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

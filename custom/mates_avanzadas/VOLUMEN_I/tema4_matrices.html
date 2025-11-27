@@ -553,7 +553,7 @@
                 </div>
 
                 <h3>2. Tipos de Matrices</h3>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li><strong>Matriz fila:</strong> 1 fila, n columnas (1×n)</li>
                     <li><strong>Matriz columna:</strong> m filas, 1 columna (m×1)</li>
                     <li><strong>Matriz cuadrada:</strong> m = n (igual número de filas y columnas)</li>
@@ -599,7 +599,7 @@
                 <p>Se suman los productos de las diagonales principales y se restan las secundarias.</p>
 
                 <h4>Propiedades de Determinantes</h4>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li>|A<sup>T</sup>| = |A|</li>
                     <li>Si una fila/columna es nula → |A| = 0</li>
                     <li>Si dos filas/columnas son iguales → |A| = 0</li>
@@ -624,7 +624,7 @@
 
                 <h3>7. Método de Gauss</h3>
                 <p>Consiste en transformar la matriz en una forma escalonada mediante operaciones elementales:</p>
-                <ul style="margin-left: 20px; line-height: 2;">
+                <ul class="ml-20-lh-2">
                     <li>Intercambiar dos filas</li>
                     <li>Multiplicar una fila por un número no nulo</li>
                     <li>Sumar a una fila otra multiplicada por un número</li>
@@ -887,7 +887,7 @@
             <h2>📋 Resumen</h2>
             <div class="theory-content">
                 <h3>Conceptos Clave:</h3>
-                <ul style="line-height: 2;">
+                <ul class="lh-2">
                     <li>✓ <strong>Matriz m×n:</strong> m filas, n columnas</li>
                     <li>✓ <strong>Suma:</strong> Solo matrices de igual dimensión, elemento a elemento</li>
                     <li>✓ <strong>Producto:</strong> A(m×n) · B(n×p) = C(m×p), NO conmutativo</li>
@@ -970,7 +970,7 @@
             const resultDiv = document.getElementById('det2Result');
             
             if ([a11, a12, a21, a22].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los valores de la matriz.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todos los valores de la matriz.</p>';
                 return;
             }
             
@@ -996,7 +996,7 @@
                 for (let j = 1; j <= 3; j++) {
                     const val = parseFloat(document.getElementById(`det3_a${i}${j}`).value);
                     if (isNaN(val)) {
-                        document.getElementById('det3Result').innerHTML = '<p style="color: red;">Por favor, completa todos los valores.</p>';
+                        document.getElementById('det3Result').innerHTML = '<p class="text-red">Por favor, completa todos los valores.</p>';
                         return;
                     }
                     row.push(val);
@@ -1033,7 +1033,7 @@
             const resultDiv = document.getElementById('invResult');
             
             if ([a11, a12, a21, a22].some(isNaN)) {
-                resultDiv.innerHTML = '<p style="color: red;">Por favor, completa todos los valores de la matriz.</p>';
+                resultDiv.innerHTML = '<p class="text-red">Por favor, completa todos los valores de la matriz.</p>';
                 return;
             }
             
@@ -1042,7 +1042,7 @@
             if (Math.abs(det) < 0.0001) {
                 resultDiv.innerHTML = `
                     <h4>Resultado:</h4>
-                    <p style="color: red;"><strong>|A| = ${det.toFixed(4)} ≈ 0</strong></p>
+                    <p class="text-red"><strong>|A| = ${det.toFixed(4)} ≈ 0</strong></p>
                     <p>La matriz <strong>NO tiene inversa</strong> (es singular).</p>
                 `;
                 return;
@@ -1059,7 +1059,7 @@
                 <p><strong>A<sup>-1</sup> =</strong></p>
                 <p>[${inv11.toFixed(4)}, ${inv12.toFixed(4)}]</p>
                 <p>[${inv21.toFixed(4)}, ${inv22.toFixed(4)}]</p>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                <p class="text-gray-sm-mt">
                     Verificación: A·A<sup>-1</sup> debería dar la matriz identidad I
                 </p>
             `;

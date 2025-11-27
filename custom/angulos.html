@@ -292,7 +292,7 @@
 
         <!-- TIPOS TAB -->
         <div id="tipos" class="content tab-content active">
-            <h2 style="text-align: center; color: #84fab0; margin-bottom: 20px;">📏 Tipos de Ángulos</h2>
+            <h2 class="section-title">📏 Tipos de Ángulos</h2>
             
             <div class="explanation">
                 <h3>¿Qué es un ángulo?</h3>
@@ -333,7 +333,7 @@
 
         <!-- MEDIR TAB -->
         <div id="medir" class="content tab-content">
-            <h2 style="text-align: center; color: #84fab0; margin-bottom: 20px;">🎯 Dibuja tu Ángulo</h2>
+            <h2 class="section-title">🎯 Dibuja tu Ángulo</h2>
             
             <div class="explanation">
                 <h3>Crea y mide ángulos</h3>
@@ -366,7 +366,7 @@
 
         <!-- INTERACTIVO TAB -->
         <div id="interactivo" class="content tab-content">
-            <h2 style="text-align: center; color: #84fab0; margin-bottom: 20px;">🖱️ Ángulo Interactivo</h2>
+            <h2 class="section-title">🖱️ Ángulo Interactivo</h2>
             
             <div class="explanation">
                 <h3>Arrastra para crear tu ángulo</h3>
@@ -374,13 +374,13 @@
             </div>
 
             <div class="input-section">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div class="practice-score-area">
                     <div style="background: linear-gradient(45deg, #00b894, #00cec9); color: white; border-radius: 10px; padding: 15px; display: inline-block; font-size: 2em; font-weight: bold;">
                         <span id="interactive-angle-value">0</span>°
                     </div>
                 </div>
 
-                <div class="angle-display" style="width: 400px; height: 400px; cursor: pointer;">
+                <div class="angle-display" class="width-400">
                     <canvas id="interactive-angle" width="400" height="400"></canvas>
                 </div>
 
@@ -407,10 +407,10 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #84fab0; margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div class="practice-score-area">
                     <span class="score-display">Puntos: <span id="score">0</span></span>
                     <span class="score-display">Nivel: <span id="level">Principiante</span></span>
                 </div>
@@ -422,13 +422,13 @@
                 </div>
 
                 <div class="input-section">
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0;">
+                    <div class="flex-wrap-gap-center">
                         <button class="calc-button" onclick="checkAngleAnswer('agudo')">🔺 Agudo</button>
                         <button class="calc-button" onclick="checkAngleAnswer('recto')">⬜ Recto</button>
                         <button class="calc-button" onclick="checkAngleAnswer('obtuso')">📐 Obtuso</button>
                         <button class="calc-button" onclick="checkAngleAnswer('llano')">➖ Llano</button>
                     </div>
-                    <button class="calc-button" onclick="generateAngleQuestion()" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">🔄 Nuevo Ángulo</button>
+                    <button class="calc-button" onclick="generateAngleQuestion()" class="gradient-teal-green">🔄 Nuevo Ángulo</button>
                     <div class="result" id="practice-result">¡Haz clic en "Nuevo Ángulo" para empezar!</div>
                 </div>
             </div>
@@ -592,7 +592,7 @@
             if (answer === currentAngle.type) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         Es un ángulo <strong>${currentAngle.label}</strong> de ${currentAngle.degrees}°<br>
                         <small>+10 puntos</small>
@@ -601,7 +601,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         Es un ángulo <strong>${currentAngle.label}</strong> de ${currentAngle.degrees}°<br>
                         <small>-5 puntos</small>

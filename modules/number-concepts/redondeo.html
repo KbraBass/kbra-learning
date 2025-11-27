@@ -134,7 +134,7 @@
 
         <!-- DECENAS TAB -->
         <div id="decenas" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔟 Redondear a Decenas</h2>
+            <h2 class="section-title">🔟 Redondear a Decenas</h2>
             
             <div class="explanation">
                 <h3>¿Qué significa redondear?</h3>
@@ -143,7 +143,7 @@
 
             <div class="rule-box">
                 <h3>📏 Regla para Decenas:</h3>
-                <ul style="line-height: 2;">
+                <ul class="line-height-relaxed">
                     <li><strong>Si las unidades son 0, 1, 2, 3, o 4:</strong> Se redondea HACIA ABAJO (mantén la decena)</li>
                     <li><strong>Si las unidades son 5, 6, 7, 8, o 9:</strong> Se redondea HACIA ARRIBA (aumenta la decena)</li>
                 </ul>
@@ -185,7 +185,7 @@
 
         <!-- CENTENAS TAB -->
         <div id="centenas" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">💯 Redondear a Centenas</h2>
+            <h2 class="section-title">💯 Redondear a Centenas</h2>
             
             <div class="explanation">
                 <h3>¡Ahora con números más grandes!</h3>
@@ -194,7 +194,7 @@
 
             <div class="rule-box">
                 <h3>📏 Regla para Centenas:</h3>
-                <ul style="line-height: 2;">
+                <ul class="line-height-relaxed">
                     <li><strong>Mira las DECENAS (el segundo dígito):</strong></li>
                     <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
                     <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
@@ -242,7 +242,7 @@
 
         <!-- MILLARES TAB -->
         <div id="millares" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔢 Redondear a Millares</h2>
+            <h2 class="section-title">🔢 Redondear a Millares</h2>
             
             <div class="explanation">
                 <h3>¡Los números más grandes!</h3>
@@ -251,7 +251,7 @@
 
             <div class="rule-box">
                 <h3>📏 Regla para Millares:</h3>
-                <ul style="line-height: 2;">
+                <ul class="line-height-relaxed">
                     <li><strong>Mira las CENTENAS (el segundo dígito desde la izquierda en números de 4 dígitos):</strong></li>
                     <li><strong>Si es 0, 1, 2, 3, o 4:</strong> Redondea HACIA ABAJO</li>
                     <li><strong>Si es 5, 6, 7, 8, o 9:</strong> Redondea HACIA ARRIBA</li>
@@ -299,15 +299,15 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
-                    <div class="number-box" id="practice-number" style="font-size: 3em;">?</div>
+                <div id="practice-visual" class="min-height-80-flex-center">
+                    <div class="number-box" id="practice-number" class="text-xlarge">?</div>
                 </div>
 
                 <div class="input-section">
@@ -405,8 +405,8 @@
             const rounded = unidades < 5 ? num - unidades : num + (10 - unidades);
             
             result.innerHTML = `
-                <div style="color: #333;">
-                    <strong>${num}</strong> → <strong style="color: var(--primary-color); font-size: 1.3em;">${rounded}</strong><br>
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
                     <small>Unidades: ${unidades} ${unidades < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
                 </div>
             `;
@@ -428,8 +428,8 @@
             const rounded = Math.round(num / 100) * 100;
             
             result.innerHTML = `
-                <div style="color: #333;">
-                    <strong>${num}</strong> → <strong style="color: var(--primary-color); font-size: 1.3em;">${rounded}</strong><br>
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
                     <small>Decenas: ${decenas} ${decenas < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
                 </div>
             `;
@@ -451,8 +451,8 @@
             const rounded = Math.round(num / 1000) * 1000;
             
             result.innerHTML = `
-                <div style="color: #333;">
-                    <strong>${num}</strong> → <strong style="color: var(--primary-color); font-size: 1.3em;">${rounded}</strong><br>
+                <div class="text-dark">
+                    <strong>${num}</strong> → <strong class="primary-large-text">${rounded}</strong><br>
                     <small>Centenas: ${centenas} ${centenas < 5 ? '(menor que 5, redondea ABAJO)' : '(5 o mayor, redondea ARRIBA)'}</small>
                 </div>
             `;
@@ -503,11 +503,11 @@
             
             if (userAnswer === currentQuestion.rounded) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.number} redondeado a ${currentQuestion.type} es <strong>${currentQuestion.rounded}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.number} redondeado a ${currentQuestion.type} es <strong>${currentQuestion.rounded}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.rounded}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.rounded}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

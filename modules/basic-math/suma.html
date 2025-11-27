@@ -194,7 +194,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} + ${num2} = ${sum} 🎉<br>
-                    <small style="font-size: 0.8em;">¡Juntamos ${num1} y ${num2}!</small>
+                    <small class="text-small-hint">¡Juntamos ${num1} y ${num2}!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -213,10 +213,10 @@
             
             let html = '<div class="visual-demo">';
             html += Components.createNumberBlocks(num1, '🔵', 40);
-            html += '<div style="font-size: 2em; color: #333;">+</div>';
+            html += '<div class="text-large-dark">+</div>';
             html += Components.createNumberBlocks(num2, '🟢', 40);
-            html += '<div style="font-size: 2em; color: #333;">=</div>';
-            html += `<div style="font-size: 3em; color: #f5576c; font-weight: bold;">${num1 + num2}</div>`;
+            html += '<div class="text-large-dark">=</div>';
+            html += `<div class="text-xlarge-pink">${num1 + num2}</div>`;
             html += '</div>';
             
             container.innerHTML = html;
@@ -239,7 +239,7 @@
             result.innerHTML = `
                 <div>
                     ${num1} + ${num2} = ${sum} 🎉<br>
-                    <small style="font-size: 0.8em;">¡Mira abajo cómo se hace paso a paso!</small>
+                    <small class="text-small-hint">¡Mira abajo cómo se hace paso a paso!</small>
                 </div>
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
@@ -261,8 +261,8 @@
             const finalUnits = unitsSum % 10;
             const tensSum = tens1 + tens2 + carry;
             
-            let html = '<h3 style="color: #f5576c; margin-bottom: 15px;">Paso a paso:</h3>';
-            html += '<div style="font-size: 1.2em; line-height: 2;">';
+            let html = '<h3 class="text-error" class="mb-15">Paso a paso:</h3>';
+            html += '<div class="text-xl-relaxed">';
             html += `<p>1️⃣ <strong>Unidades:</strong> ${units1} + ${units2} = ${unitsSum}`;
             if (carry > 0) {
                 html += ` → Escribimos <strong>${finalUnits}</strong> y llevamos <strong>${carry}</strong>`;
@@ -338,7 +338,7 @@
                 score += 10;
                 
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Correcto! 🎉<br>
                         ${currentQuestion.num1} + ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>+10 puntos (Total: ${points})</small>
@@ -351,7 +351,7 @@
                 score = Math.max(0, score - 5);
                 
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-dark">
                         ¡Intenta de nuevo! 😊<br>
                         ${currentQuestion.num1} + ${currentQuestion.num2} = ${currentQuestion.answer}<br>
                         <small>-5 puntos. ¡Sigue practicando! (Total: ${points})</small>

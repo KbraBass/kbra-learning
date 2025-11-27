@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚖️ Tema 5: Sistemas de Ecuaciones Lineales</title>
 </head>
-<body style="font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;margin:0;padding:20px">
-    <div style="max-width:1200px;margin:0 auto">
-        <nav style="background:rgba(255,255,255,0.9);padding:15px 25px;border-radius:15px;margin-bottom:20px">
-            <a href="../../index.html" style="color:#667eea;text-decoration:none">🏠 Inicio</a> ›
-            <a href="../index.html" style="color:#667eea;text-decoration:none">Mates Avanzadas</a> ›
-            <a href="volume1_index.html" style="color:#667eea;text-decoration:none">Volumen I</a> ›
+<body class="body-gradient-primary">
+    <div class="max-width-1200">
+        <nav class="card-white-rounded">
+            <a href="../../index.html" class="link-primary">🏠 Inicio</a> ›
+            <a href="../index.html" class="link-primary">Mates Avanzadas</a> ›
+            <a href="volume1_index.html" class="link-primary">Volumen I</a> ›
             <span>Tema 5: Sistemas de Ecuaciones Lineales</span>
         </nav>
 
-        <div style="background:rgba(255,255,255,0.98);border-radius:25px;padding:40px;margin-bottom:30px;text-align:center">
-            <h1 style="font-size:2.8em;color:#667eea;margin-bottom:15px">⚖️ Tema 5: Sistemas de Ecuaciones Lineales</h1>
-            <p style="font-size:1.2em;color:#666">Métodos de resolución y discusión de sistemas</p>
+        <div class="card-white-center">
+            <h1 class="text-xxl-primary-mb">⚖️ Tema 5: Sistemas de Ecuaciones Lineales</h1>
+            <p class="text-xl-gray">Métodos de resolución y discusión de sistemas</p>
         </div>
 
-        <div style="background:linear-gradient(135deg,#10b981,#059669);color:white;padding:20px;border-radius:15px;margin:20px 0;display:flex;justify-content:space-around;flex-wrap:wrap">
-            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="points">0</div><div>Puntos</div></div>
-            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="completed">0</div><div>Ejercicios</div></div>
-            <div style="text-align:center;padding:10px"><div style="font-size:2.5em;font-weight:bold" id="accuracy">0%</div><div>Precisión</div></div>
+        <div class="stats-bar">
+            <div class="text-center-p10"><div class="text-huge-bold" id="points">0</div><div>Puntos</div></div>
+            <div class="text-center-p10"><div class="text-huge-bold" id="completed">0</div><div>Ejercicios</div></div>
+            <div class="text-center-p10"><div class="text-huge-bold" id="accuracy">0%</div><div>Precisión</div></div>
         </div>
 
-        <div style="background:rgba(255,255,255,0.98);border-radius:20px;padding:40px;margin-bottom:20px">
-            <h2 style="color:#667eea;font-size:2em;margin-bottom:20px">📚 Contenido del Tema</h2>
+        <div class="card-white-lg">
+            <h2 class="text-xl-primary-mb">📚 Contenido del Tema</h2>
             
 
-            <h3 style="color:#667eea;margin:30px 0 15px 0">📖 Glosario de Símbolos Matemáticos</h3>
-            <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:25px;margin:20px 0;border-radius:15px">
-                <h4 style="color:white;margin:0 0 15px 0">Símbolos utilizados en Sistemas de Ecuaciones:</h4>
-                <ul style="list-style:none;padding-left:0;line-height:2">
+            <h3 class="text-primary-mt-mb">📖 Glosario de Símbolos Matemáticos</h3>
+            <div class="gradient-box-purple-p25-m20">
+                <h4 class="white-text-mb">Símbolos utilizados en Sistemas de Ecuaciones:</h4>
+                <ul class="list-plain-lh-2">
                     <li><strong>x, y, z</strong> = Variables / incógnitas del sistema</li>
                     <li><strong>{ }</strong> = Llaves que agrupan las ecuaciones del sistema</li>
                     <li><strong>≡</strong> = Sistema compatible indeterminado (infinitas soluciones)</li>
@@ -42,39 +42,39 @@
                     <li><strong>rango</strong> = Número de filas linealmente independientes</li>
                     <li><strong>~</strong> = Equivalente (tras operaciones elementales)</li>
                 </ul>
-                <p style="margin-top:20px;padding-top:20px;border-top:2px solid rgba(255,255,255,0.3)">
+                <p class="section-divider">
                     <strong>💡 Consejo:</strong> Familiarízate con estos símbolos antes de comenzar el estudio del tema. Te ayudará a leer y comprender las fórmulas matemáticas con mayor facilidad.
                 </p>
             </div>
 
-                        <div style="background:#f0f4ff;border-left:5px solid #667eea;padding:20px;margin:20px 0;border-radius:10px">
-                <h3 style="color:#764ba2;margin-bottom:15px">Objetivos de Aprendizaje</h3>
-                <p style="line-height:1.8">Este tema cubre los conceptos fundamentales necesarios para comprender y aplicar las matemáticas avanzadas. Incluye teoría, ejemplos resueltos paso a paso, herramientas interactivas y ejercicios de práctica.</p>
+                        <div class="info-box-primary-border">
+                <h3 class="text-purple-mb">Objetivos de Aprendizaje</h3>
+                <p class="line-height-18">Este tema cubre los conceptos fundamentales necesarios para comprender y aplicar las matemáticas avanzadas. Incluye teoría, ejemplos resueltos paso a paso, herramientas interactivas y ejercicios de práctica.</p>
             </div>
 
-            <div style="background:#e8f5e9;border-left:5px solid #10b981;padding:20px;margin:20px 0;border-radius:10px">
-                <h3 style="color:#10b981;margin-bottom:15px">💡 Ejemplo Resuelto</h3>
-                <p style="line-height:1.8">Los ejemplos están diseñados para ilustrar cada concepto con aplicaciones prácticas y procedimientos paso a paso.</p>
+            <div class="success-box">
+                <h3 class="text-green">💡 Ejemplo Resuelto</h3>
+                <p class="line-height-18">Los ejemplos están diseñados para ilustrar cada concepto con aplicaciones prácticas y procedimientos paso a paso.</p>
             </div>
 
-            <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:30px;border-radius:15px;margin:25px 0">
-                <h3 style="margin-bottom:20px">🧮 Herramientas Interactivas</h3>
+            <div class="gradient-card-primary">
+                <h3 class="mb-20">🧮 Herramientas Interactivas</h3>
                 <p>Calculadoras y visualizadores para explorar los conceptos de forma práctica.</p>
             </div>
 
-            <div style="background:#f8f9fa;padding:20px;border-radius:12px;margin:15px 0;border:2px solid #e0e0e0">
-                <h4 style="color:#667eea;margin-bottom:15px">Ejercicio de Práctica 1</h4>
-                <p style="margin-bottom:10px">Completa los ejercicios para consolidar tu aprendizaje.</p>
-                <input type="text" id="ex1" style="padding:10px;border:2px solid #ddd;border-radius:8px;margin:10px 10px 10px 0">
-                <button onclick="checkEx(1,'correcto')" style="background:#10b981;color:white;border:none;padding:10px 25px;border-radius:8px;cursor:pointer;font-weight:bold">Verificar</button>
-                <div id="f1" style="display:none;margin-top:15px;padding:15px;border-radius:8px"></div>
+            <div class="info-box">
+                <h4 class="exercise-header-primary">Ejercicio de Práctica 1</h4>
+                <p class="mb-10">Completa los ejercicios para consolidar tu aprendizaje.</p>
+                <input type="text" id="ex1" class="exercise-card-sm">
+                <button onclick="checkEx(1,'correcto')" class="button-success">Verificar</button>
+                <div id="f1" class="hidden-mt"></div>
             </div>
         </div>
 
-        <div style="display:flex;justify-content:space-between;margin:30px 0;gap:15px;flex-wrap:wrap">
-            <a href="tema4_matrices.html" style="background:rgba(255,255,255,0.95);color:#667eea;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">⬅️ Anterior</a>
-            <a href="volume1_index.html" style="background:rgba(255,255,255,0.95);color:#667eea;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">📚 Índice</a>
-            <a href="tema6_vectorial_plano.html" style="background:rgba(255,255,255,0.95);color:#667eea;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:bold">Siguiente ➡️</a>
+        <div class="flex-between-gap">
+            <a href="tema4_matrices.html" class="button-pill-primary">⬅️ Anterior</a>
+            <a href="volume1_index.html" class="button-pill-primary">📚 Índice</a>
+            <a href="tema6_vectorial_plano.html" class="button-pill-primary">Siguiente ➡️</a>
         </div>
     </div>
 

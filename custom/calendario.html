@@ -374,7 +374,7 @@
 
         <!-- CALENDARIO TAB -->
         <div id="calendario" class="content tab-content active">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">📆 Calendario Interactivo</h2>
+            <h2 class="section-title">📆 Calendario Interactivo</h2>
             
             <div class="explanation">
                 <h3>¿Qué es un calendario?</h3>
@@ -418,7 +418,7 @@
 
         <!-- CONCEPTOS TAB -->
         <div id="conceptos" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">📚 Conceptos del Calendario</h2>
+            <h2 class="section-title">📚 Conceptos del Calendario</h2>
             
             <div class="explanation">
                 <h3>Aprende los conceptos básicos</h3>
@@ -454,7 +454,7 @@
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin: 30px 0; color: #f093fb;">📅 Los 7 Días de la Semana</h3>
+            <h3 class="text-center-margin-30">📅 Los 7 Días de la Semana</h3>
             <div class="weekday-grid">
                 <div class="weekday-card" style="background: linear-gradient(135deg, #667eea, #764ba2);">Lunes</div>
                 <div class="weekday-card" style="background: linear-gradient(135deg, #f093fb, #f5576c);">Martes</div>
@@ -465,7 +465,7 @@
                 <div class="weekday-card" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);">Domingo</div>
             </div>
 
-            <h3 style="text-align: center; margin: 30px 0; color: #f093fb;">📖 Los 12 Meses del Año</h3>
+            <h3 class="text-center-margin-30">📖 Los 12 Meses del Año</h3>
             <div class="holiday-list">
                 <div class="holiday-item">
                     <span><strong>1. Enero</strong> - 31 días ❄️</span>
@@ -526,7 +526,7 @@
 
         <!-- FESTIVOS MADRID TAB -->
         <div id="festivos" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🎉 Festivos Oficiales de Madrid</h2>
+            <h2 class="section-title">🎉 Festivos Oficiales de Madrid</h2>
             
             <div class="explanation">
                 <h3>Días festivos en Madrid</h3>
@@ -538,7 +538,7 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
+                <h3 class="content-header">🔍 ¿Cuántos días faltan para el próximo festivo?</h3>
                 <button class="calc-button" onclick="findNextHoliday()">📅 Ver Próximo Festivo</button>
                 <div class="result" id="next-holiday-result"></div>
             </div>
@@ -552,7 +552,7 @@
 
         <!-- CALCULADORA TAB -->
         <div id="calculadora" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🧮 Calculadora de Fechas</h2>
+            <h2 class="section-title">🧮 Calculadora de Fechas</h2>
             
             <div class="explanation">
                 <h3>Calcula tu edad, días hasta tu cumpleaños y más</h3>
@@ -560,15 +560,15 @@
             </div>
 
             <div class="date-input">
-                <h3 style="margin-bottom: 15px;">🎂 Tu Fecha de Nacimiento</h3>
-                <input type="date" id="birthdate" style="width: 300px;">
+                <h3 class="content-header">🎂 Tu Fecha de Nacimiento</h3>
+                <input type="date" id="birthdate" class="width-300">
                 <br>
                 <button class="calc-button" onclick="calculateAge()">🎉 Calcular Edad</button>
             </div>
 
             <div class="result" id="age-result"></div>
 
-            <div class="info-grid" id="birthday-info" style="display: none;">
+            <div class="info-grid" id="birthday-info" class="display-none">
                 <div class="info-card">
                     <h3>🎂 Tu Edad</h3>
                     <div class="big-number" id="age-years">0</div>
@@ -589,13 +589,13 @@
 
                 <div class="info-card">
                     <h3>📆 Día de la Semana</h3>
-                    <div class="big-number" id="birth-weekday" style="font-size: 1.5em;">-</div>
+                    <div class="big-number" id="birth-weekday" class="text-large">-</div>
                     <p>naciste un</p>
                 </div>
             </div>
 
-            <div class="date-input" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 15px;">🗓️ ¿Es Año Bisiesto?</h3>
+            <div class="date-input" class="margin-top-30">
+                <h3 class="content-header">🗓️ ¿Es Año Bisiesto?</h3>
                 <input type="number" id="leap-year" placeholder="Año (ej: 2024)" min="1900" max="2100">
                 <br>
                 <button class="calc-button" onclick="checkLeapYear()">🔍 Verificar</button>
@@ -618,9 +618,9 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #f093fb; margin-bottom: 20px;">🏆 ¡Practica el Calendario!</h2>
+            <h2 class="section-title">🏆 ¡Practica el Calendario!</h2>
             
-            <div style="text-align: center; margin-bottom: 20px;">
+            <div class="practice-score-area">
                 <span class="score-display">Puntos: <span id="score">0</span></span>
                 <span class="score-display">Nivel: <span id="level">Principiante</span></span>
             </div>
@@ -630,13 +630,13 @@
                 <div id="answer-options" style="margin: 20px 0;">
                     <!-- Generated by JavaScript -->
                 </div>
-                <button class="calc-button" onclick="generateQuestion()" style="background: linear-gradient(45deg, #ff6b6b, #ffa500);">🔄 Nueva Pregunta</button>
+                <button class="calc-button" onclick="generateQuestion()" class="gradient-warm">🔄 Nueva Pregunta</button>
                 <div class="result" id="practice-result">¡Haz clic en "Nueva Pregunta" para empezar!</div>
             </div>
 
             <div class="fun-facts">
                 <h3>💡 Temas de Práctica:</h3>
-                <ul style="margin-left: 20px; margin-top: 10px;">
+                <ul class="ml-20-mt-10">
                     <li>Días en cada mes</li>
                     <li>Días de la semana</li>
                     <li>Orden de los meses</li>
@@ -883,7 +883,7 @@
             document.getElementById('birth-weekday').textContent = birthWeekday;
             
             document.getElementById('age-result').innerHTML = `
-                <div style="color: #4ecdc4;">
+                <div class="text-teal">
                     ¡Tienes <strong>${age} años</strong>!<br>
                     Has vivido <strong>${formatNumber(daysLived)} días</strong> 🎉
                 </div>
@@ -903,7 +903,7 @@
             
             if (isLeap) {
                 result.innerHTML = `
-                    <div style="color: #00b894;">
+                    <div class="text-green">
                         ✅ <strong>${year} SÍ es año bisiesto</strong><br>
                         Febrero tiene 29 días<br>
                         Total: 366 días en el año
@@ -911,7 +911,7 @@
                 `;
             } else {
                 result.innerHTML = `
-                    <div style="color: #d63031;">
+                    <div class="text-red">
                         ❌ <strong>${year} NO es año bisiesto</strong><br>
                         Febrero tiene 28 días<br>
                         Total: 365 días en el año
@@ -1000,7 +1000,7 @@
             if (answer == currentQuestion.correct) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #00b894;">
+                    <div class="text-green">
                         ¡Correcto! 🎉<br>
                         <strong>${currentQuestion.correct}</strong><br>
                         <small>+10 puntos</small>
@@ -1009,7 +1009,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #d63031;">
+                    <div class="text-red">
                         ¡Intenta de nuevo! 😊<br>
                         La respuesta correcta es: <strong>${currentQuestion.correct}</strong><br>
                         <small>-5 puntos</small>

@@ -17,10 +17,10 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Elementos de Geometría y Trigonometría</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Geometría y Trigonometría:</p>
-                <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
+                <ul class="list-none-lh2-mt">
                     <li><strong>△</strong> = Triángulo</li>
                     <li><strong>∠</strong> = Ángulo</li>
                     <li><strong>⊥</strong> = Perpendicular</li>
@@ -117,8 +117,8 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Teorema de Pitágoras</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Teorema de Pitágoras</h4>
                 <p><strong>Problema:</strong> Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuál es la longitud de la hipotenusa?</p>
                 <p><strong>Solución:</strong></p>
                 <p>Aplicamos el teorema de Pitágoras: a² + b² = c²</p>
@@ -129,8 +129,8 @@
                 <p><strong>Respuesta:</strong> La hipotenusa mide <strong>5 cm</strong></p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Conversión de Ángulos</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Conversión de Ángulos</h4>
                 <p><strong>Problema:</strong> Convertir 60° a radianes.</p>
                 <p><strong>Solución:</strong></p>
                 <p>Usamos la relación: 180° = π rad</p>
@@ -138,8 +138,8 @@
                 <p><strong>Respuesta:</strong> 60° = <strong>π/3 radianes</strong> (≈ 1.047 rad)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Cálculo de Razones Trigonométricas</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Cálculo de Razones Trigonométricas</h4>
                 <p><strong>Problema:</strong> En un triángulo rectángulo, la hipotenusa mide 10 y un cateto mide 6. Calcular sin(α), cos(α) y tan(α) para el ángulo α opuesto al cateto de 6.</p>
                 <p><strong>Solución:</strong></p>
                 <p>Primero hallamos el otro cateto: b² + 6² = 10²</p>
@@ -150,8 +150,8 @@
                 <p><strong>Respuesta:</strong> sin(α) = 0.6, cos(α) = 0.8, tan(α) = 0.75</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Semejanza de Triángulos</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Semejanza de Triángulos</h4>
                 <p><strong>Problema:</strong> Dos triángulos son semejantes con razón de semejanza 2:3. Si el menor tiene lados 4, 5 y 6 cm, ¿cuáles son los lados del mayor?</p>
                 <p><strong>Solución:</strong></p>
                 <p>Razón = 3/2 = 1.5</p>
@@ -159,8 +159,8 @@
                 <p><strong>Respuesta:</strong> <strong>6 cm, 7.5 cm y 9 cm</strong></p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Ángulos Notables</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Ángulos Notables</h4>
                 <p><strong>Problema:</strong> Calcular el valor exacto de sin(30°) + cos(60°)</p>
                 <p><strong>Solución:</strong></p>
                 <p>De la tabla de ángulos notables:</p>
@@ -234,7 +234,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='polinomios.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -257,7 +257,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='polinomios.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -312,7 +312,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

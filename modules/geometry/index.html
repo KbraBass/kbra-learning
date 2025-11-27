@@ -148,7 +148,7 @@
         </div>
 
         <div class="category-stats">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 10px;">Tu Progreso en Geometría</h2>
+            <h2 class="section-subtitle">Tu Progreso en Geometría</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-value" id="modules-completed">0</div>
@@ -163,15 +163,15 @@
                     <div class="stat-label">Ejercicios Realizados</div>
                 </div>
             </div>
-            <div class="progress-bar" style="margin-top: 20px;">
-                <div class="progress-fill" id="category-progress" style="width: 0%"></div>
+            <div class="progress-bar" class="margin-top-20">
+                <div class="progress-fill" id="category-progress" class="width-progress-0"></div>
             </div>
-            <p style="text-align: center; margin-top: 10px; color: #666;">
+            <p class="text-centered-gray">
                 <span id="progress-text">0% completado</span>
             </p>
         </div>
 
-        <h2 style="text-align: center; color: var(--primary-color); margin: 40px 0 30px 0;">Elige un módulo para comenzar</h2>
+        <h2 class="section-title-large">Elige un módulo para comenzar</h2>
 
         <div class="modules-grid" id="modules-container">
             <!-- Modules will be dynamically loaded here -->
@@ -229,7 +229,7 @@
                     <div class="module-title">${module.title}</div>
                     <div class="module-description">${module.description}</div>
                     <div class="module-progress">
-                        <small style="color: #666;">Progreso: ${progress}%</small>
+                        <small class="text-gray">Progreso: ${progress}%</small>
                         <div class="progress-bar">
                             <div class="progress-fill" style="width: ${progress}%"></div>
                         </div>

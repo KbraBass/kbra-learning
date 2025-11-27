@@ -17,10 +17,10 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Polinomios</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Polinomios y Álgebra:</p>
-                <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
+                <ul class="list-none-lh2-mt">
                     <li><strong>P(x)</strong> = Polinomio en la variable x</li>
                     <li><strong>a<sub>n</sub></strong> = Coeficiente del término de grado n</li>
                     <li><strong>deg(P)</strong> = Grado del polinomio P (mayor exponente)</li>
@@ -118,8 +118,8 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Suma de Polinomios</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Suma de Polinomios</h4>
                 <p><strong>Problema:</strong> (2x³ + 3x² - x + 5) + (x³ - 2x² + 4x - 3)</p>
                 <p><strong>Solución:</strong></p>
                 <p>Agrupamos términos del mismo grado:</p>
@@ -128,8 +128,8 @@
                 <p><strong>Respuesta:</strong> 3x³ + x² + 3x + 2</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Multiplicación de Polinomios</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Multiplicación de Polinomios</h4>
                 <p><strong>Problema:</strong> (x + 3)(2x - 5)</p>
                 <p><strong>Solución:</strong></p>
                 <p>Aplicamos la propiedad distributiva:</p>
@@ -139,8 +139,8 @@
                 <p><strong>Respuesta:</strong> 2x² + x - 15</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: División por Ruffini</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: División por Ruffini</h4>
                 <p><strong>Problema:</strong> Dividir (x³ - 6x² + 11x - 6) ÷ (x - 2)</p>
                 <p><strong>Solución:</strong></p>
                 <p>Coeficientes: [1, -6, 11, -6] | Divisor: x - 2, entonces a = 2</p>
@@ -154,8 +154,8 @@
                 <p><strong>Resto:</strong> 0 (entonces 2 es raíz del polinomio)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Factorización</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Factorización</h4>
                 <p><strong>Problema:</strong> Factorizar x² - 9</p>
                 <p><strong>Solución:</strong></p>
                 <p>Reconocemos la diferencia de cuadrados: a² - b²</p>
@@ -164,8 +164,8 @@
                 <p><strong>Respuesta:</strong> (x + 3)(x - 3)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Simplificación de Fracción Algebraica</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Simplificación de Fracción Algebraica</h4>
                 <p><strong>Problema:</strong> Simplificar (x² - 4)/(x² + 4x + 4)</p>
                 <p><strong>Solución:</strong></p>
                 <p>Paso 1: Factorizar numerador y denominador</p>
@@ -238,7 +238,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='estadistica.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -283,7 +283,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='estadistica.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -338,7 +338,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

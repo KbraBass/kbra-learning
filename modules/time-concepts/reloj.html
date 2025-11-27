@@ -200,7 +200,7 @@
 
         <!-- ANALÓGICO TAB -->
         <div id="analogico" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🕐 Reloj Analógico</h2>
+            <h2 class="section-title">🕐 Reloj Analógico</h2>
             
             <div class="explanation">
                 <h3>Las Manecillas del Reloj</h3>
@@ -219,13 +219,13 @@
             </div>
 
             <div class="time-selector">
-                <label style="display: flex; align-items: center; gap: 10px;">
+                <label class="flex-align-gap">
                     <span>Hora:</span>
                     <select id="hour-select" onchange="updateAnalogClock()">
                         ${Array.from({length: 12}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
                     </select>
                 </label>
-                <label style="display: flex; align-items: center; gap: 10px;">
+                <label class="flex-align-gap">
                     <span>Minutos:</span>
                     <select id="minute-select" onchange="updateAnalogClock()">
                         ${[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(m => `<option value="${m}">${m.toString().padStart(2, '0')}</option>`).join('')}
@@ -246,7 +246,7 @@
 
         <!-- DIGITAL TAB -->
         <div id="digital" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🔢 Reloj Digital</h2>
+            <h2 class="section-title">🔢 Reloj Digital</h2>
             
             <div class="explanation">
                 <h3>Formato 24 horas</h3>
@@ -278,7 +278,7 @@
 
         <!-- LENGUAJE TAB -->
         <div id="lenguaje" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">💬 Lenguaje Natural</h2>
+            <h2 class="section-title">💬 Lenguaje Natural</h2>
             
             <div class="explanation">
                 <h3>¿Cómo decimos la hora?</h3>
@@ -329,7 +329,7 @@
 
         <!-- ZONAS TAB -->
         <div id="zonas" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🌍 Zonas Horarias</h2>
+            <h2 class="section-title">🌍 Zonas Horarias</h2>
             
             <div class="explanation">
                 <h3>El mundo tiene diferentes horas</h3>
@@ -353,14 +353,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 200px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="min-height-200-flex-center"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -499,7 +499,7 @@
                     <div class="timezone-card">
                         <div class="timezone-city">${tz.city}</div>
                         <div class="timezone-time">${timeStr}</div>
-                        <small style="color: #666;">GMT${tz.offset >= 0 ? '+' : ''}${tz.offset}</small>
+                        <small class="text-gray">GMT${tz.offset >= 0 ? '+' : ''}${tz.offset}</small>
                     </div>
                 `;
             }).join('');
@@ -519,11 +519,11 @@
             const minuteDegrees = minute * 6;
             
             document.getElementById('practice-visual').innerHTML = `
-                <div class="clock-container" style="width: 200px; height: 200px;">
+                <div class="clock-container" class="width-200">
                     <div class="clock-face">
                         <div class="clock-hand hour-hand" style="transform: rotate(${hourDegrees}deg); width: 6px; height: 60px; margin-left: -3px;"></div>
                         <div class="clock-hand minute-hand" style="transform: rotate(${minuteDegrees}deg); width: 4px; height: 80px; margin-left: -2px;"></div>
-                        <div class="clock-center" style="width: 12px; height: 12px;"></div>
+                        <div class="clock-center" class="width-12"></div>
                     </div>
                 </div>
             `;
@@ -561,11 +561,11 @@
             
             if (userHour === currentQuestion.hour && userMinute === currentQuestion.minute) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

@@ -109,7 +109,7 @@
 
         <!-- TIPOS TAB -->
         <div id="tipos" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📐 Tipos de Ángulos</h2>
+            <h2 class="section-title">📐 Tipos de Ángulos</h2>
             
             <div class="explanation">
                 <h3>¿Qué es un ángulo?</h3>
@@ -181,7 +181,7 @@
 
         <!-- MEDIR TAB -->
         <div id="medir" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📏 ¿Cómo se Miden los Ángulos?</h2>
+            <h2 class="section-title">📏 ¿Cómo se Miden los Ángulos?</h2>
             
             <div class="explanation">
                 <h3>El Transportador</h3>
@@ -198,9 +198,9 @@
                 </ol>
             </div>
 
-            <div class="explanation" style="margin-top: 30px;">
+            <div class="explanation" class="margin-top-30">
                 <h3>💡 Trucos Útiles:</h3>
-                <ul style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
+                <ul class="text-left-auto">
                     <li>Si el ángulo parece grande (abierto), probablemente es obtuso (más de 90°)</li>
                     <li>Si parece pequeño (cerrado), probablemente es agudo (menos de 90°)</li>
                     <li>Si parece la esquina de un cuadrado, es recto (exactamente 90°)</li>
@@ -216,7 +216,7 @@
 
         <!-- INTERACTIVO TAB -->
         <div id="interactivo" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🎮 Ángulo Interactivo</h2>
+            <h2 class="section-title">🎮 Ángulo Interactivo</h2>
             
             <div class="explanation">
                 <h3>¡Crea tus propios ángulos!</h3>
@@ -231,7 +231,7 @@
                 <div class="input-group">
                     <label for="angle-slider">Ajusta el ángulo:</label>
                     <input type="range" id="angle-slider" min="0" max="180" value="45" 
-                           style="width: 100%; max-width: 400px; margin: 10px auto; display: block;">
+                           class="width-full-max-400">
                 </div>
             </div>
 
@@ -240,7 +240,7 @@
                 <div id="angle-type" style="font-size: 0.8em; color: var(--accent-color); margin-top: 10px;">Ángulo Agudo</div>
             </div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>🔍 Observa:</h3>
                 <ul>
                     <li><strong>0°-89°:</strong> Ángulo Agudo (pequeño)</li>
@@ -253,14 +253,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 150px; display: flex; align-items: center; justify-content: center;">
+                <div id="practice-visual" class="result-container-tall">
                     <canvas id="practice-canvas" width="200" height="200"></canvas>
                 </div>
 
@@ -512,11 +512,11 @@
             
             if (userAnswer === currentQuestion.type) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>${currentQuestion.value}° es un ángulo <strong>${typeNames[currentQuestion.type]}</strong><br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

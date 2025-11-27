@@ -166,18 +166,18 @@
 
         <!-- APRENDER TAB -->
         <div id="aprender" class="content tab-content active">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">📚 ¿Qué es la Factorización Prima?</h2>
+            <h2 class="section-title">📚 ¿Qué es la Factorización Prima?</h2>
             
             <div class="explanation">
                 <h3>Números Primos</h3>
                 <p>Un <strong>número primo</strong> es un número mayor que 1 que solo se puede dividir exactamente por 1 y por sí mismo.</p>
-                <p style="margin-top: 15px;"><strong>Ejemplos:</strong> 2, 3, 5, 7, 11, 13...</p>
+                <p class="margin-top-15"><strong>Ejemplos:</strong> 2, 3, 5, 7, 11, 13...</p>
             </div>
 
             <div class="explanation">
                 <h3>Factorización Prima</h3>
                 <p>Es el proceso de descomponer un número en sus factores primos. Es como encontrar los "bloques básicos" que forman un número.</p>
-                <p style="margin-top: 15px;"><strong>Ejemplo:</strong> 12 = 2 × 2 × 3</p>
+                <p class="margin-top-15"><strong>Ejemplo:</strong> 12 = 2 × 2 × 3</p>
             </div>
 
             <div class="fun-facts">
@@ -193,7 +193,7 @@
 
         <!-- PRIMOS TAB -->
         <div id="primos" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">⭐ Números Primos del 1 al 100</h2>
+            <h2 class="section-title">⭐ Números Primos del 1 al 100</h2>
             
             <div class="explanation">
                 <h3>Los primeros números primos</h3>
@@ -228,7 +228,7 @@
                 <div class="prime-number">97</div>
             </div>
 
-            <div class="input-section" style="margin-top: 40px;">
+            <div class="input-section" class="mt-40">
                 <h3>¿Es este número primo?</h3>
                 <div class="input-group">
                     <label for="prime-test-input">Escribe un número:</label>
@@ -237,12 +237,12 @@
                 <button class="calc-button" onclick="testPrime()">Comprobar</button>
             </div>
 
-            <div id="prime-test-result" style="margin-top: 30px;"></div>
+            <div id="prime-test-result" class="margin-top-30"></div>
         </div>
 
         <!-- FACTORIZAR TAB -->
         <div id="factorizar" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🌲 Árbol de Factorización</h2>
+            <h2 class="section-title">🌲 Árbol de Factorización</h2>
             
             <div class="explanation">
                 <h3>¿Cómo factorizar un número?</h3>
@@ -258,11 +258,11 @@
                 <button class="calc-button" onclick="factorizeNumber()">Factorizar</button>
             </div>
 
-            <div id="factor-result" style="margin-top: 30px;"></div>
+            <div id="factor-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>📝 Pasos para Factorizar:</h3>
-                <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 2;">
+                <ol class="text-left-auto">
                     <li>Empieza probando con 2 (el primo más pequeño)</li>
                     <li>Si el número es divisible, divídelo</li>
                     <li>Continúa con el resultado hasta que sea primo</li>
@@ -273,7 +273,7 @@
 
         <!-- COMPONER TAB -->
         <div id="componer" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">➕ Componer desde Factores</h2>
+            <h2 class="section-title">➕ Componer desde Factores</h2>
             
             <div class="explanation">
                 <h3>El proceso inverso</h3>
@@ -282,7 +282,7 @@
 
             <div class="input-section">
                 <h3>Multiplica estos factores primos:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="grid-autofit-120">
                     <div class="input-group">
                         <label for="factor1">Factor 1:</label>
                         <input type="number" id="factor1" placeholder="Ej: 2" min="2">
@@ -303,9 +303,9 @@
                 <button class="calc-button" onclick="composeFromFactors()">Multiplicar</button>
             </div>
 
-            <div id="compose-result" style="margin-top: 30px;"></div>
+            <div id="compose-result" class="margin-top-30"></div>
 
-            <div class="fun-facts" style="margin-top: 30px;">
+            <div class="fun-facts" class="margin-top-30">
                 <h3>💡 Ejemplo:</h3>
                 <p><strong>2 × 2 × 3 × 5</strong> = ?</p>
                 <p>Paso 1: 2 × 2 = 4</p>
@@ -316,14 +316,14 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
 
-                <h3 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
-                <div id="practice-visual" style="min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                <div id="practice-visual" class="result-container"></div>
 
                 <div class="input-section">
                     <div class="input-group">
@@ -445,7 +445,7 @@
             const num = parseInt(input.value);
             
             if (isNaN(num) || num < 2) {
-                document.getElementById('prime-test-result').innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número mayor que 1!</div>';
+                document.getElementById('prime-test-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número mayor que 1!</div>';
                 return;
             }
             
@@ -460,7 +460,7 @@
             
             if (!prime) {
                 const factors = getPrimeFactors(num);
-                html += `<p style="text-align: center; font-size: 1.2em; color: #666;">Factores primos: <strong style="color: var(--primary-color);">${factors.join(' × ')}</strong></p>`;
+                html += `<p class="text-center-12-gray">Factores primos: <strong class="text-primary-colored">${factors.join(' × ')}</strong></p>`;
             }
             
             document.getElementById('prime-test-result').innerHTML = html;
@@ -471,7 +471,7 @@
             const num = parseInt(input.value);
             
             if (isNaN(num) || num < 2) {
-                document.getElementById('factor-result').innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, escribe un número mayor que 1!</div>';
+                document.getElementById('factor-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, escribe un número mayor que 1!</div>';
                 return;
             }
             
@@ -500,7 +500,7 @@
                 .map(f => counts[f] > 1 ? `${f}^${counts[f]}` : f)
                 .join(' × ');
             
-            html += `<p style="margin-top: 15px;">Forma exponencial: <strong style="color: var(--accent-color);">${exponential}</strong></p>`;
+            html += `<p class="margin-top-15">Forma exponencial: <strong class="text-accent">${exponential}</strong></p>`;
             html += '</div>';
             
             document.getElementById('factor-result').innerHTML = html;
@@ -513,7 +513,7 @@
             const f4 = parseInt(document.getElementById('factor4').value) || null;
             
             if (isNaN(f1) || isNaN(f2)) {
-                document.getElementById('compose-result').innerHTML = '<div class="result" style="background: rgba(255, 107, 107, 0.3);">¡Por favor, completa al menos los primeros dos factores!</div>';
+                document.getElementById('compose-result').innerHTML = '<div class="result" class="bg-warning-light">¡Por favor, completa al menos los primeros dos factores!</div>';
                 return;
             }
             
@@ -525,7 +525,7 @@
             
             let html = '<div class="composition-box">';
             html += `<div class="composition-equation">${factors.join(' × ')} = ${result}</div>`;
-            html += `<p style="color: #666; font-size: 1.1em;">El número compuesto es: <strong style="color: var(--primary-color); font-size: 1.3em;">${result}</strong></p>`;
+            html += `<p class="text-gray-11">El número compuesto es: <strong class="primary-large-text">${result}</strong></p>`;
             html += '</div>';
             
             document.getElementById('compose-result').innerHTML = html;
@@ -550,9 +550,9 @@
             questionAnswered = false;
             
             document.getElementById('practice-question').textContent = `Encuentra los factores primos de ${number}`;
-            document.getElementById('practice-visual').innerHTML = `<div class="number-box" style="font-size: 3em;">${number}</div>`;
+            document.getElementById('practice-visual').innerHTML = `<div class="number-box" class="text-xlarge">${number}</div>`;
             document.getElementById('practice-answer').value = '';
-            document.getElementById('practice-result').innerHTML = '<small style="color: #666;">Escribe los factores separados por comas (Ej: 2,2,3)</small>';
+            document.getElementById('practice-result').innerHTML = '<small class="text-gray">Escribe los factores separados por comas (Ej: 2,2,3)</small>';
             document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
             
             const checkButton = document.getElementById('check-button');
@@ -589,11 +589,11 @@
             
             if (correct) {
                 Gamification.addPoints(10, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Correcto! 🎉<br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>+10 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>+10 puntos</small></div>`;
                 result.style.background = 'rgba(78, 205, 196, 0.3)';
             } else {
                 Gamification.subtractPoints(5, MODULE_ID);
-                result.innerHTML = `<div style="color: #333;">¡Intenta de nuevo! 😊<br>La respuesta correcta es: <strong>${currentQuestion.answer.join(', ')}</strong><br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>-5 puntos</small></div>`;
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es: <strong>${currentQuestion.answer.join(', ')}</strong><br>${currentQuestion.number} = ${currentQuestion.answer.join(' × ')}<br><small>-5 puntos</small></div>`;
                 result.style.background = 'rgba(255, 107, 107, 0.3)';
             }
             

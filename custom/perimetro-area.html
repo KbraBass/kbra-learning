@@ -295,12 +295,12 @@
 
         <!-- PERÍMETRO TAB -->
         <div id="perimetro" class="content tab-content active">
-            <h2 style="text-align: center; color: #fbc2eb; margin-bottom: 20px;">🚶 ¿Qué es el Perímetro?</h2>
+            <h2 class="section-title-pink">🚶 ¿Qué es el Perímetro?</h2>
             
             <div class="explanation">
                 <h3>El perímetro es el borde</h3>
                 <p>El perímetro es la distancia alrededor de una forma. ¡Es como caminar por el borde de un jardín!</p>
-                <ul style="margin-top: 10px;">
+                <ul class="list-spaced">
                     <li><strong>Cuadrado:</strong> suma los 4 lados (o lado × 4)</li>
                     <li><strong>Rectángulo:</strong> suma largo + largo + ancho + ancho</li>
                     <li><strong>Triángulo:</strong> suma los 3 lados</li>
@@ -308,7 +308,7 @@
             </div>
 
             <div class="input-section">
-                <h3 style="margin-bottom: 20px;">Calcula el Perímetro de un Cuadrado</h3>
+                <h3 class="subsection-header">Calcula el Perímetro de un Cuadrado</h3>
                 <div class="input-group">
                     <label for="square-side">Lado del cuadrado:</label>
                     <input type="number" id="square-side" placeholder="5" min="1" max="50" value="5">
@@ -321,8 +321,8 @@
                 <!-- Se generará dinámicamente -->
             </div>
 
-            <div class="input-section" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 20px;">Calcula el Perímetro de un Rectángulo</h3>
+            <div class="input-section input-section-spaced">
+                <h3 class="subsection-header">Calcula el Perímetro de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length">Largo:</label>
                     <input type="number" id="rect-length" placeholder="8" min="1" max="50" value="8">
@@ -347,12 +347,12 @@
 
         <!-- ÁREA TAB -->
         <div id="area" class="content tab-content">
-            <h2 style="text-align: center; color: #fbc2eb; margin-bottom: 20px;">📦 ¿Qué es el Área?</h2>
+            <h2 class="section-title-pink">📦 ¿Qué es el Área?</h2>
             
             <div class="explanation">
                 <h3>El área es el espacio dentro</h3>
                 <p>El área es cuánto espacio hay DENTRO de una forma. Se mide en unidades cuadradas (cm², m²).</p>
-                <ul style="margin-top: 10px;">
+                <ul class="list-spaced">
                     <li><strong>Cuadrado:</strong> lado × lado</li>
                     <li><strong>Rectángulo:</strong> largo × ancho</li>
                     <li><strong>Triángulo:</strong> (base × altura) ÷ 2</li>
@@ -360,7 +360,7 @@
             </div>
 
             <div class="input-section">
-                <h3 style="margin-bottom: 20px;">Calcula el Área de un Cuadrado</h3>
+                <h3 class="subsection-header">Calcula el Área de un Cuadrado</h3>
                 <div class="input-group">
                     <label for="square-side-area">Lado del cuadrado:</label>
                     <input type="number" id="square-side-area" placeholder="6" min="1" max="50" value="6">
@@ -373,8 +373,8 @@
                 <!-- Se generará dinámicamente -->
             </div>
 
-            <div class="input-section" style="margin-top: 30px;">
-                <h3 style="margin-bottom: 20px;">Calcula el Área de un Rectángulo</h3>
+            <div class="input-section input-section-spaced">
+                <h3 class="subsection-header">Calcula el Área de un Rectángulo</h3>
                 <div class="input-group">
                     <label for="rect-length-area">Largo:</label>
                     <input type="number" id="rect-length-area" placeholder="8" min="1" max="50" value="8">
@@ -399,15 +399,15 @@
 
         <!-- PRÁCTICA TAB -->
         <div id="practica" class="content tab-content">
-            <h2 style="text-align: center; color: #fbc2eb; margin-bottom: 20px;">🏆 ¡Practica y Mejora!</h2>
+            <h2 class="section-title-pink">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div class="practice-score-area">
                     <span class="score-display">Puntos: <span id="score">0</span></span>
                     <span class="score-display">Nivel: <span id="level">Principiante</span></span>
                 </div>
 
-                <h3 style="color: #fbc2eb; margin-bottom: 15px; text-align: center;" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                <h3 class="section-title-pink" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
                 
                 <div class="shape-visual" id="practice-visual">
                     <!-- Se generará dinámicamente -->
@@ -474,12 +474,12 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
-                        <div class="dimension-label" style="bottom: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${side}</div>
-                        <div class="dimension-label" style="right: -40px; top: 50%; transform: translateY(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
+                        <div class="dimension-label" class="position-bottom-center">${side}</div>
+                        <div class="dimension-label" class="position-left-middle">${side}</div>
+                        <div class="dimension-label" class="position-right-middle">${side}</div>
                     </div>
-                    <p style="margin-top: 50px; font-weight: bold;">Caminar alrededor = ${perimeter} unidades</p>
+                    <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
                 </div>
             `;
         }
@@ -509,12 +509,12 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-rectangle" style="width: ${displayLength}px; height: ${displayWidth}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="bottom: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
-                        <div class="dimension-label" style="right: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
+                        <div class="dimension-label dimension-label-top">${length}</div>
+                        <div class="dimension-label dimension-label-bottom">${length}</div>
+                        <div class="dimension-label dimension-label-left">${width}</div>
+                        <div class="dimension-label dimension-label-right">${width}</div>
                     </div>
-                    <p style="margin-top: 50px; font-weight: bold;">Caminar alrededor = ${perimeter} unidades</p>
+                    <p class="visual-result-text">Caminar alrededor = ${perimeter} unidades</p>
                 </div>
             `;
         }
@@ -542,9 +542,9 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-square" style="width: ${size}px; height: ${size}px; display: grid; grid-template-columns: repeat(${side}, 1fr); grid-template-rows: repeat(${side}, 1fr);">
-                        ${Array(area).fill('<div style="border: 1px solid rgba(102, 126, 234, 0.3);"></div>').join('')}
+                        ${Array(area).fill('<div class="grid-cell"></div>').join('')}
                     </div>
-                    <p style="margin-top: 10px; font-weight: bold;">${area} cuadraditos = ${area} unidades²</p>
+                    <p class="short-result-text">${area} cuadraditos = ${area} unidades²</p>
                 </div>
             `;
         }
@@ -574,9 +574,9 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-rectangle" style="width: ${displayLength}px; height: ${displayWidth}px; display: grid; grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${width}, 1fr);">
-                        ${Array(area).fill('<div style="border: 1px solid rgba(240, 147, 251, 0.3);"></div>').join('')}
+                        ${Array(area).fill('<div class="grid-cell-pink"></div>').join('')}
                     </div>
-                    <p style="margin-top: 10px; font-weight: bold;">${area} cuadraditos = ${area} unidades²</p>
+                    <p class="short-result-text">${area} cuadraditos = ${area} unidades²</p>
                 </div>
             `;
         }
@@ -595,7 +595,7 @@
                 const size = side * scale;
                 visualHTML = `
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
                     </div>
                 `;
             } else if (type === 'rect-perimeter') {
@@ -606,8 +606,8 @@
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
                     </div>
                 `;
             } else if (type === 'square-area') {
@@ -618,7 +618,7 @@
                 const size = side * scale;
                 visualHTML = `
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
                     </div>
                 `;
             } else {
@@ -629,8 +629,8 @@
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
                     </div>
                 `;
             }
@@ -669,7 +669,7 @@
             if (userAnswer === currentQuestion.answer) {
                 score += 10;
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-primary">
                         ¡Correcto! 🎉<br>
                         La respuesta es <strong>${currentQuestion.answer}</strong><br>
                         <small>+10 puntos</small>
@@ -678,7 +678,7 @@
             } else {
                 score = Math.max(0, score - 5);
                 result.innerHTML = `
-                    <div style="color: #333;">
+                    <div class="text-primary">
                         ¡Intenta de nuevo! 😊<br>
                         La respuesta correcta es <strong>${currentQuestion.answer}</strong><br>
                         <small>-5 puntos</small>
