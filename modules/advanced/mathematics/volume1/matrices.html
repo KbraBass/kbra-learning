@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema 4: Matrices - Matemáticas Avanzadas</title>
+    <title>Matrices - Matemáticas Avanzadas</title>
     <link rel="stylesheet" href="../../../../css/core.css">
     <link rel="stylesheet" href="../../../../css/components.css">
 </head>
@@ -13,213 +13,177 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <!-- Teoría -->
-        <div class="content-section active" id="teoria">
-            <h2>📚 Teoría: Matrices y Determinantes</h2>
-
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
-                <p>Símbolos utilizados en Matrices:</p>
-                <ul class="list-none-lh2-mt">
-                    <li><strong>A, B, C</strong> = Matrices (representadas por letras mayúsculas)</li>
-                    <li><strong>a<sub>ij</sub></strong> = Elemento en la fila i, columna j de una matriz</li>
-                    <li><strong>A<sup>T</sup></strong> = Matriz transpuesta de A</li>
-                    <li><strong>A<sup>-1</sup></strong> = Matriz inversa de A</li>
-                    <li><strong>|A| o det(A)</strong> = Determinante de la matriz A</li>
-                    <li><strong>I<sub>n</sub></strong> = Matriz identidad de orden n (diagonal de 1s)</li>
-                    <li><strong>O</strong> = Matriz nula (todos sus elementos son 0)</li>
-                    <li><strong>rango(A)</strong> = Rango de la matriz A</li>
-                    <li><strong>m×n</strong> = Dimensión de la matriz: m filas, n columnas</li>
-                    <li><strong>±</strong> = Más o menos (operaciones con matrices)</li>
-                </ul>
+        <!-- TAB 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Matrices</h2>
+            
+            <div class="info-box">
+                <p>Aprende los términos clave relacionados con las matrices:</p>
             </div>
 
+            <div class="term-card">
+                <h3>🔷 Matriz</h3>
+                <p><strong>Definición:</strong> Una tabla rectangular de números organizados en filas y columnas. Una matriz de dimensión m×n tiene m filas y n columnas.</p>
+                <p><strong>Ejemplo:</strong> A = [1, 2, 3; 4, 5, 6] es una matriz 2×3 (2 filas, 3 columnas)</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Determinante</h3>
+                <p><strong>Definición:</strong> Un número escalar asociado a una matriz cuadrada que proporciona información sobre sus propiedades. Se denota |A| o det(A).</p>
+                <p><strong>Ejemplo:</strong> Para A = [2, 3; 1, 4], el determinante es |A| = 2×4 - 3×1 = 5</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Matriz Inversa</h3>
+                <p><strong>Definición:</strong> Una matriz A⁻¹ que, al multiplicarse con la matriz original A, da como resultado la matriz identidad: A·A⁻¹ = I. Solo existe si |A| ≠ 0.</p>
+                <p><strong>Ejemplo:</strong> Si A = [2, 1; 1, 1], entonces A⁻¹ = [1, -1; -1, 2]</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Matriz Transpuesta</h3>
+                <p><strong>Definición:</strong> Matriz que se obtiene intercambiando las filas por las columnas de la matriz original. Se denota Aᵀ.</p>
+                <p><strong>Ejemplo:</strong> Si A = [1, 2; 3, 4], entonces Aᵀ = [1, 3; 2, 4]</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Rango de una Matriz</h3>
+                <p><strong>Definición:</strong> El número máximo de filas (o columnas) linealmente independientes en una matriz. También es el orden del mayor determinante no nulo que se puede calcular.</p>
+                <p><strong>Ejemplo:</strong> Una matriz 3×3 puede tener rango 1, 2 o 3 dependiendo de sus elementos</p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos Matemáticos en Matrices</h2>
+            
+            <div class="info-box">
+                <p>Símbolos y notación utilizada en el álgebra matricial:</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">A, B, C</span></h3>
+                <p><strong>Significado:</strong> Matrices (representadas por letras mayúsculas)</p>
+                <p><strong>Uso:</strong> A + B representa la suma de dos matrices</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">a<sub>ij</sub></span></h3>
+                <p><strong>Significado:</strong> Elemento en la fila i, columna j de una matriz</p>
+                <p><strong>Uso:</strong> En A = [1, 2; 3, 4], a₁₂ = 2 (fila 1, columna 2)</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">m×n</span></h3>
+                <p><strong>Significado:</strong> Dimensión de la matriz (m filas, n columnas)</p>
+                <p><strong>Uso:</strong> Una matriz 2×3 tiene 2 filas y 3 columnas</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">|A| o det(A)</span></h3>
+                <p><strong>Significado:</strong> Determinante de la matriz A</p>
+                <p><strong>Uso:</strong> |A| = 0 indica que la matriz es singular (no invertible)</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">A<sup>T</sup></span></h3>
+                <p><strong>Significado:</strong> Matriz transpuesta de A</p>
+                <p><strong>Uso:</strong> Intercambia filas por columnas</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">A<sup>-1</sup></span></h3>
+                <p><strong>Significado:</strong> Matriz inversa de A</p>
+                <p><strong>Uso:</strong> A·A⁻¹ = I (matriz identidad)</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">I<sub>n</sub></span></h3>
+                <p><strong>Significado:</strong> Matriz identidad de orden n</p>
+                <p><strong>Uso:</strong> Tiene 1s en la diagonal principal y 0s en el resto</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">O</span></h3>
+                <p><strong>Significado:</strong> Matriz nula</p>
+                <p><strong>Uso:</strong> Todos sus elementos son 0</p>
+            </div>
+        </div>
+
+        <!-- TAB 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>🌍 Introducción a las Matrices</h2>
+            
+            <div class="info-box">
+                <p>Las matrices son herramientas matemáticas fundamentales con aplicaciones en múltiples áreas. Descubre cómo se utilizan en la vida real:</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🎮 Gráficos por Computadora y Videojuegos</h3>
+                <p>Las matrices se utilizan para representar y manipular objetos en 3D. Las transformaciones como rotación, traslación y escalado se realizan mediante multiplicación de matrices.</p>
+                <p><strong>Ejemplo práctico:</strong> En un videojuego, cada personaje y objeto se representa mediante matrices que permiten moverlos, rotarlos y cambiar su tamaño en tiempo real.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🤖 Inteligencia Artificial y Machine Learning</h3>
+                <p>Los algoritmos de aprendizaje automático utilizan matrices para almacenar y procesar grandes cantidades de datos. Las redes neuronales se basan en operaciones matriciales para el entrenamiento y predicción.</p>
+                <p><strong>Ejemplo práctico:</strong> El reconocimiento facial utiliza matrices para comparar y procesar miles de características faciales simultáneamente.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>📊 Economía y Finanzas</h3>
+                <p>Las matrices permiten modelar sistemas económicos complejos, analizar carteras de inversión y resolver problemas de optimización financiera. El análisis de riesgo y la diversificación de inversiones se basan en operaciones matriciales.</p>
+                <p><strong>Ejemplo práctico:</strong> Los bancos utilizan matrices para analizar la relación entre diferentes activos financieros y optimizar portafolios de inversión.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🔬 Física e Ingeniería</h3>
+                <p>Las matrices son esenciales para resolver sistemas de ecuaciones que modelan circuitos eléctricos, estructuras mecánicas, y fenómenos cuánticos. La mecánica cuántica depende completamente del álgebra matricial.</p>
+                <p><strong>Ejemplo práctico:</strong> Los ingenieros utilizan matrices para calcular las fuerzas y tensiones en puentes y edificios antes de construirlos.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🗺️ Sistemas de Navegación GPS</h3>
+                <p>Los sistemas de posicionamiento global utilizan matrices para calcular coordenadas, corregir errores de señal y optimizar rutas. Las transformaciones de coordenadas entre diferentes sistemas de referencia se realizan con matrices.</p>
+                <p><strong>Ejemplo práctico:</strong> Tu teléfono usa matrices para convertir señales de satélites en tu ubicación exacta en el mapa.</p>
+            </div>
+        </div>
+
+        <!-- TAB 4: Teoría -->
+        <div class="content-section" id="teoria">
+            <h2>📚 Teoría: Matrices y Operaciones</h2>
+
+            <!-- Sección 1: Definición y Tipos -->
             <h3>1. ¿Qué es una Matriz?</h3>
             <div class="info-box">
-                <h4>Definición</h4>
-                <p>Una matriz es una tabla rectangular de números ordenados en filas y columnas. Una matriz de dimensión m×n tiene m filas y n columnas.</p>
+                <p>Una matriz es una tabla rectangular de números organizados en filas y columnas. Una matriz de dimensión m×n tiene m filas y n columnas.</p>
                 <div class="formula-box">
-                    A = (a<sub>ij</sub>) donde i = 1,...,m  y  j = 1,...,n
+                    A = (a<sub>ij</sub>) donde i = 1,...,m y j = 1,...,n
                 </div>
             </div>
 
+            <!-- Sección 2: Tipos de Matrices -->
             <h3>2. Tipos de Matrices</h3>
             <div class="info-box">
-                <h4>Clasificación</h4>
+                <h4>Clasificación Principal:</h4>
                 <ul>
                     <li><strong>Matriz fila:</strong> 1 fila, n columnas (1×n)</li>
                     <li><strong>Matriz columna:</strong> m filas, 1 columna (m×1)</li>
-                    <li><strong>Matriz cuadrada:</strong> m = n (igual número de filas y columnas)</li>
+                    <li><strong>Matriz cuadrada:</strong> m = n (mismo número de filas y columnas)</li>
                     <li><strong>Matriz nula (O):</strong> Todos sus elementos son 0</li>
                     <li><strong>Matriz identidad (I):</strong> Cuadrada con 1s en la diagonal y 0s en el resto</li>
-                    <li><strong>Matriz diagonal:</strong> Sólo tiene elementos en la diagonal principal</li>
+                    <li><strong>Matriz diagonal:</strong> Solo tiene elementos en la diagonal principal</li>
                     <li><strong>Matriz triangular:</strong> Elementos nulos por encima o debajo de la diagonal</li>
                 </ul>
             </div>
 
-            <h3>3. Operaciones con Matrices</h3>
-            
-            <div class="info-box">
-                <h4>Suma y Resta</h4>
+            <!-- Calculadora 1: Suma de Matrices -->
+            <h3>3. Suma y Resta de Matrices</h3>
+            <div class="tool-card">
+                <h4>📱 Calculadora de Suma de Matrices 2×2</h4>
                 <p>Se suman/restan los elementos correspondientes. Solo se pueden sumar matrices de la misma dimensión.</p>
                 <div class="formula-box">
                     (A + B)<sub>ij</sub> = a<sub>ij</sub> + b<sub>ij</sub>
                 </div>
-            </div>
-
-            <div class="info-box">
-                <h4>Producto por Escalar</h4>
-                <p>Se multiplica cada elemento de la matriz por el número k.</p>
-                <div class="formula-box">
-                    (k·A)<sub>ij</sub> = k·a<sub>ij</sub>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <h4>Producto de Matrices</h4>
-                <p>Para multiplicar A×B, el número de columnas de A debe ser igual al número de filas de B. El elemento (i,j) del producto es:</p>
-                <div class="formula-box">
-                    (A·B)<sub>ij</sub> = a<sub>i1</sub>·b<sub>1j</sub> + a<sub>i2</sub>·b<sub>2j</sub> + ... + a<sub>in</sub>·b<sub>nj</sub>
-                </div>
-                <div class="warning-box">
-                    <strong>⚠️ Importante:</strong> El producto de matrices NO es conmutativo: A·B ≠ B·A
-                </div>
-            </div>
-
-            <div class="info-box">
-                <h4>Matriz Transpuesta</h4>
-                <p>Se obtiene intercambiando filas por columnas: (A<sup>T</sup>)<sub>ij</sub> = a<sub>ji</sub></p>
-            </div>
-
-            <h3>4. Determinantes</h3>
-            <div class="info-box">
-                <h4>Cálculo de Determinantes</h4>
-                <p>El determinante es un número asociado a una matriz cuadrada.</p>
-                
-                <h4 class="mt-1rem">Determinante 2×2</h4>
-                <div class="formula-box">
-                    |A| = a<sub>11</sub>·a<sub>22</sub> - a<sub>12</sub>·a<sub>21</sub>
-                </div>
-
-                <h4 class="mt-1rem">Determinante 3×3 (Regla de Sarrus)</h4>
-                <p>Se suman los productos de las diagonales principales y se restan las secundarias.</p>
-
-                <h4 class="mt-1rem">Propiedades de Determinantes</h4>
-                <ul>
-                    <li>|A<sup>T</sup>| = |A|</li>
-                    <li>Si una fila/columna es nula → |A| = 0</li>
-                    <li>Si dos filas/columnas son iguales → |A| = 0</li>
-                    <li>|k·A| = k<sup>n</sup>·|A| (n = orden de la matriz)</li>
-                    <li>|A·B| = |A|·|B|</li>
-                </ul>
-            </div>
-
-            <h3>5. Matriz Inversa</h3>
-            <div class="info-box">
-                <h4>Definición y Cálculo</h4>
-                <p>Una matriz cuadrada A tiene inversa A<sup>-1</sup> si:</p>
-                <div class="formula-box">
-                    A·A<sup>-1</sup> = A<sup>-1</sup>·A = I
-                </div>
-                <div class="exam-important">
-                    <strong>Condición de Existencia:</strong> |A| ≠ 0 (la matriz debe ser no singular)
-                </div>
-
-                <h4 class="mt-1rem">Cálculo de la Inversa 2×2</h4>
-                <div class="formula-box">
-                    A<sup>-1</sup> = (1/|A|) · [a<sub>22</sub>, -a<sub>12</sub>; -a<sub>21</sub>, a<sub>11</sub>]
-                </div>
-            </div>
-
-            <h3>6. Rango de una Matriz</h3>
-            <div class="info-box">
-                <p>El rango es el número máximo de filas (o columnas) linealmente independientes. También es el orden del mayor determinante no nulo que se puede formar.</p>
-            </div>
-
-            <h3>7. Método de Gauss</h3>
-            <div class="info-box">
-                <h4>Operaciones Elementales</h4>
-                <p>Consiste en transformar la matriz en una forma escalonada mediante:</p>
-                <ul>
-                    <li>Intercambiar dos filas</li>
-                    <li>Multiplicar una fila por un número no nulo</li>
-                    <li>Sumar a una fila otra multiplicada por un número</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Ejemplos -->
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Suma de Matrices</h4>
-                <p><strong>Problema:</strong> Calcular A + B siendo A = [1, 2; 3, 4] y B = [5, 6; 7, 8]</p>
-                <p><strong>Solución:</strong></p>
-                <p>Sumamos elemento a elemento:</p>
-                <p>A + B = [1+5, 2+6; 3+7, 4+8] = [6, 8; 10, 12]</p>
-                <p><strong>Respuesta:</strong> [6, 8; 10, 12]</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Producto de Matrices</h4>
-                <p><strong>Problema:</strong> Calcular A·B siendo A = [1, 2; 3, 4] y B = [2, 0; 1, 3]</p>
-                <p><strong>Solución:</strong></p>
-                <p>Elemento (1,1): 1×2 + 2×1 = 4</p>
-                <p>Elemento (1,2): 1×0 + 2×3 = 6</p>
-                <p>Elemento (2,1): 3×2 + 4×1 = 10</p>
-                <p>Elemento (2,2): 3×0 + 4×3 = 12</p>
-                <p><strong>Respuesta:</strong> A·B = [4, 6; 10, 12]</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Determinante</h4>
-                <p><strong>Problema:</strong> Calcular |A| siendo A = [3, 2; 1, 4]</p>
-                <p><strong>Solución:</strong></p>
-                <p>|A| = 3×4 - 2×1 = 12 - 2 = 10</p>
-                <p><strong>Respuesta:</strong> |A| = 10</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Matriz Transpuesta</h4>
-                <p><strong>Problema:</strong> Calcular A<sup>T</sup> siendo A = [1, 2, 3; 4, 5, 6]</p>
-                <p><strong>Solución:</strong></p>
-                <p>Intercambiamos filas por columnas:</p>
-                <p>A<sup>T</sup> = [1, 4; 2, 5; 3, 6]</p>
-                <p><strong>Respuesta:</strong> Matriz de dimensión 3×2</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: Matriz Inversa</h4>
-                <p><strong>Problema:</strong> Calcular A<sup>-1</sup> siendo A = [2, 1; 1, 3]</p>
-                <p><strong>Solución:</strong></p>
-                <p>Paso 1: Calcular |A| = 2×3 - 1×1 = 5</p>
-                <p>Paso 2: A<sup>-1</sup> = (1/5) · [3, -1; -1, 2]</p>
-                <p>A<sup>-1</sup> = [0.6, -0.2; -0.2, 0.4]</p>
-                <p><strong>Respuesta:</strong> A<sup>-1</sup> = [0.6, -0.2; -0.2, 0.4]</p>
-            </div>
-        </div>
-
-        <!-- Herramientas -->
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
-
-            <div class="tool-card">
-                <h3>🔢 Calculadora de Determinantes 2×2</h3>
-                <p>Calcula el determinante de una matriz 2×2</p>
-                
-                <div class="tool-input-group">
-                    <label>Elementos de la matriz [a, b; c, d]:</label>
-                    <input type="text" id="det-matrix" placeholder="Ej: 3,2,1,4 (separados por comas)">
-                </div>
-                
-                <button class="calc-button" onclick="calculateDeterminant()">Calcular</button>
-                <div class="calc-result" id="det-result">Ingresa los 4 elementos</div>
-            </div>
-
-            <div class="tool-card">
-                <h3>➕ Calculadora de Suma de Matrices 2×2</h3>
-                <p>Suma dos matrices 2×2</p>
                 
                 <div class="tool-input-group">
                     <label>Matriz A [a, b; c, d]:</label>
@@ -231,13 +195,18 @@
                     <input type="text" id="sum-matrixB" placeholder="Ej: 5,6,7,8">
                 </div>
                 
-                <button class="calc-button" onclick="calculateSum()">Sumar</button>
+                <button class="calc-button" onclick="calculateSum()">Calcular A + B</button>
                 <div class="calc-result" id="sum-result">Ingresa ambas matrices</div>
             </div>
 
+            <!-- Calculadora 2: Producto por Escalar -->
+            <h3>4. Producto por Escalar</h3>
             <div class="tool-card">
-                <h3>✖️ Calculadora de Producto por Escalar</h3>
-                <p>Multiplica una matriz 2×2 por un número</p>
+                <h4>📱 Calculadora de Producto por Escalar</h4>
+                <p>Se multiplica cada elemento de la matriz por el número k.</p>
+                <div class="formula-box">
+                    (k·A)<sub>ij</sub> = k·a<sub>ij</sub>
+                </div>
                 
                 <div class="tool-input-group">
                     <label>Escalar k:</label>
@@ -249,45 +218,106 @@
                     <input type="text" id="scalar-matrix" placeholder="Ej: 1,2,3,4">
                 </div>
                 
-                <button class="calc-button" onclick="calculateScalar()">Multiplicar</button>
+                <button class="calc-button" onclick="calculateScalar()">Calcular k × A</button>
                 <div class="calc-result" id="scalar-result">Ingresa k y la matriz</div>
             </div>
-        </div>
 
-        <!-- Práctica -->
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-
-            <div id="exercises-container"></div>
-
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='geometria-trigonometria.html'">⬅️ Tema Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
-            </div>
-        </div>
-
-        <!-- Resumen -->
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen del Tema</h2>
-
+            <!-- Sección 5: Producto de Matrices -->
+            <h3>5. Producto de Matrices</h3>
             <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
+                <p>Para multiplicar A×B, el número de columnas de A debe ser igual al número de filas de B.</p>
+                <div class="formula-box">
+                    (A·B)<sub>ij</sub> = a<sub>i1</sub>·b<sub>1j</sub> + a<sub>i2</sub>·b<sub>2j</sub> + ... + a<sub>in</sub>·b<sub>nj</sub>
+                </div>
+                <div class="warning-box">
+                    <strong>⚠️ Importante:</strong> El producto de matrices NO es conmutativo: A·B ≠ B·A
+                </div>
+            </div>
+
+            <!-- Calculadora 3: Determinante -->
+            <h3>6. Determinantes</h3>
+            <div class="tool-card">
+                <h4>📱 Calculadora de Determinantes 2×2</h4>
+                <p>El determinante es un número asociado a una matriz cuadrada.</p>
+                <div class="formula-box">
+                    |A| = a<sub>11</sub>·a<sub>22</sub> - a<sub>12</sub>·a<sub>21</sub>
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Elementos de la matriz [a, b; c, d]:</label>
+                    <input type="text" id="det-matrix" placeholder="Ej: 3,2,1,4">
+                </div>
+                
+                <button class="calc-button" onclick="calculateDeterminant()">Calcular Determinante</button>
+                <div class="calc-result" id="det-result">Ingresa los 4 elementos</div>
+            </div>
+
+            <!-- Sección 7: Propiedades de Determinantes -->
+            <div class="info-box">
+                <h4>Propiedades de Determinantes:</h4>
                 <ul>
-                    <li><strong>Matriz:</strong> Tabla rectangular m×n de números</li>
-                    <li><strong>Tipos:</strong> Nula, identidad, diagonal, triangular</li>
-                    <li><strong>Suma/Resta:</strong> Solo entre matrices de igual dimensión</li>
-                    <li><strong>Producto:</strong> A(m×n)·B(n×p) = C(m×p), NO conmutativo</li>
-                    <li><strong>Transpuesta:</strong> A<sup>T</sup> intercambia filas por columnas</li>
-                    <li><strong>Determinante 2×2:</strong> |A| = a₁₁·a₂₂ - a₁₂·a₂₁</li>
-                    <li><strong>Inversa:</strong> Existe si |A| ≠ 0, cumple A·A<sup>-1</sup> = I</li>
-                    <li><strong>Rango:</strong> Máximo número de filas/columnas independientes</li>
+                    <li>|A<sup>T</sup>| = |A|</li>
+                    <li>Si una fila/columna es nula → |A| = 0</li>
+                    <li>Si dos filas/columnas son iguales → |A| = 0</li>
+                    <li>|k·A| = k<sup>n</sup>·|A| (n = orden de la matriz)</li>
+                    <li>|A·B| = |A|·|B|</li>
                 </ul>
             </div>
 
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='geometria-trigonometria.html'">⬅️ Tema Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
+            <!-- Sección 8: Matriz Transpuesta -->
+            <h3>7. Matriz Transpuesta</h3>
+            <div class="info-box">
+                <p>Se obtiene intercambiando filas por columnas: (A<sup>T</sup>)<sub>ij</sub> = a<sub>ji</sub></p>
+                <p><strong>Ejemplo:</strong> Si A = [1, 2, 3; 4, 5, 6], entonces A<sup>T</sup> = [1, 4; 2, 5; 3, 6]</p>
             </div>
+
+            <!-- Sección 9: Matriz Inversa -->
+            <h3>8. Matriz Inversa</h3>
+            <div class="info-box">
+                <p>Una matriz cuadrada A tiene inversa A<sup>-1</sup> si:</p>
+                <div class="formula-box">
+                    A·A<sup>-1</sup> = A<sup>-1</sup>·A = I
+                </div>
+                <div class="exam-important">
+                    <strong>Condición de Existencia:</strong> |A| ≠ 0 (la matriz debe ser no singular)
+                </div>
+                <h4 class="mt-1rem">Cálculo de la Inversa 2×2:</h4>
+                <div class="formula-box">
+                    A<sup>-1</sup> = (1/|A|) · [a<sub>22</sub>, -a<sub>12</sub>; -a<sub>21</sub>, a<sub>11</sub>]
+                </div>
+            </div>
+
+            <!-- Sección 10: Rango -->
+            <h3>9. Rango de una Matriz</h3>
+            <div class="info-box">
+                <p>El rango es el número máximo de filas (o columnas) linealmente independientes. También es el orden del mayor determinante no nulo que se puede formar.</p>
+            </div>
+        </div>
+
+        <!-- TAB 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento: Práctica con Matrices</h2>
+            
+            <div class="info-box">
+                <p>Practica tus conocimientos sobre matrices. Cada respuesta correcta suma <strong>+10 puntos</strong>, cada error resta <strong>-5 puntos</strong>.</p>
+            </div>
+
+            <div id="training-container"></div>
+        </div>
+
+        <!-- TAB 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Matrices</h2>
+            
+            <div class="info-box">
+                <p>Completa este examen para demostrar tu dominio de las matrices y determinantes.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Matrices" 🏆</p>
+            </div>
+
+            <div id="exam-status"></div>
+            <div id="exam-container"></div>
+            <div id="exam-results"></div>
         </div>
     </div>
 
@@ -296,60 +326,63 @@
     <script src="../../../../lib/components.js"></script>
     <script>
         const MODULE_ID = 'matrices';
-        const MODULE_TITLE = 'Tema 4: Matrices y Determinantes';
+        const MODULE_TITLE = 'Matrices y Determinantes';
 
         document.addEventListener('DOMContentLoaded', function() {
             Components.createHeader(MODULE_TITLE, '../index.html');
             
             const tabs = [
+                { id: 'glosario', label: 'Glosario', icon: '📖' },
+                { id: 'simbolos', label: 'Símbolos', icon: '🔣' },
+                { id: 'introduccion', label: 'Introducción', icon: '🌍' },
                 { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
+                { id: 'entrenamiento', label: 'Entrenamiento', icon: '🎯' },
+                { id: 'examen', label: 'Examen Final', icon: '📝' }
             ];
-            Components.createTabs(tabs, 'teoria');
+            Components.createTabs(tabs, 'glosario');
             Components.createScoreDisplay();
             
-            loadExercises();
+            loadTrainingExercises();
+            loadExam();
             Gamification.updateDisplay(MODULE_ID);
         });
 
-        const exercises = [
-            { id: 1, question: 'Si A = [2, 3; 1, 4], ¿cuánto vale el elemento a₂₁?', type: 'number', correct: '1', hint: 'a_ij significa fila i, columna j. Entonces a₂₁ está en fila 2, columna 1.' },
-            { id: 2, question: 'Calcular el determinante de A = [4, 2; 3, 1]', type: 'number', correct: '-2', hint: 'Para 2×2: |A| = a₁₁×a₂₂ - a₁₂×a₂₁. Calcula 4×1 - 2×3 = -2' },
-            { id: 3, question: 'Si A = [1, 0; 0, 1], ¿qué tipo de matriz es? (1=Identidad, 2=Nula, 3=Diagonal)', type: 'number', correct: '1', hint: 'La matriz identidad tiene 1s en la diagonal y 0s en el resto.' },
-            { id: 4, question: 'Si A es 2×3 y B es 3×4, ¿qué dimensión tiene A·B? (responde como: 24 para 2×4)', type: 'number', correct: '24', hint: 'Si A es m×n y B es n×p, entonces A·B es m×p. Aquí: 2×4 → 24' },
-            { id: 5, question: 'Si |A| = 0, ¿existe A⁻¹? (1=SÍ, 0=NO)', type: 'number', correct: '0', hint: 'La inversa solo existe si |A| ≠ 0. Si el determinante es cero, NO existe.' },
-            { id: 6, question: 'Calcular 2×A si A = [1, 2; 3, 4]. ¿Elemento (2,2)?', type: 'number', correct: '8', hint: 'Multiplicar por escalar: k·A multiplica cada elemento. 2×4 = 8' },
-            { id: 7, question: 'Si A = [1, 2, 3], ¿dimensión de Aᵀ? (responde como: 31 para 3×1)', type: 'number', correct: '31', hint: 'La transpuesta intercambia filas por columnas. 1×3 se convierte en 3×1 → 31' },
-            { id: 8, question: 'Calcular |A| si A = [5, 0; 0, 3]', type: 'number', correct: '15', hint: 'Matriz diagonal. |A| = 5×3 - 0×0 = 15' },
-            { id: 9, question: '¿Cuánto vale |I₂| (determinante de la identidad 2×2)?', type: 'number', correct: '1', hint: 'I₂ = [1, 0; 0, 1]. Calcula: 1×1 - 0×0 = 1' },
-            { id: 10, question: 'Si A = [2, 1; 4, 3], calcular elemento (1,2) de 3A', type: 'number', correct: '3', hint: 'Elemento (1,2) de A es 1. Multiplicar por 3: 3×1 = 3' }
+        // Training exercises (10 questions for practice)
+        const trainingQuestions = [
+            { id: 1, question: 'Si A = [2, 3; 1, 4], ¿cuánto vale el elemento a₂₁?', answer: '1', hint: 'a_ij significa fila i, columna j. Entonces a₂₁ está en fila 2, columna 1.' },
+            { id: 2, question: 'Calcular el determinante de A = [4, 2; 3, 1]', answer: '-2', hint: 'Para 2×2: |A| = a₁₁×a₂₂ - a₁₂×a₂₁ = 4×1 - 2×3' },
+            { id: 3, question: 'Si A = [1, 0; 0, 1], ¿qué tipo de matriz es? (responde: identidad, nula o diagonal)', answer: 'identidad', hint: 'La matriz identidad tiene 1s en la diagonal y 0s en el resto.' },
+            { id: 4, question: 'Si A es 2×3 y B es 3×4, ¿cuántas columnas tiene A·B?', answer: '4', hint: 'Si A es m×n y B es n×p, entonces A·B es m×p. Aquí: 2×4' },
+            { id: 5, question: 'Si |A| = 0, ¿existe A⁻¹? (responde: si o no)', answer: 'no', hint: 'La inversa solo existe si |A| ≠ 0. Si el determinante es cero, NO existe.' },
+            { id: 6, question: 'Calcular 2×A si A = [1, 2; 3, 4]. ¿Elemento (2,2)?', answer: '8', hint: 'Multiplicar por escalar: k·A multiplica cada elemento. 2×4 = 8' },
+            { id: 7, question: 'Si A es 1×3, ¿cuántas filas tiene Aᵀ?', answer: '3', hint: 'La transpuesta intercambia filas por columnas. 1×3 se convierte en 3×1' },
+            { id: 8, question: 'Calcular |A| si A = [5, 0; 0, 3]', answer: '15', hint: 'Matriz diagonal. |A| = 5×3 - 0×0 = 15' },
+            { id: 9, question: '¿Cuánto vale |I₂| (determinante de la identidad 2×2)?', answer: '1', hint: 'I₂ = [1, 0; 0, 1]. Calcula: 1×1 - 0×0 = 1' },
+            { id: 10, question: 'Si A = [2, 1; 4, 3], calcular elemento (1,2) de 3A', answer: '3', hint: 'Elemento (1,2) de A es 1. Multiplicar por 3: 3×1 = 3' }
         ];
 
-        function loadExercises() {
-            const container = document.getElementById('exercises-container');
-            container.innerHTML = exercises.map(ex => `
-                <div class="exercise-card" data-exercise="${ex.id}">
-                    <h4>Ejercicio ${ex.id}</h4>
-                    <p>${ex.question}</p>
-                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+        function loadTrainingExercises() {
+            const container = document.getElementById('training-container');
+            container.innerHTML = trainingQuestions.map(q => `
+                <div class="exercise-card">
+                    <h4>Ejercicio ${q.id}</h4>
+                    <p>${q.question}</p>
+                    <input type="text" id="train${q.id}" class="input-field" placeholder="Tu respuesta">
                     <div class="button-group">
-                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                        <button class="btn btn-primary" onclick="checkTraining(${q.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${q.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                    <div id="feedback${ex.id}" class="feedback"></div>
+                    <div id="hint${q.id}" class="hint-box" style="display:none">${q.hint}</div>
+                    <div id="feedback${q.id}" class="feedback"></div>
                 </div>
             `).join('');
         }
 
-        function checkAnswer(exerciseId) {
-            const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
-            const feedback = document.getElementById('feedback' + exerciseId);
-            const userAnswer = input.value.trim();
+        function checkTraining(id) {
+            const question = trainingQuestions.find(q => q.id === id);
+            const input = document.getElementById('train' + id);
+            const feedback = document.getElementById('feedback' + id);
+            const userAnswer = input.value.trim().toLowerCase();
 
             if (!userAnswer) {
                 feedback.className = 'feedback error';
@@ -358,7 +391,7 @@
                 return;
             }
 
-            const isCorrect = userAnswer === exercise.correct;
+            const isCorrect = userAnswer === question.answer.toLowerCase();
             
             if (isCorrect) {
                 feedback.className = 'feedback success';
@@ -367,7 +400,7 @@
                 Gamification.completeExercise(MODULE_ID, true);
             } else {
                 feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
+                feedback.textContent = 'Incorrecto. -5 puntos. Intenta de nuevo o usa la pista.';
                 Gamification.completeExercise(MODULE_ID, false);
             }
             
@@ -375,38 +408,136 @@
             Gamification.updateDisplay(MODULE_ID);
         }
 
-        function showHint(exerciseId) {
-            const hint = document.getElementById('hint' + exerciseId);
+        function showHint(id) {
+            const hint = document.getElementById('hint' + id);
             hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
         }
 
-        // Interactive tools
-        function calculateDeterminant() {
-            const matrixStr = document.getElementById('det-matrix').value;
-            const result = document.getElementById('det-result');
-            
-            if (!matrixStr) {
-                result.textContent = '⚠️ Por favor, ingresa los 4 elementos';
+        // Exam questions (20 questions)
+        const examQuestions = [
+            { id: 1, question: '¿Qué dimensión tiene una matriz con 3 filas y 5 columnas?', options: ['3×5', '5×3', '15×1', '8'], correct: 0 },
+            { id: 2, question: 'Si A = [6, 2; 8, 4], ¿cuál es el elemento a₁₂?', options: ['6', '2', '8', '4'], correct: 1 },
+            { id: 3, question: 'Calcular |A| si A = [2, 3; 1, 5]', options: ['10', '7', '13', '5'], correct: 1 },
+            { id: 4, question: '¿Cuál es la matriz identidad 2×2?', options: ['[1,1;1,1]', '[0,0;0,0]', '[1,0;0,1]', '[2,0;0,2]'], correct: 2 },
+            { id: 5, question: 'Si A es 2×4 y B es 4×3, ¿qué dimensión tiene A·B?', options: ['2×3', '4×4', '2×4', 'No se puede'], correct: 0 },
+            { id: 6, question: '¿Cuánto vale el determinante de la matriz nula 2×2?', options: ['1', '-1', '0', 'No definido'], correct: 2 },
+            { id: 7, question: 'Si |A| = 5 y |B| = 3, ¿cuánto vale |A·B|?', options: ['15', '8', '2', '53'], correct: 0 },
+            { id: 8, question: 'Si A = [1, 2; 3, 4], ¿cuál es Aᵀ?', options: ['[1,3;2,4]', '[1,2;3,4]', '[4,3;2,1]', '[2,1;4,3]'], correct: 0 },
+            { id: 9, question: '¿Qué condición debe cumplir A para que exista A⁻¹?', options: ['|A| = 1', '|A| ≠ 0', 'A = Aᵀ', 'A = I'], correct: 1 },
+            { id: 10, question: 'Calcular 5·A si A = [1, 0; 2, 3]. Elemento (2,2):', options: ['3', '10', '15', '5'], correct: 2 },
+            { id: 11, question: 'Si dos filas de una matriz son iguales, su determinante es:', options: ['1', '-1', '0', '2'], correct: 2 },
+            { id: 12, question: '¿Cuántas filas tiene la transpuesta de una matriz 3×7?', options: ['3', '7', '21', '10'], correct: 1 },
+            { id: 13, question: 'Una matriz diagonal tiene todos sus elementos nulos excepto:', options: ['Fila 1', 'Columna 1', 'Diagonal principal', 'Todas'], correct: 2 },
+            { id: 14, question: 'Si A·B = I, entonces B es:', options: ['A', 'Aᵀ', 'A⁻¹', '|A|'], correct: 2 },
+            { id: 15, question: 'El producto de matrices es:', options: ['Conmutativo', 'No conmutativo', 'Siempre igual', 'Simétrico'], correct: 1 },
+            { id: 16, question: 'Si A = [3, 1; 2, 4], calcular |A|:', options: ['10', '12', '11', '14'], correct: 0 },
+            { id: 17, question: '¿Qué operación NO requiere matrices del mismo tamaño?', options: ['Suma', 'Resta', 'Multiplicación', 'Todas requieren'], correct: 2 },
+            { id: 18, question: 'El rango de una matriz 3×3 puede ser máximo:', options: ['1', '2', '3', '9'], correct: 2 },
+            { id: 19, question: 'Si |A| = 0, la matriz A es:', options: ['Invertible', 'Singular', 'Identidad', 'Diagonal'], correct: 1 },
+            { id: 20, question: 'Una matriz cuadrada de orden 2 tiene:', options: ['2 elementos', '4 elementos', '8 elementos', '6 elementos'], correct: 1 }
+        ];
+
+        function loadExam() {
+            const examData = Storage.getExamData(MODULE_ID);
+            const statusDiv = document.getElementById('exam-status');
+            const container = document.getElementById('exam-container');
+            const resultsDiv = document.getElementById('exam-results');
+
+            if (examData && examData.passed) {
+                statusDiv.innerHTML = `
+                    <div class="exam-completed">
+                        <h3>✅ Examen Completado</h3>
+                        <p>Puntuación: ${examData.score}/20 (${examData.percentage}%)</p>
+                        <p>Estado: <strong>APROBADO</strong> 🎉</p>
+                        <p>Has ganado el trofeo "Maestro de Matrices" 🏆</p>
+                        <button class="btn btn-secondary" onclick="resetExam()">Reintentar Examen</button>
+                    </div>
+                `;
+                container.style.display = 'none';
                 return;
             }
-            
-            const elements = matrixStr.split(',').map(e => parseFloat(e.trim()));
-            
-            if (elements.length !== 4 || elements.some(isNaN)) {
-                result.textContent = '⚠️ Debes ingresar exactamente 4 números separados por comas';
-                return;
+
+            if (examData && examData.attempts > 0) {
+                statusDiv.innerHTML = `
+                    <div class="exam-attempts">
+                        <p>Intentos realizados: ${examData.attempts}</p>
+                        <p>Mejor puntuación: ${examData.score}/20 (${examData.percentage}%)</p>
+                    </div>
+                `;
             }
-            
-            const [a, b, c, d] = elements;
-            const det = a * d - b * c;
-            
-            result.innerHTML = `
-                <strong>Matriz:</strong> [${a}, ${b}; ${c}, ${d}]<br>
-                <strong>Cálculo:</strong> ${a}×${d} - ${b}×${c} = ${a*d} - ${b*c}<br>
-                <strong>Determinante:</strong> ${det}
+
+            container.innerHTML = `
+                <div class="exam-instructions">
+                    <p>Responde las 20 preguntas del examen. Necesitas 14 respuestas correctas (70%) para aprobar.</p>
+                    <button class="btn btn-primary" onclick="startExam()">Comenzar Examen</button>
+                </div>
             `;
         }
 
+        function startExam() {
+            const container = document.getElementById('exam-container');
+            container.innerHTML = examQuestions.map(q => `
+                <div class="exam-question">
+                    <h4>Pregunta ${q.id}</h4>
+                    <p>${q.question}</p>
+                    <div class="exam-options">
+                        ${q.options.map((opt, idx) => `
+                            <label class="exam-option">
+                                <input type="radio" name="q${q.id}" value="${idx}">
+                                <span>${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('') + `
+                <div class="exam-actions">
+                    <button class="btn btn-success" onclick="submitExam()">Enviar Examen</button>
+                </div>
+            `;
+        }
+
+        function submitExam() {
+            let correct = 0;
+            const total = examQuestions.length;
+
+            examQuestions.forEach(q => {
+                const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+                if (selected && parseInt(selected.value) === q.correct) {
+                    correct++;
+                }
+            });
+
+            const percentage = Math.round((correct / total) * 100);
+            const passed = percentage >= 70;
+
+            Storage.saveExamResult(MODULE_ID, correct, total, passed);
+
+            const resultsDiv = document.getElementById('exam-results');
+            resultsDiv.innerHTML = `
+                <div class="exam-result ${passed ? 'passed' : 'failed'}">
+                    <h3>${passed ? '🎉 ¡Aprobado!' : '❌ No Aprobado'}</h3>
+                    <p>Puntuación: ${correct}/${total} (${percentage}%)</p>
+                    <p>${passed ? 'Has ganado el trofeo "Maestro de Matrices" 🏆' : 'Necesitas 70% para aprobar. ¡Sigue practicando!'}</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Continuar</button>
+                </div>
+            `;
+
+            if (passed) {
+                Gamification.unlockTrophy('matrices');
+            }
+
+            document.getElementById('exam-container').style.display = 'none';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function resetExam() {
+            if (confirm('¿Estás seguro de que deseas reiniciar el examen? Perderás tu progreso actual.')) {
+                Storage.resetExam(MODULE_ID);
+                location.reload();
+            }
+        }
+
+        // Interactive tools
         function calculateSum() {
             const matrixAStr = document.getElementById('sum-matrixA').value;
             const matrixBStr = document.getElementById('sum-matrixB').value;
@@ -428,8 +559,9 @@
             const sumMatrix = A.map((a, i) => a + B[i]);
             
             result.innerHTML = `
-                <strong>A + B =</strong><br>
-                [${sumMatrix[0]}, ${sumMatrix[1]}; ${sumMatrix[2]}, ${sumMatrix[3]}]
+                <strong>Matriz A:</strong> [${A[0]}, ${A[1]}; ${A[2]}, ${A[3]}]<br>
+                <strong>Matriz B:</strong> [${B[0]}, ${B[1]}; ${B[2]}, ${B[3]}]<br>
+                <strong>A + B =</strong> [${sumMatrix[0]}, ${sumMatrix[1]}; ${sumMatrix[2]}, ${sumMatrix[3]}]
             `;
         }
 
@@ -453,8 +585,35 @@
             const scaledMatrix = matrix.map(e => k * e);
             
             result.innerHTML = `
-                <strong>${k} × A =</strong><br>
-                [${scaledMatrix[0]}, ${scaledMatrix[1]}; ${scaledMatrix[2]}, ${scaledMatrix[3]}]
+                <strong>Escalar:</strong> k = ${k}<br>
+                <strong>Matriz A:</strong> [${matrix[0]}, ${matrix[1]}; ${matrix[2]}, ${matrix[3]}]<br>
+                <strong>${k} × A =</strong> [${scaledMatrix[0]}, ${scaledMatrix[1]}; ${scaledMatrix[2]}, ${scaledMatrix[3]}]
+            `;
+        }
+
+        function calculateDeterminant() {
+            const matrixStr = document.getElementById('det-matrix').value;
+            const result = document.getElementById('det-result');
+            
+            if (!matrixStr) {
+                result.textContent = '⚠️ Por favor, ingresa los 4 elementos';
+                return;
+            }
+            
+            const elements = matrixStr.split(',').map(e => parseFloat(e.trim()));
+            
+            if (elements.length !== 4 || elements.some(isNaN)) {
+                result.textContent = '⚠️ Debes ingresar exactamente 4 números separados por comas';
+                return;
+            }
+            
+            const [a, b, c, d] = elements;
+            const det = a * d - b * c;
+            
+            result.innerHTML = `
+                <strong>Matriz:</strong> [${a}, ${b}; ${c}, ${d}]<br>
+                <strong>Cálculo:</strong> ${a}×${d} - ${b}×${c} = ${a*d} - ${b*c}<br>
+                <strong>Determinante:</strong> |A| = ${det}
             `;
         }
     </script>
