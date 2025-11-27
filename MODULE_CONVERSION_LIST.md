@@ -28,9 +28,11 @@
   - Fecha: 27 Nov 2025
 
 ### Prioridad Media - Geometría (Semana 2)
-- [ ] **formas.html**
-  - Estado actual: No revisado
-  - Prioridad: Media
+- [x] **formas.html** - ✅ Completado
+  - Estado: Convertido a 6 pestañas estándar
+  - Examen final: 20 preguntas, 70% para aprobar
+  - Trofeo: "Maestro de las Formas"
+  - Fecha: 27 Nov 2025
   
 - [ ] **angulos.html**
   - Estado actual: No revisado
@@ -86,11 +88,12 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 4 ✅
+- **Completados**: 5 ✅
 - **En progreso**: 0
-- **Pendientes**: 24+
-- **Progreso**: 14.3% (4/28)
-- **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada
+- **Pendientes**: 23+
+- **Progreso**: 17.9% (5/28)
+- **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
+- **Semana 2 (Geometría y Tiempo)**: 🔄 16.7% En Progreso (1/6)
 
 ## Criterios de Completitud
 Para que un módulo se considere "completado", debe cumplir:
