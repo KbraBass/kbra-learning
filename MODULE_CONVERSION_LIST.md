@@ -125,7 +125,11 @@
     - Examen final: 20 preguntas, 70% para aprobar
     - Trofeo: "Maestro de Funciones I"
     - Fecha: 27 Nov 2025
-  - [ ] funciones-elementales-2.html
+  - [x] funciones-elementales-2.html - ✅ Completado
+    - Estado: Convertido a 6 pestañas estándar
+    - Examen final: 20 preguntas, 70% para aprobar
+    - Trofeo: "Maestro de Funciones II"
+    - Fecha: 27 Nov 2025
   - [ ] representacion.html
   - [ ] limites.html
   - [ ] derivadas.html
@@ -134,10 +138,10 @@
 
 ## Resumen
 - **Total de módulos**: 28+
-- **Completados**: 20 ✅
+- **Completados**: 21 ✅
 - **En progreso**: 0
-- **Pendientes**: 8+
-- **Progreso**: 71.4% (20/28)
+- **Pendientes**: 7+
+- **Progreso**: 75.0% (21/28)
 - **Semana 1 (Matemáticas Básicas)**: ✅ 100% Completada (4/4)
 - **Semana 2 (Geometría y Tiempo)**: ✅ 100% Completada (6/6)
 - **Semana 3 (Conceptos Numéricos)**: ✅ 100% Completada (3/3)
