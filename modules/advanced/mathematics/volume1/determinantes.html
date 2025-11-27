@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinantes - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <!-- TAB 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Determinantes</h2>
+            
+            <div class="info-box">
+                <p>Aprende los términos clave relacionados con los determinantes:</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Determinante</h3>
+                <p><strong>Definición:</strong> Un valor escalar que se puede calcular a partir de los elementos de una matriz cuadrada. Proporciona información importante sobre las propiedades de la matriz, como su invertibilidad.</p>
+                <p><strong>Ejemplo:</strong> Para una matriz 2×2 A = [a, b; c, d], el determinante es |A| = ad - bc</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Menor</h3>
+                <p><strong>Definición:</strong> El determinante de la submatriz que se obtiene al eliminar una fila y una columna de una matriz dada. Se denota M<sub>ij</sub> para el elemento a<sub>ij</sub>.</p>
+                <p><strong>Ejemplo:</strong> En una matriz 3×3, el menor M₁₁ se obtiene eliminando la fila 1 y columna 1</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Cofactor</h3>
+                <p><strong>Definición:</strong> El menor de un elemento multiplicado por (-1)<sup>i+j</sup>, donde i es el número de fila y j el de columna. Se denota C<sub>ij</sub> = (-1)<sup>i+j</sup> · M<sub>ij</sub>.</p>
+                <p><strong>Ejemplo:</strong> El cofactor C₁₂ = (-1)¹⁺² · M₁₂ = -M₁₂</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Matriz Adjunta</h3>
+                <p><strong>Definición:</strong> La matriz formada por los cofactores de la matriz original, transpuesta. Se denota adj(A) y es útil para calcular la matriz inversa.</p>
+                <p><strong>Ejemplo:</strong> A⁻¹ = adj(A) / |A| cuando |A| ≠ 0</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔷 Matriz Singular</h3>
+                <p><strong>Definición:</strong> Una matriz cuadrada cuyo determinante es cero (|A| = 0). Una matriz singular no tiene inversa y sus filas (o columnas) son linealmente dependientes.</p>
+                <p><strong>Ejemplo:</strong> La matriz [1, 2; 2, 4] es singular porque |A| = 1×4 - 2×2 = 0</p>
+            </div>
+        </div>
+
+        <!-- TAB 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos Matemáticos en Determinantes</h2>
+            
+            <div class="info-box">
+                <p>Símbolos y notación utilizada en el cálculo de determinantes:</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">|A| o det(A)</span></h3>
+                <p><strong>Significado:</strong> Determinante de la matriz A</p>
+                <p><strong>Uso:</strong> |A| = 5 significa que el determinante de A es 5</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">M<sub>ij</sub></span></h3>
+                <p><strong>Significado:</strong> Menor del elemento a<sub>ij</sub></p>
+                <p><strong>Uso:</strong> Se obtiene eliminando la fila i y la columna j</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">C<sub>ij</sub></span></h3>
+                <p><strong>Significado:</strong> Cofactor del elemento a<sub>ij</sub></p>
+                <p><strong>Uso:</strong> C<sub>ij</sub> = (-1)<sup>i+j</sup> · M<sub>ij</sub></p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">adj(A)</span></h3>
+                <p><strong>Significado:</strong> Matriz adjunta de A</p>
+                <p><strong>Uso:</strong> Se usa para calcular la matriz inversa: A⁻¹ = adj(A)/|A|</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">Δ</span></h3>
+                <p><strong>Significado:</strong> Símbolo alternativo para el determinante (usado a veces en lugar de |A|)</p>
+                <p><strong>Uso:</strong> Δ = |A| en algunas notaciones</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">≠ 0</span></h3>
+                <p><strong>Significado:</strong> Diferente de cero</p>
+                <p><strong>Uso:</strong> |A| ≠ 0 indica que la matriz es invertible (no singular)</p>
+            </div>
+
+            <div class="symbol-card">
+                <h3><span class="symbol-large">± 1</span></h3>
+                <p><strong>Significado:</strong> Signo del cofactor</p>
+                <p><strong>Uso:</strong> El patrón de signos alterna en forma de tablero de ajedrez</p>
+            </div>
+        </div>
+
+        <!-- TAB 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>📚 ¿Por qué son importantes los Determinantes?</h2>
+            
+            <div class="info-box">
+                <p>Los determinantes son fundamentales en matemáticas, ciencias e ingeniería. Aquí te mostramos por qué son tan importantes:</p>
+            </div>
+
+            <div class="example-card">
+                <h3>🎮 Gráficos por Computadora y Videojuegos</h3>
+                <p>Los determinantes se usan para calcular transformaciones geométricas en 3D:</p>
+                <ul>
+                    <li>Detectar si una transformación invierte orientación (det < 0)</li>
+                    <li>Calcular áreas y volúmenes después de transformaciones</li>
+                    <li>Determinar si puntos están en el mismo lado de un plano</li>
+                    <li>Optimizar renderizado y colisiones en motores gráficos</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h3>🔬 Física e Ingeniería</h3>
+                <p>Los determinantes aparecen en múltiples aplicaciones físicas:</p>
+                <ul>
+                    <li>Calcular productos vectoriales y momentos angulares</li>
+                    <li>Resolver sistemas de ecuaciones lineales (regla de Cramer)</li>
+                    <li>Analizar estabilidad de estructuras y circuitos eléctricos</li>
+                    <li>Estudiar vibraciones y modos normales en mecánica</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h3>💻 Ciencia de Datos y Machine Learning</h3>
+                <p>Los determinantes son esenciales en análisis de datos:</p>
+                <ul>
+                    <li>Evaluar la independencia lineal de variables (multicolinealidad)</li>
+                    <li>Calcular distancias de Mahalanobis en clasificación</li>
+                    <li>Optimizar modelos mediante descomposición de matrices</li>
+                    <li>Analizar covarianzas y correlaciones en datasets</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h3>🧮 Sistemas de Ecuaciones</h3>
+                <p>Los determinantes permiten resolver sistemas lineales:</p>
+                <ul>
+                    <li>Determinar si un sistema tiene solución única (det ≠ 0)</li>
+                    <li>Aplicar la regla de Cramer para resolver sistemas</li>
+                    <li>Encontrar matrices inversas para resolver ecuaciones</li>
+                    <li>Analizar la dependencia lineal de ecuaciones</li>
+                </ul>
+            </div>
+
+            <div class="example-card">
+                <h3>📐 Geometría Analítica</h3>
+                <p>Los determinantes facilitan cálculos geométricos:</p>
+                <ul>
+                    <li>Calcular áreas de triángulos y polígonos</li>
+                    <li>Calcular volúmenes de paralelepípedos y tetraedros</li>
+                    <li>Determinar colinealidad y coplanaridad de puntos</li>
+                    <li>Encontrar ecuaciones de rectas y planos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 4: Teoría y Práctica -->
+        <div class="content-section" id="teoria">
+            <h2>📖 Teoría de Determinantes</h2>
+
+            <!-- Determinante 2x2 -->
+            <div class="theory-section">
+                <h3>🔢 Determinante de Matriz 2×2</h3>
+                <div class="formula-box">
+                    <p>Para una matriz 2×2: A = [a, b; c, d]</p>
+                    <p><strong>|A| = ad - bc</strong></p>
+                </div>
+                <p><strong>Ejemplo:</strong></p>
+                <p>A = [3, 2; 1, 4]</p>
+                <p>|A| = (3)(4) - (2)(1) = 12 - 2 = 10</p>
+                
+                <div class="calculator-box">
+                    <h4>Calculadora de Determinante 2×2</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 300px;">
+                        <input type="number" id="det2-a" placeholder="a" class="input-field">
+                        <input type="number" id="det2-b" placeholder="b" class="input-field">
+                        <input type="number" id="det2-c" placeholder="c" class="input-field">
+                        <input type="number" id="det2-d" placeholder="d" class="input-field">
+                    </div>
+                    <button onclick="calcularDet2x2()" class="btn btn-primary" style="margin-top: 10px;">Calcular Determinante</button>
+                    <div id="det2-result" class="result-box"></div>
+                </div>
+            </div>
+
+            <!-- Determinante 3x3 -->
+            <div class="theory-section">
+                <h3>🔢 Determinante de Matriz 3×3</h3>
+                <div class="formula-box">
+                    <p>Para una matriz 3×3: A = [a, b, c; d, e, f; g, h, i]</p>
+                    <p><strong>|A| = a(ei - fh) - b(di - fg) + c(dh - eg)</strong></p>
+                    <p>También se puede calcular por desarrollo de cofactores por cualquier fila o columna.</p>
+                </div>
+                <p><strong>Ejemplo:</strong></p>
+                <p>A = [2, 1, 3; 4, 0, 1; 1, 2, 1]</p>
+                <p>|A| = 2(0·1 - 1·2) - 1(4·1 - 1·1) + 3(4·2 - 0·1)</p>
+                <p>|A| = 2(-2) - 1(3) + 3(8) = -4 - 3 + 24 = 17</p>
+
+                <div class="calculator-box">
+                    <h4>Calculadora de Determinante 3×3</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; max-width: 250px;">
+                        <input type="number" id="det3-a" placeholder="a" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-b" placeholder="b" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-c" placeholder="c" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-d" placeholder="d" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-e" placeholder="e" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-f" placeholder="f" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-g" placeholder="g" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-h" placeholder="h" class="input-field" style="padding: 5px;">
+                        <input type="number" id="det3-i" placeholder="i" class="input-field" style="padding: 5px;">
+                    </div>
+                    <button onclick="calcularDet3x3()" class="btn btn-primary" style="margin-top: 10px;">Calcular Determinante</button>
+                    <div id="det3-result" class="result-box"></div>
+                </div>
+            </div>
+
+            <!-- Propiedades -->
+            <div class="theory-section">
+                <h3>📜 Propiedades de los Determinantes</h3>
+                <div class="property-card">
+                    <p><strong>1. Determinante de la Transpuesta:</strong> |A<sup>T</sup>| = |A|</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>2. Determinante del Producto:</strong> |AB| = |A| · |B|</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>3. Determinante de la Inversa:</strong> |A⁻¹| = 1/|A| (si |A| ≠ 0)</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>4. Multiplicación por Escalar:</strong> |kA| = k<sup>n</sup>|A| para matriz n×n</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>5. Intercambio de Filas:</strong> Intercambiar dos filas cambia el signo del determinante</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>6. Fila de Ceros:</strong> Si una fila es toda ceros, |A| = 0</p>
+                </div>
+                <div class="property-card">
+                    <p><strong>7. Filas Proporcionales:</strong> Si dos filas son proporcionales, |A| = 0</p>
+                </div>
+            </div>
+
+            <!-- Regla de Cramer -->
+            <div class="theory-section">
+                <h3>🎯 Regla de Cramer</h3>
+                <p>La regla de Cramer permite resolver sistemas de ecuaciones lineales usando determinantes:</p>
+                <div class="formula-box">
+                    <p>Para el sistema: Ax = b</p>
+                    <p>Si |A| ≠ 0, entonces:</p>
+                    <p><strong>x<sub>i</sub> = |A<sub>i</sub>| / |A|</strong></p>
+                    <p>donde A<sub>i</sub> es la matriz A con la columna i reemplazada por el vector b</p>
+                </div>
+                <p><strong>Ejemplo para sistema 2×2:</strong></p>
+                <p>2x + 3y = 8</p>
+                <p>x + 4y = 9</p>
+                <p>|A| = |2, 3; 1, 4| = 8 - 3 = 5</p>
+                <p>x = |8, 3; 9, 4| / 5 = (32 - 27) / 5 = 1</p>
+                <p>y = |2, 8; 1, 9| / 5 = (18 - 8) / 5 = 2</p>
+            </div>
+
+            <!-- Área y Volumen -->
+            <div class="theory-section">
+                <h3>📐 Aplicaciones Geométricas</h3>
+                <div class="formula-box">
+                    <p><strong>Área de un Triángulo:</strong></p>
+                    <p>Dados tres vértices (x₁,y₁), (x₂,y₂), (x₃,y₃):</p>
+                    <p>Área = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|</p>
+                </div>
+                <div class="formula-box">
+                    <p><strong>Volumen de un Tetraedro:</strong></p>
+                    <p>Dados cuatro vértices en 3D:</p>
+                    <p>Volumen = ⅙|det(matriz formada por vectores desde un vértice a los otros tres)|</p>
+                </div>
+            </div>
+
+            <!-- Desarrollo por Cofactores -->
+            <div class="theory-section">
+                <h3>🔄 Desarrollo por Cofactores</h3>
+                <p>Para calcular el determinante de matrices de orden n ≥ 3, se usa desarrollo por cofactores:</p>
+                <div class="formula-box">
+                    <p><strong>Desarrollo por la fila i:</strong></p>
+                    <p>|A| = a<sub>i1</sub>C<sub>i1</sub> + a<sub>i2</sub>C<sub>i2</sub> + ... + a<sub>in</sub>C<sub>in</sub></p>
+                    <p>donde C<sub>ij</sub> = (-1)<sup>i+j</sup> · M<sub>ij</sub></p>
+                </div>
+                <p><strong>Patrón de signos para cofactores:</strong></p>
+                <div class="formula-box">
+                    <p>+ - + - ...</p>
+                    <p>- + - + ...</p>
+                    <p>+ - + - ...</p>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento de Determinantes</h2>
+            
+            <div class="info-box">
+                <p>Practica calculando determinantes. ¡Cada respuesta correcta suma 10 puntos! ❌ Incorrecta: -5 puntos</p>
+            </div>
+
+            <div class="practice-box">
+                <h3 id="training-question">Pregunta aparecerá aquí</h3>
+                <div id="training-inputs" style="margin: 20px 0;"></div>
+                <button onclick="checkTrainingAnswer()" class="btn btn-primary">Verificar Respuesta</button>
+                <button onclick="nextTrainingQuestion()" class="btn btn-secondary">Siguiente Pregunta</button>
+                <div id="training-feedback" class="feedback-box"></div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Determinantes</h2>
+            
+            <div class="info-box">
+                <p>Completa este examen para demostrar tu dominio de los determinantes.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Determinantes" 🏆</p>
+            </div>
+
+            <div id="exam-container"></div>
+            <button onclick="submitExam()" class="btn btn-success" id="submit-exam-btn" style="display: none;">Enviar Examen</button>
+            <div id="exam-results"></div>
+        </div>
+    </div>
+
+    <script src="../../../../js/storage.js"></script>
+    <script src="../../../../js/gamification.js"></script>
+    <script src="../../../../js/components.js"></script>
+    <script>
+        const MODULE_NAME = 'determinantes';
+        const TROPHY_ID = 'trophy_determinantes';
+        
+        // Inicializar componentes
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeHeader('Determinantes', '../../../../');
+            initializeTabs(['glosario', 'simbolos', 'introduccion', 'teoria', 'entrenamiento', 'examen']);
+            initializeScoreDisplay();
+            
+            // Cargar datos del módulo
+            const moduleData = loadModuleExam(MODULE_NAME);
+            
+            // Verificar si ya tiene trofeo
+            const hasTrophy = checkTrophy(TROPHY_ID);
+            if (hasTrophy) {
+                showInfo('¡Ya has completado este módulo y obtenido el trofeo! 🏆');
+            }
+            
+            // Iniciar primera pregunta de entrenamiento
+            nextTrainingQuestion();
+        });
+
+        // CALCULADORAS
+        function calcularDet2x2() {
+            const a = parseFloat(document.getElementById('det2-a').value) || 0;
+            const b = parseFloat(document.getElementById('det2-b').value) || 0;
+            const c = parseFloat(document.getElementById('det2-c').value) || 0;
+            const d = parseFloat(document.getElementById('det2-d').value) || 0;
+            
+            const det = a * d - b * c;
+            
+            const resultDiv = document.getElementById('det2-result');
+            resultDiv.innerHTML = `
+                <h4>Resultado:</h4>
+                <p><strong>Matriz A = [${a}, ${b}; ${c}, ${d}]</strong></p>
+                <p><strong>|A| = (${a})(${d}) - (${b})(${c}) = ${a*d} - ${b*c} = ${det}</strong></p>
+                ${det !== 0 ? '<p class="success">✓ La matriz es invertible (|A| ≠ 0)</p>' : '<p class="warning">⚠ La matriz es singular (|A| = 0, no invertible)</p>'}
+            `;
+        }
+
+        function calcularDet3x3() {
+            const a = parseFloat(document.getElementById('det3-a').value) || 0;
+            const b = parseFloat(document.getElementById('det3-b').value) || 0;
+            const c = parseFloat(document.getElementById('det3-c').value) || 0;
+            const d = parseFloat(document.getElementById('det3-d').value) || 0;
+            const e = parseFloat(document.getElementById('det3-e').value) || 0;
+            const f = parseFloat(document.getElementById('det3-f').value) || 0;
+            const g = parseFloat(document.getElementById('det3-g').value) || 0;
+            const h = parseFloat(document.getElementById('det3-h').value) || 0;
+            const i = parseFloat(document.getElementById('det3-i').value) || 0;
+            
+            const det = a*(e*i - f*h) - b*(d*i - f*g) + c*(d*h - e*g);
+            
+            const term1 = a*(e*i - f*h);
+            const term2 = b*(d*i - f*g);
+            const term3 = c*(d*h - e*g);
+            
+            const resultDiv = document.getElementById('det3-result');
+            resultDiv.innerHTML = `
+                <h4>Resultado:</h4>
+                <p><strong>Matriz 3×3:</strong></p>
+                <p>[${a}, ${b}, ${c}]</p>
+                <p>[${d}, ${e}, ${f}]</p>
+                <p>[${g}, ${h}, ${i}]</p>
+                <p><strong>Cálculo por desarrollo de cofactores (fila 1):</strong></p>
+                <p>|A| = ${a}(${e}·${i} - ${f}·${h}) - ${b}(${d}·${i} - ${f}·${g}) + ${c}(${d}·${h} - ${e}·${g})</p>
+                <p>|A| = ${a}(${e*i - f*h}) - ${b}(${d*i - f*g}) + ${c}(${d*h - e*g})</p>
+                <p>|A| = ${term1} - ${term2} + ${term3}</p>
+                <p><strong>|A| = ${det}</strong></p>
+                ${det !== 0 ? '<p class="success">✓ La matriz es invertible</p>' : '<p class="warning">⚠ La matriz es singular (no invertible)</p>'}
+            `;
+        }
+
+        // ENTRENAMIENTO
+        let currentTrainingQuestion = null;
+
+        const trainingQuestions = [
+            {
+                question: "Calcula el determinante de A = [5, 2; 3, 4]",
+                type: "number",
+                answer: 14, // 5*4 - 2*3 = 20 - 6 = 14
+                explanation: "|A| = (5)(4) - (2)(3) = 20 - 6 = 14"
+            },
+            {
+                question: "Calcula el determinante de B = [1, 3; 2, 6]",
+                type: "number",
+                answer: 0, // 1*6 - 3*2 = 6 - 6 = 0
+                explanation: "|B| = (1)(6) - (3)(2) = 6 - 6 = 0. La matriz es singular."
+            },
+            {
+                question: "Si |A| = 4, ¿cuál es |A<sup>-1</sup>|?",
+                type: "number",
+                answer: 0.25, // 1/4 = 0.25
+                explanation: "|A⁻¹| = 1/|A| = 1/4 = 0.25"
+            },
+            {
+                question: "Si |A| = 5 y |B| = 3, ¿cuál es |AB|?",
+                type: "number",
+                answer: 15, // 5 * 3 = 15
+                explanation: "|AB| = |A| · |B| = 5 · 3 = 15"
+            },
+            {
+                question: "Calcula el determinante de C = [2, 0; 0, 3]",
+                type: "number",
+                answer: 6, // 2*3 - 0*0 = 6
+                explanation: "|C| = (2)(3) - (0)(0) = 6. Matriz diagonal."
+            },
+            {
+                question: "Si |A| = -2, ¿cuál es |A<sup>T</sup>|?",
+                type: "number",
+                answer: -2, // |A^T| = |A|
+                explanation: "|A<sup>T</sup>| = |A| = -2 (propiedad de la transpuesta)"
+            },
+            {
+                question: "Calcula el determinante de D = [4, 1; 8, 2]",
+                type: "number",
+                answer: 0, // 4*2 - 1*8 = 8 - 8 = 0
+                explanation: "|D| = (4)(2) - (1)(8) = 8 - 8 = 0. Filas proporcionales (fila 2 = 2×fila 1)"
+            },
+            {
+                question: "Si |A| = 3 para una matriz 2×2, ¿cuál es |2A|?",
+                type: "number",
+                answer: 12, // k^n * |A| = 2^2 * 3 = 4 * 3 = 12
+                explanation: "|2A| = 2² · |A| = 4 · 3 = 12 (matriz 2×2)"
+            },
+            {
+                question: "Calcula el determinante de E = [-1, 2; 3, -4]",
+                type: "number",
+                answer: -2, // (-1)(-4) - (2)(3) = 4 - 6 = -2
+                explanation: "|E| = (-1)(-4) - (2)(3) = 4 - 6 = -2"
+            },
+            {
+                question: "¿Una matriz con determinante cero es invertible? (Responde 0 para NO, 1 para SÍ)",
+                type: "number",
+                answer: 0,
+                explanation: "NO. Si |A| = 0, la matriz es singular y no tiene inversa."
+            },
+            {
+                question: "Calcula el determinante de F = [1, 0, 0; 0, 2, 0; 0, 0, 3]",
+                type: "number",
+                answer: 6, // 1*2*3 = 6 (matriz diagonal)
+                explanation: "|F| = 1 · 2 · 3 = 6 (producto de elementos diagonales en matriz diagonal)"
+            },
+            {
+                question: "Calcula el determinante de G = [2, 1, 0; 1, 2, 1; 0, 1, 2]",
+                type: "number",
+                answer: 4, // 2(4-1) - 1(2-0) + 0 = 2(3) - 1(2) = 6 - 2 = 4
+                explanation: "|G| = 2(2·2 - 1·1) - 1(1·2 - 1·0) + 0 = 2(3) - 1(2) = 6 - 2 = 4"
+            },
+            {
+                question: "Si intercambiamos dos filas de una matriz y |A| = 5, ¿cuál es el nuevo determinante?",
+                type: "number",
+                answer: -5,
+                explanation: "Intercambiar dos filas cambia el signo del determinante: -5"
+            },
+            {
+                question: "Calcula el determinante de H = [3, -2; -6, 4]",
+                type: "number",
+                answer: 0, // 3*4 - (-2)*(-6) = 12 - 12 = 0
+                explanation: "|H| = (3)(4) - (-2)(-6) = 12 - 12 = 0. Filas proporcionales."
+            },
+            {
+                question: "Si |A| = 7 para una matriz 3×3, ¿cuál es |3A|?",
+                type: "number",
+                answer: 189, // k^n * |A| = 3^3 * 7 = 27 * 7 = 189
+                explanation: "|3A| = 3³ · |A| = 27 · 7 = 189 (matriz 3×3)"
+            }
+        ];
+
+        function nextTrainingQuestion() {
+            currentTrainingQuestion = trainingQuestions[Math.floor(Math.random() * trainingQuestions.length)];
+            
+            document.getElementById('training-question').textContent = currentTrainingQuestion.question;
+            document.getElementById('training-inputs').innerHTML = `
+                <input type="number" id="training-answer" class="input-field" placeholder="Tu respuesta" step="any">
+            `;
+            document.getElementById('training-feedback').innerHTML = '';
+        }
+
+        function checkTrainingAnswer() {
+            const userAnswer = parseFloat(document.getElementById('training-answer').value);
+            const feedbackDiv = document.getElementById('training-feedback');
+            
+            if (isNaN(userAnswer)) {
+                feedbackDiv.innerHTML = '<p class="warning">⚠ Por favor ingresa un número</p>';
+                return;
+            }
+            
+            const tolerance = 0.01; // Tolerancia para decimales
+            const isCorrect = Math.abs(userAnswer - currentTrainingQuestion.answer) < tolerance;
+            
+            if (isCorrect) {
+                updateScore(10);
+                feedbackDiv.innerHTML = `
+                    <p class="success">✓ ¡Correcto! +10 puntos</p>
+                    <p>${currentTrainingQuestion.explanation}</p>
+                `;
+            } else {
+                updateScore(-5);
+                feedbackDiv.innerHTML = `
+                    <p class="error">✗ Incorrecto. -5 puntos</p>
+                    <p><strong>Respuesta correcta:</strong> ${currentTrainingQuestion.answer}</p>
+                    <p>${currentTrainingQuestion.explanation}</p>
+                `;
+            }
+            
+            checkAchievements();
+        }
+
+        // EXAMEN FINAL
+        const examQuestions = [
+            {
+                question: "Calcula el determinante de [3, 1; 2, 4]",
+                type: "number",
+                answer: 10 // 3*4 - 1*2 = 10
+            },
+            {
+                question: "Calcula el determinante de [5, 2; 10, 4]",
+                type: "number",
+                answer: 0 // 5*4 - 2*10 = 0
+            },
+            {
+                question: "Si |A| = 6, ¿cuál es |A⁻¹|? (Redondea a 2 decimales)",
+                type: "number",
+                answer: 0.17 // 1/6 ≈ 0.1667
+            },
+            {
+                question: "Si |A| = 4 y |B| = -2, ¿cuál es |AB|?",
+                type: "number",
+                answer: -8 // 4 * (-2) = -8
+            },
+            {
+                question: "Calcula el determinante de [1, 0; 0, 5]",
+                type: "number",
+                answer: 5 // 1*5 - 0*0 = 5
+            },
+            {
+                question: "Si |A| = 7, ¿cuál es |A<sup>T</sup>|?",
+                type: "number",
+                answer: 7 // |A^T| = |A|
+            },
+            {
+                question: "Calcula el determinante de [2, 3; 4, 6]",
+                type: "number",
+                answer: 0 // 2*6 - 3*4 = 0
+            },
+            {
+                question: "Si |A| = 2 para una matriz 2×2, ¿cuál es |3A|?",
+                type: "number",
+                answer: 18 // 3^2 * 2 = 9 * 2 = 18
+            },
+            {
+                question: "Calcula el determinante de [-2, 1; 3, -4]",
+                type: "number",
+                answer: 5 // (-2)(-4) - (1)(3) = 8 - 3 = 5
+            },
+            {
+                question: "Si intercambiamos dos filas y |A| = -3, ¿cuál es el nuevo determinante?",
+                type: "number",
+                answer: 3 // Cambia de signo
+            },
+            {
+                question: "Calcula el determinante de [4, 0; 0, 3]",
+                type: "number",
+                answer: 12 // 4*3 = 12
+            },
+            {
+                question: "Calcula el determinante de [1, 2; 3, 6]",
+                type: "number",
+                answer: 0 // 1*6 - 2*3 = 0
+            },
+            {
+                question: "Si |A| = 5, ¿cuál es |2A| para matriz 3×3?",
+                type: "number",
+                answer: 40 // 2^3 * 5 = 8 * 5 = 40
+            },
+            {
+                question: "Calcula el determinante de [0, 1; 1, 0]",
+                type: "number",
+                answer: -1 // 0*0 - 1*1 = -1
+            },
+            {
+                question: "Si |A| = 0, ¿la matriz tiene inversa? (0=NO, 1=SÍ)",
+                type: "number",
+                answer: 0 // NO
+            },
+            {
+                question: "Calcula el determinante de [6, 2; 3, 1]",
+                type: "number",
+                answer: 0 // 6*1 - 2*3 = 0
+            },
+            {
+                question: "Si |A| = -4 y |B| = 3, ¿cuál es |A||B|?",
+                type: "number",
+                answer: -12 // -4 * 3 = -12
+            },
+            {
+                question: "Calcula el determinante de [1, 0, 0; 0, 1, 0; 0, 0, 1]",
+                type: "number",
+                answer: 1 // Matriz identidad
+            },
+            {
+                question: "Calcula el determinante de [2, 1; 4, 3]",
+                type: "number",
+                answer: 2 // 2*3 - 1*4 = 2
+            },
+            {
+                question: "Si |A| = 10 para matriz 2×2, ¿cuál es |-A|?",
+                type: "number",
+                answer: 10 // (-1)^2 * 10 = 10
+            }
+        ];
+
+        function submitExam() {
+            let correctAnswers = 0;
+            const results = [];
+            
+            examQuestions.forEach((q, index) => {
+                const userAnswer = parseFloat(document.getElementById(`exam-q${index}`).value);
+                const tolerance = 0.02; // Tolerancia de 2%
+                const isCorrect = Math.abs(userAnswer - q.answer) < Math.max(tolerance, Math.abs(q.answer * 0.02));
+                
+                if (isCorrect) correctAnswers++;
+                results.push({ question: q.question, userAnswer, correctAnswer: q.answer, isCorrect });
+            });
+            
+            const percentage = (correctAnswers / examQuestions.length) * 100;
+            const passed = percentage >= 70;
+            
+            // Guardar resultado del examen
+            saveModuleExam(MODULE_NAME, {
+                score: correctAnswers,
+                total: examQuestions.length,
+                percentage: percentage,
+                passed: passed,
+                attempts: (loadModuleExam(MODULE_NAME).attempts || 0) + 1
+            });
+            
+            // Mostrar resultados
+            let resultsHTML = `
+                <div class="result-box ${passed ? 'success' : 'error'}">
+                    <h3>${passed ? '🎉 ¡Aprobado!' : '😢 No Aprobado'}</h3>
+                    <p><strong>Puntuación:</strong> ${correctAnswers}/${examQuestions.length} (${percentage.toFixed(1)}%)</p>
+                    ${passed ? '<p>¡Has obtenido el trofeo "Maestro de Determinantes"! 🏆</p>' : '<p>Necesitas 70% o más para aprobar. ¡Sigue practicando!</p>'}
+                </div>
+            `;
+            
+            if (passed && !checkTrophy(TROPHY_ID)) {
+                awardTrophy(TROPHY_ID);
+                showTrophyToast('Maestro de Determinantes');
+            }
+            
+            resultsHTML += '<h3>Respuestas:</h3>';
+            results.forEach((r, i) => {
+                resultsHTML += `
+                    <div class="feedback-box ${r.isCorrect ? 'success' : 'error'}">
+                        <p><strong>Pregunta ${i+1}:</strong> ${r.question}</p>
+                        <p>Tu respuesta: ${r.userAnswer || 'Sin respuesta'}</p>
+                        <p>Respuesta correcta: ${r.correctAnswer}</p>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('exam-results').innerHTML = resultsHTML;
+            document.getElementById('submit-exam-btn').style.display = 'none';
+            
+            checkAchievements();
+        }
+
+        // Generar examen al entrar a la pestaña
+        function showTab(tabName) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            const targetSection = document.getElementById(tabName);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // Generar examen si es la primera vez
+                if (tabName === 'examen' && !document.querySelector('#exam-container .question-box')) {
+                    generateExam();
+                }
+            }
+        }
+
+        function generateExam() {
+            const container = document.getElementById('exam-container');
+            let html = '';
+            
+            examQuestions.forEach((q, index) => {
+                html += `
+                    <div class="question-box">
+                        <p><strong>Pregunta ${index + 1}:</strong> ${q.question}</p>
+                        <input type="number" id="exam-q${index}" class="input-field" placeholder="Tu respuesta" step="any">
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.getElementById('submit-exam-btn').style.display = 'block';
+            document.getElementById('exam-results').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
