@@ -17,8 +17,8 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Matrices y Determinantes</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos Matemáticos</h4>
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
                 <p>Símbolos utilizados en Matrices:</p>
                 <ul style="list-style: none; padding-left: 0; line-height: 2; margin-top: 1rem;">
                     <li><strong>A, B, C</strong> = Matrices (representadas por letras mayúsculas)</li>
@@ -96,15 +96,15 @@
                 <h4>Cálculo de Determinantes</h4>
                 <p>El determinante es un número asociado a una matriz cuadrada.</p>
                 
-                <h4 style="margin-top: 1rem;">Determinante 2×2</h4>
+                <h4 class="mt-1rem">Determinante 2×2</h4>
                 <div class="formula-box">
                     |A| = a<sub>11</sub>·a<sub>22</sub> - a<sub>12</sub>·a<sub>21</sub>
                 </div>
 
-                <h4 style="margin-top: 1rem;">Determinante 3×3 (Regla de Sarrus)</h4>
+                <h4 class="mt-1rem">Determinante 3×3 (Regla de Sarrus)</h4>
                 <p>Se suman los productos de las diagonales principales y se restan las secundarias.</p>
 
-                <h4 style="margin-top: 1rem;">Propiedades de Determinantes</h4>
+                <h4 class="mt-1rem">Propiedades de Determinantes</h4>
                 <ul>
                     <li>|A<sup>T</sup>| = |A|</li>
                     <li>Si una fila/columna es nula → |A| = 0</li>
@@ -125,7 +125,7 @@
                     <strong>Condición de Existencia:</strong> |A| ≠ 0 (la matriz debe ser no singular)
                 </div>
 
-                <h4 style="margin-top: 1rem;">Cálculo de la Inversa 2×2</h4>
+                <h4 class="mt-1rem">Cálculo de la Inversa 2×2</h4>
                 <div class="formula-box">
                     A<sup>-1</sup> = (1/|A|) · [a<sub>22</sub>, -a<sub>12</sub>; -a<sub>21</sub>, a<sub>11</sub>]
                 </div>
@@ -152,8 +152,8 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Suma de Matrices</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Suma de Matrices</h4>
                 <p><strong>Problema:</strong> Calcular A + B siendo A = [1, 2; 3, 4] y B = [5, 6; 7, 8]</p>
                 <p><strong>Solución:</strong></p>
                 <p>Sumamos elemento a elemento:</p>
@@ -161,8 +161,8 @@
                 <p><strong>Respuesta:</strong> [6, 8; 10, 12]</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Producto de Matrices</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Producto de Matrices</h4>
                 <p><strong>Problema:</strong> Calcular A·B siendo A = [1, 2; 3, 4] y B = [2, 0; 1, 3]</p>
                 <p><strong>Solución:</strong></p>
                 <p>Elemento (1,1): 1×2 + 2×1 = 4</p>
@@ -172,16 +172,16 @@
                 <p><strong>Respuesta:</strong> A·B = [4, 6; 10, 12]</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Determinante</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Determinante</h4>
                 <p><strong>Problema:</strong> Calcular |A| siendo A = [3, 2; 1, 4]</p>
                 <p><strong>Solución:</strong></p>
                 <p>|A| = 3×4 - 2×1 = 12 - 2 = 10</p>
                 <p><strong>Respuesta:</strong> |A| = 10</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Matriz Transpuesta</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Matriz Transpuesta</h4>
                 <p><strong>Problema:</strong> Calcular A<sup>T</sup> siendo A = [1, 2, 3; 4, 5, 6]</p>
                 <p><strong>Solución:</strong></p>
                 <p>Intercambiamos filas por columnas:</p>
@@ -189,8 +189,8 @@
                 <p><strong>Respuesta:</strong> Matriz de dimensión 3×2</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Matriz Inversa</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Matriz Inversa</h4>
                 <p><strong>Problema:</strong> Calcular A<sup>-1</sup> siendo A = [2, 1; 1, 3]</p>
                 <p><strong>Solución:</strong></p>
                 <p>Paso 1: Calcular |A| = 2×3 - 1×1 = 5</p>
@@ -260,7 +260,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='geometria-trigonometria.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -284,7 +284,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='geometria-trigonometria.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -339,7 +339,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

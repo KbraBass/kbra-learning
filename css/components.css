@@ -1841,3 +1841,181 @@ tr:hover {
     border-top: 6px solid #f093fb;
 }
 
+/* ==================== PHASE 7 - ADDITIONAL UTILITIES ==================== */
+
+/* Success color utilities */
+.text-success {
+    color: var(--color-success);
+}
+
+.border-left-success {
+    border-left-color: var(--color-success);
+}
+
+/* Text alignment with padding */
+.text-center-p10 {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Margin utilities */
+.mt-2rem {
+    margin-top: 2rem;
+}
+
+.mt-1rem {
+    margin-top: 1rem;
+}
+
+.mt-15px {
+    margin-top: 15px;
+}
+
+.white-text-mt0 {
+    color: white;
+    margin-top: 0;
+}
+
+/* Font and opacity utilities */
+.text-sm-opacity {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.font-semibold-mb-sm {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.text-2rem-mb {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Background utilities */
+.bg-white-alpha-p1 {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.bg-gradient-primary-white {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Position utilities */
+.position-top-label {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-left-label {
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* List utilities */
+.list-unstyled-lh2 {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+}
+
+.list-lh18-ml25 {
+    line-height: 1.8;
+    margin-left: 25px;
+}
+
+/* Large text utilities */
+.text-3xl-mb {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.text-28-pink-mb {
+    font-size: 2.8em;
+    color: #f5576c;
+    margin-bottom: 15px;
+}
+
+.text-15-dark-mb {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Body gradient utilities */
+.body-gradient-pink-full {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Link block gradient */
+.link-block-gradient-pink-full {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Colored text with margins */
+.text-pink-mt30-mb15 {
+    color: #f5576c;
+    margin: 30px 0 15px 0;
+}
+
+.text-pink-mb15 {
+    color: #f5576c;
+    margin-bottom: 15px;
+}
+
+.text-pink-2em-mb20 {
+    color: #f5576c;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.text-amber-mb15 {
+    color: #d97706;
+    margin-bottom: 15px;
+}
+
+.text-plum-mb15 {
+    color: #c23564;
+    margin-bottom: 15px;
+}
+
+.text-gray-lh16-mb20 {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Gradient boxes */
+.gradient-box-pink-p30-m25 {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+}
+
+.gradient-box-purple-p25-m20 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+

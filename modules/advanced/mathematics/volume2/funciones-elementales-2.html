@@ -16,9 +16,9 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Funciones Elementales II</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos</h4>
-                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
+                <ul class="list-unstyled-lh2">
                     <li><strong>e</strong> = Número de Euler ≈ 2.71828...</li>
                     <li><strong>eˣ</strong> = Función exponencial natural</li>
                     <li><strong>aˣ</strong> = Función exponencial base a</li>
@@ -113,36 +113,36 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Ecuación Exponencial</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Ecuación Exponencial</h4>
                 <p><strong>Problema:</strong> Resolver 3ˣ = 27</p>
                 <p><strong>Solución:</strong> 27 = 3³ → 3ˣ = 3³ → x = 3</p>
                 <p><strong>Respuesta:</strong> x = 3</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Logaritmo</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Logaritmo</h4>
                 <p><strong>Problema:</strong> Calcular log₂(16)</p>
                 <p><strong>Solución:</strong> ¿2ʸ = 16? → 2⁴ = 16 → y = 4</p>
                 <p><strong>Respuesta:</strong> log₂(16) = 4</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Propiedad de Logaritmos</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Propiedad de Logaritmos</h4>
                 <p><strong>Problema:</strong> Simplificar ln(e³)</p>
                 <p><strong>Solución:</strong> ln(e³) = 3·ln(e) = 3·1 = 3</p>
                 <p><strong>Respuesta:</strong> ln(e³) = 3</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Cambio de Base</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Cambio de Base</h4>
                 <p><strong>Problema:</strong> Expresar log₂(8) usando ln</p>
                 <p><strong>Solución:</strong> log₂(8) = ln(8)/ln(2) = ln(2³)/ln(2) = 3ln(2)/ln(2) = 3</p>
                 <p><strong>Respuesta:</strong> log₂(8) = 3</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Función Trigonométrica</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Función Trigonométrica</h4>
                 <p><strong>Problema:</strong> Calcular sin(π/2)</p>
                 <p><strong>Solución:</strong> π/2 radianes = 90°, sin(90°) = 1</p>
                 <p><strong>Respuesta:</strong> sin(π/2) = 1</p>
@@ -197,7 +197,7 @@
         <div class="content-section" id="practica">
             <h2>✏️ Práctica</h2>
             <div id="exercises-container"></div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">⬅️ Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
                 <button class="btn btn-secondary" onclick="window.location.href='limites.html'">Siguiente ➡️</button>
@@ -217,7 +217,7 @@
                     <li><strong>Trigonométricas:</strong> Período 2π (sin, cos)</li>
                 </ul>
             </div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">⬅️ Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
                 <button class="btn btn-secondary" onclick="window.location.href='limites.html'">Siguiente ➡️</button>
@@ -267,7 +267,7 @@
                     <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                     <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                 </div>
-                <div id="hint${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                 <div id="feedback${ex.id}" class="feedback"></div></div>
             `).join('');
         }

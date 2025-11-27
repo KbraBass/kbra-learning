@@ -54,7 +54,7 @@
                 <p>Si un evento puede ocurrir de <strong>m</strong> maneras diferentes y, después de que esto suceda, 
                 un segundo evento puede ocurrir de <strong>n</strong> maneras diferentes, entonces ambos eventos 
                 pueden ocurrir de <strong>m × n</strong> maneras diferentes.</p>
-                <div class="example-box" style="margin-top: 1rem;">
+                <div class="example-box" class="mt-1rem">
                     <p><strong>Ejemplo:</strong> Si tienes 3 camisas y 4 pantalones, puedes vestirte de 3 × 4 = 12 maneras diferentes.</p>
                 </div>
             </div>
@@ -227,7 +227,7 @@
 
             <div id="exercises-container"></div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -312,7 +312,7 @@
                 </ul>
             </div>
 
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-numeros.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='../index.html'">Volver a Matemáticas</button>
             </div>
@@ -429,7 +429,7 @@
                         <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                         <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                     </div>
-                    <div id="hint${ex.id}" class="hint-box" style="display: none;">${ex.hint}</div>
+                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                     <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
             `).join('');

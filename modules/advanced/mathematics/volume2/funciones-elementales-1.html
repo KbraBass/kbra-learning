@@ -17,9 +17,9 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Funciones Elementales I</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos</h4>
-                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
+                <ul class="list-unstyled-lh2">
                     <li><strong>f(x)</strong> = Función f evaluada en x</li>
                     <li><strong>Dom(f)</strong> = Dominio de f (valores permitidos de x)</li>
                     <li><strong>Im(f)</strong> o <strong>Ran(f)</strong> = Imagen/rango de f</li>
@@ -121,24 +121,24 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Dominio de Función Racional</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Dominio de Función Racional</h4>
                 <p><strong>Problema:</strong> Hallar Dom(f) si f(x) = (x+1)/(x²-4)</p>
                 <p><strong>Solución:</strong></p>
                 <p>x²-4 = 0 → x² = 4 → x = ±2</p>
                 <p><strong>Respuesta:</strong> Dom(f) = ℝ - {-2, 2}</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Dominio de Función Radical</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Dominio de Función Radical</h4>
                 <p><strong>Problema:</strong> Hallar Dom(f) si f(x) = √(3x-6)</p>
                 <p><strong>Solución:</strong></p>
                 <p>3x-6 ≥ 0 → 3x ≥ 6 → x ≥ 2</p>
                 <p><strong>Respuesta:</strong> Dom(f) = [2, ∞)</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Composición</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Composición</h4>
                 <p><strong>Problema:</strong> Si f(x) = x² y g(x) = x+3, hallar (f∘g)(2)</p>
                 <p><strong>Solución:</strong></p>
                 <p>g(2) = 2+3 = 5</p>
@@ -146,8 +146,8 @@
                 <p><strong>Respuesta:</strong> (f∘g)(2) = 25</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Función Inversa</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Función Inversa</h4>
                 <p><strong>Problema:</strong> Hallar f⁻¹ si f(x) = 2x - 5</p>
                 <p><strong>Solución:</strong></p>
                 <p>y = 2x - 5 → y + 5 = 2x → x = (y+5)/2</p>
@@ -155,8 +155,8 @@
                 <p><strong>Respuesta:</strong> f⁻¹(x) = (x+5)/2</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Evaluación de Función</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Evaluación de Función</h4>
                 <p><strong>Problema:</strong> Si f(x) = x³ - 2x + 1, calcular f(-2)</p>
                 <p><strong>Solución:</strong></p>
                 <p>f(-2) = (-2)³ - 2(-2) + 1 = -8 + 4 + 1 = -3</p>
@@ -222,7 +222,7 @@
         <div class="content-section" id="practica">
             <h2>✏️ Práctica</h2>
             <div id="exercises-container"></div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-reales.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
                 <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">Siguiente ➡️</button>
@@ -243,7 +243,7 @@
                     <li><strong>Inversa:</strong> f(f⁻¹(x)) = x</li>
                 </ul>
             </div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='preliminares-reales.html'">⬅️ Tema Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
                 <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">Siguiente ➡️</button>
@@ -293,7 +293,7 @@
                     <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                     <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                 </div>
-                <div id="hint${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                 <div id="feedback${ex.id}" class="feedback"></div></div>
             `).join('');
         }

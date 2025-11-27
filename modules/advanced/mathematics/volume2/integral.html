@@ -16,9 +16,9 @@
         <div class="content-section active" id="teoria">
             <h2>📚 Teoría: Integral</h2>
 
-            <div class="info-box" style="background: var(--gradient-primary); color: white;">
-                <h4 style="color: white; margin-top: 0;">📖 Glosario de Símbolos</h4>
-                <ul style="list-style: none; padding-left: 0; line-height: 2;">
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
+                <ul class="list-unstyled-lh2">
                     <li><strong>∫</strong> = Integral</li>
                     <li><strong>∫f(x)dx</strong> = Integral indefinida</li>
                     <li><strong>∫ₐᵇf(x)dx</strong> = Integral definida</li>
@@ -113,36 +113,36 @@
         <div class="content-section" id="ejemplos">
             <h2>💡 Ejemplos Resueltos</h2>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 1: Potencia</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Potencia</h4>
                 <p><strong>Problema:</strong> ∫x³dx</p>
                 <p><strong>Solución:</strong> x⁴/4 + C</p>
                 <p><strong>Respuesta:</strong> x⁴/4 + C</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 2: Exponencial</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Exponencial</h4>
                 <p><strong>Problema:</strong> ∫eˣdx</p>
                 <p><strong>Solución:</strong> eˣ + C</p>
                 <p><strong>Respuesta:</strong> eˣ + C</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 3: Definida</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Definida</h4>
                 <p><strong>Problema:</strong> ∫₀² x dx</p>
                 <p><strong>Solución:</strong> [x²/2]₀² = 4/2 - 0 = 2</p>
                 <p><strong>Respuesta:</strong> 2</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 4: Área</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Área</h4>
                 <p><strong>Problema:</strong> Área bajo y=x² entre x=0 y x=1</p>
                 <p><strong>Solución:</strong> ∫₀¹ x² dx = [x³/3]₀¹ = 1/3</p>
                 <p><strong>Respuesta:</strong> 1/3 unidades²</p>
             </div>
 
-            <div class="info-box" style="border-left-color: var(--color-success);">
-                <h4 style="color: var(--color-success);">Ejemplo 5: Trigonométrica</h4>
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Trigonométrica</h4>
                 <p><strong>Problema:</strong> ∫sin(x)dx</p>
                 <p><strong>Solución:</strong> -cos(x) + C</p>
                 <p><strong>Respuesta:</strong> -cos(x) + C</p>
@@ -205,7 +205,7 @@
         <div class="content-section" id="practica">
             <h2>✏️ Práctica</h2>
             <div id="exercises-container"></div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
             </div>
@@ -224,7 +224,7 @@
                     <li><strong>Constante:</strong> No olvidar +C</li>
                 </ul>
             </div>
-            <div class="navigation-buttons" style="margin-top: 2rem;">
+            <div class="navigation-buttons" class="mt-2rem">
                 <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
                 <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
             </div>
@@ -273,7 +273,7 @@
                     <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
                     <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
                 </div>
-                <div id="hint${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
                 <div id="feedback${ex.id}" class="feedback"></div></div>
             `).join('');
         }
