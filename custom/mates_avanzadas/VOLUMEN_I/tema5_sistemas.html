@@ -636,7 +636,7 @@
             <!-- Resolvedor de Sistemas 2x2 -->
             <div class="interactive-tool">
                 <h3 class="tool-title">🔢 Resolvedor de Sistemas 2×2</h3>
-                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                <p class="text-center-gray-mb-20">
                     Ingresa los coeficientes del sistema:<br>
                     { a₁x + b₁y = c₁<br>
                     { a₂x + b₂y = c₂
@@ -649,7 +649,7 @@
                     <input type="number" id="sys_b2" placeholder="b₂" step="0.01">
                     <input type="number" id="sys_c2" placeholder="c₂" step="0.01">
                 </div>
-                <div style="text-align: center;">
+                <div class="text-center-only">
                     <button onclick="solveSystem2x2()">Resolver (Cramer)</button>
                 </div>
                 <div class="result-box" id="sysResult"></div>
@@ -658,7 +658,7 @@
             <!-- Clasificador de Sistemas -->
             <div class="interactive-tool">
                 <h3 class="tool-title">🔍 Clasificador de Sistemas</h3>
-                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                <p class="text-center-gray-mb-20">
                     Analiza el tipo de sistema según sus coeficientes
                 </p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
@@ -669,7 +669,7 @@
                     <input type="number" id="class_b2" placeholder="b₂" step="0.01">
                     <input type="number" id="class_c2" placeholder="c₂" step="0.01">
                 </div>
-                <div style="text-align: center;">
+                <div class="text-center-only">
                     <button onclick="classifySystem()">Clasificar Sistema</button>
                 </div>
                 <div class="result-box" id="classResult"></div>
@@ -826,7 +826,7 @@
             <h2>📋 Resumen</h2>
             <div class="theory-content">
                 <h3>Conceptos Clave:</h3>
-                <ul style="line-height: 2;">
+                <ul class="lh-2">
                     <li>✓ <strong>SCD:</strong> Solución única (|A| ≠ 0)</li>
                     <li>✓ <strong>SCI:</strong> Infinitas soluciones (ecuaciones proporcionales)</li>
                     <li>✓ <strong>SI:</strong> Sin solución (contradicción)</li>

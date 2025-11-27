@@ -474,10 +474,10 @@
             visual.innerHTML = `
                 <div class="shape-container">
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
-                        <div class="dimension-label" style="bottom: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${side}</div>
-                        <div class="dimension-label" style="right: -40px; top: 50%; transform: translateY(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
+                        <div class="dimension-label" class="position-bottom-center">${side}</div>
+                        <div class="dimension-label" class="position-left-middle">${side}</div>
+                        <div class="dimension-label" class="position-right-middle">${side}</div>
                     </div>
                     <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
                 </div>
@@ -595,7 +595,7 @@
                 const size = side * scale;
                 visualHTML = `
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
                     </div>
                 `;
             } else if (type === 'rect-perimeter') {
@@ -606,8 +606,8 @@
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
                     </div>
                 `;
             } else if (type === 'square-area') {
@@ -618,7 +618,7 @@
                 const size = side * scale;
                 visualHTML = `
                     <div class="visual-square" style="width: ${size}px; height: ${size}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${side}</div>
+                        <div class="dimension-label" class="position-top-center">${side}</div>
                     </div>
                 `;
             } else {
@@ -629,8 +629,8 @@
                 const scale = Math.min(200 / length, 150 / width, 15);
                 visualHTML = `
                     <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
-                        <div class="dimension-label" style="top: -30px; left: 50%; transform: translateX(-50%);">${length}</div>
-                        <div class="dimension-label" style="left: -40px; top: 50%; transform: translateY(-50%);">${width}</div>
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
                     </div>
                 `;
             }

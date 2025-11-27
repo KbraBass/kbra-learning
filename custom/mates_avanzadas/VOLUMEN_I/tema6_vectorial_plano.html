@@ -662,7 +662,7 @@
             <!-- Calculadora de Producto Escalar -->
             <div class="interactive-tool">
                 <h3 class="tool-title">⚡ Calculadora de Producto Escalar</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="grid-2col-gap15">
                     <div>
                         <label><strong>Vector u⃗:</strong></label>
                         <input type="number" id="dot_ux" placeholder="uₓ" step="0.01" class="margin-5-v">
@@ -681,7 +681,7 @@
             <!-- Visualizador de Vectores -->
             <div class="interactive-tool">
                 <h3 class="tool-title">📐 Visualizador de Vectores 2D</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="grid-2col-gap15">
                     <div>
                         <label><strong>Vector u⃗ (azul):</strong></label>
                         <input type="number" id="vis_ux" placeholder="uₓ" step="0.1" value="3" class="margin-5-v">
@@ -700,7 +700,7 @@
             <!-- Calculadora de Distancia -->
             <div class="interactive-tool">
                 <h3 class="tool-title">📍 Calculadora de Distancia entre Puntos</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="grid-2col-gap15">
                     <div>
                         <label><strong>Punto P:</strong></label>
                         <input type="number" id="dist_px" placeholder="x₁" step="0.01" class="margin-5-v">
@@ -867,7 +867,7 @@
             <h2>📋 Resumen</h2>
             <div class="theory-content">
                 <h3>Conceptos Clave:</h3>
-                <ul style="line-height: 2;">
+                <ul class="lh-2">
                     <li>✓ <strong>Vector:</strong> v⃗ = (vₓ, vᵧ), segmento orientado</li>
                     <li>✓ <strong>Módulo:</strong> |v⃗| = √(vₓ² + vᵧ²)</li>
                     <li>✓ <strong>Suma:</strong> u⃗ + v⃗ = (uₓ+vₓ, uᵧ+vᵧ)</li>
@@ -961,7 +961,7 @@
                 <p>|v⃗| = √(${x}² + ${y}²)</p>
                 <p>|v⃗| = √(${(x*x).toFixed(2)} + ${(y*y).toFixed(2)})</p>
                 <p>|v⃗| = √${(x*x + y*y).toFixed(2)}</p>
-                <p style="font-size: 1.3em; color: #667eea;"><strong>|v⃗| = ${module.toFixed(4)}</strong></p>
+                <p class="text-primary-13em"><strong>|v⃗| = ${module.toFixed(4)}</strong></p>
             `;
         }
 
@@ -1005,7 +1005,7 @@
                 <p><strong>Cálculo:</strong></p>
                 <p>u⃗ · v⃗ = (${ux})(${vx}) + (${uy})(${vy})</p>
                 <p>u⃗ · v⃗ = ${(ux*vx).toFixed(2)} + ${(uy*vy).toFixed(2)}</p>
-                <p style="font-size: 1.3em; color: #667eea;"><strong>u⃗ · v⃗ = ${dotProduct.toFixed(4)}</strong></p>
+                <p class="text-primary-13em"><strong>u⃗ · v⃗ = ${dotProduct.toFixed(4)}</strong></p>
                 ${perpendicular}
                 ${angleInfo}
             `;
@@ -1121,7 +1121,7 @@
                 <p>d = √[(${qx} - ${px})² + (${qy} - ${py})²]</p>
                 <p>d = √[${(qx-px).toFixed(2)}² + ${(qy-py).toFixed(2)}²]</p>
                 <p>d = √[${((qx-px)*(qx-px)).toFixed(2)} + ${((qy-py)*(qy-py)).toFixed(2)}]</p>
-                <p style="font-size: 1.3em; color: #667eea;"><strong>d = ${distance.toFixed(4)} unidades</strong></p>
+                <p class="text-primary-13em"><strong>d = ${distance.toFixed(4)} unidades</strong></p>
             `;
         }
 

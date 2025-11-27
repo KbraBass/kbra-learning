@@ -668,11 +668,11 @@
                 
                 <div class="input-group">
                     <label>Vector v⃗ = (</label>
-                    <input type="number" id="modulo-x" placeholder="x" style="width: 80px;">
+                    <input type="number" id="modulo-x" placeholder="x" class="width-80">
                     <label>,</label>
-                    <input type="number" id="modulo-y" placeholder="y" style="width: 80px;">
+                    <input type="number" id="modulo-y" placeholder="y" class="width-80">
                     <label>,</label>
-                    <input type="number" id="modulo-z" placeholder="z" style="width: 80px;">
+                    <input type="number" id="modulo-z" placeholder="z" class="width-80">
                     <label>)</label>
                 </div>
                 
@@ -1145,7 +1145,7 @@
                     |v⃗| = √(${x}² + ${y}² + ${z}²)<br>
                     |v⃗| = √(${x*x} + ${y*y} + ${z*z})<br>
                     |v⃗| = √${x*x + y*y + z*z}<br>
-                    |v⃗| = <strong style="color: #10b981; font-size: 1.2em;">${modulo.toFixed(4)}</strong>
+                    |v⃗| = <strong class="text-success-lg">${modulo.toFixed(4)}</strong>
                 </div>
             `;
         }
@@ -1288,7 +1288,7 @@
                     <strong>Paso 2:</strong> Calcular u⃗ · (v⃗ × w⃗)<br>
                     [u⃗, v⃗, w⃗] = ${productoMixto.toFixed(4)}<br><br>
                     
-                    <strong style="color: #10b981; font-size: 1.2em;">📦 Volumen del paralelepípedo:</strong><br>
+                    <strong class="text-success-lg">📦 Volumen del paralelepípedo:</strong><br>
                     V = |[u⃗, v⃗, w⃗]| = <strong style="color: #10b981; font-size: 1.3em;">${volumen.toFixed(4)} u³</strong>
                 </div>
             `;
@@ -1329,7 +1329,7 @@
                     <strong>Denominador:</strong><br>
                     √(${a}² + ${b}² + ${c}²) = √${a*a + b*b + c*c} = ${denominador.toFixed(4)}<br><br>
                     
-                    <strong style="color: #10b981; font-size: 1.2em;">📏 Distancia:</strong><br>
+                    <strong class="text-success-lg">📏 Distancia:</strong><br>
                     d(P, π) = <strong style="color: #10b981; font-size: 1.3em;">${distancia.toFixed(4)} unidades</strong>
                 </div>
             `;

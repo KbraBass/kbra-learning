@@ -827,7 +827,7 @@
             <h2>📋 Resumen</h2>
             <div class="theory-content">
                 <h3>Conceptos Clave:</h3>
-                <ul style="line-height: 2;">
+                <ul class="lh-2">
                     <li>✓ <strong>Teorema de Pitágoras:</strong> a² + b² = c² (triángulos rectángulos)</li>
                     <li>✓ <strong>Teorema de Thales:</strong> Proporcionalidad en rectas paralelas</li>
                     <li>✓ <strong>Semejanza:</strong> Triángulos con ángulos iguales y lados proporcionales</li>
@@ -973,7 +973,7 @@
                 <p><strong>sin(${angleDeg}°)</strong> = ${sinValue.toFixed(4)}</p>
                 <p><strong>cos(${angleDeg}°)</strong> = ${cosValue.toFixed(4)}</p>
                 <p><strong>tan(${angleDeg}°)</strong> = ${Math.abs(tanValue) > 1000 ? '∞' : tanValue.toFixed(4)}</p>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                <p class="text-gray-sm-mt">
                     Verificación: sin²(α) + cos²(α) = ${(sinValue*sinValue + cosValue*cosValue).toFixed(4)} ≈ 1 ✓
                 </p>
             `;

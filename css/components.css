@@ -2019,3 +2019,227 @@ tr:hover {
     border-radius: 15px;
 }
 
+/* ==================== PHASE 8: Position & Transform Utilities ==================== */
+
+/* Positioned labels with transforms */
+.position-top-center {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-left-middle {
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-right-middle {
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-bottom-center {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Info boxes with borders */
+.info-box-warning {
+    background: #fff8e1;
+    border: 2px dashed #f59e0b;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.info-box-pink-border {
+    background: #fff0f6;
+    border-left: 5px solid #f5576c;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.info-box-primary-border {
+    background: #f0f4ff;
+    border-left: 5px solid #667eea;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.badge-inline {
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #666;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Card variants */
+.card-white-elevated {
+    background: rgba(255,255,255,0.98);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-top: 6px solid #f093fb;
+}
+
+.gradient-card-pink-purple {
+    background: linear-gradient(135deg, #f5576c, #764ba2);
+    color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.gradient-card-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+}
+
+/* Body gradients */
+.body-gradient-primary {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Text size and color combinations */
+.text-xxl-primary-mb {
+    font-size: 2.8em;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.text-xl-primary-mb {
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.text-primary-mt-mb {
+    color: #667eea;
+    margin: 30px 0 15px 0;
+}
+
+.text-purple-mb {
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.text-primary-13em {
+    font-size: 1.3em;
+    color: #667eea;
+}
+
+.text-gray-mb-30 {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.text-center-gray-mb-20 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.text-success-lg {
+    color: #10b981;
+    font-size: 1.2em;
+}
+
+.text-gray-sm-mt {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Font size utilities */
+.font-2rem-bold {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.font-25rem-bold {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Layout utilities */
+.list-none-lh2-mt {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+    margin-top: 1rem;
+}
+
+.lh-2 {
+    line-height: 2;
+}
+
+.flex-gap-15-mb-wrap {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.grid-2col-gap15 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.text-center-p1-bg-white-alpha {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.bg-white-alpha-p1-center {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Spacing utilities */
+.mt-3rem {
+    margin-top: 3rem;
+}
+
+.mb-15rem {
+    margin-bottom: 1.5rem;
+}
+
+/* Width utilities */
+.width-80 {
+    width: 80px;
+}
+
+.width-0 {
+    width: 0%;
+}
+
+/* Opacity */
+.opacity-09 {
+    opacity: 0.9;
+}
+
+/* Text alignment */
+.text-center-only {
+    text-align: center;
+}
+
