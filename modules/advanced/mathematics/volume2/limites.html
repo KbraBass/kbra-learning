@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema 3: Límites y Continuidad - Matemáticas Avanzadas</title>
+    <title>Límites - Matemáticas Avanzadas</title>
     <link rel="stylesheet" href="../../../../css/core.css">
     <link rel="stylesheet" href="../../../../css/components.css">
 </head>
@@ -13,230 +13,402 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <div class="content-section active" id="teoria">
-            <h2>📚 Teoría: Límites y Continuidad</h2>
+        <!-- Tab 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Límites</h2>
 
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
-                <ul class="list-unstyled-lh2">
-                    <li><strong>lim</strong> = Límite</li>
-                    <li><strong>x→a</strong> = x tiende a a</li>
-                    <li><strong>x→∞</strong> = x tiende a infinito</li>
-                    <li><strong>lim⁺</strong> = Límite por la derecha</li>
-                    <li><strong>lim⁻</strong> = Límite por la izquierda</li>
-                    <li><strong>∞</strong> = Infinito</li>
-                    <li><strong>0/0, ∞/∞</strong> = Indeterminaciones</li>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Aprende los términos clave relacionados con límites y continuidad:</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Límite</h3>
+                <p><strong>Definición:</strong> El valor al que se aproxima una función f(x) cuando x se acerca a un punto a. Se denota lim(x→a) f(x) = L. Significa que f(x) puede hacerse arbitrariamente cercana a L tomando x suficientemente cerca de a.</p>
+                <p><strong>Ejemplo:</strong> lim(x→2) x² = 4 porque cuando x se acerca a 2, x² se acerca a 4.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Límites Laterales</h3>
+                <p><strong>Definición:</strong> Límite por la derecha lim(x→a⁺) f(x) cuando x se acerca a 'a' con x > a. Límite por la izquierda lim(x→a⁻) f(x) cuando x < a. El límite existe si y solo si ambos límites laterales existen y son iguales.</p>
+                <p><strong>Ejemplo:</strong> Para f(x) = |x|/x, lim(x→0⁺) = 1 y lim(x→0⁻) = -1, entonces lim(x→0) no existe.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Indeterminación</h3>
+                <p><strong>Definición:</strong> Expresiones como 0/0, ∞/∞, 0·∞, ∞-∞, 1^∞, 0^0, ∞^0 que requieren técnicas especiales (factorización, racionalización, L'Hôpital) para evaluar el límite.</p>
+                <p><strong>Ejemplo:</strong> lim(x→1) (x²-1)/(x-1) = 0/0 (indeterminación), pero factorizando: lim(x+1) = 2.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>�� Regla de L'Hôpital</h3>
+                <p><strong>Definición:</strong> Técnica para resolver indeterminaciones 0/0 o ∞/∞ derivando numerador y denominador: si lim f(x)/g(x) es 0/0 o ∞/∞, entonces lim f(x)/g(x) = lim f'(x)/g'(x) (si este último existe).</p>
+                <p><strong>Ejemplo:</strong> lim(x→0) sin(x)/x = 0/0 → lim cos(x)/1 = 1.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Continuidad</h3>
+                <p><strong>Definición:</strong> Una función f es continua en x=a si: (1) f(a) existe, (2) lim(x→a) f(x) existe, y (3) lim(x→a) f(x) = f(a). Si alguna condición falla, hay discontinuidad (evitable, de salto, o infinita).</p>
+                <p><strong>Ejemplo:</strong> f(x) = x² es continua en x=2 porque f(2)=4 y lim(x→2) x²=4.</p>
+            </div>
+        </div>
+
+        <!-- Tab 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos y Notación</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Notación matemática esencial para límites y continuidad:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">lim<sub>x→a</sub> f(x)</span>
+                    <span class="symbol-name">Límite</span>
+                </div>
+                <p><strong>Significado:</strong> Límite de f(x) cuando x tiende a a</p>
+                <p><strong>Uso:</strong> lim<sub>x→2</sub> x² = 4. Expresa el valor al que se aproxima f(x).</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">lim<sub>x→a⁺</sub>, lim<sub>x→a⁻</sub></span>
+                    <span class="symbol-name">Límites laterales</span>
+                </div>
+                <p><strong>Significado:</strong> Límite por la derecha (x > a) y por la izquierda (x < a)</p>
+                <p><strong>Uso:</strong> lim<sub>x→0⁺</sub> 1/x = +∞, lim<sub>x→0⁻</sub> 1/x = -∞</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">lim<sub>x→∞</sub>, lim<sub>x→-∞</sub></span>
+                    <span class="symbol-name">Límites al infinito</span>
+                </div>
+                <p><strong>Significado:</strong> Límite cuando x crece sin límite (positivo o negativo)</p>
+                <p><strong>Uso:</strong> lim<sub>x→∞</sub> 1/x = 0. Comportamiento asintótico.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">0/0, ∞/∞</span>
+                    <span class="symbol-name">Indeterminaciones</span>
+                </div>
+                <p><strong>Significado:</strong> Formas indeterminadas que requieren técnicas especiales</p>
+                <p><strong>Uso:</strong> Requieren factorización, racionalización, o regla de L'Hôpital.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">f'(x)</span>
+                    <span class="symbol-name">Derivada</span>
+                </div>
+                <p><strong>Significado:</strong> Derivada de f (usado en regla de L'Hôpital)</p>
+                <p><strong>Uso:</strong> lim f(x)/g(x) = lim f'(x)/g'(x) para indeterminaciones 0/0 o ∞/∞</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">∞</span>
+                    <span class="symbol-name">Infinito</span>
+                </div>
+                <p><strong>Significado:</strong> Concepto de cantidad sin límite (no es un número real)</p>
+                <p><strong>Uso:</strong> lim<sub>x→0</sub> 1/x² = +∞. Crecimiento sin cota.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">ε, δ</span>
+                    <span class="symbol-name">Épsilon, delta</span>
+                </div>
+                <p><strong>Significado:</strong> Símbolos de la definición formal de límite (épsilon-delta)</p>
+                <p><strong>Uso:</strong> ∀ε>0, ∃δ>0: si 0<|x-a|<δ entonces |f(x)-L|<ε</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>📚 Introducción a Límites</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Los límites son fundamentales en cálculo y análisis matemático. ¡Descubre sus aplicaciones!</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🏗️ Ingeniería y Física</h3>
+                <ul>
+                    <li><strong>Velocidad instantánea:</strong> v(t) = lim(Δt→0) Δs/Δt define velocidad en un instante</li>
+                    <li><strong>Aceleración:</strong> a(t) = lim(Δt→0) Δv/Δt calcula cambio de velocidad instantáneo</li>
+                    <li><strong>Resistencia de materiales:</strong> Tensión = lim(A→0) F/A en puntos críticos</li>
+                    <li><strong>Circuitos eléctricos:</strong> Análisis de comportamiento cuando t→∞ o t→0⁺</li>
+                    <li><strong>Mecánica de fluidos:</strong> Presión en un punto como límite de fuerzas</li>
                 </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>💰 Economía y Finanzas</h3>
+                <ul>
+                    <li><strong>Costo marginal:</strong> C'(x) = lim(Δx→0) ΔC/Δx mide costo de una unidad adicional</li>
+                    <li><strong>Ingreso marginal:</strong> Análisis de cambio en ingresos mediante límites</li>
+                    <li><strong>Interés continuo:</strong> A = lim(n→∞) P(1+r/n)^(nt) = Pe^(rt)</li>
+                    <li><strong>Elasticidad:</strong> E = lim(ΔP→0) (ΔQ/Q)/(ΔP/P) en demanda y oferta</li>
+                    <li><strong>Valor presente:</strong> VP = lim(t→∞) de flujos de efectivo descontados</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>🧬 Ciencias Naturales</h3>
+                <ul>
+                    <li><strong>Tasas de crecimiento:</strong> dP/dt = lim(Δt→0) ΔP/Δt en poblaciones</li>
+                    <li><strong>Concentraciones:</strong> [C] = lim(V→0) n/V define concentración puntual</li>
+                    <li><strong>Cinética química:</strong> Velocidad de reacción como límite de Δ[A]/Δt</li>
+                    <li><strong>Difusión molecular:</strong> Flujo = lim(Δx→0) -D·ΔC/Δx (Ley de Fick)</li>
+                    <li><strong>Decaimiento radiactivo:</strong> N(t) con comportamiento asintótico a 0</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>💻 Computación y Tecnología</h3>
+                <ul>
+                    <li><strong>Análisis de algoritmos:</strong> Complejidad temporal lim(n→∞) T(n)/f(n)</li>
+                    <li><strong>Procesamiento de señales:</strong> Respuesta de filtros cuando ω→0 o ω→∞</li>
+                    <li><strong>Inteligencia artificial:</strong> Convergencia de gradiente descendente</li>
+                    <li><strong>Gráficos por computadora:</strong> Suavizado de curvas mediante límites</li>
+                    <li><strong>Redes neuronales:</strong> Límites en funciones de activación (sigmoide, tanh)</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>📊 Matemáticas y Análisis</h3>
+                <ul>
+                    <li><strong>Derivadas:</strong> f'(x) = lim(h→0) [f(x+h)-f(x)]/h define la derivada</li>
+                    <li><strong>Integrales:</strong> ∫f(x)dx = lim(n→∞) Σf(xᵢ)Δx (sumas de Riemann)</li>
+                    <li><strong>Series:</strong> Convergencia de Σaₙ mediante lim(n→∞) Sₙ</li>
+                    <li><strong>Ecuaciones diferenciales:</strong> Comportamiento asintótico de soluciones</li>
+                    <li><strong>Teoremas fundamentales:</strong> Base del cálculo diferencial e integral</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 4: Teoría -->
+        <div class="content-section" id="teoria">
+            <h2>📖 Teoría y Práctica: Límites</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Domina los conceptos fundamentales y técnicas de cálculo de límites</p>
             </div>
 
             <h3>1. Concepto de Límite</h3>
             <div class="info-box">
                 <div class="formula-box">
-                    lim(x→a) f(x) = L
+                    lim<sub>x→a</sub> f(x) = L
                 </div>
-                <p><strong>Significado:</strong> Cuando x se acerca a a, f(x) se acerca a L</p>
-                <p><strong>Formal:</strong> ∀ε>0, ∃δ>0 tal que si 0<|x-a|<δ entonces |f(x)-L|<ε</p>
+                <p><strong>Significado intuitivo:</strong> Cuando x se acerca a a, f(x) se acerca a L</p>
+                <p><strong>Definición formal (ε-δ):</strong> Para todo ε > 0, existe δ > 0 tal que si 0 < |x - a| < δ entonces |f(x) - L| < ε</p>
+                <ul>
+                    <li>El límite describe el comportamiento cerca de a (no necesariamente en a)</li>
+                    <li>f(a) puede no estar definida, pero el límite puede existir</li>
+                    <li>Si el límite existe, es único</li>
+                </ul>
             </div>
 
             <h3>2. Límites Laterales</h3>
             <div class="info-box">
-                <p><strong>Por la derecha:</strong> lim(x→a⁺) f(x) (x > a)</p>
-                <p><strong>Por la izquierda:</strong> lim(x→a⁻) f(x) (x < a)</p>
+                <p><strong>Límite por la derecha:</strong> lim<sub>x→a⁺</sub> f(x) cuando x se acerca a 'a' con x > a</p>
+                <p><strong>Límite por la izquierda:</strong> lim<sub>x→a⁻</sub> f(x) cuando x se acerca a 'a' con x < a</p>
                 <div class="exam-important">
-                    <strong>Importante:</strong> El límite existe ⇔ límites laterales son iguales
+                    <strong>Teorema:</strong> lim<sub>x→a</sub> f(x) existe ⇔ lim<sub>x→a⁺</sub> f(x) = lim<sub>x→a⁻</sub> f(x)
                 </div>
-            </div>
-
-            <h3>3. Cálculo de Límites</h3>
-            <div class="info-box">
-                <h4>Propiedades</h4>
+                <p><strong>Ejemplo:</strong> Para f(x) = |x|/x:</p>
                 <ul>
-                    <li>lim[f(x) + g(x)] = lim f(x) + lim g(x)</li>
-                    <li>lim[f(x) · g(x)] = lim f(x) · lim g(x)</li>
-                    <li>lim[f(x) / g(x)] = lim f(x) / lim g(x) (si lim g(x) ≠ 0)</li>
-                    <li>lim[c·f(x)] = c · lim f(x)</li>
+                    <li>lim<sub>x→0⁺</sub> |x|/x = 1 (x > 0 → |x| = x)</li>
+                    <li>lim<sub>x→0⁻</sub> |x|/x = -1 (x < 0 → |x| = -x)</li>
+                    <li>Como 1 ≠ -1, el límite no existe</li>
                 </ul>
             </div>
 
-            <h3>4. Indeterminaciones</h3>
+            <h3>3. Propiedades de Límites</h3>
+            <div class="info-box">
+                <p>Si lim<sub>x→a</sub> f(x) = L y lim<sub>x→a</sub> g(x) = M, entonces:</p>
+                <ul>
+                    <li><strong>Suma:</strong> lim[f(x) + g(x)] = L + M</li>
+                    <li><strong>Resta:</strong> lim[f(x) - g(x)] = L - M</li>
+                    <li><strong>Producto:</strong> lim[f(x) · g(x)] = L · M</li>
+                    <li><strong>Cociente:</strong> lim[f(x) / g(x)] = L / M (si M ≠ 0)</li>
+                    <li><strong>Potencia:</strong> lim[f(x)]ⁿ = Lⁿ</li>
+                    <li><strong>Constante:</strong> lim[c · f(x)] = c · L</li>
+                </ul>
+            </div>
+
+            <h3>4. Indeterminaciones y Técnicas</h3>
             <table class="comparison-table">
                 <thead>
-                    <tr><th>Tipo</th><th>Forma</th><th>Técnicas</th></tr>
+                    <tr><th>Forma Indeterminada</th><th>Técnicas de Resolución</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>0/0</td><td>Cociente</td><td>Factorizar, simplificar, L'Hôpital</td></tr>
-                    <tr><td>∞/∞</td><td>Cociente</td><td>Dividir por mayor potencia, L'Hôpital</td></tr>
-                    <tr><td>0·∞</td><td>Producto</td><td>Convertir a cociente</td></tr>
-                    <tr><td>∞-∞</td><td>Resta</td><td>Factorizar, racionalizar</td></tr>
-                    <tr><td>1^∞</td><td>Potencia</td><td>Usar e^(lim ln(f))</td></tr>
+                    <tr>
+                        <td>0/0</td>
+                        <td>Factorizar y simplificar, racionalizar, L'Hôpital</td>
+                    </tr>
+                    <tr>
+                        <td>∞/∞</td>
+                        <td>Dividir por mayor potencia, L'Hôpital</td>
+                    </tr>
+                    <tr>
+                        <td>0 · ∞</td>
+                        <td>Convertir a cociente (0/0 o ∞/∞)</td>
+                    </tr>
+                    <tr>
+                        <td>∞ - ∞</td>
+                        <td>Factorizar común, racionalizar</td>
+                    </tr>
+                    <tr>
+                        <td>1^∞, 0^0, ∞^0</td>
+                        <td>Usar logaritmos: e^(lim ln f)</td>
+                    </tr>
                 </tbody>
             </table>
 
             <h3>5. Regla de L'Hôpital</h3>
             <div class="info-box">
-                <p>Si lim f(x)/g(x) es 0/0 o ∞/∞:</p>
+                <p><strong>Enunciado:</strong> Si lim f(x)/g(x) es de la forma 0/0 o ∞/∞, entonces:</p>
                 <div class="formula-box">
-                    lim f(x)/g(x) = lim f'(x)/g'(x)
+                    lim<sub>x→a</sub> f(x)/g(x) = lim<sub>x→a</sub> f'(x)/g'(x)
                 </div>
                 <div class="exam-important">
-                    <strong>Condición:</strong> Solo para indeterminaciones 0/0 o ∞/∞
+                    <strong>Condiciones:</strong>
+                    <ul>
+                        <li>Solo aplicable a indeterminaciones 0/0 o ∞/∞</li>
+                        <li>f'(x) y g'(x) deben existir cerca de a</li>
+                        <li>lim f'(x)/g'(x) debe existir o ser ±∞</li>
+                        <li>Puede aplicarse repetidamente si persiste la indeterminación</li>
+                    </ul>
                 </div>
             </div>
 
             <h3>6. Límites al Infinito</h3>
             <div class="info-box">
-                <p><strong>Polinomios:</strong> Domina el término de mayor grado</p>
-                <p><strong>Racionales:</strong> Comparar grados del numerador y denominador</p>
+                <p><strong>Funciones polinómicas:</strong> Domina el término de mayor grado</p>
+                <div class="formula-box">
+                    lim<sub>x→∞</sub> (aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₀) = ±∞ · signo(aₙ)
+                </div>
+                <p><strong>Funciones racionales P(x)/Q(x):</strong></p>
                 <ul>
-                    <li>Si grado(P) > grado(Q): ±∞</li>
-                    <li>Si grado(P) = grado(Q): cociente de coeficientes principales</li>
-                    <li>Si grado(P) < grado(Q): 0</li>
+                    <li><strong>grado(P) > grado(Q):</strong> límite = ±∞</li>
+                    <li><strong>grado(P) = grado(Q):</strong> límite = coeficiente principal de P / coeficiente principal de Q</li>
+                    <li><strong>grado(P) < grado(Q):</strong> límite = 0</li>
+                </ul>
+                <p><strong>Límites notables:</strong></p>
+                <ul>
+                    <li>lim<sub>x→∞</sub> 1/x = 0</li>
+                    <li>lim<sub>x→∞</sub> e^x = ∞, lim<sub>x→-∞</sub> e^x = 0</li>
+                    <li>lim<sub>x→∞</sub> (1 + 1/x)^x = e</li>
                 </ul>
             </div>
 
             <h3>7. Continuidad</h3>
             <div class="info-box">
-                <p>f es continua en x=a si:</p>
+                <p><strong>Definición:</strong> f es continua en x = a si:</p>
                 <ol>
-                    <li>f(a) existe</li>
-                    <li>lim(x→a) f(x) existe</li>
-                    <li>lim(x→a) f(x) = f(a)</li>
+                    <li>f(a) existe (a está en el dominio)</li>
+                    <li>lim<sub>x→a</sub> f(x) existe</li>
+                    <li>lim<sub>x→a</sub> f(x) = f(a)</li>
                 </ol>
-            </div>
-
-            <h3>8. Tipos de Discontinuidad</h3>
-            <div class="info-box">
+                <p><strong>Tipos de discontinuidad:</strong></p>
                 <ul>
-                    <li><strong>Evitable:</strong> Límite existe pero ≠ f(a)</li>
-                    <li><strong>Salto:</strong> Límites laterales diferentes</li>
-                    <li><strong>Infinita:</strong> Límite es ±∞ (asíntota vertical)</li>
+                    <li><strong>Evitable:</strong> lim<sub>x→a</sub> f(x) existe pero ≠ f(a) (puede "rellenarse")</li>
+                    <li><strong>Salto:</strong> lim<sub>x→a⁺</sub> ≠ lim<sub>x→a⁻</sub> (límites laterales diferentes)</li>
+                    <li><strong>Infinita:</strong> lim<sub>x→a</sub> f(x) = ±∞ (asíntota vertical)</li>
                 </ul>
             </div>
-        </div>
 
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Límite Simple</h4>
-                <p><strong>Problema:</strong> lim(x→2) (x² + 1)</p>
-                <p><strong>Solución:</strong> Sustitución directa: 2² + 1 = 5</p>
-                <p><strong>Respuesta:</strong> 5</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Indeterminación 0/0</h4>
-                <p><strong>Problema:</strong> lim(x→1) (x²-1)/(x-1)</p>
-                <p><strong>Solución:</strong> (x²-1)/(x-1) = (x+1)(x-1)/(x-1) = x+1 → 2</p>
-                <p><strong>Respuesta:</strong> 2</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Límite al Infinito</h4>
-                <p><strong>Problema:</strong> lim(x→∞) (3x²+1)/(x²-2)</p>
-                <p><strong>Solución:</strong> Mismo grado: 3/1 = 3</p>
-                <p><strong>Respuesta:</strong> 3</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Continuidad</h4>
-                <p><strong>Problema:</strong> ¿f(x) = x² es continua en x=2?</p>
-                <p><strong>Solución:</strong> f(2)=4, lim(x→2) x²=4 → Sí es continua</p>
-                <p><strong>Respuesta:</strong> Sí</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: L'Hôpital</h4>
-                <p><strong>Problema:</strong> lim(x→0) sin(x)/x</p>
-                <p><strong>Solución:</strong> 0/0 → L'Hôpital: lim cos(x)/1 = 1</p>
-                <p><strong>Respuesta:</strong> 1</p>
-            </div>
-        </div>
-
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
+            <h3>🛠️ Herramientas Interactivas</h3>
 
             <div class="tool-card">
-                <h3>🎯 Calculadora de Límites Polinómicos</h3>
-                <p>Evalúa límites por sustitución directa</p>
+                <h4>🎯 Calculadora de Límites Polinómicos</h4>
+                <p>Evalúa límites de funciones polinómicas por sustitución directa</p>
                 <div class="tool-input-group">
-                    <label>Coef [a,b,c] para f(x)=ax²+bx+c:</label>
-                    <input type="text" id="lim-coef" placeholder="Ej: 1,0,1">
+                    <label>Coeficientes [a,b,c] para f(x) = ax² + bx + c:</label>
+                    <input type="text" id="lim-coef" placeholder="Ej: 1,0,1" class="tool-input">
                 </div>
                 <div class="tool-input-group">
                     <label>x tiende a:</label>
-                    <input type="number" step="any" id="lim-a" placeholder="Ej: 2">
+                    <input type="number" step="any" id="lim-a" placeholder="Ej: 2" class="tool-input">
                 </div>
-                <button class="calc-button" onclick="calculateLimit()">Calcular</button>
-                <div class="calc-result" id="lim-result">Ingresa los datos</div>
+                <button class="calc-button" onclick="calculateLimit()">Calcular Límite</button>
+                <div class="calc-result" id="lim-result">Ingresa los datos y haz clic en Calcular</div>
             </div>
 
             <div class="tool-card">
-                <h3>∞ Límites al Infinito (Racionales)</h3>
-                <p>Analiza límites de funciones racionales</p>
+                <h4>∞ Analizador de Límites al Infinito</h4>
+                <p>Analiza límites de funciones racionales cuando x→∞</p>
                 <div class="tool-input-group">
-                    <label>Grado numerador:</label>
-                    <input type="number" id="inf-num" placeholder="Ej: 2">
+                    <label>Grado del numerador:</label>
+                    <input type="number" id="inf-num" placeholder="Ej: 2" class="tool-input">
                 </div>
                 <div class="tool-input-group">
-                    <label>Grado denominador:</label>
-                    <input type="number" id="inf-den" placeholder="Ej: 2">
+                    <label>Grado del denominador:</label>
+                    <input type="number" id="inf-den" placeholder="Ej: 2" class="tool-input">
                 </div>
                 <div class="tool-input-group">
-                    <label>Coef principal numerador:</label>
-                    <input type="number" step="any" id="inf-a" placeholder="Ej: 3">
+                    <label>Coeficiente principal del numerador:</label>
+                    <input type="number" step="any" id="inf-a" placeholder="Ej: 3" class="tool-input">
                 </div>
                 <div class="tool-input-group">
-                    <label>Coef principal denominador:</label>
-                    <input type="number" step="any" id="inf-b" placeholder="Ej: 1">
+                    <label>Coeficiente principal del denominador:</label>
+                    <input type="number" step="any" id="inf-b" placeholder="Ej: 1" class="tool-input">
                 </div>
                 <button class="calc-button" onclick="calculateInfiniteLimit()">Analizar</button>
-                <div class="calc-result" id="inf-result">Ingresa los datos</div>
+                <div class="calc-result" id="inf-result">Ingresa los datos y haz clic en Analizar</div>
             </div>
 
             <div class="tool-card">
-                <h3>📊 Verificador de Continuidad</h3>
-                <p>Verifica si una función es continua en un punto</p>
+                <h4>📊 Verificador de Continuidad</h4>
+                <p>Verifica si una función es continua en un punto dado</p>
                 <div class="tool-input-group">
-                    <label>f(a):</label>
-                    <input type="number" step="any" id="cont-fa" placeholder="Ej: 4">
+                    <label>Valor de f(a):</label>
+                    <input type="number" step="any" id="cont-fa" placeholder="Ej: 4" class="tool-input">
                 </div>
                 <div class="tool-input-group">
-                    <label>lim(x→a) f(x):</label>
-                    <input type="number" step="any" id="cont-lim" placeholder="Ej: 4">
+                    <label>Valor de lim(x→a) f(x):</label>
+                    <input type="number" step="any" id="cont-lim" placeholder="Ej: 4" class="tool-input">
                 </div>
-                <button class="calc-button" onclick="checkContinuity()">Verificar</button>
-                <div class="calc-result" id="cont-result">Ingresa los datos</div>
+                <button class="calc-button" onclick="checkContinuity()">Verificar Continuidad</button>
+                <div class="calc-result" id="cont-result">Ingresa los datos y haz clic en Verificar</div>
             </div>
         </div>
 
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-            <div id="exercises-container"></div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='derivadas.html'">Siguiente ➡️</button>
+        <!-- Tab 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento: Límites</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Practica con estos ejercicios para dominar los límites. ¡Cada respuesta correcta suma +10 puntos!</p>
+            </div>
+
+            <div id="training-container"></div>
+
+            <div class="navigation-buttons mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">🏠 Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='continuidad.html'">Siguiente ➡️</button>
             </div>
         </div>
 
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen</h2>
-            <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
-                <ul>
-                    <li><strong>Límite:</strong> Valor al que tiende f(x)</li>
-                    <li><strong>Laterales:</strong> Deben coincidir</li>
-                    <li><strong>0/0:</strong> Factorizar o L'Hôpital</li>
-                    <li><strong>∞/∞:</strong> Comparar grados</li>
-                    <li><strong>L'Hôpital:</strong> Derivar numerador y denominador</li>
-                    <li><strong>Continuidad:</strong> lim f(x) = f(a)</li>
-                </ul>
+        <!-- Tab 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final: Límites</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Completa este examen para demostrar tu dominio de los límites.</p>
+                <p class="white-text"><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p class="white-text"><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Límites" 🏆</p>
             </div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='derivadas.html'">Siguiente ➡️</button>
+
+            <div id="exam-container"></div>
+
+            <div class="navigation-buttons mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">🏠 Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='continuidad.html'">Siguiente ➡️</button>
             </div>
         </div>
     </div>
@@ -246,130 +418,472 @@
     <script src="../../../../lib/components.js"></script>
     <script>
         const MODULE_ID = 'limites';
-        const MODULE_TITLE = 'Tema 3: Límites y Continuidad';
+        const MODULE_TITLE = 'Límites';
+        const TROPHY_ID = 'limites';
 
-        document.addEventListener('DOMContentLoaded', function() {
-            Components.createHeader(MODULE_TITLE, 'index.html');
-            Components.createTabs([
-                { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
-            ], 'teoria');
-            Components.createScoreDisplay();
-            loadExercises();
-            Gamification.updateDisplay(MODULE_ID);
-        });
-
-        const exercises = [
-            { id: 1, question: 'lim(x→3) (x+2)', correct: '5', hint: 'Sustitución directa: 3+2=5' },
-            { id: 2, question: 'lim(x→0) x²', correct: '0', hint: '0²=0' },
-            { id: 3, question: 'lim(x→∞) 5', correct: '5', hint: 'Constante no cambia' },
-            { id: 4, question: 'lim(x→2) (x²-4)/(x-2)', correct: '4', hint: 'Factor: (x+2)(x-2)/(x-2)=x+2→4' },
-            { id: 5, question: 'lim(x→∞) (2x)/(x+1)', correct: '2', hint: 'Mismo grado: 2/1=2' },
-            { id: 6, question: 'Si f(2)=5 y lim(x→2)f(x)=5, ¿continua? (1=SÍ,0=NO)', correct: '1', hint: 'Límite = f(2) → continua' },
-            { id: 7, question: 'lim(x→1) x³', correct: '1', hint: '1³=1' },
-            { id: 8, question: 'lim(x→0) (sin(x)/x) [valor conocido]', correct: '1', hint: 'Límite notable: vale 1' },
-            { id: 9, question: 'lim(x→∞) (x²)/(x³)', correct: '0', hint: 'Grado menor arriba: 0' },
-            { id: 10, question: 'lim(x→4) √x', correct: '2', hint: '√4=2' }
+        // Tab configuration
+        const TABS = [
+            { id: 'glosario', name: 'Glosario', icon: '📖' },
+            { id: 'simbolos', name: 'Símbolos', icon: '🔣' },
+            { id: 'introduccion', name: 'Introducción', icon: '📚' },
+            { id: 'teoria', name: 'Teoría', icon: '📖' },
+            { id: 'entrenamiento', name: 'Entrenamiento', icon: '🎯' },
+            { id: 'examen', name: 'Examen Final', icon: '📝' }
         ];
 
-        function loadExercises() {
-            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
-                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
-                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
-                </div>
-                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                <div id="feedback${ex.id}" class="feedback"></div></div>
-            `).join('');
-        }
-
-        function checkAnswer(exerciseId) {
-            const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
-            const feedback = document.getElementById('feedback' + exerciseId);
-            const userAnswer = parseFloat(input.value.trim());
-            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
-            
-            if (isCorrect) {
-                feedback.className = 'feedback success';
-                feedback.textContent = '¡Correcto! ✨ +10 puntos';
-                input.disabled = true;
-                Gamification.completeExercise(MODULE_ID, true);
-            } else {
-                feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
-                Gamification.completeExercise(MODULE_ID, false);
+        // Training questions (15 questions, +10 correct / -5 incorrect)
+        const TRAINING_QUESTIONS = [
+            {
+                question: "¿Cuál es el valor de lim(x→2) (x + 3)?",
+                options: ["3", "5", "No existe", "∞"],
+                correct: 1,
+                explanation: "Por sustitución directa: 2 + 3 = 5"
+            },
+            {
+                question: "Si lim(x→a⁺) f(x) = 3 y lim(x→a⁻) f(x) = 3, ¿existe lim(x→a) f(x)?",
+                options: ["No", "Sí, y es 3", "Sí, y es 6", "Depende de f(a)"],
+                correct: 1,
+                explanation: "Si los límites laterales coinciden, el límite existe y es igual a ese valor"
+            },
+            {
+                question: "¿Qué técnica se usa para lim(x→1) (x²-1)/(x-1)?",
+                options: ["L'Hôpital", "Factorización", "Sustitución directa", "Racionalización"],
+                correct: 1,
+                explanation: "Es 0/0, factorizamos: (x+1)(x-1)/(x-1) = x+1 → 2"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) (3x²+1)/(x²-2)?",
+                options: ["0", "1", "3", "∞"],
+                correct: 2,
+                explanation: "Mismo grado: cociente de coeficientes principales = 3/1 = 3"
+            },
+            {
+                question: "¿La regla de L'Hôpital se aplica a la forma 1/0?",
+                options: ["Sí", "No, solo a 0/0 o ∞/∞", "Sí, pero da 0", "Depende"],
+                correct: 1,
+                explanation: "L'Hôpital solo se aplica a indeterminaciones 0/0 o ∞/∞"
+            },
+            {
+                question: "Una función es continua en x=a si:",
+                options: ["f(a) existe", "lim(x→a) f(x) = f(a)", "f'(a) existe", "f es derivable"],
+                correct: 1,
+                explanation: "Continuidad requiere que f(a) exista, lim exista, y lim f(x) = f(a)"
+            },
+            {
+                question: "¿Cuál es lim(x→0) sin(x)/x?",
+                options: ["0", "1", "∞", "No existe"],
+                correct: 1,
+                explanation: "Límite notable: lim(x→0) sin(x)/x = 1 (o usar L'Hôpital)"
+            },
+            {
+                question: "Si lim(x→∞) P(x)/Q(x) donde grado(P) < grado(Q), el límite es:",
+                options: ["∞", "0", "1", "Cociente de coeficientes"],
+                correct: 1,
+                explanation: "Si el grado del numerador es menor, el límite es 0"
+            },
+            {
+                question: "¿Qué tipo de discontinuidad tiene f(x) = 1/x en x=0?",
+                options: ["Evitable", "Salto", "Infinita", "No tiene"],
+                correct: 2,
+                explanation: "lim(x→0) 1/x = ±∞, es una asíntota vertical (discontinuidad infinita)"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) 1/x?",
+                options: ["1", "0", "∞", "No existe"],
+                correct: 1,
+                explanation: "Cuando x crece sin límite, 1/x se aproxima a 0"
+            },
+            {
+                question: "Para resolver lim con forma ∞-∞, se recomienda:",
+                options: ["L'Hôpital directamente", "Factorizar o racionalizar", "Sustituir", "Dividir por x"],
+                correct: 1,
+                explanation: "∞-∞ requiere factorización o racionalización para convertir a otra forma"
+            },
+            {
+                question: "Si lim(x→2⁺) f(x) = 5 y lim(x→2⁻) f(x) = 3, entonces:",
+                options: ["lim(x→2) f(x) = 4", "lim(x→2) f(x) = 5", "lim(x→2) f(x) no existe", "f(2) = 4"],
+                correct: 2,
+                explanation: "Los límites laterales son diferentes, por lo tanto el límite no existe"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) e^x?",
+                options: ["0", "1", "e", "∞"],
+                correct: 3,
+                explanation: "La función exponencial e^x crece sin límite cuando x→∞"
+            },
+            {
+                question: "¿Cuál es lim(x→0) (1-cos(x))/x²?",
+                options: ["0", "1/2", "1", "No existe"],
+                correct: 1,
+                explanation: "Forma 0/0, usando L'Hôpital dos veces o límite notable: 1/2"
+            },
+            {
+                question: "Si f es continua en [a,b] y f(a) < 0 < f(b), entonces:",
+                options: ["f no tiene raíces", "f tiene al menos una raíz en (a,b)", "f'(c) = 0", "f es derivable"],
+                correct: 1,
+                explanation: "Teorema del valor intermedio: existe c en (a,b) con f(c) = 0"
             }
-            feedback.style.display = 'block';
-            Gamification.updateDisplay(MODULE_ID);
+        ];
+
+        // Exam questions (20 questions from 25-question bank)
+        const EXAM_QUESTIONS = [
+            {
+                question: "¿Cuál es lim(x→3) (x² - 9)/(x - 3)?",
+                options: ["0", "3", "6", "No existe"],
+                correct: 2,
+                explanation: "Factorizando: (x+3)(x-3)/(x-3) = x+3 → 6"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) (2x³ + x)/(x³ - 1)?",
+                options: ["0", "1", "2", "∞"],
+                correct: 2,
+                explanation: "Mismo grado: 2/1 = 2"
+            },
+            {
+                question: "Si lim(x→a) f(x) = L, ¿qué se puede afirmar sobre f(a)?",
+                options: ["f(a) = L", "f(a) puede no existir", "f(a) ≠ L", "f es continua en a"],
+                correct: 1,
+                explanation: "El límite puede existir aunque f(a) no esté definida"
+            },
+            {
+                question: "¿Cuál es lim(x→0⁺) ln(x)?",
+                options: ["0", "1", "-∞", "∞"],
+                correct: 2,
+                explanation: "Cuando x→0⁺, ln(x)→-∞"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) (x+1)/x?",
+                options: ["0", "1", "∞", "No existe"],
+                correct: 1,
+                explanation: "(x+1)/x = 1 + 1/x → 1 cuando x→∞"
+            },
+            {
+                question: "Usando L'Hôpital, lim(x→0) (e^x - 1)/x es:",
+                options: ["0", "1", "e", "∞"],
+                correct: 1,
+                explanation: "0/0 → lim e^x/1 = e^0 = 1"
+            },
+            {
+                question: "¿Qué valor hace que f(x) = (x²-4)/(x-2) sea continua en x=2?",
+                options: ["0", "2", "4", "No se puede"],
+                correct: 2,
+                explanation: "lim(x→2) (x²-4)/(x-2) = lim(x+2) = 4, definir f(2) = 4"
+            },
+            {
+                question: "¿Cuál es lim(x→0) x·sin(1/x)?",
+                options: ["0", "1", "No existe", "∞"],
+                correct: 0,
+                explanation: "Teorema del sandwich: -|x| ≤ x·sin(1/x) ≤ |x| → 0"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) arctan(x)?",
+                options: ["0", "π/4", "π/2", "π"],
+                correct: 2,
+                explanation: "arctan(x) → π/2 cuando x→∞"
+            },
+            {
+                question: "¿Cuál es lim(x→1) (x³-1)/(x-1)?",
+                options: ["1", "2", "3", "No existe"],
+                correct: 2,
+                explanation: "(x³-1)/(x-1) = x²+x+1 → 3"
+            },
+            {
+                question: "Si f(x) = x² para x≠0 y f(0) = 1, ¿f es continua en x=0?",
+                options: ["Sí", "No", "Depende", "No está definida"],
+                correct: 1,
+                explanation: "lim(x→0) x² = 0 ≠ f(0) = 1, no es continua"
+            },
+            {
+                question: "¿Cuál es lim(x→0) (tan(x))/x?",
+                options: ["0", "1", "∞", "No existe"],
+                correct: 1,
+                explanation: "tan(x)/x = sin(x)/(x·cos(x)) → 1/1 = 1"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) (√(x²+1) - x)?",
+                options: ["0", "1/2", "1", "∞"],
+                correct: 0,
+                explanation: "Racionalizar: [√(x²+1) - x]·[√(x²+1) + x]/[√(x²+1) + x] = 1/[√(x²+1) + x] → 0"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) (1 + 1/x)^x?",
+                options: ["1", "e", "∞", "0"],
+                correct: 1,
+                explanation: "Definición del número e: lim(x→∞) (1 + 1/x)^x = e"
+            },
+            {
+                question: "Si lim(x→a) [f(x) + g(x)] = 5 y lim(x→a) f(x) = 2, ¿cuál es lim(x→a) g(x)?",
+                options: ["2", "3", "5", "7"],
+                correct: 1,
+                explanation: "lim g(x) = lim[f(x) + g(x)] - lim f(x) = 5 - 2 = 3"
+            },
+            {
+                question: "¿Cuál es lim(x→0) (1 - cos(x))/x?",
+                options: ["0", "1/2", "1", "No existe"],
+                correct: 0,
+                explanation: "Form 0/0, usando L'Hôpital: lim sin(x)/1 = 0"
+            },
+            {
+                question: "¿Cuál es lim(x→2⁻) 1/(x-2)?",
+                options: ["-∞", "0", "+∞", "1"],
+                correct: 0,
+                explanation: "Cuando x→2⁻, x-2→0⁻, entonces 1/(x-2)→-∞"
+            },
+            {
+                question: "¿Cuál es lim(x→∞) x/e^x?",
+                options: ["0", "1", "e", "∞"],
+                correct: 0,
+                explanation: "Forma ∞/∞, L'Hôpital: lim 1/e^x = 0"
+            },
+            {
+                question: "Si f es continua en [0,1] con f(0) = 1 y f(1) = 3, ¿existe c con f(c) = 2?",
+                options: ["Sí, por TVI", "No", "Solo si f' existe", "Depende"],
+                correct: 0,
+                explanation: "Teorema del Valor Intermedio garantiza la existencia de c"
+            },
+            {
+                question: "¿Cuál es lim(x→0) x²·sin(1/x²)?",
+                options: ["0", "1", "No existe", "∞"],
+                correct: 0,
+                explanation: "Teorema del sandwich: -x² ≤ x²·sin(1/x²) ≤ x² → 0"
+            },
+            {
+                question: "¿Cuál es lim(x→-∞) e^x?",
+                options: ["0", "1", "e", "-∞"],
+                correct: 0,
+                explanation: "e^x → 0 cuando x→-∞"
+            },
+            {
+                question: "¿Cuál es lim(x→0) (e^(2x) - 1)/x?",
+                options: ["1", "2", "e", "0"],
+                correct: 1,
+                explanation: "0/0, L'Hôpital: lim 2e^(2x)/1 = 2"
+            },
+            {
+                question: "¿Cuál es lim(x→π) sin(x)?",
+                options: ["-1", "0", "1", "π"],
+                correct: 1,
+                explanation: "Por sustitución directa: sin(π) = 0"
+            },
+            {
+                question: "Si lim(x→a) f(x)·g(x) = 0 y lim(x→a) g(x) = 0, ¿qué se puede concluir de lim(x→a) f(x)?",
+                options: ["Es 0", "Es ∞", "No se puede determinar", "Es 1"],
+                correct: 2,
+                explanation: "Sin más información sobre f(x), no se puede determinar su límite (forma 0·?)"
+            },
+            {
+                question: "¿Cuál es lim(x→0) (√(1+x) - 1)/x?",
+                options: ["0", "1/2", "1", "2"],
+                correct: 1,
+                explanation: "0/0, racionalizar o L'Hôpital: lim 1/(2√(1+x)) = 1/2"
+            }
+        ];
+
+        // Initialize components when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage();
+            loadTrainingQuestions();
+            loadExam();
+        });
+
+        // Initialize page with header, tabs, and score
+        function initializePage() {
+            createHeader(MODULE_TITLE);
+            createTabs(TABS);
+            createScoreDisplay();
+            loadScore();
         }
 
-        function showHint(exerciseId) {
-            const hint = document.getElementById('hint' + exerciseId);
-            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        // Load training questions
+        function loadTrainingQuestions() {
+            const container = document.getElementById('training-container');
+            if (!container) return;
+
+            TRAINING_QUESTIONS.forEach((q, index) => {
+                const questionDiv = createQuestionElement(q, index, 'training');
+                container.appendChild(questionDiv);
+            });
         }
 
+        // Load exam (20 random questions from the bank)
+        function loadExam() {
+            const container = document.getElementById('exam-container');
+            if (!container) return;
+
+            // Shuffle and select 20 questions
+            const shuffled = [...EXAM_QUESTIONS].sort(() => Math.random() - 0.5);
+            const selectedQuestions = shuffled.slice(0, 20);
+
+            selectedQuestions.forEach((q, index) => {
+                const questionDiv = createQuestionElement(q, index, 'exam');
+                container.appendChild(questionDiv);
+            });
+
+            // Add submit button
+            const submitButton = document.createElement('button');
+            submitButton.className = 'btn btn-success btn-large mt-2rem';
+            submitButton.textContent = '✅ Enviar Examen';
+            submitButton.onclick = submitExam;
+            container.appendChild(submitButton);
+
+            // Check if already passed
+            checkExamStatus();
+        }
+
+        // Submit exam and check if passed
+        function submitExam() {
+            let correct = 0;
+            const total = 20;
+            const examQuestions = document.querySelectorAll('[data-type="exam"]');
+
+            examQuestions.forEach(questionDiv => {
+                const selectedOption = questionDiv.querySelector('input[type="radio"]:checked');
+                if (selectedOption) {
+                    const questionIndex = parseInt(questionDiv.dataset.index);
+                    const isCorrect = parseInt(selectedOption.value) === parseInt(selectedOption.dataset.correct);
+                    if (isCorrect) correct++;
+                }
+            });
+
+            const percentage = (correct / total) * 100;
+            const passed = percentage >= 70;
+
+            // Save exam result
+            saveExamResult(MODULE_ID, {
+                score: correct,
+                total: total,
+                percentage: percentage,
+                passed: passed,
+                attempts: getExamAttempts(MODULE_ID) + 1
+            });
+
+            // Show results
+            if (passed) {
+                // Award trophy
+                unlockTrophy(TROPHY_ID);
+                showTrophyToast(TROPHY_ID);
+                
+                alert(`🎉 ¡Felicitaciones! Has aprobado con ${percentage.toFixed(1)}%\n\nRespuestas correctas: ${correct}/${total}\n\n🏆 ¡Has obtenido el trofeo "Maestro de Límites"!`);
+            } else {
+                alert(`❌ No has aprobado. Obtuviste ${percentage.toFixed(1)}%\n\nNecesitas 70% o más para aprobar (14/20 correctas)\nRespuestas correctas: ${correct}/${total}\n\n¡Sigue practicando en la sección de Entrenamiento!`);
+            }
+
+            // Reload to show updated status
+            setTimeout(() => location.reload(), 2000);
+        }
+
+        // Check exam status and show if already passed
+        function checkExamStatus() {
+            const examData = getExamResult(MODULE_ID);
+            if (examData && examData.passed) {
+                const container = document.getElementById('exam-container');
+                const passedDiv = document.createElement('div');
+                passedDiv.className = 'info-box bg-success white-text';
+                passedDiv.innerHTML = `
+                    <h3>✅ ¡Examen Aprobado!</h3>
+                    <p>Ya has completado este examen exitosamente.</p>
+                    <p><strong>Puntuación:</strong> ${examData.score}/${examData.total} (${examData.percentage.toFixed(1)}%)</p>
+                    <p><strong>Intentos:</strong> ${examData.attempts}</p>
+                    <p>🏆 <strong>Trofeo "Maestro de Límites" desbloqueado</strong></p>
+                `;
+                container.insertBefore(passedDiv, container.firstChild);
+            }
+        }
+
+        // Calculator functions
         function calculateLimit() {
-            const coefStr = document.getElementById('lim-coef').value;
-            const a = parseFloat(document.getElementById('lim-a').value);
-            const result = document.getElementById('lim-result');
-            
-            if (!coefStr || isNaN(a)) {
-                result.textContent = '⚠️ Completa todos los campos';
+            const coefInput = document.getElementById('lim-coef').value;
+            const aInput = document.getElementById('lim-a').value;
+            const resultDiv = document.getElementById('lim-result');
+
+            if (!coefInput || aInput === '') {
+                resultDiv.innerHTML = '<span class="error-text">⚠️ Por favor completa todos los campos</span>';
                 return;
             }
-            
-            const [c1, c2, c3] = coefStr.split(',').map(n => parseFloat(n.trim()));
-            const value = c1*a*a + c2*a + c3;
-            
-            result.innerHTML = `<strong>lim(x→${a}) f(x) = ${value.toFixed(2)}</strong>`;
+
+            try {
+                const coefs = coefInput.split(',').map(c => parseFloat(c.trim()));
+                if (coefs.length !== 3 || coefs.some(isNaN)) {
+                    throw new Error('Formato incorrecto');
+                }
+
+                const [a, b, c] = coefs;
+                const x = parseFloat(aInput);
+                const result = a*x*x + b*x + c;
+
+                resultDiv.innerHTML = `
+                    <div class="success-text">
+                        <strong>📊 Resultado:</strong><br>
+                        f(x) = ${a}x² + ${b}x + ${c}<br>
+                        lim<sub>x→${x}</sub> f(x) = <strong>${result}</strong><br>
+                        <small>Por sustitución directa: ${a}(${x})² + ${b}(${x}) + ${c} = ${result}</small>
+                    </div>
+                `;
+            } catch (e) {
+                resultDiv.innerHTML = '<span class="error-text">⚠️ Error en los datos. Use formato: a,b,c</span>';
+            }
         }
 
         function calculateInfiniteLimit() {
             const numGrade = parseInt(document.getElementById('inf-num').value);
             const denGrade = parseInt(document.getElementById('inf-den').value);
-            const a = parseFloat(document.getElementById('inf-a').value);
-            const b = parseFloat(document.getElementById('inf-b').value);
-            const result = document.getElementById('inf-result');
-            
-            if (isNaN(numGrade) || isNaN(denGrade) || isNaN(a) || isNaN(b)) {
-                result.textContent = '⚠️ Completa todos los campos';
+            const numCoef = parseFloat(document.getElementById('inf-a').value);
+            const denCoef = parseFloat(document.getElementById('inf-b').value);
+            const resultDiv = document.getElementById('inf-result');
+
+            if (isNaN(numGrade) || isNaN(denGrade) || isNaN(numCoef) || isNaN(denCoef)) {
+                resultDiv.innerHTML = '<span class="error-text">⚠️ Por favor completa todos los campos</span>';
                 return;
             }
-            
-            let limitValue;
-            if (numGrade > denGrade) limitValue = '∞';
-            else if (numGrade === denGrade) limitValue = (a/b).toFixed(2);
-            else limitValue = '0';
-            
-            result.innerHTML = `
-                <strong>Análisis:</strong><br>
-                Grado numerador: ${numGrade}<br>
-                Grado denominador: ${denGrade}<br>
-                <strong>lim(x→∞) = ${limitValue}</strong>
+
+            let result, explanation;
+            if (numGrade > denGrade) {
+                result = numCoef > 0 ? '+∞' : '-∞';
+                explanation = 'Grado del numerador mayor → límite es ±∞';
+            } else if (numGrade === denGrade) {
+                result = (numCoef / denCoef).toFixed(2);
+                explanation = 'Mismo grado → cociente de coeficientes principales';
+            } else {
+                result = '0';
+                explanation = 'Grado del numerador menor → límite es 0';
+            }
+
+            resultDiv.innerHTML = `
+                <div class="success-text">
+                    <strong>📊 Análisis:</strong><br>
+                    Grado numerador: ${numGrade}<br>
+                    Grado denominador: ${denGrade}<br>
+                    lim<sub>x→∞</sub> P(x)/Q(x) = <strong>${result}</strong><br>
+                    <small>${explanation}</small>
+                </div>
             `;
         }
 
         function checkContinuity() {
             const fa = parseFloat(document.getElementById('cont-fa').value);
-            const limF = parseFloat(document.getElementById('cont-lim').value);
-            const result = document.getElementById('cont-result');
-            
-            if (isNaN(fa) || isNaN(limF)) {
-                result.textContent = '⚠️ Completa ambos campos';
+            const limValue = parseFloat(document.getElementById('cont-lim').value);
+            const resultDiv = document.getElementById('cont-result');
+
+            if (isNaN(fa) || isNaN(limValue)) {
+                resultDiv.innerHTML = '<span class="error-text">⚠️ Por favor completa todos los campos</span>';
                 return;
             }
-            
-            const continuous = Math.abs(fa - limF) < 0.001;
-            
-            result.innerHTML = continuous ?
-                '<strong>✓ La función ES continua</strong><br>lim f(x) = f(a)' :
-                '<strong>✗ La función NO es continua</strong><br>lim f(x) ≠ f(a)';
+
+            const isContinuous = Math.abs(fa - limValue) < 0.0001;
+            const status = isContinuous ? '✅ SÍ es continua' : '❌ NO es continua';
+            const reason = isContinuous 
+                ? 'f(a) = lim(x→a) f(x), se cumplen las 3 condiciones' 
+                : 'f(a) ≠ lim(x→a) f(x), hay discontinuidad';
+
+            resultDiv.innerHTML = `
+                <div class="${isContinuous ? 'success-text' : 'error-text'}">
+                    <strong>📊 Verificación:</strong><br>
+                    f(a) = ${fa}<br>
+                    lim(x→a) f(x) = ${limValue}<br>
+                    <strong>${status}</strong><br>
+                    <small>${reason}</small>
+                </div>
+            `;
         }
     </script>
 </body>
