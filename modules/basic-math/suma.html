@@ -558,9 +558,9 @@
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
             
-            // Visual representation (if numbers are small enough)
-            if (num1 + num2 <= 20) {
-                visualDiv.innerHTML = Components.createNumberBlocks(num1, num2, sum);
+            // Visual representation (if sum is small enough)
+            if (sum <= 20) {
+                visualDiv.innerHTML = Components.createAdditionBlocks(num1, num2);
             } else {
                 visualDiv.innerHTML = '<p style="text-align: center; color: #666;">Los números son muy grandes para mostrar visualmente, ¡pero el resultado es correcto!</p>';
             }
