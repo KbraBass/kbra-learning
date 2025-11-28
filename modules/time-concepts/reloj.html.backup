@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende a Leer el Reloj! - Conceptos de Tiempo</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific clock styles */
+        .clock-container {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            position: relative;
+            background: white;
+            border-radius: 50%;
+            border: 8px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .clock-face {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .clock-hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            background: var(--primary-color);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .hour-hand {
+            width: 8px;
+            height: 80px;
+            margin-left: -4px;
+            background: #333;
+            z-index: 3;
+        }
+        
+        .minute-hand {
+            width: 6px;
+            height: 110px;
+            margin-left: -3px;
+            background: var(--primary-color);
+            z-index: 4;
+        }
+        
+        .second-hand {
+            width: 2px;
+            height: 120px;
+            margin-left: -1px;
+            background: var(--accent-color);
+            z-index: 5;
+        }
+        
+        .clock-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 6;
+        }
+        
+        .clock-number {
+            position: absolute;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .digital-display {
+            background: #333;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 4em;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: 30px auto;
+        }
+        
+        .time-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .time-controls button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .time-controls button:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .time-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .time-selector select {
+            padding: 10px 15px;
+            font-size: 1.1em;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .timezone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .timezone-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timezone-city {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timezone-time {
+            font-size: 2em;
+            font-family: 'Courier New', monospace;
+            color: var(--accent-color);
+        }
+        
+        .language-examples {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-example {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 10px;
+        }
+        
+        .time-numeric {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .time-words {
+            font-size: 1.2em;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header-container"></div>
+        <div id="tabs-container"></div>
+
+        <!-- ANALÓGICO TAB -->
+        <div id="analogico" class="content tab-content active">
+            <h2 class="section-title">🕐 Reloj Analógico</h2>
+            
+            <div class="explanation">
+                <h3>Las Manecillas del Reloj</h3>
+                <p><strong>Manecilla corta (horaria):</strong> Señala la hora</p>
+                <p><strong>Manecilla larga (minutera):</strong> Señala los minutos</p>
+                <p><strong>Manecilla delgada (segundero):</strong> Señala los segundos</p>
+            </div>
+
+            <div class="clock-container">
+                <div class="clock-face" id="analog-clock">
+                    <div class="clock-hand hour-hand" id="hour-hand"></div>
+                    <div class="clock-hand minute-hand" id="minute-hand"></div>
+                    <div class="clock-hand second-hand" id="second-hand"></div>
+                    <div class="clock-center"></div>
+                </div>
+            </div>
+
+            <div class="time-selector">
+                <label class="flex-align-gap">
+                    <span>Hora:</span>
+                    <select id="hour-select" onchange="updateAnalogClock()">
+                        ${Array.from({length: 12}, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+                    </select>
+                </label>
+                <label class="flex-align-gap">
+                    <span>Minutos:</span>
+                    <select id="minute-select" onchange="updateAnalogClock()">
+                        ${[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55].map(m => `<option value="${m}">${m.toString().padStart(2, '0')}</option>`).join('')}
+                    </select>
+                </label>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 ¿Sabías que...?</h3>
+                <ul>
+                    <li>La manecilla horaria da 2 vueltas completas al día (24 horas)</li>
+                    <li>La manecilla minutera da 1 vuelta completa cada hora (60 minutos)</li>
+                    <li>Cuando la minutera está en el 12, es "en punto"</li>
+                    <li>Cuando está en el 6, es "y media"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DIGITAL TAB -->
+        <div id="digital" class="content tab-content">
+            <h2 class="section-title">🔢 Reloj Digital</h2>
+            
+            <div class="explanation">
+                <h3>Formato 24 horas</h3>
+                <p>Los relojes digitales muestran el tiempo en formato <strong>HH:MM:SS</strong></p>
+                <p><strong>00:00</strong> = Medianoche | <strong>12:00</strong> = Mediodía</p>
+            </div>
+
+            <div class="digital-display" id="digital-clock">00:00:00</div>
+
+            <div class="time-controls">
+                <button onclick="setCurrentTime()">⏰ Hora Actual</button>
+                <button onclick="setCustomTime(9, 0)">🌅 09:00 (Mañana)</button>
+                <button onclick="setCustomTime(12, 0)">☀️ 12:00 (Mediodía)</button>
+                <button onclick="setCustomTime(18, 30)">🌆 18:30 (Tarde)</button>
+                <button onclick="setCustomTime(0, 0)">🌙 00:00 (Medianoche)</button>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🔄 Conversión AM/PM a 24 horas:</h3>
+                <ul>
+                    <li><strong>1:00 AM</strong> → 01:00</li>
+                    <li><strong>12:00 PM</strong> → 12:00 (mediodía)</li>
+                    <li><strong>3:00 PM</strong> → 15:00 (12 + 3)</li>
+                    <li><strong>11:59 PM</strong> → 23:59</li>
+                    <li><strong>12:00 AM</strong> → 00:00 (medianoche)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LENGUAJE TAB -->
+        <div id="lenguaje" class="content tab-content">
+            <h2 class="section-title">💬 Lenguaje Natural</h2>
+            
+            <div class="explanation">
+                <h3>¿Cómo decimos la hora?</h3>
+                <p>En español, tenemos diferentes formas de expresar el tiempo de manera natural y conversacional.</p>
+            </div>
+
+            <div class="language-examples">
+                <div class="language-example">
+                    <div class="time-numeric">03:00</div>
+                    <div class="time-words">Las tres en punto</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">03:15</div>
+                    <div class="time-words">Las tres y cuarto</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">03:30</div>
+                    <div class="time-words">Las tres y media</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">03:45</div>
+                    <div class="time-words">Las cuatro menos cuarto</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">03:50</div>
+                    <div class="time-words">Las cuatro menos diez</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">12:00</div>
+                    <div class="time-words">Mediodía / Las doce</div>
+                </div>
+                <div class="language-example">
+                    <div class="time-numeric">00:00</div>
+                    <div class="time-words">Medianoche / Las doce de la noche</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🗣️ Expresiones Comunes:</h3>
+                <ul>
+                    <li><strong>"En punto":</strong> Exactamente la hora (ej: 3:00)</li>
+                    <li><strong>"Y media":</strong> 30 minutos después (ej: 3:30)</li>
+                    <li><strong>"Y cuarto":</strong> 15 minutos después (ej: 3:15)</li>
+                    <li><strong>"Menos cuarto":</strong> 15 minutos antes (ej: 3:45 = 4 menos cuarto)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ZONAS TAB -->
+        <div id="zonas" class="content tab-content">
+            <h2 class="section-title">🌍 Zonas Horarias</h2>
+            
+            <div class="explanation">
+                <h3>El mundo tiene diferentes horas</h3>
+                <p>Debido a la rotación de la Tierra, cuando en España es de día, en otros lugares es de noche. Por eso existen las zonas horarias.</p>
+            </div>
+
+            <div class="timezone-grid" id="timezone-grid">
+                <!-- Timezones will be populated by JavaScript -->
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌐 Datos Interesantes:</h3>
+                <ul>
+                    <li>Hay 24 zonas horarias principales (una por cada hora del día)</li>
+                    <li>La línea internacional de cambio de fecha está en el Océano Pacífico</li>
+                    <li>Algunos países tienen media hora o 45 minutos de diferencia</li>
+                    <li>España usa el horario CET/CEST (GMT+1 o GMT+2 en verano)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container"></div>
+
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                
+                <div id="practice-visual" class="min-height-200-flex-center"></div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta (HH:MM):</label>
+                        <input type="text" id="practice-answer" placeholder="Ej: 03:45">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li>Recuerda: la manecilla corta es la hora, la larga los minutos</li>
+                    <li>Cada número en el reloj representa 5 minutos</li>
+                    <li>Escribe la hora en formato 24 horas (Ej: 15:30 para las 3:30 PM)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'reloj';
+        let currentQuestion = null;
+        let questionAnswered = false;
+        let clockInterval = null;
+
+        function init() {
+            const headerHtml = Components.createHeader(
+                '🕐 ¡Aprende a Leer el Reloj! 🕐',
+                'Domina el tiempo en todos sus formatos',
+                '../index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            const tabs = [
+                { id: 'analogico', label: 'Reloj Analógico' },
+                { id: 'digital', label: 'Reloj Digital' },
+                { id: 'lenguaje', label: 'Lenguaje Natural' },
+                { id: 'zonas', label: 'Zonas Horarias' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'analogico');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            updateScoreDisplay();
+            updateAnalogClock();
+            updateDigitalClock();
+            updateTimezones();
+            
+            // Update clocks every second
+            clockInterval = setInterval(() => {
+                updateDigitalClock();
+                updateTimezones();
+            }, 1000);
+            
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                if (button.textContent.includes('Analógico') && tabName === 'analogico') button.classList.add('active');
+                else if (button.textContent.includes('Digital') && tabName === 'digital') button.classList.add('active');
+                else if (button.textContent.includes('Lenguaje') && tabName === 'lenguaje') button.classList.add('active');
+                else if (button.textContent.includes('Zonas') && tabName === 'zonas') button.classList.add('active');
+                else if (button.textContent.includes('Práctica') && tabName === 'practica') button.classList.add('active');
+            });
+        }
+
+        function updateAnalogClock() {
+            const hour = parseInt(document.getElementById('hour-select').value);
+            const minute = parseInt(document.getElementById('minute-select').value);
+            
+            const hourHand = document.getElementById('hour-hand');
+            const minuteHand = document.getElementById('minute-hand');
+            const secondHand = document.getElementById('second-hand');
+            
+            const hourDegrees = (hour % 12) * 30 + (minute / 60) * 30;
+            const minuteDegrees = minute * 6;
+            const secondDegrees = 0;
+            
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+            secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+        }
+
+        function updateDigitalClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        function setCurrentTime() {
+            updateDigitalClock();
+        }
+
+        function setCustomTime(hours, minutes) {
+            const h = hours.toString().padStart(2, '0');
+            const m = minutes.toString().padStart(2, '0');
+            document.getElementById('digital-clock').textContent = `${h}:${m}:00`;
+        }
+
+        function updateTimezones() {
+            const now = new Date();
+            const timezones = [
+                { city: 'Madrid', offset: 1 },
+                { city: 'Londres', offset: 0 },
+                { city: 'Nueva York', offset: -5 },
+                { city: 'Los Ángeles', offset: -8 },
+                { city: 'Tokio', offset: 9 },
+                { city: 'Sídney', offset: 11 }
+            ];
+            
+            const grid = document.getElementById('timezone-grid');
+            grid.innerHTML = timezones.map(tz => {
+                const localTime = new Date(now.getTime() + (tz.offset * 60 - now.getTimezoneOffset()) * 60000);
+                const timeStr = localTime.toTimeString().slice(0, 5);
+                return `
+                    <div class="timezone-card">
+                        <div class="timezone-city">${tz.city}</div>
+                        <div class="timezone-time">${timeStr}</div>
+                        <small class="text-gray">GMT${tz.offset >= 0 ? '+' : ''}${tz.offset}</small>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function generateQuestion() {
+            const hour = Math.floor(Math.random() * 12) + 1;
+            const minute = [0, 15, 30, 45][Math.floor(Math.random() * 4)];
+            
+            currentQuestion = { hour, minute };
+            questionAnswered = false;
+            
+            document.getElementById('practice-question').textContent = 'Lee la hora del reloj:';
+            
+            // Create a practice clock
+            const hourDegrees = (hour % 12) * 30 + (minute / 60) * 30;
+            const minuteDegrees = minute * 6;
+            
+            document.getElementById('practice-visual').innerHTML = `
+                <div class="clock-container" class="width-200">
+                    <div class="clock-face">
+                        <div class="clock-hand hour-hand" style="transform: rotate(${hourDegrees}deg); width: 6px; height: 60px; margin-left: -3px;"></div>
+                        <div class="clock-hand minute-hand" style="transform: rotate(${minuteDegrees}deg); width: 4px; height: 80px; margin-left: -2px;"></div>
+                        <div class="clock-center" class="width-12"></div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Escribe la hora en formato HH:MM!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('practice-answer').value.trim();
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) return;
+            
+            if (!userAnswer.match(/^\d{1,2}:\d{2}$/)) {
+                result.textContent = '¡Por favor, escribe la hora en formato HH:MM (ej: 03:30)!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const [userHour, userMinute] = userAnswer.split(':').map(n => parseInt(n));
+            const correctHour = currentQuestion.hour.toString().padStart(2, '0');
+            const correctMinute = currentQuestion.minute.toString().padStart(2, '0');
+            const correctAnswer = `${correctHour}:${correctMinute}`;
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            if (userHour === currentQuestion.hour && userMinute === currentQuestion.minute) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>Son las <strong>${correctAnswer}</strong><br><small>+10 puntos</small></div>`;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La hora correcta es <strong>${correctAnswer}</strong><br><small>-5 puntos</small></div>`;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('score').textContent = Storage.getTotalPoints();
+            document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
+        }
+
+        init();
+    </script>
+</body>
+</html>

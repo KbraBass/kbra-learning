@@ -1,155 +1,222 @@
 # 🎓 Kbra Learning Platform
 
-A gamified learning platform built with simple HTML, CSS, and JavaScript for GitHub Pages. Perfect for family learning with interactive lessons, quizzes, and achievements!
+Una plataforma de aprendizaje gamificada construida con HTML, CSS y JavaScript simple para GitHub Pages. ¡Perfecta para aprendizaje familiar con lecciones interactivas, cuestionarios y logros!
 
-## 🌟 Features
+## 🌟 Características
 
-- **Interactive Lessons**: 6 engaging lessons covering various subjects
-  - 🔢 Basic Math (Addition & Subtraction)
-  - ✖️ Multiplication Tables
-  - 🌍 World Capitals
-  - 🔬 Basic Science
-  - 📚 English Grammar
-  - ⏰ Telling Time
+- **Módulos de Aprendizaje Interactivos**: 28+ módulos cubriendo varios temas
+  - 🔢 Matemáticas Básicas (4 módulos)
+  - 📐 Geometría (3 módulos)
+  - 🎯 Conceptos Numéricos (3 módulos)
+  - ⏰ Conceptos de Tiempo (3 módulos)
+  - 🎓 Matemáticas Avanzadas (15+ módulos)
 
-- **Gamification Elements**:
-  - ⭐ Points system - Earn points based on quiz performance
-  - 🏆 Achievements - Unlock 6 different achievements
-  - 📊 Progress tracking - See completed lessons at a glance
-  - 💾 Local storage - Progress persists across sessions
+- **Sistema de Gamificación Unificado**:
+  - ⭐ Sistema de puntos global - Gana puntos basados en el rendimiento
+  - 🏆 Sistema de trofeos - Un trofeo por módulo completado
+  - 🎖️ 18 logros desbloqueables
+  - 📊 Seguimiento de progreso - Ve las lecciones completadas de un vistazo
+  - 💾 Almacenamiento local - El progreso persiste durante 7 días
+  - 🔥 Sistema de rachas diarias
 
-- **Quiz System**:
-  - 5 questions per lesson
-  - Immediate feedback on answers
-  - Color-coded correct/incorrect responses
-  - Performance-based point rewards
+- **Estructura de Módulo Estándar**:
+  - 📖 **Glosario**: Términos clave y definiciones
+  - 🔣 **Símbolos**: Notación matemática y símbolos
+  - 📚 **Introducción**: Contexto y aplicaciones del mundo real
+  - 📖 **Teoría y Práctica**: Lecciones interactivas con herramientas
+  - 🎯 **Entrenamiento**: Preguntas de práctica para ganar puntos
+  - 📝 **Examen Final**: 10-30 preguntas, 70% requerido para aprobar
 
-- **Responsive Design**:
-  - Beautiful gradient UI
-  - Works on desktop and mobile devices
-  - Smooth animations and transitions
-  - Bottom navigation for easy access
+- **Sistema de Niveles**:
+  - 🌱 Principiante (0-199 puntos)
+  - ⭐ Intermedio (200-499 puntos)
+  - 💫 Experto (500+ puntos)
 
-## 🚀 Getting Started
+- **Diseño Responsivo**:
+  - UI hermosa con gradientes
+  - Funciona en dispositivos de escritorio y móviles
+  - Animaciones y transiciones suaves
+  - Navegación intuitiva
 
-### View Online
-Visit the live site at: `https://kbrabass.github.io/kbra-learning/`
+## 🚀 Comenzar
 
-### Run Locally
-1. Clone the repository:
+### Ver en Línea
+Visita el sitio en vivo en: `https://kbrabass.github.io/kbra-learning/`
+
+### Ejecutar Localmente
+1. Clona el repositorio:
    ```bash
    git clone https://github.com/KbraBass/kbra-learning.git
    cd kbra-learning
    ```
 
-2. Open `index.html` in your web browser, or start a local server:
+2. Abre `index.html` en tu navegador web, o inicia un servidor local:
    ```bash
-   # Using Python 3
+   # Usando Python 3
    python3 -m http.server 8080
    
-   # Using Node.js
+   # Usando Node.js
    npx http-server -p 8080
    ```
 
-3. Navigate to `http://localhost:8080` in your browser
+3. Navega a `http://localhost:8080` en tu navegador
 
-## 📖 How to Use
+## 📖 Cómo Usar
 
-1. **Start Learning**: Click "Start Learning" on the welcome screen
-2. **Choose a Lesson**: Select any lesson card to begin a quiz
-3. **Answer Questions**: Click on your answer choice
-4. **Earn Points**: Complete quizzes to earn points based on your score
-5. **Unlock Achievements**: Meet achievement criteria to unlock badges
-6. **Track Progress**: View your stats in the header and completed lessons
+1. **Comenzar a Aprender**: Haz clic en "Start Learning" en la pantalla de bienvenida
+2. **Explorar Módulos**: Navega a través de categorías en el hub de módulos
+3. **Seleccionar un Módulo**: Elige cualquier tarjeta de módulo para comenzar
+4. **Navegar Pestañas**: Usa las 6 pestañas para explorar el contenido
+5. **Practicar**: Usa la pestaña Entrenamiento para practicar y ganar puntos
+6. **Tomar el Examen**: Completa el Examen Final con 70%+ para aprobar
+7. **Ganar Trofeos**: Desbloquea trofeos al completar módulos
+8. **Seguir Progreso**: Ve tus estadísticas en el encabezado y logros desbloqueados
 
-## 🎯 Achievements
+## 🎯 Logros
 
-- 🎯 **First Steps** - Complete your first lesson
-- ⭐ **Star Student** - Earn 100 points
-- 🏆 **Champion** - Complete 3 lessons
-- 🎓 **Scholar** - Complete all lessons
-- 💯 **Perfectionist** - Score 100% on any quiz
-- 🔥 **On Fire** - Earn 250 points
+### Logros Básicos
+- 🎯 **Primeros Pasos** - Completa tu primera lección
+- ⭐ **Estudiante Estrella** - Gana 100 puntos
+- 🏆 **Campeón** - Completa 5 lecciones
+- 🎓 **Erudito** - Completa 15 lecciones
+- 💯 **Perfeccionista** - Obtén 100% en cualquier examen final
+- 🔥 **¡En Llamas!** - Gana 500 puntos
 
-## 🛠️ Technical Details
+### Logros por Categoría
+- 📚 **Maestro de Matemáticas** - Completa todos los módulos de matemáticas básicas
+- 🔷 **Gurú de Geometría** - Completa todos los módulos de geometría
+- ⏰ **Viajero del Tiempo** - Completa todos los conceptos de tiempo
+- 🔢 **Experto en Números** - Completa todos los conceptos numéricos
+- 🧮 **Aprendiz Avanzado** - Completa 5 módulos avanzados
 
-- **Pure Frontend**: No backend or build process required
-- **Technologies**: HTML5, CSS3, Vanilla JavaScript
-- **Storage**: Browser localStorage for progress persistence
-- **Hosting**: GitHub Pages compatible
-- **No Dependencies**: No external libraries needed
+### Logros de Racha
+- 🌟 **Racha de 3 Días** - Aprende durante 3 días consecutivos
+- 💫 **Racha de 7 Días** - Aprende durante 7 días consecutivos
+- ✨ **Racha de 30 Días** - ¡Un mes de aprendizaje continuo!
 
-## 📁 File Structure
+### Logros de Excelencia
+- 🎖️ **Cinco Perfectos** - Obtén 100% en 5 exámenes finales
+- 👑 **Maestro Supremo** - Completa TODOS los módulos con 70%+
+- ⚡ **Relámpago** - Completa un módulo en menos de 15 minutos
+- 🎨 **Coleccionista** - Obtén 20 trofeos
+
+## 🛠️ Detalles Técnicos
+
+- **Frontend Puro**: No se requiere backend o proceso de compilación
+- **Tecnologías**: HTML5, CSS3, JavaScript Vanilla
+- **Almacenamiento**: localStorage del navegador para persistencia de progreso (7 días)
+- **Hosting**: Compatible con GitHub Pages
+- **Sin Dependencias**: No se necesitan bibliotecas externas
+
+## 📁 Estructura de Archivos
 
 ```
 kbra-learning/
-├── index.html      # Main HTML structure
-├── styles.css      # All styling and animations
-├── app.js          # Application logic and data
-├── LICENSE         # MIT License
-└── README.md       # This file
+├── index.html                  # Página principal/hub
+├── app.js                      # Lógica de aplicación original
+├── styles.css                  # Estilos originales
+├── lib/                        # Bibliotecas JavaScript compartidas
+│   ├── storage.js             # Gestión de localStorage (v2.0.0)
+│   ├── gamification.js        # Sistema de puntos, logros, trofeos
+│   └── components.js          # Generadores de componentes UI reutilizables
+├── css/                        # Hojas de estilo compartidas
+│   ├── core.css               # Estilos base y utilidades
+│   └── components.css         # Estilos específicos de componentes
+├── modules/                    # Todos los módulos de aprendizaje
+│   ├── index.html             # Hub de módulos
+│   ├── basic-math/            # Operaciones aritméticas
+│   ├── geometry/              # Conceptos geométricos
+│   ├── number-concepts/       # Teoría de números
+│   ├── time-concepts/         # Aprendizaje relacionado con tiempo
+│   └── advanced/              # Matemáticas avanzadas
+├── UNIFIED_MODULE_ARCHITECTURE.md    # Especificación de arquitectura
+├── CONVERSION_AGENT_GUIDE.md         # Guía de conversión de módulos
+├── IMPLEMENTATION_GUIDE.md           # Guía técnica detallada
+├── PROJECT_SUMMARY.md                # Resumen del proyecto
+└── README.md                          # Este archivo
 ```
 
-## 🎨 Customization
+## 🎨 Personalización
 
-### Adding New Lessons
+### Agregar Nuevos Módulos
 
-Edit `app.js` and add a new lesson object to the `lessons` array:
+Los módulos siguen una estructura estandarizada de 6 pestañas. Ver `UNIFIED_MODULE_ARCHITECTURE.md` para la especificación completa y `CONVERSION_AGENT_GUIDE.md` para el proceso de conversión.
+
+Estructura básica:
+1. **Glosario**: Define términos clave
+2. **Símbolos**: Explica notación
+3. **Introducción**: Proporciona contexto
+4. **Teoría**: Enseña con herramientas interactivas
+5. **Entrenamiento**: Preguntas de práctica
+6. **Examen Final**: 10-30 preguntas, 70% para aprobar
+
+### Agregar Nuevos Logros
+
+Agrega al array `achievementDefinitions` en `lib/gamification.js`:
 
 ```javascript
 {
-    id: 7,
-    icon: '📝',
-    title: 'Your Lesson Title',
-    description: 'Lesson description',
-    difficulty: 'Easy|Medium|Hard',
-    points: 50,
-    questions: [
-        {
-            question: 'Your question?',
-            options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-            correct: 0  // Index of correct answer (0-3)
-        }
-        // Add more questions...
-    ]
-}
-```
-
-### Adding New Achievements
-
-Add to the `achievements` array in `app.js`:
-
-```javascript
-{
-    id: 7,
+    id: 'achievement-id',
     icon: '🌟',
-    name: 'Achievement Name',
-    description: 'How to unlock this achievement',
-    condition: (progress) => {
-        // Return true when achievement should be unlocked
-        return progress.totalPoints >= 500;
+    name: 'Nombre del Logro',
+    description: 'Cómo desbloquear este logro',
+    condition: (stats) => {
+        // Devuelve true cuando el logro debe desbloquearse
+        return stats.totalPoints >= 1000;
     }
 }
 ```
 
-## 📱 Browser Compatibility
+### Agregar Nuevos Trofeos
 
-- ✅ Chrome/Edge (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+Agrega al objeto `trophyDefinitions` en `lib/gamification.js`:
 
-## 🤝 Contributing
+```javascript
+'modulo-id-completado': {
+    icon: '🏆',
+    name: 'Nombre del Trofeo',
+    description: 'Descripción del logro'
+}
+```
 
-This is a personal family learning platform, but suggestions are welcome! Feel free to:
-- Report bugs
-- Suggest new features
-- Propose new lessons or quiz questions
+## 📱 Compatibilidad del Navegador
 
-## 📄 License
+- ✅ Chrome/Edge (última versión)
+- ✅ Firefox (última versión)
+- ✅ Safari (última versión)
+- ✅ Navegadores móviles (iOS Safari, Chrome Mobile)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**Características Requeridas**:
+- localStorage (soporte universal)
+- CSS Grid & Flexbox (2017+)
+- Propiedades Personalizadas CSS (2018+)
+- JavaScript ES6 (2015+)
 
-## 👨‍👩‍👧‍👦 Made For
+## 💾 Persistencia de Datos
 
-Built with ❤️ for family learning and education
+- Los datos del usuario se almacenan en `localStorage` del navegador
+- **Expiración**: Los datos expiran después de 7 días de inactividad
+- **Extensión Automática**: Visitar la plataforma extiende la expiración 7 días más
+- **Exportar/Importar**: Los usuarios pueden hacer copia de seguridad y restaurar el progreso
+
+## 🤝 Contribuir
+
+Esta es una plataforma de aprendizaje familiar personal, ¡pero las sugerencias son bienvenidas! Siéntete libre de:
+- Reportar bugs
+- Sugerir nuevas características
+- Proponer nuevas lecciones o preguntas de cuestionario
+- Mejorar el contenido educativo
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## 👨‍👩‍👧‍👦 Hecho Para
+
+Construido con ❤️ para el aprendizaje y educación familiar
+
+---
+
+**Versión**: 2.0.0  
+**Última Actualización**: 27 de Noviembre, 2025  
+**Estado**: Arquitectura Unificada Implementada ✅

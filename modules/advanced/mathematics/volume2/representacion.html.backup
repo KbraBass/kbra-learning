@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Representación de Funciones - Matemáticas Avanzadas</title>
+    <link rel="stylesheet" href="../../../../css/core.css">
+    <link rel="stylesheet" href="../../../../css/components.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="tabs-container"></div>
+    <div id="score-container"></div>
+
+    <div class="container">
+        <div class="content-section active" id="teoria">
+            <h2>📚 Teoría: Representación de Funciones</h2>
+
+            <div class="info-box" class="bg-gradient-primary-white">
+                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
+                <ul class="list-unstyled-lh2">
+                    <li><strong>Dom(f)</strong> = Dominio</li>
+                    <li><strong>AV, AH, AO</strong> = Asíntotas (vertical, horizontal, oblicua)</li>
+                    <li><strong>f'(x)</strong> = Derivada primera (crecimiento)</li>
+                    <li><strong>f''(x)</strong> = Derivada segunda (concavidad)</li>
+                    <li><strong>máx, mín</strong> = Extremos</li>
+                    <li><strong>PI</strong> = Punto de inflexión</li>
+                </ul>
+            </div>
+
+            <h3>1. Pasos para Representar una Función</h3>
+            <div class="info-box">
+                <ol>
+                    <li>Dominio y continuidad</li>
+                    <li>Asíntotas (verticales, horizontales, oblicuas)</li>
+                    <li>Crecimiento/decrecimiento (f' > 0 o f' < 0)</li>
+                    <li>Extremos relativos (f' = 0)</li>
+                    <li>Concavidad (f'' > 0 convexa, f'' < 0 cóncava)</li>
+                    <li>Puntos de inflexión (f'' = 0)</li>
+                    <li>Gráfica completa</li>
+                </ol>
+            </div>
+
+            <h3>2. Asíntotas</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Tipo</th><th>Condición</th><th>Ejemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Vertical (AV)</td><td>lim(x→a) f(x) = ±∞</td><td>x = a</td></tr>
+                    <tr><td>Horizontal (AH)</td><td>lim(x→±∞) f(x) = L</td><td>y = L</td></tr>
+                    <tr><td>Oblicua (AO)</td><td>lim(x→±∞) [f(x)-(mx+n)] = 0</td><td>y = mx+n</td></tr>
+                </tbody>
+            </table>
+
+            <h3>3. Crecimiento y Decrecimiento</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>f'(x) > 0:</strong> f crece en ese intervalo</li>
+                    <li><strong>f'(x) < 0:</strong> f decrece en ese intervalo</li>
+                    <li><strong>f'(x) = 0:</strong> posibles extremos</li>
+                </ul>
+                <div class="exam-important">
+                    <strong>Criterio:</strong> Estudiar signo de f'(x)
+                </div>
+            </div>
+
+            <h3>4. Extremos Relativos</h3>
+            <div class="info-box">
+                <p>Si f'(a) = 0:</p>
+                <ul>
+                    <li><strong>Máximo:</strong> f' cambia de + a -</li>
+                    <li><strong>Mínimo:</strong> f' cambia de - a +</li>
+                </ul>
+                <p><strong>Criterio 2ª derivada:</strong></p>
+                <ul>
+                    <li>f''(a) < 0 → máximo</li>
+                    <li>f''(a) > 0 → mínimo</li>
+                </ul>
+            </div>
+
+            <h3>5. Concavidad y Convexidad</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>f''(x) > 0:</strong> Convexa (∪, sonríe)</li>
+                    <li><strong>f''(x) < 0:</strong> Cóncava (∩, triste)</li>
+                </ul>
+            </div>
+
+            <h3>6. Puntos de Inflexión</h3>
+            <div class="info-box">
+                <p>Donde f'' = 0 y cambia de signo</p>
+                <p>Punto donde la función cambia de cóncava a convexa o viceversa</p>
+            </div>
+
+            <h3>7. Optimización</h3>
+            <div class="info-box">
+                <h4>Método:</h4>
+                <ol>
+                    <li>Expresar la función a optimizar</li>
+                    <li>Derivar e igualar a 0</li>
+                    <li>Verificar que es máximo/mínimo (2ª derivada)</li>
+                    <li>Calcular el valor óptimo</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="content-section" id="ejemplos">
+            <h2>💡 Ejemplos Resueltos</h2>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 1: Crecimiento</h4>
+                <p><strong>Problema:</strong> f(x)=x², ¿dónde crece?</p>
+                <p><strong>Solución:</strong> f'(x)=2x > 0 cuando x > 0</p>
+                <p><strong>Respuesta:</strong> Crece en (0, +∞)</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 2: Extremo</h4>
+                <p><strong>Problema:</strong> Extremos de f(x)=-x²+4x</p>
+                <p><strong>Solución:</strong> f'(x)=-2x+4=0 → x=2, f''(2)=-2<0 → máximo</p>
+                <p><strong>Respuesta:</strong> Máximo en x=2, valor f(2)=4</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 3: Asíntota Vertical</h4>
+                <p><strong>Problema:</strong> f(x)=1/(x-3), asíntotas verticales</p>
+                <p><strong>Solución:</strong> Denominador=0 en x=3</p>
+                <p><strong>Respuesta:</strong> AV: x=3</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 4: Concavidad</h4>
+                <p><strong>Problema:</strong> f(x)=x³, ¿convexa o cóncava en x=1?</p>
+                <p><strong>Solución:</strong> f''(x)=6x, f''(1)=6>0 → convexa</p>
+                <p><strong>Respuesta:</strong> Convexa en x=1</p>
+            </div>
+
+            <div class="info-box" class="border-left-success">
+                <h4 class="text-success">Ejemplo 5: Punto Inflexión</h4>
+                <p><strong>Problema:</strong> f(x)=x³, punto de inflexión</p>
+                <p><strong>Solución:</strong> f''(x)=6x=0 → x=0</p>
+                <p><strong>Respuesta:</strong> PI en (0,0)</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="herramientas">
+            <h2>🛠️ Herramientas Interactivas</h2>
+
+            <div class="tool-card">
+                <h3>📈 Análisis de Crecimiento</h3>
+                <p>Estudia el crecimiento de f(x)=ax²+bx+c</p>
+                <div class="tool-input-group">
+                    <label>Coeficientes [a,b,c]:</label>
+                    <input type="text" id="crec-coef" placeholder="Ej: 1,0,0">
+                </div>
+                <button class="calc-button" onclick="analyzeGrowth()">Analizar</button>
+                <div class="calc-result" id="crec-result">Ingresa los coeficientes</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>🎯 Localizador de Extremos</h3>
+                <p>Encuentra extremos de f(x)=ax²+bx+c</p>
+                <div class="tool-input-group">
+                    <label>Coeficientes [a,b,c]:</label>
+                    <input type="text" id="ext-coef" placeholder="Ej: -1,4,0">
+                </div>
+                <button class="calc-button" onclick="findExtrema()">Calcular</button>
+                <div class="calc-result" id="ext-result">Ingresa los coeficientes</div>
+            </div>
+
+            <div class="tool-card">
+                <h3>📊 Analizador de Concavidad</h3>
+                <p>Determina concavidad de f(x)=ax²+bx+c</p>
+                <div class="tool-input-group">
+                    <label>Coeficiente a:</label>
+                    <input type="number" step="any" id="conc-a" placeholder="Ej: 1">
+                </div>
+                <button class="calc-button" onclick="analyzeConcavity()">Analizar</button>
+                <div class="calc-result" id="conc-result">Ingresa el coeficiente</div>
+            </div>
+        </div>
+
+        <div class="content-section" id="practica">
+            <h2>✏️ Práctica</h2>
+            <div id="exercises-container"></div>
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='derivadas.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='integral.html'">Siguiente ➡️</button>
+            </div>
+        </div>
+
+        <div class="content-section" id="resumen">
+            <h2>📋 Resumen</h2>
+            <div class="info-box">
+                <h4>🎯 Conceptos Clave</h4>
+                <ul>
+                    <li><strong>f' > 0:</strong> Función crece</li>
+                    <li><strong>f' < 0:</strong> Función decrece</li>
+                    <li><strong>f' = 0:</strong> Posibles extremos</li>
+                    <li><strong>f'' > 0:</strong> Convexa (∪)</li>
+                    <li><strong>f'' < 0:</strong> Cóncava (∩)</li>
+                    <li><strong>f'' = 0:</strong> Posible punto inflexión</li>
+                    <li><strong>AV:</strong> lim = ±∞</li>
+                    <li><strong>AH:</strong> lim = L</li>
+                </ul>
+            </div>
+            <div class="navigation-buttons" class="mt-2rem">
+                <button class="btn btn-secondary" onclick="window.location.href='derivadas.html'">⬅️ Anterior</button>
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
+                <button class="btn btn-secondary" onclick="window.location.href='integral.html'">Siguiente ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../../lib/storage.js"></script>
+    <script src="../../../../lib/gamification.js"></script>
+    <script src="../../../../lib/components.js"></script>
+    <script>
+        const MODULE_ID = 'representacion';
+        const MODULE_TITLE = 'Tema 5: Representación de Funciones';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            Components.createHeader(MODULE_TITLE, 'index.html');
+            Components.createTabs([
+                { id: 'teoria', label: 'Teoría', icon: '📚' },
+                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
+                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
+                { id: 'practica', label: 'Práctica', icon: '✏️' },
+                { id: 'resumen', label: 'Resumen', icon: '📋' }
+            ], 'teoria');
+            Components.createScoreDisplay();
+            loadExercises();
+            Gamification.updateDisplay(MODULE_ID);
+        });
+
+        const exercises = [
+            { id: 1, question: 'f(x)=x², f\'(3)=6. ¿Crece? (1=SÍ,0=NO)', correct: '1', hint: 'f\'>0 → crece' },
+            { id: 2, question: 'f(x)=-x², f\'(-2)=4>0. ¿Crece? (1=SÍ,0=NO)', correct: '1', hint: 'f\'>0 → crece' },
+            { id: 3, question: 'f\'(x)=2x=0, punto crítico x=?', correct: '0', hint: '2x=0 → x=0' },
+            { id: 4, question: 'f\'\'(x)=2>0, ¿convexa? (1=SÍ,0=NO)', correct: '1', hint: 'f\'\'>0 → convexa' },
+            { id: 5, question: 'f\'\'(x)=-2<0, ¿cóncava? (1=SÍ,0=NO)', correct: '1', hint: 'f\'\'<0 → cóncava' },
+            { id: 6, question: 'f(x)=1/(x-5), AV en x=?', correct: '5', hint: 'Denominador=0 en x=5' },
+            { id: 7, question: 'lim(x→∞)(3x²/x²)=?', correct: '3', hint: 'Mismo grado: 3/1=3 (AH)' },
+            { id: 8, question: 'f\'(2)=0, f\'\'(2)=-3<0, ¿máx o mín? (1=máx,0=mín)', correct: '1', hint: 'f\'\'<0 → máximo' },
+            { id: 9, question: 'f\'\'(x)=6x=0, PI en x=?', correct: '0', hint: '6x=0 → x=0' },
+            { id: 10, question: 'f(x)=x³, f\'(1)=3>0, ¿crece? (1=SÍ,0=NO)', correct: '1', hint: 'f\'>0 → crece' }
+        ];
+
+        function loadExercises() {
+            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
+                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
+                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
+                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                </div>
+                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
+                <div id="feedback${ex.id}" class="feedback"></div></div>
+            `).join('');
+        }
+
+        function checkAnswer(exerciseId) {
+            const exercise = exercises.find(ex => ex.id === exerciseId);
+            const input = document.getElementById('ex' + exerciseId);
+            const feedback = document.getElementById('feedback' + exerciseId);
+            const userAnswer = parseFloat(input.value.trim());
+            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.completeExercise(MODULE_ID, true);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                Gamification.completeExercise(MODULE_ID, false);
+            }
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showHint(exerciseId) {
+            const hint = document.getElementById('hint' + exerciseId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function analyzeGrowth() {
+            const coefStr = document.getElementById('crec-coef').value;
+            const result = document.getElementById('crec-result');
+            
+            if (!coefStr) {
+                result.textContent = '⚠️ Ingresa los coeficientes';
+                return;
+            }
+            
+            const [a, b, c] = coefStr.split(',').map(n => parseFloat(n.trim()));
+            const critical = -b / (2 * a);
+            
+            let analysis = '';
+            if (a > 0) {
+                analysis = `Decrece en (-∞, ${critical.toFixed(2)})<br>Crece en (${critical.toFixed(2)}, +∞)`;
+            } else {
+                analysis = `Crece en (-∞, ${critical.toFixed(2)})<br>Decrece en (${critical.toFixed(2)}, +∞)`;
+            }
+            
+            result.innerHTML = `
+                <strong>f'(x) = ${2*a}x + ${b}</strong><br>
+                <strong>Punto crítico:</strong> x = ${critical.toFixed(2)}<br>
+                ${analysis}
+            `;
+        }
+
+        function findExtrema() {
+            const coefStr = document.getElementById('ext-coef').value;
+            const result = document.getElementById('ext-result');
+            
+            if (!coefStr) {
+                result.textContent = '⚠️ Ingresa los coeficientes';
+                return;
+            }
+            
+            const [a, b, c] = coefStr.split(',').map(n => parseFloat(n.trim()));
+            const x = -b / (2 * a);
+            const y = a*x*x + b*x + c;
+            const type = a > 0 ? 'Mínimo' : 'Máximo';
+            
+            result.innerHTML = `
+                <strong>${type} en:</strong> x = ${x.toFixed(2)}<br>
+                <strong>Valor:</strong> f(${x.toFixed(2)}) = ${y.toFixed(2)}<br>
+                <strong>f''(x) = ${2*a}</strong> ${a > 0 ? '> 0' : '< 0'}
+            `;
+        }
+
+        function analyzeConcavity() {
+            const a = parseFloat(document.getElementById('conc-a').value);
+            const result = document.getElementById('conc-result');
+            
+            if (isNaN(a)) {
+                result.textContent = '⚠️ Ingresa el coeficiente';
+                return;
+            }
+            
+            const fpp = 2 * a;
+            let concavity;
+            if (fpp > 0) concavity = 'Convexa (∪) en todo ℝ';
+            else if (fpp < 0) concavity = 'Cóncava (∩) en todo ℝ';
+            else concavity = 'Ni cóncava ni convexa';
+            
+            result.innerHTML = `
+                <strong>f''(x) = ${fpp}</strong><br>
+                <strong>${concavity}</strong>
+            `;
+        }
+    </script>
+</body>
+</html>

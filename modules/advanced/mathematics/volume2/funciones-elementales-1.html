@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema 1: Funciones Elementales I - Matemáticas Avanzadas</title>
+    <title>Funciones Elementales I - Matemáticas Avanzadas</title>
     <link rel="stylesheet" href="../../../../css/core.css">
     <link rel="stylesheet" href="../../../../css/components.css">
 </head>
@@ -13,23 +13,159 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <!-- Teoría -->
-        <div class="content-section active" id="teoria">
-            <h2>📚 Teoría: Funciones Elementales I</h2>
+        <!-- Tab 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Funciones Elementales I</h2>
 
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
-                <ul class="list-unstyled-lh2">
-                    <li><strong>f(x)</strong> = Función f evaluada en x</li>
-                    <li><strong>Dom(f)</strong> = Dominio de f (valores permitidos de x)</li>
-                    <li><strong>Im(f)</strong> o <strong>Ran(f)</strong> = Imagen/rango de f</li>
-                    <li><strong>f: A → B</strong> = Función de A en B</li>
-                    <li><strong>f⁻¹(x)</strong> = Función inversa de f</li>
-                    <li><strong>f∘g</strong> = Composición: f(g(x))</li>
-                    <li><strong>√</strong> = Raíz cuadrada</li>
-                    <li><strong>ⁿ√</strong> = Raíz n-ésima</li>
-                </ul>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Aprende los términos clave relacionados con las funciones elementales:</p>
             </div>
+
+            <div class="term-card">
+                <h3>🔵 Función</h3>
+                <p><strong>Definición:</strong> Una función f: A → B es una regla o correspondencia que asigna a cada elemento x del conjunto A (dominio) exactamente un elemento y del conjunto B (codominio), denotado y = f(x).</p>
+                <p><strong>Ejemplo:</strong> f(x) = 2x + 3 es una función que a cada número real x le asigna el número 2x + 3.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Dominio e Imagen</h3>
+                <p><strong>Definición:</strong> El dominio Dom(f) es el conjunto de todos los valores permitidos de x. La imagen Im(f) o rango Ran(f) es el conjunto de todos los valores que toma f(x).</p>
+                <p><strong>Ejemplo:</strong> Para f(x) = √x, Dom(f) = [0, ∞) e Im(f) = [0, ∞).</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Función Polinómica</h3>
+                <p><strong>Definición:</strong> Una función de la forma P(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀, donde los coeficientes aᵢ son números reales y n es un entero no negativo (grado del polinomio).</p>
+                <p><strong>Ejemplo:</strong> f(x) = x³ - 2x² + 5x - 7 es un polinomio de grado 3 (cúbico).</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Función Racional</h3>
+                <p><strong>Definición:</strong> Una función de la forma f(x) = P(x)/Q(x), donde P y Q son polinomios y Q(x) ≠ 0. El dominio excluye los valores donde Q(x) = 0.</p>
+                <p><strong>Ejemplo:</strong> f(x) = (x+1)/(x²-4) con Dom(f) = ℝ - {-2, 2}.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Composición de Funciones</h3>
+                <p><strong>Definición:</strong> La composición de dos funciones f y g, denotada (f∘g)(x) = f(g(x)), es una nueva función que primero aplica g y luego f al resultado.</p>
+                <p><strong>Ejemplo:</strong> Si f(x) = x² y g(x) = x+1, entonces (f∘g)(x) = (x+1)².</p>
+            </div>
+        </div>
+
+        <!-- Tab 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos Matemáticos</h2>
+
+            <div class="info-box bg-gradient-success-white">
+                <p class="white-text-mt0">Símbolos esenciales para trabajar con funciones elementales:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">f(x)</span>
+                    <span class="symbol-name">Función f evaluada en x</span>
+                </div>
+                <p><strong>Uso:</strong> Representa el valor que toma la función f cuando la variable independiente es x.</p>
+                <p><strong>Ejemplo:</strong> Si f(x) = 2x + 3, entonces f(5) = 2(5) + 3 = 13.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">f: A → B</span>
+                    <span class="symbol-name">Función de A en B</span>
+                </div>
+                <p><strong>Uso:</strong> Indica que f es una función con dominio A y codominio B.</p>
+                <p><strong>Ejemplo:</strong> f: ℝ → ℝ definida por f(x) = x².</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">Dom(f) / Im(f)</span>
+                    <span class="symbol-name">Dominio e Imagen</span>
+                </div>
+                <p><strong>Uso:</strong> Dom(f) representa el dominio y Im(f) o Ran(f) la imagen (rango) de f.</p>
+                <p><strong>Ejemplo:</strong> Para f(x) = 1/x, Dom(f) = ℝ - {0}.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">f⁻¹(x)</span>
+                    <span class="symbol-name">Función Inversa</span>
+                </div>
+                <p><strong>Uso:</strong> La función inversa de f satisface f(f⁻¹(x)) = x y f⁻¹(f(x)) = x.</p>
+                <p><strong>Ejemplo:</strong> Si f(x) = 2x, entonces f⁻¹(x) = x/2.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">f∘g</span>
+                    <span class="symbol-name">Composición de Funciones</span>
+                </div>
+                <p><strong>Uso:</strong> (f∘g)(x) = f(g(x)). Se lee "f compuesta con g".</p>
+                <p><strong>Ejemplo:</strong> Si f(x) = x² y g(x) = x+1, entonces (f∘g)(x) = (x+1)².</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">√ / ⁿ√</span>
+                    <span class="symbol-name">Raíz Cuadrada y Raíz n-ésima</span>
+                </div>
+                <p><strong>Uso:</strong> √x es la raíz cuadrada de x. ⁿ√x es la raíz n-ésima de x.</p>
+                <p><strong>Ejemplo:</strong> √16 = 4 y ³√27 = 3.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">xⁿ</span>
+                    <span class="symbol-name">Potencia o Exponente</span>
+                </div>
+                <p><strong>Uso:</strong> Representa x multiplicado por sí mismo n veces.</p>
+                <p><strong>Ejemplo:</strong> x² = x·x, x³ = x·x·x.</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>🌟 Introducción a las Funciones Elementales I</h2>
+
+            <div class="info-box bg-gradient-info-white">
+                <p class="white-text-mt0">Las funciones elementales son fundamentales en matemáticas y tienen aplicaciones en numerosos campos:</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🔬 Física e Ingeniería</h3>
+                <p><strong>Aplicación:</strong> Las funciones polinómicas modelan trayectorias de proyectiles (parábolas), movimiento acelerado, y relaciones entre variables físicas.</p>
+                <p><strong>Ejemplo real:</strong> La altura h(t) = -4.9t² + 20t + 2 describe la altura en metros de un objeto lanzado hacia arriba, donde t es el tiempo en segundos.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>💰 Economía y Finanzas</h3>
+                <p><strong>Aplicación:</strong> Las funciones racionales modelan costos promedio, oferta y demanda, utilidades marginales. Ayudan a optimizar producción y maximizar ganancias.</p>
+                <p><strong>Ejemplo real:</strong> El costo promedio C(x) = (1000 + 50x)/x por unidad, donde x es el número de unidades producidas.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🌡️ Ciencias Naturales</h3>
+                <p><strong>Aplicación:</strong> Las funciones radicales aparecen en leyes físicas como la ley de gravitación, velocidad de escape, y en modelos de crecimiento poblacional.</p>
+                <p><strong>Ejemplo real:</strong> La velocidad v = √(2gh) de un objeto en caída libre, donde g es gravedad y h la altura.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>💻 Ciencias de la Computación</h3>
+                <p><strong>Aplicación:</strong> La composición de funciones es esencial en programación funcional, procesamiento de datos, y algoritmos de transformación. Las funciones inversas se usan en criptografía.</p>
+                <p><strong>Ejemplo real:</strong> Cadenas de transformaciones de datos: normalizar(filtrar(ordenar(datos))).</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🎨 Gráficos y Diseño</h3>
+                <p><strong>Aplicación:</strong> Las funciones polinómicas y racionales se usan para crear curvas suaves en diseño gráfico, animación, y modelado 3D.</p>
+                <p><strong>Ejemplo real:</strong> Curvas de Bézier (funciones polinómicas) para dibujar trayectorias suaves en software de diseño.</p>
+            </div>
+        </div>
+
+        <!-- Tab 4: Teoría y Práctica -->
+        <div class="content-section" id="teoria">
+            <h2>📚 Teoría y Práctica</h2>
 
             <h3>1. Concepto de Función</h3>
             <div class="info-box">
@@ -61,6 +197,24 @@
                 </ul>
             </div>
 
+            <div class="tool-card">
+                <h3>📊 Evaluador de Funciones Polinómicas</h3>
+                <p>Evalúa funciones cuadráticas f(x) = ax² + bx + c en un punto</p>
+                
+                <div class="tool-input-group">
+                    <label>Coeficientes [a,b,c]:</label>
+                    <input type="text" id="poly-coef" placeholder="Ej: 1,-3,2">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Valor de x:</label>
+                    <input type="number" step="any" id="poly-x" placeholder="Ej: 2">
+                </div>
+                
+                <button class="calc-button" onclick="evaluatePolynomial()">Evaluar</button>
+                <div class="calc-result" id="poly-result">Ingresa los datos</div>
+            </div>
+
             <h3>3. Funciones Racionales</h3>
             <div class="info-box">
                 <div class="formula-box">
@@ -71,6 +225,19 @@
                 <div class="exam-important">
                     <strong>Importante:</strong> Siempre buscar las raíces del denominador para encontrar el dominio
                 </div>
+            </div>
+
+            <div class="tool-card">
+                <h3>🔍 Calculadora de Dominio (Funciones Racionales)</h3>
+                <p>Encuentra el dominio excluyendo las raíces del denominador</p>
+                
+                <div class="tool-input-group">
+                    <label>Raíces del denominador (separadas por comas):</label>
+                    <input type="text" id="domain-roots" placeholder="Ej: -2,2">
+                </div>
+                
+                <button class="calc-button" onclick="calculateDomain()">Calcular Dominio</button>
+                <div class="calc-result" id="domain-result">Ingresa las raíces</div>
             </div>
 
             <h3>4. Funciones Radicales</h3>
@@ -99,6 +266,24 @@
                 </ol>
             </div>
 
+            <div class="tool-card">
+                <h3>🔄 Calculadora de Composición</h3>
+                <p>Calcula (f∘g)(x) = f(g(x)) para f(y) = ay + b</p>
+                
+                <div class="tool-input-group">
+                    <label>Resultado de g(x):</label>
+                    <input type="number" step="any" id="comp-gx" placeholder="Ej: 5">
+                </div>
+                
+                <div class="tool-input-group">
+                    <label>Coeficientes de f [a,b] para f(y)=ay+b:</label>
+                    <input type="text" id="comp-f" placeholder="Ej: 2,3">
+                </div>
+                
+                <button class="calc-button" onclick="calculateComposition()">Calcular</button>
+                <div class="calc-result" id="comp-result">Ingresa los datos</div>
+            </div>
+
             <h3>6. Función Inversa</h3>
             <div class="info-box">
                 <p>f⁻¹ es la inversa de f si:</p>
@@ -117,137 +302,36 @@
             </div>
         </div>
 
-        <!-- Ejemplos -->
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Dominio de Función Racional</h4>
-                <p><strong>Problema:</strong> Hallar Dom(f) si f(x) = (x+1)/(x²-4)</p>
-                <p><strong>Solución:</strong></p>
-                <p>x²-4 = 0 → x² = 4 → x = ±2</p>
-                <p><strong>Respuesta:</strong> Dom(f) = ℝ - {-2, 2}</p>
+        <!-- Tab 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>💪 Entrenamiento</h2>
+            
+            <div class="info-box bg-gradient-warning-white">
+                <h4 class="white-text-mt0">🎯 Practica tus habilidades</h4>
+                <p class="white-text">Responde correctamente para ganar <strong>+10 puntos</strong>. Las respuestas incorrectas restan <strong>-5 puntos</strong>.</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Dominio de Función Radical</h4>
-                <p><strong>Problema:</strong> Hallar Dom(f) si f(x) = √(3x-6)</p>
-                <p><strong>Solución:</strong></p>
-                <p>3x-6 ≥ 0 → 3x ≥ 6 → x ≥ 2</p>
-                <p><strong>Respuesta:</strong> Dom(f) = [2, ∞)</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Composición</h4>
-                <p><strong>Problema:</strong> Si f(x) = x² y g(x) = x+3, hallar (f∘g)(2)</p>
-                <p><strong>Solución:</strong></p>
-                <p>g(2) = 2+3 = 5</p>
-                <p>f(g(2)) = f(5) = 5² = 25</p>
-                <p><strong>Respuesta:</strong> (f∘g)(2) = 25</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Función Inversa</h4>
-                <p><strong>Problema:</strong> Hallar f⁻¹ si f(x) = 2x - 5</p>
-                <p><strong>Solución:</strong></p>
-                <p>y = 2x - 5 → y + 5 = 2x → x = (y+5)/2</p>
-                <p>Intercambiando: y = (x+5)/2</p>
-                <p><strong>Respuesta:</strong> f⁻¹(x) = (x+5)/2</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: Evaluación de Función</h4>
-                <p><strong>Problema:</strong> Si f(x) = x³ - 2x + 1, calcular f(-2)</p>
-                <p><strong>Solución:</strong></p>
-                <p>f(-2) = (-2)³ - 2(-2) + 1 = -8 + 4 + 1 = -3</p>
-                <p><strong>Respuesta:</strong> f(-2) = -3</p>
-            </div>
+            <div id="training-container"></div>
         </div>
 
-        <!-- Herramientas -->
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
-
-            <div class="tool-card">
-                <h3>📊 Evaluador de Funciones</h3>
-                <p>Evalúa funciones polinómicas en un punto</p>
-                
-                <div class="tool-input-group">
-                    <label>Coeficientes [a,b,c] para f(x)=ax²+bx+c:</label>
-                    <input type="text" id="poly-coef" placeholder="Ej: 1,-3,2">
-                </div>
-                
-                <div class="tool-input-group">
-                    <label>Valor de x:</label>
-                    <input type="number" step="any" id="poly-x" placeholder="Ej: 2">
-                </div>
-                
-                <button class="calc-button" onclick="evaluatePolynomial()">Evaluar</button>
-                <div class="calc-result" id="poly-result">Ingresa los datos</div>
+        <!-- Tab 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Funciones Elementales I</h2>
+            
+            <div class="info-box bg-gradient-danger-white">
+                <h4 class="white-text-mt0">📋 Completa este examen para demostrar tu dominio</h4>
+                <p class="white-text"><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p class="white-text"><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Funciones I" 🏆</p>
             </div>
 
-            <div class="tool-card">
-                <h3>🔍 Calculadora de Dominio</h3>
-                <p>Encuentra el dominio de funciones racionales</p>
-                
-                <div class="tool-input-group">
-                    <label>Raíces del denominador (separadas por comas):</label>
-                    <input type="text" id="domain-roots" placeholder="Ej: -2,2">
-                </div>
-                
-                <button class="calc-button" onclick="calculateDomain()">Calcular Dominio</button>
-                <div class="calc-result" id="domain-result">Ingresa las raíces</div>
+            <div id="exam-container"></div>
+            
+            <div class="exam-actions">
+                <button class="btn-exam" onclick="submitExam()">Enviar Examen</button>
+                <button class="btn-exam-secondary" onclick="resetExam()">Reiniciar</button>
             </div>
-
-            <div class="tool-card">
-                <h3>🔄 Calculadora de Composición</h3>
-                <p>Calcula (f∘g)(x) = f(g(x))</p>
-                
-                <div class="tool-input-group">
-                    <label>g(x) - evaluado en x:</label>
-                    <input type="number" step="any" id="comp-gx" placeholder="Ej: 5">
-                </div>
-                
-                <div class="tool-input-group">
-                    <label>f(y) - coeficientes [a,b] para f(y)=ay+b:</label>
-                    <input type="text" id="comp-f" placeholder="Ej: 2,3">
-                </div>
-                
-                <button class="calc-button" onclick="calculateComposition()">Calcular</button>
-                <div class="calc-result" id="comp-result">Ingresa los datos</div>
-            </div>
-        </div>
-
-        <!-- Práctica -->
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-            <div id="exercises-container"></div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='preliminares-reales.html'">⬅️ Tema Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">Siguiente ➡️</button>
-            </div>
-        </div>
-
-        <!-- Resumen -->
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen</h2>
-            <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
-                <ul>
-                    <li><strong>Función:</strong> Relación que asigna único valor</li>
-                    <li><strong>Polinómica:</strong> Dom = ℝ</li>
-                    <li><strong>Racional:</strong> Dom = ℝ - {raíces denominador}</li>
-                    <li><strong>Radical par:</strong> Radicando ≥ 0</li>
-                    <li><strong>Composición:</strong> (f∘g)(x) = f(g(x))</li>
-                    <li><strong>Inversa:</strong> f(f⁻¹(x)) = x</li>
-                </ul>
-            </div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='preliminares-reales.html'">⬅️ Tema Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-2.html'">Siguiente ➡️</button>
-            </div>
+            
+            <div id="exam-results"></div>
         </div>
     </div>
 
@@ -256,54 +340,68 @@
     <script src="../../../../lib/components.js"></script>
     <script>
         const MODULE_ID = 'funciones-elementales-1';
-        const MODULE_TITLE = 'Tema 1: Funciones Elementales I';
+        const MODULE_TITLE = 'Funciones Elementales I';
+        const TROPHY_ID = 'funciones-elem-1';
 
         document.addEventListener('DOMContentLoaded', function() {
             Components.createHeader(MODULE_TITLE, 'index.html');
             Components.createTabs([
+                { id: 'glosario', label: 'Glosario', icon: '📖' },
+                { id: 'simbolos', label: 'Símbolos', icon: '🔣' },
+                { id: 'introduccion', label: 'Introducción', icon: '🌟' },
                 { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
-            ], 'teoria');
+                { id: 'entrenamiento', label: 'Entrenamiento', icon: '💪' },
+                { id: 'examen', label: 'Examen Final', icon: '📝' }
+            ], 'glosario');
             Components.createScoreDisplay();
-            loadExercises();
+            loadTrainingExercises();
+            loadExam();
             Gamification.updateDisplay(MODULE_ID);
         });
 
-        const exercises = [
-            { id: 1, question: 'Si f(x)=2x+3, ¿cuánto vale f(5)?', correct: '13', hint: 'f(5) = 2(5)+3 = 10+3 = 13' },
-            { id: 2, question: 'Dom de f(x)=1/(x-3). ¿Qué valor está excluido?', correct: '3', hint: 'x-3=0 → x=3' },
-            { id: 3, question: 'Dom de f(x)=√(x-4). ¿Valor mínimo de x?', correct: '4', hint: 'x-4≥0 → x≥4' },
-            { id: 4, question: 'Si f(x)=x² y g(x)=x+1, ¿(f∘g)(0)?', correct: '1', hint: 'g(0)=1, f(1)=1²=1' },
-            { id: 5, question: 'Si f(x)=3x-6, ¿f⁻¹(0)?', correct: '2', hint: '0=3x-6 → x=2' },
-            { id: 6, question: 'Grado del polinomio x³-2x+1', correct: '3', hint: 'El mayor exponente es 3' },
-            { id: 7, question: '¿Dom de f(x)=1/(x²-1) excluye cuántos valores?', correct: '2', hint: 'x²-1=0 → x=±1' },
-            { id: 8, question: 'Si f(x)=x³, ¿f(-2)?', correct: '-8', hint: '(-2)³ = -8' },
-            { id: 9, question: 'Si f(x)=√x, ¿f(16)?', correct: '4', hint: '√16 = 4' },
-            { id: 10, question: 'Si f(x)=x+5, ¿f⁻¹(10)?', correct: '5', hint: '10=x+5 → x=5' }
+        // Training exercises
+        const trainingExercises = [
+            { id: 1, question: 'Si f(x) = 2x + 3, ¿cuánto vale f(5)?', answer: '13', hint: 'f(5) = 2(5) + 3 = 10 + 3 = 13' },
+            { id: 2, question: 'Para f(x) = 1/(x-3), ¿qué valor está excluido del dominio?', answer: '3', hint: 'x - 3 = 0 → x = 3' },
+            { id: 3, question: 'Para f(x) = √(x-4), ¿cuál es el valor mínimo de x en el dominio?', answer: '4', hint: 'x - 4 ≥ 0 → x ≥ 4, mínimo es 4' },
+            { id: 4, question: 'Si f(x) = x² y g(x) = x+1, ¿cuánto vale (f∘g)(0)?', answer: '1', hint: 'g(0) = 0+1 = 1, f(1) = 1² = 1' },
+            { id: 5, question: 'Si f(x) = 3x - 6, ¿cuánto vale f⁻¹(0)?', answer: '2', hint: '0 = 3x - 6 → 3x = 6 → x = 2' },
+            { id: 6, question: '¿Cuál es el grado del polinomio P(x) = x³ - 2x + 1?', answer: '3', hint: 'El mayor exponente es 3' },
+            { id: 7, question: 'Para f(x) = 1/(x²-1), ¿cuántos valores están excluidos del dominio?', answer: '2', hint: 'x² - 1 = 0 → x = ±1 (dos valores)' },
+            { id: 8, question: 'Si f(x) = x³, ¿cuánto vale f(-2)?', answer: '-8', hint: '(-2)³ = (-2)×(-2)×(-2) = -8' },
+            { id: 9, question: 'Si f(x) = √x, ¿cuánto vale f(16)?', answer: '4', hint: '√16 = 4' },
+            { id: 10, question: 'Si f(x) = x + 5, ¿cuánto vale f⁻¹(10)?', answer: '5', hint: '10 = x + 5 → x = 5' },
+            { id: 11, question: 'Para f(x) = 2x² + 3x - 1, ¿cuánto vale f(0)?', answer: '-1', hint: 'f(0) = 2(0)² + 3(0) - 1 = -1' },
+            { id: 12, question: 'Si f(x) = x² y g(x) = 2x, ¿cuánto vale (f∘g)(3)?', answer: '36', hint: 'g(3) = 2(3) = 6, f(6) = 6² = 36' },
+            { id: 13, question: '¿Cuál es el grado de f(x) = 5x⁴ - 2x² + 7?', answer: '4', hint: 'El mayor exponente es 4' },
+            { id: 14, question: 'Si f(x) = 1/x, ¿qué número está excluido del dominio?', answer: '0', hint: 'No se puede dividir por 0' },
+            { id: 15, question: 'Para f(x) = √(2x-6), ¿cuál es el valor mínimo de x?', answer: '3', hint: '2x - 6 ≥ 0 → 2x ≥ 6 → x ≥ 3' }
         ];
 
-        function loadExercises() {
-            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
-                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
-                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+        function loadTrainingExercises() {
+            const container = document.getElementById('training-container');
+            container.innerHTML = trainingExercises.map(ex => `
+                <div class="exercise-card">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p>${ex.question}</p>
+                    <input type="number" step="any" id="train-${ex.id}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkTraining(${ex.id})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+                    </div>
+                    <div id="hint-${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                    <div id="feedback-${ex.id}" class="feedback"></div>
                 </div>
-                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                <div id="feedback${ex.id}" class="feedback"></div></div>
             `).join('');
         }
 
-        function checkAnswer(exerciseId) {
-            const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
-            const feedback = document.getElementById('feedback' + exerciseId);
+        function checkTraining(id) {
+            const exercise = trainingExercises.find(ex => ex.id === id);
+            const input = document.getElementById(`train-${id}`);
+            const feedback = document.getElementById(`feedback-${id}`);
             const userAnswer = parseFloat(input.value.trim());
-            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.01;
+            const correctAnswer = parseFloat(exercise.answer);
+            const isCorrect = Math.abs(userAnswer - correctAnswer) < 0.01;
             
             if (isCorrect) {
                 feedback.className = 'feedback success';
@@ -312,18 +410,113 @@
                 Gamification.completeExercise(MODULE_ID, true);
             } else {
                 feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                feedback.textContent = 'Incorrecto. -5 puntos. Intenta de nuevo.';
                 Gamification.completeExercise(MODULE_ID, false);
             }
             feedback.style.display = 'block';
             Gamification.updateDisplay(MODULE_ID);
         }
 
-        function showHint(exerciseId) {
-            const hint = document.getElementById('hint' + exerciseId);
+        function showHint(id) {
+            const hint = document.getElementById(`hint-${id}`);
             hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
         }
 
+        // Exam questions
+        const examQuestions = [
+            { id: 1, question: 'Si f(x) = 3x - 7, ¿cuánto vale f(4)?', answer: '5' },
+            { id: 2, question: 'Para f(x) = 1/(x-5), ¿qué valor excluye el dominio?', answer: '5' },
+            { id: 3, question: 'Para f(x) = √(x-1), ¿valor mínimo de x?', answer: '1' },
+            { id: 4, question: 'Si f(x) = x² y g(x) = x-2, ¿(f∘g)(3)?', answer: '1' },
+            { id: 5, question: 'Si f(x) = 2x + 8, ¿f⁻¹(0)?', answer: '-4' },
+            { id: 6, question: 'Grado de P(x) = 2x⁵ - x³ + 1', answer: '5' },
+            { id: 7, question: 'Para f(x) = 1/(x²-9), ¿cuántos valores excluye?', answer: '2' },
+            { id: 8, question: 'Si f(x) = x⁴, ¿f(-1)?', answer: '1' },
+            { id: 9, question: 'Si f(x) = √x, ¿f(9)?', answer: '3' },
+            { id: 10, question: 'Si f(x) = x - 3, ¿f⁻¹(7)?', answer: '10' },
+            { id: 11, question: 'Para f(x) = x² + 2x + 1, ¿f(1)?', answer: '4' },
+            { id: 12, question: 'Si f(x) = 2x y g(x) = x², ¿(f∘g)(2)?', answer: '8' },
+            { id: 13, question: 'Grado de f(x) = 7x - 3', answer: '1' },
+            { id: 14, question: 'Para f(x) = 1/(2x), ¿valor excluido?', answer: '0' },
+            { id: 15, question: 'Para f(x) = √(3x), ¿mínimo x?', answer: '0' },
+            { id: 16, question: 'Si f(x) = x³, ¿f(2)?', answer: '8' },
+            { id: 17, question: 'Si f(x) = 4x - 12, ¿f⁻¹(0)?', answer: '3' },
+            { id: 18, question: 'Para f(x) = 1/(x²-4), ¿cuántos excluidos?', answer: '2' },
+            { id: 19, question: 'Si f(x) = x² y g(x) = x+3, ¿(f∘g)(1)?', answer: '16' },
+            { id: 20, question: 'Para f(x) = √(x-5), ¿mínimo x?', answer: '5' },
+            { id: 21, question: 'Si f(x) = 5x + 10, ¿f(2)?', answer: '20' },
+            { id: 22, question: 'Grado de P(x) = x² - 4', answer: '2' },
+            { id: 23, question: 'Si f(x) = x³, ¿f(3)?', answer: '27' },
+            { id: 24, question: 'Para f(x) = 1/(x-1), ¿valor excluido?', answer: '1' },
+            { id: 25, question: 'Si f(x) = √x, ¿f(25)?', answer: '5' }
+        ];
+
+        let selectedExamQuestions = [];
+        let examAnswers = {};
+
+        function loadExam() {
+            // Select 20 random questions from the pool
+            const shuffled = [...examQuestions].sort(() => Math.random() - 0.5);
+            selectedExamQuestions = shuffled.slice(0, 20);
+            
+            const container = document.getElementById('exam-container');
+            container.innerHTML = selectedExamQuestions.map((q, index) => `
+                <div class="exam-question">
+                    <h4>Pregunta ${index + 1}</h4>
+                    <p>${q.question}</p>
+                    <input type="number" step="any" id="exam-${q.id}" class="input-field" placeholder="Tu respuesta">
+                </div>
+            `).join('');
+        }
+
+        function submitExam() {
+            let correct = 0;
+            const total = selectedExamQuestions.length;
+            
+            selectedExamQuestions.forEach(q => {
+                const input = document.getElementById(`exam-${q.id}`);
+                const userAnswer = parseFloat(input.value.trim());
+                const correctAnswer = parseFloat(q.answer);
+                
+                if (Math.abs(userAnswer - correctAnswer) < 0.01) {
+                    correct++;
+                    input.style.border = '2px solid #22c55e';
+                } else {
+                    input.style.border = '2px solid #ef4444';
+                }
+                input.disabled = true;
+            });
+            
+            const percentage = (correct / total) * 100;
+            const passed = percentage >= 70;
+            
+            const resultsDiv = document.getElementById('exam-results');
+            resultsDiv.className = `exam-results ${passed ? 'success' : 'error'}`;
+            resultsDiv.innerHTML = `
+                <h3>${passed ? '¡Aprobado! 🎉' : 'No Aprobado 😞'}</h3>
+                <p>Puntuación: ${correct}/${total} (${percentage.toFixed(1)}%)</p>
+                <p>${passed ? '¡Has demostrado tu dominio de las funciones elementales I!' : 'Necesitas al menos 70% para aprobar. ¡Sigue practicando!'}</p>
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // Save exam result
+            Storage.saveExamResult(MODULE_ID, percentage, passed);
+            
+            // Award trophy if passed
+            if (passed) {
+                Gamification.awardTrophy(TROPHY_ID);
+            }
+            
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function resetExam() {
+            examAnswers = {};
+            loadExam();
+            document.getElementById('exam-results').style.display = 'none';
+        }
+
+        // Tool functions
         function evaluatePolynomial() {
             const coefStr = document.getElementById('poly-coef').value;
             const x = parseFloat(document.getElementById('poly-x').value);
@@ -331,14 +524,22 @@
             
             if (!coefStr || isNaN(x)) {
                 result.textContent = '⚠️ Completa todos los campos';
+                result.className = 'calc-result error';
                 return;
             }
             
             const coef = coefStr.split(',').map(n => parseFloat(n.trim()));
+            if (coef.length !== 3 || coef.some(isNaN)) {
+                result.textContent = '⚠️ Ingresa exactamente 3 coeficientes';
+                result.className = 'calc-result error';
+                return;
+            }
+            
             const value = coef[0]*x*x + coef[1]*x + coef[2];
             
             result.innerHTML = `<strong>f(x) = ${coef[0]}x² + ${coef[1]}x + ${coef[2]}</strong><br>
                 <strong>f(${x}) = ${value.toFixed(2)}</strong>`;
+            result.className = 'calc-result success';
         }
 
         function calculateDomain() {
@@ -346,13 +547,22 @@
             const result = document.getElementById('domain-result');
             
             if (!rootsStr) {
-                result.textContent = '⚠️ Ingresa las raíces';
+                result.textContent = '⚠️ Ingresa las raíces del denominador';
+                result.className = 'calc-result error';
                 return;
             }
             
-            const roots = rootsStr.split(',').map(n => parseFloat(n.trim())).sort((a,b) => a-b);
+            const roots = rootsStr.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n)).sort((a,b) => a-b);
+            
+            if (roots.length === 0) {
+                result.textContent = '⚠️ No se encontraron raíces válidas';
+                result.className = 'calc-result error';
+                return;
+            }
+            
             result.innerHTML = `<strong>Dominio:</strong> ℝ - {${roots.join(', ')}}<br>
-                <strong>Intervalo:</strong> (-∞,${roots[0]}) ∪ (${roots[0]},${roots[1]}) ∪ (${roots[1]},∞)`;
+                <strong>Interpretación:</strong> Todos los reales excepto ${roots.join(' y ')}`;
+            result.className = 'calc-result success';
         }
 
         function calculateComposition() {
@@ -362,14 +572,24 @@
             
             if (isNaN(gx) || !fStr) {
                 result.textContent = '⚠️ Completa todos los campos';
+                result.className = 'calc-result error';
                 return;
             }
             
-            const [a, b] = fStr.split(',').map(n => parseFloat(n.trim()));
+            const coef = fStr.split(',').map(n => parseFloat(n.trim()));
+            if (coef.length !== 2 || coef.some(isNaN)) {
+                result.textContent = '⚠️ Ingresa exactamente 2 coeficientes [a,b]';
+                result.className = 'calc-result error';
+                return;
+            }
+            
+            const [a, b] = coef;
             const value = a*gx + b;
             
             result.innerHTML = `<strong>g(x) = ${gx}</strong><br>
-                <strong>f(g(x)) = ${a}(${gx}) + ${b} = ${value}</strong>`;
+                <strong>f(y) = ${a}y + ${b}</strong><br>
+                <strong>(f∘g)(x) = f(g(x)) = ${a}(${gx}) + ${b} = ${value}</strong>`;
+            result.className = 'calc-result success';
         }
     </script>
 </body>

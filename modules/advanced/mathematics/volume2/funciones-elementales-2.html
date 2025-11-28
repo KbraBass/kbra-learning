@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema 2: Funciones Elementales II - Matemáticas Avanzadas</title>
+    <title>Funciones Elementales II - Matemáticas Avanzadas</title>
     <link rel="stylesheet" href="../../../../css/core.css">
     <link rel="stylesheet" href="../../../../css/components.css">
 </head>
@@ -13,22 +13,179 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <div class="content-section active" id="teoria">
-            <h2>📚 Teoría: Funciones Elementales II</h2>
+        <!-- Tab 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Funciones Elementales II</h2>
 
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
-                <ul class="list-unstyled-lh2">
-                    <li><strong>e</strong> = Número de Euler ≈ 2.71828...</li>
-                    <li><strong>eˣ</strong> = Función exponencial natural</li>
-                    <li><strong>aˣ</strong> = Función exponencial base a</li>
-                    <li><strong>ln(x)</strong> = Logaritmo natural (base e)</li>
-                    <li><strong>log(x)</strong> = Logaritmo decimal (base 10)</li>
-                    <li><strong>logₐ(x)</strong> = Logaritmo base a</li>
-                    <li><strong>sin, cos, tan</strong> = Funciones trigonométricas</li>
-                    <li><strong>arcsin, arccos, arctan</strong> = Inversas trigonométricas</li>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Aprende los términos clave relacionados con funciones exponenciales, logarítmicas y trigonométricas:</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Función Exponencial</h3>
+                <p><strong>Definición:</strong> Una función de la forma f(x) = aˣ donde a > 0 y a ≠ 1. La base a es una constante y el exponente x es la variable. La función exponencial natural usa base e ≈ 2.71828.</p>
+                <p><strong>Ejemplo:</strong> f(x) = 2ˣ crece rápidamente; f(0) = 1, f(1) = 2, f(2) = 4, f(3) = 8.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Función Logarítmica</h3>
+                <p><strong>Definición:</strong> La función logarítmica y = logₐ(x) es la función inversa de la exponencial aʸ = x. Responde: "¿a qué exponente debo elevar a para obtener x?". El logaritmo natural ln(x) usa base e.</p>
+                <p><strong>Ejemplo:</strong> log₂(8) = 3 porque 2³ = 8; ln(e²) = 2 porque e² = e².</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Número de Euler (e)</h3>
+                <p><strong>Definición:</strong> Constante matemática fundamental e ≈ 2.71828..., definida como lim(1 + 1/n)ⁿ cuando n→∞. Base natural de exponenciales y logaritmos, fundamental en cálculo.</p>
+                <p><strong>Ejemplo:</strong> e aparece en crecimiento continuo: A(t) = A₀·eʳᵗ (interés compuesto continuo).</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Funciones Trigonométricas</h3>
+                <p><strong>Definición:</strong> Las funciones sin(x), cos(x), tan(x) relacionan ángulos con razones en triángulos. Son periódicas: sin y cos tienen período 2π, tan tiene período π. Valores en [-1, 1] para sin y cos.</p>
+                <p><strong>Ejemplo:</strong> sin(π/2) = 1, cos(0) = 1, tan(π/4) = 1.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Funciones Trigonométricas Inversas</h3>
+                <p><strong>Definición:</strong> Las funciones arcsin(x), arccos(x), arctan(x) son las inversas de las funciones trigonométricas en sus dominios restringidos. Devuelven el ángulo cuyo seno/coseno/tangente es x.</p>
+                <p><strong>Ejemplo:</strong> arcsin(1/2) = π/6 porque sin(π/6) = 1/2; arctan(1) = π/4.</p>
+            </div>
+        </div>
+
+        <!-- Tab 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos y Notación</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Notación matemática esencial para funciones exponenciales, logarítmicas y trigonométricas:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">e</span>
+                    <span class="symbol-name">Número de Euler</span>
+                </div>
+                <p><strong>Significado:</strong> Constante matemática fundamental ≈ 2.71828...</p>
+                <p><strong>Uso:</strong> Base de logaritmos naturales y exponenciales naturales. e = lim(1 + 1/n)ⁿ</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">aˣ, eˣ</span>
+                    <span class="symbol-name">Función exponencial</span>
+                </div>
+                <p><strong>Significado:</strong> Exponenciación con base a o e</p>
+                <p><strong>Uso:</strong> f(x) = 2ˣ, f(x) = eˣ. Crecimiento o decaimiento exponencial.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">ln(x), log(x), logₐ(x)</span>
+                    <span class="symbol-name">Función logarítmica</span>
+                </div>
+                <p><strong>Significado:</strong> Logaritmo natural (base e), decimal (base 10), o base a</p>
+                <p><strong>Uso:</strong> y = logₐ(x) ⇔ aʸ = x. Inversa de la exponencial.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">sin, cos, tan</span>
+                    <span class="symbol-name">Funciones trigonométricas</span>
+                </div>
+                <p><strong>Significado:</strong> Seno, coseno, tangente de un ángulo</p>
+                <p><strong>Uso:</strong> sin(x), cos(x), tan(x). Funciones periódicas fundamentales.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">arcsin, arccos, arctan</span>
+                    <span class="symbol-name">Funciones trigonométricas inversas</span>
+                </div>
+                <p><strong>Significado:</strong> Arco seno, arco coseno, arco tangente</p>
+                <p><strong>Uso:</strong> Devuelven el ángulo. arcsin(1/2) = π/6.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">π</span>
+                    <span class="symbol-name">Pi</span>
+                </div>
+                <p><strong>Significado:</strong> Constante π ≈ 3.14159... (relación circunferencia/diámetro)</p>
+                <p><strong>Uso:</strong> Medida de ángulos, períodos trigonométricos. 2π rad = 360°</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol">≈</span>
+                    <span class="symbol-name">Aproximadamente igual</span>
+                </div>
+                <p><strong>Significado:</strong> Indica valor aproximado o redondeado</p>
+                <p><strong>Uso:</strong> e ≈ 2.718, π ≈ 3.142</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>📚 Introducción a Funciones Elementales II</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Las funciones exponenciales, logarítmicas y trigonométricas son esenciales en múltiples campos. ¡Descubre sus aplicaciones!</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🌍 Ciencias Naturales y Biología</h3>
+                <ul>
+                    <li><strong>Crecimiento poblacional:</strong> P(t) = P₀·eʳᵗ modela poblaciones con crecimiento exponencial</li>
+                    <li><strong>Decaimiento radiactivo:</strong> N(t) = N₀·e^(-λt) describe desintegración de isótopos</li>
+                    <li><strong>Escalas logarítmicas:</strong> pH = -log[H⁺], escala Richter para terremotos</li>
+                    <li><strong>Ritmos biológicos:</strong> Funciones trigonométricas modelan ciclos circadianos</li>
                 </ul>
             </div>
+
+            <div class="application-card">
+                <h3>💰 Economía y Finanzas</h3>
+                <ul>
+                    <li><strong>Interés compuesto continuo:</strong> A = P·eʳᵗ calcula valor futuro de inversiones</li>
+                    <li><strong>Crecimiento económico:</strong> PIB, inflación modelados exponencialmente</li>
+                    <li><strong>Amortización de préstamos:</strong> Logaritmos calculan tiempo de pago</li>
+                    <li><strong>Análisis de tendencias:</strong> Datos económicos con transformación logarítmica</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>🔬 Física e Ingeniería</h3>
+                <ul>
+                    <li><strong>Oscilaciones:</strong> x(t) = A·sin(ωt + φ) describe movimiento armónico simple</li>
+                    <li><strong>Ondas electromagnéticas:</strong> Funciones trigonométricas modelan luz, sonido, radio</li>
+                    <li><strong>Circuitos AC:</strong> Corriente y voltaje alternos son funciones seno/coseno</li>
+                    <li><strong>Decaimiento de temperatura:</strong> Ley de enfriamiento de Newton usa exponenciales</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>💻 Computación y Tecnología</h3>
+                <ul>
+                    <li><strong>Complejidad de algoritmos:</strong> O(log n) indica eficiencia logarítmica</li>
+                    <li><strong>Procesamiento de señales:</strong> Transformada de Fourier usa funciones trigonométricas</li>
+                    <li><strong>Criptografía:</strong> Exponenciales en cifrados RSA y curvas elípticas</li>
+                    <li><strong>Compresión de datos:</strong> Escalas logarítmicas en audio (dB) y video</li>
+                </ul>
+            </div>
+
+            <div class="application-card">
+                <h3>🎨 Gráficos y Diseño</h3>
+                <ul>
+                    <li><strong>Animaciones:</strong> Funciones trigonométricas crean movimientos suaves y cíclicos</li>
+                    <li><strong>Efectos visuales:</strong> Ondas, espirales usando sin/cos</li>
+                    <li><strong>Perspectiva 3D:</strong> Proyecciones usan funciones trigonométricas</li>
+                    <li><strong>Ajustes de imagen:</strong> Correcciones gamma usan funciones exponenciales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 4: Teoría y Práctica -->
+        <div class="content-section" id="teoria">
+            <h2>📖 Teoría y Práctica</h2>
 
             <h3>1. Función Exponencial</h3>
             <div class="info-box">
@@ -45,8 +202,23 @@
                     <li>Si a > 1: creciente; Si 0 < a < 1: decreciente</li>
                 </ul>
                 <div class="exam-important">
-                    <strong>Importante:</strong> e = lim(1 + 1/n)ⁿ cuando n→∞
+                    <strong>Importante:</strong> e = lim(1 + 1/n)ⁿ cuando n→∞ ≈ 2.71828
                 </div>
+            </div>
+
+            <div class="calculator-box">
+                <h4>🧮 Calculadora de Función Exponencial</h4>
+                <p>Evalúa f(x) = a^x para diferentes valores de a y x:</p>
+                <div class="input-group">
+                    <label>Base (a):</label>
+                    <input type="number" id="expBase" value="2" step="0.1" min="0.1">
+                </div>
+                <div class="input-group">
+                    <label>Exponente (x):</label>
+                    <input type="number" id="expX" value="3" step="0.1">
+                </div>
+                <button onclick="calcularExponencial()" class="btn-calculate">Calcular</button>
+                <div id="expResult" class="result-box"></div>
             </div>
 
             <h3>2. Función Logarítmica</h3>
@@ -63,29 +235,60 @@
                     <li>logₐ(xⁿ) = n·logₐ(x)</li>
                     <li>logₐ(x) = ln(x)/ln(a) (cambio de base)</li>
                 </ul>
-            </div>
-
-            <h3>3. Relación Exponencial-Logarítmica</h3>
-            <div class="info-box">
                 <div class="exam-important">
                     <strong>Funciones inversas:</strong> ln(eˣ) = x y e^(ln(x)) = x
                 </div>
-                <p>El logaritmo es la función inversa de la exponencial</p>
             </div>
 
-            <h3>4. Ecuaciones Exponenciales</h3>
+            <div class="calculator-box">
+                <h4>🧮 Calculadora de Logaritmo</h4>
+                <p>Calcula log_a(x) para diferentes bases:</p>
+                <div class="input-group">
+                    <label>Base (a):</label>
+                    <input type="number" id="logBase" value="10" step="0.1" min="0.1">
+                </div>
+                <div class="input-group">
+                    <label>Argumento (x):</label>
+                    <input type="number" id="logX" value="100" step="0.1" min="0.01">
+                </div>
+                <button onclick="calcularLogaritmo()" class="btn-calculate">Calcular</button>
+                <div id="logResult" class="result-box"></div>
+            </div>
+
+            <h3>3. Ecuaciones Exponenciales y Logarítmicas</h3>
             <div class="info-box">
-                <p><strong>Método:</strong> Aplicar logaritmos a ambos lados</p>
-                <p><strong>Ejemplo:</strong> 2ˣ = 8 → x·ln(2) = ln(8) → x = ln(8)/ln(2) = 3</p>
+                <p><strong>Método para ecuaciones exponenciales:</strong> Aplicar logaritmos a ambos lados</p>
+                <div class="example-box">
+                    <strong>Ejemplo:</strong> Resolver 2ˣ = 8<br>
+                    ln(2ˣ) = ln(8)<br>
+                    x·ln(2) = ln(8)<br>
+                    x = ln(8)/ln(2) = 3
+                </div>
+                <p><strong>Método para ecuaciones logarítmicas:</strong> Usar propiedades y exponenciar</p>
+                <div class="example-box">
+                    <strong>Ejemplo:</strong> Resolver log₂(x) + log₂(x-3) = 2<br>
+                    log₂(x(x-3)) = 2<br>
+                    x(x-3) = 2² = 4<br>
+                    x² - 3x - 4 = 0 → x = 4 (verificar x > 0 y x > 3)
+                </div>
             </div>
 
-            <h3>5. Ecuaciones Logarítmicas</h3>
-            <div class="info-box">
-                <p><strong>Método:</strong> Usar propiedades de logaritmos y exponenciar</p>
-                <p><strong>Importante:</strong> Verificar que las soluciones estén en el dominio (x > 0)</p>
+            <div class="calculator-box">
+                <h4>🧮 Resolver Ecuación Exponencial</h4>
+                <p>Resuelve a^x = b (encuentra x):</p>
+                <div class="input-group">
+                    <label>Base (a):</label>
+                    <input type="number" id="eqExpBase" value="2" step="0.1" min="0.1">
+                </div>
+                <div class="input-group">
+                    <label>Resultado (b):</label>
+                    <input type="number" id="eqExpB" value="8" step="0.1" min="0.01">
+                </div>
+                <button onclick="resolverEcuacionExponencial()" class="btn-calculate">Resolver</button>
+                <div id="eqExpResult" class="result-box"></div>
             </div>
 
-            <h3>6. Funciones Trigonométricas</h3>
+            <h3>4. Funciones Trigonométricas</h3>
             <table class="comparison-table">
                 <thead>
                     <tr><th>Función</th><th>Dominio</th><th>Imagen</th><th>Período</th></tr>
@@ -97,7 +300,17 @@
                 </tbody>
             </table>
 
-            <h3>7. Funciones Trigonométricas Inversas</h3>
+            <div class="info-box">
+                <p><strong>Identidades fundamentales:</strong></p>
+                <ul>
+                    <li>sin²(x) + cos²(x) = 1 (identidad pitagórica)</li>
+                    <li>tan(x) = sin(x)/cos(x)</li>
+                    <li>sin(-x) = -sin(x), cos(-x) = cos(x)</li>
+                    <li>sin(x + 2π) = sin(x), cos(x + 2π) = cos(x)</li>
+                </ul>
+            </div>
+
+            <h3>5. Funciones Trigonométricas Inversas</h3>
             <table class="comparison-table">
                 <thead>
                     <tr><th>Función</th><th>Dominio</th><th>Imagen</th></tr>
@@ -110,237 +323,609 @@
             </table>
         </div>
 
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
+        <!-- Tab 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento</h2>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Ecuación Exponencial</h4>
-                <p><strong>Problema:</strong> Resolver 3ˣ = 27</p>
-                <p><strong>Solución:</strong> 27 = 3³ → 3ˣ = 3³ → x = 3</p>
-                <p><strong>Respuesta:</strong> x = 3</p>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Practica con problemas sobre funciones exponenciales, logarítmicas y trigonométricas. Cada respuesta correcta suma +10 puntos, cada incorrecta resta -5 puntos.</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Logaritmo</h4>
-                <p><strong>Problema:</strong> Calcular log₂(16)</p>
-                <p><strong>Solución:</strong> ¿2ʸ = 16? → 2⁴ = 16 → y = 4</p>
-                <p><strong>Respuesta:</strong> log₂(16) = 4</p>
+            <div id="training-container">
+                <div id="training-question" class="question-box">
+                    <p id="training-question-text"></p>
+                </div>
+                <div id="training-options" class="options-container"></div>
+                <button onclick="checkTrainingAnswer()" id="training-submit-btn" class="btn-primary" style="display:none;">Verificar Respuesta</button>
+                <div id="training-feedback" class="feedback-box"></div>
+                <button onclick="nextTrainingQuestion()" id="training-next-btn" class="btn-secondary" style="display:none;">Siguiente Pregunta</button>
             </div>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Propiedad de Logaritmos</h4>
-                <p><strong>Problema:</strong> Simplificar ln(e³)</p>
-                <p><strong>Solución:</strong> ln(e³) = 3·ln(e) = 3·1 = 3</p>
-                <p><strong>Respuesta:</strong> ln(e³) = 3</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Cambio de Base</h4>
-                <p><strong>Problema:</strong> Expresar log₂(8) usando ln</p>
-                <p><strong>Solución:</strong> log₂(8) = ln(8)/ln(2) = ln(2³)/ln(2) = 3ln(2)/ln(2) = 3</p>
-                <p><strong>Respuesta:</strong> log₂(8) = 3</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: Función Trigonométrica</h4>
-                <p><strong>Problema:</strong> Calcular sin(π/2)</p>
-                <p><strong>Solución:</strong> π/2 radianes = 90°, sin(90°) = 1</p>
-                <p><strong>Respuesta:</strong> sin(π/2) = 1</p>
+            <div class="stats-box">
+                <p>Preguntas respondidas: <span id="training-answered">0</span></p>
+                <p>Respuestas correctas: <span id="training-correct">0</span></p>
+                <p>Respuestas incorrectas: <span id="training-incorrect">0</span></p>
             </div>
         </div>
 
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
+        <!-- Tab 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Funciones Elementales II</h2>
 
-            <div class="tool-card">
-                <h3>📈 Calculadora Exponencial</h3>
-                <p>Calcula aˣ</p>
-                <div class="tool-input-group">
-                    <label>Base a:</label>
-                    <input type="number" step="any" id="exp-a" placeholder="Ej: 2">
-                </div>
-                <div class="tool-input-group">
-                    <label>Exponente x:</label>
-                    <input type="number" step="any" id="exp-x" placeholder="Ej: 3">
-                </div>
-                <button class="calc-button" onclick="calculateExp()">Calcular</button>
-                <div class="calc-result" id="exp-result">Ingresa los datos</div>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Completa este examen para demostrar tu dominio de funciones exponenciales, logarítmicas y trigonométricas.</p>
+                <p class="white-text-mt0"><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p class="white-text-mt0"><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Funciones II" 🏆</p>
             </div>
 
-            <div class="tool-card">
-                <h3>📊 Calculadora de Logaritmos</h3>
-                <p>Calcula logₐ(x)</p>
-                <div class="tool-input-group">
-                    <label>Base a:</label>
-                    <input type="number" step="any" id="log-a" placeholder="Ej: 2">
+            <div id="exam-container">
+                <div id="exam-start" class="exam-start-box">
+                    <h3>¿Listo para comenzar?</h3>
+                    <p>El examen contiene 20 preguntas sobre todos los temas de funciones elementales II.</p>
+                    <p>No se otorgan puntos durante el examen, solo evaluación.</p>
+                    <button onclick="startExam()" class="btn-primary btn-large">Comenzar Examen</button>
                 </div>
-                <div class="tool-input-group">
-                    <label>Argumento x:</label>
-                    <input type="number" step="any" id="log-x" placeholder="Ej: 8">
+
+                <div id="exam-questions" style="display:none;">
+                    <div class="exam-progress">
+                        <p>Pregunta <span id="current-question">1</span> de <span id="total-questions">20</span></p>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="exam-question" class="question-box">
+                        <p id="exam-question-text"></p>
+                    </div>
+                    <div id="exam-options" class="options-container"></div>
+                    <button onclick="nextExamQuestion()" id="exam-next-btn" class="btn-primary">Siguiente</button>
                 </div>
-                <button class="calc-button" onclick="calculateLog()">Calcular</button>
-                <div class="calc-result" id="log-result">Ingresa los datos</div>
-            </div>
 
-            <div class="tool-card">
-                <h3>🌊 Calculadora Trigonométrica</h3>
-                <p>Calcula sin, cos, tan</p>
-                <div class="tool-input-group">
-                    <label>Ángulo (radianes):</label>
-                    <input type="number" step="any" id="trig-x" placeholder="Ej: 1.5708">
+                <div id="exam-results" style="display:none;">
+                    <h3>Resultados del Examen</h3>
+                    <div class="results-box">
+                        <p class="result-score">Puntuación: <span id="exam-score"></span>%</p>
+                        <p>Respuestas correctas: <span id="exam-correct"></span> de <span id="exam-total"></span></p>
+                        <p id="exam-status"></p>
+                    </div>
+                    <div id="exam-trophy" style="display:none;" class="trophy-box">
+                        <h3>🏆 ¡Felicitaciones!</h3>
+                        <p>Has obtenido el trofeo: <strong>"Maestro de Funciones II"</strong></p>
+                    </div>
+                    <button onclick="retakeExam()" class="btn-secondary">Reintentar Examen</button>
                 </div>
-                <button class="calc-button" onclick="calculateTrig()">Calcular</button>
-                <div class="calc-result" id="trig-result">Ingresa el ángulo</div>
-            </div>
-        </div>
-
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-            <div id="exercises-container"></div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">Siguiente ➡️</button>
-            </div>
-        </div>
-
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen</h2>
-            <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
-                <ul>
-                    <li><strong>Exponencial:</strong> aˣ, Dom=ℝ, Im=(0,∞)</li>
-                    <li><strong>Logaritmo:</strong> Inversa de exponencial</li>
-                    <li><strong>e:</strong> Base natural ≈ 2.71828</li>
-                    <li><strong>ln:</strong> Logaritmo natural (base e)</li>
-                    <li><strong>Propiedades:</strong> log(xy)=log(x)+log(y)</li>
-                    <li><strong>Trigonométricas:</strong> Período 2π (sin, cos)</li>
-                </ul>
-            </div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">Siguiente ➡️</button>
             </div>
         </div>
     </div>
 
-    <script src="../../../../lib/storage.js"></script>
-    <script src="../../../../lib/gamification.js"></script>
-    <script src="../../../../lib/components.js"></script>
+    <script src="../../../../js/storage.js"></script>
+    <script src="../../../../js/gamification.js"></script>
+    <script src="../../../../js/components.js"></script>
     <script>
-        const MODULE_ID = 'funciones-elementales-2';
-        const MODULE_TITLE = 'Tema 2: Funciones Elementales II';
+        // Initialize components
+        initializeHeader('Funciones Elementales II', '../../../../index.html');
+        initializeTabs([
+            { id: 'glosario', name: 'Glosario', icon: '📖' },
+            { id: 'simbolos', name: 'Símbolos', icon: '🔣' },
+            { id: 'introduccion', name: 'Introducción', icon: '📚' },
+            { id: 'teoria', name: 'Teoría', icon: '📐' },
+            { id: 'entrenamiento', name: 'Entrenamiento', icon: '🎯' },
+            { id: 'examen', name: 'Examen Final', icon: '📝' }
+        ]);
+        initializeScore();
 
-        document.addEventListener('DOMContentLoaded', function() {
-            Components.createHeader(MODULE_TITLE, 'index.html');
-            Components.createTabs([
-                { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
-            ], 'teoria');
-            Components.createScoreDisplay();
-            loadExercises();
-            Gamification.updateDisplay(MODULE_ID);
-        });
+        // Calculadora de Función Exponencial
+        function calcularExponencial() {
+            const a = parseFloat(document.getElementById('expBase').value);
+            const x = parseFloat(document.getElementById('expX').value);
+            
+            if (a <= 0) {
+                document.getElementById('expResult').innerHTML = '<p class="error">La base debe ser positiva (a > 0)</p>';
+                return;
+            }
+            
+            const result = Math.pow(a, x);
+            
+            let html = '<div class="calculation-result">';
+            html += `<p><strong>f(x) = ${a}^${x} = ${result.toFixed(4)}</strong></p>`;
+            html += '<p class="explanation">';
+            
+            if (a === Math.E) {
+                html += 'Función exponencial natural e^x';
+            } else if (a > 1) {
+                html += 'Función exponencial creciente (a > 1)';
+            } else if (a < 1) {
+                html += 'Función exponencial decreciente (0 < a < 1)';
+            }
+            
+            html += '</p>';
+            html += `<p>Cuando x = 0: ${a}^0 = 1</p>`;
+            html += '</div>';
+            
+            document.getElementById('expResult').innerHTML = html;
+        }
 
-        const exercises = [
-            { id: 1, question: '¿Cuánto vale e⁰?', correct: '1', hint: 'a⁰ = 1 para todo a > 0' },
-            { id: 2, question: 'Resolver 2ˣ = 16. ¿x?', correct: '4', hint: '16 = 2⁴' },
-            { id: 3, question: '¿ln(e) = ?', correct: '1', hint: 'logₐ(a) = 1' },
-            { id: 4, question: '¿log₁₀(100) = ?', correct: '2', hint: '10² = 100' },
-            { id: 5, question: '¿sin(0) = ?', correct: '0', hint: 'Revisar círculo trigonométrico' },
-            { id: 6, question: '¿cos(0) = ?', correct: '1', hint: 'Revisar círculo trigonométrico' },
-            { id: 7, question: 'Si 3ˣ = 9, ¿x?', correct: '2', hint: '9 = 3²' },
-            { id: 8, question: '¿ln(1) = ?', correct: '0', hint: 'e⁰ = 1' },
-            { id: 9, question: '¿log₂(8) = ?', correct: '3', hint: '2³ = 8' },
-            { id: 10, question: '¿Período de sin(x)? (usar π)', correct: '6.28', hint: '2π ≈ 6.28' }
+        // Calculadora de Logaritmo
+        function calcularLogaritmo() {
+            const a = parseFloat(document.getElementById('logBase').value);
+            const x = parseFloat(document.getElementById('logX').value);
+            
+            if (a <= 0 || a === 1) {
+                document.getElementById('logResult').innerHTML = '<p class="error">La base debe ser positiva y diferente de 1</p>';
+                return;
+            }
+            
+            if (x <= 0) {
+                document.getElementById('logResult').innerHTML = '<p class="error">El argumento debe ser positivo (x > 0)</p>';
+                return;
+            }
+            
+            const result = Math.log(x) / Math.log(a);
+            
+            let html = '<div class="calculation-result">';
+            html += `<p><strong>log<sub>${a}</sub>(${x}) = ${result.toFixed(4)}</strong></p>`;
+            html += '<p class="explanation">';
+            
+            if (Math.abs(a - Math.E) < 0.01) {
+                html += `ln(${x}) = ${result.toFixed(4)} (logaritmo natural)`;
+            } else if (a === 10) {
+                html += `log(${x}) = ${result.toFixed(4)} (logaritmo decimal)`;
+            }
+            
+            html += '</p>';
+            html += `<p>Verificación: ${a}^${result.toFixed(4)} = ${Math.pow(a, result).toFixed(4)}</p>`;
+            html += '</div>';
+            
+            document.getElementById('logResult').innerHTML = html;
+        }
+
+        // Resolver Ecuación Exponencial
+        function resolverEcuacionExponencial() {
+            const a = parseFloat(document.getElementById('eqExpBase').value);
+            const b = parseFloat(document.getElementById('eqExpB').value);
+            
+            if (a <= 0 || a === 1) {
+                document.getElementById('eqExpResult').innerHTML = '<p class="error">La base debe ser positiva y diferente de 1</p>';
+                return;
+            }
+            
+            if (b <= 0) {
+                document.getElementById('eqExpResult').innerHTML = '<p class="error">El resultado debe ser positivo</p>';
+                return;
+            }
+            
+            const x = Math.log(b) / Math.log(a);
+            
+            let html = '<div class="calculation-result">';
+            html += `<p><strong>Ecuación: ${a}^x = ${b}</strong></p>`;
+            html += '<p class="steps">Pasos de resolución:</p>';
+            html += '<ol>';
+            html += `<li>Aplicar logaritmo: log<sub>${a}</sub>(${a}^x) = log<sub>${a}</sub>(${b})</li>`;
+            html += `<li>Simplificar: x = log<sub>${a}</sub>(${b})</li>`;
+            html += `<li>Calcular: x = ln(${b})/ln(${a}) = ${x.toFixed(4)}</li>`;
+            html += '</ol>';
+            html += `<p class="result-highlight"><strong>Solución: x = ${x.toFixed(4)}</strong></p>`;
+            html += `<p>Verificación: ${a}^${x.toFixed(4)} = ${Math.pow(a, x).toFixed(4)} ≈ ${b}</p>`;
+            html += '</div>';
+            
+            document.getElementById('eqExpResult').innerHTML = html;
+        }
+
+        // Training questions
+        const trainingQuestions = [
+            {
+                question: "¿Cuál es el valor de e^0?",
+                options: ["0", "1", "e", "∞"],
+                correct: 1,
+                explanation: "Cualquier número elevado a la potencia 0 es igual a 1, incluyendo e^0 = 1"
+            },
+            {
+                question: "Si ln(x) = 2, entonces x = ?",
+                options: ["2", "e²", "2e", "e/2"],
+                correct: 1,
+                explanation: "Por definición: ln(x) = 2 significa e² = x, entonces x = e² ≈ 7.389"
+            },
+            {
+                question: "¿Cuál es el dominio de f(x) = ln(x)?",
+                options: ["ℝ", "(0, ∞)", "[-1, 1]", "[1, ∞)"],
+                correct: 1,
+                explanation: "El logaritmo solo está definido para números positivos, por lo que Dom(ln) = (0, ∞)"
+            },
+            {
+                question: "log₂(8) = ?",
+                options: ["2", "3", "4", "8"],
+                correct: 1,
+                explanation: "log₂(8) = 3 porque 2³ = 8"
+            },
+            {
+                question: "¿Cuál es el período de sin(x)?",
+                options: ["π", "2π", "π/2", "4π"],
+                correct: 1,
+                explanation: "La función seno tiene período 2π: sin(x + 2π) = sin(x)"
+            },
+            {
+                question: "Si 2^x = 16, entonces x = ?",
+                options: ["2", "3", "4", "8"],
+                correct: 2,
+                explanation: "2^4 = 16, por lo tanto x = 4"
+            },
+            {
+                question: "¿Cuál es la imagen de cos(x)?",
+                options: ["ℝ", "(0, ∞)", "[-1, 1]", "(-∞, -1]"],
+                correct: 2,
+                explanation: "El coseno oscila entre -1 y 1, entonces Im(cos) = [-1, 1]"
+            },
+            {
+                question: "ln(e³) = ?",
+                options: ["e", "3", "e³", "3e"],
+                correct: 1,
+                explanation: "ln y exponencial son inversas: ln(e³) = 3"
+            },
+            {
+                question: "log₁₀(1000) = ?",
+                options: ["2", "3", "10", "100"],
+                correct: 1,
+                explanation: "log₁₀(1000) = log₁₀(10³) = 3"
+            },
+            {
+                question: "arcsin(1) = ?",
+                options: ["0", "π/6", "π/4", "π/2"],
+                correct: 3,
+                explanation: "arcsin(1) = π/2 porque sin(π/2) = 1"
+            },
+            {
+                question: "¿Cuál es el valor de e^(ln(5))?",
+                options: ["e", "5", "ln(5)", "5e"],
+                correct: 1,
+                explanation: "Exponencial y logaritmo natural son inversas: e^(ln(5)) = 5"
+            },
+            {
+                question: "Si log_a(x) + log_a(y) = log_a(z), entonces z = ?",
+                options: ["x + y", "x - y", "x·y", "x/y"],
+                correct: 2,
+                explanation: "Por propiedad: log_a(x) + log_a(y) = log_a(x·y), entonces z = x·y"
+            },
+            {
+                question: "¿Cuál es el dominio de arcsin(x)?",
+                options: ["ℝ", "[-1, 1]", "(0, ∞)", "[-π/2, π/2]"],
+                correct: 1,
+                explanation: "arcsin solo está definido para valores de seno válidos: Dom(arcsin) = [-1, 1]"
+            },
+            {
+                question: "tan(π/4) = ?",
+                options: ["0", "1/2", "1", "√2"],
+                correct: 2,
+                explanation: "tan(π/4) = sin(π/4)/cos(π/4) = (√2/2)/(√2/2) = 1"
+            },
+            {
+                question: "Si 3^x = 1, entonces x = ?",
+                options: ["-1", "0", "1", "3"],
+                correct: 1,
+                explanation: "Cualquier número elevado a 0 es 1: 3^0 = 1, entonces x = 0"
+            }
         ];
 
-        function loadExercises() {
-            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
-                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
-                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
-                </div>
-                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                <div id="feedback${ex.id}" class="feedback"></div></div>
-            `).join('');
+        let currentTrainingIndex = -1;
+        let trainingStats = {
+            answered: 0,
+            correct: 0,
+            incorrect: 0
+        };
+        let selectedTrainingOption = -1;
+
+        function startTraining() {
+            nextTrainingQuestion();
         }
 
-        function checkAnswer(exerciseId) {
-            const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
-            const feedback = document.getElementById('feedback' + exerciseId);
-            const userAnswer = parseFloat(input.value.trim());
-            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
+        function nextTrainingQuestion() {
+            // Clear previous state
+            selectedTrainingOption = -1;
+            document.getElementById('training-feedback').innerHTML = '';
+            document.getElementById('training-submit-btn').style.display = 'none';
+            document.getElementById('training-next-btn').style.display = 'none';
             
+            // Select random question
+            currentTrainingIndex = Math.floor(Math.random() * trainingQuestions.length);
+            const q = trainingQuestions[currentTrainingIndex];
+            
+            // Display question
+            document.getElementById('training-question-text').textContent = q.question;
+            
+            // Display options
+            let optionsHTML = '';
+            q.options.forEach((option, index) => {
+                optionsHTML += `<div class="option-btn" onclick="selectTrainingOption(${index})">${option}</div>`;
+            });
+            document.getElementById('training-options').innerHTML = optionsHTML;
+            document.getElementById('training-submit-btn').style.display = 'block';
+        }
+
+        function selectTrainingOption(index) {
+            selectedTrainingOption = index;
+            const options = document.querySelectorAll('#training-options .option-btn');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected');
+                if (i === index) opt.classList.add('selected');
+            });
+        }
+
+        function checkTrainingAnswer() {
+            if (selectedTrainingOption === -1) {
+                alert('Por favor selecciona una respuesta');
+                return;
+            }
+            
+            const q = trainingQuestions[currentTrainingIndex];
+            const isCorrect = selectedTrainingOption === q.correct;
+            
+            trainingStats.answered++;
             if (isCorrect) {
-                feedback.className = 'feedback success';
-                feedback.textContent = '¡Correcto! ✨ +10 puntos';
-                input.disabled = true;
-                Gamification.completeExercise(MODULE_ID, true);
+                trainingStats.correct++;
+                addPoints(10);
+                document.getElementById('training-feedback').innerHTML = 
+                    `<div class="feedback-correct">✅ ¡Correcto! +10 puntos<br>${q.explanation}</div>`;
             } else {
-                feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
-                Gamification.completeExercise(MODULE_ID, false);
+                trainingStats.incorrect++;
+                addPoints(-5);
+                document.getElementById('training-feedback').innerHTML = 
+                    `<div class="feedback-incorrect">❌ Incorrecto. -5 puntos<br>Respuesta correcta: ${q.options[q.correct]}<br>${q.explanation}</div>`;
             }
-            feedback.style.display = 'block';
-            Gamification.updateDisplay(MODULE_ID);
-        }
-
-        function showHint(exerciseId) {
-            const hint = document.getElementById('hint' + exerciseId);
-            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function calculateExp() {
-            const a = parseFloat(document.getElementById('exp-a').value);
-            const x = parseFloat(document.getElementById('exp-x').value);
-            const result = document.getElementById('exp-result');
             
-            if (isNaN(a) || isNaN(x)) {
-                result.textContent = '⚠️ Completa todos los campos';
+            // Update stats
+            document.getElementById('training-answered').textContent = trainingStats.answered;
+            document.getElementById('training-correct').textContent = trainingStats.correct;
+            document.getElementById('training-incorrect').textContent = trainingStats.incorrect;
+            
+            // Show next button, hide submit
+            document.getElementById('training-submit-btn').style.display = 'none';
+            document.getElementById('training-next-btn').style.display = 'block';
+            
+            // Disable option selection
+            const options = document.querySelectorAll('#training-options .option-btn');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+        }
+
+        // Exam questions
+        const examQuestions = [
+            {
+                question: "¿Cuál es el valor de e^1?",
+                options: ["1", "2.718", "3.14", "10"],
+                correct: 1
+            },
+            {
+                question: "Si ln(x) = 0, entonces x = ?",
+                options: ["0", "1", "e", "∞"],
+                correct: 1
+            },
+            {
+                question: "log₃(27) = ?",
+                options: ["2", "3", "9", "27"],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es el período de cos(x)?",
+                options: ["π", "2π", "π/2", "1"],
+                correct: 1
+            },
+            {
+                question: "arctan(0) = ?",
+                options: ["-1", "0", "1", "π/4"],
+                correct: 1
+            },
+            {
+                question: "Si 5^x = 125, entonces x = ?",
+                options: ["2", "3", "5", "25"],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es la imagen de sin(x)?",
+                options: ["ℝ", "(0, ∞)", "[-1, 1]", "[-π, π]"],
+                correct: 2
+            },
+            {
+                question: "e^(ln(7)) = ?",
+                options: ["e", "7", "ln(7)", "7e"],
+                correct: 1
+            },
+            {
+                question: "log(100) = ? (base 10)",
+                options: ["1", "2", "10", "100"],
+                correct: 1
+            },
+            {
+                question: "sin(π/2) = ?",
+                options: ["-1", "0", "1/2", "1"],
+                correct: 3
+            },
+            {
+                question: "Si log_2(x) = 5, entonces x = ?",
+                options: ["10", "16", "25", "32"],
+                correct: 3
+            },
+            {
+                question: "cos(0) = ?",
+                options: ["-1", "0", "1/2", "1"],
+                correct: 3
+            },
+            {
+                question: "¿Cuál es el dominio de ln(x - 2)?",
+                options: ["ℝ", "(2, ∞)", "[-2, ∞)", "[0, ∞)"],
+                correct: 1
+            },
+            {
+                question: "tan(0) = ?",
+                options: ["-1", "0", "1", "No definido"],
+                correct: 1
+            },
+            {
+                question: "arccos(0) = ?",
+                options: ["0", "π/6", "π/4", "π/2"],
+                correct: 3
+            },
+            {
+                question: "log_a(1) = ? para cualquier a > 0, a ≠ 1",
+                options: ["-1", "0", "1", "a"],
+                correct: 1
+            },
+            {
+                question: "Si 2^x = 1/8, entonces x = ?",
+                options: ["-4", "-3", "3", "8"],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es la imagen de arctan(x)?",
+                options: ["ℝ", "[-1, 1]", "(-π/2, π/2)", "[0, π]"],
+                correct: 2
+            },
+            {
+                question: "ln(1) = ?",
+                options: ["-1", "0", "1", "e"],
+                correct: 1
+            },
+            {
+                question: "sin²(x) + cos²(x) = ?",
+                options: ["0", "1", "2", "sin(2x)"],
+                correct: 1
+            },
+            {
+                question: "Si ln(x) = ln(3) + ln(4), entonces x = ?",
+                options: ["7", "12", "ln(7)", "e^7"],
+                correct: 1
+            },
+            {
+                question: "¿Cuánto vale log_4(16)?",
+                options: ["1", "2", "4", "16"],
+                correct: 1
+            },
+            {
+                question: "arcsin(0) = ?",
+                options: ["-π/2", "0", "π/2", "π"],
+                correct: 1
+            },
+            {
+                question: "e^0 = ?",
+                options: ["0", "1", "e", "No definido"],
+                correct: 1
+            },
+            {
+                question: "¿Cuál es el período de tan(x)?",
+                options: ["π/2", "π", "2π", "No periódica"],
+                correct: 1
+            }
+        ];
+
+        let currentExamQuestions = [];
+        let currentExamIndex = 0;
+        let examAnswers = [];
+
+        function startExam() {
+            // Select 20 random questions
+            currentExamQuestions = [];
+            const used = new Set();
+            while (currentExamQuestions.length < 20 && currentExamQuestions.length < examQuestions.length) {
+                const index = Math.floor(Math.random() * examQuestions.length);
+                if (!used.has(index)) {
+                    used.add(index);
+                    currentExamQuestions.push(examQuestions[index]);
+                }
+            }
+            
+            currentExamIndex = 0;
+            examAnswers = new Array(currentExamQuestions.length).fill(-1);
+            
+            document.getElementById('exam-start').style.display = 'none';
+            document.getElementById('exam-questions').style.display = 'block';
+            document.getElementById('total-questions').textContent = currentExamQuestions.length;
+            
+            showExamQuestion();
+        }
+
+        function showExamQuestion() {
+            const q = currentExamQuestions[currentExamIndex];
+            
+            document.getElementById('current-question').textContent = currentExamIndex + 1;
+            document.getElementById('exam-question-text').textContent = q.question;
+            
+            let optionsHTML = '';
+            q.options.forEach((option, index) => {
+                const selected = examAnswers[currentExamIndex] === index ? 'selected' : '';
+                optionsHTML += `<div class="option-btn ${selected}" onclick="selectExamOption(${index})">${option}</div>`;
+            });
+            document.getElementById('exam-options').innerHTML = optionsHTML;
+            
+            const progress = ((currentExamIndex + 1) / currentExamQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            
+            const btnText = currentExamIndex < currentExamQuestions.length - 1 ? 'Siguiente' : 'Finalizar Examen';
+            document.getElementById('exam-next-btn').textContent = btnText;
+        }
+
+        function selectExamOption(index) {
+            examAnswers[currentExamIndex] = index;
+            const options = document.querySelectorAll('#exam-options .option-btn');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected');
+                if (i === index) opt.classList.add('selected');
+            });
+        }
+
+        function nextExamQuestion() {
+            if (examAnswers[currentExamIndex] === -1) {
+                alert('Por favor selecciona una respuesta');
                 return;
             }
             
-            const value = Math.pow(a, x);
-            result.innerHTML = `<strong>${a}^${x} = ${value.toFixed(4)}</strong>`;
+            currentExamIndex++;
+            
+            if (currentExamIndex < currentExamQuestions.length) {
+                showExamQuestion();
+            } else {
+                showExamResults();
+            }
         }
 
-        function calculateLog() {
-            const a = parseFloat(document.getElementById('log-a').value);
-            const x = parseFloat(document.getElementById('log-x').value);
-            const result = document.getElementById('log-result');
+        function showExamResults() {
+            let correct = 0;
+            currentExamQuestions.forEach((q, i) => {
+                if (examAnswers[i] === q.correct) correct++;
+            });
             
-            if (isNaN(a) || isNaN(x) || a <= 0 || x <= 0) {
-                result.textContent = '⚠️ Base y argumento deben ser > 0';
-                return;
+            const score = Math.round((correct / currentExamQuestions.length) * 100);
+            const passed = score >= 70;
+            
+            document.getElementById('exam-questions').style.display = 'none';
+            document.getElementById('exam-results').style.display = 'block';
+            
+            document.getElementById('exam-score').textContent = score;
+            document.getElementById('exam-correct').textContent = correct;
+            document.getElementById('exam-total').textContent = currentExamQuestions.length;
+            
+            const statusEl = document.getElementById('exam-status');
+            if (passed) {
+                statusEl.innerHTML = '<p class="exam-passed">✅ ¡Examen Aprobado!</p>';
+                document.getElementById('exam-trophy').style.display = 'block';
+                
+                // Award trophy
+                awardTrophy('funciones-elementales-2', 'Maestro de Funciones II', '🏆');
+                
+                // Save exam result
+                saveExamResult('funciones-elementales-2', score, true);
+            } else {
+                statusEl.innerHTML = '<p class="exam-failed">❌ No aprobaste. Necesitas 70% o más.</p>';
+                document.getElementById('exam-trophy').style.display = 'none';
+                saveExamResult('funciones-elementales-2', score, false);
             }
-            
-            const value = Math.log(x) / Math.log(a);
-            result.innerHTML = `<strong>log₍${a}₎(${x}) = ${value.toFixed(4)}</strong>`;
         }
 
-        function calculateTrig() {
-            const x = parseFloat(document.getElementById('trig-x').value);
-            const result = document.getElementById('trig-result');
-            
-            if (isNaN(x)) {
-                result.textContent = '⚠️ Ingresa un ángulo válido';
-                return;
-            }
-            
-            result.innerHTML = `
-                <strong>sin(${x}) = ${Math.sin(x).toFixed(4)}</strong><br>
-                <strong>cos(${x}) = ${Math.cos(x).toFixed(4)}</strong><br>
-                <strong>tan(${x}) = ${Math.tan(x).toFixed(4)}</strong>
-            `;
+        function retakeExam() {
+            document.getElementById('exam-results').style.display = 'none';
+            document.getElementById('exam-start').style.display = 'block';
         }
+
+        // Initialize training on load
+        window.addEventListener('load', () => {
+            startTraining();
+        });
     </script>
 </body>
 </html>

@@ -86,6 +86,33 @@
             background: var(--warning-color);
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         }
+        
+        .glossary-term {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glossary-term h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .symbol-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .symbol-display {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -93,13 +120,136 @@
         <div id="header-container"></div>
         <div id="tabs-container"></div>
 
-        <!-- BÁSICAS TAB -->
-        <div id="basicas" class="content tab-content active">
-            <h2 class="section-title">🔷 Formas Básicas</h2>
+        <!-- GLOSARIO TAB -->
+        <div id="glosario" class="content tab-content active">
+            <h2 class="section-title">📖 Glosario de Formas Geométricas</h2>
             
             <div class="explanation">
-                <h3>Las formas están en todas partes</h3>
-                <p>¡Las formas geométricas son como los bloques de construcción del mundo! Están en tu casa, en la naturaleza, y en los objetos que usas cada día.</p>
+                <p>Aprende los términos clave relacionados con las formas geométricas:</p>
+            </div>
+
+            <div class="glossary-term">
+                <h4>🔷 Polígono</h4>
+                <p><strong>Definición:</strong> Una figura geométrica plana cerrada formada por líneas rectas. Los círculos NO son polígonos porque son curvos.</p>
+                <p><strong>Ejemplo:</strong> Triángulo, cuadrado, pentágono, hexágono.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h4>📐 Lado</h4>
+                <p><strong>Definición:</strong> Cada una de las líneas rectas que forman el borde de un polígono.</p>
+                <p><strong>Ejemplo:</strong> Un triángulo tiene 3 lados, un cuadrado tiene 4 lados.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h4>📍 Vértice</h4>
+                <p><strong>Definición:</strong> El punto donde se encuentran dos lados (también llamado esquina).</p>
+                <p><strong>Ejemplo:</strong> Un cuadrado tiene 4 vértices, un pentágono tiene 5 vértices.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h4>📏 Ángulo</h4>
+                <p><strong>Definición:</strong> El espacio formado entre dos lados que se encuentran en un vértice.</p>
+                <p><strong>Ejemplo:</strong> Los ángulos de un cuadrado son todos de 90 grados (ángulos rectos).</p>
+            </div>
+
+            <div class="glossary-term">
+                <h4>🔄 Simetría</h4>
+                <p><strong>Definición:</strong> Propiedad de una forma que permite dividirla en dos partes iguales con una línea.</p>
+                <p><strong>Ejemplo:</strong> Un círculo tiene infinitas líneas de simetría, un cuadrado tiene 4.</p>
+            </div>
+        </div>
+
+        <!-- SÍMBOLOS TAB -->
+        <div id="simbolos" class="content tab-content">
+            <h2 class="section-title">🔣 Símbolos en Geometría</h2>
+            
+            <div class="explanation">
+                <p>Los símbolos geométricos nos ayudan a describir y clasificar las formas:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">△</div>
+                <h3>Triángulo</h3>
+                <p>El símbolo △ representa un triángulo. Tiene 3 lados y 3 ángulos.</p>
+                <p><strong>Uso:</strong> △ABC significa "triángulo ABC" con vértices A, B y C.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">□</div>
+                <h3>Cuadrado/Rectángulo</h3>
+                <p>El símbolo □ representa cuadriláteros (figuras de 4 lados).</p>
+                <p><strong>Uso:</strong> Se usa para indicar formas con 4 lados y 4 ángulos rectos.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">○</div>
+                <h3>Círculo</h3>
+                <p>El símbolo ○ representa un círculo. No tiene lados ni vértices.</p>
+                <p><strong>Uso:</strong> Una curva continua donde todos los puntos están a la misma distancia del centro.</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">∠</div>
+                <h3>Ángulo</h3>
+                <p>El símbolo ∠ se usa para representar un ángulo.</p>
+                <p><strong>Uso:</strong> ∠ABC significa "el ángulo en el punto B formado por los puntos A, B y C".</p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Dato Curioso</h3>
+                <p>La palabra "geometría" viene del griego "geo" (tierra) y "metron" (medida). ¡Originalmente se usaba para medir terrenos!</p>
+            </div>
+        </div>
+
+        <!-- INTRODUCCIÓN TAB -->
+        <div id="introduccion" class="content tab-content">
+            <h2 class="section-title">🌍 Las Formas en Nuestro Mundo</h2>
+            
+            <div class="explanation">
+                <h3>¿Por qué son importantes las formas?</h3>
+                <p>Las formas geométricas están en todas partes en nuestro mundo. Desde los edificios que construimos hasta los objetos que usamos cada día, las formas nos rodean constantemente.</p>
+            </div>
+
+            <div class="shapes-grid">
+                <div class="shape-card">
+                    <h3>🏠 En la Arquitectura</h3>
+                    <p>Los arquitectos usan formas para diseñar edificios. Los triángulos son muy fuertes y se usan en techos y puentes. Los cuadrados y rectángulos forman las paredes y ventanas.</p>
+                </div>
+
+                <div class="shape-card">
+                    <h3>🎨 En el Arte</h3>
+                    <p>Los artistas combinan formas para crear pinturas y esculturas. El famoso pintor Mondrian usó solo cuadrados y rectángulos en sus obras.</p>
+                </div>
+
+                <div class="shape-card">
+                    <h3>🌿 En la Naturaleza</h3>
+                    <p>Los panales de las abejas son hexágonos perfectos. Las gotas de agua forman círculos. Las hojas de los árboles pueden ser triangulares, ovaladas o en forma de corazón.</p>
+                </div>
+
+                <div class="shape-card">
+                    <h3>⚽ En los Deportes</h3>
+                    <p>Un balón de fútbol está hecho de pentágonos y hexágonos. Una cancha de baloncesto tiene rectángulos. Las señales de tráfico usan diferentes formas para transmitir mensajes.</p>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 Aplicaciones Reales</h3>
+                <ul style="text-align: left; max-width: 700px; margin: 0 auto;">
+                    <li><strong>Construcción:</strong> Los triángulos hacen las estructuras más fuertes y estables.</li>
+                    <li><strong>Diseño:</strong> Las formas crean equilibrio visual y belleza en productos y edificios.</li>
+                    <li><strong>Naturaleza:</strong> Las formas eficientes (como hexágonos) ahorran espacio y materiales.</li>
+                    <li><strong>Comunicación:</strong> Las señales usan formas específicas para transmitir información rápidamente.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content tab-content">
+            <h2 class="section-title">📚 Teoría y Práctica de las Formas</h2>
+            
+            <div class="explanation">
+                <h3>Formas Básicas</h3>
+                <p>Las formas están en todas partes. Están en tu casa, en la naturaleza, y en los objetos que usas cada día.</p>
             </div>
 
             <div class="shapes-grid">
@@ -144,19 +294,9 @@
                 </div>
             </div>
 
-            <div class="fun-facts">
-                <h3>🌟 ¡Dato Curioso!</h3>
-                <p>El triángulo es la forma más fuerte en construcción. ¡Por eso se usa en puentes y torres! No se puede doblar fácilmente como otras formas.</p>
-            </div>
-        </div>
-
-        <!-- AVANZADAS TAB -->
-        <div id="avanzadas" class="content tab-content">
-            <h2 class="section-title">⬡ Formas Avanzadas</h2>
-            
-            <div class="explanation">
-                <h3>Formas con más lados</h3>
-                <p>Cuando las formas tienen más de 4 lados, ¡se vuelven más interesantes! Estas se llaman polígonos.</p>
+            <div class="explanation" style="margin-top: 40px;">
+                <h3>⬡ Formas Avanzadas</h3>
+                <p>Cuando las formas tienen más de 4 lados, se llaman polígonos. Cada polígono tiene un nombre especial según su número de lados.</p>
             </div>
 
             <div class="shapes-grid">
@@ -182,44 +322,19 @@
             </div>
 
             <div class="fun-facts">
-                <h3>🐝 ¡Dato Curioso!</h3>
-                <p>Las abejas construyen sus panales con hexágonos porque es la forma que usa menos cera y aprovecha mejor el espacio. ¡Las abejas son ingenieras naturales!</p>
-            </div>
-        </div>
-
-        <!-- PROPIEDADES TAB -->
-        <div id="propiedades" class="content tab-content">
-            <h2 class="section-title">📋 Propiedades de las Formas</h2>
-            
-            <div class="explanation">
-                <h3>¿Qué hace única a cada forma?</h3>
-                <p>Cada forma tiene propiedades especiales que la hacen diferente de las demás.</p>
-            </div>
-
-            <div class="input-section">
-                <h3>Características Importantes:</h3>
-                <ul style="text-align: left; max-width: 600px; margin: 20px auto; font-size: 1.1em; line-height: 2;">
-                    <li><strong>Lados:</strong> Líneas rectas que forman el borde</li>
-                    <li><strong>Vértices:</strong> Puntos donde se juntan los lados (esquinas)</li>
-                    <li><strong>Ángulos:</strong> Espacio entre dos lados que se encuentran</li>
-                    <li><strong>Simetría:</strong> Si puedes doblarla por la mitad y ambas partes son iguales</li>
+                <h3>🌟 ¡Datos Curiosos!</h3>
+                <ul style="text-align: left; max-width: 700px; margin: 0 auto;">
+                    <li>El triángulo es la forma más fuerte en construcción. ¡Por eso se usa en puentes y torres!</li>
+                    <li>Las abejas construyen sus panales con hexágonos porque es la forma que usa menos cera y aprovecha mejor el espacio.</li>
+                    <li>Un círculo tiene infinitas líneas de simetría.</li>
+                    <li><strong>Polígono</strong> significa "muchos ángulos" en griego.</li>
                 </ul>
             </div>
-
-            <div class="explanation" class="margin-top-30">
-                <h3>🔄 Simetría</h3>
-                <p>Un círculo tiene infinitas líneas de simetría. Un cuadrado tiene 4. Un triángulo equilátero tiene 3.</p>
-            </div>
-
-            <div class="fun-facts">
-                <h3>💡 Truco para Recordar:</h3>
-                <p><strong>Polígono</strong> significa "muchos ángulos" en griego. Cualquier forma con líneas rectas es un polígono. ¡El círculo NO es un polígono porque es curvo!</p>
-            </div>
         </div>
 
-        <!-- PRÁCTICA TAB -->
-        <div id="practica" class="content tab-content">
-            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+        <!-- ENTRENAMIENTO TAB -->
+        <div id="entrenamiento" class="content tab-content">
+            <h2 class="section-title">🏆 Entrenamiento - ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
                 <div id="score-container"></div>
@@ -245,7 +360,42 @@
                     <li>Cuenta los lados rectos para saber qué forma es</li>
                     <li>Los vértices son las esquinas puntiagudas</li>
                     <li>Dibuja las formas en papel para recordarlas mejor</li>
+                    <li>¡Cada respuesta correcta suma +10 puntos!</li>
+                    <li>Las respuestas incorrectas restan -5 puntos</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- EXAMEN FINAL TAB -->
+        <div id="examen" class="content tab-content">
+            <h2 class="section-title">📝 Examen Final de Formas Geométricas</h2>
+            
+            <div class="explanation">
+                <p>Completa este examen para demostrar tu dominio de las formas geométricas.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro de las Formas" 🏆</p>
+            </div>
+
+            <div class="input-section">
+                <button class="calc-button" onclick="startExam()" id="start-exam-btn">🎯 Comenzar Examen</button>
+            </div>
+
+            <div id="exam-container" style="display: none;">
+                <div id="exam-questions"></div>
+                <div class="input-section" style="margin-top: 30px;">
+                    <button class="calc-button" onclick="submitExam()">✅ Enviar Examen</button>
+                </div>
+            </div>
+
+            <div id="exam-result" style="display: none;">
+                <div class="result-container-tall">
+                    <h3 id="exam-score"></h3>
+                    <p id="exam-message"></p>
+                    <div id="exam-trophy"></div>
+                </div>
+                <div class="input-section">
+                    <button class="calc-button" onclick="retakeExam()">🔄 Reintentar Examen</button>
+                </div>
             </div>
         </div>
     </div>
@@ -258,6 +408,8 @@
         const MODULE_ID = 'formas';
         let currentQuestion = null;
         let questionAnswered = false;
+        let examQuestions = [];
+        let examAnswers = [];
 
         function init() {
             const headerHtml = Components.createHeader(
@@ -268,12 +420,14 @@
             document.getElementById('header-container').innerHTML = headerHtml;
 
             const tabs = [
-                { id: 'basicas', label: 'Formas Básicas' },
-                { id: 'avanzadas', label: 'Formas Avanzadas' },
-                { id: 'propiedades', label: 'Propiedades' },
-                { id: 'practica', label: '¡Práctica!' }
+                { id: 'glosario', label: 'Glosario' },
+                { id: 'simbolos', label: 'Símbolos' },
+                { id: 'introduccion', label: 'Introducción' },
+                { id: 'teoria', label: 'Teoría' },
+                { id: 'entrenamiento', label: 'Entrenamiento' },
+                { id: 'examen', label: 'Examen Final' }
             ];
-            const tabsHtml = Components.createTabs(tabs, 'basicas');
+            const tabsHtml = Components.createTabs(tabs, 'glosario');
             document.getElementById('tabs-container').innerHTML = tabsHtml;
 
             const scoreHtml = Components.createScoreDisplay();
@@ -301,7 +455,14 @@
             document.getElementById(tabName).classList.add('active');
             
             document.querySelectorAll('.tab-button').forEach(button => {
-                const labels = { basicas: 'Básicas', avanzadas: 'Avanzadas', propiedades: 'Propiedades', practica: 'Práctica' };
+                const labels = { 
+                    glosario: 'Glosario', 
+                    simbolos: 'Símbolos', 
+                    introduccion: 'Introducción', 
+                    teoria: 'Teoría', 
+                    entrenamiento: 'Entrenamiento', 
+                    examen: 'Examen Final' 
+                };
                 if (button.textContent.includes(labels[tabName])) {
                     button.classList.add('active');
                 }
@@ -317,7 +478,9 @@
                 { question: '¿Cuántos lados tiene un hexágono?', answer: 6 },
                 { question: '¿Cuántos vértices tiene un triángulo?', answer: 3 },
                 { question: '¿Cuántos lados tiene un círculo?', answer: 0 },
-                { question: '¿Cuántos vértices tiene un pentágono?', answer: 5 }
+                { question: '¿Cuántos vértices tiene un pentágono?', answer: 5 },
+                { question: '¿Cuántos vértices tiene un hexágono?', answer: 6 },
+                { question: '¿Cuántos vértices tiene un círculo?', answer: 0 }
             ];
             
             currentQuestion = questions[Math.floor(Math.random() * questions.length)];
@@ -362,6 +525,100 @@
             }
             
             updateScoreDisplay();
+        }
+
+        function startExam() {
+            const allQuestions = [
+                { question: '¿Cuántos lados tiene un triángulo?', answer: 3 },
+                { question: '¿Cuántos lados tiene un cuadrado?', answer: 4 },
+                { question: '¿Cuántos vértices tiene un rectángulo?', answer: 4 },
+                { question: '¿Cuántos lados tiene un pentágono?', answer: 5 },
+                { question: '¿Cuántos lados tiene un hexágono?', answer: 6 },
+                { question: '¿Cuántos vértices tiene un triángulo?', answer: 3 },
+                { question: '¿Cuántos lados tiene un círculo?', answer: 0 },
+                { question: '¿Cuántos vértices tiene un pentágono?', answer: 5 },
+                { question: '¿Cuántos vértices tiene un hexágono?', answer: 6 },
+                { question: '¿Cuántos vértices tiene un círculo?', answer: 0 },
+                { question: '¿Cuántos vértices tiene un cuadrado?', answer: 4 },
+                { question: 'Si un polígono tiene 3 lados, ¿cuántos vértices tiene?', answer: 3 },
+                { question: '¿Cuántos lados tiene un rectángulo?', answer: 4 },
+                { question: 'Si un polígono tiene 5 lados, ¿cuántos vértices tiene?', answer: 5 },
+                { question: 'Si un polígono tiene 6 vértices, ¿cuántos lados tiene?', answer: 6 },
+                { question: '¿Cuántas líneas de simetría tiene un cuadrado?', answer: 4 },
+                { question: '¿Cuántos lados iguales tiene un cuadrado?', answer: 4 },
+                { question: 'En un triángulo, ¿cuántos ángulos hay?', answer: 3 },
+                { question: 'En un hexágono, ¿cuántos ángulos hay?', answer: 6 },
+                { question: 'Si una forma tiene 4 lados iguales, ¿cuántos vértices tiene?', answer: 4 }
+            ];
+
+            examQuestions = [];
+            const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
+            examQuestions = shuffled.slice(0, 20);
+            examAnswers = new Array(20).fill('');
+
+            let html = '';
+            examQuestions.forEach((q, index) => {
+                html += `
+                    <div class="glossary-term">
+                        <h4>Pregunta ${index + 1}</h4>
+                        <p>${q.question}</p>
+                        <div class="input-group">
+                            <input type="number" id="exam-q${index}" placeholder="Tu respuesta" 
+                                   onchange="examAnswers[${index}] = this.value">
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('exam-questions').innerHTML = html;
+            document.getElementById('exam-container').style.display = 'block';
+            document.getElementById('start-exam-btn').style.display = 'none';
+            document.getElementById('exam-result').style.display = 'none';
+        }
+
+        function submitExam() {
+            let correct = 0;
+            examQuestions.forEach((q, index) => {
+                const userAnswer = parseInt(examAnswers[index]);
+                if (userAnswer === q.answer) {
+                    correct++;
+                }
+            });
+
+            const score = (correct / examQuestions.length) * 100;
+            const passed = score >= 70;
+
+            document.getElementById('exam-container').style.display = 'none';
+            document.getElementById('exam-result').style.display = 'block';
+
+            document.getElementById('exam-score').textContent = 
+                `Puntuación: ${correct}/${examQuestions.length} (${score.toFixed(1)}%)`;
+
+            if (passed) {
+                document.getElementById('exam-message').innerHTML = 
+                    `<strong>¡Felicitaciones! 🎉</strong><br>Has aprobado el examen de formas geométricas.`;
+                document.getElementById('exam-trophy').innerHTML = 
+                    `<div style="font-size: 4em; margin: 20px 0;">🏆</div><p><strong>¡Trofeo desbloqueado!</strong><br>"Maestro de las Formas"</p>`;
+                
+                Storage.markModuleComplete(MODULE_ID, score);
+                Storage.awardTrophy(MODULE_ID, 'Maestro de las Formas');
+                
+                Gamification.showTrophyToast('🏆 ¡Trofeo Desbloqueado!', 'Maestro de las Formas');
+            } else {
+                document.getElementById('exam-message').innerHTML = 
+                    `<strong>Sigue practicando 💪</strong><br>Necesitas 70% o más para aprobar. ¡Casi lo logras!`;
+                document.getElementById('exam-trophy').innerHTML = '';
+                
+                Storage.updateFinalExam(MODULE_ID, score, false);
+            }
+
+            Gamification.checkAchievements();
+        }
+
+        function retakeExam() {
+            document.getElementById('exam-result').style.display = 'none';
+            document.getElementById('start-exam-btn').style.display = 'block';
+            examAnswers = [];
         }
 
         function updateScoreDisplay() {

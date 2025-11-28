@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tema 4: Derivadas - Matemáticas Avanzadas</title>
+    <title>Derivadas - Matemáticas Avanzadas Volume 2</title>
     <link rel="stylesheet" href="../../../../css/core.css">
     <link rel="stylesheet" href="../../../../css/components.css">
 </head>
@@ -13,147 +13,236 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <div class="content-section active" id="teoria">
-            <h2>📚 Teoría: Derivadas</h2>
-
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos</h4>
-                <ul class="list-unstyled-lh2">
-                    <li><strong>f'(x), df/dx</strong> = Derivada de f</li>
-                    <li><strong>y'</strong> = Derivada de y</li>
-                    <li><strong>d²f/dx²</strong> = Derivada segunda</li>
-                    <li><strong>∂</strong> = Derivada parcial</li>
-                    <li><strong>Δx, Δy</strong> = Incrementos</li>
-                </ul>
+        <!-- Glosario Tab -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Derivadas</h2>
+            
+            <div class="info-box bg-gradient-primary-white">
+                <p>Aprende los términos clave relacionados con las derivadas:</p>
             </div>
+
+            <div class="glossary-term">
+                <h3>🔹 Derivada</h3>
+                <p><strong>Definición:</strong> La tasa de cambio instantánea de una función en un punto. Geométricamente, es la pendiente de la recta tangente a la curva en ese punto.</p>
+                <div class="formula-box">f'(x) = lim<sub>h→0</sub> [f(x+h) - f(x)] / h</div>
+                <p><strong>Ejemplo:</strong> Si f(x) = x², entonces f'(x) = 2x. En x=3, la derivada es f'(3) = 6.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔹 Regla de la Cadena</h3>
+                <p><strong>Definición:</strong> Regla para derivar funciones compuestas. Si y = f(g(x)), entonces dy/dx = f'(g(x)) · g'(x).</p>
+                <div class="formula-box">[f(g(x))]' = f'(g(x)) · g'(x)</div>
+                <p><strong>Ejemplo:</strong> Para f(x) = (x²+1)³, aplicamos la regla: f'(x) = 3(x²+1)² · 2x = 6x(x²+1)².</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔹 Recta Tangente</h3>
+                <p><strong>Definición:</strong> Recta que toca a una curva en un punto y tiene la misma pendiente que la curva en ese punto. Su ecuación se obtiene usando la derivada.</p>
+                <div class="formula-box">y - f(a) = f'(a)(x - a)</div>
+                <p><strong>Ejemplo:</strong> Para f(x) = x² en x=2: f(2)=4, f'(2)=4, tangente: y-4 = 4(x-2) → y = 4x-4.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔹 Derivación Implícita</h3>
+                <p><strong>Definición:</strong> Técnica para derivar ecuaciones donde y no está despejada en función de x. Se deriva ambos lados respecto a x, recordando que dy/dx es la incógnita.</p>
+                <p><strong>Ejemplo:</strong> Para x² + y² = 25, derivando: 2x + 2y·(dy/dx) = 0, entonces dy/dx = -x/y.</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔹 Derivadas de Orden Superior</h3>
+                <p><strong>Definición:</strong> Derivadas de la derivada. La segunda derivada f''(x) mide la concavidad de la función y, en física, representa la aceleración si f(x) es la posición.</p>
+                <p><strong>Ejemplo:</strong> Si f(x) = x⁴, entonces f'(x) = 4x³, f''(x) = 12x², f'''(x) = 24x.</p>
+            </div>
+        </div>
+
+        <!-- Símbolos Tab -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos Matemáticos</h2>
+            
+            <div class="info-box bg-gradient-primary-white">
+                <p>Notación matemática utilizada en derivadas:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">f'(x), df/dx, dy/dx</span>
+                    <span class="symbol-name">Derivada</span>
+                </div>
+                <p><strong>Significado:</strong> Derivada de la función f respecto a x. Todas estas notaciones son equivalentes.</p>
+                <p><strong>Uso:</strong> f'(x) = 2x significa que la derivada de f en x es 2x</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">f''(x), d²f/dx²</span>
+                    <span class="symbol-name">Segunda Derivada</span>
+                </div>
+                <p><strong>Significado:</strong> Derivada de la derivada. Mide la curvatura o concavidad de la función.</p>
+                <p><strong>Uso:</strong> f''(x) > 0 indica que la función es convexa (∪), f''(x) < 0 indica cóncava (∩)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">lim<sub>h→0</sub></span>
+                    <span class="symbol-name">Límite cuando h tiende a 0</span>
+                </div>
+                <p><strong>Significado:</strong> Valor al que se aproxima una expresión cuando h se acerca a 0.</p>
+                <p><strong>Uso:</strong> En la definición de derivada: lim<sub>h→0</sub> [f(x+h) - f(x)]/h</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">∂f/∂x</span>
+                    <span class="symbol-name">Derivada Parcial</span>
+                </div>
+                <p><strong>Significado:</strong> Derivada respecto a una variable manteniendo las demás constantes (funciones de varias variables).</p>
+                <p><strong>Uso:</strong> Para f(x,y) = x²y, ∂f/∂x = 2xy</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">Δx, Δy</span>
+                    <span class="symbol-name">Incrementos</span>
+                </div>
+                <p><strong>Significado:</strong> Cambio o diferencia en el valor de x o y.</p>
+                <p><strong>Uso:</strong> Δy/Δx es la tasa de cambio promedio, mientras que dy/dx es la tasa instantánea</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">n · x<sup>n-1</sup></span>
+                    <span class="symbol-name">Regla de la Potencia</span>
+                </div>
+                <p><strong>Significado:</strong> Fórmula para derivar funciones potencia.</p>
+                <p><strong>Uso:</strong> (x³)' = 3x², (x⁵)' = 5x⁴</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-icon">∘</span>
+                    <span class="symbol-name">Composición de Funciones</span>
+                </div>
+                <p><strong>Significado:</strong> Operación de componer funciones: (f∘g)(x) = f(g(x)).</p>
+                <p><strong>Uso:</strong> Se deriva con la regla de la cadena</p>
+            </div>
+        </div>
+
+        <!-- Introducción Tab -->
+        <div class="content-section" id="introduccion">
+            <h2>📚 Introducción a las Derivadas</h2>
+            
+            <div class="info-box bg-gradient-success-white">
+                <h3>¿Por qué son importantes las derivadas?</h3>
+                <p>Las derivadas son una de las herramientas matemáticas más poderosas y útiles. Nos permiten medir cómo cambian las cosas, optimizar procesos, y entender fenómenos del mundo real.</p>
+            </div>
+
+            <div class="application-section">
+                <h3>🏗️ Ingeniería y Física</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Velocidad y aceleración:</strong> Si s(t) es la posición de un objeto, v(t) = s'(t) es su velocidad y a(t) = s''(t) es su aceleración.</li>
+                        <li><strong>Optimización estructural:</strong> Minimizar el uso de materiales manteniendo la resistencia.</li>
+                        <li><strong>Circuitos eléctricos:</strong> La corriente es la derivada de la carga respecto al tiempo.</li>
+                        <li><strong>Mecánica de fluidos:</strong> Gradientes de presión, velocidad de flujo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-section">
+                <h3>💰 Economía y Finanzas</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Costo marginal:</strong> C'(x) indica el costo de producir una unidad adicional.</li>
+                        <li><strong>Ingreso marginal:</strong> R'(x) muestra el ingreso adicional por vender una unidad más.</li>
+                        <li><strong>Optimización de beneficios:</strong> Encontrar el nivel de producción que maximiza ganancias.</li>
+                        <li><strong>Elasticidad de la demanda:</strong> Mide sensibilidad del consumidor a cambios de precio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-section">
+                <h3>🔬 Ciencias Naturales y Medicina</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Crecimiento de poblaciones:</strong> dP/dt = kP (crecimiento exponencial).</li>
+                        <li><strong>Difusión de sustancias:</strong> Ley de Fick relaciona el flujo con el gradiente de concentración.</li>
+                        <li><strong>Farmaco cinética:</strong> Velocidad de absorción y eliminación de medicamentos.</li>
+                        <li><strong>Reacciones químicas:</strong> Velocidad de reacción como derivada de la concentración.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-section">
+                <h3>💻 Computación y Tecnología</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Machine Learning:</strong> Descenso del gradiente para entrenar redes neuronales.</li>
+                        <li><strong>Gráficos por computadora:</strong> Calcular normales para iluminación realista.</li>
+                        <li><strong>Compresión de datos:</strong> Optimizar algoritmos de compresión.</li>
+                        <li><strong>Procesamiento de señales:</strong> Detectar cambios abruptos en señales.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="application-section">
+                <h3>🎨 Diseño y Arquitectura</h3>
+                <div class="info-box">
+                    <ul>
+                        <li><strong>Curvas suaves:</strong> Curvas de Bézier para diseño gráfico y CAD.</li>
+                        <li><strong>Optimización de formas:</strong> Minimizar la resistencia al aire en diseño aerodinámico.</li>
+                        <li><strong>Análisis estructural:</strong> Calcular puntos de máxima tensión en edificios.</li>
+                        <li><strong>Iluminación:</strong> Calcular ángulos de incidencia de luz.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teoría y Práctica Tab -->
+        <div class="content-section" id="teoria">
+            <h2>📐 Teoría y Práctica de Derivadas</h2>
 
             <h3>1. Concepto de Derivada</h3>
             <div class="info-box">
-                <div class="formula-box">
-                    f'(x) = lim(h→0) [f(x+h) - f(x)] / h
-                </div>
-                <p><strong>Significado:</strong> Tasa de cambio instantánea de f en x</p>
-                <p><strong>Interpretación geométrica:</strong> Pendiente de la recta tangente</p>
+                <p><strong>Definición:</strong> La derivada de una función f en un punto x es el límite:</p>
+                <div class="formula-box">f'(x) = lim<sub>h→0</sub> [f(x+h) - f(x)] / h</div>
+                <p><strong>Interpretación geométrica:</strong> Pendiente de la recta tangente a la curva en (x, f(x)).</p>
+                <p><strong>Interpretación física:</strong> Tasa de cambio instantánea (velocidad si f es posición).</p>
             </div>
 
-            <h3>2. Reglas de Derivación</h3>
+            <h3>2. Reglas Básicas de Derivación</h3>
             <table class="comparison-table">
                 <thead>
-                    <tr><th>Función</th><th>Derivada</th></tr>
+                    <tr><th>Función</th><th>Derivada</th><th>Ejemplo</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>c (constante)</td><td>0</td></tr>
-                    <tr><td>xⁿ</td><td>n·xⁿ⁻¹</td></tr>
-                    <tr><td>sin(x)</td><td>cos(x)</td></tr>
-                    <tr><td>cos(x)</td><td>-sin(x)</td></tr>
-                    <tr><td>eˣ</td><td>eˣ</td></tr>
-                    <tr><td>ln(x)</td><td>1/x</td></tr>
-                    <tr><td>aˣ</td><td>aˣ·ln(a)</td></tr>
-                    <tr><td>logₐ(x)</td><td>1/(x·ln(a))</td></tr>
+                    <tr><td>c (constante)</td><td>0</td><td>(5)' = 0</td></tr>
+                    <tr><td>x<sup>n</sup></td><td>n·x<sup>n-1</sup></td><td>(x³)' = 3x²</td></tr>
+                    <tr><td>e<sup>x</sup></td><td>e<sup>x</sup></td><td>(e<sup>x</sup>)' = e<sup>x</sup></td></tr>
+                    <tr><td>a<sup>x</sup></td><td>a<sup>x</sup>·ln(a)</td><td>(2<sup>x</sup>)' = 2<sup>x</sup>·ln(2)</td></tr>
+                    <tr><td>ln(x)</td><td>1/x</td><td>(ln(x))' = 1/x</td></tr>
+                    <tr><td>log<sub>a</sub>(x)</td><td>1/(x·ln(a))</td><td>(log<sub>2</sub>(x))' = 1/(x·ln(2))</td></tr>
+                    <tr><td>sin(x)</td><td>cos(x)</td><td>(sin(x))' = cos(x)</td></tr>
+                    <tr><td>cos(x)</td><td>-sin(x)</td><td>(cos(x))' = -sin(x)</td></tr>
+                    <tr><td>tan(x)</td><td>sec²(x) = 1/cos²(x)</td><td>(tan(x))' = sec²(x)</td></tr>
                 </tbody>
             </table>
 
-            <h3>3. Operaciones con Derivadas</h3>
+            <h3>3. Reglas de Operaciones</h3>
             <div class="info-box">
                 <ul>
-                    <li><strong>Suma:</strong> (f + g)' = f' + g'</li>
+                    <li><strong>Suma/Resta:</strong> (f ± g)' = f' ± g'</li>
                     <li><strong>Producto por constante:</strong> (c·f)' = c·f'</li>
-                    <li><strong>Producto:</strong> (f·g)' = f'·g + f·g'</li>
-                    <li><strong>Cociente:</strong> (f/g)' = (f'·g - f·g') / g²</li>
+                    <li><strong>Producto:</strong> (f·g)' = f'·g + f·g' (Regla del producto)</li>
+                    <li><strong>Cociente:</strong> (f/g)' = (f'·g - f·g') / g² (Regla del cociente)</li>
+                    <li><strong>Cadena:</strong> [f(g(x))]' = f'(g(x)) · g'(x) (Regla de la cadena)</li>
                 </ul>
             </div>
 
-            <h3>4. Regla de la Cadena</h3>
-            <div class="info-box">
-                <div class="formula-box">
-                    [f(g(x))]' = f'(g(x)) · g'(x)
-                </div>
-                <div class="exam-important">
-                    <strong>Fundamental:</strong> Para funciones compuestas
-                </div>
-                <p><strong>Ejemplo:</strong> [(x²+1)³]' = 3(x²+1)² · 2x</p>
-            </div>
-
-            <h3>5. Derivación Implícita</h3>
-            <div class="info-box">
-                <p>Para ecuaciones F(x,y)=0 donde y depende de x:</p>
-                <ol>
-                    <li>Derivar ambos lados respecto a x</li>
-                    <li>Recordar que dy/dx es la incógnita</li>
-                    <li>Despejar dy/dx</li>
-                </ol>
-                <p><strong>Ejemplo:</strong> x²+y²=25 → 2x+2y·y'=0 → y'=-x/y</p>
-            </div>
-
-            <h3>6. Derivadas de Orden Superior</h3>
-            <div class="info-box">
-                <ul>
-                    <li><strong>Segunda derivada:</strong> f''(x) = [f'(x)]'</li>
-                    <li><strong>Tercera derivada:</strong> f'''(x) = [f''(x)]'</li>
-                    <li><strong>n-ésima derivada:</strong> f⁽ⁿ⁾(x)</li>
-                </ul>
-                <p><strong>Interpretación física:</strong> f''(x) es la aceleración si f(x) es la posición</p>
-            </div>
-
-            <h3>7. Aplicaciones</h3>
-            <div class="info-box">
-                <h4>Recta Tangente en (a, f(a)):</h4>
-                <div class="formula-box">
-                    y - f(a) = f'(a)(x - a)
-                </div>
-                <h4>Velocidad y Aceleración:</h4>
-                <ul>
-                    <li>v(t) = s'(t) (velocidad)</li>
-                    <li>a(t) = v'(t) = s''(t) (aceleración)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Potencia</h4>
-                <p><strong>Problema:</strong> f(x) = x⁴</p>
-                <p><strong>Solución:</strong> f'(x) = 4x³</p>
-                <p><strong>Respuesta:</strong> 4x³</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Producto</h4>
-                <p><strong>Problema:</strong> f(x) = x² · sin(x)</p>
-                <p><strong>Solución:</strong> f'(x) = 2x·sin(x) + x²·cos(x)</p>
-                <p><strong>Respuesta:</strong> 2x·sin(x) + x²·cos(x)</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Cociente</h4>
-                <p><strong>Problema:</strong> f(x) = x/(x+1)</p>
-                <p><strong>Solución:</strong> f'(x) = [1·(x+1) - x·1]/(x+1)² = 1/(x+1)²</p>
-                <p><strong>Respuesta:</strong> 1/(x+1)²</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Cadena</h4>
-                <p><strong>Problema:</strong> f(x) = (2x+3)⁵</p>
-                <p><strong>Solución:</strong> f'(x) = 5(2x+3)⁴ · 2 = 10(2x+3)⁴</p>
-                <p><strong>Respuesta:</strong> 10(2x+3)⁴</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: Tangente</h4>
-                <p><strong>Problema:</strong> Recta tangente a f(x)=x² en x=1</p>
-                <p><strong>Solución:</strong> f'(x)=2x, f'(1)=2, f(1)=1 → y-1=2(x-1) → y=2x-1</p>
-                <p><strong>Respuesta:</strong> y = 2x - 1</p>
-            </div>
-        </div>
-
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
+            <h3>4. Herramientas Interactivas</h3>
 
             <div class="tool-card">
-                <h3>📐 Derivada de Potencias</h3>
-                <p>Calcula la derivada de f(x) = axⁿ</p>
+                <h4>📐 Derivada de Potencias</h4>
+                <p>Calcula la derivada de f(x) = ax<sup>n</sup> usando la regla de la potencia</p>
                 <div class="tool-input-group">
                     <label>Coeficiente a:</label>
                     <input type="number" step="any" id="der-a" placeholder="Ej: 3">
@@ -163,64 +252,120 @@
                     <input type="number" step="any" id="der-n" placeholder="Ej: 4">
                 </div>
                 <button class="calc-button" onclick="calculateDerivative()">Derivar</button>
-                <div class="calc-result" id="der-result">Ingresa los datos</div>
+                <div class="calc-result" id="der-result">Ingresa los datos y haz clic en Derivar</div>
             </div>
 
             <div class="tool-card">
-                <h3>📏 Recta Tangente</h3>
-                <p>Encuentra la ecuación de la recta tangente</p>
+                <h4>📏 Recta Tangente</h4>
+                <p>Encuentra la ecuación de la recta tangente a f(x) = ax² + bx + c en el punto x₀</p>
                 <div class="tool-input-group">
-                    <label>f(x) = ax² + bx + c</label>
-                    <input type="text" id="tang-coef" placeholder="Ej: 1,0,0">
+                    <label>Coeficientes (a,b,c):</label>
+                    <input type="text" id="tang-coef" placeholder="Ej: 1,0,0 para f(x)=x²">
                 </div>
                 <div class="tool-input-group">
                     <label>Punto x₀:</label>
                     <input type="number" step="any" id="tang-x0" placeholder="Ej: 2">
                 </div>
-                <button class="calc-button" onclick="calculateTangent()">Calcular</button>
-                <div class="calc-result" id="tang-result">Ingresa los datos</div>
+                <button class="calc-button" onclick="calculateTangent()">Calcular Tangente</button>
+                <div class="calc-result" id="tang-result">Ingresa los datos y haz clic en Calcular</div>
             </div>
 
             <div class="tool-card">
-                <h3>🔢 Derivada en un Punto</h3>
-                <p>Evalúa f'(x₀) para f(x)=x²</p>
+                <h4>🔢 Evaluar Derivada en un Punto</h4>
+                <p>Evalúa f'(x₀) para f(x) = x² (puedes modificar para otras funciones)</p>
                 <div class="tool-input-group">
                     <label>Punto x₀:</label>
                     <input type="number" step="any" id="eval-x0" placeholder="Ej: 3">
                 </div>
-                <button class="calc-button" onclick="evaluateDerivative()">Evaluar</button>
-                <div class="calc-result" id="eval-result">Ingresa el punto</div>
+                <button class="calc-button" onclick="evaluateDerivative()">Evaluar f'(x₀)</button>
+                <div class="calc-result" id="eval-result">Ingresa el punto y haz clic en Evaluar</div>
+            </div>
+
+            <h3>5. Ejemplos Resueltos</h3>
+            
+            <div class="info-box border-left-success">
+                <h4 class="text-success">Ejemplo 1: Regla de la Potencia</h4>
+                <p><strong>Problema:</strong> Deriva f(x) = x⁴</p>
+                <p><strong>Solución:</strong> Aplicamos (x<sup>n</sup>)' = n·x<sup>n-1</sup> con n=4</p>
+                <p class="formula-box">f'(x) = 4·x<sup>4-1</sup> = 4x³</p>
+                <p><strong>Respuesta:</strong> f'(x) = 4x³</p>
+            </div>
+
+            <div class="info-box border-left-success">
+                <h4 class="text-success">Ejemplo 2: Regla del Producto</h4>
+                <p><strong>Problema:</strong> Deriva f(x) = x² · sin(x)</p>
+                <p><strong>Solución:</strong> Usamos (f·g)' = f'·g + f·g' con f=x² y g=sin(x)</p>
+                <p>f' = 2x, g' = cos(x)</p>
+                <p class="formula-box">f'(x) = 2x·sin(x) + x²·cos(x)</p>
+                <p><strong>Respuesta:</strong> f'(x) = 2x·sin(x) + x²·cos(x)</p>
+            </div>
+
+            <div class="info-box border-left-success">
+                <h4 class="text-success">Ejemplo 3: Regla del Cociente</h4>
+                <p><strong>Problema:</strong> Deriva f(x) = x/(x+1)</p>
+                <p><strong>Solución:</strong> Usamos (f/g)' = (f'·g - f·g')/g²</p>
+                <p>f = x → f' = 1, g = x+1 → g' = 1</p>
+                <p class="formula-box">f'(x) = [1·(x+1) - x·1]/(x+1)² = 1/(x+1)²</p>
+                <p><strong>Respuesta:</strong> f'(x) = 1/(x+1)²</p>
+            </div>
+
+            <div class="info-box border-left-success">
+                <h4 class="text-success">Ejemplo 4: Regla de la Cadena</h4>
+                <p><strong>Problema:</strong> Deriva f(x) = (2x+3)⁵</p>
+                <p><strong>Solución:</strong> Sea u = 2x+3, entonces f = u⁵</p>
+                <p>df/du = 5u⁴, du/dx = 2</p>
+                <p class="formula-box">f'(x) = 5(2x+3)⁴ · 2 = 10(2x+3)⁴</p>
+                <p><strong>Respuesta:</strong> f'(x) = 10(2x+3)⁴</p>
+            </div>
+
+            <div class="info-box border-left-success">
+                <h4 class="text-success">Ejemplo 5: Recta Tangente</h4>
+                <p><strong>Problema:</strong> Encuentra la recta tangente a f(x) = x² en x = 1</p>
+                <p><strong>Solución:</strong></p>
+                <p>1. f(1) = 1² = 1 (punto de tangencia: (1,1))</p>
+                <p>2. f'(x) = 2x, entonces f'(1) = 2 (pendiente)</p>
+                <p>3. Ecuación: y - 1 = 2(x - 1)</p>
+                <p class="formula-box">y = 2x - 1</p>
+                <p><strong>Respuesta:</strong> y = 2x - 1</p>
             </div>
         </div>
 
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-            <div id="exercises-container"></div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">Siguiente ➡️</button>
-            </div>
-        </div>
-
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen</h2>
-            <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
+        <!-- Entrenamiento Tab -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento - Derivadas</h2>
+            
+            <div class="info-box bg-gradient-warning-white">
+                <h3>💪 Practica tus habilidades</h3>
+                <p><strong>Instrucciones:</strong> Resuelve cada ejercicio y verifica tu respuesta. Recuerda:</p>
                 <ul>
-                    <li><strong>Derivada:</strong> Tasa de cambio instantánea</li>
-                    <li><strong>Potencia:</strong> (xⁿ)' = n·xⁿ⁻¹</li>
-                    <li><strong>Producto:</strong> (f·g)' = f'g + fg'</li>
-                    <li><strong>Cociente:</strong> (f/g)' = (f'g-fg')/g²</li>
-                    <li><strong>Cadena:</strong> [f(g)]' = f'(g)·g'</li>
-                    <li><strong>Tangente:</strong> y-f(a) = f'(a)(x-a)</li>
+                    <li>✅ Respuesta correcta: +10 puntos</li>
+                    <li>❌ Respuesta incorrecta: -5 puntos</li>
+                    <li>💡 Puedes usar las pistas si necesitas ayuda</li>
+                    <li>🔄 Puedes practicar tantas veces como quieras</li>
                 </ul>
             </div>
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-secondary" onclick="window.location.href='limites.html'">⬅️ Anterior</button>
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='representacion.html'">Siguiente ➡️</button>
+
+            <div id="exercises-container"></div>
+        </div>
+
+        <!-- Examen Final Tab -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Derivadas</h2>
+            
+            <div class="info-box bg-gradient-danger-white">
+                <h3>🎓 Demuestra tu dominio</h3>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Maestro de Derivadas" 🏆</p>
+                <p><strong>Importante:</strong> Este examen no afecta tu puntuación, solo determina si apruebas el módulo.</p>
             </div>
+
+            <div id="exam-container"></div>
+            
+            <div class="exam-actions" id="exam-actions">
+                <button class="btn btn-success btn-lg" onclick="startExam()">Comenzar Examen</button>
+            </div>
+
+            <div class="exam-results" id="exam-results" style="display: none;"></div>
         </div>
     </div>
 
@@ -229,65 +374,99 @@
     <script src="../../../../lib/components.js"></script>
     <script>
         const MODULE_ID = 'derivadas';
-        const MODULE_TITLE = 'Tema 4: Derivadas';
+        const MODULE_TITLE = 'Derivadas';
 
         document.addEventListener('DOMContentLoaded', function() {
             Components.createHeader(MODULE_TITLE, 'index.html');
             Components.createTabs([
-                { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
-            ], 'teoria');
+                { id: 'glosario', label: 'Glosario', icon: '📖' },
+                { id: 'simbolos', label: 'Símbolos', icon: '🔣' },
+                { id: 'introduccion', label: 'Introducción', icon: '📚' },
+                { id: 'teoria', label: 'Teoría y Práctica', icon: '📐' },
+                { id: 'entrenamiento', label: 'Entrenamiento', icon: '🎯' },
+                { id: 'examen', label: 'Examen Final', icon: '📝' }
+            ], 'glosario');
             Components.createScoreDisplay();
             loadExercises();
             Gamification.updateDisplay(MODULE_ID);
         });
 
+        // Ejercicios de entrenamiento (puntuación +10/-5)
         const exercises = [
-            { id: 1, question: 'Deriva x³', correct: '3', hint: 'n·xⁿ⁻¹ con n=3 → 3x²' },
-            { id: 2, question: 'Deriva 5 (constante)', correct: '0', hint: 'Constantes derivan a 0' },
-            { id: 3, question: 'Deriva x⁵ [coeficiente de x⁴]', correct: '5', hint: '5x⁴, coef es 5' },
-            { id: 4, question: 'Deriva eˣ [coeficiente]', correct: '1', hint: '(eˣ)\'=eˣ, coef 1' },
-            { id: 5, question: 'Deriva ln(x) [denominador]', correct: '1', hint: '1/x, denom es x' },
-            { id: 6, question: 'Deriva sin(x) → cos(x), evalúa en π [valor]', correct: '-1', hint: 'cos(π)=-1' },
-            { id: 7, question: 'Pendiente tangente f(x)=x² en x=2', correct: '4', hint: 'f\'(x)=2x, f\'(2)=4' },
-            { id: 8, question: '(x²)\'=2x, segunda derivada coef', correct: '2', hint: '(2x)\'=2' },
-            { id: 9, question: 'Deriva 2x³ [coef de x²]', correct: '6', hint: '6x², coef 6' },
-            { id: 10, question: 'f(x)=x⁴, f\'(1)=?', correct: '4', hint: 'f\'(x)=4x³, f\'(1)=4' }
+            { id: 1, question: '¿Cuál es la derivada de f(x) = x³?', correct: '3x²', options: ['3x²', 'x²', '3x', 'x³'], hint: 'Usa la regla de la potencia: (xⁿ)' = n·x<sup>n-1</sup>' },
+            { id: 2, question: '¿Cuál es la derivada de una constante f(x) = 5?', correct: '0', options: ['0', '5', '1', 'x'], hint: 'Las constantes siempre derivan a 0' },
+            { id: 3, question: '¿Cuál es el coeficiente de x⁴ en la derivada de f(x) = x⁵?', correct: '5', options: ['5', '4', '1', '20'], hint: '(x⁵)' = 5x⁴, el coeficiente es 5' },
+            { id: 4, question: '¿Cuál es la derivada de f(x) = e<sup>x</sup>?', correct: 'e<sup>x</sup>', options: ['e<sup>x</sup>', 'xe<sup>x-1</sup>', '0', 'ln(x)'], hint: 'La derivada de e<sup>x</sup> es ella misma' },
+            { id: 5, question: '¿Cuál es la derivada de f(x) = ln(x)?', correct: '1/x', options: ['1/x', 'x', '1', 'ln(x)'], hint: '(ln(x))' = 1/x' },
+            { id: 6, question: 'Si f(x) = sin(x), ¿cuánto vale f\'(π)?', correct: '-1', options: ['-1', '0', '1', 'π'], hint: '(sin(x))' = cos(x), y cos(π) = -1' },
+            { id: 7, question: 'Para f(x) = x², la pendiente de la tangente en x=2 es:', correct: '4', options: ['4', '2', '8', '0'], hint: 'f\'(x) = 2x, entonces f\'(2) = 4' },
+            { id: 8, question: 'Si f(x) = x², ¿cuánto vale f\'\'(x)?', correct: '2', options: ['2', '2x', '0', 'x'], hint: 'f\'(x) = 2x, entonces f\'\'(x) = 2' },
+            { id: 9, question: '¿Cuál es el coeficiente de x² en la derivada de f(x) = 2x³?', correct: '6', options: ['6', '3', '2', '8'], hint: '(2x³)' = 6x², el coeficiente es 6' },
+            { id: 10, question: 'Si f(x) = x⁴, ¿cuánto vale f\'(1)?', correct: '4', options: ['4', '1', '3', '0'], hint: 'f\'(x) = 4x³, entonces f\'(1) = 4' },
+            { id: 11, question: '¿Cuál es la derivada de f(x) = cos(x)?', correct: '-sin(x)', options: ['-sin(x)', 'sin(x)', '-cos(x)', '0'], hint: 'La derivada del coseno es menos seno' },
+            { id: 12, question: 'Derivada de f(x) = 3x² + 2x:', correct: '6x+2', options: ['6x+2', '3x+2', '6x', '5x²'], hint: 'Deriva cada término por separado' },
+            { id: 13, question: 'Usando regla del producto, (x·e<sup>x</sup>)' =', correct: 'e<sup>x</sup>+x·e<sup>x</sup>', options: ['e<sup>x</sup>+x·e<sup>x</sup>', 'x·e<sup>x</sup>', 'e<sup>x</sup>', '2x·e<sup>x</sup>'], hint: '(f·g)' = f'·g + f·g'. f=x, g=e<sup>x</sup>' },
+            { id: 14, question: '¿Cuál es la segunda derivada de f(x) = x³?', correct: '6x', options: ['6x', '3x²', 'x²', '6'], hint: 'f\'(x) = 3x², f\'\'(x) = 6x' },
+            { id: 15, question: 'Regla de la cadena para f(x) = (x²+1)², f\'(x) =', correct: '4x(x²+1)', options: ['4x(x²+1)', '2(x²+1)', '2x', '4x'], hint: '[u²]' = 2u·u' con u = x²+1' },
+            { id: 16, question: 'Si f(x) = 1/x = x⁻¹, f\'(x) =', correct: '-1/x²', options: ['-1/x²', '1/x', '-x²', '0'], hint: '(x⁻¹)' = -1·x⁻² = -1/x²' },
+            { id: 17, question: 'Derivada de f(x) = x·sin(x):', correct: 'sin(x)+x·cos(x)', options: ['sin(x)+x·cos(x)', 'x·cos(x)', 'sin(x)', 'cos(x)'], hint: 'Regla del producto: (x)\'sin(x) + x(sin(x))\'' },
+            { id: 18, question: '¿Cuál es la tercera derivada de f(x) = x⁴?', correct: '24x', options: ['24x', '12x²', '4x³', '24'], hint: 'f\'=4x³, f\'\'=12x², f\'\'\'=24x' },
+            { id: 19, question: 'Para f(x) = e<sup>2x</sup>, f\'(x) =', correct: '2e<sup>2x</sup>', options: ['2e<sup>2x</sup>', 'e<sup>2x</sup>', '2x·e<sup>2x-1</sup>', 'e<sup>x</sup>'], hint: 'Regla de la cadena: [e<sup>u</sup>]' = e<sup>u</sup>·u' con u=2x' },
+            { id: 20, question: 'Derivada de f(x) = ln(2x):', correct: '1/x', options: ['1/x', '1/2x', '2/x', 'ln(2)'], hint: '[ln(u)]' = u'/u = 2/(2x) = 1/x' },
+            { id: 21, question: 'Si f(x) = x⁶, la derivada es:', correct: '6x⁵', options: ['6x⁵', 'x⁵', '6x⁶', '5x⁵'], hint: 'Regla de la potencia con n=6' },
+            { id: 22, question: '¿Cuánto vale (2)' (derivada de la constante 2)?', correct: '0', options: ['0', '2', '1', 'x'], hint: 'Cualquier constante deriva a 0' },
+            { id: 23, question: 'Derivada de f(x) = √x = x<sup>1/2</sup>:', correct: '1/(2√x)', options: ['1/(2√x)', '√x', '1/x', 'x'], hint: '(x<sup>1/2</sup>)' = (1/2)x<sup>-1/2</sup> = 1/(2√x)' },
+            { id: 24, question: 'Si f(x)=tan(x), f\'(x) =', correct: 'sec²(x)', options: ['sec²(x)', 'cot(x)', 'cos²(x)', '-tan(x)'], hint: 'La derivada de tangente es secante al cuadrado' },
+            { id: 25, question: 'Regla del cociente: (x/x²)' =', correct: '(1-x)/x³', options: ['(1-x)/x³', '1/x', '-1/x²', '1/x²'], hint: '[(f/g)]' = (f'g-fg')/g². Simplifica (1·x²-x·2x)/x⁴' }
         ];
 
         function loadExercises() {
-            document.getElementById('exercises-container').innerHTML = exercises.map(ex => `
-                <div class="exercise-card"><h4>Ejercicio ${ex.id}</h4><p>${ex.question}</p>
-                <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                    <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = exercises.map(ex => `
+                <div class="exercise-card">
+                    <h4>Ejercicio ${ex.id}</h4>
+                    <p class="exercise-question">${ex.question}</p>
+                    ${ex.options ? `
+                        <div class="options-grid">
+                            ${ex.options.map(opt => `
+                                <button class="option-btn" onclick="checkExercise(${ex.id}, '${opt}')">${opt}</button>
+                            `).join('')}
+                        </div>
+                    ` : `
+                        <input type="text" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
+                        <button class="btn btn-primary" onclick="checkExercise(${ex.id})">Verificar</button>
+                    `}
+                    <button class="btn btn-secondary btn-sm" onclick="showHint(${ex.id})">💡 Pista</button>
+                    <div id="hint${ex.id}" class="hint-box" style="display:none;">${ex.hint}</div>
+                    <div id="feedback${ex.id}" class="feedback"></div>
                 </div>
-                <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                <div id="feedback${ex.id}" class="feedback"></div></div>
             `).join('');
         }
 
-        function checkAnswer(exerciseId) {
+        function checkExercise(exerciseId, selectedAnswer) {
             const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
             const feedback = document.getElementById('feedback' + exerciseId);
-            const userAnswer = parseFloat(input.value.trim());
-            const isCorrect = Math.abs(userAnswer - parseFloat(exercise.correct)) <= 0.1;
+            let userAnswer;
+            
+            if (selectedAnswer !== undefined) {
+                userAnswer = selectedAnswer;
+            } else {
+                const input = document.getElementById('ex' + exerciseId);
+                userAnswer = input.value.trim();
+            }
+            
+            const isCorrect = userAnswer.toLowerCase() === exercise.correct.toLowerCase();
             
             if (isCorrect) {
                 feedback.className = 'feedback success';
-                feedback.textContent = '¡Correcto! ✨ +10 puntos';
-                input.disabled = true;
+                feedback.innerHTML = '✅ ¡Correcto! +10 puntos';
                 Gamification.completeExercise(MODULE_ID, true);
             } else {
                 feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo.';
+                feedback.innerHTML = `❌ Incorrecto. La respuesta correcta es: ${exercise.correct}. -5 puntos`;
                 Gamification.completeExercise(MODULE_ID, false);
             }
+            
             feedback.style.display = 'block';
             Gamification.updateDisplay(MODULE_ID);
         }
@@ -297,13 +476,14 @@
             hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
         }
 
+        // Calculadoras
         function calculateDerivative() {
             const a = parseFloat(document.getElementById('der-a').value);
             const n = parseFloat(document.getElementById('der-n').value);
             const result = document.getElementById('der-result');
             
             if (isNaN(a) || isNaN(n)) {
-                result.textContent = '⚠️ Completa ambos campos';
+                result.innerHTML = '<span class="text-error">⚠️ Por favor completa ambos campos</span>';
                 return;
             }
             
@@ -311,8 +491,11 @@
             const newExp = n - 1;
             
             result.innerHTML = `
-                <strong>Función original:</strong> f(x) = ${a}x^${n}<br>
-                <strong>Derivada:</strong> f'(x) = ${newCoef}x^${newExp}
+                <div class="success-box">
+                    <strong>Función original:</strong> f(x) = ${a}x<sup>${n}</sup><br>
+                    <strong>Regla aplicada:</strong> (ax<sup>n</sup>)' = a·n·x<sup>n-1</sup><br>
+                    <strong>Derivada:</strong> f'(x) = ${newCoef}x<sup>${newExp}</sup>
+                </div>
             `;
         }
 
@@ -322,19 +505,29 @@
             const result = document.getElementById('tang-result');
             
             if (!coefStr || isNaN(x0)) {
-                result.textContent = '⚠️ Completa todos los campos';
+                result.innerHTML = '<span class="text-error">⚠️ Por favor completa todos los campos</span>';
                 return;
             }
             
-            const [a, b, c] = coefStr.split(',').map(n => parseFloat(n.trim()));
+            const coeffs = coefStr.split(',').map(n => parseFloat(n.trim()));
+            if (coeffs.length !== 3 || coeffs.some(isNaN)) {
+                result.innerHTML = '<span class="text-error">⚠️ Formato incorrecto. Usa: a,b,c</span>';
+                return;
+            }
+            
+            const [a, b, c] = coeffs;
             const fx0 = a*x0*x0 + b*x0 + c;
             const fpx0 = 2*a*x0 + b;
             const b_tang = fx0 - fpx0*x0;
             
             result.innerHTML = `
-                <strong>Punto:</strong> (${x0}, ${fx0.toFixed(2)})<br>
-                <strong>Pendiente:</strong> m = ${fpx0.toFixed(2)}<br>
-                <strong>Ecuación:</strong> y = ${fpx0.toFixed(2)}x + ${b_tang.toFixed(2)}
+                <div class="success-box">
+                    <strong>Función:</strong> f(x) = ${a}x² + ${b}x + ${c}<br>
+                    <strong>Punto de tangencia:</strong> (${x0}, ${fx0.toFixed(2)})<br>
+                    <strong>Derivada:</strong> f'(x) = ${2*a}x + ${b}<br>
+                    <strong>Pendiente en x₀:</strong> m = f'(${x0}) = ${fpx0.toFixed(2)}<br>
+                    <strong>Ecuación de la tangente:</strong> y = ${fpx0.toFixed(2)}x + ${b_tang.toFixed(2)}
+                </div>
             `;
         }
 
@@ -343,17 +536,155 @@
             const result = document.getElementById('eval-result');
             
             if (isNaN(x0)) {
-                result.textContent = '⚠️ Ingresa el punto';
+                result.innerHTML = '<span class="text-error">⚠️ Por favor ingresa el punto</span>';
                 return;
             }
             
             const derValue = 2 * x0;
             
             result.innerHTML = `
-                <strong>f(x) = x²</strong><br>
-                <strong>f'(x) = 2x</strong><br>
-                <strong>f'(${x0}) = ${derValue}</strong>
+                <div class="success-box">
+                    <strong>Función:</strong> f(x) = x²<br>
+                    <strong>Derivada:</strong> f'(x) = 2x<br>
+                    <strong>Evaluación:</strong> f'(${x0}) = 2(${x0}) = <strong>${derValue}</strong><br>
+                    <em>Esto significa que la pendiente de la tangente en x=${x0} es ${derValue}</em>
+                </div>
             `;
+        }
+
+        // Examen Final (sin puntuación, solo aprobado/suspenso)
+        const examQuestions = [
+            { id: 1, question: 'Deriva f(x) = x⁷', correct: '7x⁶', options: ['7x⁶', 'x⁶', '7x⁷', '6x⁶'] },
+            { id: 2, question: 'Deriva f(x) = 10', correct: '0', options: ['0', '10', '1', 'x'] },
+            { id: 3, question: 'Deriva f(x) = 3x⁴ [coef de x³]', correct: '12', options: ['12', '3', '4', '7'] },
+            { id: 4, question: 'Deriva f(x) = sin(x)', correct: 'cos(x)', options: ['cos(x)', '-sin(x)', '-cos(x)', 'tan(x)'] },
+            { id: 5, question: 'Deriva f(x) = e<sup>x</sup>', correct: 'e<sup>x</sup>', options: ['e<sup>x</sup>', 'xe<sup>x-1</sup>', '1', 'ln(x)'] },
+            { id: 6, question: 'Si f(x)=x³, f\'(2)=?', correct: '12', options: ['12', '6', '8', '3'] },
+            { id: 7, question: 'Deriva f(x) = ln(x)', correct: '1/x', options: ['1/x', 'x', 'e<sup>x</sup>', 'ln(x)'] },
+            { id: 8, question: 'Segunda derivada de f(x)=x⁴', correct: '12x²', options: ['12x²', '4x³', '24x', '12'] },
+            { id: 9, question: '(x·sin(x))' [regla del producto]', correct: 'sin(x)+x·cos(x)', options: ['sin(x)+x·cos(x)', 'x·cos(x)', 'cos(x)', 'sin(x)'] },
+            { id: 10, question: 'Deriva f(x) = 5x² + 3x', correct: '10x+3', options: ['10x+3', '5x+3', '10x', '15x'] },
+            { id: 11, question: 'Pendiente tangente f(x)=x² en x=3', correct: '6', options: ['6', '3', '9', '2'] },
+            { id: 12, question: 'Deriva f(x) = cos(x)', correct: '-sin(x)', options: ['-sin(x)', 'sin(x)', '-cos(x)', '0'] },
+            { id: 13, question: '(x²+1)³ [regla cadena, coef x<sup>5</sup> tras derivar]', correct: '6', options: ['6', '3', '2', '12'] },
+            { id: 14, question: 'Deriva f(x) = 1/x', correct: '-1/x²', options: ['-1/x²', '1/x', '1/x²', '0'] },
+            { id: 15, question: 'Si f(x)=2x³, f\'(1)=?', correct: '6', options: ['6', '2', '3', '8'] },
+            { id: 16, question: 'Deriva f(x) = √x', correct: '1/(2√x)', options: ['1/(2√x)', '√x', '1/x', '2√x'] },
+            { id: 17, question: 'Tercera derivada de f(x)=x⁵', correct: '60x²', options: ['60x²', '20x³', '5x⁴', '120x'] },
+            { id: 18, question: '(e<sup>3x</sup>)\' [regla cadena]', correct: '3e<sup>3x</sup>', options: ['3e<sup>3x</sup>', 'e<sup>3x</sup>', '3x·e<sup>3x-1</sup>', 'e<sup>x</sup>'] },
+            { id: 19, question: 'Deriva f(x) = x⁴ + 2x² - 5', correct: '4x³+4x', options: ['4x³+4x', '4x³+2x', 'x³+4x', '4x⁴+4x²'] },
+            { id: 20, question: 'Regla cociente: (1/x²)\'', correct: '-2/x³', options: ['-2/x³', '2/x³', '-1/x', '1/x³'] },
+            // 5 preguntas adicionales para selección aleatoria
+            { id: 21, question: 'Si f(x)=sin(2x), f\'(x)=', correct: '2cos(2x)', options: ['2cos(2x)', 'cos(2x)', '2sin(2x)', 'cos(x)'] },
+            { id: 22, question: '(ln(3x))\'', correct: '1/x', options: ['1/x', '1/3x', '3/x', 'ln(3)'] },
+            { id: 23, question: 'Deriva f(x) = tan(x)', correct: 'sec²(x)', options: ['sec²(x)', 'cos²(x)', 'cot(x)', 'sin(x)'] },
+            { id: 24, question: 'Si f(x)=x·e<sup>x</sup>, f\'(0)=', correct: '1', options: ['1', '0', 'e', '2'] },
+            { id: 25, question: 'Segunda derivada de f(x)=e<sup>x</sup>', correct: 'e<sup>x</sup>', options: ['e<sup>x</sup>', '0', '1', 'xe<sup>x</sup>'] }
+        ];
+
+        let currentExam = [];
+        let examStarted = false;
+
+        function startExam() {
+            // Seleccionar 20 preguntas aleatorias
+            const shuffled = [...examQuestions].sort(() => Math.random() - 0.5);
+            currentExam = shuffled.slice(0, 20);
+            examStarted = true;
+
+            const container = document.getElementById('exam-container');
+            container.innerHTML = currentExam.map((q, index) => `
+                <div class="exam-question">
+                    <h4>Pregunta ${index + 1}</h4>
+                    <p>${q.question}</p>
+                    <div class="options-grid">
+                        ${q.options.map(opt => `
+                            <button class="option-btn" onclick="selectExamAnswer(${index}, '${opt}')" id="exam-q${index}-${opt}">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <input type="hidden" id="exam-answer-${index}" value="">
+                </div>
+            `).join('');
+
+            document.getElementById('exam-actions').innerHTML = `
+                <button class="btn btn-success btn-lg" onclick="submitExam()">Enviar Examen</button>
+                <button class="btn btn-secondary" onclick="cancelExam()">Cancelar</button>
+            `;
+        }
+
+        function selectExamAnswer(questionIndex, answer) {
+            document.getElementById('exam-answer-' + questionIndex).value = answer;
+            
+            // Visual feedback
+            const question = currentExam[questionIndex];
+            question.options.forEach(opt => {
+                const btn = document.getElementById(`exam-q${questionIndex}-${opt}`);
+                if (btn) {
+                    btn.classList.remove('selected');
+                    if (opt === answer) {
+                        btn.classList.add('selected');
+                    }
+                }
+            });
+        }
+
+        function submitExam() {
+            let correctCount = 0;
+            const totalQuestions = currentExam.length;
+
+            currentExam.forEach((q, index) => {
+                const userAnswer = document.getElementById('exam-answer-' + index).value;
+                if (userAnswer === q.correct) {
+                    correctCount++;
+                }
+            });
+
+            const percentage = (correctCount / totalQuestions) * 100;
+            const passed = percentage >= 70;
+
+            const resultsDiv = document.getElementById('exam-results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `
+                <div class="exam-result-card ${passed ? 'success' : 'error'}">
+                    <h3>${passed ? '🎉 ¡Felicitaciones!' : '😔 No aprobaste'}</h3>
+                    <p class="exam-score">Puntuación: ${correctCount}/${totalQuestions} (${percentage.toFixed(1)}%)</p>
+                    <p>${passed ? 
+                        '¡Has aprobado el examen! Has desbloqueado el trofeo "Maestro de Derivadas" 🏆' : 
+                        'Necesitas al menos 70% para aprobar. Sigue practicando y vuelve a intentarlo.'
+                    }</p>
+                    ${passed ? '<div class="trophy-display">🏆 Maestro de Derivadas</div>' : ''}
+                    <button class="btn btn-primary" onclick="resetExam()">
+                        ${passed ? 'Volver al inicio' : 'Intentar de nuevo'}
+                    </button>
+                </div>
+            `;
+
+            if (passed) {
+                Gamification.completeModule(MODULE_ID, percentage);
+            }
+
+            document.getElementById('exam-container').style.display = 'none';
+            document.getElementById('exam-actions').style.display = 'none';
+        }
+
+        function cancelExam() {
+            if (confirm('¿Estás seguro de que quieres cancelar el examen?')) {
+                resetExam();
+            }
+        }
+
+        function resetExam() {
+            examStarted = false;
+            currentExam = [];
+            document.getElementById('exam-container').innerHTML = '';
+            document.getElementById('exam-results').style.display = 'none';
+            document.getElementById('exam-results').innerHTML = '';
+            document.getElementById('exam-actions').innerHTML = `
+                <button class="btn btn-success btn-lg" onclick="startExam()">Comenzar Examen</button>
+            `;
+            document.getElementById('exam-container').style.display = 'block';
+            document.getElementById('exam-actions').style.display = 'block';
         }
     </script>
 </body>

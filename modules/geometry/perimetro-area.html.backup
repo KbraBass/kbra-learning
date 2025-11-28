@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Aprende Perímetro y Área! - Geometría Divertida</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../../css/core.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    
+    <style>
+        /* Module-specific geometry visualizations */
+        .shape-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .visual-square, .visual-rectangle {
+            position: relative;
+            border: 3px solid var(--primary-color);
+            background: linear-gradient(135deg, rgba(251, 194, 235, 0.3), rgba(166, 193, 238, 0.3));
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        
+        .dimension-label {
+            position: absolute;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        
+        #practice-visual .shape-container {
+            min-height: 200px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header will be inserted here -->
+        <div id="header-container"></div>
+
+        <!-- Tabs will be inserted here -->
+        <div id="tabs-container"></div>
+
+        <!-- PERÍMETRO TAB -->
+        <div id="perimetro" class="content tab-content active">
+            <h2 class="section-title">📏 ¿Qué es el Perímetro?</h2>
+            
+            <div class="explanation">
+                <h3>El perímetro es el borde</h3>
+                <p>El perímetro es la distancia alrededor de una forma. ¡Es como caminar por el borde de un jardín!</p>
+                <ul class="list-spaced">
+                    <li><strong>Cuadrado:</strong> suma los 4 lados (o lado × 4)</li>
+                    <li><strong>Rectángulo:</strong> suma largo + largo + ancho + ancho</li>
+                    <li><strong>Triángulo:</strong> suma los 3 lados</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3 class="subsection-header">Calcula el Perímetro de un Cuadrado</h3>
+                <div class="input-group">
+                    <label for="square-side">Lado del cuadrado:</label>
+                    <input type="number" id="square-side" placeholder="5" min="1" max="50" value="5">
+                </div>
+                <button class="calc-button" onclick="calculateSquarePerimeter()">🔍 Calcular</button>
+                <div class="result" id="square-perimeter-result">¡Escribe el lado y calcula!</div>
+            </div>
+
+            <div class="shape-visual" id="square-visual"></div>
+
+            <div class="input-section" class="margin-top-30">
+                <h3 class="subsection-header">Calcula el Perímetro de un Rectángulo</h3>
+                <div class="input-group">
+                    <label for="rect-length">Largo:</label>
+                    <input type="number" id="rect-length" placeholder="8" min="1" max="50" value="8">
+                </div>
+                <div class="input-group">
+                    <label for="rect-width">Ancho:</label>
+                    <input type="number" id="rect-width" placeholder="5" min="1" max="50" value="5">
+                </div>
+                <button class="calc-button" onclick="calculateRectPerimeter()">🔍 Calcular</button>
+                <div class="result" id="rect-perimeter-result">¡Escribe largo y ancho!</div>
+            </div>
+
+            <div class="shape-visual" id="rect-visual"></div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>Si tienes un terreno cuadrado de 10 metros por lado y quieres cercarlo, necesitas 40 metros de cerca (10 + 10 + 10 + 10 = 40). ¡Eso es el perímetro!</p>
+            </div>
+        </div>
+
+        <!-- ÁREA TAB -->
+        <div id="area" class="content tab-content">
+            <h2 class="section-title">📦 ¿Qué es el Área?</h2>
+            
+            <div class="explanation">
+                <h3>El área es el espacio dentro</h3>
+                <p>El área es cuánto espacio hay DENTRO de una forma. Se mide en unidades cuadradas (cm², m²).</p>
+                <ul class="list-spaced">
+                    <li><strong>Cuadrado:</strong> lado × lado</li>
+                    <li><strong>Rectángulo:</strong> largo × ancho</li>
+                    <li><strong>Triángulo:</strong> (base × altura) ÷ 2</li>
+                </ul>
+            </div>
+
+            <div class="input-section">
+                <h3 class="subsection-header">Calcula el Área de un Cuadrado</h3>
+                <div class="input-group">
+                    <label for="square-side-area">Lado del cuadrado:</label>
+                    <input type="number" id="square-side-area" placeholder="6" min="1" max="50" value="6">
+                </div>
+                <button class="calc-button" onclick="calculateSquareArea()">📊 Calcular</button>
+                <div class="result" id="square-area-result">¡Escribe el lado y calcula!</div>
+            </div>
+
+            <div class="shape-visual" id="square-area-visual"></div>
+
+            <div class="input-section" class="margin-top-30">
+                <h3 class="subsection-header">Calcula el Área de un Rectángulo</h3>
+                <div class="input-group">
+                    <label for="rect-length-area">Largo:</label>
+                    <input type="number" id="rect-length-area" placeholder="8" min="1" max="50" value="8">
+                </div>
+                <div class="input-group">
+                    <label for="rect-width-area">Ancho:</label>
+                    <input type="number" id="rect-width-area" placeholder="4" min="1" max="50" value="4">
+                </div>
+                <button class="calc-button" onclick="calculateRectArea()">📊 Calcular</button>
+                <div class="result" id="rect-area-result">¡Escribe largo y ancho!</div>
+            </div>
+
+            <div class="shape-visual" id="rect-area-visual"></div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>Si tu habitación mide 4 metros de largo por 3 metros de ancho, su área es 12 m². ¡Eso te dice cuánta alfombra necesitas para cubrirla!</p>
+            </div>
+        </div>
+
+        <!-- PRÁCTICA TAB -->
+        <div id="practica" class="content tab-content">
+            <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
+            
+            <div class="practice-area">
+                <div id="score-container"></div>
+
+                <h3 class="header-with-color" id="practice-question">Haz clic en "Nueva Pregunta" para empezar</h3>
+                
+                <div class="shape-visual" id="practice-visual"></div>
+
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="practice-answer">Tu respuesta:</label>
+                        <input type="number" id="practice-answer" placeholder="?">
+                    </div>
+                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <div class="result" id="practice-result">¡Genera una pregunta para empezar!</div>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Consejos:</h3>
+                <ul>
+                    <li><strong>Perímetro:</strong> Suma todos los lados (el borde)</li>
+                    <li><strong>Área:</strong> Multiplica largo × ancho (el espacio dentro)</li>
+                    <li>Dibuja la forma en papel para visualizarla mejor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared JavaScript Libraries -->
+    <script src="../../lib/storage.js"></script>
+    <script src="../../lib/gamification.js"></script>
+    <script src="../../lib/components.js"></script>
+
+    <script>
+        const MODULE_ID = 'perimetro-area';
+        let currentQuestion = null;
+        let questionAnswered = false;
+
+        function init() {
+            const headerHtml = Components.createHeader(
+                '📐 ¡Aprende Perímetro y Área! 📐',
+                'Descubre cómo medir el borde y el espacio de las formas',
+                '../index.html'
+            );
+            document.getElementById('header-container').innerHTML = headerHtml;
+
+            const tabs = [
+                { id: 'perimetro', label: 'Perímetro' },
+                { id: 'area', label: 'Área' },
+                { id: 'practica', label: '¡Práctica!' }
+            ];
+            const tabsHtml = Components.createTabs(tabs, 'perimetro');
+            document.getElementById('tabs-container').innerHTML = tabsHtml;
+
+            const scoreHtml = Components.createScoreDisplay();
+            document.getElementById('score-container').innerHTML = scoreHtml;
+            
+            updateScoreDisplay();
+            
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const button = this.closest('.input-section').querySelector('.calc-button');
+                        if (button && !button.disabled) {
+                            button.click();
+                        }
+                    }
+                });
+            });
+            
+            Storage.updateStreak();
+        }
+
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            buttons.forEach(button => {
+                if (button.textContent.includes(tabName === 'perimetro' ? 'Perímetro' : 
+                                                  tabName === 'area' ? 'Área' : 
+                                                  'Práctica')) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        function calculateSquarePerimeter() {
+            const side = parseInt(document.getElementById('square-side').value);
+            const result = document.getElementById('square-perimeter-result');
+            const visual = document.getElementById('square-visual');
+            
+            if (isNaN(side) || side <= 0) {
+                result.textContent = '¡Por favor, escribe un número válido!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const perimeter = side * 4;
+            const scale = Math.min(150 / side, 10);
+            const size = side * scale;
+            
+            result.innerHTML = `<div>Perímetro = ${side} × 4 = <strong>${perimeter} unidades</strong> 🎉</div>`;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            visual.innerHTML = `
+                <div class="shape-container">
+                    <div class="visual-square" style="width: ${size}px; height: ${size}px;">
+                        <div class="dimension-label" class="position-top-center">${side}</div>
+                        <div class="dimension-label" class="position-bottom-center">${side}</div>
+                        <div class="dimension-label" class="position-left-middle">${side}</div>
+                        <div class="dimension-label" class="position-right-middle">${side}</div>
+                    </div>
+                    <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
+                </div>
+            `;
+        }
+
+        function calculateRectPerimeter() {
+            const length = parseInt(document.getElementById('rect-length').value);
+            const width = parseInt(document.getElementById('rect-width').value);
+            const result = document.getElementById('rect-perimeter-result');
+            const visual = document.getElementById('rect-visual');
+            
+            if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+                result.textContent = '¡Por favor, escribe números válidos!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const perimeter = (length * 2) + (width * 2);
+            const scale = Math.min(200 / length, 150 / width, 10);
+            
+            result.innerHTML = `<div>Perímetro = (${length} × 2) + (${width} × 2) = <strong>${perimeter} unidades</strong> 🎉</div>`;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            visual.innerHTML = `
+                <div class="shape-container">
+                    <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-bottom-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
+                        <div class="dimension-label" class="position-right-middle">${width}</div>
+                    </div>
+                    <p class="visual-result-large">Caminar alrededor = ${perimeter} unidades</p>
+                </div>
+            `;
+        }
+
+        function calculateSquareArea() {
+            const side = parseInt(document.getElementById('square-side-area').value);
+            const result = document.getElementById('square-area-result');
+            const visual = document.getElementById('square-area-visual');
+            
+            if (isNaN(side) || side <= 0) {
+                result.textContent = '¡Por favor, escribe un número válido!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const area = side * side;
+            const scale = Math.min(200 / side, 15);
+            
+            result.innerHTML = `<div>Área = ${side} × ${side} = <strong>${area} unidades²</strong> 🎉</div>`;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            if (area <= 100) {
+                visual.innerHTML = `
+                    <div class="shape-container">
+                        <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px; display: grid; grid-template-columns: repeat(${side}, 1fr); grid-template-rows: repeat(${side}, 1fr);">
+                            ${Array(area).fill('<div style="border: 1px solid rgba(102, 126, 234, 0.3);"></div>').join('')}
+                        </div>
+                        <p class="bold-spaced">${area} cuadraditos = ${area} unidades²</p>
+                    </div>
+                `;
+            } else {
+                visual.innerHTML = `
+                    <div class="shape-container">
+                        <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;"></div>
+                        <p class="bold-spaced">Área = ${area} unidades²</p>
+                    </div>
+                `;
+            }
+        }
+
+        function calculateRectArea() {
+            const length = parseInt(document.getElementById('rect-length-area').value);
+            const width = parseInt(document.getElementById('rect-width-area').value);
+            const result = document.getElementById('rect-area-result');
+            const visual = document.getElementById('rect-area-visual');
+            
+            if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+                result.textContent = '¡Por favor, escribe números válidos!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            const area = length * width;
+            const scale = Math.min(250 / length, 200 / width, 15);
+            
+            result.innerHTML = `<div>Área = ${length} × ${width} = <strong>${area} unidades²</strong> 🎉</div>`;
+            result.style.background = 'rgba(78, 205, 196, 0.3)';
+            
+            if (area <= 100) {
+                visual.innerHTML = `
+                    <div class="shape-container">
+                        <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px; display: grid; grid-template-columns: repeat(${length}, 1fr); grid-template-rows: repeat(${width}, 1fr);">
+                            ${Array(area).fill('<div style="border: 1px solid rgba(240, 147, 251, 0.3);"></div>').join('')}
+                        </div>
+                        <p class="bold-spaced">${area} cuadraditos = ${area} unidades²</p>
+                    </div>
+                `;
+            } else {
+                visual.innerHTML = `
+                    <div class="shape-container">
+                        <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;"></div>
+                        <p class="bold-spaced">Área = ${area} unidades²</p>
+                    </div>
+                `;
+            }
+        }
+
+        function generateQuestion() {
+            const types = ['square-perimeter', 'rect-perimeter', 'square-area', 'rect-area'];
+            const type = types[Math.floor(Math.random() * types.length)];
+            
+            let side, length, width, answer, question, visualHTML;
+            
+            if (type === 'square-perimeter') {
+                side = Math.floor(Math.random() * 8) + 3;
+                answer = side * 4;
+                question = `¿Cuál es el PERÍMETRO de un cuadrado de lado ${side}?`;
+                const scale = Math.min(150 / side, 15);
+                visualHTML = `
+                    <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;">
+                        <div class="dimension-label" class="position-top-center">${side}</div>
+                    </div>
+                `;
+            } else if (type === 'rect-perimeter') {
+                length = Math.floor(Math.random() * 8) + 4;
+                width = Math.floor(Math.random() * 6) + 2;
+                answer = (length * 2) + (width * 2);
+                question = `¿Cuál es el PERÍMETRO de un rectángulo de ${length} × ${width}?`;
+                const scale = Math.min(200 / length, 150 / width, 15);
+                visualHTML = `
+                    <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
+                    </div>
+                `;
+            } else if (type === 'square-area') {
+                side = Math.floor(Math.random() * 8) + 3;
+                answer = side * side;
+                question = `¿Cuál es el ÁREA de un cuadrado de lado ${side}?`;
+                const scale = Math.min(150 / side, 15);
+                visualHTML = `
+                    <div class="visual-square" style="width: ${side * scale}px; height: ${side * scale}px;">
+                        <div class="dimension-label" class="position-top-center">${side}</div>
+                    </div>
+                `;
+            } else {
+                length = Math.floor(Math.random() * 8) + 4;
+                width = Math.floor(Math.random() * 6) + 2;
+                answer = length * width;
+                question = `¿Cuál es el ÁREA de un rectángulo de ${length} × ${width}?`;
+                const scale = Math.min(200 / length, 150 / width, 15);
+                visualHTML = `
+                    <div class="visual-rectangle" style="width: ${length * scale}px; height: ${width * scale}px;">
+                        <div class="dimension-label" class="position-top-center">${length}</div>
+                        <div class="dimension-label" class="position-left-middle">${width}</div>
+                    </div>
+                `;
+            }
+            
+            currentQuestion = { type, answer };
+            questionAnswered = false;
+            
+            document.getElementById('practice-question').textContent = question;
+            document.getElementById('practice-visual').innerHTML = `<div class="shape-container">${visualHTML}</div>`;
+            document.getElementById('practice-answer').value = '';
+            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
+            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
+            
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = false;
+            checkButton.textContent = '✅ Comprobar';
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('practice-answer').value);
+            const result = document.getElementById('practice-result');
+            
+            if (!currentQuestion || questionAnswered) return;
+            
+            if (isNaN(userAnswer)) {
+                result.textContent = '¡Por favor, escribe un número!';
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+                return;
+            }
+            
+            questionAnswered = true;
+            const checkButton = document.getElementById('check-button');
+            checkButton.disabled = true;
+            checkButton.textContent = '✅ Respondido';
+            
+            if (userAnswer === currentQuestion.answer) {
+                Gamification.addPoints(10, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Correcto! 🎉<br>La respuesta es <strong>${currentQuestion.answer}</strong><br><small>+10 puntos</small></div>`;
+                result.style.background = 'rgba(78, 205, 196, 0.3)';
+            } else {
+                Gamification.subtractPoints(5, MODULE_ID);
+                result.innerHTML = `<div class="text-dark">¡Intenta de nuevo! 😊<br>La respuesta correcta es <strong>${currentQuestion.answer}</strong><br><small>-5 puntos</small></div>`;
+                result.style.background = 'rgba(255, 107, 107, 0.3)';
+            }
+            
+            updateScoreDisplay();
+        }
+
+        function updateScoreDisplay() {
+            const totalPoints = Storage.getTotalPoints();
+            const level = Gamification.getCurrentLevel();
+            
+            document.getElementById('score').textContent = totalPoints;
+            document.getElementById('level').textContent = level.name;
+        }
+
+        init();
+    </script>
+</body>
+</html>

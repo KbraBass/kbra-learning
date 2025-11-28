@@ -13,29 +13,169 @@
     <div id="score-container"></div>
 
     <div class="container">
-        <!-- Teoría -->
-        <div class="content-section active" id="teoria">
+        <!-- Tab 1: Glosario -->
+        <div class="content-section active" id="glosario">
+            <h2>📖 Glosario de Números Reales</h2>
+
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Aprende los términos clave relacionados con los números reales:</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Axioma</h3>
+                <p><strong>Definición:</strong> Proposición fundamental que se acepta sin demostración y sirve como base para construir una teoría matemática. Los números reales se definen mediante un sistema de axiomas.</p>
+                <p><strong>Ejemplo:</strong> El axioma conmutativo de la suma dice que a + b = b + a para todo a, b ∈ ℝ.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Supremo e Ínfimo</h3>
+                <p><strong>Definición:</strong> El supremo (sup A) de un conjunto A es la menor cota superior. El ínfimo (inf A) es la mayor cota inferior. Pueden o no pertenecer al conjunto.</p>
+                <p><strong>Ejemplo:</strong> Para A = (0, 1), sup A = 1 e inf A = 0, pero ni 0 ni 1 pertenecen a A.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Valor Absoluto</h3>
+                <p><strong>Definición:</strong> El valor absoluto de un número x, denotado |x|, es la distancia de x al origen (0) en la recta real. Siempre es no negativo.</p>
+                <p><strong>Ejemplo:</strong> |-5| = 5 y |5| = 5. La distancia de ambos al 0 es 5.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Densidad de los Racionales</h3>
+                <p><strong>Definición:</strong> Los números racionales (ℚ) son densos en ℝ significa que entre dos números reales cualesquiera siempre hay un número racional.</p>
+                <p><strong>Ejemplo:</strong> Entre 0.5 y 0.6 hay infinitos racionales, como 0.55 = 11/20.</p>
+            </div>
+
+            <div class="term-card">
+                <h3>🔵 Propiedad Arquimediana</h3>
+                <p><strong>Definición:</strong> Los números naturales no están acotados superiormente. Para cualquier número real x, existe un natural n tal que n > x.</p>
+                <p><strong>Ejemplo:</strong> Por grande que sea x = 1,000,000, siempre existe n = 1,000,001 > x.</p>
+            </div>
+        </div>
+
+        <!-- Tab 2: Símbolos -->
+        <div class="content-section" id="simbolos">
+            <h2>🔣 Símbolos Matemáticos</h2>
+
+            <div class="info-box bg-gradient-success-white">
+                <p class="white-text-mt0">Símbolos esenciales para trabajar con números reales:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">ℝ</span>
+                    <span class="symbol-name">Números Reales</span>
+                </div>
+                <p><strong>Uso:</strong> Denota el conjunto de todos los números en la recta numérica (racionales e irracionales).</p>
+                <p><strong>Ejemplo:</strong> π ∈ ℝ, √2 ∈ ℝ, 3/4 ∈ ℝ</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">∀ / ∃</span>
+                    <span class="symbol-name">Cuantificadores Universales y Existenciales</span>
+                </div>
+                <p><strong>Uso:</strong> ∀ significa "para todo", ∃ significa "existe al menos un".</p>
+                <p><strong>Ejemplo:</strong> ∀ x ∈ ℝ, x² ≥ 0 (todo real al cuadrado es no negativo)</p>
+                <p><strong>Ejemplo:</strong> ∃ x ∈ ℝ tal que x² = 2 (existe un real cuyo cuadrado es 2)</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">⇒ / ⇔</span>
+                    <span class="symbol-name">Implicación y Equivalencia</span>
+                </div>
+                <p><strong>Uso:</strong> ⇒ significa "implica" o "entonces". ⇔ significa "si y solo si".</p>
+                <p><strong>Ejemplo:</strong> x = 0 ⇒ |x| = 0</p>
+                <p><strong>Ejemplo:</strong> |x| = 0 ⇔ x = 0</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">|x|</span>
+                    <span class="symbol-name">Valor Absoluto</span>
+                </div>
+                <p><strong>Uso:</strong> Distancia de x al origen. |x| = x si x ≥ 0, |x| = -x si x < 0.</p>
+                <p><strong>Ejemplo:</strong> |-7| = 7, |5| = 5</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">sup / inf</span>
+                    <span class="symbol-name">Supremo e Ínfimo</span>
+                </div>
+                <p><strong>Uso:</strong> sup A es la menor cota superior de A, inf A es la mayor cota inferior.</p>
+                <p><strong>Ejemplo:</strong> Para A = [0, 1), sup A = 1, inf A = 0</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">∈ / ∉</span>
+                    <span class="symbol-name">Pertenencia</span>
+                </div>
+                <p><strong>Uso:</strong> ∈ significa "pertenece a", ∉ significa "no pertenece a".</p>
+                <p><strong>Ejemplo:</strong> π ∈ ℝ, π ∉ ℚ</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-header">
+                    <span class="symbol-large">ε, δ</span>
+                    <span class="symbol-name">Números Pequeños Positivos</span>
+                </div>
+                <p><strong>Uso:</strong> Representan números arbitrariamente pequeños y positivos, usados en la definición de límites.</p>
+                <p><strong>Ejemplo:</strong> Para ε = 0.01, existe δ > 0 tal que...</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Introducción -->
+        <div class="content-section" id="introduccion">
+            <h2>🌟 Introducción a los Números Reales</h2>
+
+            <div class="info-box bg-gradient-info-white">
+                <p class="white-text-mt0">Los números reales son el fundamento del análisis matemático y tienen aplicaciones en múltiples áreas:</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🏗️ Física e Ingeniería</h3>
+                <p><strong>Aplicación:</strong> Las magnitudes físicas (distancia, tiempo, masa, energía) se representan con números reales. Las ecuaciones de movimiento, termodinámica y electromagnetismo utilizan ℝ.</p>
+                <p><strong>Ejemplo Real:</strong> La velocidad de un objeto v(t) = 5t m/s es una función de ℝ a ℝ. Para calcular cuando alcanza 100 m/s: 5t = 100 → t = 20 segundos.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>💹 Economía y Finanzas</h3>
+                <p><strong>Aplicación:</strong> Los precios, tasas de interés, rendimientos de inversiones y modelos económicos se basan en ℝ. El interés compuesto usa funciones exponenciales reales.</p>
+                <p><strong>Ejemplo Real:</strong> Con interés compuesto continuo, capital C(t) = C₀e^(rt). Si inviertes $1000 al 5% anual, en 10 años: C(10) = 1000e^(0.5) ≈ $1648.72.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>🔬 Ciencias Naturales</h3>
+                <p><strong>Aplicación:</strong> Concentraciones químicas, poblaciones biológicas, decaimiento radiactivo y modelos de crecimiento usan números reales y funciones continuas.</p>
+                <p><strong>Ejemplo Real:</strong> Ley de enfriamiento de Newton: T(t) = T_ambiente + (T₀ - T_ambiente)e^(-kt), donde todas las variables son números reales.</p>
+            </div>
+
+            <div class="application-card">
+                <h3>📊 Estadística y Ciencia de Datos</h3>
+                <p><strong>Aplicación:</strong> Promedios, desviaciones estándar, probabilidades continuas y regresiones trabajan con valores reales. Las distribuciones de probabilidad son funciones de ℝ a ℝ.</p>
+                <p><strong>Ejemplo Real:</strong> La altura humana sigue una distribución normal con media μ ∈ ℝ y desviación σ ∈ ℝ. f(x) = (1/σ√(2π))e^(-(x-μ)²/(2σ²))</p>
+            </div>
+
+            <div class="application-card">
+                <h3>💻 Computación Científica</h3>
+                <p><strong>Aplicación:</strong> Algoritmos numéricos, optimización, machine learning y simulaciones requieren aritmética de punto flotante para aproximar números reales en computadoras.</p>
+                <p><strong>Ejemplo Real:</strong> Método de Newton-Raphson para encontrar raíces: x_(n+1) = x_n - f(x_n)/f'(x_n). Converge a soluciones reales con precisión arbitraria.</p>
+            </div>
+
+            <div class="exam-important">
+                <h4>💡 ¿Por qué es importante?</h4>
+                <p>Los números reales completan los racionales, llenando "huecos" como √2, π, e. El axioma del supremo garantiza que toda sucesión de Cauchy converge en ℝ, lo que es esencial para el cálculo diferencial e integral. Sin ℝ completo, no podríamos definir rigurosamente límites, derivadas ni integrales.</p>
+            </div>
+        </div>
+
+        <!-- Tab 4: Teoría -->
+        <div class="content-section" id="teoria">
             <h2>📚 Teoría: Números Reales</h2>
 
-            <div class="info-box" class="bg-gradient-primary-white">
-                <h4 class="white-text-mt0">📖 Glosario de Símbolos Matemáticos</h4>
-                <ul class="list-unstyled-lh2">
-                    <li><strong>ℝ</strong> = Números Reales (conjunto de todos los números en la recta numérica)</li>
-                    <li><strong>∀</strong> = "para todo" / "para cada" (cuantificador universal)</li>
-                    <li><strong>∃</strong> = "existe" / "existe al menos un" (cuantificador existencial)</li>
-                    <li><strong>∃!</strong> = "existe un único"</li>
-                    <li><strong>⇒</strong> = "implica" / "entonces" (implicación lógica)</li>
-                    <li><strong>⇔</strong> = "si y solo si" / "es equivalente a" (doble implicación)</li>
-                    <li><strong>∈</strong> = "pertenece a" / "es elemento de"</li>
-                    <li><strong>∉</strong> = "no pertenece a"</li>
-                    <li><strong>⊂</strong> = "está contenido en" / "es subconjunto de"</li>
-                    <li><strong>≤ , ≥ , < , ></strong> = Relaciones de orden</li>
-                    <li><strong>∞</strong> = Infinito (concepto, no un número)</li>
-                    <li><strong>sup / inf</strong> = Supremo e ínfimo</li>
-                    <li><strong>max / min</strong> = Máximo y mínimo</li>
-                    <li><strong>|x|</strong> = Valor absoluto de x</li>
-                    <li><strong>ε , δ</strong> = Números pequeños positivos (límites)</li>
-                </ul>
+            <div class="info-box bg-gradient-primary-white">
+                <p class="white-text-mt0">Los números reales forman un campo ordenado completo con propiedades fundamentales.</p>
             </div>
 
             <h3>1. Axiomas de los Números Reales</h3>
@@ -94,6 +234,16 @@
             </div>
 
             <h3>4. Valor Absoluto y Distancia</h3>
+            <div class="tool-card">
+                <h4>📏 Calculadora de Valor Absoluto</h4>
+                <div class="tool-input-group">
+                    <label>Número x:</label>
+                    <input type="number" step="any" id="abs-x" placeholder="Ej: -5">
+                </div>
+                <button class="calc-button" onclick="calculateAbs()">Calcular |x|</button>
+                <div class="calc-result" id="abs-result">Ingresa un número</div>
+            </div>
+
             <div class="info-box">
                 <h4>Definición de Valor Absoluto</h4>
                 <div class="formula-box">
@@ -108,7 +258,24 @@
                     <li>|x + y| ≤ |x| + |y| (desigualdad triangular)</li>
                     <li>||x| - |y|| ≤ |x - y|</li>
                 </ul>
-                <h4 class="mt-1rem">Distancia</h4>
+            </div>
+
+            <div class="tool-card">
+                <h4>📐 Distancia entre Números</h4>
+                <div class="tool-input-group">
+                    <label>Número x:</label>
+                    <input type="number" step="any" id="dist-x" placeholder="Ej: 3">
+                </div>
+                <div class="tool-input-group">
+                    <label>Número y:</label>
+                    <input type="number" step="any" id="dist-y" placeholder="Ej: 7">
+                </div>
+                <button class="calc-button" onclick="calculateDistance()">Calcular Distancia</button>
+                <div class="calc-result" id="dist-result">Ingresa ambos números</div>
+            </div>
+
+            <div class="info-box">
+                <h4>Distancia</h4>
                 <div class="formula-box">
                     d(x, y) = |x - y|
                 </div>
@@ -116,6 +283,24 @@
             </div>
 
             <h3>5. Intervalos en ℝ</h3>
+            <div class="tool-card">
+                <h4>🔍 Verificador de Intervalos</h4>
+                <div class="tool-input-group">
+                    <label>Número x:</label>
+                    <input type="number" step="any" id="int-x" placeholder="Ej: 5">
+                </div>
+                <div class="tool-input-group">
+                    <label>Límite inferior a:</label>
+                    <input type="number" step="any" id="int-a" placeholder="Ej: 2">
+                </div>
+                <div class="tool-input-group">
+                    <label>Límite superior b:</label>
+                    <input type="number" step="any" id="int-b" placeholder="Ej: 8">
+                </div>
+                <button class="calc-button" onclick="checkInterval()">Verificar</button>
+                <div class="calc-result" id="int-result">Ingresa los datos</div>
+            </div>
+
             <table class="comparison-table">
                 <thead>
                     <tr><th>Notación</th><th>Descripción</th><th>Gráfica</th></tr>
@@ -166,161 +351,35 @@
             </div>
         </div>
 
-        <!-- Ejemplos -->
-        <div class="content-section" id="ejemplos">
-            <h2>💡 Ejemplos Resueltos</h2>
+        <!-- Tab 5: Entrenamiento -->
+        <div class="content-section" id="entrenamiento">
+            <h2>🎯 Entrenamiento</h2>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 1: Valor Absoluto</h4>
-                <p><strong>Problema:</strong> Resolver |x - 3| < 2</p>
-                <p><strong>Solución:</strong></p>
-                <p>|x - 3| < 2 ⇔ -2 < x - 3 < 2</p>
-                <p>Sumando 3: -2 + 3 < x < 2 + 3</p>
-                <p><strong>Respuesta:</strong> x ∈ (1, 5)</p>
+            <div class="info-box bg-gradient-success-white">
+                <p class="white-text-mt0">Practica con ejercicios de números reales. ¡Gana +10 puntos por cada respuesta correcta y -5 por incorrecta!</p>
             </div>
 
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 2: Supremo e Ínfimo</h4>
-                <p><strong>Problema:</strong> Hallar sup A e inf A si A = {1/n : n ∈ ℕ}</p>
-                <p><strong>Solución:</strong></p>
-                <p>A = {1, 1/2, 1/3, 1/4, ...}</p>
-                <p>sup A = 1 (y es también max A, pues 1 ∈ A)</p>
-                <p>inf A = 0 (pero 0 ∉ A, así que no hay min A)</p>
-                <p><strong>Respuesta:</strong> sup A = 1, inf A = 0</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 3: Desigualdad Triangular</h4>
-                <p><strong>Problema:</strong> Verificar |5 - 8| ≤ |5| + |-8|</p>
-                <p><strong>Solución:</strong></p>
-                <p>|5 - 8| = |-3| = 3</p>
-                <p>|5| + |-8| = 5 + 8 = 13</p>
-                <p>3 ≤ 13 ✓</p>
-                <p><strong>Respuesta:</strong> Se cumple la desigualdad</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 4: Propiedad Arquimediana</h4>
-                <p><strong>Problema:</strong> Dado x = 1000000, encontrar n ∈ ℕ tal que n > x</p>
-                <p><strong>Solución:</strong></p>
-                <p>Simplemente tomamos n = 1000001</p>
-                <p><strong>Respuesta:</strong> n = 1000001 (o cualquier n mayor)</p>
-            </div>
-
-            <div class="info-box" class="border-left-success">
-                <h4 class="text-success">Ejemplo 5: Densidad de ℚ</h4>
-                <p><strong>Problema:</strong> Encontrar un racional entre 0.5 y 0.6</p>
-                <p><strong>Solución:</strong></p>
-                <p>Podemos tomar r = 11/20 = 0.55</p>
-                <p>0.5 < 0.55 < 0.6 ✓</p>
-                <p><strong>Respuesta:</strong> r = 11/20 (o 1/2, 3/5, etc.)</p>
-            </div>
+            <div id="training-container"></div>
         </div>
 
-        <!-- Herramientas -->
-        <div class="content-section" id="herramientas">
-            <h2>🛠️ Herramientas Interactivas</h2>
+        <!-- Tab 6: Examen Final -->
+        <div class="content-section" id="examen">
+            <h2>📝 Examen Final de Números Reales</h2>
 
-            <div class="tool-card">
-                <h3>📏 Calculadora de Valor Absoluto</h3>
-                <p>Calcula el valor absoluto y resuelve desigualdades</p>
-                
-                <div class="tool-input-group">
-                    <label>Número x:</label>
-                    <input type="number" step="any" id="abs-x" placeholder="Ej: -5">
-                </div>
-                
-                <button class="calc-button" onclick="calculateAbs()">Calcular |x|</button>
-                <div class="calc-result" id="abs-result">Ingresa un número</div>
+            <div class="info-box bg-gradient-warning-white">
+                <p class="white-text-mt0">Completa este examen para demostrar tu dominio de los números reales.</p>
+                <p class="white-text"><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p class="white-text"><strong>Recompensa:</strong> Obtén el trofeo "Maestro de los Reales" 🏆</p>
             </div>
 
-            <div class="tool-card">
-                <h3>📐 Distancia entre Números</h3>
-                <p>Calcula d(x, y) = |x - y|</p>
-                
-                <div class="tool-input-group">
-                    <label>Número x:</label>
-                    <input type="number" step="any" id="dist-x" placeholder="Ej: 3">
-                </div>
-                
-                <div class="tool-input-group">
-                    <label>Número y:</label>
-                    <input type="number" step="any" id="dist-y" placeholder="Ej: 7">
-                </div>
-                
-                <button class="calc-button" onclick="calculateDistance()">Calcular Distancia</button>
-                <div class="calc-result" id="dist-result">Ingresa ambos números</div>
+            <div id="exam-container"></div>
+
+            <div class="exam-actions">
+                <button class="btn btn-primary btn-lg" onclick="submitExam()" id="submit-exam-btn">Enviar Examen</button>
+                <button class="btn btn-secondary btn-lg" onclick="resetExam()" id="reset-exam-btn">Reiniciar Examen</button>
             </div>
 
-            <div class="tool-card">
-                <h3>🔍 Verificador de Intervalos</h3>
-                <p>Verifica si un número pertenece a un intervalo</p>
-                
-                <div class="tool-input-group">
-                    <label>Número x:</label>
-                    <input type="number" step="any" id="int-x" placeholder="Ej: 5">
-                </div>
-                
-                <div class="tool-input-group">
-                    <label>Límite inferior a:</label>
-                    <input type="number" step="any" id="int-a" placeholder="Ej: 2">
-                </div>
-                
-                <div class="tool-input-group">
-                    <label>Límite superior b:</label>
-                    <input type="number" step="any" id="int-b" placeholder="Ej: 8">
-                </div>
-                
-                <button class="calc-button" onclick="checkInterval()">Verificar</button>
-                <div class="calc-result" id="int-result">Ingresa los datos</div>
-            </div>
-        </div>
-
-        <!-- Práctica -->
-        <div class="content-section" id="practica">
-            <h2>✏️ Práctica</h2>
-
-            <div id="exercises-container"></div>
-
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Volver al Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">Siguiente Tema ➡️</button>
-            </div>
-        </div>
-
-        <!-- Resumen -->
-        <div class="content-section" id="resumen">
-            <h2>📋 Resumen del Tema</h2>
-
-            <div class="info-box">
-                <h4>🎯 Conceptos Clave</h4>
-                <ul>
-                    <li>ℝ es un <strong>campo ordenado completo</strong></li>
-                    <li><strong>Axiomas:</strong> Suma, producto, orden y supremo</li>
-                    <li><strong>Valor absoluto:</strong> |x| = distancia al origen</li>
-                    <li><strong>Supremo:</strong> Menor cota superior</li>
-                    <li><strong>Ínfimo:</strong> Mayor cota inferior</li>
-                    <li><strong>Desigualdad triangular:</strong> |x+y| ≤ |x|+|y|</li>
-                    <li><strong>Propiedad arquimediana:</strong> ℕ no acotado</li>
-                    <li><strong>Densidad:</strong> ℚ es denso en ℝ</li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h4>💡 Para el Examen</h4>
-                <ul>
-                    <li>El <strong>axioma del supremo</strong> distingue ℝ de ℚ</li>
-                    <li>Domina las <strong>propiedades del valor absoluto</strong></li>
-                    <li>Practica resolver <strong>desigualdades con valor absoluto</strong></li>
-                    <li>Entiende la diferencia entre <strong>supremo y máximo</strong></li>
-                    <li>Los <strong>entornos</strong> son base para límites</li>
-                </ul>
-            </div>
-
-            <div class="navigation-buttons" class="mt-2rem">
-                <button class="btn btn-primary" onclick="window.location.href='index.html'">Volver al Índice</button>
-                <button class="btn btn-secondary" onclick="window.location.href='funciones-elementales-1.html'">Siguiente Tema ➡️</button>
-            </div>
+            <div id="exam-result-container"></div>
         </div>
     </div>
 
@@ -330,106 +389,44 @@
     <script>
         const MODULE_ID = 'preliminares-reales';
         const MODULE_TITLE = 'Preliminares: Números Reales';
+        const TROPHY_ID = 'trophy-reales';
 
         document.addEventListener('DOMContentLoaded', function() {
             Components.createHeader(MODULE_TITLE, 'index.html');
             
             const tabs = [
+                { id: 'glosario', label: 'Glosario', icon: '📖' },
+                { id: 'simbolos', label: 'Símbolos', icon: '🔣' },
+                { id: 'introduccion', label: 'Introducción', icon: '🌟' },
                 { id: 'teoria', label: 'Teoría', icon: '📚' },
-                { id: 'ejemplos', label: 'Ejemplos', icon: '💡' },
-                { id: 'herramientas', label: 'Herramientas', icon: '🛠️' },
-                { id: 'practica', label: 'Práctica', icon: '✏️' },
-                { id: 'resumen', label: 'Resumen', icon: '📋' }
+                { id: 'entrenamiento', label: 'Entrenamiento', icon: '🎯' },
+                { id: 'examen', label: 'Examen Final', icon: '📝' }
             ];
-            Components.createTabs(tabs, 'teoria');
+            Components.createTabs(tabs, 'glosario');
             Components.createScoreDisplay();
             
-            loadExercises();
+            loadTrainingQuestions();
+            loadExam();
+            checkExamStatus();
             Gamification.updateDisplay(MODULE_ID);
         });
 
-        const exercises = [
-            { id: 1, question: '¿Cuál es el valor de |-7|?', correct: '7', hint: 'El valor absoluto siempre es positivo o cero' },
-            { id: 2, question: 'Si |x| = 5, ¿cuántos valores puede tener x?', correct: '2', hint: 'x = 5 ó x = -5' },
-            { id: 3, question: '¿Cuál es la distancia entre 3 y 10 en ℝ?', correct: '7', hint: 'd(3,10) = |3-10| = |-7| = 7' },
-            { id: 4, question: 'Si A = (0,1), ¿cuál es sup A?', correct: '1', hint: 'El supremo es la menor cota superior' },
-            { id: 5, question: 'Si A = (0,1), ¿existe max A? (1=SÍ, 0=NO)', correct: '0', hint: '1 no pertenece a A' },
-            { id: 6, question: 'Resolver |x| < 3. ¿Cuántos números enteros satisfacen?', correct: '5', hint: 'x ∈ (-3,3) → x = -2,-1,0,1,2' },
-            { id: 7, question: '¿Es √2 un número racional? (1=SÍ, 0=NO)', correct: '0', hint: '√2 es irracional' },
-            { id: 8, question: '¿|5 + 3| = |5| + |3|? (1=SÍ, 0=NO)', correct: '1', hint: '|8| = 8 y 5+3 = 8' },
-            { id: 9, question: 'Si 0 < a < b, ¿es √(ab) < (a+b)/2? (1=SÍ, 0=NO)', correct: '1', hint: 'Media geométrica < media aritmética' },
-            { id: 10, question: '¿Cuántos axiomas de suma hay?', correct: '5', hint: 'Cerradura, asociativa, neutro, opuesto, conmutativa' }
-        ];
-
-        function loadExercises() {
-            const container = document.getElementById('exercises-container');
-            container.innerHTML = exercises.map(ex => `
-                <div class="exercise-card" data-exercise="${ex.id}">
-                    <h4>Ejercicio ${ex.id}</h4>
-                    <p>${ex.question}</p>
-                    <input type="number" step="any" id="ex${ex.id}" class="input-field" placeholder="Tu respuesta">
-                    <div class="button-group">
-                        <button class="btn btn-primary" onclick="checkAnswer(${ex.id})">Verificar</button>
-                        <button class="btn btn-secondary" onclick="showHint(${ex.id})">💡 Pista</button>
-                    </div>
-                    <div id="hint${ex.id}" class="hint-box" class="display-none">${ex.hint}</div>
-                    <div id="feedback${ex.id}" class="feedback"></div>
-                </div>
-            `).join('');
-        }
-
-        function checkAnswer(exerciseId) {
-            const exercise = exercises.find(ex => ex.id === exerciseId);
-            const input = document.getElementById('ex' + exerciseId);
-            const feedback = document.getElementById('feedback' + exerciseId);
-            const userAnswer = parseFloat(input.value.trim());
-
-            if (isNaN(userAnswer)) {
-                feedback.className = 'feedback error';
-                feedback.textContent = 'Por favor, ingresa una respuesta numérica.';
-                feedback.style.display = 'block';
-                return;
-            }
-
-            const correctValue = parseFloat(exercise.correct);
-            const isCorrect = Math.abs(userAnswer - correctValue) <= 0.01;
-            
-            if (isCorrect) {
-                feedback.className = 'feedback success';
-                feedback.textContent = '¡Correcto! ✨ +10 puntos';
-                input.disabled = true;
-                Gamification.completeExercise(MODULE_ID, true);
-            } else {
-                feedback.className = 'feedback error';
-                feedback.textContent = 'Incorrecto. Intenta de nuevo o usa la pista.';
-                Gamification.completeExercise(MODULE_ID, false);
-            }
-            
-            feedback.style.display = 'block';
-            Gamification.updateDisplay(MODULE_ID);
-        }
-
-        function showHint(exerciseId) {
-            const hint = document.getElementById('hint' + exerciseId);
-            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // Interactive tools
+        // Calculators
         function calculateAbs() {
             const x = parseFloat(document.getElementById('abs-x').value);
             const result = document.getElementById('abs-result');
             
             if (isNaN(x)) {
-                result.textContent = '⚠️ Por favor, ingresa un número válido';
+                result.innerHTML = '<span class="error">⚠️ Por favor ingresa un número válido</span>';
                 return;
             }
             
             const abs = Math.abs(x);
-            
             result.innerHTML = `
-                <strong>Número:</strong> x = ${x}<br>
-                <strong>Valor absoluto:</strong> |${x}| = ${abs}<br>
-                <strong>Interpretación:</strong> Distancia de ${x} al origen = ${abs} unidades
+                <div class="success">
+                    ✅ <strong>|${x}| = ${abs}</strong><br>
+                    Interpretación: La distancia de ${x} al origen (0) es ${abs}
+                </div>
             `;
         }
 
@@ -439,16 +436,16 @@
             const result = document.getElementById('dist-result');
             
             if (isNaN(x) || isNaN(y)) {
-                result.textContent = '⚠️ Por favor, ingresa ambos números';
+                result.innerHTML = '<span class="error">⚠️ Por favor ingresa ambos números</span>';
                 return;
             }
             
             const dist = Math.abs(x - y);
-            
             result.innerHTML = `
-                <strong>Puntos:</strong> x = ${x}, y = ${y}<br>
-                <strong>Distancia:</strong> d(x,y) = |${x} - ${y}| = |${x-y}| = ${dist}<br>
-                <strong>Interpretación:</strong> ${x} y ${y} están a ${dist} unidades de distancia
+                <div class="success">
+                    ✅ <strong>d(${x}, ${y}) = |${x} - ${y}| = ${dist}</strong><br>
+                    La distancia entre ${x} y ${y} es ${dist}
+                </div>
             `;
         }
 
@@ -459,19 +456,219 @@
             const result = document.getElementById('int-result');
             
             if (isNaN(x) || isNaN(a) || isNaN(b)) {
-                result.textContent = '⚠️ Por favor, completa todos los campos';
+                result.innerHTML = '<span class="error">⚠️ Por favor ingresa todos los valores</span>';
                 return;
             }
             
             const inOpen = x > a && x < b;
             const inClosed = x >= a && x <= b;
             
-            result.innerHTML = `
-                <strong>Número:</strong> x = ${x}<br>
-                <strong>Intervalo abierto (${a}, ${b}):</strong> ${inOpen ? '✓ SÍ pertenece' : '✗ NO pertenece'}<br>
-                <strong>Intervalo cerrado [${a}, ${b}]:</strong> ${inClosed ? '✓ SÍ pertenece' : '✗ NO pertenece'}<br>
-                <strong>Explicación:</strong> ${x} ${inOpen ? 'está entre' : 'NO está entre'} ${a} y ${b} (sin incluirlos)
+            let html = '<div class="info">';
+            html += `<strong>Verificación para x = ${x}, a = ${a}, b = ${b}:</strong><br><br>`;
+            html += `(a, b) = (${a}, ${b}): ${inOpen ? '✅ SÍ pertenece' : '❌ NO pertenece'}<br>`;
+            html += `[a, b] = [${a}, ${b}]: ${inClosed ? '✅ SÍ pertenece' : '❌ NO pertenece'}<br>`;
+            html += `[a, b) = [${a}, ${b}): ${x >= a && x < b ? '✅ SÍ pertenece' : '❌ NO pertenece'}<br>`;
+            html += `(a, b] = (${a}, ${b}]: ${x > a && x <= b ? '✅ SÍ pertenece' : '❌ NO pertenece'}`;
+            html += '</div>';
+            
+            result.innerHTML = html;
+        }
+
+        // Training Questions
+        const trainingQuestions = [
+            { q: '¿Cuál es el valor de |-7|?', a: '7', hint: 'El valor absoluto siempre es positivo o cero' },
+            { q: 'Si |x| = 5, ¿cuántos valores puede tener x?', a: '2', hint: 'x = 5 ó x = -5' },
+            { q: '¿Cuál es la distancia entre 3 y 10 en ℝ?', a: '7', hint: 'd(3,10) = |3-10| = |-7| = 7' },
+            { q: 'Si A = (0,1), ¿cuál es sup A?', a: '1', hint: 'El supremo es la menor cota superior' },
+            { q: 'Si A = (0,1), ¿existe max A? (1=SÍ, 0=NO)', a: '0', hint: '1 no pertenece a A' },
+            { q: 'Resolver |x| < 3. ¿Cuántos números enteros satisfacen?', a: '5', hint: 'x ∈ (-3,3) → x = -2,-1,0,1,2' },
+            { q: '¿Es √2 un número racional? (1=SÍ, 0=NO)', a: '0', hint: '√2 es irracional' },
+            { q: '¿|5 + 3| = |5| + |3|? (1=SÍ, 0=NO)', a: '1', hint: '|8| = 8 y 5+3 = 8' },
+            { q: 'Si 0 < a < b, ¿es √(ab) < (a+b)/2? (1=SÍ, 0=NO)', a: '1', hint: 'Media geométrica < media aritmética' },
+            { q: '¿Cuántos axiomas de suma hay?', a: '5', hint: 'Cerradura, asociativa, neutro, opuesto, conmutativa' },
+            { q: '¿Cuál es |-12 + 5|?', a: '7', hint: 'Primero calcula -12 + 5 = -7, luego |-7| = 7' },
+            { q: 'Si inf A = 3, ¿puede 3 no estar en A? (1=SÍ, 0=NO)', a: '1', hint: 'El ínfimo puede no pertenecer al conjunto' },
+            { q: '¿|x - y| = |y - x| para todo x, y? (1=SÍ, 0=NO)', a: '1', hint: 'La distancia es simétrica' },
+            { q: '¿Existe un número racional entre π y π+0.001? (1=SÍ, 0=NO)', a: '1', hint: 'ℚ es denso en ℝ' },
+            { q: 'Si |x| = |y|, ¿x = y necesariamente? (1=SÍ, 0=NO)', a: '0', hint: 'Podría ser x = -y' }
+        ];
+
+        function loadTrainingQuestions() {
+            const container = document.getElementById('training-container');
+            container.innerHTML = trainingQuestions.map((item, index) => `
+                <div class="exercise-card">
+                    <h4>Pregunta ${index + 1}</h4>
+                    <p>${item.q}</p>
+                    <input type="number" step="any" id="train-${index}" class="input-field" placeholder="Tu respuesta">
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="checkTraining(${index})">Verificar</button>
+                        <button class="btn btn-secondary" onclick="showTrainingHint(${index})">💡 Pista</button>
+                    </div>
+                    <div id="train-hint-${index}" class="hint-box" style="display:none">${item.hint}</div>
+                    <div id="train-feedback-${index}" class="feedback"></div>
+                </div>
+            `).join('');
+        }
+
+        function checkTraining(index) {
+            const item = trainingQuestions[index];
+            const input = document.getElementById(`train-${index}`);
+            const feedback = document.getElementById(`train-feedback-${index}`);
+            const userAnswer = parseFloat(input.value.trim());
+            
+            if (isNaN(userAnswer)) {
+                feedback.className = 'feedback error';
+                feedback.textContent = 'Por favor, ingresa una respuesta numérica.';
+                feedback.style.display = 'block';
+                return;
+            }
+            
+            const correctValue = parseFloat(item.a);
+            const isCorrect = Math.abs(userAnswer - correctValue) <= 0.01;
+            
+            if (isCorrect) {
+                feedback.className = 'feedback success';
+                feedback.textContent = '¡Correcto! ✨ +10 puntos';
+                input.disabled = true;
+                Gamification.addPoints(MODULE_ID, 10);
+            } else {
+                feedback.className = 'feedback error';
+                feedback.textContent = `❌ Incorrecto. -5 puntos. Respuesta correcta: ${item.a}`;
+                Gamification.addPoints(MODULE_ID, -5);
+            }
+            feedback.style.display = 'block';
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function showTrainingHint(index) {
+            const hint = document.getElementById(`train-hint-${index}`);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Exam
+        const examQuestions = [
+            { q: '¿Cuál es el valor absoluto de -15?', a: '15' },
+            { q: 'Si |x| = 8, ¿cuál es un valor posible de x? (responde 8 o -8)', a: ['8', '-8'] },
+            { q: '¿Cuál es la distancia entre -4 y 10 en ℝ?', a: '14' },
+            { q: 'Si A = [1, 5], ¿cuál es sup A?', a: '5' },
+            { q: 'Si A = (2, 7), ¿cuál es inf A?', a: '2' },
+            { q: '¿Existe max A si A = (0, 3)? (1=SÍ, 0=NO)', a: '0' },
+            { q: '¿Cuántos axiomas de producto hay?', a: '5' },
+            { q: 'Si a ≤ b y b ≤ c, ¿entonces a ≤ c? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿|x + y| ≤ |x| + |y| para todo x, y? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Es π un número racional? (1=SÍ, 0=NO)', a: '0' },
+            { q: '¿Es la suma conmutativa en ℝ? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Cuál es |(- 6)|?', a: '6' },
+            { q: 'Resolver |x| = 0. ¿Cuál es el valor de x?', a: '0' },
+            { q: '¿Entre 1.5 y 1.6 hay un número racional? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Los naturales están acotados superiormente? (1=SÍ, 0=NO)', a: '0' },
+            { q: 'Si A = {1, 2, 3}, ¿cuál es sup A?', a: '3' },
+            { q: '¿|x| = -x si x < 0? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿d(x, y) = d(y, x) para todo x, y? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Cuál es el elemento neutro de la suma en ℝ?', a: '0' },
+            { q: '¿√(9·16) = √9 · √16? (1=SÍ, 0=NO)', a: '1' },
+            { q: 'Si |a - b| < 0.1, ¿están a y b "cerca"? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Existe inverso multiplicativo de 0? (1=SÍ, 0=NO)', a: '0' },
+            { q: 'Si x ∈ (2, 5) y y ∈ (2, 5), ¿x + y ∈ ℝ? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Para x ≥ -1 y n ∈ ℕ, (1+x)ⁿ ≥ 1+nx? (1=SÍ, 0=NO)', a: '1' },
+            { q: '¿Cuál es |-20 + 20|?', a: '0' }
+        ];
+
+        function loadExam() {
+            const container = document.getElementById('exam-container');
+            const selectedQuestions = examQuestions.slice(0, 20);
+            
+            container.innerHTML = selectedQuestions.map((item, index) => `
+                <div class="exam-question">
+                    <h4>Pregunta ${index + 1}</h4>
+                    <p>${item.q}</p>
+                    <input type="number" step="any" id="exam-${index}" class="input-field" placeholder="Tu respuesta">
+                </div>
+            `).join('');
+        }
+
+        function submitExam() {
+            let correct = 0;
+            const total = 20;
+            const selectedQuestions = examQuestions.slice(0, 20);
+            
+            for (let i = 0; i < total; i++) {
+                const input = document.getElementById(`exam-${i}`);
+                const userAnswer = input.value.trim();
+                const question = selectedQuestions[i];
+                
+                if (Array.isArray(question.a)) {
+                    if (question.a.includes(userAnswer)) correct++;
+                } else {
+                    const correctValue = parseFloat(question.a);
+                    const userValue = parseFloat(userAnswer);
+                    if (!isNaN(userValue) && Math.abs(userValue - correctValue) <= 0.01) {
+                        correct++;
+                    }
+                }
+                input.disabled = true;
+            }
+            
+            const percentage = (correct / total) * 100;
+            const passed = percentage >= 70;
+            
+            const resultContainer = document.getElementById('exam-result-container');
+            resultContainer.innerHTML = `
+                <div class="exam-result ${passed ? 'success' : 'error'}">
+                    <h3>${passed ? '🎉 ¡Aprobado!' : '📚 Necesitas estudiar más'}</h3>
+                    <p><strong>Resultado:</strong> ${correct}/${total} correctas (${percentage.toFixed(1)}%)</p>
+                    <p>${passed ? '¡Has dominado los números reales!' : 'Necesitas 14/20 (70%) para aprobar.'}</p>
+                </div>
             `;
+            
+            if (passed) {
+                const examData = {
+                    passed: true,
+                    score: percentage,
+                    attempts: (Storage.get().modules[MODULE_ID]?.examAttempts || 0) + 1
+                };
+                Storage.saveExam(MODULE_ID, examData);
+                Gamification.unlockTrophy(TROPHY_ID);
+                Gamification.showTrophyToast('Maestro de los Reales', '¡Has completado el módulo de Números Reales!');
+            } else {
+                const examData = {
+                    passed: false,
+                    score: percentage,
+                    attempts: (Storage.get().modules[MODULE_ID]?.examAttempts || 0) + 1
+                };
+                Storage.saveExam(MODULE_ID, examData);
+            }
+            
+            document.getElementById('submit-exam-btn').disabled = true;
+            Gamification.updateDisplay(MODULE_ID);
+        }
+
+        function resetExam() {
+            for (let i = 0; i < 20; i++) {
+                const input = document.getElementById(`exam-${i}`);
+                input.value = '';
+                input.disabled = false;
+            }
+            document.getElementById('exam-result-container').innerHTML = '';
+            document.getElementById('submit-exam-btn').disabled = false;
+        }
+
+        function checkExamStatus() {
+            const data = Storage.get();
+            const moduleData = data.modules[MODULE_ID];
+            
+            if (moduleData && moduleData.examPassed) {
+                const resultContainer = document.getElementById('exam-result-container');
+                resultContainer.innerHTML = `
+                    <div class="exam-result success">
+                        <h3>✅ Ya aprobaste este examen</h3>
+                        <p><strong>Puntuación:</strong> ${moduleData.examScore.toFixed(1)}%</p>
+                        <p><strong>Intentos:</strong> ${moduleData.examAttempts}</p>
+                        <p>🏆 Has desbloqueado el trofeo "Maestro de los Reales"</p>
+                    </div>
+                `;
+                document.getElementById('submit-exam-btn').disabled = true;
+            }
         }
     </script>
 </body>

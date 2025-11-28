@@ -42,27 +42,6 @@
             justify-content: center;
         }
         
-        .angle-lines {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .angle-arc {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--primary-color);
-            border-radius: 50%;
-        }
-        
-        .angle-label {
-            position: absolute;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
         .interactive-angle {
             width: 300px;
             height: 300px;
@@ -73,10 +52,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        #angle-canvas {
+        #angle-canvas, #practice-canvas {
             width: 100%;
             height: 100%;
-            cursor: pointer;
         }
         
         .angle-info {
@@ -100,6 +78,30 @@
             margin: 0 auto;
             line-height: 2;
         }
+
+        .glossary-term {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .symbol-card {
+            background: white;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .symbol-display {
+            font-size: 4em;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -107,8 +109,138 @@
         <div id="header-container"></div>
         <div id="tabs-container"></div>
 
-        <!-- TIPOS TAB -->
-        <div id="tipos" class="content tab-content active">
+        <!-- GLOSARIO TAB -->
+        <div id="glosario" class="content tab-content active">
+            <h2 class="section-title">📖 Glosario de Ángulos</h2>
+            
+            <div class="explanation">
+                <p>Aprende los términos clave relacionados con los ángulos:</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>🔷 Ángulo</h3>
+                <p><strong>Definición:</strong> El espacio o abertura entre dos líneas (llamadas lados) que se encuentran en un punto común (llamado vértice). Se mide en grados (°).</p>
+                <p><strong>Ejemplo:</strong> La esquina de un libro forma un ángulo de 90°</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>📍 Vértice</h3>
+                <p><strong>Definición:</strong> El punto donde se encuentran los dos lados de un ángulo. Es el "rincón" del ángulo.</p>
+                <p><strong>Ejemplo:</strong> En la esquina de una mesa, el punto exacto donde se unen los bordes es el vértice</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>📏 Lado</h3>
+                <p><strong>Definición:</strong> Cada una de las dos líneas rectas que forman un ángulo. Los lados se extienden desde el vértice.</p>
+                <p><strong>Ejemplo:</strong> En una letra "V", cada una de las dos líneas es un lado del ángulo</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>📐 Grado (°)</h3>
+                <p><strong>Definición:</strong> La unidad que usamos para medir ángulos. Un círculo completo tiene 360 grados.</p>
+                <p><strong>Ejemplo:</strong> Un ángulo recto mide exactamente 90°, que es 1/4 de un círculo completo</p>
+            </div>
+
+            <div class="glossary-term">
+                <h3>📏 Transportador</h3>
+                <p><strong>Definición:</strong> Herramienta con forma de semicírculo que se usa para medir ángulos. Está marcado de 0° a 180°.</p>
+                <p><strong>Ejemplo:</strong> Como un semicírculo con números que nos ayuda a saber cuántos grados tiene un ángulo</p>
+            </div>
+        </div>
+
+        <!-- SÍMBOLOS TAB -->
+        <div id="simbolos" class="content tab-content">
+            <h2 class="section-title">🔣 Símbolos en Ángulos</h2>
+            
+            <div class="explanation">
+                <p>Conoce los símbolos matemáticos que se usan para representar ángulos:</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">∠</div>
+                <h3>Símbolo de Ángulo</h3>
+                <p><strong>Uso:</strong> Se escribe antes de las letras que nombran un ángulo</p>
+                <p><strong>Ejemplo:</strong> ∠ABC significa "el ángulo ABC"</p>
+                <p><strong>Se lee:</strong> "Ángulo ABC"</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">°</div>
+                <h3>Grado</h3>
+                <p><strong>Uso:</strong> Indica la medida del ángulo en grados</p>
+                <p><strong>Ejemplo:</strong> 45° significa "cuarenta y cinco grados"</p>
+                <p><strong>Se lee:</strong> "Grados"</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">⊥</div>
+                <h3>Perpendicular</h3>
+                <p><strong>Uso:</strong> Indica que dos líneas forman un ángulo recto (90°)</p>
+                <p><strong>Ejemplo:</strong> AB ⊥ CD significa que las líneas AB y CD son perpendiculares</p>
+                <p><strong>Se lee:</strong> "Es perpendicular a"</p>
+            </div>
+
+            <div class="symbol-card">
+                <div class="symbol-display">□</div>
+                <h3>Ángulo Recto</h3>
+                <p><strong>Uso:</strong> Se dibuja un pequeño cuadrado en el vértice para indicar un ángulo de 90°</p>
+                <p><strong>Ejemplo:</strong> El símbolo □ en una esquina significa que es un ángulo recto</p>
+                <p><strong>Se lee:</strong> "Ángulo recto"</p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>💡 Dato Curioso</h3>
+                <p>El símbolo ∠ viene de la palabra griega "γωνία" (gonia) que significa "esquina" o "ángulo".</p>
+            </div>
+        </div>
+
+        <!-- INTRODUCCIÓN TAB -->
+        <div id="introduccion" class="content tab-content">
+            <h2 class="section-title">📚 ¿Qué son los Ángulos?</h2>
+            
+            <div class="explanation">
+                <h3>¿Dónde encontramos ángulos?</h3>
+                <p>Los ángulos están por todas partes en nuestra vida diaria. ¡Vamos a descubrirlos!</p>
+            </div>
+
+            <div class="angle-card">
+                <h3>🏠 En la Arquitectura</h3>
+                <p>Las casas y edificios están llenos de ángulos: techos inclinados, escaleras, ventanas, puertas. Los arquitectos usan ángulos para hacer edificios fuertes y bonitos.</p>
+                <p><strong>Ejemplo:</strong> El techo de una casa forma un ángulo agudo en la punta</p>
+            </div>
+
+            <div class="angle-card">
+                <h3>🎨 En el Arte</h3>
+                <p>Los artistas usan ángulos para crear perspectiva y profundidad en sus dibujos. Las líneas que se encuentran en diferentes ángulos hacen que las pinturas se vean más realistas.</p>
+                <p><strong>Ejemplo:</strong> Cuando dibujas un camino que se aleja, las líneas forman ángulos</p>
+            </div>
+
+            <div class="angle-card">
+                <h3>⚽ En los Deportes</h3>
+                <p>El ángulo en que pateas un balón determina a dónde va. Los jugadores profesionales calculan ángulos para hacer los mejores tiros.</p>
+                <p><strong>Ejemplo:</strong> Un portero estudia el ángulo de tiro para saber dónde bloquear</p>
+            </div>
+
+            <div class="angle-card">
+                <h3>🕐 En los Relojes</h3>
+                <p>Las manecillas del reloj forman diferentes ángulos a lo largo del día. A las 3:00, forman un ángulo recto de 90°.</p>
+                <p><strong>Ejemplo:</strong> A las 3:00 en punto, el horario y minutero forman un ángulo de 90°</p>
+            </div>
+
+            <div class="angle-card">
+                <h3>✈️ En la Navegación</h3>
+                <p>Los pilotos y capitanes usan ángulos para navegar. El ángulo en que giras el volante o el timón determina tu nueva dirección.</p>
+                <p><strong>Ejemplo:</strong> Un avión gira 45° a la derecha para cambiar de ruta</p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>🌟 ¡Dato Curioso!</h3>
+                <p>Los antiguos babilonios dividieron el círculo en 360 grados hace más de 4,000 años. Eligieron 360 porque es un número que se puede dividir fácilmente de muchas maneras: ½, ⅓, ¼, ⅕, ⅙, ⅛, ⅑, 1/10, 1/12, y muchas más!</p>
+            </div>
+        </div>
+
+        <!-- TEORÍA TAB -->
+        <div id="teoria" class="content tab-content">
             <h2 class="section-title">📐 Tipos de Ángulos</h2>
             
             <div class="explanation">
@@ -173,18 +305,8 @@
                 </div>
             </div>
 
-            <div class="fun-facts">
-                <h3>🌟 ¡Dato Curioso!</h3>
-                <p>La palabra "ángulo" viene del latín "angulus" que significa "esquina". ¡Los ángulos están en todas las esquinas!</p>
-            </div>
-        </div>
-
-        <!-- MEDIR TAB -->
-        <div id="medir" class="content tab-content">
-            <h2 class="section-title">📏 ¿Cómo se Miden los Ángulos?</h2>
-            
-            <div class="explanation">
-                <h3>El Transportador</h3>
+            <div class="explanation margin-top-30">
+                <h3>📏 ¿Cómo se Miden los Ángulos?</h3>
                 <p>Usamos una herramienta llamada <strong>transportador</strong> para medir ángulos. Tiene forma de semicírculo y está marcado de 0° a 180°.</p>
             </div>
 
@@ -198,28 +320,8 @@
                 </ol>
             </div>
 
-            <div class="explanation" class="margin-top-30">
-                <h3>💡 Trucos Útiles:</h3>
-                <ul class="text-left-auto">
-                    <li>Si el ángulo parece grande (abierto), probablemente es obtuso (más de 90°)</li>
-                    <li>Si parece pequeño (cerrado), probablemente es agudo (menos de 90°)</li>
-                    <li>Si parece la esquina de un cuadrado, es recto (exactamente 90°)</li>
-                    <li>Una vuelta completa son 360° (como dar la vuelta completa en círculo)</li>
-                </ul>
-            </div>
-
-            <div class="fun-facts">
-                <h3>🎯 ¡Practica!</h3>
-                <p>Busca ángulos en tu casa: las esquinas de mesas (90°), las agujas del reloj, las escaleras. ¡Los ángulos están por todas partes!</p>
-            </div>
-        </div>
-
-        <!-- INTERACTIVO TAB -->
-        <div id="interactivo" class="content tab-content">
-            <h2 class="section-title">🎮 Ángulo Interactivo</h2>
-            
             <div class="explanation">
-                <h3>¡Crea tus propios ángulos!</h3>
+                <h3>🎮 Ángulo Interactivo</h3>
                 <p>Mueve el control deslizante para cambiar el ángulo y ver cómo se clasifica.</p>
             </div>
 
@@ -240,19 +342,19 @@
                 <div id="angle-type" style="font-size: 0.8em; color: var(--accent-color); margin-top: 10px;">Ángulo Agudo</div>
             </div>
 
-            <div class="fun-facts" class="margin-top-30">
-                <h3>🔍 Observa:</h3>
+            <div class="fun-facts">
+                <h3>💡 Trucos Útiles:</h3>
                 <ul>
-                    <li><strong>0°-89°:</strong> Ángulo Agudo (pequeño)</li>
-                    <li><strong>90°:</strong> Ángulo Recto (esquina perfecta)</li>
-                    <li><strong>91°-179°:</strong> Ángulo Obtuso (abierto)</li>
-                    <li><strong>180°:</strong> Ángulo Llano (línea recta)</li>
+                    <li>Si el ángulo parece grande (abierto), probablemente es obtuso (más de 90°)</li>
+                    <li>Si parece pequeño (cerrado), probablemente es agudo (menos de 90°)</li>
+                    <li>Si parece la esquina de un cuadrado, es recto (exactamente 90°)</li>
+                    <li>Una vuelta completa son 360° (como dar la vuelta completa en círculo)</li>
                 </ul>
             </div>
         </div>
 
-        <!-- PRÁCTICA TAB -->
-        <div id="practica" class="content tab-content">
+        <!-- ENTRENAMIENTO TAB -->
+        <div id="entrenamiento" class="content tab-content">
             <h2 class="section-title">🏆 ¡Practica y Mejora!</h2>
             
             <div class="practice-area">
@@ -291,6 +393,32 @@
                 </ul>
             </div>
         </div>
+
+        <!-- EXAMEN FINAL TAB -->
+        <div id="examen" class="content tab-content">
+            <h2 class="section-title">📝 Examen Final de Ángulos</h2>
+            
+            <div class="explanation">
+                <p>Completa este examen para demostrar tu dominio de los ángulos.</p>
+                <p><strong>Requisitos:</strong> 70% o más para aprobar (14/20 respuestas correctas)</p>
+                <p><strong>Recompensa:</strong> Obtén el trofeo "Experto en Ángulos" 🏆</p>
+            </div>
+
+            <div id="exam-container">
+                <button class="calc-button" onclick="startExam()">▶ Iniciar Examen</button>
+                <div id="exam-status"></div>
+            </div>
+
+            <div id="exam-questions" style="display: none;">
+                <!-- Questions will be inserted here -->
+            </div>
+
+            <div id="exam-results" style="display: none;">
+                <h3 id="exam-score-title"></h3>
+                <div id="exam-feedback"></div>
+                <button class="calc-button" onclick="startExam()">🔄 Reintentar Examen</button>
+            </div>
+        </div>
     </div>
 
     <script src="../../lib/storage.js"></script>
@@ -302,6 +430,8 @@
         let currentAngle = 45;
         let currentQuestion = null;
         let questionAnswered = false;
+        let examQuestions = [];
+        let examAnswers = [];
 
         function init() {
             const headerHtml = Components.createHeader(
@@ -312,12 +442,14 @@
             document.getElementById('header-container').innerHTML = headerHtml;
 
             const tabs = [
-                { id: 'tipos', label: 'Tipos de Ángulos' },
-                { id: 'medir', label: 'Medir Ángulos' },
-                { id: 'interactivo', label: 'Ángulo Interactivo' },
-                { id: 'practica', label: '¡Práctica!' }
+                { id: 'glosario', label: 'Glosario' },
+                { id: 'simbolos', label: 'Símbolos' },
+                { id: 'introduccion', label: 'Introducción' },
+                { id: 'teoria', label: 'Teoría' },
+                { id: 'entrenamiento', label: 'Entrenamiento' },
+                { id: 'examen', label: 'Examen Final' }
             ];
-            const tabsHtml = Components.createTabs(tabs, 'tipos');
+            const tabsHtml = Components.createTabs(tabs, 'glosario');
             document.getElementById('tabs-container').innerHTML = tabsHtml;
 
             const scoreHtml = Components.createScoreDisplay();
@@ -332,10 +464,10 @@
                     drawInteractiveAngle();
                     updateAngleInfo();
                 });
-                drawInteractiveAngle();
             }
             
             Storage.updateStreak();
+            updateExamStatus();
         }
 
         function showTab(tabName) {
@@ -345,14 +477,20 @@
             document.getElementById(tabName).classList.add('active');
             
             document.querySelectorAll('.tab-button').forEach(button => {
-                const labels = { tipos: 'Tipos', medir: 'Medir', interactivo: 'Interactivo', practica: 'Práctica' };
+                const labels = { glosario: 'Glosario', simbolos: 'Símbolos', introduccion: 'Introducción', 
+                                teoria: 'Teoría', entrenamiento: 'Entrenamiento', examen: 'Examen' };
                 if (button.textContent.includes(labels[tabName])) {
                     button.classList.add('active');
                 }
             });
             
-            if (tabName === 'interactivo') {
-                setTimeout(drawInteractiveAngle, 100);
+            if (tabName === 'teoria') {
+                setTimeout(() => {
+                    drawInteractiveAngle();
+                    updateAngleInfo();
+                }, 100);
+            } else if (tabName === 'examen') {
+                updateExamStatus();
             }
         }
 
@@ -402,7 +540,11 @@
         }
 
         function updateAngleInfo() {
-            document.getElementById('angle-value').textContent = currentAngle + '°';
+            const angleValue = document.getElementById('angle-value');
+            const angleType = document.getElementById('angle-type');
+            if (!angleValue || !angleType) return;
+
+            angleValue.textContent = currentAngle + '°';
             
             let type = '';
             if (currentAngle === 0) type = 'Sin ángulo';
@@ -411,7 +553,7 @@
             else if (currentAngle < 180) type = 'Ángulo Obtuso';
             else if (currentAngle === 180) type = 'Ángulo Llano';
             
-            document.getElementById('angle-type').textContent = type;
+            angleType.textContent = type;
         }
 
         function generateQuestion() {
@@ -419,10 +561,12 @@
                 { value: 45, type: 'agudo' },
                 { value: 30, type: 'agudo' },
                 { value: 60, type: 'agudo' },
+                { value: 75, type: 'agudo' },
                 { value: 90, type: 'recto' },
                 { value: 120, type: 'obtuso' },
                 { value: 150, type: 'obtuso' },
                 { value: 135, type: 'obtuso' },
+                { value: 100, type: 'obtuso' },
                 { value: 180, type: 'llano' }
             ];
             
@@ -527,6 +671,188 @@
             document.getElementById('score').textContent = Storage.getTotalPoints();
             document.getElementById('level').textContent = Gamification.getCurrentLevel().name;
         }
+
+        // EXAM FUNCTIONS
+        function startExam() {
+            examQuestions = generateExamQuestions();
+            examAnswers = new Array(examQuestions.length).fill(null);
+            
+            document.getElementById('exam-container').style.display = 'none';
+            document.getElementById('exam-results').style.display = 'none';
+            document.getElementById('exam-questions').style.display = 'block';
+            
+            renderExamQuestions();
+        }
+
+        function generateExamQuestions() {
+            const questionBank = [
+                { q: "¿Cuántos grados tiene un ángulo agudo?", a: "Menos de 90°", options: ["Menos de 90°", "Exactamente 90°", "Más de 90°", "Exactamente 180°"] },
+                { q: "¿Cuántos grados tiene un ángulo recto?", a: "90°", options: ["45°", "90°", "180°", "360°"] },
+                { q: "¿Cuántos grados tiene un ángulo obtuso?", a: "Entre 90° y 180°", options: ["Menos de 90°", "Exactamente 90°", "Entre 90° y 180°", "Más de 180°"] },
+                { q: "¿Cuántos grados tiene un ángulo llano?", a: "180°", options: ["90°", "180°", "270°", "360°"] },
+                { q: "Un ángulo de 45° es:", a: "Agudo", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Un ángulo de 135° es:", a: "Obtuso", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "¿Qué herramienta usamos para medir ángulos?", a: "Transportador", options: ["Regla", "Transportador", "Compás", "Escuadra"] },
+                { q: "¿En qué unidad se miden los ángulos?", a: "Grados", options: ["Metros", "Grados", "Centímetros", "Litros"] },
+                { q: "¿Cómo se llama el punto donde se encuentran dos lados de un ángulo?", a: "Vértice", options: ["Centro", "Vértice", "Base", "Cúspide"] },
+                { q: "¿Cuántos grados tiene una vuelta completa?", a: "360°", options: ["180°", "270°", "360°", "720°"] },
+                { q: "Un ángulo de 90° también se llama:", a: "Ángulo recto", options: ["Ángulo agudo", "Ángulo recto", "Ángulo obtuso", "Ángulo llano"] },
+                { q: "Dos líneas perpendiculares forman un ángulo de:", a: "90°", options: ["45°", "90°", "180°", "270°"] },
+                { q: "Un ángulo de 30° es:", a: "Agudo", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Un ángulo de 120° es:", a: "Obtuso", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Un ángulo de 60° es:", a: "Agudo", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Un ángulo de 150° es:", a: "Obtuso", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "¿Cuál de estos NO es un tipo de ángulo?", a: "Ángulo redondo", options: ["Ángulo agudo", "Ángulo recto", "Ángulo redondo", "Ángulo obtuso"] },
+                { q: "Las esquinas de un libro forman ángulos de:", a: "90°", options: ["45°", "90°", "180°", "360°"] },
+                { q: "La mitad de un ángulo llano es:", a: "90°", options: ["45°", "90°", "180°", "270°"] },
+                { q: "Si un ángulo mide 85°, es:", a: "Agudo", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Si un ángulo mide 95°, es:", a: "Obtuso", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "¿Cuántos grados mide un cuarto de círculo?", a: "90°", options: ["45°", "90°", "180°", "360°"] },
+                { q: "¿Qué símbolo representa un ángulo?", a: "∠", options: ["°", "∠", "⊥", "∞"] },
+                { q: "Las manecillas del reloj a las 3:00 forman un ángulo:", a: "Recto", options: ["Agudo", "Recto", "Obtuso", "Llano"] },
+                { q: "Un ángulo mayor que 90° pero menor que 180° es:", a: "Obtuso", options: ["Agudo", "Recto", "Obtuso", "Llano"] }
+            ];
+
+            // Shuffle and select 20 questions
+            const shuffled = questionBank.sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, 20);
+        }
+
+        function renderExamQuestions() {
+            const container = document.getElementById('exam-questions');
+            let html = '<div class="exam-questions-container">';
+            
+            examQuestions.forEach((q, index) => {
+                html += `
+                    <div class="exam-question">
+                        <h4>Pregunta ${index + 1}</h4>
+                        <p>${q.q}</p>
+                        <div class="exam-options">
+                `;
+                
+                q.options.forEach((option, optIndex) => {
+                    html += `
+                        <label class="exam-option">
+                            <input type="radio" name="q${index}" value="${option}" onchange="saveAnswer(${index}, '${option}')">
+                            <span>${option}</span>
+                        </label>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            html += '<button class="calc-button" onclick="submitExam()">📝 Enviar Examen</button>';
+            
+            container.innerHTML = html;
+        }
+
+        function saveAnswer(questionIndex, answer) {
+            examAnswers[questionIndex] = answer;
+        }
+
+        function submitExam() {
+            // Check if all questions answered
+            if (examAnswers.includes(null)) {
+                alert('Por favor responde todas las preguntas antes de enviar el examen.');
+                return;
+            }
+            
+            // Calculate score
+            let correct = 0;
+            examQuestions.forEach((q, index) => {
+                if (examAnswers[index] === q.a) {
+                    correct++;
+                }
+            });
+            
+            const percentage = (correct / examQuestions.length) * 100;
+            const passed = percentage >= 70;
+            
+            // Save results
+            Storage.saveFinalTestResults(MODULE_ID, correct, examQuestions.length, passed);
+            
+            // Award trophy if passed
+            if (passed) {
+                Storage.awardTrophy('angulos');
+                Gamification.showTrophyToast('Experto en Ángulos');
+            }
+            
+            // Show results
+            showExamResults(correct, examQuestions.length, percentage, passed);
+        }
+
+        function showExamResults(correct, total, percentage, passed) {
+            document.getElementById('exam-questions').style.display = 'none';
+            document.getElementById('exam-results').style.display = 'block';
+            
+            const title = document.getElementById('exam-score-title');
+            const feedback = document.getElementById('exam-feedback');
+            
+            title.textContent = `Resultado: ${correct}/${total} (${percentage.toFixed(1)}%)`;
+            
+            if (passed) {
+                feedback.innerHTML = `
+                    <div class="result" style="background: rgba(78, 205, 196, 0.3);">
+                        <h3>¡Felicitaciones! 🎉</h3>
+                        <p>Has aprobado el examen con ${percentage.toFixed(1)}%</p>
+                        <p>🏆 ¡Has ganado el trofeo "Experto en Ángulos"!</p>
+                        <p>Dominas los ángulos perfectamente. ¡Sigue así!</p>
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="result" style="background: rgba(255, 107, 107, 0.3);">
+                        <h3>Sigue practicando 💪</h3>
+                        <p>Has obtenido ${percentage.toFixed(1)}%</p>
+                        <p>Necesitas al menos 70% para aprobar.</p>
+                        <p>Revisa la teoría y vuelve a intentarlo. ¡Tú puedes!</p>
+                    </div>
+                `;
+            }
+            
+            updateExamStatus();
+        }
+
+        function updateExamStatus() {
+            const testData = Storage.getFinalTestData(MODULE_ID);
+            const statusDiv = document.getElementById('exam-status');
+            
+            if (testData && testData.passed) {
+                statusDiv.innerHTML = `
+                    <div class="result" style="background: rgba(78, 205, 196, 0.3);">
+                        <h4>✅ Examen Aprobado</h4>
+                        <p>Puntuación: ${((testData.score / testData.total) * 100).toFixed(1)}%</p>
+                        <p>🏆 Trofeo "Experto en Ángulos" obtenido</p>
+                    </div>
+                `;
+            } else if (testData) {
+                statusDiv.innerHTML = `
+                    <div class="result" style="background: rgba(255, 255, 255, 0.9);">
+                        <h4>📝 Último intento</h4>
+                        <p>Puntuación: ${((testData.score / testData.total) * 100).toFixed(1)}%</p>
+                        <p>Intentos: ${testData.attempts}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Add Enter key support
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const activeTab = document.querySelector('.tab-content.active');
+                if (activeTab && activeTab.id === 'entrenamiento') {
+                    const answer = document.getElementById('practice-answer').value;
+                    if (answer && !questionAnswered) {
+                        checkAnswer();
+                    }
+                }
+            }
+        });
 
         init();
     </script>
