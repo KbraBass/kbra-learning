@@ -279,7 +279,7 @@
                         <label for="sum2">Segundo factor:</label>
                         <input type="number" id="sum2" placeholder="Ejemplo: 3" min="0">
                     </div>
-                    <button class="calc-button" onclick="add()">✖️ Multiplicar</button>
+                    <button class="calc-button" onclick="multiply()">✖️ Multiplicar</button>
                     <div class="result" id="sum-result">¡Escribe dos números y multiplícalos!</div>
                 </div>
 
@@ -305,7 +305,7 @@
                         <label for="carry1">Número para la tabla (1-12):</label>
                         <input type="number" id="carry1" placeholder="Ejemplo: 7" min="1" max="12">
                     </div>
-                    <button class="calc-button" onclick="addWithCarry()">✖️ Mostrar Tabla</button>
+                    <button class="calc-button" onclick="showMultiplicationTable()">✖️ Mostrar Tabla</button>
                     <div class="result" id="carry-result">¡Escribe un número!</div>
                 </div>
 
@@ -481,13 +481,13 @@
             
             // Add Enter key support for inputs
             document.getElementById('sum1').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') add();
+                if (e.key === 'Enter') multiply();
             });
             document.getElementById('sum2').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') add();
+                if (e.key === 'Enter') multiply();
             });
             document.getElementById('carry1').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') addWithCarry();
+                if (e.key === 'Enter') showMultiplicationTable();
             });
             document.getElementById('practice-answer').addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') checkAnswer();
@@ -527,8 +527,8 @@
             return labels[tabId] || '';
         }
 
-        // Basic addition with visualization
-        function add() {
+        // Basic multiplication with visualization
+        function multiply() {
             const num1 = parseInt(document.getElementById('sum1').value);
             const num2 = parseInt(document.getElementById('sum2').value);
             const result = document.getElementById('sum-result');
@@ -551,16 +551,16 @@
             `;
             result.style.background = 'rgba(78, 205, 196, 0.3)';
             
-            // Visual representation (if numbers are small enough)
+            // Visual representation (if product is small enough)
             if (product <= 20) {
-                visualDiv.innerHTML = Components.createNumberBlocks(num1, num2, product);
+                visualDiv.innerHTML = Components.createNumberBlocks(product);
             } else {
                 visualDiv.innerHTML = '<p style="text-align: center; color: #666;">El producto es muy grande para mostrar visualmente, ¡pero el resultado es correcto!</p>';
             }
         }
 
         // Show multiplication table
-        function addWithCarry() {
+        function showMultiplicationTable() {
             const tableNum = parseInt(document.getElementById('carry1').value);
             const result = document.getElementById('carry-result');
             const explanation = document.getElementById('carry-explanation');
