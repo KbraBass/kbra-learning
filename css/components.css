@@ -12,10 +12,6 @@
 }
 
 .game-card {
-    --card-color1: #667eea;
-    --card-color2: #764ba2;
-    
-    background: linear-gradient(135deg, var(--card-color1) 0%, var(--card-color2) 100%);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     box-shadow: var(--shadow-lg);
@@ -24,6 +20,36 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.card-blue {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.card-orange {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+}
+
+.card-green {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+}
+
+.card-red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.card-teal-pink {
+    background: linear-gradient(135deg, #4ecdc4, #f5576c);
+}
+
+.card-purple-red {
+    background: linear-gradient(135deg, #764ba2, #f5576c);
+}
+.card-green-blue {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+}
+.card-pink-blue {
+    background: linear-gradient(135deg, #f5576c, var(--color-primary));
 }
 
 .game-card:hover {

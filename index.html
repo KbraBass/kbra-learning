@@ -8,33 +8,6 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/components.css">
-    <style>
-        /* Simple tab-like navigation */
-        .dashboard-nav {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .dashboard-nav .nav-tab {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 10px 10px 0 0;
-            transition: background 0.3s;
-        }
-        .dashboard-nav .nav-tab.active {
-            background: rgba(255, 255, 255, 0.3);
-            font-weight: bold;
-        }
-        .dashboard-view {
-            display: none;
-        }
-        .dashboard-view.active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -61,10 +34,10 @@
             <div class="category-section">
                 <h2 class="category-title"><span class="category-icon">🔢</span> Matemáticas Básicas <span class="category-icon">🔢</span></h2>
                 <div class="games-grid">
-                    <div class="game-card"><div class="game-icon">➕</div><h2 class="game-title">Suma</h2><p class="game-description">¡Aprende a sumar! Juntar números nunca fue tan divertido.</p><a href="modules/basic-math/suma.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">➖</div><h2 class="game-title">Resta</h2><p class="game-description">¡Domina la resta! Aprende a quitar números de forma fácil.</p><a href="modules/basic-math/resta.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">✖️</div><h2 class="game-title">Multiplicación</h2><p class="game-description">¡Tablas de multiplicar! Aprende las tablas del 1 al 10.</p><a href="modules/basic-math/multiplicacion.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">➗</div><h2 class="game-title">División</h2><p class="game-description">¡Aprende a dividir! Reparte cantidades equitativamente.</p><a href="modules/basic-math/division.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-blue"><div class="game-icon">➕</div><h2 class="game-title">Suma</h2><p class="game-description">¡Aprende a sumar! Juntar números nunca fue tan divertido.</p><a href="modules/basic-math/suma.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-orange"><div class="game-icon">➖</div><h2 class="game-title">Resta</h2><p class="game-description">¡Domina la resta! Aprende a quitar números de forma fácil.</p><a href="modules/basic-math/resta.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-green"><div class="game-icon">✖️</div><h2 class="game-title">Multiplicación</h2><p class="game-description">¡Tablas de multiplicar! Aprende las tablas del 1 al 10.</p><a href="modules/basic-math/multiplicacion.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-red"><div class="game-icon">➗</div><h2 class="game-title">División</h2><p class="game-description">¡Aprende a dividir! Reparte cantidades equitativamente.</p><a href="modules/basic-math/division.html" class="game-link">¡Jugar Ahora!</a></div>
                 </div>
             </div>
 
@@ -72,9 +45,9 @@
             <div class="category-section">
                 <h2 class="category-title"><span class="category-icon">🔷</span> Geometría Divertida <span class="category-icon">🔶</span></h2>
                 <div class="games-grid">
-                    <div class="game-card"><div class="game-icon">🔷</div><h2 class="game-title">Formas Geométricas</h2><p class="game-description">¡Descubre círculos, triángulos, cuadrados y más!</p><a href="modules/geometry/formas.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">📐</div><h2 class="game-title">Ángulos</h2><p class="game-description">¡Aprende sobre ángulos agudos, rectos y obtusos!</p><a href="modules/geometry/angulos.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">📏</div><h2 class="game-title">Perímetro y Área</h2><p class="game-description">¡Mide el borde y el espacio de las formas!</p><a href="modules/geometry/perimetro-area.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-teal-pink"><div class="game-icon">🔷</div><h2 class="game-title">Formas Geométricas</h2><p class="game-description">¡Descubre círculos, triángulos, cuadrados y más!</p><a href="modules/geometry/formas.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-green-blue"><div class="game-icon">📐</div><h2 class="game-title">Ángulos</h2><p class="game-description">¡Aprende sobre ángulos agudos, rectos y obtusos!</p><a href="modules/geometry/angulos.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-pink-blue"><div class="game-icon">📏</div><h2 class="game-title">Perímetro y Área</h2><p class="game-description">¡Mide el borde y el espacio de las formas!</p><a href="modules/geometry/perimetro-area.html" class="game-link">¡Jugar Ahora!</a></div>
                 </div>
             </div>
 
@@ -82,9 +55,9 @@
             <div class="category-section">
                 <h2 class="category-title"><span class="category-icon">🎯</span> Conceptos Numéricos <span class="category-icon">🎯</span></h2>
                 <div class="games-grid">
-                    <div class="game-card"><div class="game-icon">🎯</div><h2 class="game-title">Redondeo</h2><p class="game-description">¡Redondea números como un experto!</p><a href="modules/number-concepts/redondeo.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">💯</div><h2 class="game-title">Composición Decimal</h2><p class="game-description">¡Entiende las unidades, decenas y centenas!</p><a href="modules/number-concepts/composicion-decimal.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">🔢</div><h2 class="game-title">Factorización Prima</h2><p class="game-description">¡Descompón números en factores primos!</p><a href="modules/number-concepts/factorizacion-prima.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-purple-red"><div class="game-icon">🎯</div><h2 class="game-title">Redondeo</h2><p class="game-description">¡Redondea números como un experto!</p><a href="modules/number-concepts/redondeo.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-blue"><div class="game-icon">💯</div><h2 class="game-title">Composición Decimal</h2><p class="game-description">¡Entiende las unidades, decenas y centenas!</p><a href="modules/number-concepts/composicion-decimal.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-orange"><div class="game-icon">🔢</div><h2 class="game-title">Factorización Prima</h2><p class="game-description">¡Descompón números en factores primos!</p><a href="modules/number-concepts/factorizacion-prima.html" class="game-link">¡Jugar Ahora!</a></div>
                 </div>
             </div>
 
@@ -92,9 +65,9 @@
             <div class="category-section">
                 <h2 class="category-title"><span class="category-icon">⏰</span> Conceptos de Tiempo <span class="category-icon">📅</span></h2>
                 <div class="games-grid">
-                    <div class="game-card"><div class="game-icon">🕐</div><h2 class="game-title">El Reloj</h2><p class="game-description">¡Aprende a leer la hora como un profesional!</p><a href="modules/time-concepts/reloj.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">📅</div><h2 class="game-title">El Calendario</h2><p class="game-description">¡Descubre meses, semanas y días!</p><a href="modules/time-concepts/calendario.html" class="game-link">¡Jugar Ahora!</a></div>
-                    <div class="game-card"><div class="game-icon">🍂</div><h2 class="game-title">Las Estaciones</h2><p class="game-description">¡Aprende sobre primavera, verano, otoño e invierno!</p><a href="modules/time-concepts/estaciones.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-green"><div class="game-icon">🕐</div><h2 class="game-title">El Reloj</h2><p class="game-description">¡Aprende a leer la hora como un profesional!</p><a href="modules/time-concepts/reloj.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-red"><div class="game-icon">📅</div><h2 class="game-title">El Calendario</h2><p class="game-description">¡Descubre meses, semanas y días!</p><a href="modules/time-concepts/calendario.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card card-teal-pink"><div class="game-icon">🍂</div><h2 class="game-title">Las Estaciones</h2><p class="game-description">¡Aprende sobre primavera, verano, otoño e invierno!</p><a href="modules/time-concepts/estaciones.html" class="game-link">¡Jugar Ahora!</a></div>
                 </div>
             </div>
             
@@ -102,8 +75,8 @@
             <div class="category-section">
                 <h2 class="category-title"><span class="category-icon">🎓</span> Aprendizaje Avanzado <span class="category-icon">🎓</span></h2>
                 <div class="text-center-30-mb">
-                    <p style="font-size: 1.3em; color: white; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Contenido universitario y profesional para adolescentes y adultos</p>
-                    <a href="modules/advanced/index.html" class="btn btn-primary" style="font-size: 1.2em; padding: 20px 40px;">📚 Explorar Módulos Avanzados →</a>
+                    <p class="advanced-learning-text">Contenido universitario y profesional para adolescentes y adultos</p>
+                    <a href="modules/advanced/index.html" class="btn btn-primary advanced-learning-button">📚 Explorar Módulos Avanzados →</a>
                 </div>
             </div>
         </div>
