@@ -2030,15 +2030,15 @@ tr:hover {
 
 /* Module-specific theme override */
 .input-section.theme-pink {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, #cd3cdd, #a8293a);
 }
 
 .module-glossary-item {
-    background: white;
+    background: rgb(255, 255, 230);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
 }
 
 .module-glossary-item h3 {
@@ -2047,11 +2047,11 @@ tr:hover {
 }
 
 .module-symbol-card {
-    background: white;
+    background: rgb(255, 255, 230);
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
 }
 
 .module-symbol-display {
@@ -2068,22 +2068,22 @@ tr:hover {
 }
 
 .module-intro-section {
-    background: white;
+    background: rgb(255, 255, 230);
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
 }
 
 .module-exam-intro, .module-exam-area, .module-exam-results {
     background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
 }
 
 .module-exam-info {
-    background: var(--color-gray-100);
+    background: rgba(96, 50, 234, 0.3);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
@@ -2108,7 +2108,7 @@ tr:hover {
 }
 
 .module-exam-stat-item {
-    background: var(--color-gray-100);
+    background: #85d4ac;
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;

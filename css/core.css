@@ -15,10 +15,10 @@
     /* Colors - Main Palette */
     --color-primary: #3498db;
     --color-primary-dark: #2980b9;
-    --color-secondary: #f1c40f;
-    --color-secondary-dark: #e67e22;
-    --color-accent: #2ecc71;
-    --color-accent-dark: #27ae60;
+    --color-secondary: #994500;
+    --color-secondary-dark: #c8cb22;
+    --color-accent: #1c944e;
+    --color-accent-dark: #092715;
     
     /* Functional Colors */
     --color-success: #00b894;
@@ -427,7 +427,7 @@ button:disabled {
 
 /* ==================== PRACTICE AREAS ==================== */
 .practice-area {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(98, 190, 118, 0.9);
     border-radius: var(--radius-md);
     padding: var(--space-xl);
     margin: var(--space-lg) 0;
