@@ -140,7 +140,7 @@
                 title: '¡Aprende a Sumar!',
                 subtitle: 'Descubre la diversión de juntar números',
                 icon: '➕',
-                backLink: '../index.html'
+                backLink: '../../index.html'
             });
 
             // Render tabs
