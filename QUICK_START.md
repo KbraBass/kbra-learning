@@ -18,7 +18,7 @@
 ### Demo Implementation (Complete)
 - ✅ **modules/basic-math/suma.html** - Fully converted reference implementation
 - ✅ **modules/basic-math/index.html** - Category landing page
-- ✅ **modules/index.html** - Main modules hub
+- ✅ **index.html** - Main modules hub
 
 ### Documentation (Complete)
 - ✅ UNIFICATION_PLAN.md - Full architecture plan

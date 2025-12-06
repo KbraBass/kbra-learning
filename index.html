@@ -1,165 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kbra Learning Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Panel Principal - Kbra Learning</title>
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        /* Simple tab-like navigation */
+        .dashboard-nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dashboard-nav .nav-tab {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 10px 10px 0 0;
+            transition: background 0.3s;
+        }
+        .dashboard-nav .nav-tab.active {
+            background: rgba(255, 255, 255, 0.3);
+            font-weight: bold;
+        }
+        .dashboard-view {
+            display: none;
+        }
+        .dashboard-view.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>🎓 Kbra Learning Platform</h1>
-        <div class="user-stats">
-            <div class="stat">
-                <span class="stat-icon">⭐</span>
-                <span class="stat-value" id="total-points">0</span>
-                <span class="stat-label">Points</span>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Centro de Aprendizaje 🎓</h1>
+            <p class="subtitle">Tu panel central de Kbra Learning</p>
+        </div>
+
+        <!-- User Stats -->
+        <div id="stats-container"></div>
+
+        <!-- Achievements Snapshot -->
+        <div id="achievements-section"></div>
+
+        <!-- Navigation -->
+        <div class="dashboard-nav">
+            <div class="nav-tab active" onclick="showView('modules-view')">Módulos</div>
+            <div class="nav-tab" onclick="showView('all-achievements-view')">Todos los Logros</div>
+        </div>
+
+        <!-- Modules View -->
+        <div id="modules-view" class="dashboard-view active">
+            <!-- Category: Basic Math -->
+            <div class="category-section">
+                <h2 class="category-title"><span class="category-icon">🔢</span> Matemáticas Básicas <span class="category-icon">🔢</span></h2>
+                <div class="games-grid">
+                    <div class="game-card"><div class="game-icon">➕</div><h2 class="game-title">Suma</h2><p class="game-description">¡Aprende a sumar! Juntar números nunca fue tan divertido.</p><a href="modules/basic-math/suma.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">➖</div><h2 class="game-title">Resta</h2><p class="game-description">¡Domina la resta! Aprende a quitar números de forma fácil.</p><a href="modules/basic-math/resta.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">✖️</div><h2 class="game-title">Multiplicación</h2><p class="game-description">¡Tablas de multiplicar! Aprende las tablas del 1 al 10.</p><a href="modules/basic-math/multiplicacion.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">➗</div><h2 class="game-title">División</h2><p class="game-description">¡Aprende a dividir! Reparte cantidades equitativamente.</p><a href="modules/basic-math/division.html" class="game-link">¡Jugar Ahora!</a></div>
+                </div>
             </div>
-            <div class="stat">
-                <span class="stat-icon">🏆</span>
-                <span class="stat-value" id="achievements-count">0</span>
-                <span class="stat-label">Achievements</span>
+
+            <!-- Category: Geometry -->
+            <div class="category-section">
+                <h2 class="category-title"><span class="category-icon">🔷</span> Geometría Divertida <span class="category-icon">🔶</span></h2>
+                <div class="games-grid">
+                    <div class="game-card"><div class="game-icon">🔷</div><h2 class="game-title">Formas Geométricas</h2><p class="game-description">¡Descubre círculos, triángulos, cuadrados y más!</p><a href="modules/geometry/formas.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">📐</div><h2 class="game-title">Ángulos</h2><p class="game-description">¡Aprende sobre ángulos agudos, rectos y obtusos!</p><a href="modules/geometry/angulos.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">📏</div><h2 class="game-title">Perímetro y Área</h2><p class="game-description">¡Mide el borde y el espacio de las formas!</p><a href="modules/geometry/perimetro-area.html" class="game-link">¡Jugar Ahora!</a></div>
+                </div>
             </div>
-            <div class="stat">
-                <span class="stat-icon">📚</span>
-                <span class="stat-value" id="completed-lessons">0</span>
-                <span class="stat-label">Completed</span>
+
+            <!-- Category: Number Concepts -->
+            <div class="category-section">
+                <h2 class="category-title"><span class="category-icon">🎯</span> Conceptos Numéricos <span class="category-icon">🎯</span></h2>
+                <div class="games-grid">
+                    <div class="game-card"><div class="game-icon">🎯</div><h2 class="game-title">Redondeo</h2><p class="game-description">¡Redondea números como un experto!</p><a href="modules/number-concepts/redondeo.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">💯</div><h2 class="game-title">Composición Decimal</h2><p class="game-description">¡Entiende las unidades, decenas y centenas!</p><a href="modules/number-concepts/composicion-decimal.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">🔢</div><h2 class="game-title">Factorización Prima</h2><p class="game-description">¡Descompón números en factores primos!</p><a href="modules/number-concepts/factorizacion-prima.html" class="game-link">¡Jugar Ahora!</a></div>
+                </div>
+            </div>
+
+            <!-- Category: Time Concepts -->
+            <div class="category-section">
+                <h2 class="category-title"><span class="category-icon">⏰</span> Conceptos de Tiempo <span class="category-icon">📅</span></h2>
+                <div class="games-grid">
+                    <div class="game-card"><div class="game-icon">🕐</div><h2 class="game-title">El Reloj</h2><p class="game-description">¡Aprende a leer la hora como un profesional!</p><a href="modules/time-concepts/reloj.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">📅</div><h2 class="game-title">El Calendario</h2><p class="game-description">¡Descubre meses, semanas y días!</p><a href="modules/time-concepts/calendario.html" class="game-link">¡Jugar Ahora!</a></div>
+                    <div class="game-card"><div class="game-icon">🍂</div><h2 class="game-title">Las Estaciones</h2><p class="game-description">¡Aprende sobre primavera, verano, otoño e invierno!</p><a href="modules/time-concepts/estaciones.html" class="game-link">¡Jugar Ahora!</a></div>
+                </div>
+            </div>
+            
+            <!-- Category: Advanced Learning -->
+            <div class="category-section">
+                <h2 class="category-title"><span class="category-icon">🎓</span> Aprendizaje Avanzado <span class="category-icon">🎓</span></h2>
+                <div class="text-center-30-mb">
+                    <p style="font-size: 1.3em; color: white; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Contenido universitario y profesional para adolescentes y adultos</p>
+                    <a href="modules/advanced/index.html" class="btn btn-primary" style="font-size: 1.2em; padding: 20px 40px;">📚 Explorar Módulos Avanzados →</a>
+                </div>
             </div>
         </div>
-    </header>
 
-    <main>
-        <section class="welcome-section" id="welcome-section">
-            <h2>Welcome to Your Learning Journey! 🚀</h2>
-            <p>Learn at your own pace with fun, interactive lessons and earn achievements along the way!</p>
-            <button class="btn btn-primary" onclick="startLearning()">Start Learning</button>
-        </section>
-
-        <!-- NEW: Modules Hub Link -->
-        <section class="modules-hub-section hidden-default" id="modules-hub-section">
-            <div class="hub-banner">
-                <h2>🎓 Learning Modules Hub</h2>
-                <p>Explore our comprehensive collection of interactive learning modules</p>
-                <div class="flex-gap-md">
-                    <a href="modules/index.html" class="btn btn-primary btn-large">📚 Basic Modules →</a>
-                    <a href="modules/advanced/index.html" class="btn btn-primary btn-large">🎓 Advanced Learning →</a>
+        <!-- All Achievements View -->
+        <div id="all-achievements-view" class="dashboard-view">
+            <div class="category-section">
+                <h2 class="category-title">Todos los Logros</h2>
+                <div id="all-achievements-grid" class="achievements-grid full-list">
+                    <!-- All achievements will be rendered here by app.js -->
                 </div>
             </div>
-            <div class="hub-stats" id="hub-stats">
-                <div class="hub-stat-card">
-                    <span class="hub-stat-icon">📚</span>
-                    <span class="hub-stat-value" id="total-modules">28</span>
-                    <span class="hub-stat-label">Total Modules</span>
-                </div>
-                <div class="hub-stat-card">
-                    <span class="hub-stat-icon">✅</span>
-                    <span class="hub-stat-value" id="completed-modules">0</span>
-                    <span class="hub-stat-label">Completed</span>
-                </div>
-                <div class="hub-stat-card">
-                    <span class="hub-stat-icon">⭐</span>
-                    <span class="hub-stat-value" id="module-points">0</span>
-                    <span class="hub-stat-label">Points Earned</span>
-                </div>
-                <div class="hub-stat-card">
-                    <span class="hub-stat-icon">🔥</span>
-                    <span class="hub-stat-value" id="current-streak">0</span>
-                    <span class="hub-stat-label">Day Streak</span>
-                </div>
-            </div>
-            <div class="categories-preview">
-                <h3>Categories Available:</h3>
-                <div class="category-tags">
-                    <span class="category-tag">🔢 Basic Math (4)</span>
-                    <span class="category-tag">📐 Geometry (3)</span>
-                    <span class="category-tag">🎯 Number Concepts (3)</span>
-                    <span class="category-tag">⏰ Time Concepts (3)</span>
-                    <span class="category-tag">🎓 Advanced Math (15)</span>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
 
-        <section class="lessons-section hidden-default" id="lessons-section">
-            <h2>Choose Your Lesson</h2>
-            <div class="lessons-grid" id="lessons-grid">
-                <!-- Lessons will be dynamically loaded here -->
-            </div>
-        </section>
-
-        <section class="quiz-section hidden-default" id="quiz-section">
-            <div class="quiz-container">
-                <div class="quiz-header">
-                    <h2 id="quiz-title">Quiz</h2>
-                    <div class="quiz-progress">
-                        <span id="current-question">1</span> / <span id="total-questions">5</span>
-                    </div>
-                </div>
-                <div class="quiz-content">
-                    <h3 id="question-text"></h3>
-                    <div class="options" id="options-container">
-                        <!-- Options will be dynamically loaded here -->
-                    </div>
-                </div>
-                <div class="quiz-footer">
-                    <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
-                    <button class="btn btn-primary hidden-default" id="next-btn" onclick="nextQuestion()">Next Question</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="achievements-section hidden-default" id="achievements-section">
-            <h2>🏆 Your Achievements</h2>
-            <div class="achievements-grid" id="achievements-grid">
-                <!-- Achievements will be dynamically loaded here -->
-            </div>
-            <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
-        </section>
-
-        <section class="results-section hidden-default" id="results-section">
-            <div class="results-container">
-                <h2>Quiz Complete! 🎉</h2>
-                <div class="results-content">
-                    <div class="score-display">
-                        <span class="score-label">Your Score:</span>
-                        <span class="score-value" id="final-score">0</span>
-                        <span class="score-total">/ <span id="max-score">0</span></span>
-                    </div>
-                    <p id="result-message"></p>
-                    <div class="points-earned">
-                        <span class="points-icon">⭐</span>
-                        <span id="points-earned">0</span>
-                        <span>Points Earned!</span>
-                    </div>
-                </div>
-                <div class="results-actions">
-                    <button class="btn btn-secondary" onclick="backToLessons()">Back to Lessons</button>
-                    <button class="btn btn-primary" onclick="retryQuiz()">Try Again</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <nav class="bottom-nav">
-            <button class="nav-btn" onclick="showSection('modules')">
-                <span class="nav-icon">🎓</span>
-                <span class="nav-label">Modules</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('lessons')">
-                <span class="nav-icon">📚</span>
-                <span class="nav-label">Lessons</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('achievements')">
-                <span class="nav-icon">🏆</span>
-                <span class="nav-label">Achievements</span>
-            </button>
-            <button class="nav-btn" onclick="resetProgress()">
-                <span class="nav-icon">🔄</span>
-                <span class="nav-label">Reset</span>
-            </button>
-        </nav>
-    </footer>
-
+    <!-- Shared JavaScript Libraries -->
+    <script src="lib/storage.js"></script>
+    <script src="lib/gamification.js"></script>
+    <script src="lib/components.js"></script>
     <script src="app.js"></script>
+
+    <script>
+        function showView(viewId) {
+            // Hide all views
+            document.querySelectorAll('.dashboard-view').forEach(view => view.classList.remove('active'));
+            // Deactivate all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+            
+            // Show the selected view
+            document.getElementById(viewId).classList.add('active');
+            // Activate the selected tab
+            document.querySelector(`.nav-tab[onclick="showView('${viewId}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
