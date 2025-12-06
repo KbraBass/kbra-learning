@@ -8,139 +8,6 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="../../css/core.css">
     <link rel="stylesheet" href="../../css/components.css">
-    
-    <style>
-        /* Module-specific theme override */
-        .input-section {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-        
-        .glossary-item {
-            background: white;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .glossary-item h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        
-        .symbol-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .symbol-display {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        
-        .symbols-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .intro-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .item-block.removed {
-            opacity: 0.3;
-            text-decoration: line-through;
-        }
-        
-        .exam-intro, .exam-area, .exam-results {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .exam-info {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .exam-progress {
-            background: #667eea;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
-        .result-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .stat-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .stat-value {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-        
-        .stat-label {
-            display: block;
-            margin-top: 0.5rem;
-            color: #666;
-        }
-        
-        .success-message {
-            background: #d4edda;
-            border: 2px solid #28a745;
-            color: #155724;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .error-message {
-            background: #f8d7da;
-            border: 2px solid #dc3545;
-            color: #721c24;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .btn-large {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -152,27 +19,27 @@
             <div class="tab-content active" id="glosario">
                 <h2>📖 Glosario de Términos</h2>
                 <div class="glossary-section">
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Resta (Sustracción)</h3>
                         <p>Operación matemática que consiste en quitar o disminuir una cantidad de otra para saber cuánto queda.</p>
                         <div class="example"><strong>Ejemplo:</strong> 8 - 3 = 5</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Minuendo</h3>
                         <p>El número del cual restamos. Es el número mayor en una resta. En 10 - 4, el minuendo es 10.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 15 - 7 = 8, el minuendo es 15</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Sustraendo</h3>
                         <p>El número que restamos o quitamos. En 10 - 4, el sustraendo es 4.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 15 - 7 = 8, el sustraendo es 7</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Diferencia (Resultado)</h3>
                         <p>El resultado que obtenemos al restar dos números.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 12 - 5 = 7, la diferencia es 7</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Pedir Prestado (Prestadas)</h3>
                         <p>Cuando el dígito del minuendo es menor que el del sustraendo, "pedimos prestado" 10 unidades de la siguiente columna.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 42 - 17, pedimos prestado 1 decena (10 unidades) para restar 12 - 7</div>
@@ -183,9 +50,9 @@
             <!-- Tab 2: Símbolos -->
             <div class="tab-content" id="simbolos">
                 <h2>🔣 Símbolos y Notación</h2>
-                <div class="symbols-grid">
-                    <div class="symbol-card">
-                        <div class="symbol-display">−</div>
+                <div class="module-symbols-grid">
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">−</div>
                         <div class="symbol-name"><strong>Signo de Resta</strong></div>
                         <div class="symbol-description">
                             Se lee "menos" y representa la operación de restar o quitar cantidades.
@@ -194,8 +61,8 @@
                             <strong>Ejemplo:</strong> 8 - 3 se lee "ocho menos tres"
                         </div>
                     </div>
-                    <div class="symbol-card">
-                        <div class="symbol-display">=</div>
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">=</div>
                         <div class="symbol-name"><strong>Signo de Igual</strong></div>
                         <div class="symbol-description">
                             Indica que las cantidades a ambos lados tienen el mismo valor.
@@ -204,8 +71,8 @@
                             <strong>Ejemplo:</strong> 10 - 4 = 6 significa que diez menos cuatro es igual a seis
                         </div>
                     </div>
-                    <div class="symbol-card">
-                        <div class="symbol-display">></div>
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">></div>
                         <div class="symbol-name"><strong>Mayor que</strong></div>
                         <div class="symbol-description">
                             Indica que el número de la izquierda es mayor que el de la derecha.
@@ -228,13 +95,13 @@
             <!-- Tab 3: Introducción -->
             <div class="tab-content" id="introduccion">
                 <h2>📚 Introducción a la Resta</h2>
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>¿Qué es la Resta?</h3>
                     <p>La resta es una operación matemática fundamental que nos ayuda a saber cuánto queda cuando quitamos una cantidad de otra. Es lo opuesto a sumar: en lugar de juntar, separamos o quitamos.</p>
                     <p><strong>Por ejemplo:</strong> Si tienes 8 caramelos y te comes 3, ¿cuántos te quedan? 8 - 3 = 5 caramelos. ¡Eso es restar!</p>
                 </div>
                 
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>¿Por qué es importante aprender a restar?</h3>
                     <p>La resta es esencial en nuestra vida diaria porque:</p>
                     <ul>
@@ -246,7 +113,7 @@
                     </ul>
                 </div>
                 
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>En el Mundo Real</h3>
                     <p><strong>🏪 En la tienda:</strong> Si pagas $20 por algo que cuesta $13, te devuelven: 20 - 13 = $7</p>
                     <p><strong>🎮 En los videojuegos:</strong> Si tienes 50 puntos y pierdes 15, te quedan: 50 - 15 = 35 puntos</p>
@@ -270,21 +137,21 @@
                 <h2>📖 Teoría y Práctica</h2>
                 
                 <!-- Resta Básica -->
-                <div class="input-section">
+                <div class="input-section theme-blue">
                     <h3>🎯 Calculadora de Resta Básica</h3>
                     <div class="input-group">
-                        <label for="sub1">Minuendo (número mayor):</label>
-                        <input type="number" id="sub1" placeholder="Ejemplo: 8" min="0" value="8">
+                        <label for="num1">Minuendo (número mayor):</label>
+                        <input type="number" id="num1" placeholder="Ejemplo: 8" min="0" value="8">
                     </div>
                     <div class="input-group">
-                        <label for="sub2">Sustraendo (número a restar):</label>
-                        <input type="number" id="sub2" placeholder="Ejemplo: 3" min="0" value="3">
+                        <label for="num2">Sustraendo (número a restar):</label>
+                        <input type="number" id="num2" placeholder="Ejemplo: 3" min="0" value="3">
                     </div>
-                    <button class="calc-button" onclick="subtract()">➖ Restar</button>
-                    <div class="result" id="sub-result">¡Escribe dos números y restalos!</div>
+                    <button class="calc-button" onclick="BasicMathModule.calculate()">➖ Restar</button>
+                    <div class="result" id="calc-result">¡Escribe dos números y restalos!</div>
                 </div>
 
-                <div id="visual-sub"></div>
+                <div id="visual-calc"></div>
 
                 <div class="explanation">
                     <h3>📝 ¿Cómo funciona la resta?</h3>
@@ -298,23 +165,23 @@
                 </div>
 
                 <!-- Resta con Prestadas -->
-                <div class="input-section" style="margin-top: 2rem;">
+                <div class="input-section theme-blue mt-2rem">
                     <h3>🔟 Resta con Prestadas</h3>
                     <p>Cuando el dígito del minuendo es menor que el del sustraendo, "pedimos prestado" 10 de la siguiente columna.</p>
                     
                     <div class="input-group">
-                        <label for="borrow1">Minuendo:</label>
-                        <input type="number" id="borrow1" placeholder="Ejemplo: 42" min="10" value="42">
+                        <label for="carry1">Minuendo:</label>
+                        <input type="number" id="carry1" placeholder="Ejemplo: 42" min="10" value="42">
                     </div>
                     <div class="input-group">
-                        <label for="borrow2">Sustraendo:</label>
-                        <input type="number" id="borrow2" placeholder="Ejemplo: 17" min="10" value="17">
+                        <label for="carry2">Sustraendo:</label>
+                        <input type="number" id="carry2" placeholder="Ejemplo: 17" min="10" value="17">
                     </div>
-                    <button class="calc-button" onclick="subtractWithBorrow()">➖ Restar con Explicación</button>
-                    <div class="result" id="borrow-result">¡Escribe dos números!</div>
+                    <button class="calc-button" onclick="BasicMathModule.calculateWithCarry()">➖ Restar con Explicación</button>
+                    <div class="result" id="carry-result">¡Escribe dos números!</div>
                 </div>
 
-                <div class="explanation" id="borrow-explanation">
+                <div class="explanation" id="carry-explanation">
                     <h3>📝 Explicación paso a paso:</h3>
                     <p>La explicación aparecerá aquí cuando restes dos números.</p>
                 </div>
@@ -342,8 +209,8 @@
                     <div class="input-group">
                         <input type="number" id="practice-answer" placeholder="Tu respuesta..." class="practice-input">
                     </div>
-                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
-                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <button class="calc-button" id="check-button" onclick="BasicMathModule.checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="BasicMathModule.generateQuestion()">🔄 Nueva Pregunta</button>
                     <div class="result" id="practice-result">¡Escribe tu respuesta!</div>
                 </div>
 
@@ -364,8 +231,8 @@
             <div class="tab-content" id="examen">
                 <h2>📝 Examen Final</h2>
                 
-                <div class="exam-intro" id="exam-intro">
-                    <div class="exam-info">
+                <div class="module-exam-intro" id="exam-intro">
+                    <div class="module-exam-info">
                         <h3>Información del Examen</h3>
                         <p><strong>Preguntas:</strong> <span id="exam-total-questions">20</span></p>
                         <p><strong>Tipo:</strong> Resta de números (respuesta numérica)</p>
@@ -383,11 +250,11 @@
                             <li>Necesitas al menos 70% para aprobar</li>
                         </ul>
                     </div>
-                    <button class="calc-button btn-large" onclick="startFinalExam()">🚀 Comenzar Examen</button>
+                    <button class="calc-button btn-large" onclick="BasicMathModule.startFinalExam()">🚀 Comenzar Examen</button>
                 </div>
 
-                <div class="exam-area hidden" id="exam-area">
-                    <div class="exam-progress">
+                <div class="module-exam-area hidden" id="exam-area">
+                    <div class="module-exam-progress">
                         <span>Pregunta <span id="current-q">1</span> de <span id="total-q">20</span></span>
                     </div>
                     <div id="exam-question-container">
@@ -395,30 +262,30 @@
                         <div class="input-group">
                             <input type="number" id="exam-answer" placeholder="Escribe tu respuesta...">
                         </div>
-                        <button class="calc-button btn-large" onclick="submitExamAnswer()">➡️ Siguiente</button>
+                        <button class="calc-button btn-large" onclick="BasicMathModule.submitExamAnswer()">➡️ Siguiente</button>
                     </div>
                 </div>
 
-                <div class="exam-results hidden" id="exam-results">
+                <div class="module-exam-results hidden" id="exam-results">
                     <h3>🎊 Resultados del Examen</h3>
-                    <div class="result-stats">
-                        <div class="stat-item">
-                            <span class="stat-value" id="correct-answers">0</span>
-                            <span class="stat-label">Correctas</span>
+                    <div class="module-result-stats">
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="correct-answers">0</span>
+                            <span class="module-exam-stat-label">Correctas</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="incorrect-answers">0</span>
-                            <span class="stat-label">Incorrectas</span>
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="incorrect-answers">0</span>
+                            <span class="module-exam-stat-label">Incorrectas</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="final-percentage">0%</span>
-                            <span class="stat-label">Calificación</span>
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="final-percentage">0%</span>
+                            <span class="module-exam-stat-label">Calificación</span>
                         </div>
                     </div>
                     <div id="exam-feedback"></div>
-                    <div style="margin-top: 1.5rem;">
-                        <button class="calc-button" onclick="retryExam()">🔄 Reintentar Examen</button>
-                        <button class="calc-button" onclick="showTab('teoria')">📖 Repasar Teoría</button>
+                    <div class="mt-1rem">
+                        <button class="calc-button" onclick="BasicMathModule.retryExam()">🔄 Reintentar Examen</button>
+                        <button class="calc-button" onclick="BasicMathModule.showTab('teoria')">📖 Repasar Teoría</button>
                     </div>
                 </div>
             </div>
@@ -428,420 +295,18 @@
     <script src="../../lib/storage.js"></script>
     <script src="../../lib/gamification.js"></script>
     <script src="../../lib/components.js"></script>
+    <script src="../../lib/modules/basic-math.js"></script>
 
     <script>
-        const MODULE_ID = 'resta';
-        let score = 0;
-        let currentQuestion = null;
-        let questionAnswered = false;
-        let startTime = Date.now();
-        
-        let examQuestions = [];
-        let currentExamQuestion = 0;
-        let examAnswers = [];
-
-        function init() {
-            document.getElementById('header-container').innerHTML = Components.createHeader({
-                title: '¡Aprende a Restar!',
-                subtitle: 'Descubre cómo quitar números',
-                icon: '➖',
-                backLink: '../index.html'
-            });
-
-            const tabs = [
-                { id: 'glosario', label: 'Glosario' },
-                { id: 'simbolos', label: 'Símbolos' },
-                { id: 'introduccion', label: 'Introducción' },
-                { id: 'teoria', label: 'Teoría' },
-                { id: 'entrenamiento', label: 'Entrenamiento' },
-                { id: 'examen', label: 'Examen Final' }
-            ];
-            document.getElementById('tabs-container').innerHTML = Components.createTabs(tabs, showTab);
-
-            const moduleData = Storage.getModuleData(MODULE_ID);
-            const currentScore = moduleData ? moduleData.score : 0;
-            const currentLevel = Storage.getCurrentLevel();
-            
-            document.getElementById('score-container').innerHTML = Components.createScoreDisplay(
-                Storage.getTotalPoints(), 
-                currentLevel
-            );
-
-            Storage.updateStreak();
-            generateQuestion();
-            loadExamData();
-            
-            ['sub1', 'sub2'].forEach(id => {
-                document.getElementById(id).addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') subtract();
-                });
-            });
-            ['borrow1', 'borrow2'].forEach(id => {
-                document.getElementById(id).addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') subtractWithBorrow();
-                });
-            });
-            document.getElementById('practice-answer').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') checkAnswer();
-            });
-            document.getElementById('exam-answer').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') submitExamAnswer();
-            });
-        }
-
-        function showTab(tabName) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-            
-            document.getElementById(tabName).classList.add('active');
-            
-            buttons.forEach(button => {
-                if (button.textContent.trim() === getTabLabel(tabName)) {
-                    button.classList.add('active');
-                }
-            });
-        }
-        
-        function getTabLabel(tabId) {
-            const labels = {
-                'glosario': 'Glosario',
-                'simbolos': 'Símbolos',
-                'introduccion': 'Introducción',
-                'teoria': 'Teoría',
-                'entrenamiento': 'Entrenamiento',
-                'examen': 'Examen Final'
-            };
-            return labels[tabId] || '';
-        }
-
-        function subtract() {
-            const num1 = parseInt(document.getElementById('sub1').value);
-            const num2 = parseInt(document.getElementById('sub2').value);
-            const result = document.getElementById('sub-result');
-            const visualDiv = document.getElementById('visual-sub');
-            
-            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
-                result.textContent = '¡Por favor, escribe números válidos!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                visualDiv.innerHTML = '';
-                return;
-            }
-            
-            if (num2 > num1) {
-                result.innerHTML = `
-                    <div>
-                        ⚠️ El sustraendo (${num2}) es mayor que el minuendo (${num1})<br>
-                        El resultado sería negativo: ${num1} - ${num2} = ${num1 - num2}
-                    </div>
-                `;
-                result.style.background = 'rgba(255, 193, 7, 0.3)';
-                visualDiv.innerHTML = '';
-                return;
-            }
-            
-            const diff = num1 - num2;
-            
-            result.innerHTML = `
-                <div>
-                    ${num1} - ${num2} = ${diff} 🎉<br>
-                    <small class="text-small-hint">¡Quitamos ${num2} de ${num1}!</small>
-                </div>
-            `;
-            result.style.background = 'rgba(78, 205, 196, 0.3)';
-            
-            if (num1 <= 20) {
-                visualDiv.innerHTML = createSubtractionBlocks(num1, num2, diff);
-            } else {
-                visualDiv.innerHTML = '<p style="text-align: center; color: #666;">Los números son muy grandes para mostrar visualmente, ¡pero el resultado es correcto!</p>';
-            }
-        }
-
-        function createSubtractionBlocks(total, remove, remaining) {
-            let html = '<div class="visual-demo" style="padding: 1rem; text-align: center;">';
-            html += '<p><strong>Visual:</strong> Empezamos con ' + total + ', quitamos ' + remove + '</p>';
-            html += '<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 1rem 0;">';
-            
-            for (let i = 0; i < total; i++) {
-                const removed = i < remove ? ' removed' : '';
-                html += '<div class="item-block' + removed + '" style="width: 40px; height: 40px; background: ' + (i < remove ? '#ccc' : '#667eea') + '; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">' + (i + 1) + '</div>';
-            }
-            
-            html += '</div>';
-            html += '<p><strong>Quedan:</strong> ' + remaining + ' elementos</p>';
-            html += '</div>';
-            return html;
-        }
-
-        function subtractWithBorrow() {
-            const num1 = parseInt(document.getElementById('borrow1').value);
-            const num2 = parseInt(document.getElementById('borrow2').value);
-            const result = document.getElementById('borrow-result');
-            const explanation = document.getElementById('borrow-explanation');
-            
-            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
-                result.textContent = '¡Por favor, escribe números válidos!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                explanation.innerHTML = '<h3>📝 Explicación paso a paso:</h3><p>Escribe dos números para ver la explicación.</p>';
-                return;
-            }
-            
-            const diff = num1 - num2;
-            
-            result.innerHTML = `
-                <div>
-                    ${num1} - ${num2} = ${diff} 🎉
-                </div>
-            `;
-            result.style.background = 'rgba(78, 205, 196, 0.3)';
-            
-            const units1 = num1 % 10;
-            const tens1 = Math.floor(num1 / 10);
-            const units2 = num2 % 10;
-            const tens2 = Math.floor(num2 / 10);
-            
-            let explanationHTML = '<h3>📝 Explicación paso a paso:</h3>';
-            explanationHTML += '<ol>';
-            explanationHTML += `<li><strong>Separamos en unidades y decenas:</strong><br>`;
-            explanationHTML += `${num1} = ${tens1} decenas + ${units1} unidades<br>`;
-            explanationHTML += `${num2} = ${tens2} decenas + ${units2} unidades</li>`;
-            
-            if (units1 < units2) {
-                explanationHTML += `<li><strong>Pedimos prestado:</strong> Como ${units1} < ${units2}, pedimos prestado 1 decena (10 unidades)<br>`;
-                explanationHTML += `Ahora tenemos ${units1 + 10} unidades y ${tens1 - 1} decenas</li>`;
-                explanationHTML += `<li><strong>Restamos las unidades:</strong> ${units1 + 10} - ${units2} = ${units1 + 10 - units2}</li>`;
-                explanationHTML += `<li><strong>Restamos las decenas:</strong> ${tens1 - 1} - ${tens2} = ${tens1 - 1 - tens2}</li>`;
-            } else {
-                explanationHTML += `<li><strong>Restamos las unidades:</strong> ${units1} - ${units2} = ${units1 - units2}</li>`;
-                explanationHTML += `<li><strong>Restamos las decenas:</strong> ${tens1} - ${tens2} = ${tens1 - tens2}</li>`;
-            }
-            
-            explanationHTML += `<li><strong>Resultado final:</strong> ${diff}</li>`;
-            explanationHTML += '</ol>';
-            
-            explanation.innerHTML = explanationHTML;
-        }
-
-        function generateQuestion() {
-            const difficulty = Math.random();
-            let num1, num2;
-            
-            if (difficulty < 0.4) {
-                num1 = Math.floor(Math.random() * 9) + 2;
-                num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
-            } else if (difficulty < 0.7) {
-                num1 = Math.floor(Math.random() * 40) + 20;
-                num2 = Math.floor(Math.random() * 30) + 5;
-            } else {
-                num1 = Math.floor(Math.random() * 49) + 51;
-                num2 = Math.floor(Math.random() * 40) + 10;
-            }
-            
-            currentQuestion = {
-                num1: num1,
-                num2: num2,
-                answer: num1 - num2
-            };
-            
-            document.getElementById('practice-question').textContent = `¿Cuánto es ${num1} - ${num2}?`;
-            document.getElementById('practice-answer').value = '';
-            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
-            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
-            questionAnswered = false;
-            
-            const checkButton = document.getElementById('check-button');
-            checkButton.disabled = false;
-            checkButton.textContent = '✅ Comprobar';
-        }
-
-        function checkAnswer() {
-            const userAnswer = parseInt(document.getElementById('practice-answer').value);
-            const result = document.getElementById('practice-result');
-            
-            if (!currentQuestion || questionAnswered) {
-                return;
-            }
-            
-            if (isNaN(userAnswer)) {
-                result.textContent = '¡Por favor, escribe un número!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                return;
-            }
-            
-            questionAnswered = true;
-            const checkButton = document.getElementById('check-button');
-            checkButton.disabled = true;
-            checkButton.textContent = '✅ Respondido';
-            
-            if (userAnswer === currentQuestion.answer) {
-                Gamification.addPoints(10, MODULE_ID);
-                score += 10;
-                
-                result.innerHTML = `
-                    <div class="text-dark">
-                        ¡Correcto! 🎉<br>
-                        ${currentQuestion.num1} - ${currentQuestion.num2} = ${currentQuestion.answer}<br>
-                        <small>+10 puntos (Total: ${Storage.getTotalPoints()})</small>
-                    </div>
-                `;
-                result.style.background = 'rgba(78, 205, 196, 0.3)';
-            } else {
-                Gamification.subtractPoints(5, MODULE_ID);
-                score -= 5;
-                
-                result.innerHTML = `
-                    <div class="text-dark">
-                        Incorrecto 😔<br>
-                        ${currentQuestion.num1} - ${currentQuestion.num2} = ${currentQuestion.answer}<br>
-                        Tu respuesta: ${userAnswer}<br>
-                        <small>-5 puntos (Total: ${Storage.getTotalPoints()})</small>
-                    </div>
-                `;
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-            }
-            
-            updateScoreDisplay();
-        }
-
-        function updateScoreDisplay() {
-            document.getElementById('score-container').innerHTML = Components.createScoreDisplay(
-                Storage.getTotalPoints(), 
-                Storage.getCurrentLevel()
-            );
-        }
-
-        function loadExamData() {
-            const testData = Storage.getFinalTestData(MODULE_ID);
-            if (testData) {
-                document.getElementById('exam-attempts').textContent = testData.attempts || 0;
-                if (testData.passed) {
-                    document.getElementById('exam-best-score').textContent = testData.score + ' / 20 (' + Math.round((testData.score / 20) * 100) + '%)';
-                }
-            }
-        }
-
-        function startFinalExam() {
-            examQuestions = [];
-            for (let i = 0; i < 20; i++) {
-                const difficulty = Math.random();
-                let num1, num2;
-                
-                if (difficulty < 0.4) {
-                    num1 = Math.floor(Math.random() * 9) + 2;
-                    num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
-                } else if (difficulty < 0.7) {
-                    num1 = Math.floor(Math.random() * 40) + 20;
-                    num2 = Math.floor(Math.random() * 30) + 5;
-                } else {
-                    num1 = Math.floor(Math.random() * 49) + 51;
-                    num2 = Math.floor(Math.random() * 40) + 10;
-                }
-                
-                examQuestions.push({
-                    num1: num1,
-                    num2: num2,
-                    answer: num1 - num2
-                });
-            }
-            
-            currentExamQuestion = 0;
-            examAnswers = [];
-            
-            document.getElementById('exam-intro').classList.add('hidden');
-            document.getElementById('exam-area').classList.remove('hidden');
-            document.getElementById('exam-results').classList.add('hidden');
-            
-            showExamQuestion();
-        }
-
-        function showExamQuestion() {
-            const q = examQuestions[currentExamQuestion];
-            document.getElementById('current-q').textContent = currentExamQuestion + 1;
-            document.getElementById('total-q').textContent = examQuestions.length;
-            document.getElementById('exam-question').textContent = `¿Cuánto es ${q.num1} - ${q.num2}?`;
-            document.getElementById('exam-answer').value = '';
-            document.getElementById('exam-answer').focus();
-        }
-
-        function submitExamAnswer() {
-            const userAnswer = parseInt(document.getElementById('exam-answer').value);
-            
-            if (isNaN(userAnswer)) {
-                alert('Por favor, escribe un número válido');
-                return;
-            }
-            
-            examAnswers.push(userAnswer);
-            currentExamQuestion++;
-            
-            if (currentExamQuestion < examQuestions.length) {
-                showExamQuestion();
-            } else {
-                showExamResults();
-            }
-        }
-
-        function showExamResults() {
-            let correct = 0;
-            for (let i = 0; i < examQuestions.length; i++) {
-                if (examAnswers[i] === examQuestions[i].answer) {
-                    correct++;
-                }
-            }
-            
-            const percentage = Math.round((correct / examQuestions.length) * 100);
-            const passed = percentage >= 70;
-            
-            document.getElementById('exam-area').classList.add('hidden');
-            document.getElementById('exam-results').classList.remove('hidden');
-            
-            document.getElementById('correct-answers').textContent = correct;
-            document.getElementById('incorrect-answers').textContent = examQuestions.length - correct;
-            document.getElementById('final-percentage').textContent = percentage + '%';
-            
-            const feedbackDiv = document.getElementById('exam-feedback');
-            if (passed) {
-                feedbackDiv.innerHTML = `
-                    <div class="success-message">
-                        <h4>🎉 ¡Felicidades! Has aprobado el examen</h4>
-                        <p>Has completado exitosamente el módulo de resta con una calificación de ${percentage}%.</p>
-                        <p><strong>¡Has ganado el trofeo de "Experto en Resta"!</strong> 🏆</p>
-                    </div>
-                `;
-                
-                Storage.saveFinalTestResults(MODULE_ID, correct, examQuestions.length, true);
-                Storage.awardTrophy(`${MODULE_ID}-completado`, MODULE_ID);
-                Gamification.showTrophyToast(`${MODULE_ID}-completado`);
-                Gamification.checkAchievements();
-            } else {
-                feedbackDiv.innerHTML = `
-                    <div class="error-message">
-                        <h4>😔 No has aprobado esta vez</h4>
-                        <p>Obtuviste ${percentage}% pero necesitas al menos 70% para aprobar.</p>
-                        <p><strong>¡No te rindas!</strong> Repasa la teoría y practica más en la sección de Entrenamiento.</p>
-                        <p>Respuestas correctas necesarias: ${Math.ceil(examQuestions.length * 0.7)} de ${examQuestions.length}</p>
-                    </div>
-                `;
-                
-                Storage.saveFinalTestResults(MODULE_ID, correct, examQuestions.length, false);
-            }
-            
-            loadExamData();
-        }
-
-        function retryExam() {
-            document.getElementById('exam-results').classList.add('hidden');
-            document.getElementById('exam-intro').classList.remove('hidden');
-        }
-
-        window.addEventListener('beforeunload', function() {
-            const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-            Storage.addTimeSpent(timeSpent);
-        });
-
-        document.addEventListener('DOMContentLoaded', init);
+        const config = {
+            moduleId: 'resta',
+            operation: '-',
+            operationName: 'Resta',
+            icon: '➖',
+            title: '¡Aprende a Restar!',
+            subtitle: 'Descubre cómo quitar números',
+        };
+        BasicMathModule.init(config);
     </script>
 </body>
 </html>

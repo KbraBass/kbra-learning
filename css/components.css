@@ -12,10 +12,6 @@
 }
 
 .game-card {
-    --card-color1: #667eea;
-    --card-color2: #764ba2;
-    
-    background: linear-gradient(135deg, var(--card-color1) 0%, var(--card-color2) 100%);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     box-shadow: var(--shadow-lg);
@@ -24,6 +20,36 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.card-blue {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+}
+
+.card-orange {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+}
+
+.card-green {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+}
+
+.card-red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.card-teal-pink {
+    background: linear-gradient(135deg, #4ecdc4, #f5576c);
+}
+
+.card-purple-red {
+    background: linear-gradient(135deg, #764ba2, #f5576c);
+}
+.card-green-blue {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+}
+.card-pink-blue {
+    background: linear-gradient(135deg, #f5576c, var(--color-primary));
 }
 
 .game-card:hover {
@@ -1998,9 +2024,132 @@ tr:hover {
 
 .text-gray-lh16-mb20 {
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
 }
+
+/* ==================== BASIC MATH MODULE COMPONENTS ==================== */
+
+/* Module-specific theme override */
+.input-section.theme-pink {
+    background: linear-gradient(135deg, #cd3cdd, #a8293a);
+}
+
+.module-glossary-item {
+    background: rgb(255, 255, 230);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+}
+
+.module-glossary-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.module-symbol-card {
+    background: rgb(255, 255, 230);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+}
+
+.module-symbol-display {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.module-symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.module-intro-section {
+    background: rgb(255, 255, 230);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+}
+
+.module-exam-intro, .module-exam-area, .module-exam-results {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 3px 4px 8px rgba(0,0,0,0.5);
+}
+
+.module-exam-info {
+    background: rgba(96, 50, 234, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.module-exam-progress {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.module-result-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.module-exam-stat-item {
+    background: #85d4ac;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.module-exam-stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.module-exam-stat-label {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+.module-success-message {
+    background: #d4edda;
+    border: 2px solid var(--color-success);
+    color: #155724;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.module-error-message {
+    background: #f8d7da;
+    border: 2px solid var(--color-error);
+    color: #721c24;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
 
 /* Gradient boxes */
 .gradient-box-pink-p30-m25 {

@@ -8,134 +8,6 @@
     <!-- Shared CSS -->
     <link rel="stylesheet" href="../../css/core.css">
     <link rel="stylesheet" href="../../css/components.css">
-    
-    <style>
-        /* Module-specific theme override */
-        .input-section {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-        }
-        
-        .glossary-item {
-            background: white;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .glossary-item h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        
-        .symbol-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .symbol-display {
-            font-size: 3rem;
-            color: #f093fb;
-            margin-bottom: 0.5rem;
-        }
-        
-        .symbols-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .intro-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .exam-intro, .exam-area, .exam-results {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .exam-info {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .exam-progress {
-            background: #667eea;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
-        .result-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .stat-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .stat-value {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-        
-        .stat-label {
-            display: block;
-            margin-top: 0.5rem;
-            color: #666;
-        }
-        
-        .success-message {
-            background: #d4edda;
-            border: 2px solid #28a745;
-            color: #155724;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .error-message {
-            background: #f8d7da;
-            border: 2px solid #dc3545;
-            color: #721c24;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .btn-large {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -151,27 +23,27 @@
             <div class="tab-content active" id="glosario">
                 <h2>📖 Glosario de Términos</h2>
                 <div class="glossary-section">
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Multiplicación</h3>
                         <p>Operación matemática que consiste en sumar un número tantas veces como indica otro número. Es una forma rápida de hacer sumas repetidas.</p>
                         <div class="example"><strong>Ejemplo:</strong> 3 × 4 = 12 (es como sumar 3 + 3 + 3 + 3)</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Factores</h3>
                         <p>Los números que se multiplican en una operación. En la multiplicación 7 × 3, los factores son 7 y 3.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 5 × 8 = 40, los factores son 5 y 8</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Producto</h3>
                         <p>El resultado que obtenemos al multiplicar dos o más números.</p>
                         <div class="example"><strong>Ejemplo:</strong> En 6 × 7 = 42, el producto es 42</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Tabla de Multiplicar</h3>
                         <p>Lista organizada de productos que resultan de multiplicar un número por los números del 1 al 10 (o 12).</p>
                         <div class="example"><strong>Ejemplo:</strong> La tabla del 5: 5×1=5, 5×2=10, 5×3=15, etc.</div>
                     </div>
-                    <div class="glossary-item">
+                    <div class="module-glossary-item">
                         <h3>Propiedad Conmutativa</h3>
                         <p>En la multiplicación, el orden de los factores no altera el producto. Es decir, 3 × 4 = 4 × 3.</p>
                         <div class="example"><strong>Ejemplo:</strong> 6 × 2 = 12 y 2 × 6 = 12</div>
@@ -182,9 +54,9 @@
             <!-- Tab 2: Símbolos -->
             <div class="tab-content" id="simbolos">
                 <h2>🔣 Símbolos y Notación</h2>
-                <div class="symbols-grid">
-                    <div class="symbol-card">
-                        <div class="symbol-display">×</div>
+                <div class="module-symbols-grid">
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">×</div>
                         <div class="symbol-name"><strong>Signo de Multiplicación</strong></div>
                         <div class="symbol-description">
                             Se lee "por" o "multiplicado por" y representa la operación de multiplicar.
@@ -193,8 +65,8 @@
                             <strong>Ejemplo:</strong> 5 × 3 se lee "cinco por tres"
                         </div>
                     </div>
-                    <div class="symbol-card">
-                        <div class="symbol-display">=</div>
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">=</div>
                         <div class="symbol-name"><strong>Signo de Igual</strong></div>
                         <div class="symbol-description">
                             Indica que las cantidades a ambos lados son equivalentes o tienen el mismo valor.
@@ -203,8 +75,8 @@
                             <strong>Ejemplo:</strong> 7 × 2 = 14 significa que siete por dos es igual a catorce
                         </div>
                     </div>
-                    <div class="symbol-card">
-                        <div class="symbol-display">·</div>
+                    <div class="module-symbol-card">
+                        <div class="module-symbol-display">·</div>
                         <div class="symbol-name"><strong>Punto de Multiplicación</strong></div>
                         <div class="symbol-description">
                             Otra forma de representar la multiplicación, usada especialmente en matemáticas avanzadas.
@@ -227,13 +99,13 @@
             <!-- Tab 3: Introducción -->
             <div class="tab-content" id="introduccion">
                 <h2>📚 Introducción a la Multiplicación</h2>
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>¿Qué es la Multiplicación?</h3>
                     <p>La multiplicación es una operación matemática que nos permite sumar un número varias veces de forma rápida. Es como tener grupos iguales y contar cuántas cosas hay en total. Por ejemplo, si tienes 4 cajas con 5 caramelos cada una, en lugar de sumar 5 + 5 + 5 + 5, puedes multiplicar 4 × 5 = 20 caramelos.</p>
                     <p><strong>Por ejemplo:</strong> 3 × 4 = 12 significa que tienes 3 grupos de 4, o que sumas el número 4 tres veces (4 + 4 + 4 = 12).</p>
                 </div>
                 
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>¿Por qué es importante aprender a multiplicar?</h3>
                     <p>La multiplicación es fundamental en nuestra vida diaria porque:</p>
                     <ul>
@@ -245,7 +117,7 @@
                     </ul>
                 </div>
                 
-                <div class="intro-section">
+                <div class="module-intro-section">
                     <h3>En el Mundo Real</h3>
                     <p><strong>🏪 En la tienda:</strong> Si cada chocolate cuesta $3 y compras 5, gastas: 5 × 3 = $15 total</p>
                     <p><strong>🎮 En los videojuegos:</strong> Si cada nivel te da 25 puntos y completas 8 niveles: 8 × 25 = 200 puntos</p>
@@ -269,21 +141,21 @@
                 <h2>📖 Teoría y Práctica</h2>
                 
                 <!-- Sección de Multiplicación Básica -->
-                <div class="input-section">
+                <div class="input-section theme-pink">
                     <h3>🔢 Calculadora de Multiplicación Básica</h3>
                     <div class="input-group">
-                        <label for="sum1">Primer factor:</label>
-                        <input type="number" id="sum1" placeholder="Ejemplo: 5" min="0">
+                        <label for="num1">Primer factor:</label>
+                        <input type="number" id="num1" placeholder="Ejemplo: 5" min="0">
                     </div>
                     <div class="input-group">
-                        <label for="sum2">Segundo factor:</label>
-                        <input type="number" id="sum2" placeholder="Ejemplo: 3" min="0">
+                        <label for="num2">Segundo factor:</label>
+                        <input type="number" id="num2" placeholder="Ejemplo: 3" min="0">
                     </div>
-                    <button class="calc-button" onclick="multiply()">✖️ Multiplicar</button>
-                    <div class="result" id="sum-result">¡Escribe dos números y multiplícalos!</div>
+                    <button class="calc-button" onclick="BasicMathModule.calculate()">✖️ Multiplicar</button>
+                    <div class="result" id="calc-result">¡Escribe dos números y multiplícalos!</div>
                 </div>
 
-                <div id="visual-sum"></div>
+                <div id="visual-calc"></div>
 
                 <div class="explanation">
                     <h3>📝 ¿Cómo funciona la multiplicación?</h3>
@@ -297,7 +169,7 @@
                 </div>
 
                 <!-- Sección de Tablas de Multiplicar -->
-                <div class="input-section" style="margin-top: 2rem;">
+                <div class="input-section theme-pink mt-2rem">
                     <h3>🚀 Tabla de Multiplicar</h3>
                     <p>Selecciona un número para ver su tabla de multiplicar completa.</p>
                     
@@ -305,7 +177,7 @@
                         <label for="carry1">Número para la tabla (1-12):</label>
                         <input type="number" id="carry1" placeholder="Ejemplo: 7" min="1" max="12">
                     </div>
-                    <button class="calc-button" onclick="showMultiplicationTable()">✖️ Mostrar Tabla</button>
+                    <button class="calc-button" onclick="BasicMathModule.showMultiplicationTable()">✖️ Mostrar Tabla</button>
                     <div class="result" id="carry-result">¡Escribe un número!</div>
                 </div>
 
@@ -338,8 +210,8 @@
                     <div class="input-group">
                         <input type="number" id="practice-answer" placeholder="Tu respuesta..." class="practice-input">
                     </div>
-                    <button class="calc-button" id="check-button" onclick="checkAnswer()">✅ Comprobar</button>
-                    <button class="calc-button" onclick="generateQuestion()">🔄 Nueva Pregunta</button>
+                    <button class="calc-button" id="check-button" onclick="BasicMathModule.checkAnswer()">✅ Comprobar</button>
+                    <button class="calc-button" onclick="BasicMathModule.generateQuestion()">🔄 Nueva Pregunta</button>
                     <div class="result" id="practice-result">¡Escribe tu respuesta!</div>
                 </div>
 
@@ -360,8 +232,8 @@
             <div class="tab-content" id="examen">
                 <h2>📝 Examen Final</h2>
                 
-                <div class="exam-intro" id="exam-intro">
-                    <div class="exam-info">
+                <div class="module-exam-intro" id="exam-intro">
+                    <div class="module-exam-info">
                         <h3>Información del Examen</h3>
                         <p><strong>Preguntas:</strong> <span id="exam-total-questions">20</span></p>
                         <p><strong>Tipo:</strong> Multiplicación de números (respuesta numérica)</p>
@@ -379,11 +251,11 @@
                             <li>Necesitas al menos 70% para aprobar</li>
                         </ul>
                     </div>
-                    <button class="calc-button btn-large" onclick="startFinalExam()">🚀 Comenzar Examen</button>
+                    <button class="calc-button btn-large" onclick="BasicMathModule.startFinalExam()">🚀 Comenzar Examen</button>
                 </div>
 
-                <div class="exam-area hidden" id="exam-area">
-                    <div class="exam-progress">
+                <div class="module-exam-area hidden" id="exam-area">
+                    <div class="module-exam-progress">
                         <span>Pregunta <span id="current-q">1</span> de <span id="total-q">20</span></span>
                     </div>
                     <div id="exam-question-container">
@@ -391,30 +263,30 @@
                         <div class="input-group">
                             <input type="number" id="exam-answer" placeholder="Escribe tu respuesta...">
                         </div>
-                        <button class="calc-button btn-large" onclick="submitExamAnswer()">➡️ Siguiente</button>
+                        <button class="calc-button btn-large" onclick="BasicMathModule.submitExamAnswer()">➡️ Siguiente</button>
                     </div>
                 </div>
 
-                <div class="exam-results hidden" id="exam-results">
+                <div class="module-exam-results hidden" id="exam-results">
                     <h3>🎊 Resultados del Examen</h3>
-                    <div class="result-stats">
-                        <div class="stat-item">
-                            <span class="stat-value" id="correct-answers">0</span>
-                            <span class="stat-label">Correctas</span>
+                    <div class="module-result-stats">
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="correct-answers">0</span>
+                            <span class="module-exam-stat-label">Correctas</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="incorrect-answers">0</span>
-                            <span class="stat-label">Incorrectas</span>
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="incorrect-answers">0</span>
+                            <span class="module-exam-stat-label">Incorrectas</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-value" id="final-percentage">0%</span>
-                            <span class="stat-label">Calificación</span>
+                        <div class="module-exam-stat-item">
+                            <span class="module-exam-stat-value" id="final-percentage">0%</span>
+                            <span class="module-exam-stat-label">Calificación</span>
                         </div>
                     </div>
                     <div id="exam-feedback"></div>
-                    <div style="margin-top: 1.5rem;">
-                        <button class="calc-button" onclick="retryExam()">🔄 Reintentar Examen</button>
-                        <button class="calc-button" onclick="showTab('teoria')">📖 Repasar Teoría</button>
+                    <div class="mt-1rem">
+                        <button class="calc-button" onclick="BasicMathModule.retryExam()">🔄 Reintentar Examen</button>
+                        <button class="calc-button" onclick="BasicMathModule.showTab('teoria')">📖 Repasar Teoría</button>
                     </div>
                 </div>
             </div>
@@ -425,411 +297,19 @@
     <script src="../../lib/storage.js"></script>
     <script src="../../lib/gamification.js"></script>
     <script src="../../lib/components.js"></script>
+    <script src="../../lib/modules/basic-math.js"></script>
 
-    <!-- Module-specific JavaScript -->
+    <!-- Module-specific Initialization -->
     <script>
-        const MODULE_ID = 'multiplicacion';
-        let score = 0;
-        let currentQuestion = null;
-        let questionAnswered = false;
-        let startTime = Date.now();
-        
-        // Exam variables
-        let examQuestions = [];
-        let currentExamQuestion = 0;
-        let examAnswers = [];
-
-        // Initialize module
-        function init() {
-            // Render header
-            document.getElementById('header-container').innerHTML = Components.createHeader({
-                title: '¡Aprende a Multiplicar!',
-                subtitle: 'Descubre el poder de repetir números',
-                icon: '✖️',
-                backLink: '../index.html'
-            });
-
-            // Render tabs
-            const tabs = [
-                { id: 'glosario', label: 'Glosario' },
-                { id: 'simbolos', label: 'Símbolos' },
-                { id: 'introduccion', label: 'Introducción' },
-                { id: 'teoria', label: 'Teoría' },
-                { id: 'entrenamiento', label: 'Entrenamiento' },
-                { id: 'examen', label: 'Examen Final' }
-            ];
-            document.getElementById('tabs-container').innerHTML = Components.createTabs(tabs, showTab);
-
-            // Render score display
-            const moduleData = Storage.getModuleData(MODULE_ID);
-            const currentScore = moduleData ? moduleData.score : 0;
-            const currentLevel = Storage.getCurrentLevel();
-            
-            document.getElementById('score-container').innerHTML = Components.createScoreDisplay(
-                Storage.getTotalPoints(), 
-                currentLevel
-            );
-
-            // Update streak
-            Storage.updateStreak();
-
-            // Generate first practice question
-            generateQuestion();
-            
-            // Load exam data
-            loadExamData();
-            
-            // Add Enter key support for inputs
-            document.getElementById('sum1').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') multiply();
-            });
-            document.getElementById('sum2').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') multiply();
-            });
-            document.getElementById('carry1').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') showMultiplicationTable();
-            });
-            document.getElementById('practice-answer').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') checkAnswer();
-            });
-            document.getElementById('exam-answer').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') submitExamAnswer();
-            });
-        }
-
-        // Tab switching function
-        function showTab(tabName) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-            
-            document.getElementById(tabName).classList.add('active');
-            
-            // Find and activate the correct button
-            buttons.forEach(button => {
-                if (button.textContent.trim() === getTabLabel(tabName)) {
-                    button.classList.add('active');
-                }
-            });
-        }
-        
-        function getTabLabel(tabId) {
-            const labels = {
-                'glosario': 'Glosario',
-                'simbolos': 'Símbolos',
-                'introduccion': 'Introducción',
-                'teoria': 'Teoría',
-                'entrenamiento': 'Entrenamiento',
-                'examen': 'Examen Final'
-            };
-            return labels[tabId] || '';
-        }
-
-        // Basic multiplication with visualization
-        function multiply() {
-            const num1 = parseInt(document.getElementById('sum1').value);
-            const num2 = parseInt(document.getElementById('sum2').value);
-            const result = document.getElementById('sum-result');
-            const visualDiv = document.getElementById('visual-sum');
-            
-            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
-                result.textContent = '¡Por favor, escribe números válidos!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                visualDiv.innerHTML = '';
-                return;
-            }
-            
-            const product = num1 * num2;
-            
-            result.innerHTML = `
-                <div>
-                    ${num1} × ${num2} = ${product} 🎉<br>
-                    <small class="text-small-hint">¡Es como sumar ${num1} ${num2} veces!</small>
-                </div>
-            `;
-            result.style.background = 'rgba(78, 205, 196, 0.3)';
-            
-            // Visual representation (if product is small enough)
-            if (product <= 20) {
-                visualDiv.innerHTML = Components.createNumberBlocks(product);
-            } else {
-                visualDiv.innerHTML = '<p style="text-align: center; color: #666;">El producto es muy grande para mostrar visualmente, ¡pero el resultado es correcto!</p>';
-            }
-        }
-
-        // Show multiplication table
-        function showMultiplicationTable() {
-            const tableNum = parseInt(document.getElementById('carry1').value);
-            const result = document.getElementById('carry-result');
-            const explanation = document.getElementById('carry-explanation');
-            
-            if (isNaN(tableNum) || tableNum < 1 || tableNum > 12) {
-                result.textContent = '¡Por favor, escribe un número del 1 al 12!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                explanation.innerHTML = '<h3>📝 Tabla de multiplicar:</h3><p>Escribe un número del 1 al 12 para ver su tabla.</p>';
-                return;
-            }
-            
-            result.innerHTML = `
-                <div>
-                    ✅ Mostrando la tabla del ${tableNum}
-                </div>
-            `;
-            result.style.background = 'rgba(78, 205, 196, 0.3)';
-            
-            // Generate multiplication table
-            let explanationHTML = `<h3>📝 Tabla de multiplicar del ${tableNum}:</h3>`;
-            explanationHTML += '<div style="background: white; padding: 1.5rem; border-radius: 12px; max-width: 400px; margin: 0 auto;">';
-            
-            for (let i = 1; i <= 10; i++) {
-                const product = tableNum * i;
-                explanationHTML += `
-                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem; margin: 0.5rem 0; border-radius: 8px; font-size: 1.2rem; text-align: center;">
-                        ${tableNum} × ${i} = ${product}
-                    </div>
-                `;
-            }
-            
-            explanationHTML += '</div>';
-            explanation.innerHTML = explanationHTML;
-        }
-
-        // Generate practice question
-        function generateQuestion() {
-            const difficulty = Math.random();
-            let num1, num2;
-            
-            if (difficulty < 0.4) {
-                // Easy: tables 1-5
-                num1 = Math.floor(Math.random() * 5) + 1;
-                num2 = Math.floor(Math.random() * 10) + 1;
-            } else if (difficulty < 0.7) {
-                // Medium: tables 6-10
-                num1 = Math.floor(Math.random() * 5) + 6;
-                num2 = Math.floor(Math.random() * 10) + 1;
-            } else {
-                // Hard: tables 11-12
-                num1 = Math.floor(Math.random() * 2) + 11;
-                num2 = Math.floor(Math.random() * 10) + 1;
-            }
-            
-            currentQuestion = {
-                num1: num1,
-                num2: num2,
-                answer: num1 * num2
-            };
-            
-            document.getElementById('practice-question').textContent = `¿Cuánto es ${num1} × ${num2}?`;
-            document.getElementById('practice-answer').value = '';
-            document.getElementById('practice-result').textContent = '¡Escribe tu respuesta!';
-            document.getElementById('practice-result').style.background = 'rgba(255, 255, 255, 0.9)';
-            questionAnswered = false;
-            
-            const checkButton = document.getElementById('check-button');
-            checkButton.disabled = false;
-            checkButton.textContent = '✅ Comprobar';
-        }
-
-        // Check answer
-        function checkAnswer() {
-            const userAnswer = parseInt(document.getElementById('practice-answer').value);
-            const result = document.getElementById('practice-result');
-            
-            if (!currentQuestion || questionAnswered) {
-                return;
-            }
-            
-            if (isNaN(userAnswer)) {
-                result.textContent = '¡Por favor, escribe un número!';
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-                return;
-            }
-            
-            questionAnswered = true;
-            const checkButton = document.getElementById('check-button');
-            checkButton.disabled = true;
-            checkButton.textContent = '✅ Respondido';
-            
-            if (userAnswer === currentQuestion.answer) {
-                // Correct answer
-                Gamification.addPoints(10, MODULE_ID);
-                score += 10;
-                
-                result.innerHTML = `
-                    <div class="text-dark">
-                        ¡Correcto! 🎉<br>
-                        ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
-                        <small>+10 puntos (Total: ${Storage.getTotalPoints()})</small>
-                    </div>
-                `;
-                result.style.background = 'rgba(78, 205, 196, 0.3)';
-            } else {
-                // Incorrect answer
-                Gamification.subtractPoints(5, MODULE_ID);
-                score -= 5;
-                
-                result.innerHTML = `
-                    <div class="text-dark">
-                        Incorrecto 😔<br>
-                        ${currentQuestion.num1} × ${currentQuestion.num2} = ${currentQuestion.answer}<br>
-                        Tu respuesta: ${userAnswer}<br>
-                        <small>-5 puntos (Total: ${Storage.getTotalPoints()})</small>
-                    </div>
-                `;
-                result.style.background = 'rgba(255, 107, 107, 0.3)';
-            }
-            
-            updateScoreDisplay();
-        }
-
-        function updateScoreDisplay() {
-            document.getElementById('score-container').innerHTML = Components.createScoreDisplay(
-                Storage.getTotalPoints(), 
-                Storage.getCurrentLevel()
-            );
-        }
-
-        // ===== FINAL EXAM FUNCTIONS =====
-        
-        function loadExamData() {
-            const testData = Storage.getFinalTestData(MODULE_ID);
-            if (testData) {
-                document.getElementById('exam-attempts').textContent = testData.attempts || 0;
-                if (testData.passed) {
-                    document.getElementById('exam-best-score').textContent = testData.score + ' / 20 (' + Math.round((testData.score / 20) * 100) + '%)';
-                }
-            }
-        }
-
-        function startFinalExam() {
-            // Generate 20 random multiplication questions
-            examQuestions = [];
-            for (let i = 0; i < 20; i++) {
-                const difficulty = Math.random();
-                let num1, num2;
-                
-                if (difficulty < 0.4) {
-                    // Easy: tables 1-5
-                    num1 = Math.floor(Math.random() * 5) + 1;
-                    num2 = Math.floor(Math.random() * 10) + 1;
-                } else if (difficulty < 0.7) {
-                    // Medium: tables 6-10
-                    num1 = Math.floor(Math.random() * 5) + 6;
-                    num2 = Math.floor(Math.random() * 10) + 1;
-                } else {
-                    // Hard: tables 11-12
-                    num1 = Math.floor(Math.random() * 2) + 11;
-                    num2 = Math.floor(Math.random() * 10) + 1;
-                }
-                
-                examQuestions.push({
-                    num1: num1,
-                    num2: num2,
-                    answer: num1 * num2
-                });
-            }
-            
-            currentExamQuestion = 0;
-            examAnswers = [];
-            
-            document.getElementById('exam-intro').classList.add('hidden');
-            document.getElementById('exam-area').classList.remove('hidden');
-            document.getElementById('exam-results').classList.add('hidden');
-            
-            showExamQuestion();
-        }
-
-        function showExamQuestion() {
-            const q = examQuestions[currentExamQuestion];
-            document.getElementById('current-q').textContent = currentExamQuestion + 1;
-            document.getElementById('total-q').textContent = examQuestions.length;
-            document.getElementById('exam-question').textContent = `¿Cuánto es ${q.num1} × ${q.num2}?`;
-            document.getElementById('exam-answer').value = '';
-            document.getElementById('exam-answer').focus();
-        }
-
-        function submitExamAnswer() {
-            const userAnswer = parseInt(document.getElementById('exam-answer').value);
-            
-            if (isNaN(userAnswer)) {
-                alert('Por favor, escribe un número válido');
-                return;
-            }
-            
-            examAnswers.push(userAnswer);
-            currentExamQuestion++;
-            
-            if (currentExamQuestion < examQuestions.length) {
-                showExamQuestion();
-            } else {
-                showExamResults();
-            }
-        }
-
-        function showExamResults() {
-            let correct = 0;
-            for (let i = 0; i < examQuestions.length; i++) {
-                if (examAnswers[i] === examQuestions[i].answer) {
-                    correct++;
-                }
-            }
-            
-            const percentage = Math.round((correct / examQuestions.length) * 100);
-            const passed = percentage >= 70;
-            
-            document.getElementById('exam-area').classList.add('hidden');
-            document.getElementById('exam-results').classList.remove('hidden');
-            
-            document.getElementById('correct-answers').textContent = correct;
-            document.getElementById('incorrect-answers').textContent = examQuestions.length - correct;
-            document.getElementById('final-percentage').textContent = percentage + '%';
-            
-            const feedbackDiv = document.getElementById('exam-feedback');
-            if (passed) {
-                feedbackDiv.innerHTML = `
-                    <div class="success-message">
-                        <h4>🎉 ¡Felicidades! Has aprobado el examen</h4>
-                        <p>Has completado exitosamente el módulo de multiplicación con una calificación de ${percentage}%.</p>
-                        <p><strong>¡Has ganado el trofeo de "Campeón de Multiplicación"!</strong> 🏆</p>
-                    </div>
-                `;
-                
-                // Save result and award trophy
-                Storage.saveFinalTestResults(MODULE_ID, correct, examQuestions.length, true);
-                Storage.awardTrophy(`${MODULE_ID}-completado`, MODULE_ID);
-                Gamification.showTrophyToast(`${MODULE_ID}-completado`);
-                Gamification.checkAchievements();
-            } else {
-                feedbackDiv.innerHTML = `
-                    <div class="error-message">
-                        <h4>😔 No has aprobado esta vez</h4>
-                        <p>Obtuviste ${percentage}% pero necesitas al menos 70% para aprobar.</p>
-                        <p><strong>¡No te rindas!</strong> Repasa la teoría y practica más en la sección de Entrenamiento.</p>
-                        <p>Respuestas correctas necesarias: ${Math.ceil(examQuestions.length * 0.7)} de ${examQuestions.length}</p>
-                    </div>
-                `;
-                
-                Storage.saveFinalTestResults(MODULE_ID, correct, examQuestions.length, false);
-            }
-            
-            loadExamData();
-        }
-
-        function retryExam() {
-            document.getElementById('exam-results').classList.add('hidden');
-            document.getElementById('exam-intro').classList.remove('hidden');
-        }
-
-        // Track time spent
-        window.addEventListener('beforeunload', function() {
-            const timeSpent = Math.floor((Date.now() - startTime) / 1000);
-            Storage.addTimeSpent(timeSpent);
-        });
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', init);
+        const config = {
+            moduleId: 'multiplicacion',
+            operation: '*',
+            operationName: 'Multiplicación',
+            icon: '✖️',
+            title: '¡Aprende a Multiplicar!',
+            subtitle: 'Descubre el poder de repetir números',
+        };
+        BasicMathModule.init(config);
     </script>
 </body>
 </html>

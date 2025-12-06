@@ -19,7 +19,7 @@ The Kbra Learning Platform has been successfully restructured from individual st
 - **Demo Implementation**: 3 HTML files
   - modules/basic-math/suma.html (converted)
   - modules/basic-math/index.html (category page)
-  - modules/index.html (hub page)
+  - index.html (main hub page)
 
 - **Documentation**: 4 comprehensive guides
   - UNIFICATION_PLAN.md (400+ lines)
