@@ -427,7 +427,7 @@ button:disabled {
 
 /* ==================== PRACTICE AREAS ==================== */
 .practice-area {
-    background: rgba(98, 190, 118, 0.9);
+    background: rgba(98, 158, 190, 0.9);
     border-radius: var(--radius-md);
     padding: var(--space-xl);
     margin: var(--space-lg) 0;

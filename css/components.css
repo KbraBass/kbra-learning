@@ -2758,32 +2758,28 @@ tr:hover {
 
 /* Custom styles for the multiplication table */
 .multiplication-table {
-    /* Existing table styles in core.css might apply white background,
-       so ensure text is dark. */
-    color: var(--color-gray-600); /* Use a defined dark text color variable */
+    color: var(--color-gray-600);
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
 }
 
 .multiplication-table th {
-    /* Headers already have white text from thead rule in core.css */
-    color: var(--color-white); /* Explicitly white for headers */
+    color: var(--color-white);
+    padding: 0.5rem 0.75rem;
 }
 
 .multiplication-table td {
-    color: var(--color-gray-600); /* Ensure table data has dark text */
+    color: var(--color-gray-600);
+    padding: 0.5rem 0.75rem;
+    text-align: center;
 }
 
 /* Ensure alternating row colors are visible */
 .multiplication-table tbody tr:nth-child(even) {
-    background: var(--color-gray-100); /* Lighter background for even rows */
+    background: var(--color-gray-100);
 }
 
 .multiplication-table tbody tr:hover {
-    background: var(--color-gray-200); /* A slightly darker hover effect */
-}
-
-/* Ensure h3 inside resultDiv is dark and centered */
-#carry-result h3 {
-    color: var(--color-gray-600); /* Explicitly set dark color for the title */
-    text-align: center; /* Center the title */
-    margin-bottom: var(--space-md); /* Add some space below the title */
+    background: var(--color-gray-200);
 }

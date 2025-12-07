@@ -170,18 +170,18 @@
                     <p>Cuando el dígito del minuendo es menor que el del sustraendo, "pedimos prestado" 10 de la siguiente columna.</p>
                     
                     <div class="input-group">
-                        <label for="carry1">Minuendo:</label>
-                        <input type="number" id="carry1" placeholder="Ejemplo: 42" min="10" value="42">
+                        <label for="borrow1">Minuendo:</label>
+                        <input type="number" id="borrow1" placeholder="Ejemplo: 42" min="10" value="42">
                     </div>
                     <div class="input-group">
-                        <label for="carry2">Sustraendo:</label>
-                        <input type="number" id="carry2" placeholder="Ejemplo: 17" min="10" value="17">
+                        <label for="borrow2">Sustraendo:</label>
+                        <input type="number" id="borrow2" placeholder="Ejemplo: 17" min="10" value="17">
                     </div>
                     <button class="calc-button" onclick="BasicMathModule.calculateWithCarry()">➖ Restar con Explicación</button>
-                    <div class="result" id="carry-result">¡Escribe dos números!</div>
+                    <div class="result" id="borrow-result">¡Escribe dos números!</div>
                 </div>
 
-                <div class="explanation" id="carry-explanation">
+                <div class="explanation" id="borrow-explanation">
                     <h3>📝 Explicación paso a paso:</h3>
                     <p>La explicación aparecerá aquí cuando restes dos números.</p>
                 </div>
