@@ -193,6 +193,21 @@
                     <p>La explicación aparecerá aquí cuando dividas dos números.</p>
                 </div>
 
+                <!-- División Table Area -->
+                <div class="input-section theme-blue mt-2rem">
+                    <h3 style="color: white; text-align: center; margin-bottom: 1rem;">Tabla de División</h3>
+                    <div class="input-group">
+                        <label for="division-table-number">Elige el divisor (1-12):</label>
+                        <input type="number" id="division-table-number" min="1" max="12" placeholder="Ejemplo: 4">
+                        <button class="calc-button" onclick="BasicMathModule.showDivisionTable()">Mostrar Tabla</button>
+                    </div>
+                    <div class="result" id="division-table-result"></div>
+                    <div class="explanation" id="division-table-explanation">
+                        <h3>📝 ¿Cómo se relaciona con la multiplicación?</h3>
+                        <p>La tabla de división es como la de multiplicar, pero al revés. Si sabes que 4 × 3 = 12, entonces 12 ÷ 4 = 3 y 12 ÷ 3 = 4. Cada resultado de la tabla de multiplicar te da dos divisiones posibles.</p>
+                        <p>Por ejemplo, si eliges el divisor 4, verás cómo todos los resultados corresponden a multiplicaciones con 4.</p>
+                    </div>
+                </div>
                 <div class="fun-facts">
                     <h3>💡 Consejos para Dividir</h3>
                     <ul>
@@ -225,9 +240,10 @@
                 <div class="fun-facts">
                     <h3>💡 Consejos para Practicar</h3>
                     <ul>
-                        <li>Usa tus dedos para contar cuando empieces</li>
-                        <li>El orden no importa: 5 + 3 = 3 + 5 = 8</li>
-                        <li>Practica con números pequeños primero, ¡luego sube!</li>
+                        <li>Repasa las tablas de multiplicar: te ayudarán a dividir más rápido</li>
+                        <li>Divide objetos reales (como dulces o lápices) para entender mejor</li>
+                        <li>Practica con divisiones exactas antes de intentar con resto</li>
+                        <li>Si no sabes la respuesta, prueba multiplicar el divisor por diferentes números</li>
                         <li>Cada respuesta correcta te da +10 puntos</li>
                         <li>No te preocupes por los errores, ¡son parte del aprendizaje!</li>
                         <li>Intenta resolver mentalmente antes de usar la calculadora</li>
